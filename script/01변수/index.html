@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 변수는 호출 전 선언 필요 
+  상수를 이용해 변수를 선언할 수 없음
+  예약어를 변수로 사용할 수 없음
+  Undefined와 null과 NaN은 false
+  문자형 변수와 숫자형 변수를 더하면 이어붙인 후 문자형으로 변환한다 
+  값은 연산자로 이어붙여야만 한다-->
+  <script>
+    var a = '사과'
+    var b = '바나나'
+    // var b = '사과'
+    // var a = '바나나'
+    var c = a
+    var a = b
+    var b = c
+
+    console.log(a, b); //바나나 사과
+  </script>
+</body>
+
+</html>
