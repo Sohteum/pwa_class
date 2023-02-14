@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+</body>
+
+<script>
+  /*
+    a = '5'
+    parseInt('5') -> 5
+    parseInt(a) -> 5 
+
+    a = '1'
+    b = '5'
+    parseInt(a+b) -> 15 문자와 문자를 더한다음 숫자로 변환한것. 
+    만약 6을 얻고싶다면 이렇게 
+    console.log(parseInt(a) + parseInt(b)); 
+     
+    a = '5입니다'
+    parseInt(a) -> 5 
+
+    a = '숫자5'
+    parseInt(a) -> NaN
+
+    a = '1.443535'
+    parseInt(a) -> 1
+  
+    */
+
+
+
+  /*   var a = parseInt(prompt('첫번째 숫자를 입력하세요'))
+    var b = parseInt(prompt('두번째 숫자를 입력하세요'))
+    var c = a + b
+    alert(c) */
+
+  /*   var a = prompt('첫번째 숫자를 입력하세요')
+    var b = prompt('두번째 숫자를 입력하세요')
+    var c = parseInt(a) + parseInt(b)
+    alert(c) */
+
+  /* var a = prompt('첫번째 정수나 소수를 입력하세요')
+  var b = prompt('두번째 정수나 소수를 입력하세요')
+  var c = parseFloat(a) + parseFloat(b)
+  alert(c) */
+
+  /* 나머지 구하기 예제 */
+  /* var a = prompt('나누어질 수(정수)를 입력하세요') //14
+  var b = prompt('나눌 수(정수)를 입력하세요') //5
+  var c = parseInt(a/b)
+  var d = a - b * c
+  alert(d) */
+  //4
+
+  /* var a = prompt('나누어질 수(정수)를 입력하세요') //14
+  var b = prompt('나눌 수(정수)를 입력하세요') //5
+  var c = a / b
+  var d = a - b * parseInt(c)
+  alert(d) */
+
+  /* var a = prompt('나누어질 수(정수)를 입력하세요') //14
+  var b = prompt('나눌 수(정수)를 입력하세요') //5
+  var c = a % b
+  alert(c) */
+
+  /* var a = prompt('가지고 있는 금액을 입력하세요') //1000
+  var b = prompt('물건 가격을 입력하세요') //300
+  var c = a % b
+  alert(c)
+  // 구입가능개수 3, 잔돈 100 */
+
+  /* var a = prompt('가지고 있는 금액을 입력하세요') //1000
+  var b = prompt('물건 가격을 입력하세요') //300
+  var c = parseInt(a / b)
+  var d = a - b * c
+  alert('구입가능개수 :'+3+'개, 잔돈 '+d+'')
+  // 구입가능개수 3, 잔돈 100 */
+
+  /* 평균구하기 */
+  /*   var 국어 = prompt('국어점수를 입력하세요') //40
+    var 영어 = prompt('영어점수를 입력하세요') //30
+    var 수학 = prompt('수학점수를 입력하세요') //30
+    var 총점 = parseInt(국어) + parseInt(영어) + parseInt(수학)
+    var 평균 = parseInt(총점 / 3 * 10) / 10
+    alert('총점은 ' + 총점 + '점, 평균은 ' + 평균 + '점')
+  
+    console.log(평균); */
+  //총점은 100점, 평균은 33.3점 
+
+  /* 컨테이너의 너비를 입력받자1000
+  그리드의 개수3
+  그리드 한칸의 너비300
+  그럼 한개 여백의넓이는?50 */
+  /*   var widthOfContainer = parseInt(prompt('컨테이너의 너비'))
+    var numberOfGrid = parseInt(prompt('그리드의 개수'))
+    var widthOfGrid = parseInt(prompt('그리드 한 칸의 너비'))
+    var fullWidthOfMargin = widthOfContainer - widthOfGrid * numberOfGrid
+    var widthOfMargin = fullWidthOfMargin / (numberOfGrid-1)
+    alert(widthOfMargin) */
+
+
+  /* 컨테이너 넓이를 입력받자 1000
+  여백의 개수를 입력받자 2
+  여백의 넓이를 입력받자 50
+  1칸의 넓이는? 300 */
+  var widthOfContainer = parseInt(prompt('컨테이너의 너비'))
+  var numberOfMargin = parseInt(prompt('여백의 개수'))
+  var widthOfMargin = parseInt(prompt('여백의 너비'))
+  var fullWidthOfMargin = widthOfContainer - widthOfMargin * numberOfMargin
+  var oneWidthOfGrid = fullWidthOfMargin / (numberOfMargin + 1)
+  alert(oneWidthOfGrid)
+
+
+  a = 1.123454
+  a.tofixed(1)  //1.2
+
+
+  prompt('첫번째수를 입력') //10
+  prompt('두번째수를 입력') //20
+  alert()// 10은 20의 50%입니다
+
+
+</script>
+
+</html>
