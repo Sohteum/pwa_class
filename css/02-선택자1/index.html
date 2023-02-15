@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.style1#id1 {
+      color: red;
+    }
+
+    .style1.style2 {
+      text-decoration: underline;
+    }
+
+    span.style1 {
+      color: blue;
+    }
+
+    .box1,
+    .box2 {
+      width: 300px;
+      height: 300px;
+      background-color: palevioletred;
+    }
+
+    .box1>div,
+    .box2>div {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+
+    * {
+      /* 전체를 선택한것 
+      .box2 * {}
+      .box2 * > *{} 박스2의 전체요소중 누군가의자손
+      .
+      */
+    }
+
+    .box1>div>div,
+    .box2>div>div {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>선택자의 조합</h1>
+    <ul>
+      <li>클래스나 아이디를 호출시 여백을 이용해서 다수의 클래스명을 연결, id는 1개만 지정가능</li>
+      <li>combine(연결)선택자 : 여러 선택자를 연결하는 방식, 타입명은 앞쪽에서 사용</li>
+      <li>combination선택자(여러가지방법)</li>
+      <li>comma combination쉼표조합선택자 : 쉼표를 이용해서 다수의 선택자를 연결</li>
+      <li>자손(decendent)선택자 : 여백을 이용한 선택자</li>
+      <li>자식(children)선택자를 이용한 &gt;선택자</li>
+      <li>전체(universal)선택자 : * (전부다)</li>
+    </ul>
+
+    <hr>
+    <div class="style1" id="id1">style1</div>
+    <div class="style2">style2</div>
+    <div class="style1 style2">style1, style2</div>
+    <span class="style1">span</span>
+    <hr>
+    <div class="box1">
+      <div>
+        <div></div>
+      </div>
+    </div>
+    <br>
+    <div class="box2">
+      <div>
+        <div></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

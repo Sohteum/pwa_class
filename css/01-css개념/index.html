@@ -46,7 +46,25 @@
       background-color: beige;
       font-family: '휴먼아미체';
     }
-    
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: palevioletred;
+    }
+
+    .box:hover {
+      background-color: red;
+    }
+
+    .box:active {
+      background-color: teal;
+    }
+
+    .ex *:hover {
+      background-color: red; 
+    }
+
   </style>
 </head>
 
@@ -140,8 +158,26 @@
         <li>글자정렬, 글자관련 스타일은 상속이 됨.</li>
       </ul>
     </section>
+    <hr>
+    <section>
+      <h2>가상클래스</h2>
+      <p>css rule에서 정의된 클래스명</p>
+      <div class="box">
+      </div>
+    </section>
 
     <span class="style">span</span>
+    <br>
+
+    <div class="ex">
+      <small>samll</small>
+      <b>bold</b>
+      <span>span</span>
+      <em>em</em>
+      <i>italic</i>
+      <!-- 선택자 한번만, 쉼표 안쓰기, 호버되면 각각 빨강되게 -->
+
+    </div>
 
   </main>
 </body>
