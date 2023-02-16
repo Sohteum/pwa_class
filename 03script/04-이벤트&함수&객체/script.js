@@ -138,19 +138,14 @@ function 계산(수1, 수2) {
   return 객체
 }
 
-function 점수(숫자1, 숫자2, 숫자3) {
-  var 국어 = parseInt(숫자1)
-  var 영어 = parseInt(숫자2)
-  var 수학 = parseInt(숫자3)
-  var 총점1 = 국어 + 영어
-  var 평균1 = (총점1 / 2).toFixed(2)
-  var 총점2 = 영어 + 수학
-  var 평균2 = (총점2 / 2).toFixed(2)
+function 점수(숫자1, 숫자2) {
+  var 숫자1 = parseInt(숫자1)
+  var 숫자2 = parseInt(숫자2)
+  var 총점 = 숫자1 + 숫자2
+  var 평균 = (총점 / 2).toFixed(2)
   var 결과 = {
-    총점1,
-    평균1,
-    총점2,
-    평균2,
+    총점,
+    평균,
   }
   return 결과
 }
@@ -159,17 +154,15 @@ function 점수(숫자1, 숫자2, 숫자3) {
 $('.ex3 .div1 button').click(function () {
   var 국어 = $('.ex3 .div1 .num1').val()
   var 영어 = $('.ex3 .div1 .num2').val()
-  var 수학 = $('.ex3 .div1 .num3').val()
-  var { 총점1, 평균1 } = 점수(국어, 영어, 수학)
-  $('.ex3 .div1 .output').html(총점1 + '  ' + 평균1)
+  var { 총점, 평균 } = 점수(국어, 영어)
+  $('.ex3 .div1 .output').html(총점 + '  ' + 평균)
 })
 
 $('.ex3 .div2 button').click(function () {
-  var 국어 = $('.ex3 .div2 .num1').val()
   var 영어 = $('.ex3 .div2 .num2').val()
   var 수학 = $('.ex3 .div2 .num3').val()
-  var { 총점2, 평균2 } = 점수(국어, 영어, 수학)
-  $('.ex3 .div2 .output').html(총점2 + '  ' + 평균2)
+  var { 총점, 평균 } = 점수(영어, 수학)
+  $('.ex3 .div2 .output').html(총점 + '  ' + 평균)
 })
 
 /* function 점수(숫자1, 숫자2,) {
@@ -190,18 +183,37 @@ $('.ex3 .div2 button').click(function () {
 } */
 
 function 가격() {
-var 신발 = 1000
-var 가방 = 2000
-var 모자 = 3000
-var red = 100
-var black = 200
-var white = 300
+  /*     var 신발 = parseInt()
+      var 가방 = parseInt(2000)
+      var 모자 = parseInt(3000)
+      var red = parseInt(100)
+      var black = parseInt(200)
+      var white = parseInt(300) */
+  /*   var 상품 = parseInt($('.ex4 p:nth-of-type(2) input:checked').val())
+    var 옵션 = parseInt($('.ex4 p:nth-of-type(3) input:checked').val())
+    var 수량 = $('.ex4 .div1 .num').val()
+    var 가격 = (상품 + 옵션) * 수량
+    return 가격 */
+  var 상품 = parseInt($('.ex4 p:nth-of-type(2) input:checked').val())
+  var 옵션 = parseInt($('.ex4 p:nth-of-type(3) input:checked').val())
+  var 수량 = $('.ex4 .div1 .num').val()
+  var 가격 = (상품 + 옵션) * 수량
+  return 가격
+
+
 }
 
+/* $('.ex4 .div1 button').click(function () {
+  var 상품 = parseInt($('.ex4 p:nth-of-type(2) input:checked').val())
+  var 옵션 = parseInt($('.ex4 p:nth-of-type(3) input:checked').val())
+  var 수량 = $('.ex4 .div1 .num').val()
+  var 가격 = (상품 + 옵션) * 수량
+  $('.ex4 .div1 :last-child').html(가격)
+}) */
+
 $('.ex4 .div1 button').click(function () {
-  var 신발 = $('.ex4 .div1 .num1').val()
-  var 가방 = $('.ex4 .div1 .num2').val()
-  var 모자 = $('.ex4 .div1 .num3').val()
-  var { 총점2, 평균2 } = 가격()
-  $('.ex4 .div1 .output').html(총점2 + '  ' + 평균2)
+  var 상품 = parseInt($('.ex4 p:nth-of-type(2) input:checked').val())
+  var 옵션 = parseInt($('.ex4 p:nth-of-type(3) input:checked').val())
+  var 수량 = $('.ex4 .div1 .num').val()
+  $('.ex4 .div1 :last-child').html(가격)
 })
