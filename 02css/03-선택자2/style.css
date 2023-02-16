@@ -1,0 +1,44 @@
+.ex1 div span.style {
+  color: red;
+}
+
+/* .ex1 div span:first-child {
+  color:red;
+} */
+
+
+.ex2 * * {
+  color: red;
+}
+
+/* .ex2 div,.ex2 p * {
+  color:red;
+} */
+
+/* 4, 5, 6을 빨갛게 */
+.ex3 div ~ div * {
+  color:red;
+}
+
+/* 1, 2, 3을 빨갛게 */
+
+/* .ex3 p+div * {
+  color: red;
+} */
+
+/* .ex4 div:first-of-type {
+  color:red;
+} */
+
+.ex4 div :first-child {
+  color: red;
+}
+/* 첫번째자식 모두. 근데 가상클래스 안에서는 *이 생략가능 */
+
+.ex5 div + div * :last-child{
+  color: red;
+}
+/* 안에있는 첫번째자식이 마지막자식이라 둘 다 값이 같다 */
+/* div뒤에있는div는 2~6까지디브인거지
+근데 2, 3, 456이렇게 하나씩 디브니까
+그중 막내는 456 */

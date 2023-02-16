@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>다양한 선택자</h1>
+    <hr>
+    <article class="ex1">
+      <h1>자손선택자와 컴바인선택자</h1>
+      <p>첫번째 span글자를 빨갛게</p>
+      <div>
+        <span class="style">span</span>
+        <span>span</span>
+      </div>
+      <span class="style">span</span>
+      <div>
+        <small class="style">small</small> <!-- 보조적의미 -->
+      </div>
+    </article>
+    <hr>
+    <article class="ex2">
+      <h2>universal selector</h2>
+      <p>2.글자색을 모두 빨갛게</p>
+      <div>
+        <b>b</b>
+        <i>i</i>
+        <u>u</u>
+      </div>
+      <p>
+        <b>b</b>
+        <i>i</i>
+        <u>u</u>
+      </p>
+    </article>
+    <article>
+      <h3>adjust siblings</h3>
+      <p>+, 뒤쪽 형제요소 한개만 선택</p>
+    </article>
+    <hr>
+    <article class="ex3">
+      <h3>general siblings</h3>
+      <p>3. ~, 뒤쪽 형제요소 전체 선택</p>
+      <div>
+        <i>1</i>
+        <u>2</u>
+        <b>3</b>
+      </div>
+      <div>
+        <i>4</i>
+        <u>5</u>
+        <b>6</b>
+      </div>
+    </article>
+    <hr>
+    <article class="ex4">
+      <h2>4. 1,4을 빨갛게(first-child)</h2>
+      <div>
+        <i>1</i>
+        <u>2</u>
+        <b>3</b>
+      </div>
+      <div>
+        <q>4</q>
+        <u>5</u>
+        <b>6</b>
+      </div>
+    </article>
+    <hr>
+    <article class="ex5">
+      <h2>5. 4,5,6을 빨갛게(last-child)</h2>
+      <div>
+        <div><i>1</i></div>
+        <div><u>2</u></div>
+        <div><b>3</b></div>
+      </div>
+      <div>
+        <div><i>4</i></div>
+        <div><u>5</u></div>
+        <div><b>6</b></div>
+      </div>
+    </article>
+    <hr>
+  </main>
+</body>
+
+</html>
