@@ -7,6 +7,7 @@
 body {
   margin: 0px;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -18,15 +19,51 @@ body {
 
 .logo__bar {
   margin-left: 30px;
-  color:pink;
+  color: pink;
   font-size: 25px;
 }
 
 .logo__text {
-  color:pink;
-  font-style: none;
-  text-decoration: none;
+  /* 이 클래스에서는 텍스트언더라인수정, 컬러 등 수정이 안되는데 아래처럼 태그로 바로들어가면가능 */
+}
 
+.logo__bar a {
+  text-decoration: none;
+  color: pink;
+}
+
+.search__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  positoin: relative;
+}
+
+.search__bar input {
+  width: 280px;
+  height: 30px;
+  border: 1px solid #a8a4a4;
+  border-radius: 20px;
+}
+
+.search__bar button {
+  position: absolute;
+  left:470px; /* 의미없...반응형불가 */
+}
+
+
+
+.etc__bar {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  padding-right: 10px;
+  /* 적용안됨 */
+}
+
+.text__bar {
+  font-size: 14px;
 }
 
 .nav__bar {
@@ -34,8 +71,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position:relative;
-  width:100%;
+  position: relative;
+  margin: 20px 0px;
+  /* 적용안됨 */
+  width: 100%;
   height: 100%;
 }
 
@@ -43,12 +82,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color:#757575;
+  color: #757575;
 }
+
 
 .nav__text {
   position: absolute;
   bottom: -50px;
   font-size: 15px;
-  color:#a4a4a4;
+  color: #a4a4a4;
 }
