@@ -74,7 +74,7 @@ sum(1,2) */
   // (a-b*c)/(b-1)
   } */
 
-  function 여백한칸너비(a, b, c, d) {
+  function 여백한칸너비(a, b, c) {
     var 컨테이너너비 = a
     var 그리드의개수 = b
     var 그리드한칸너비 = c

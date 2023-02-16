@@ -4,8 +4,33 @@
 @import "components/header.css";
 @import "components/navbar.css";
 
+body {
+  margin: 0px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: none;
+  background-color: #a4a4a4;
+
+}
+
+.logo__bar {
+  margin-left: 30px;
+  color:pink;
+  font-size: 25px;
+}
+
+.logo__text {
+  color:pink;
+  font-style: none;
+  text-decoration: none;
+
+}
 
 .nav__bar {
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,10 +43,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color:#757575;
 }
 
 .nav__text {
   position: absolute;
   bottom: -50px;
   font-size: 15px;
+  color:#a4a4a4;
 }
