@@ -36,7 +36,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  positoin: relative;
+  position: relative;
 }
 
 .search__bar input {
@@ -45,6 +45,11 @@ body {
   border: 1px solid #a8a4a4;
   border-radius: 20px;
 }
+
+input:focus {
+  outline: none;
+}
+
 
 .search__bar button {
   position: absolute;
@@ -62,8 +67,18 @@ body {
   /* 적용안됨 */
 }
 
-.text__bar {
+.etc__bar {
   font-size: 14px;
+  /* margin-right: 10px; */
+}
+
+
+#user__hamberger {
+  margin-left:10px;
+}
+
+#user__icon {
+  padding-left:8px;
 }
 
 .nav__bar {
