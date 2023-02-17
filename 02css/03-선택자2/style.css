@@ -77,10 +77,10 @@
   background-color: pink;
 }
 
-.ex11 div [href]  {
+.ex11 a[href]  {
  color: red;
 }
 
-.ex12 div a[href^="h"] {
+.ex12 a[href^="h"] {
   color: red;
  }
