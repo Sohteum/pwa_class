@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="section1">
+    <p>사칙연산</p>
+    <hr>
+    <article class="article1">
+      <p class="p1">
+        <input value="1" name="integer" type="radio">1
+        <input value="2" name="integer" type="radio">2
+        <input value="2" name="integer" type="radio">3
+      </p>
+      +
+      <p class="p2">
+        <input value="1" name="string" type="radio">one
+        <input value="2" name="string" type="radio">two
+        <input value="3" name="string" type="radio">three
+      </p>
+      <!-- 둘이 더하는거 -->
+      <button>결과</button>
+      <p class="output">?</p>
+    </article>
+
+    <hr>
+    <article class="article2">
+      <p class="p1">
+        <input value="1" name="integer2" type="radio">1
+        <input value="2" name="integer2" type="radio">2
+        <input value="3" name="integer2" type="radio">3
+      </p>
+      +
+      <p class="p2">
+        <input value="1" name="string2" type="radio">one
+        <input value="2" name="string2" type="radio">two
+        <input value="3" name="string2" type="radio">three
+      </p>
+      <!-- 둘이 더하는거 -->
+      <button>결과</button>
+      <p class="output">?</p>
+    </article>
+    <hr>
+    <section class="ex2">
+      <input class="num1" type="number" value="0">
+      +
+      <input class="num2" type="number" value="0">
+      =
+      <b class="output">0</b>
+    </section>
+    <hr>
+    <section class="ex3">
+      <input class="num" type="number" value="0">
+      <p class="radios">
+        <input value="0" name="ex3" type="radio" checked>zero
+        <input value="1" name="ex3" type="radio">one
+        <input value="2" name="ex3" type="radio">two
+        <input value="3" name="ex3" type="radio">three
+      </p>
+      <select>
+        <option value="0">영</option>
+        <option value="1">하나</option>
+        <option value="2">둘</option>
+        <option value="3">셋</option>
+      </select>
+      <p class="output">0</p>
+    </section>
+
+    <hr>
+    <section class="ex4">
+      <article class="prd1">
+        <p class="radios1">
+          <input value="1000" name="pdt" type="radio" checked>남성신발(1000)
+          <input value="2000" name="pdt" type="radio">남성모자(2000)
+          <input value="3000" name="pdt" type="radio">남성가방(3000)
+        </p>
+        <select>
+          <option value="100">빨강(+100)</option>
+          <option value="200">파랑(+200)</option>
+          <option value="300">블랙(+300)</option>
+        </select>
+        <p>
+          <input class="num" type="text" value="0">개
+        </p>
+        <p class="output">0원</p>
+      </article>
+      <hr>
+      <article class="prd2">
+        <p class="radios2">
+          <input name="pdt" type="radio" checked>여성신발(1500)
+          <input name="pdt" type="radio">여성모자(2500)
+          <input name="pdt" type="radio">여성가방(3500)
+        </p>
+        <select>
+          <option value="">빨강(+100)</option>
+          <option value="">파랑(+200)</option>
+          <option value="">블랙(+300)</option>
+        </select>
+        <p>
+          <input class="num" type="text" value="0">개
+        </p>
+        <p class="output">0원</p>
+      </article>
+      <hr>
+      <p class="total">총가격 0원</p>
+    </section>
+    <hr>
+</body>
+
+</html>
