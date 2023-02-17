@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>이미지출력</h1>
+    <section class="section1">
+      <h2>img요소</h2>
+      <ul>
+        <li>src속성과 alt(보조텍스트)속성을 가져야 함</li>
+        <li>이미지의 ratio를 유지하기 위해 너비나 높이중 하나만 설정</li>
+        <li>
+          이미지의 ratio와 다른 크기를 지정할 경우
+          object-fit(cover, contain), object-position css 속성을 이용
+        </li>
+      </ul>
+      <img class="naver1" src="./img/naver.jpg" alt>
+      <img class="naver2" src="./img/naver.jpg" alt>
+    </section>
+    <hr>
+    <section class="section2">
+      <h2>background-image</h2>
+      <article>
+        <h3>roll hover 효과</h3>
+        <a class="facebook" href="http://facebook.com"></a>
+
+      </article>
+      <article>
+        <h3>배경의 반복과 위치</h3>
+        <ul>
+          <li>
+            backgroud-repeat <br>
+            * no-repeat <br>
+            * repeat-x <br>
+            * repeat-y <br>
+
+          </li>
+         
+          <li>
+            background-position <br>
+            · 수평 : left center right <br>
+            · 수직 : top center bottom <br>
+            · 숫자입력 : 50px // 50px center <br>
+          </li>
+          <li>
+            background-size
+            · 하나의 값만 입력하면 넓이를 의미(높이는 비례에 따라 조정)
+            · auto값은 비례를 자동으로 유지하는 값
+          </li>
+        </ul>
+        <div class="box1">
+        </div>
+        <div class="box2">
+        </div>
+        <br>
+        <div class="box div1"></div>
+        <div class="box div2"></div>
+        <div class="box div3"></div>
+        <div class="box div4"></div>
+        <div class="box div5"></div>
+        <div class="box div6"></div>
+        <!-- css 공통선언은 box, 따로주는건 div로, -->
+      </article>
+    </section>
+    <hr>
+  </main>
+</body>
+
+</html>

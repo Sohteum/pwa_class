@@ -1,0 +1,104 @@
+body {}
+
+.naver1 {
+  width: 200px;
+
+}
+
+.naver2 {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  /* 사실 센터센터가 센터로 생략 */
+  border: 1px solid red;
+}
+
+.facebook {
+  display: block;
+  width: 100px;
+  height: 50px;
+  background-image: url(../img/facebook.jpg);
+}
+
+.facebook:hover {
+  background-image: url(../img/facebook_over.png);
+}
+
+/* 옛날방식 */
+
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  background-image: url(../img/bg2.jpg), url(../img/bg1.jpg);
+  background-repeat: repeat-y, repeat-x;
+  background-position: center center, 0 bottom;
+
+}
+
+.box2 {
+  width: 200px;
+  height: 150px;
+  background-image: url(../img/spriteimg.jpg);
+  border: 1px solid black;
+  background-size: auto 100px;
+  background-repeat: no-repeat;
+}
+
+.box{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+  background-image: url(../img/spriteimg.jpg);
+}
+
+
+.div3 {
+  background-position: 0 -50px;
+}
+
+.div3:hover {
+  background-position: -50px -50px;
+}
+
+.div1 {
+  background-position: 0 0;
+}
+
+.div1:hover {
+  background-position: -50px 0;
+}
+
+.div2 {
+  background-position: -100px 0;
+}
+
+.div2:hover {
+  background-position: -150px 0;
+}
+
+.div4 {
+  background-position: -100px -50px;
+}
+
+.div4:hover {
+  background-position: -150px -50px;
+}
+
+.div5 {
+  background-position: 0 -100px;
+}
+
+.div5:hover {
+  background-position: -50px -100px;
+}
+
+.div6 {
+  background-position: -100px -100px;
+}
+
+.div6:hover {
+  background-position: -150px -100px;
+}
