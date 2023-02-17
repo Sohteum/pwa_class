@@ -35,10 +35,52 @@
 }
 /* 첫번째자식 모두. 근데 가상클래스 안에서는 *이 생략가능 */
 
-.ex5 div + div * :last-child{
+/* .ex5 div + div * :last-child{
   color: red;
-}
+} */
 /* 안에있는 첫번째자식이 마지막자식이라 둘 다 값이 같다 */
 /* div뒤에있는div는 2~6까지디브인거지
 근데 2, 3, 456이렇게 하나씩 디브니까
 그중 막내는 456 */
+
+.ex5 > div:last-child {
+  color: red;
+}
+
+/* .ex6 div:last-child {
+  background-color: pink;
+} */
+
+.ex6 div:nth-child(3) *{
+  background-color: pink;
+}
+/* 차일드는 전체 중에 보는거 */
+
+/* .ex7 b:nth-child(2){
+  background-color: yellow;
+} */
+
+.ex7 div :nth-child(2){
+  background-color: yellow;
+}
+/* *는 가상클래스앞에서 생략가능 */
+
+.ex8 div *:nth-last-child(4) ~ *{
+  background-color: pink;
+}
+
+.ex9 div *:nth-child(odd) {
+  background-color: pink;
+}
+
+.ex10 div:nth-of-type(1) *:not(q) {
+  background-color: pink;
+}
+
+.ex11 div [href]  {
+ color: red;
+}
+
+.ex12 div a[href^="h"] {
+  color: red;
+ }
