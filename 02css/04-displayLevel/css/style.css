@@ -57,7 +57,6 @@ h1 {
   width: 100px;
   height: 100px;
   background-color: yellowgreen;
-  line-height: 100px;
   /* margin-top:100px; 이건 안됨. */
 
   /* 내 글자만큼이니까 100을 주면 가운데로 옴. 자식이 우선순위높으니까 자식한테도 준거야 */
@@ -67,9 +66,11 @@ h1 {
   height: 100px;
   line-height: 100px;
 }
+
 .ex2 div:last-child {
   height: 200px;
   line-height: 200px;
+
 }
 
 /* --------------------------------------- */
@@ -84,9 +85,10 @@ h1 {
 
 .ex3 span:first-child {
   display: block;
-  width:100px;
+  width: 100px;
   height: 100px;
-  background-color: rgb(96, 126, 172);
+  background-color: rgb(0, 0, 0);
+  color: white;
   line-height: 100px;
   margin-left: auto;
 }
@@ -101,9 +103,10 @@ h1 {
 
 .ex4 span:first-child {
   display: block;
-  width:100px;
+  width: 100px;
   height: 100px;
-  background-color: rgb(96, 126, 172);
+  background-color: rgb(0, 0, 0);
+  color: white;
   line-height: 100px;
   margin-left: auto;
 }
@@ -111,31 +114,98 @@ h1 {
 .ex5 {
   background-color: yellow;
   width: 100%;
-  height: 100px;
   text-align: center;
   margin: 0 auto;
 }
 
 .ex5 span:first-child {
-  display: block;
-  width:100px;
+  display: inline-block;
+  width: 100px;
   height: 100px;
-  background-color: rgb(96, 126, 172);
+  background-color: rgb(0, 0, 0);
+  color: white;
   line-height: 100px;
-  margin-left: auto;
+  margin: auto;
 }
 
 .ex5 span:last-child {
-  display: block;
-  width:100px;
+  display: inline-block;
+  width: 100px;
   height: 100px;
-  background-color: rgb(96, 126, 172);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  line-height: 100px;
+  margin: auto;
+}
+
+.ex6 {
+  background-color: yellow;
+  width: 100%;
+  text-align: center;
+}
+
+.ex6 span:first-child {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  line-height: 100px;
+  margin: auto;
+}
+
+.ex6 span:last-child {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+  color: white;
   line-height: 100px;
   margin-left: auto;
 }
 
+.ex7 {
+  background-color: yellow;
+  width: 100%;
+  text-align: center;
+}
 
+.ex7 span:nth-child(1) {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  line-height: 100px;
+  margin-right: auto;
+}
 
+.ex7 span:nth-child(2) {
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin-left: auto;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
 
+.ex7 span:nth-child(3) {
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin-right: auto;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
 
-
+.ex7 span:nth-child(4) {
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-left: auto;
+}
