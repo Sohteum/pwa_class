@@ -1,0 +1,97 @@
+body {
+  /*   background-color: palevioletred; */
+}
+
+h1 {
+  width: 300px;
+  background-color: aquamarine;
+}
+
+.section1 span,
+.section1 b {
+  background-color: antiquewhite;
+  width: 300px;
+}
+
+.ex1 span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80px;
+  background-color: teal;
+
+}
+
+.ex1 span:nth-of-type(1) {
+  height: 150px;
+  line-height: 150px;
+  text-align: right;
+}
+
+.ex1 span:nth-of-type(2) {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.ex1 span:nth-of-type(3) {
+  height: 50px;
+  line-height: 50px;
+}
+
+.ex2 {
+  /*   text-align: center; */
+  background-color: aqua;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 300px;
+  /* 내안의 노랑 박스글자를 옮긴다 */
+
+  /* 노란색을 움직이고싶다. 근데 텍스트가 상속을 받은거지 */
+  /* 한글자만썻지만 글자폭?이 늘어난거라 다시 밑에서 줘야됨 */
+}
+
+.ex2 div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: yellowgreen;
+  line-height: 100px;
+  /* margin-top:100px; 이건 안됨. */
+
+  /* 내 글자만큼이니까 100을 주면 가운데로 옴. 자식이 우선순위높으니까 자식한테도 준거야 */
+}
+
+.ex2 div:first-child {
+  height: 100px;
+  line-height: 100px;
+}
+.ex2 div:last-child {
+  height: 200px;
+  line-height: 200px;
+}
+
+/* --------------------------------------- */
+
+.ex3 {
+  background-color: yellow;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ex3 span:first-child {
+  display: block;
+  width:100px;
+  height: 100px;
+  background-color: rgb(96, 126, 172);
+  line-height: 100px;
+  margin-left: auto;
+}
+
+
+
+
+
