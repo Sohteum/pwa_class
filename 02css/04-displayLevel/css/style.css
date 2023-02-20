@@ -91,6 +91,50 @@ h1 {
   margin-left: auto;
 }
 
+.ex4 {
+  background-color: yellow;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ex4 span:first-child {
+  display: block;
+  width:100px;
+  height: 100px;
+  background-color: rgb(96, 126, 172);
+  line-height: 100px;
+  margin-left: auto;
+}
+
+.ex5 {
+  background-color: yellow;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ex5 span:first-child {
+  display: block;
+  width:100px;
+  height: 100px;
+  background-color: rgb(96, 126, 172);
+  line-height: 100px;
+  margin-left: auto;
+}
+
+.ex5 span:last-child {
+  display: block;
+  width:100px;
+  height: 100px;
+  background-color: rgb(96, 126, 172);
+  line-height: 100px;
+  margin-left: auto;
+}
+
+
 
 
 
