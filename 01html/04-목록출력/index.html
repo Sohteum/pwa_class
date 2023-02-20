@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <main>
+    <h1>list</h1>
+    <p>유사기능이나 의미를 가진 그룹화</p>
+    <section>
+      <h2>ul Unordered list)</h2>
+      <p>순서가 없는 목록</p>
+      <article>
+        <h3>2022년 개봉 영화</h3>
+        <ul type="square">
+          <li>헌트</li>
+          <li>마녀</li>
+          <li>토르</li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+    <section>
+      <h2>ol (ordered list)</h2>
+      <p>순서가 필요한 목록</p>
+      <article>
+        <h3>2022년 개봉영화 순위</h3>
+        <ol type="I">
+          <li>아바타</li>
+          <li>슬램덩크</li>
+          <li>영웅</li>
+        </ol>
+      </article>
+    </section>
+    <hr>
+    <section>
+      <h2>dl (definition list)</h2>
+      <p>용어나 의미를 정의하는 목록</p>
+      <article>
+        <h3>웹언어</h3>
+        <dl>
+          <dt>html</dt>
+          <dd>웹 문서의 시멘틱 구조를 설계하는 언어</dd>
+          <dt>css</dt>
+          <dd>웹 문서의 레이아웃 및 시작적 구조를 설계하는 용어</dd>
+        </dl>
+      </article>
+    </section>
+    <section>
+      <h2>목록 요소의 특징</h2>
+      <ul>
+        <li>ul(li만 자식으로 허락됨), type속성(disc, circle, square)</li>
+        <li>ol(li만 자식으로 허락됨), type속성(1,A,a,I,i)</li>
+        <li>dl(dt,dd만 자식으로 허락됨)</li>
+        <li>
+          type속성 대신 list-style과 가상 엘리먼트를 이용해 불릿기호를 대체함</li>
+      </ul>
+      <article>
+        <h3>불릿기호 출력하기</h3>
+        <ul class="ex1">
+          <li>아바타</li>
+          <li>슬램덩크</li>
+          <li>영웅</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+body {
+  background-color: palegoldenrod;
+}
+
+.ex1 li {
+  list-style: none;
+}
+
+.ex1 li::before {
+  content:'· ';
+}
