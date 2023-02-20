@@ -44,12 +44,12 @@ $(document).ready(function () {
 
 
   $('.ex5 button').click(function () {
-    $('.ex5 span').toggleClass('rr')
+    $('.ex5 .red').toggleClass('rr')
   })
 
 
-  
-  
+
+
 
 
 

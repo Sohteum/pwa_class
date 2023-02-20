@@ -12,13 +12,22 @@
   border: 1px solid black;
 }
 
-.ex5 div {
-  text-align: end;
+.ex5 div {}
+
+
+.ex5 span {
+  background-color: red;
+  display: block;
+  width: 100px;
+  height: 100px;
+
 }
 
-.ex5 div span.rr {
+
+.ex5 span.rr {
   background-color: red;
-  display: inline-block;
+  display: block;
+  margin-left: auto;
   width: 100px;
   height: 100px;
 }
