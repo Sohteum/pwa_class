@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>margin padding</h1>
+    <ul>
+      <li>margin(바깥쪽 간격), padding(안쪽여백)</li>
+      <li>margin,padding : 위 오른쪽 아래쪽 왼쪽(12시부터 clockWise)</li>
+      <li>padding,padding : 상하 좌우</li>
+      <li>padding,padding : 전체</li>
+      <li>
+        첫번째 block요소는 margin-top안됨, <br>
+        마지막 block요소는 margin-bottom안됨, <br>
+        예외(부모요소의border나 padding이 적용될 경우)
+      </li>
+      <li>padding과 border는 기본적으로 크기의 바깥쪽으로 적용됨, <br>
+        box-sizing속성을 이용해서 크기의 안쪽으로 적용가능
+      </li>
+      <li>block요소간의 상하마진은 겹친다(큰쪽이 적용된다)
+      </li>
+      <li>
+        inline레벨은 상하마진과 상하패딩이 적용되지 않음
+      </li>
+    </ul>
+    <hr>
+    <div class="container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <hr>
+    <div class="container2">
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <hr>
+    <div class="container3">
+      <div>div1</div>
+      <div>div2</div>
+    </div>
+    <hr>
+    <div class="container4">
+      <span>span1</span>
+      <span>span2</span>
+    </div>
+
+    <hr>
+    <div class="container5">
+      <div class="div1">
+        <div>1</div>
+        <div>2</div>
+      </div>
+      <div class="div2">
+        <div>3</div>
+        <div>4</div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+.container1 {
+  background-color: grey;
+  width: 500px;
+  margin: 30px auto;
+  padding: 95px;
+  box-sizing: border-box;
+  border: 5px solid pink;
+}
+
+.container1 div {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  color: white;
+}
+
+/* .container1 div:nth-child(1) {
+} */
+
+.container1 div:nth-child(2) {
+  margin-left: 100px;
+}
+
+/* 형제기준이니까 위로 마진을 안줘도 되는거지 */
+.container1 div:nth-child(3) {
+  margin-left: 200px;
+}
+
+
+
+.container2 {
+  background-color: grey;
+  width: 500px;
+  margin: 30px auto;
+  padding: 100px;
+  box-sizing: border-box;
+}
+
+.container2>div {
+  background-color: black;
+}
+
+.container2>div>div:first-child {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+.container2>div>div:last-child {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  margin: 100px 0 0 auto;
+}
+
+.container3 {
+  border: 1px solid red;
+}
+
+.container3 div {
+  background-color: aquamarine;
+  margin: 20px 0;
+}
+
+.container4 {
+  border: 1px solid seagreen;
+}
+
+.container4 span {
+  display: inline-block;
+  margin: 30px 0;
+  width: 80%;
+  background-color: yellow;
+}
+
+.container5 {
+  background-color: black;
+  box-sizing: border-box;
+  padding: 30px;
+  width: 670px;
+  margin: 30px auto;
+}
+
+.container5 .div1,
+.container5 .div2 {
+  background-color: red;
+  box-sizing: border-box;
+  padding: 30px;
+  width: 290px;
+}
+
+.container5 .div1 {}
+
+.container5 .div2 {
+  margin: 30px 0 0 auto;
+}
+
+.container5 .div1 div,
+.container5 .div2 div {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+
+}
+
+.container5 .div1 div:first-child {}
+
+.container5 .div1 div:last-child {
+  margin: 30px 0 0 auto;
+}
+
+.container5 .div2 div:first-child {}
+
+.container5 .div2 div:last-child {
+  margin: 30px 0 0 auto;
+}
