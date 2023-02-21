@@ -34,38 +34,9 @@ $(function () {
     fn3($(this))
   })
 
+  ///////////////////////////////////////////////////////////////
 
-
-  function fn4(n,con, bg) {
-
-  }
-
-  $('.ex4 .con1 button').click(function () {
-    var n = $(this).text() //클릭한버튼의 번호
-    var bg = $(`.ex4 .con${con} .box${n}`).attr('data-bg')
-    var con= 1;
-    fn4(n, bg)
-    $(`.ex4 .con${con} .box${n}`).css({ 'background': bg })
-    $(`.ex4 .con${con} div`).not($(`.box${n}`)).css({ 'background': 'none' })
-  })
-
-  /*   $('.ex4 button').click(function () {
-      fn4(el, con, bg)
-    }) */
-
-  $('.ex4 .con2 button').click(function () {
-    var n = $(this).val()
-    var bg = $(`.ex4 .con2 .box${n}`).text()
-    var con = 2;
-    fn4(n, bg)
-    $(`.ex4 .con2 .box${n}`).css({ 'background': bg })
-    $(`.ex4 .con2 div`).not($(`.box${n}`)).css({ 'background': 'none' })
-  })
-/* 
-  function fn4(el, bg) {
-    var n = el.text()
-    var bg = $(`.ex4 .con${con} .box${n}`).attr('data-bg')
-    var con = $(`.ex4 .con${con}`).text()
+  function fn4(n, con, bg) {
     $(`.ex4 .con${con} .box${n}`).css({ 'background': bg })
     $(`.ex4 .con${con} div`).not($(`.box${n}`)).css({ 'background': 'none' })
   }
@@ -73,20 +44,16 @@ $(function () {
   $('.ex4 .con1 button').click(function () {
     var n = $(this).text() //클릭한버튼의 번호
     var bg = $(`.ex4 .con1 .box${n}`).attr('data-bg')
-    $(`.ex4 .con1 .box${n}`).css({ 'background': bg })
-    $(`.ex4 .con1 div`).not($(`.box${n}`)).css({ 'background': 'none' })
+    var con = $(`.ex4 .con1`).attr('data-con')
+    fn4(n, con, bg)
   })
 
-  /*   $('.ex4 button').click(function () {
-      fn4(el, con, bg)
-    }) */
-
- /*  $('.ex4 .con2 button').click(function () {
+  $('.ex4 .con2 button').click(function () {
     var n = $(this).val()
     var bg = $(`.ex4 .con2 .box${n}`).text()
-    $(`.ex4 .con2 .box${n}`).css({ 'background': bg })
-    $(`.ex4 .con2 div`).not($(`.box${n}`)).css({ 'background': 'none' }) 
-    // fn4(el, con, bg)  
-  })*/
+    var con = $(`.ex4 .con2`).attr('data-con')
+    fn4(n, con, bg)
+  })
+
 
 })
