@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <section class="ex1">
+      <p>1. 클릭한 버튼의 숫자(1 one,2 two, 3 three)가 출력돼요</p>
+      <button value="1" data-n="one">하나</button>
+      <button value="2" data-n="two">둘</button>
+      <button value="3" data-n="three">셋</button>
+    </section>
+    <hr>
+    <section class="ex2">
+      <article class="con1">
+        <p>2.1 클릭한 버튼의 글자색 빨갛게(나머지는 원래대로)</p>
+        <button value="1">버튼</button>
+        <button value="1">버튼</button>
+        <button value="1">버튼</button>
+        <button value="1">버튼</button>
+      </article>
+      <article class="con2">
+        <p>2.2 클릭한 버튼의 글자색 빨갛게(나머지는 원래대로)</p>
+        <button value="2">버튼</button>
+        <button value="2">버튼</button>
+        <button value="2">버튼</button>
+        <button value="2">버튼</button>
+      </article>
+    </section>
+    <hr>
+    <section class="ex3">
+      <article class="con1">
+        <p>3-1. 클릭한 스판의 글자색 빨갛게(나머지는 파란색)</p>
+        <span data-con="1">span1</span>
+        <span data-con="1">span2</span>
+        <span data-con="1">span3</span>
+        <span data-con="1">span4</span>
+      </article>
+      <article class="con2">
+        <p>3-2. 클릭한 스판의 글자색 빨갛게(나머지는 파란색)</p>
+        <span data-con="2">span1</span>
+        <span data-con="2">span2</span>
+        <span data-con="2">span3</span>
+        <span data-con="2">span4</span>
+        <!-- 클릭한 동일한 속성에서 밸류 찾아야되니까 반드시 데이터컨으로 이름이 같아야함 -->
+      </article>
+    </section>
+    <hr>
+    <section class="ex4">
+      <article class="con1">
+        <p>
+          4-1. 클릭한 버튼에 해당하는 박스가 정해진 색으로
+          (나머지는 원래대로)
+        </p>
+        <p>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+        </p>
+        <div data-bg="red" class="box1">빨강</div>
+        <div data-bg="blue" class="box2">파랑</div>
+        <div data-bg="yellow" class="box3">노랑</div>
+        <div data-bg="green" class="box4">녹색</div>
+      </article>
+      <article class="con2">
+        <p>4-2. 클릭한 버튼에 해당하는 박스가 빨갛게(나머지는 원래대로)</p>
+        <p>
+          <button value="1">하나</button>
+          <button value="2">둘</button>
+          <button value="3">셋</button>
+          <button value="4">넷</button>
+          <!-- 여기 값이 있으면 사용할 수 있음 -->
+        </p>
+        <div class="box1">red</div>
+        <div class="box2">blue</div>
+        <div class="box3">yellow</div>
+        <div class="box4">green</div>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>
