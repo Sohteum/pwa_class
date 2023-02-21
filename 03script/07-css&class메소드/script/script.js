@@ -44,7 +44,7 @@ $(document).ready(function () {
 
 
   $('.ex5 button').click(function () {
-    $('.ex5 .red').toggleClass('rr')
+    $('.ex5 span').toggleClass('rr')
   })
 
 

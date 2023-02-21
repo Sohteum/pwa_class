@@ -12,7 +12,10 @@
   border: 1px solid black;
 }
 
-.ex5 div {}
+.ex5 div {
+  text-align: center;
+
+}
 
 
 .ex5 span {
@@ -20,8 +23,9 @@
   display: block;
   width: 100px;
   height: 100px;
-
-}
+  line-height: 100px;
+  margin-right:auto;
+ }
 
 
 .ex5 span.rr {

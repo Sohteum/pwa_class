@@ -1,0 +1,11 @@
+  <!-- jQuery 라이브러리 CDN 연결 -->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+더조은컴퓨터아카데미 (atosoft.kr)
+http://tjoeun.atosoft.kr/
+
+http://kjhardcore.dothome.co.kr/
+수업자료실
+
+https://drive.google.com/open?id=1Bm0FBZe0cCFY-pjEejS_rnLouieKH5ZK&authuser=kjhardcore19760602%40gmail.com&usp=drive_fs
+수업동영상 구글 드라이브 주소
