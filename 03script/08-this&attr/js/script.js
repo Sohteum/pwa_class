@@ -37,6 +37,7 @@ $(function () {
   ///////////////////////////////////////////////////////////////
 
   function fn4(n, con, bg) {
+  
     $(`.ex4 .con${con} .box${n}`).css({ 'background': bg })
     $(`.ex4 .con${con} div`).not($(`.box${n}`)).css({ 'background': 'none' })
   }

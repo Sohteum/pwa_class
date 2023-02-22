@@ -1,0 +1,61 @@
+table {
+  border-collapse: collapse;
+}
+
+/* 벌어지는 칸들을 뭉쳐놓는거 */
+
+td,
+th {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.table1 {
+  margin: 0 auto;
+}
+
+.table1 td,
+.table1 th {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  font-weight: 500;
+  /* vertical-align: middle; */
+}
+
+.table1 thead th {
+  background-color: black;
+  color: white;
+}
+
+.table1 tbody th {
+  background-color: grey;
+}
+
+.table2 {
+  margin: 0 auto;
+}
+
+.table2 tr > * {
+  height: 40px;
+  text-align: center;
+}
+
+.table2 th {
+  background-color: antiquewhite;
+}
+
+.table2 th[scope='rowgroup'] {
+background-color: beige;
+}
+
+.table2 td:first-child {
+width:70px;
+}
+
+.table2 td:first-child ~ * {
+width:100px;
+}
+
+
+
