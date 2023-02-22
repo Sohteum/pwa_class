@@ -1,0 +1,81 @@
+.ex1 {
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
+  border: 1px solid salmon;
+}
+
+/* .ex1 div {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  display: inline-block;
+}
+.ex1 span {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  display: inline-block;
+  }
+  /* margin-left: 294px; 이렇게 딱 핏되는 정도가 되면 상자 안에 들어가지고 아니면 밑으로 내려감*/
+/*  마진오토는 블럭레벨만 가능 */
+
+
+.ex1 {
+  display: flex;
+
+}
+
+.ex1 div {
+  background-color: blueviolet;
+}
+
+.ex1 span {
+  width: 100px;
+  margin-left: auto;
+  background-color: aquamarine;
+}
+
+/* ------------------------------------ */
+.ex2 {
+  border: 1px solid red;
+  display: flex;
+  height: 300px;
+  width: 300px;
+  flex-direction: column;
+}
+
+.ex2 span {
+  background-color: yellowgreen;
+
+}
+
+/* ------------------------------- */
+.ex3 {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid black;
+ /*  margin: 0 auto; */
+}
+
+/* 여기 왜 마진을 줘야함? */
+
+.ex3 div {
+  color: white;
+  background-color: blue;
+  margin-left: auto;
+}
+
+.ex3 div:nth-child(1) {
+  width: 50px;
+}
+
+.ex3 div:nth-child(2) {
+  width: 100px;
+}
+
+.ex3 div:nth-child(3) {
+  width: 150px;
+}

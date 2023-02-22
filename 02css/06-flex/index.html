@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>flex</h1>
+    <p>다양한 레이아웃을 구현하는 속성</p>
+    <article>
+      <h2>flex레이아웃의 특징</h2>
+      <ul>
+        <li>자식요소들의 레이아웃을 설계하기위해 부모요소에게 적용</li>
+        <li>flex요소의 자식요소들은 기존(가지고있던)display속성이 사라짐</li>
+        <li>
+          flex요소의 자식요소들은 인라인레벨도 크기를 가질 수 있고,블럭레벨은 100%너비가 사라짐
+          margin의 auto값을 모두 적용가능</li>
+      </ul>
+      <div class="ex1">
+        <div>div</div>
+        <span>span</span>
+      </div>
+    </article>
+    <hr>
+    <article>
+      <h2>flex-direction</h2>
+      <p>자식요소를 배치하는 축(오뎅꼬치)의 방향, 순서</p>
+      <ul>
+        <li>row, row-reverse (자식요소들이 가로,좌우로 배치)</li>
+        <li>column, column-reverse(자식요소들을 세로,상하로 배치)</li>
+        <li>row일경우(너비높이 지정안했을경우) 자식요소의 높이가 부모의 높이와 동일해짐</li>
+        <li>column일경우(너비높이 지정안했을경우) 자식요소의 너비가 부모의 너비와 동일(스트레칭된)해짐</li>
+      </ul>
+      <div class="ex2">
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+      </div>
+      <hr>
+      <div class="ex3">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>
