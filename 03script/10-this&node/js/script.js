@@ -23,7 +23,7 @@ $(function () {
   })
 
   $(`.ex1 .cont3 div`).click(function () {
-    $(this).not($(this)).removeClass('active')
+    $(`.ex1 .cont3 div`).removeClass('active')
     $(this).toggleClass('active')
   })
 
@@ -71,21 +71,21 @@ $(function () {
   //부모의 형제를 모두찾으면 안적어도되겠지. 형제가 하나면 안적어도되겠지. 근데 몇명있으면 당연히 적어야지
 
 
-    function fn3(el, obj) {
-      var {css, init, active} = obj
-      $(`.ex4 button`).css({ [css]: init })
-      el.parent().siblings('article').children('button').css({ [css]: active })
+  function fn3(el, obj) {
+    var { css, init, active } = obj
+    $(`.ex4 button`).css({ [css]: init })
+    el.parent().siblings('article').children('button').css({ [css]: active })
+  }
+
+  $(`.ex4 button`).click(function () {
+    var obj = {
+      css: 'font-weight',
+      init: 'normal',
+      active: 'bold'
     }
-  
-    $(`.ex4 button`).click(function () {
-      var obj = {
-        css: 'font-weight',
-        init: 'normal',
-        active: 'bold'
-      }
-      fn3($(this),obj)
-    })
-  
+    fn3($(this), obj)
+  })
+
 
 
 })
