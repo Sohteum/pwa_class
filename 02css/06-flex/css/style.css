@@ -43,6 +43,7 @@
   height: 300px;
   width: 300px;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .ex2 span {
@@ -57,7 +58,7 @@
   display: flex;
   flex-direction: column-reverse;
   border: 1px solid black;
- /*  margin: 0 auto; */
+  margin: 0 auto;
 }
 
 /* 여기 왜 마진을 줘야함? */
