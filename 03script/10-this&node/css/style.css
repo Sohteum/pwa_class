@@ -1,0 +1,20 @@
+.ex1 div{
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+}
+
+.ex1 .cont1 div.active,
+.ex1 .cont2 div.active {
+width: 100px;
+height: 100px;
+background-color: red;
+text-align: center;
+line-height: 100px;
+}
+
+.ex1 .cont3 div.active{
+  background-color: red;
+}

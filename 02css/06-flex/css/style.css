@@ -52,31 +52,70 @@
 }
 
 /* ------------------------------- */
+
 .ex3 {
   width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column-reverse;
-  border: 1px solid black;
   margin: 0 auto;
+  border: 1px solid #000;
 }
 
-/* 여기 왜 마진을 줘야함? */
+/* 코딩 순서를 까먹으면 자꾸 다시적게 되니까 내가 걍 순서를 정하자 */
 
-.ex3 div {
-  color: white;
-  background-color: blue;
-  margin-left: auto;
+.ex3 span {
+  background-color: yellow;
 }
 
-.ex3 div:nth-child(1) {
-  width: 50px;
+.ex3 span:nth-of-type(1) {
+  margin-left: 250px;
 }
 
-.ex3 div:nth-child(2) {
-  width: 100px;
+.ex3 span:nth-of-type(2) {
+  margin-left: 200px;
 }
 
-.ex3 div:nth-child(3) {
-  width: 150px;
+.ex3 span:nth-of-type(3) {
+  margin-left: 150px;
+}
+
+/* 너비를 주지않았을때는 마진을 줘서 너비를 지정가능 */
+
+.ex4 {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+.ex4 div {
+  background-color: palevioletred;
+}
+
+
+.ex5 {
+width: 300px;
+height: 300px;
+margin: 0 auto;
+border: 1px solid #000;
+display:flex;
+flex-direction: row-reverse;
+justify-content: flex-end;
+}
+
+.ex5 div {
+  background-color: aquamarine;
+}
+.ex5 div:nth-child(1) {
+height: 50px;
+}
+.ex5 div:nth-child(2) {
+  height: 100px;
+}
+.ex5 div:nth-child(3) {
+  height: 150px;
 }
