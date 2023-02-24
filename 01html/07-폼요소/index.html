@@ -23,7 +23,15 @@
       <li>autocomplete속성 : 자동완성기능, name속성을 가져야함</li>
       <li>option요소의 label속성은 텍스트를 대체하는 기능을 함</li>
       <li>button type : submit,reset,button</li>
-      
+      <li>file요소 : multiple(다수의 파일을 선택할수있는 기능 제공), accept(파일 포맷(유형) 지정)</li>
+      <li>email : 유효성체크기능 제공(데이터가 맞는지), mobile사용시 키패드 ui환경을 제공 </li>
+      <li>number,range : 숫자만 입력가능, 유효성체크기능제공, min, max속성 허락됨</li>
+      <li>date, time: 날짜와 시간을 입력</li>
+      <li>textarea : 크기(cols,rows),css의 resize속성을 사용할 수 있음,
+        textarea요소 안쪽은 이너html이라고 하는데 모든 여백이 글자로 인식됨
+      </li>
+
+
     </ul>
     <hr>
     <form>
@@ -41,9 +49,10 @@
         <p>
           <label for="">성별</label>
           <label for="id3-1">
-            <input name="a" type="radio" id="id3-1" title="남자일경우">남</label>
+            <input checked name="a" type="radio" id="id3-1" title="남자일경우">남</label>
           <!-- 레이블을 먼저 만드는게 권장사항.그래서 레이블을 부모로 만들고 자식을 인풋으로 만듦 -->
           <!-- 라벨로 감싸주면 남만 클릭해도 클릭됨 -->
+          <!-- checked불리언속성. 값이 없음 -->
           <input name="a" type="radio" id="id3-2" title="여자일경우"><label for="id3-2">여</label>
           <!-- 여기서 최상단 레이블은 css를 위한거지 여기서 남여 인풋을 위한 레이블이 아님 
           타이틀을 쓰면 레이블을 안써도됨.걍 둘다쓰자-->
@@ -60,20 +69,68 @@
         </p>
         <p>
           <label for="id5">가입경로</label>
-          <select name="" id="id5">
+          <select name="" id="id5" multiple size="2">
             <option value="">인터넷</option>
             <option value="">지인소개</option>
-            <option value="">기타</option>
+            <option selected value="">기타</option>
           </select>
-          <!-- 셀렉트는 무조건 옵션. 옵션도 읽어줘야하니까 타이틀을 적용해도되고+레이블을 넣어도됨(레이블로하면 그 해당 옵션 값이 그걸 대체해버림) -->
+          <!-- 셀렉트는 무조건 옵션. 옵션도 읽어줘야하니까 타이틀을 적용해도되고+레이블을 넣어도됨(레이블로하면 그 해당 옵션 값이 그걸 대체해버림.레이블을 속성값으로 주는게 옵션뿐.) 멀티플 사용하면 항목값 얼마나 보여줄건지 지정가능 멀티플 전부 근데 멀티플이 디폴트값.., 사이즈값 항목게수-->
+        </p>
+
+        <p>
+          <label for="id6">파일</label>
+          <input id="id6" type="file" multiple accept="image/*,pdf">
+        </p>
+        <!--    어셉트는 마임타입, 멀티플은 불리언요소 -->
+        <p>
+        <p>
+          <label>연령</label>
+          <input type="number" min="0" max="9">
+          <!-- 사이즈속성, 맥스랭스 이런거 안됨. 사용하면 문법오류-->
         </p>
         <p>
-          <button type="submit">버튼</button>
-          <!-- 서브밋 안적어도 서브밋되는게 디폴트야 -->
-          <button type="reset">다시작성하기</button>
-          <!-- 데이터전송안하고 화면에서 작성한 데이터만 없앰 -->
-          <button type="button">가입시확인사항</button>
-          <!-- 순수 버튼의 목적. 누르면 얼럴트 띄운다던지-->
+          <label for="">이메일
+            <input id="" type="email"></label>
+        </p>
+        <p>
+          <label for="">전화번호</label>
+          <input type="tel" title-="전화번호 첫번째 3자리">
+          <input type="tel" title-="전화번호 두번째 3자리">
+          <input type="tel" title-="전화번호 세번째 3자리">
+          <!-- ui에만 영향을 줌. 키패드가 뜸 -->여기 타이틀은 써주는게 권장임?
+        </p>
+        <p>
+          <label for="">생년월일</label>
+          <input type="date">
+          <!-- 날짜 입력창생성 -->
+        </p>
+        <p>
+          <label for="">신장</label>
+          <input type="range" min="100" max="300" step="50">
+          <!-- 민맥은 레인지, 넘버에! 나중에 밸류값 가져오면 min이 나옴/스텝은 스냅이 걸림 tab으로 올리거나 접근성차원-->
+          <!-- 레인지는 체인지 이벤트로 조절가능 -->
+        </p>
+        <p>
+          <label for="">예약시간</label>
+          <input type="time">
+        </p>
+        <p>
+          <label for="">상세내용</label>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <!-- 여는태그와 닫는태그 사이에 공간이 있으면 그걸 여백으로 인식하니 엔터치지말기, 리사이징 가능하나 싫으면 css로 지정-->
+          <!-- 멀티라인텍스트라고함. 인풋타입텍스트는 한줄만 가능 -->
+
+        </p>
+        <input type="text" value="전송">
+        <input type="reset" value="리셋">
+        <input type="button" value="모양만버튼">
+        <br>
+        <button type="submit" value="1">전송하기</button>
+        <!-- 폼타입 안에서는 서브밋 안적어도 서브밋되는게 디폴트야 ,밸류로는 값을 받아옴/폼밖에서는 그냥 버튼-->
+        <button type="reset">다시작성하기</button>
+        <!-- 데이터전송안하고 화면에서 작성한 데이터만 없앰 -->
+        <button type="button">가입시확인사항</button>
+        <!-- 순수 버튼의 목적. 누르면 얼럴트 띄운다던지-->
         </p>
         <!-- 인풋을 전송하려면 버튼이 있어야겠지 -->
       </fieldset>
