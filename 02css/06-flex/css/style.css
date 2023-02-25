@@ -1,4 +1,4 @@
-.ex1 {
+a.ex1 {
   width: 500px;
   height: 100px;
   margin: 0 auto;
@@ -98,24 +98,186 @@
 
 
 .ex5 {
-width: 300px;
-height: 300px;
-margin: 0 auto;
-border: 1px solid #000;
-display:flex;
-flex-direction: row-reverse;
-justify-content: flex-end;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .ex5 div {
   background-color: aquamarine;
+  margin-top: auto;
 }
+
 .ex5 div:nth-child(1) {
-height: 50px;
+  height: 50px;
 }
+
 .ex5 div:nth-child(2) {
   height: 100px;
 }
+
 .ex5 div:nth-child(3) {
   height: 150px;
+  margin-left: 50px;
 }
+
+.ex6 {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.ex6 div {
+  background-color: yellowgreen;
+
+}
+
+.ex6 div:nth-child(1) {}
+
+.ex6 div:nth-child(2) {}
+
+.ex6 div:nth-child(3) {
+  margin-left: 50px;
+}
+
+.ex7 {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ex7 div {
+  background-color: blueviolet;
+  border: 1px solid #000;
+}
+
+.ex8 {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+
+}
+
+.ex8>span {
+  border: 1px solid blue;
+}
+
+.ex8 span:nth-child(1) {
+  width: 50%;
+}
+
+.ex8 span:nth-child(2) {
+  flex: 1;
+}
+
+
+
+.ex8 span:nth-child(3) {
+  flex: 1;
+}
+
+.ex8 span:nth-child(4) {
+  flex: 1;
+}
+
+/* 이부분 여쭤보기 영상에서는 1이 50%고 나머지가 균일하게 가짐*/
+
+
+.ex9 {
+  display: flex;
+  /*   flex-direction: row;
+  align-items: stretch; 
+  해야되는게 맞는데 기본값이다.이부분 여쭤보기 */
+  justify-content: space-between;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex9>div {
+  width: 200px;
+  border: 1px solid blue;
+}
+
+.ex10 {
+  display: flex;
+  /*   flex-direction: row;
+  align-items: stretch; 
+  해야되는게 맞는데 기본값이다.이부분 여쭤보기 */
+  justify-content: space-between;
+
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex10>div {
+  width: 200px;
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.ex10 h3 {
+  background-color: yellow;
+}
+
+.ex10 p {
+  background-color: aquamarine;
+  flex: 1;
+}
+
+.ex11 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+/* 보더를 줬을때는 박스사이징이 필요한지 생각해보기 */
+
+.ex11 div {
+  border: 1px solid blue;
+  width: 33.333%;
+  box-sizing: border-box;
+}
+
+/* 내가 컨테이너에 500을 줬으니까 boxsizing안하면 세개씩 못담음 */
+
+.ex12 {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+  display: flex;
+}
+
+.ex12>div {
+  display: inline-flex;
+  border: 1px solid blue;
+}
+
+.ex12>div>div {
+  padding: 30px;
+  border: 1px solid pink;
+
+}
+
+/* 여기서 빨간 박스안에 다 넣으려면 어떻게함? */
