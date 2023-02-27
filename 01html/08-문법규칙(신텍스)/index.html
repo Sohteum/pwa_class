@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>syntex rule</h1>법
+    <p>html 유효성(validator) 검사(kldp,w3c/https://validator.kldp.org/)를 이용해 확인해 볼것</p>
+    <section>
+      <h2>문법규칙</h2>
+      <ul>
+        <li>inline요소의 자식으로는 block요소는 허락되지 않는다
+          예외 : a는 모든 요소의 부모로 허락됨(인터렉티브 제외!확인!)
+        </li>
+        <li>heading요소(h1~6), p요소의 자식으로는 인라인(인라인블럭)계열레벨만 허락된다</li>
+        <li>interactive요소간에는 부모자식관계가 허락되지 않는다(사용자가 클릭하면 바뀌는 폼요소,앵커같은)</li>
+        <li>figcaption의 자식으로는 a요소가 허락되지 않는다(웹사이트 만들면서 다룰예정)</li>
+        <!-- 이미지넣을 때 이미지에 대한 자세한 설명을 figure안에 이미지넣고 이미지안에 figcaption 넣고 상세내용기입 -->
+        <!--<figure> 접근성차원에서 만들어진 요소
+          <img src="" alt="이건 화면에 출력이 안돼요">
+          <figcaption>
+            <h1>제목</h1>
+            <p>내용</p>
+          </figcaption>
+        </figure> -->
+        <li>ul,ol의 자식요소로는 li만 허락된다</li>
+        <li>li의 자식으로는 모든 요소가 허락된다(ul도가능함/스타일같은건안돼...헤드에만 쓸수있어,스크립트는 다됨)</li>
+        <li>dl의 자식으로는 dt,dd요소만 허락된다</li>
+        <li>style,meta,title요소는 head의 자식요소로만 허락된다</li>
+        <li>img요소는 alt속성(보조텍스트)을 가져야 한다</li>
+      
+      </ul>
+    </section>
+    <hr>
+    <section>
+      <h2>권장사항</h2>매너
+      <ul>
+        <li>heading요소(제목)는 텍스트를 포함하길 권장</li>
+        <!-- <h2><img src="" alt=""></h2> 이런거는 권장하지않음 -->
+        <li>h1과 main요소는 웹문서에 한개씩 포함하길 권장</li>
+        <li>main,section,article요소는 heading요소(제목)를 한개 이상 포함하길 권장</li>
+        <li>heading요소는 순차적으로 적용하길 권장(h1의 번호 순으로,지키기는 어렵)</li>
+        <li>title값은 page마다 다르게 출력하길 권장</li>
+        <!-- 한 사이트 내에서도 페이지마다 타이틀을 다르게 구성하는것 -->
+        <li>WAI-ARIA규칙을 준수하길 권장,알고는 있자(aoa11y웹접근성만연구하는유튭)</li>
+<!--         <a href="#" aria-role="button"> <-이런거는 거의 하는데는 없었다...
+          <div></div>
+        </a> -->
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
