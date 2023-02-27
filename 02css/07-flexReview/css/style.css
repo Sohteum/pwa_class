@@ -1,0 +1,188 @@
+body {
+  background-color: antiquewhite;
+}
+
+
+.ex1 {
+  display: flex;
+  margin: 20px 0;
+  border: 1px solid red;
+}
+
+.ex1 div {
+  width: 33.333%;
+  border: 1px solid blue;
+}
+
+/* 부모가 100%니까 가능한 것 */
+
+.ex2 {
+  display: inline-flex;
+  margin: 20px 0;
+  border: 1px solid red;
+}
+
+/* 부모의 넓이가 사라짐. 자식의 넓이에따라 부모가 바뀌는게 인라인플렉스
+인라인은 row로 한줄을 말하는것. 옆으로 배치할때만 사용 */
+
+.ex2 div {
+  /*   width:33.333%; */
+  border: 1px solid blue;
+}
+
+/* 여기서는 자식에게 width를 줘도 적용안됨 */
+
+.ex3,
+.ex4 {
+  margin: 30px 0;
+  border: 1px solid red;
+  display: flex;
+}
+
+.ex3 {
+  flex-direction: row-reverse;
+}
+
+.ex4 {
+  height: 100px;
+  flex-direction: column-reverse;
+}
+
+.ex3 div,
+.ex4 div {
+  border: 1px solid blue;
+}
+
+
+.ex5,
+.ex6 {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+  border: 1px solid red;
+}
+
+.ex5 {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.ex6 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.ex5 div,
+.ex6 div {
+  border: 1px solid blue;
+}
+
+.ex7,
+.ex8,
+.ex9 {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+  border: 1px solid red;
+}
+
+.ex7 div,
+.ex8 div,
+.ex9 div {
+  border: 1px solid blue;
+}
+
+.ex7 {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ex8 {
+  flex-direction: column-reverse;
+  align-items: center;
+
+}
+
+.ex9 {
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  border: 1px solid red;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+}
+
+.flex div {
+  border: 1px solid blue;
+}
+
+.ex10 {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+/* .ex10 div {
+  flex:3;
+} */
+
+/* .ex10 div:last-child {
+  width:50%;
+  flex:none;
+} */
+
+.ex10 div:nth-child(1) {
+  flex: 1;
+}
+
+.ex10 div:nth-child(2) {
+  flex: 1;
+}
+
+.ex10 div:nth-child(3) {
+  flex: 2;
+}
+
+.ex11 {
+  flex-direction: column;
+}
+
+.ex11 div {
+  flex: 1;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 라인하이트는 두줄일땐 안되지만 얼라인아이템즈는 두줄이여도 가능 */
+
+.ex11 div:nth-child(2) {
+  margin: 10px 0;
+}
+
+/* .ex11 div:not(3) {
+  margin-bottom: 10px;
+}
+ */
+
+ .ex12{
+  width: 300px;
+  margin:30px auto;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+ }
+
+ .ex12 div {
+  border:1px solid blue;
+  flex:1;
+ }
