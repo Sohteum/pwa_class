@@ -1,0 +1,212 @@
+■ 버전관리시스템 개념 (verson contrl system)------------------------
+  ● 버전관리
+    ○ 작업의 히스토리를 저장하는 프로그램
+    ○ git : 버전관리시스템중 가장 대중화 된 프레임워크
+    ○ gitHub : git을 온라인과 연동하는 서비스
+    ○ git 인터페이스
+      ▶ cli 인터페이스
+        git 명령어를 콘솔창에 입력하여 사용하는 방식
+      ▶ gui 인터페이스
+        그래픽 사용자 환경을 제공, source tree
+
+■ git 환경 설정-------------------------------------------------------
+
+  ● source tree 설치
+    - 아틀라시안 로그인
+    - 소스트리 다운로드 후 설치
+    - 빅버킷 옵션 건너뛰기 
+    - 설치중 머큐리얼 에러발생 무시
+    - 사용자 이름등은 임의로 입력 무방
+    - ssh키가 없을 경우 아니오 선택
+    - 영어인터페이스설정
+      도구 / 옵션 / 일반 / repo settings / 언어 를 english로 변경
+    - 폴더탐색기 / 보기 / 파일확장명,숨긴항목 옵션을 활성화
+    - force push 설정
+      Tool / option / Git / Enable Force push
+
+  ● 버전관리 폴더 생성 
+    
+    ○ 소스트리 초기화면
+      - clone : github와 연동시
+      - add : 이미 git으로 관리되어 있는 폴더를 추가
+      - create : git을 시작할 폴더를 추가
+    
+    ○ 프로젝트 폴더 버전관리 시작
+      - create : 폴더경로 설정 (계정에 저장소 생성하기 체크 하지 말 것)
+      - 이미 존재하는 폴더 경고창 발생시 yes
+      - .git폴더 생성확인
+
+    ○ .gitignore
+      - .git폴더 과 동일한 경로에 .gitignore파일 생성
+      - 폴더명/ 파일명등을 한줄단위로 기록
+      - 소스트리의 파일리스트에서 우클릭 후 igonore 선택
+
+■ github 저장소
+
+  ● 깃저장소 생성 (git repository)
+    - 우측상단 사용자메뉴 / your repositories / new (녹색버튼)
+    - 저장소이름 (영문숫자)
+      저장소설명 (입력안해도 무방)
+      공개설정(public, private)
+      add readme file (연동 목적이 아닌 직접 파일을 업로드할경우, 호스팅 할경우)
+  
+  ● 깃저장소 관리
+    - 저장소 선택
+      우측상단 사용자메뉴 / your repositories / new (녹색버튼)
+    - 저장소 삭제
+      삭제할 저장소 선택
+      저장소메뉴 / settings / danger zone / Delete this repository  
+      저장소 이름 입력후 삭제
+
+■ 원격(remote)저장소 연동 설정
+  
+  ● 프로젝트를 처음 연결할 경우
+    - 로컬을 깃 등록 (소스트리의 create)
+    - github 저장소 생성 후 tocken 발급 
+      · 우측 상단 사용자 메뉴 / settings
+      · 좌측 메뉴 하단의 developer settings 
+      · 좌측 메뉴 personal access tockens / Tockens (classic)
+      · generate new tocken (classic)
+        note : 메모 , expirataion : 유효기간 , Select scopes옵션 repo체크
+      · 생성된 tocken 저장
+    
+    - 토큰사용시 주의사항
+      · 소스트리가 설치 되어 있는 수만큼 토큰이 필요함
+      · 소스트리에 토큰을 재 입력해야 할 경우
+        c:/사용자/사용자ID/AppData/Local/Atlassian/SourceTree/passwd 삭제
+        c:/사용자/사용자ID/AppData/Local/Atlassian/SourceTree/userhosts 삭제
+        깃허브사이트에서 토큰 재발급 또는 revoke 후 토큰번호 저장
+        소스트리 재실행
+        
+    - 메뉴 / repository / repository settings 혹은 우측상단의 remote아이콘을 / add
+    - remote details 옵션
+      · default remote 체크 (origin 원격 이름)
+      · url / path 
+        (깃허브 저장소의 경로 입력)
+        (파일이 업로드 된 후에는 저장소 code메뉴에서 확인 가능)
+      · username 임의로 입력
+      · push나 pull 실행시 비밀번호란에 토큰입력
+        (no-helper 체크 후 하단의 always옵션 체크)
+        
+  ● 저장소가 기 존재할 경우 연동
+    - 별도의 토큰을 생성할 것
+    - 소스트리의 clone메뉴를 이용
+    - url/path 저장소 경로 입력 (깃허브 코드메뉴에서 확인 가능)
+    - 연동할 로컬 폴더 설정
+    - 클론 (처음연동시 토큰입력)
+
+■ 원격(remote)저장소 관리
+  ● pull, push
+    - 작업시작 전 반드시 pull을 선행
+    - 작업종료 후 반드시 push를 실행
+
+  ● squash (커밋을 합치는 목적, 커밋의 갯수 줄이기)
+    - 병합하고 싶은 커밋의 이전 커밋에서 우클릭 후 rebase children 
+    - 상단의 커밋부터 차례대로 squash with previos를 실행
+    - force push를 이용해 push 실행
+    - 최하위 커밋으로 reset후 pull 실행
+
+  ● 문제상황해결
+    - 작업종료 후 push를 실행하지 않았을 경우 
+      (해결방법 없음)
+    - pull을 선행하지 않고 작업했을 경우
+      · 소스트리의 history패널에서 수정한 파일 확인 후 백업 
+      · 작업전 커밋으로 하드 리셋 
+      · pull
+      · 백업된 파일과 마지막 커밋 상태의 파일 비교후 수정
+      · 커밋 후 push
+
+  ● remote 히스토리보다 이전 커밋으로 변경
+    - 필요한 상황
+      · reset 
+      · rebase
+      · squash
+    - 순서
+      1) force push설정 
+        소스트리메뉴 tool/option/git/enable force push 활성화
+      2) force push
+      3) 제거된 히스토리 전으로 hard reset후 pull 실행
+
+■ git 사용법-------------------------------------------------------
+
+  ● 파일관리
+    ○ .gitignore
+      - .git폴더 과 동일한 경로에 .gitignore파일 생성
+      - 폴더명/ 파일명등을 한줄단위로 기록
+      - 소스트리의 파일리스트에서 우클릭 후 igonore 선택 
+    ○ discard
+      - 커밋 목록에서 제외한다
+    ○ remove
+      - 파일이나 폴더를 제거를 한다
+
+  ● commit 
+
+    ○ 버전을 생성
+    ○ 커밋 순서
+      1) file status 패널
+      2) commit할 파일을 stage에 등록 
+         (수정하지 않은 파일이 unstage목록에 존재할때는 discard를 이용해서 제거)
+      3) description을 자세히 기술
+      4) commit 실행
+    
+  ● history 관리
+
+    ○ mainbranch 
+      최종적으로 존재해야 하는 브런치
+    ○ head
+      현재 작업중인 commit시점
+    ○ checkout
+      history를 commit시점으로 이동하는 행위 
+    ○ reset
+      - 선택한 commit 이후의 히스토리를 제거
+      - hard 옵션
+      - 깃허브와 연동시 force push를 사용해야만 함
+    ○ reverse (revert)  
+      - 브런치를 생성하지 않고 과거 커밋을 최상위 커밋으로 등록
+      - 마지막 commit시점으로 checkout
+      - 마지막 commit시점부터 차례대로 아래의 commit을 reverse
+
+  ● branch
+
+    ○ 생성방법
+      - 분기점 커밋으로 체크아웃
+      - branch 생성 (히스토리 우클릭, 상단메뉴 branch아이콘)
+      - 브런치를 생성하지 않고 하위 커밋을 수정했을 경우 
+        최종커밋으로 체크아웃 된 상태에서 브런치를 생성해야 함
+
+    ○ merge (branch를 하나로 병합)
+      - 순서 
+        예시 : b브런치를 master로 합병
+        · master브런치로 체크아웃
+        · b브런치를 우클릭 후 merge
+        · b브런치를 제거
+      - 종류
+        · fast foward : 히스토리의 마지막 커밋에서 브런치를 생성 후 머지
+        · three way merge : 브런치의 분기가 나누어졌을 경우 머지 (충돌을 해결해야 함)
+      - 주의사항
+        · 머지가 된 브런치는 리셋으로 다시 복원할 수 없음
+
+    ○ rebase (branch를 하나로 병합, 브런치의 히스토리가 남지 않는다)
+      - 주의사항
+        · 원격 연동이나 협업시 매우 위험
+        · 원격시 force push를 같이 사용해야 함 
+      - 순서
+        1) 제거될 브런치로 체크아웃
+        2) 남아야 될 브런치를 우클릭 후 rebase
+        3) 충돌해결 
+        4) 변경된 모든 파일을 스테이즈 등록 
+           (! 절대 commit하지 말것)
+        5) 남아야 될 브런치를 우클릭 후 rebase 
+           (continue rebase 선택)
+        6) 남아야 될 브런치로 체크아웃
+        7) 제거될 브런치 선택 후 merge   
+        8) 브런치 제거
+
+    ○ delte branch
+      - 체크 아웃된 브러치는 삭제할 수 없음
+      - 머지가 되기 전 브런치를 삭제할 경우 force delete를 이용
+
+    ○ conflict
+      - select current : 체크아웃된 브런치의 내용으로 변경
+      - select incoming : 병합될 브런치으로 내용으로 변경
+      - select both : 두개의 브런치 내용을 병합될
