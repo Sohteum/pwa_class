@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body * {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* 이하부분 작성------------------------------ */
+
+.container1 {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.container1>div {
+  width: 20%;
+}
+
+.container1>div>a {
+  display: block;
+}
+
+/* 이건 아래 컨테이너에서는 의미가 없음. 적용해보기 */
+
+.container2 {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container2>div {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.container2>div:nth-child(2)~div {
+  margin-bottom: 0;
+}
+
+.container2>div>p {
+
+
+  flex: 1;
+  margin: 10px 0;
+}
+
+/* 전부다 밀고 맨아래만 빼줌
+왜냐면 css에서는 0 앞쪽을 선택을 못해. 0 뒷쪽만 선택가능 */
+
+
+.container3 {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container3>div {
+  width: 30%;
+  margin: 0 10px;
+}
+
+.container3>div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 플렉스를 주면 a가 블록으로 바뀌니까.줄필요가없는거 */
+
+.container3>div:first-child>p {
+  flex: 1;
+}
+
+.container3>div:last-child>div>a {
+  display: block;
+}
+
+.container3>p {
+  margin:10px 0;
+}
+
+.container3>div:last-child > div:first-child {
+margin-bottom: 10px;
+}
