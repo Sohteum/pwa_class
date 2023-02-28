@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="ex1">
+    <article class="cont1">
+      <input type="number" class="num1">
+      +
+      <input type="number" class="num2">
+      =
+      <button value="1">결과보기</button>
+      <p>?</p>
+    </article>
+    <article class="cont2">
+      <input type="number" class="num1">
+      +
+      <input type="number" class="num2">
+      =
+      <button value="2">결과보기</button>
+      <p>?</p>
+      <!-- 이벤트타겟(디스)를 모르면 이벤트 두개 만들어야함 -->
+    </article>
+    <article class="cont3">
+      <input type="number" class="num1">
+      +
+      <input type="number" class="num2">
+      =
+      <button value="3">결과보기</button>
+      <p>?</p>
+    </article>
+  </section>
+  <hr>
+  <section class="ex2">
+    <article data-cont="1" class="cont1">
+      <input value="1000" type="radio" name="ex2" checked>남자상의(1000원)
+      <input value="1500" type="radio" name="ex2">남자하의(1500월)
+      <input value="2000" type="radio" name="ex2">남자신발(2000원)
+      <!--인풋에 적으면 여러번 써야하니까 그럴거없이 아티클에 적어보자. this의 부모를 찾는거야. -->
+      <br>
+      <input type="number" value="0">개
+      <p>0원</p>
+    </article>
+    <article data-cont="2" class="cont2">
+      <input value="1100" type="radio" name="ex21" checked>여자상의(1100원)
+      <input value="1600" type="radio" name="ex21">여자하의(1500월)
+      <input value="2100" type="radio" name="ex21">여자신발(2100원)
+      <br>
+      <input type="number" value="0">개
+      <p>0원</p>
+    </article>
+  </section>
+  <hr>
+  <section class="ex3">
+    <article>
+      <p>클릭한 박스가 색이 변해요</p>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </article>
+    <article>
+      <p>클릭한 박스가 색이 변해요</p>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </article>
+  </section>
+  <hr>
+  <section class="ex4">
+    <article>
+      <p>클릭한 박스의 색으로 모두 변해요</p>
+      <div data-col="red">빨</div>
+      <div data-col="yellow">노</div>
+      <div data-col="blue">파</div>
+      <div data-col="green">녹</div>
+    </article>
+    <article>
+      <p>클릭한 박스의 색으로 모두 변해요</p>
+      <div data-col="red">빨</div>
+      <div data-col="yellow">노</div>
+      <div data-col="blue">파</div>
+      <div data-col="green">녹</div>
+    </article>
+    <hr>
+    <article>
+      <p>4. 클릭한 버튼의 번호가 출력되요</p>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <p class="output">번호</p>
+    </article>
+  </section>
+  <section class="ex5">
+    <p>5. 클릭한 버튼의 숫자가 출력되요</p>
+    <button value="1">one</button>
+    <button value="2">two</button>
+    <button value="3">three</button>
+    <button value="4">four</button>
+    <p class="output">번호</p>
+  </section>
+  <section class="ex6">
+    <p>6. 클릭한 요소의 해당하는 색이 출력되요</p>
+    <div data-bg="red">빨</div>
+    <div data-bg="blue">파</div>
+    <div data-bg="green">녹</div>
+    <p class="output"></p>
+  </section>
+  <hr>
+  <section class="ex7">
+    <p>7. 클릭한 박스의 배경이 빨갛게 변해요 </p>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </section>
+  <hr>
+  <section class="ex8">
+    <p>8. 클릭한 박스의 배경이 해당색으로 변해요 </p>
+    <div data-bg="red">빨</div>
+    <div data-bg="blue">파</div>
+    <div data-bg="green">녹</div>
+  </section>
+  <hr>
+  <section class="ex9">
+    <p>9. 클릭한 버튼의 번호에 해당하는 박스가 빨갛게 변해요 </p>
+    <button value="1">일</button>
+    <button value="2">이</button>
+    <button value="3">삼</button>
+    <br><br>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+  </section>
+  <hr>
+  <section class="ex10">
+    <p>10.클릭한 버튼의 번호에 해당하는 박스가 색이 변해요</p>
+    <button data-n="1" value="red">1.빨강</button>
+    <button data-n="2" value="blue">2.파랑</button>
+    <button data-n="3" value="green">3.녹색</button>
+    <br><br>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+  </section>
+  <hr>
+  <section class="ex11">
+    <p>10.클릭한 버튼의 번호에 해당하는 박스가 색이 변해요</p>
+    <button value="1">1.빨강</button>
+    <button value="2">2.파랑</button>
+    <button value="3">3.녹색</button>
+    <br><br>
+    <div class="box1" data-bg="red">1</div>
+    <div class="box2" data-bg="blue">2</div>
+    <div class="box3" data-bg="green">3</div>
+  </section>
+</section>
+<hr>
+<section class="ex12">
+  <p>12. 글자를 입력할 때마다 출력되요</p>
+  <article>
+    <input type="text">
+    <p class="output">?</p>
+  </article>
+  <article>
+    <input type="text">
+    <p class="output">?</p>
+  </article>
+</section>
+<hr>
+<section class="ex13">
+  <p>13. 선택한 버튼의 해당하는 박스가 해당색으로 변해요</p>
+  <article>
+    <input value="1" type="radio" name="ex13-1">1
+    <input value="2" type="radio" name="ex13-1">2
+    <input value="3" type="radio" name="ex13-1">3
+    <br>
+    <div class="box1" data-bg="red">1.빨</div>
+    <div class="box2" data-bg="blue">2.파</div>
+    <div class="box3" data-bg="green">3.녹</div>
+  </article>
+  <br>
+  <article>
+    <input value="1" type="radio" name="ex13-2">1
+    <input value="2" type="radio" name="ex13-2">2
+    <input value="3" type="radio" name="ex13-2">3
+    <br>
+    <div class="box1" data-bg="red">1.빨</div>
+    <div class="box2" data-bg="blue">2.파</div>
+    <div class="box3" data-bg="green">3.녹</div>
+  </article>
+</section>
+</body>
+
+</html>

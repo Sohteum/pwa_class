@@ -1,0 +1,30 @@
+.ex3 div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border:1px solid #000;
+  vertical-align: middle;
+}
+.ex4 div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border:1px solid #000;
+  vertical-align: middle;
+}
+section>div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border:1px solid #000;
+  vertical-align: middle;
+}
+article>div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border:1px solid #000;
+  vertical-align: middle;
+}
+
+
