@@ -30,13 +30,13 @@ h1 {
 .ex1 span:nth-of-type(2) {
   height: 100px;
   line-height: 100px;
-  text-align: center;
+  text-align: start;
 }
 
 .ex1 span:nth-of-type(3) {
   height: 50px;
   line-height: 50px;
-  text-align: center;
+  text-align: end;
 }
 
 .ex2 {
@@ -58,6 +58,7 @@ h1 {
   width: 100px;
   height: 100px;
   background-color: yellowgreen;
+
   /* margin-top:100px; 이건 안됨. */
 
   /* 내 글자만큼이니까 100을 주면 가운데로 옴. 자식이 우선순위높으니까 자식한테도 준거야 */
