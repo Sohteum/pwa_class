@@ -212,21 +212,50 @@ alter ->,불가. 연산자랑 ''스트링이랑 같이 이어붙여야 가능. �
   })
 
 
-  function fn4(param) {
-    var 번호 = param
-    var 글자 = $(`.ex4 .cont${번호} input`).val()
-    $(`.ex4 .cont${번호} p`).text(글자)
-  }
+  /*   function fn4(param) {
+      var 번호 = param
+      var 글자 = $(`.ex4 .cont${번호} input`).val()
+      $(`.ex4 .cont${번호} p`).text(글자)
+    }
+  
+  
+    $(`.ex4 button`).click(function () {
+      fn4($(this).val())
+    })
+    $(`.ex4 input`).bind('input', function () {
+         var 입력하는번호 = $(this).attr('data-n')
+         var 입력값 = $(`.ex4 .cont${입력하는번호} input`).val()
+         $(`.ex4 .cont${입력하는번호} p`).text(입력값) 
+      fn4($(this).attr('data-n'))
+    })
+     */
+
+
+function fn3(param) {
+  var num = param
+  var 입력값 = $(`.ex4 .cont${num} input`).val()
+  $(`.ex4 .cont${num} p`).text(입력값)
+}
 
 
   $(`.ex4 button`).click(function () {
-    fn4($(this).val())
+/*     var 번호 = $(this).val()
+    var 입력값 = $(`.ex4 .cont${번호} input`).val()
+    $(`.ex4 .cont${번호} p`).text(입력값) */
+    fn3($(this).val())
   })
+
   $(`.ex4 input`).bind('input', function () {
-    /*    var 입력하는번호 = $(this).attr('data-n')
-       var 입력값 = $(`.ex4 .cont${입력하는번호} input`).val()
-       $(`.ex4 .cont${입력하는번호} p`).text(입력값) */
-    fn4($(this).attr('data-n'))
+    /* 번호를 인풋창에 입력하자마자 ? 값이 변함 */
+/*     var num = $(this).attr('data-n')
+    var 입력값 = $(`.ex4 .cont${num} input`).val()
+    $(`.ex4 .cont${num} p`).text(입력값) */
+    fn3($(this).attr('data-n'))
   })
-  /*  */
+
+
+
+
+
+
 })
