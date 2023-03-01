@@ -266,18 +266,19 @@ a.ex1 {
   width: 500px;
   margin: 0 auto;
   border: 1px solid red;
-  display: flex;
+  /*   overflow: hidden; */
+  background-color: beige;
 }
 
 .ex12>div {
-  display: inline-flex;
   border: 1px solid blue;
+  display: flex;
 }
 
 .ex12>div>div {
   padding: 30px;
   border: 1px solid pink;
-
+  flex: 1;
 }
 
 /* 여기서 빨간 박스안에 다 넣으려면 어떻게함? */
