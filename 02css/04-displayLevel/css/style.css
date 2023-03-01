@@ -47,8 +47,7 @@ h1 {
   margin: 0 auto;
   text-align: center;
   line-height: 300px;
-  /* 내안의 노랑 박스글자를 옮긴다 */
-
+  /* 내안의 노랑 박스글자를 옮긴다 그러니까 노랑애들이 가운데 가려면 line-height300 */
   /* 노란색을 움직이고싶다. 근데 텍스트가 상속을 받은거지 */
   /* 한글자만썻지만 글자폭?이 늘어난거라 다시 밑에서 줘야됨 */
 }
@@ -59,14 +58,17 @@ h1 {
   height: 100px;
   background-color: yellowgreen;
 
-  /* margin-top:100px; 이건 안됨. */
+  /*   margin-top:100px; 이건 안됨. 부모가 보더나 패딩이 있어야만 가능
+  그럼 div를 수직으로 옮기려면 인라인레벨로 바꿔야함. 그래서 inline-block적용
+  그리고 1번 상자는 100만큼 가운데 가니까 */
 
   /* 내 글자만큼이니까 100을 주면 가운데로 옴. 자식이 우선순위높으니까 자식한테도 준거야 */
 }
 
 .ex2 div:first-child {
   height: 100px;
-  line-height: 100px;
+
+  /* 내 안에 있는 글자를 정렬할거면 디브에 라인하이트100 */
 }
 
 .ex2 div:last-child {
