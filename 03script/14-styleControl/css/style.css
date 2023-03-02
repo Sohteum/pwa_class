@@ -7,42 +7,46 @@ section div {
 }
 
 .ex2 div.active {
-background-color: red;
-color:white;
-border-radius: 50%;
-text-align: center;
-line-height: 50px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
 }
 
 
 .ex4 button.active,
 .ex6 button.active,
 .ex7 button.active,
-.ex8 button.active{
+.ex8 button.active {
   color: red;
 }
 
 .ex10 div,
 .ex11 div {
-  display:none;
+  display: none;
 }
 
-.ex12 div.active1{
+.ex12 div.active1 {
   background-color: red;
 }
-.ex12 div.active2{
+
+.ex12 div.active2 {
   background-color: blue;
 }
-.ex12 div.active3{
+
+.ex12 div.active3 {
   background-color: green;
 }
 
 .ex13 .box1.active {
   background-color: red;
 }
+
 .ex13 .box2.active {
-  background-color: red;
+  background-color: blue;
 }
+
 .ex13 .box3.active {
-  background-color: red;
+  background-color: green;
 }

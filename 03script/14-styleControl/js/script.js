@@ -1,33 +1,27 @@
 $(document).ready(function () {
 
+
   function fn1(el) {
     $(`.ex1 div`).css({ 'background': 'none' })
-    var num = el.text()
-    var bg = $(`.ex1 .box${num}`).attr('data-bg')
-    el.siblings(`.box${num}`).css({ 'background': bg })
+    var n = el.text()
+    var bg = $(`.ex1 .box${n}`).attr(`data-bg`)
+    el.siblings(`.ex1 .box${n}`).css({ 'background': bg })
   }
 
 
   $(`.ex1 button`).click(function () {
-    /*   $(`.ex1 div`).css({'background':'none'})
-      var num = $(this).text()
-      var bg = $(`.ex1 .box${num}`).attr('data-bg')
-      $(this).siblings(`.box${num}`).css({'background':bg}) */
+    /*     $(`.ex1 div`).css({ 'background': 'none' })
+        var n = $(this).text()
+        var bg = $(`.ex1 .box${n}`).attr(`data-bg`)
+        $(this).siblings(`.ex1 .box${n}`).css({ 'background': bg }) */
     fn1($(this))
   })
 
-  /* $(`.ex1 button`).click(function(){
-  $(`.ex1 div`).css({'backgruond':'none'})
-  var num = $(this).text()
-  var bg = $(this).siblings('div').attr('data-bg')
-  $(this).siblings(`.box${num}`).css({'backgruond':bg})
-  }) */
 
   $(`.ex2 div`).click(function () {
-    $(this).siblings('div').removeClass(`active`)
-    $(this).addClass(`active`)
+    $(this).siblings('div').removeClass('active')
+    $(this).addClass('active')
   })
-
 
   $(`.ex3 button`).click(function () {
     $(this).siblings('button').css({ 'color': 'black' })
@@ -35,11 +29,12 @@ $(document).ready(function () {
   })
 
 
-  $(`.ex4 button`).click(function () {
-    $(this).siblings(`button`).removeClass(`active`)
-    $(this).toggleClass(`active`)
-  })
+  /*   $(`.ex4 button`).click(function () {
+      $(this).siblings(`button`).removeClass(`active`)
+      $(this).toggleClass(`active`)
+    }) */
   //여기서 굳이 siblings보다 $(`.ex4 button`).removeClass(`active`) 이렇게 하는게 더 편해.
+
 
   $(`.ex5 button`).click(function () {
     $(`.ex5 button`).css({ 'color': 'black' })
@@ -64,17 +59,14 @@ $(document).ready(function () {
     var num = $(this).val()
     $(`.ex7 .art${num} button`).not($(this)).removeClass(`active`)
     $(this).toggleClass(`active`)
-  })
+  })//다시풀어보기
 
-/*   $(`.ex8 button`).click(function () {
-    $(this).parents(`article`).find('button').not($(this))
-    $(this).toggleClass(`active`)
-  }) */
 
   $(`.ex8 button`).click(function () {
     $(this).parents(`article`).find('button').not($(this)).removeClass('active')
     $(this).toggleClass(`active`)
-  })
+  })// 다시풀어보기
+
   /* parents는 조상 다 찾을 수 있는거
   find는 자손 다 찾을 수 있는거 */
   /* 위험한 코드야 왜냐면 전체를 아티클로 감쌌거나 하면 모든 버튼을 찾을 수 있음 그러니까 윗 조상이 걸리지 않게 내가 원하는 조상에다가 class를 따로주자. */
@@ -92,7 +84,8 @@ $(document).ready(function () {
     var n = $(this).text()
     $(`.ex9 div`).show()
     $(`.ex9 .box${n}`).hide()
-  })
+  }) // 다시풀어보기
+
 
   $(`.ex10 button`).click(function () {
     var n = $(this).text()
@@ -100,14 +93,24 @@ $(document).ready(function () {
     $(`.ex10 .box${n}`).show()
   })
 
+
+  /*   $(`.ex11 button`).click(function () {
+      var n = $(this).text()
+      $(`.ex11 div`).not(`.ex11 .box${n}`).hide()
+      $(`.ex11 .box${n}`).toggle()
+    }) */
+  /* not쓰는 애들은 toggle,toggleClass 다른애들은 전부다 꺼도됨
+  토글과 토글클래스 차이 구분할것
+  토글은 그냥 그 자체가 생겼다 사라졌다. 토글클래스는 css로 뭔가 추가할때*/
+
   $(`.ex11 button`).click(function () {
     var n = $(this).text()
-    $(`.ex11 div`).not(`.ex11 .box${n}`).hide()
+    $(`.ex11 div`).hide()
     $(`.ex11 .box${n}`).toggle()
   })
-  /* not쓰는 애들은 toggle,toggleClass 다른애들은 전부다 꺼도됨*/
 
-  $(`.ex12 button`).click(function(){
+
+  $(`.ex12 button`).click(function () {
     var n = $(this).text()
     $(`.ex12 div`).not(`.box${n}`).removeClass(`active1 active2 active3`)
     $(`.ex12 .box${n} `).toggleClass(`active${n}`)
@@ -123,5 +126,6 @@ $(document).ready(function () {
     $(`.ex13 div`).not(`.box${n}`).removeClass(`active`)
     $(`.ex13 .box${n}`).toggleClass(`active`)
   })
-//12,13똑같은 문젠데 내가 만든다면 13번처럼 만들라는 뜻. 12번은 비효율적
+
+  //12,13똑같은 문젠데 내가 만든다면 13번처럼 만들라는 뜻. 12번은 비효율적
 })
