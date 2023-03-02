@@ -151,27 +151,34 @@ $(document).ready(function () {
     $(`.ex10 .box${num}`).css({ 'background': bg })
   })
 
-  $(`.ex11 button`).click(function(){
-    $(`.ex11 div`).css({'background':'none'})
+  $(`.ex11 button`).click(function () {
+    $(`.ex11 div`).css({ 'background': 'none' })
     var num = $(this).val()
     var bg = $(`.ex11 .box${num}`).attr('data-bg')
-    $(`.ex11 .box${num}`).css({'background':bg})
+    $(`.ex11 .box${num}`).css({ 'background': bg })
   })
 
-$(`.ex12 input`).bind('input',function(){
-  var 입력값 = $(this).val()
-/*   $(this).parent().siblings('article').child('input').text(입력값) */
-  $(this).siblings('.output').text(입력값)
-})
+  $(`.ex12 input`).bind('input', function () {
+    var 입력값 = $(this).val()
+    /*   $(this).parent().siblings('article').child('input').text(입력값) */
+    $(this).siblings('.output').text(입력값)
+  })
 
-$(`.ex13 input`).click(function(){
-  $(`.ex13 div`).css({'background':'none'})
-  var num = $(this).val()
-  var bg = $(`.ex13 .box${num}`).attr('data-bg')
-  $(this).siblings(`div.box${num}`).css({'background':bg})
-})
-// 출력해야하는 창이 똑같이 두개가 있을때 siblings를 이용하자!
+  /* $(`.ex13 input`).click(function(){
+    $(`.ex13 div`).css({'background':'none'})
+    var num = $(this).val()
+    var bg = $(`.ex13 .box${num}`).attr('data-bg')
+    $(this).siblings(`div.box${num}`).css({'background':bg})
+  }) */
+  // 출력해야하는 창이 똑같이 두개가 있을때 siblings를 이용하자!
 
+
+  $(`.ex13 input`).click(function () {
+    $(`.ex13 div`).css({ 'background': 'none' })
+    var num = $(this).val()
+    var bg = $(`.ex13 .box${num}`).attr('data-bg')
+    $(this).siblings(`div.box${num}`).css({ 'background': bg })
+  })
 
 
 })
