@@ -1,0 +1,162 @@
+body {
+  background-color: antiquewhite;
+  font-family: 'Russo One', sans-serif;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* 마진 패딩. 에이전트스타일이 자동적용되어있어서 없애야함 */
+
+li {
+  list-style: none;
+}
+
+.container1 {
+  width: 980px;
+  margin: 30px auto;
+  border: 1px solid #000;
+  background-color: pink;
+  box-sizing: border-box;
+  padding-top: 20px;
+  /*  overflow: auto; */
+}
+
+/* 옛날에는 클리어픽스가 없을때 오버플로우오토를 사용하기도 했음 하지만 이 방법은 플롯과 충돌이 남*/
+
+
+.container1::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 마지막 엘리먼트를 짝퉁으로 넣겠다. 가상요소
+진짜에 넣기는 html문법도 안맞고 꼬일거같으니까
+가상요소를 주는것.
+가상요소는 인라인레벨임. 클리어보스하려면 블럭레벨이어야함 
+이 행위를 클리어픽스라고 함.깔끔하게 고쳤다!
+플롯이 적용된 자식요소의 크기를 인식하게 하는 방법 */
+
+.container1 li {
+  margin: 0 0 20px 20px;
+  height: 300px;
+  background-color: palegoldenrod;
+}
+
+.container1 .box {
+  width: 300px;
+}
+.container1 .wbox {
+  width: 460px;
+}
+
+/* 첫번째 블럭레벨은 형제기준이니 마진탑이 안되는데 얘는 가능 */
+
+.container1 .box1,
+.container1 .box2,
+.container1 .box3,
+.container1 .box4,
+.container1 .box5,
+.container1 .box6,
+.container1 .box8,
+.container1 .box9 {
+  float: left;
+}
+
+.container1 .box3 {
+  clear: both;
+}
+/* 
+6번은 옆으로 가고싶은데 자리 없으니까 클리어 안해줘도됨 */
+.container1 .box7 {
+  float:right;
+  margin-right: 20px;
+}
+/* 다음줄로 갈건데 클리어안주면 자리있는경우 무조건 그 자리로 감 */
+/* 클리어보스가 되면 거기까지 부모가 높이를 인식함 그밑에 플롯생기면 또 인식못해. 그밑에 클리어 생기면 또 인식해. 그러니 마지막에 클리어해줘야함*/
+/* 3번박스가 위에 형을 인지를 못해서 마진을 줄수가없음 그래서 마진줄려면 1번이 밀어줘야함
+근데 3번이 1번자리에가서 아래로 미는건 가능 */
+/* 뒤에 형제들이 또 있으니까 3번은 클리어보스를 하고 다시 또 플롯을해줌 */
+
+/* 얘는 무조건 수평배치가 목적, 자기 형제와 서겠다 */
+/* 플렉스는 부모한테 줬다면 플롯은 자식에게 줌 */
+/* 자식에게 플롯을 주면 부모요소는 높이갑이 0이 됨.그니까 배경이 사라짐
+그래서 부모가 알아서 늘어나게해줘야하는데 이걸 클리닝이라고 하고 방법으로는 클리어픽스를 이용한다 만 알면됨
+그리고 그 밑에 뭐가 들어가면 플롯애들을 인지하지 못하고 부모밑에 붙음 */
+/* left-먼저나온애가 왼쪽,right-먼저나온애가 오른쪽, */
+
+
+
+
+.container2 {
+  width: 980px;
+  margin: 30px auto;
+  border: 1px solid #000;
+  background-color: white;
+  box-sizing: border-box;
+  padding-top: 20px;
+
+  /*  overflow: auto; */
+}
+
+.container2::after {
+  content:'';
+  display: block;
+  clear: both;
+}
+
+.container2 li {
+  width: 300px;
+  height: 300px;
+  background-color: #000;
+  font-size: 80px;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.container2 .wbox {
+  width: 300px;
+  height: 620px;
+}
+
+.container2 .box1,
+.container2 .box2,
+.container2 .box3, 
+.container2 .box4 {
+  float: left;
+  margin: 0 0 20px 20px;
+}
+
+.container2 .box5 {
+  clear:both;
+}
+
+.container2 .box5,
+.container2 .box6,
+.container2 .box7,
+.container2 .box8 {
+  float:right;
+  margin: 0 20px 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

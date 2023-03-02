@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <main>
+    <h1>float을 이용한 그리드 레이아웃</h1>
+    <p>다양한 레이아웃 구현 목적(주로 높이가 다른격자/그리드는 높이랑 너비까지 다른격자)</p>
+    <!-- 이전사이트 수정하려면 필요, 협업에서도 필요 -->
+    <ul>
+      <li>
+        float이 적용된 자식객체의 높이를 부모객체가 인식하지 못함.영향을 못줌
+        clearfix를 이용해 해결가능 <br>
+        <pre>
+          부모요소::after {
+            content:"";
+            display:block;
+            clear:both;
+          }
+        </pre>
+        마지막 요소에 클리어보스를 적용하면 되는데 넣을 수 있는 타입이 딱이 없어서 가상요소를 만들어 클리어보스적용
+      </li>
+      <li>
+        float이 적용되면 display 속성을 잃는다
+        margin의 auto를 사용할 수 없음
+        inline요소도 크기를 지정할 수 있음
+      </li>
+      <li>
+        float이 적용된 다음요소는(인접형제 adjacent siblings)float과 clear중 하나를 선택해야함(아니면없어져버림) <br>
+        -float:앞쪽 형제들과 나란히 서겠다 <br>
+        -clear:형제들과 관계를 끊겠다.(오 왼 둘함)
+      </li>
+      <li>
+        float레이아웃시 margin-bottom 사용 권장 <br>
+        float이 적용되지 않은 객체는 위쪽에 위치하는 float요소와 margin이 적용되지 않음</li>
+    </ul>
+    <hr>
+    <ul class="container1">
+      <li class="box box1">1</li>
+      <li class="box box2">2</li>
+      <li class="box box3">3</li>
+      <li class="box box4">4</li>
+      <li class="box box5">5</li>
+      <li class="box box6">6</li>
+      <li class="box box7">7</li>
+      <li class="wbox box8">8</li>
+      <li class="wbox box9">9</li>
+    </ul>
+    <hr>
+    <ul class="container2">
+      <li class="wbox box1">div1</li>
+      <li class="box box2">div2</li>
+      <li class="box box3">div3</li>
+      <li class="box box4">div4</li>
+      <li class="wbox box5">div5</li>
+      <li class="box box6">div6</li>
+      <li class="box box7">div7</li>
+      <li class="box box8">div8</li>
+
+    </ul>
+  </main>
+
+</body>
+
+</html>
