@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./scc/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- this가 노드중 하나  -->
+  <form class="ex1">
+    <p>1. 양수를 입력하세요</p>
+    <input type="number">
+    <!-- 인풋에서 엔터를 치면 form으로 전달되는 서브밋이벤트가 나타남 항상 폼에서만! -->
+    <p class="output">결과</p>
+  </form>
+  <hr>
+  <form class="ex2">
+    <p>2. 1, 2, 3중 하나를 입력하면 영어로 출력돼요</p>
+    <input type="number">
+    <p class="output">결과</p>
+  </form>
+  <hr>
+  <section class="ex3">
+    <p>3. 3이상이면서 7이하인 숫자를 입력해주세요</p>
+    <input type="number">
+    <button>결과보기</button>
+    <p class="output">결과</p>
+  </section>
+  <hr>
+  <form class="ex4">
+    <p>4. 1, 5, 10, 25중 임의로 입력해주세요(정.오)</p>
+    <!-- 숫자가 입력이 안되거나 내용이 없으면  경고출력(유효성검사), 정,오답출력-->
+    <input type="text">
+    <p class="output">결과</p>
+  </form>
+  <hr>
+  <div class="ex5">
+    <p>5. 짝수 숫자를 입력하세요</p>
+    <!-- 숫자가 입력이 안되거나 내용이 없으면  경고출력(유효성검사), 정,오답출력-->
+    <input type="text">
+    <button>결과보기</button>
+    <p class="output">결과</p>
+  </div>
+</body>
+
+</html>
