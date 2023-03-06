@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css"
+    />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/script.js"></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://code.jquery.com/jquery-latest.js"></script>
-  <script src="./js/script.js"></script>
-  <title>Document</title>
-</head>
-
-<body>
-  <section class="ex1">
-    <p>1. 점수를 입력하면 등급이 출력되요</p>
-    <pre>
+  <body>
+    <section class="ex1">
+      <p>1. 점수를 입력하면 등급이 출력되요</p>
+      <pre>
       평균기준
        90이상:a
        80이상~90미만 :b
        70이상~80미만 :c
        70미만 :d
-    </pre>
-    <p>국어 : <input class="kor" type="number">점</p>
-    <p>영어 : <input class="eng" type="number">점</p>
-    <p>수학 : <input class="math" type="number">점</p>
-    <p><button>결과보기</button></p>
-    <p class="output">출력</p>
-  </section>
-  <hr>
-  <section class="ex2">
-    <p>2. 점수를 입력하면 등급이 출력돼요</p>
-    <pre>
+    </pre
+      >
+      <p>
+        국어 :
+        <input
+          class="kor"
+          type="number"
+        />점
+      </p>
+      <p>
+        영어 :
+        <input
+          class="eng"
+          type="number"
+        />점
+      </p>
+      <p>
+        수학 :
+        <input
+          class="math"
+          type="number"
+        />점
+      </p>
+      <p><button>결과보기</button></p>
+      <p class="output">출력</p>
+    </section>
+    <hr />
+    <section class="ex2">
+      <p>2. 점수를 입력하면 등급이 출력돼요</p>
+      <pre>
       성년이면
        90이상:a
        80이상~90미만 :b
@@ -42,58 +69,119 @@
        70이상~80미만 :b
        60이상~70미만 :c
        60미만 :d
-    </pre>
-    <p><input class="age" type="number" placeholder="나이를 입력"></p>
-    <p><input class="point" type="number" placeholder="점수를 입력"></p>
-    <p><button>결과보기</button></p>
-    <p class="output">출력</p>
-  </section>
-  <hr>
-  <section class="ex3">
-    <p>3. 가위바위보</p>
-    <p>
-      <input value="가위" type="radio" name="user">가위
-      <input value="바위" type="radio" name="user">바위
-      <input value="보" type="radio" name="user">보
-    </p>
-    <button>결과보기</button>
-    <p class="output">결과</p>
-  </section>
-  <hr>
-  <p>4. 계산기</p><!-- 유효성검사, 나누기는 0으로 나누면 안됨-->
-  <section class="ex4">
-    <input class="num1-1" type="text" size="1" maxlength="1">
-    <input class="num1-2" type="text" size="1" maxlength="1">
+    </pre
+      >
+      <p>
+        <input
+          class="age"
+          type="number"
+          placeholder="나이를 입력"
+        />
+      </p>
+      <p>
+        <input
+          class="point"
+          type="number"
+          placeholder="점수를 입력"
+        />
+      </p>
+      <p><button>결과보기</button></p>
+      <p class="output">출력</p>
+    </section>
+    <hr />
+    <section class="ex3">
+      <p>3. 가위바위보</p>
+      <p>
+        <input
+          value="가위"
+          type="radio"
+          name="user"
+        />가위
+        <input
+          value="바위"
+          type="radio"
+          name="user"
+        />바위
+        <input
+          value="보"
+          type="radio"
+          name="user"
+        />보
+      </p>
+      <button>결과보기</button>
+      <p class="output">결과</p>
+    </section>
+    <hr />
+    <p>4. 계산기</p>
+    <!-- 유효성검사, 나누기는 0으로 나누면 안됨-->
+    <section class="ex4">
+      <input
+        class="num1-1"
+        type="text"
+        size="1"
+        maxlength="1"
+      />
+      <input
+        class="num1-2"
+        type="text"
+        size="1"
+        maxlength="1"
+      />
 
-    <select>
-      <option value="1">더하기</option>
-      <option value="2">빼기</option>
-      <option value="3">곱하기</option>
-      <option value="4">나누기</option>
-    </select>
+      <select>
+        <option value="1">더하기</option>
+        <option value="2">빼기</option>
+        <option value="3">곱하기</option>
+        <option value="4">나누기</option>
+      </select>
 
-    <input class="num2-1" type="text" size="1" maxlength="1">
-    <input class="num2-2" type="text" size="1" maxlength="1">
-    =
-    <button>결과보기</button>
-    <p class="output">결과</p>
-  </section>
-  <hr>
-  <section class="ex5">
-    <p>5. bmi 수치 계산기</p>
-    <p>
-      <input vlaue="1" name="성별" type="radio">남
-      <input vlaue="2" name="성별" type="radio">여
-    </p>
-    <p>
-      <input class="cm" type="number" placeholder="신장을 입력하세요">cm
-    </p>
-    <p>
-      <input class="kg" type="number" placeholder="체중을 입력하세요">kg
-    </p>
-    <button>결과보기</button>
-    <p class="output">bmi수치와 결과가 출력됩니다.</p>
-  </section>
-</body>
-
+      <input
+        class="num2-1"
+        type="text"
+        size="1"
+        maxlength="1"
+      />
+      <input
+        class="num2-2"
+        type="text"
+        size="1"
+        maxlength="1"
+      />
+      =
+      <button>결과보기</button>
+      <p class="output">결과</p>
+    </section>
+    <hr />
+    <section class="ex5">
+      <p>5. bmi 수치 계산기</p>
+      <p>
+        <input
+          value="male"
+          name="성별"
+          type="radio"
+        />남
+        <input
+          value="female"
+          name="성별"
+          type="radio"
+        />여
+      </p>
+      <p>
+        <input
+          class="cm"
+          type="number"
+          placeholder="신장을 입력하세요"
+        />cm
+      </p>
+      <p>
+        <input
+          class="kg"
+          type="number"
+          placeholder="체중을 입력하세요"
+        />kg
+      </p>
+      <button>결과보기</button>
+      <p class="output">bmi수치와 결과가 출력됩니다.</p>
+    </section>
+  </body>
 </html>

@@ -122,11 +122,11 @@ $(document).ready(function () {
     console.log(sum2);
     var result
     var cal = parseInt($(`.ex4 select`).val())
-    if (!sum1 || !sum2 ||(cal===4&&num3===0&&num4===0) ) {
+    if (!sum1 || !sum2 || (cal === 4 && sum2 === 0)) {
       alert('입력오류')
       return false;
     }
-    
+
     if (cal === 1) {
       result = sum1 + sum2
     } else if (cal === 2) {
@@ -146,18 +146,18 @@ $(document).ready(function () {
     var cm = parseInt($(`.ex5 .cm`).val())
     var kg = parseInt($(`.ex5 .kg`).val())
     var calc = kg / (cm * (0.01) * cm * (0.01))
-    var male = $(`.ex5 .input`).val()
-    var female = $(`.ex5 .input`).val()
+    var 성별 = $(`.ex5 input:checked`).val()
+    console.log(성별);
     var result
-    if(!cm||!kg) {
+    if (!cm || !kg) {
       alert('입력오류')
       return false;
     }
-    if ((male && calc < 15) || (female && calc < 20)) {
+    if ((성별 === male && calc < 15) || (성별 === female && calc < 20)) {
       result = '마름'
-    } else if ((male && calc < 20) || (female && calc < 25)) {
+    } else if ((성별 === male && calc < 20) || (성별 === female && calc < 25)) {
       result = '적정'
-    } else if ((male && calc < 25) || (female && calc < 30)) {
+    } else if ((성별 === male && calc < 25) || (성별 === female && calc < 30)) {
       result = '약간비만'
     } else {
       result = '비만'
