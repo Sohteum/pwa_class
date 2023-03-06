@@ -1,0 +1,267 @@
+body {
+  background-color: antiquewhite;
+}
+
+.container .box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+}
+
+.container .box1 {
+  position: absolute;
+  /* 디폴트 static */
+  top: calc(50% - 50px);
+  /* 왼쪽으로부터의 거리,탑이랑 바텀은 동시에 쓸수없지. */
+  right: 0;
+  /* calc()안에 계산식 넣어주면 계산을 해줌. 연산자 ㅇ앞뒤로는 무조건 띄어쓰기 */
+  background-color: teal;
+}
+
+/* 디스플레이속성이 사라져서 원래 width지우면 가로가 가득차는데 얘는 홀쭉이가됨.
+패딩 쪽으로 갈 수 도있고 다른애 위에 올라탈수있음 */
+/* 이걸 z축이라고 함 제트축으로 나온거. 긍까 포토샵에서 레이어가 가장 위에 올라온거. 
+서로 영향을 주지않고 독립적인 위치가 됨.*/
+
+.container .box1 div {
+  position: absolute;
+  left: calc(100%-30px);
+  width: 30px;
+  height: 30px;
+  background-color: palegreen;
+}
+
+.container .box2 {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: thistle;
+}
+
+/* 스크롤(브라우저내에서 문서의 위치를 바꾸는행위)을 내려도 안움직인다같은 답변을 하면안됨.
+웹브라우저 
+문서가 움직이면 다큐먼트기준이라고 하는데 앱솔루트는 문서기준이니까 문서에 달라붙어서 움직임
+픽스트는 브라우저기준임. 웹문서를 움직여도 좌표기준점이 브라우저에 붙으니까 안움직임
+움직이고싶으면 브라우저를 움직여야함
+픽스드는 화면 밖으로 나가도 스크롤바가 안생김. 왜냐면 브라우저기준이니까. 문서랑은 상관이없음. 그래서 화면밖으로 나가면 찾을 수가 없는것임*/
+
+.container .box2 div {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background-color: purple;
+}
+
+
+.container .box3 {
+  text-align: center;
+  border: 1px solid #000;
+}
+
+/* .box3 div{
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: gray;
+  padding:30px;
+  이렇게 하면 부모가 높이도 인식을 못하고 자기들끼리도 인식을 못해서 하나로 합쳐짐. 
+} */
+.container .box3 div {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: gray;
+  padding: 30px;
+}
+
+.container .box3 div b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
+
+/* 패딩 안에 들어가지 않고 밖에 나와있음 */
+
+.container .box4 {
+  position: relative;
+  width: 500px;
+  margin: 30px auto;
+  border: 1px solid #000;
+}
+
+.container .box4 div {
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+
+}
+
+.container .abs {
+  position: absolute;
+  background-color: red;
+}
+
+/* z-index가 생기니까  */
+.container .rel {
+
+  position: relative;
+  margin: 0 auto;
+  background-color: blue;
+}
+
+/* 얘는 그냥 div */
+/* 좌표 주기 전의 위치가 0
+그럼 거기가 left,top,right,bottom 0 인거지 */
+
+/* ------------------------------------------------------------- */
+/* 
+.container1,
+.container2,
+.container3 {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.container1 {
+  background-color: red;
+  position: relative;
+  margin: 30px auto;
+}
+
+.container2 {
+  background-color: skyblue;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.container3 {
+  background-color: blue;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.container1 .box,
+.container2 .box,
+.container3 .box {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+} */
+
+/* .container1 .box1,
+.container1 .box2 {
+  position: static;
+}
+
+ .container1 .box1 {
+  float: right;
+}
+
+.container1 .box2 {
+  clear: both;
+  float: left;
+  margin-top: 100px;
+}
+
+.container1::after {
+  content: '';
+  display: block;
+  clear: both;
+} 
+ */
+/* .container1 .box,
+.container2 .box,
+.container3 .box {
+
+}
+
+.container1 .box1 {
+  margin-left: 200px;
+}
+.container1 .box2 {
+  margin-top:100px;
+} */
+
+/* .container1 ,
+.container2 ,
+.container3 {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.container1 .box1 {
+margin-top: 200px;
+}
+ */
+
+
+
+
+/* ----------------------------------- */
+
+.con {
+  position: relative;
+}
+
+.container1,
+.container2,
+.container3 {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.container1 {
+  background-color: red;
+  position: absolute;
+}
+
+.container2 {
+  background-color: skyblue;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.container3 {
+  background-color: blue;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+
+.container1 .box,
+.container2 .box,
+.container3 .box {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.container1,
+.container2,
+.container3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container1 .box1,
+.container2 .box1,
+.container3 .box1{
+  margin-top: 200px;
+}

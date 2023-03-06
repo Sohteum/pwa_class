@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>position</h1>
+  <p>좌표를 이용해서 위치를 설정</p>
+  <ul>
+    <li>
+      <h2>absolute</h2>
+      <ul>
+        <li>기존 display속성을 잃음/ </li>
+        <li>좌표를 이용해서 독립적인 위치로 이동한다</li>
+        <li>좌표 : (left,right), (top,bottom)</li>
+        <li>좌표는 position 속성을 가지고있는 상위요소기준</li>
+        <li>z-index가 적용됨(레이어가 맨앞으로 나왔다는걸 이렇게 표현)</li>
+        <li>position이 적용된 자식의 크기를 부모요소는 인식하지 못함(만약 부모가 높이가 없다면 자식이 앱솔이 됐을때 높이가 사라짐)</li>
+        <li>문서(Document) 기준의 좌표</li>
+      </ul>
+    </li>
+
+    <li>
+      <h2>fixed</h2>
+      <ul>
+        <li>좌표의 기준점이 브라우저라는 점(스크롤의 위치영향을 받지 않음)을 제외하면 absolute와 동일</li>
+        <li>부모가 있어도 따라가지 않고 브라우저 기준으로 움직임</li>
+      </ul>
+    </li>
+    <li>
+      <h3>relative</h3>
+      <ul>
+        <li>현재 레이아웃을 유지하며 포지션을 가질 수 있다</li>
+        <li>자식의 기준이 되기 위함이 큼, 자식의 위치를 잡아주는 역할을 많이 함</li>
+        <li>초기위치(좌표지정 전 위치)를 좌표의 0점으로 설정(태어난 위치가 기준점이 됨). 부모가 기준이 되는 absolute와 다름</li>
+      </ul>
+    </li>
+    <li>
+      z-index는 항상 마지막에 만들어진 애가 가장 위로 올라옴
+    </li>
+  </ul>
+  <hr>
+
+
+
+  <div class="container">
+    <div class="box4">
+      <div class="abs">abs</div>
+      <div class="rel">rel</div>
+    </div>
+    <div class="box box1">
+      <div>1</div>
+    </div>
+
+    <div class="box box2">
+      <div></div>
+    </div>
+    <div class="box3">
+      <div>
+        1<br><br><br><br><br><br><br><br><br><br><br><br><b></b>
+      </div>
+      <div>2
+        <br><br><b></b>
+      </div>
+      <div>3
+        <br><br><br><br><br><br><b></b>
+      </div>
+      <div>4
+        <br><br><br><br><br><br><br><br><br><b></b>
+      </div>
+    </div>
+  </div container>
+
+  <div class="con">
+    <div class="container1">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+    </div>
+    <div class="container2">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+    </div>
+    <div class="container3">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+    </div>
+  </div>
+
+  <!-- 안에 있는 박스는 포지션쓰지말기 -->
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
