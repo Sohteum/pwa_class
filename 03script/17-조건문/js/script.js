@@ -145,9 +145,8 @@ $(document).ready(function () {
   $(`.ex5 button`).click(function () {
     var cm = parseInt($(`.ex5 .cm`).val())
     var kg = parseInt($(`.ex5 .kg`).val())
-    var calc = kg / parseInt((cm * (0.01) * cm * (0.01))).toFixed(0)
+    var calc = (kg / (cm * (0.01)) * (cm * (0.01))).toFixed(1)
     var 성별 = $(`.ex5 input:checked`).val()
-    console.log(성별);
     var result
     if (!cm || !kg) {
       alert('입력오류')
@@ -157,7 +156,7 @@ $(document).ready(function () {
       result = '마름'
     } else if ((calc<=15&&성별==='male'&&calc < 20) || (calc<=20&&성별==='female'&&calc < 25)) {
       result = '적정'
-    } else if ((calc<=20&&성별==='male'&&calc < 25) || (calc<=25&&성별==='female'&&calc < 30)) {
+    } else if ((calc<=20&&성별==='male'&&calc < 25) || (calc<=25&&성별==='female'&&calc < 25)) {
       result = '약간비만'
     } else {
       result = '비만'
