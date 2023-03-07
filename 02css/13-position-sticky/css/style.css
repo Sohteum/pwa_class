@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  padding-top: 50px;
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: antiquewhite;
+  width: 100%;
+  /* 포지션 픽스드하면 너비 사라지니까 준거야 */
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+/* 이 아래에 글을 쓰면 픽스드에 가리니까 여기 비워둬야함 
+그래서 바디에 패딩탑을 줌
+그러면 h1은 내려오는데 좌표주면 됨.*/
+
+
+section {
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+  border: 1px solid salmon;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+article {
+  margin: 10px 0;
+  border: 1px solid skyblue;
+}
+
+h2 {
+  z-index: 1;
+  position: sticky;
+  top: 50px;
+  background-color: seagreen;
+  color: white;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* 특정 시점에서 갑자기 fixed가 되고싶을때. 여기서는 브라우저 기준으로 top50까지 왔을때 그게 스티키
+포지션 렐러티브와 동일한 속성.
+좌표를 줄때 스티키가 될 위치를 좌표주면 됨.
+허나 얘는 무한정고정이아님. 부모의 끝을 만나면,즉 고정한계점이 부모임. 부모가 브라우저에서 없어져버리면 얘도 같이 사라짐.
+근데 z인덱스가 적용되니까 h2가 더 나중에 생겨서 위로 올라와버림
+그래서 h1한테 지인덱스 1을 줌  */
+
+
+h3 {
+  position: sticky;
+  top: 90px;
+  height: 40px;
+  background-color: aquamarine;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* 부모가 지인덱스가 있는순간 자식들은 그 안에서 레벨이 결정됨 */
+/* 3은 안줘도됨. 0이 기본값이니까. 그리고 h2는 그다음번 순서니까1 h1은 그다음번 순서니까 2 */
+
+/* --------------------------------------------------------------- */
+.section0 {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.section0 .sidebar {
+  position: sticky;
+  top: 60px;
+  width: 30%;
+  background-color: aqua;
+}
+/* 항상 부모안에 공간이 필요함 가득차있으면 멈출시간이 없음
+비어있어야 멈출 시간이 있는거 그래서 얼라인아이템즈를 주는거. */
+
+.section0 .content {
+  width: 65%;
+  background-color: blue;
+}

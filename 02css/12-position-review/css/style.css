@@ -1,0 +1,83 @@
+body {
+  background-color: rgb(255, 254, 245);
+}
+
+.ex1 {
+  width: 500px;
+  margin: auto;
+  font-size: 50px;
+  font-weight: 600;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.ex1>div {
+  position: relative;
+
+  display: inline-block;
+}
+
+/* div는 이제 글자니까 텍스트얼라인센터가 돼서 너비가 사라짐.
+둘다 너비가 사라지고 가운데정렬했으니까 동일한 위치로 오는거지. */
+.ex1 div .red {
+  position: absolute;
+  color: red;
+  left: 0%;
+  height: 50%;
+  overflow: hidden;
+}
+
+/* 하이트를 지정. 원래 인라인에벨이라 적용안되는데 포지션이 들어가서 적용이됨. 그리고 높이의 50%는 부모의 높이가 있어야만 줄수있는데 앱솔이거나 픽스트일때만 가능하게됨 너비는 상관없는데 높이는 원래 반드시 부모가 지정되어있어야함
+부모높이의 반절을 높이로 지정한거지. */
+/* 렐러티브는 상관없고 픽스트랑 앱솔만 좌표를 지정 */
+
+
+.ex2 {
+  border: 1px solid #000;
+  width: 900px;
+  margin: 30px auto;
+  display: flex;
+
+}
+
+.ex2 div {
+  flex: 1;
+  margin:20px;
+  height: 100px;
+  background-color: bisque;
+  position:relative;
+}
+/* 엘리먼트가 필요한데 만들기 싫을때 가상엘리먼트를 이용한다 */
+
+.ex2 div::before {
+  content:'';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top:-15px;
+  left:calc(50% - 15px);
+  border-radius: 50%;
+  background-color: bisque;
+}
+/* 반드시 컨텐트를 넣어줘야하고 내용을 넣어도됨, 가상엘리먼트는 무조건 인라인레벨
+이걸 그냥 넣으면 원래 엘리먼트에 영향을 주니까 앱솔을 주는거지 
+포지션을 줬으면 디스플레이를 블럭이나 인라인블럭이나 이런거 줄필요없어 display속성이 사라지잖아 사용하면 쪽팔림
+flex는 그 안의 요소를 정리하는거니까 써도됨*/
+
+
+header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top:0;
+  background-color: peru;
+}
+.section1 {
+  background-color: pink;
+}
+.section2 {
+  background-color: paleturquoise;
+}
+.section3 {
+  background-color: palegreen;
+}
