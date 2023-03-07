@@ -145,7 +145,7 @@ $(document).ready(function () {
   $(`.ex5 button`).click(function () {
     var cm = parseInt($(`.ex5 .cm`).val())
     var kg = parseInt($(`.ex5 .kg`).val())
-    var calc = kg / (cm * (0.01) * cm * (0.01))
+    var calc = kg / parseInt((cm * (0.01) * cm * (0.01))).toFixed(0)
     var 성별 = $(`.ex5 input:checked`).val()
     console.log(성별);
     var result
@@ -153,16 +153,16 @@ $(document).ready(function () {
       alert('입력오류')
       return false;
     }
-    if ((성별 === male && calc < 15) || (성별 === female && calc < 20)) {
+    if ((성별==='male'&&calc < 15) || (성별==='female'&&calc < 20)) {
       result = '마름'
-    } else if ((성별 === male && calc < 20) || (성별 === female && calc < 25)) {
+    } else if ((calc<=15&&성별==='male'&&calc < 20) || (calc<=20&&성별==='female'&&calc < 25)) {
       result = '적정'
-    } else if ((성별 === male && calc < 25) || (성별 === female && calc < 30)) {
+    } else if ((calc<=20&&성별==='male'&&calc < 25) || (calc<=25&&성별==='female'&&calc < 30)) {
       result = '약간비만'
     } else {
       result = '비만'
     }
-    $(`.ex5 .output`).text(result)
+    $(`.ex5 .output`).text(`${성별} bmi수치(${calc})와 ${result} 입니다`)
   })
 
 
