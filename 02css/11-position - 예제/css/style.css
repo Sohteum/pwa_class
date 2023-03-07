@@ -56,6 +56,11 @@
   margin-top: 200px;
 }  */
 
+
+/* ----------------------------------------------------- */
+
+
+/* 
 .box {
   position:absolute;
   width: 300px;
@@ -88,4 +93,30 @@ background-color: yellow;
 .box div:first-child {
   margin-top: 200px;
 }
+ */
+
+
+ .box {
+  position:absolute;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .box1{
+  background-color: red;
+  top:calc(50% - 150px);
+  left:calc(50% - 150px);
+ }
+ .box2{
+  background-color: skyblue;
+  top:50%;
+  left:50%;
+ }
+ .box3{
+  background-color: blue;
+  top:calc(50% + 150px);
+  left:calc(50% + 150px);
+ }
 
