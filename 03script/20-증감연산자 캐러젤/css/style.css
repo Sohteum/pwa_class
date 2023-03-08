@@ -1,4 +1,4 @@
-body  {
+body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -22,7 +22,7 @@ body  {
   top: 125px;
   border-radius: 50%;
   border: none;
-  font-size: 20px;
+  font-size: 30px;
   color: white;
   background-color: transparent;
 }
@@ -40,19 +40,21 @@ body  {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-;
+  ;
 
 }
 
 /* 포지션은 마진오토안돼 플롯도 안돼 플렉스는 마진가능 */
 
 .ex6 .indicator button.active {
-font-weight: 1000;
+  font-weight: 1000;
+  font-size: 20px;
 }
 
 .ex6 .indicator button {
   border-radius: 50%;
   border: transparent;
-  font-size: 5px;
-  color: transparent;
+  font-size: 10px;
+  color: opacity(0.5);
+  background-color: transparent;
 }

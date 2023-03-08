@@ -187,7 +187,7 @@ $(function () {
   $(`.ex8 button`).click(function () {
     var a = (a + n)
     n += 1
-    result = n + a
+    result = a
 
     $(`.ex8 .output`).append(result)
 
