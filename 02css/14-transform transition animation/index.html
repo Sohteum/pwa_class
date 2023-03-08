@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>변형과 모션</h1>
+    <section>
+      <h2>transform</h2>
+      <ul>
+        <li>레이아웃에는 변화가 없는 상태에서 렌더링에만(시각적으로만) 변화를 줌</li>
+        <li>transform : scale(2)(2배) rotate(45deg) translate(x좌표, y좌표)</li>
+        <li>transform, opacity 프로퍼티(속성)가 적용되면 z-index가 적용됨</li>
+        <li>transform의 %기준은 해당요소!의 크기기준</li>
+      </ul>
+      <div class="ex1">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </div>
+      <div class="ex2">
+        <div></div>
+        <span>가나다라 <br> 마바사아자차카</span>
+      </div>
+    </section>
+    <section>
+      <h2>transition</h2>
+      <ul>
+        <li>css 프로퍼티가 변하는 시간 설정</li>
+        <li>transition:property||all 시간s</li>
+        <li>transition은 숫자로 변환이 가능한 속성에만 적용/<!-- 숫자라고 다되진않음 미분이 가능한 단위. 1.00000으로 할수있는거 --></li>
+        <li>transition-delay : 프로퍼티간의 trnasition 시작 시간 지연</li>
+        <li>transition-delay효과를 구현하려면 all 사용불가. 따로 기재</li>
+      </ul>
+      <div class="ex3">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </div>
+
+      <div class="ex4">
+        <button>버튼</button>
+        <div></div>
+      </div>
+      <div class="ex5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="ex6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+    동그라미가 되야 굴러갈수있음
+  </main>
+</body>
+
+</html>
