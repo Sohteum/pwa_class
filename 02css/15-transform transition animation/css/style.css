@@ -11,7 +11,7 @@
   left: 0;
   width: 50px;
   height: 50px;
-  background-image: linear-gradient(90deg, pink, coral, red);
+  background-image: linear-gradient(40deg, pink, coral, red);
   transition: border-radius 0.1s, left 1s, transform 1s;
   transition-delay: 1s, 0s, 0s;
 }
@@ -216,6 +216,7 @@
 
 .ex6:hover {
   animation: wobble 1s 2;
-}/* 초랑 몇번 반복할건지 */
-/* 트랜스폼이 거의 들어있기때문에 이걸 사용하려면 원래 코드에서는 트랜스폼을 안써야됨 */
+}
 
+/* 초랑 몇번 반복할건지 */
+/* 트랜스폼이 거의 들어있기때문에 이걸 사용하려면 원래 코드에서는 트랜스폼을 안써야됨 */

@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css"
+    />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/script.js"></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://code.jquery.com/jquery-latest.js"></script>
-  <script src="./js/script.js"></script>
-  <title>Document</title>
-</head>
+  <body>
+    <main>
+      <h1>animation, @keyframes</h1>
+      <p>반복적이거나 여러단계의 모션을 구현(비교:트랜지션은 한번동작만 가능) @keyframes를 이용해 모션을 설계, animation을 이용해 호출</p>
+      <ul>
+        <li>animation-name: move;</li>
+        <!-- 이름 -->
+        <li>animation-duration:3s;</li>
+        <!-- 시간 -->
+        <li>animation-iteration-count: infinite;</li>
+        <!-- 반복한는지 -->
+        <li>animation-timing-function: linear;</li>
+        <!-- 감가속도, 탄성 등을 설정 이즈인 가속/이즈아웃 감속/리니어 등속 -->
+        <li>animation-direction: alternate;</li>
+        <!-- 애니메이션 방향을 토글시키는것 -->
+        <li>animation이 중지되었을때 바로 초기화됨(트랜지션은 부드럽게 원래대로 돌아오는것과비교)</li>
+        <!-- 마우스를 올렸을때 다시 돌아오는 1단계애니메이션. 즉 토글일때는 트렌지션, 지도에 마우스를 올려놓으면 계속 통통해 혹은 깜빡거려 그런건 애니메이션 -->
+      </ul>
+      <hr />
+      <div class="ex3">
+        <div></div>
+      </div>
+    </main>
+    <hr />
 
-<body>
-  <main>
-    <h1>animation, @keyframes</h1>
-    <p>반복적이거나 여러단계의 모션을 구현(비교:트랜지션은 한번동작만 가능)
-      @keyframes를 이용해 모션을 설계, animation을 이용해 호출
-    </p>
-    <ul>
-      <li> animation-name: move;</li><!-- 이름 -->
-      <li>animation-duration:3s;</li><!-- 시간 -->
-      <li>animation-iteration-count: infinite;</li><!-- 반복한는지 -->
-      <li>animation-timing-function: linear;</li><!-- 감가속도, 탄성 등을 설정 이즈인 가속/이즈아웃 감속/리니어 등속 -->
-      <li>animation-direction: alternate;</li><!-- 애니메이션 방향을 토글시키는것 -->
-      <li>animation이 중지되었을때 바로 초기화됨(트랜지션은 부드럽게 원래대로 돌아오는것과비교)</li>
-      <!-- 마우스를 올렸을때 다시 돌아오는 1단계애니메이션. 즉 토글일때는 트렌지션, 지도에 마우스를 올려놓으면 계속 통통해 혹은 깜빡거려 그런건 애니메이션 -->
-    </ul>
-    <hr>
-    <div class="ex3">
+    <button class="ex4">버튼</button>
+    <hr />
+    <div class="ex5"></div>
+    <hr />
+    <div class="ex6"></div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <hr />
+    <div class="ex1">
       <div></div>
     </div>
-  </main>
-  <hr>
-
-  <button class="ex4">
-    버튼
-  </button>
-  <hr>
-  <div class="ex5">
-
-  </div>
-  <hr>
-  <div class="ex6">
-
-  </div>
-
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <hr>
-  <div class="ex1">
-    <div></div>
-  </div>
-  <button class="ex2">
-    <span class="bar1"></span>
-    <span class="bar2"></span>
-    <span class="bar3"></span>
-  </button>
-
-</body>
-
+    <button class="ex2">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </button>
+  </body>
 </html>
