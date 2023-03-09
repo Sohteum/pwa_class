@@ -1,0 +1,221 @@
+@import "./animation.css";
+
+.ex1 {
+  border: 1px solid #000;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.ex1 div {
+  position: relative;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-image: linear-gradient(90deg, pink, coral, red);
+  transition: border-radius 0.1s, left 1s, transform 1s;
+  transition-delay: 1s, 0s, 0s;
+}
+
+/* radial-gradient(방사형,각도 못넣음)
+그라디언트는 백그라운드 이미지로 적용을 하게 되어있음
+백그라운드 컬러로 하면 적용이 안됨 */
+
+/* 트랜스폼을 쓸까?좌표는 반응형이 안됨 그렇다면 퍼센트는?
+자기크기기준이니까 끝까지 갈수가없음
+결국 좌표를 쓰는데 부모의 크기만큼 오도록 하면 됨 */
+
+/* 여기서 앱솔 주면 부모 높이 사라져 그래서 렐러티브 줘야돼 */
+
+/* 오퍼시티 보더레디우스, 트랜스폼 는 기본값이 있어서 디브에 따로 안넣어줘도되는데 레프트값은 0 을 넣어줘야 부드럽게 가능 */
+
+.ex1:hover div {
+  left: calc(100% - 50px);
+  border-radius: 50%;
+  transform: rotate(900deg);
+  transition-delay: 0s, 0.5s, 0.5s;
+}
+
+/* 트랜지션 딜레이의 위치를 잘 기억하자! 호버했을때는 바로 동그라미가 되어서 움직여야하고
+호버를 떼면 이동까지 기다렸다가 다시 동그라미가 되어야함  */
+
+
+.ex2 {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  margin: 30px auto;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.ex2 span {
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 5px;
+  width: 40px;
+  height: 4px;
+  background-color: teal;
+  transition: margin-top 0.5s, transform 0.5s, opacity 0.5s;
+  transition-delay: 0.5s, 0s, 0.0s;
+}
+
+/* 1가 된다음에 3이 되기 */
+
+.ex2 .bar1 {
+  margin-top: -10px;
+}
+
+.ex2 .bar2 {}
+
+.ex2 .bar3 {
+  margin-top: 10px;
+}
+
+.ex2.active span {
+  margin-top: 0;
+  transition-delay: 0s, 0.5s, 0.5s;
+}
+
+/* 1자가 된 후 에 x 가 되는거 */
+
+.ex2.active .bar1 {
+  transform: rotate(45deg);
+}
+
+.ex2.active .bar2 {
+  opacity: 0;
+}
+
+.ex2.active .bar3 {
+  transform: rotate(-45deg);
+}
+
+.ex3 {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  border: 1px solid #000;
+}
+
+.ex3 div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: thistle;
+  /*   animation-name: move;
+  animation-duration:3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear ;
+  animation-direction: alternate;  */
+}
+
+/* 감속도 운동을 함 이즈앤아웃 브레이크밟는것처럼
+이거를 등속도로 구현을 하고싶을때가 있음
+ */
+
+.ex3:hover div {
+  animation: move 2s linear infinite;
+}
+
+/* 이름이랑 초만 정해놓고 나머지는 순서상관없음 */
+
+@keyframes move {
+  0% {
+    left: 0;
+    top: 0;
+  }
+
+  25% {
+    left: 450px;
+    top: 0;
+  }
+
+  50% {
+    left: 450px;
+    top: 450px;
+  }
+
+  75% {
+    left: 0;
+    top: 450px;
+  }
+
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+/* 여기서는 5단계고 시작은 0퍼 끝은 100퍼 
+키프레임은 함수랑 비슷해 만들어놓고 호출을 해야함*/
+
+/* ------------------------------------ */
+.ex4 {
+  position: relative;
+}
+
+.ex4:hover::before {
+  animation: jump 0.2s alternate ease-in-out infinite;
+}
+
+.ex4::before {
+  content: '';
+  position: absolute;
+  background-color: orangered;
+  width: 10px;
+  height: 10px;
+  right: -5px;
+  top: -5px;
+  border-radius: 50%;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY();
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 2단계를 만들면 얼터네잇을 하면 됨. 3단계를 하면 걍 하면됨 */
+
+
+.ex5 {
+  margin: 30px auto;
+  height: 100px;
+  border: 1px solid #000;
+  background-image: url(../image/KakaoTalk_20230309_123715987.png);
+  background-repeat: repeat-x;
+  background-size: auto 50%;
+  animation: bg 10000s linear infinite;
+}
+
+/* 초를 조금 줬을때는 이미지가 움직이면서 툭 끊기는게 보여서 많이줌 */
+
+@keyframes bg {
+  0% {
+    background-position: 0 center;
+  }
+
+  100% {
+    background-position: -1000000px center;
+  }
+}
+
+.ex6 {
+  margin: 30px auto;
+  height: 100px;
+  width: 100px;
+  background-color: blueviolet;
+}
+
+.ex6:hover {
+  animation: wobble 1s 2;
+}/* 초랑 몇번 반복할건지 */
+/* 트랜스폼이 거의 들어있기때문에 이걸 사용하려면 원래 코드에서는 트랜스폼을 안써야됨 */
+

@@ -129,28 +129,29 @@
 /* 마우스호버되면 하나씩 나타나고 마우스 떼면 동시에 사라짐 힌트 : 오퍼시티가 1이 되긴 해야함 마우스를 이엑스5 디브 호버에 올렷을때 그안에있는 div가변하는거지 */
 
 .ex6 {
-  text-align: center;
-  margin: 50px 0;
-  border: 1px solid #000;
+ border: 1px solid #000;
+ text-align: center;
+ margin: 30px auto;
 }
 
 .ex6:hover div {
-  opacity: 1;
+ opacity: 1;
 }
 
 .ex6:hover div:nth-child(2) {
-  transition-delay: 0.5s;
+ transition-delay: 0.3s;
 }
 
 .ex6:hover div:nth-child(3) {
-  transition-delay: 0.8s;
+  transition-delay: 0.6s;
+  
 }
 
 .ex6 div {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  opacity: 0;
-  transition: all 1s;
+ width: 100px;
+ height: 100px;
+ background-color: yellowgreen;
+ opacity: 0;
+ transition: all 1s;
 }
