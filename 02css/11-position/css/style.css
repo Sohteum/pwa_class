@@ -16,6 +16,7 @@ body {
   right: 0;
   /* calc()안에 계산식 넣어주면 계산을 해줌. 연산자 ㅇ앞뒤로는 무조건 띄어쓰기 */
   background-color: teal;
+/*   margin-right:200px; 여기서는 좌표가 right:0이니까 마진left는 안되는거지. 오토값도 당연히 불가. */
 }
 
 /* 디스플레이속성이 사라져서 원래 width지우면 가로가 가득차는데 얘는 홀쭉이가됨.

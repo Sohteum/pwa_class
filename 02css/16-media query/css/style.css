@@ -1,0 +1,105 @@
+/* @media screen and (min-width:1000px) {
+  body {
+    background-color: tan;
+  }
+}
+
+@media screen and (max-width:500px) {
+  body {
+    background-color: teal;
+  }
+
+}
+
+@media screen and (min-width:500px) and (max-width:1000px) {
+  body {
+    background-color: olive;
+  }
+} */
+
+body {
+  margin: 0;
+}
+
+.a {
+  width: 95%;
+  max-width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: peachpuff;
+}
+
+/* 95%를 유지하되 800을 넘으면 안된다는 뜻 
+여기서는 800을 줘버리면 안됨.
+그렇다고 95%를 주면 800을 넘어가버리겠지.
+조건을 나누면 가능은 한데 여기서 미디어쿼리를 안써도되면 쓰지말것
+공통적인건 한번에. */
+
+.container {
+  width: 95%;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+.sideBar {
+  /*   background-color: aqua; */
+}
+
+.sideBar .b,
+.sideBar .c {
+  height: 200px;
+  background-color: rgb(165, 166, 255);
+}
+
+.d {
+  height: 410px;
+  background-color: brown;
+}
+
+.e {
+  width: 95%;
+  max-width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: rgb(165, 255, 195);
+}
+
+@media screen and (min-width:1000px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sideBar {
+    width: calc(25% - 10px);
+  }
+
+  .sideBar .b {
+    margin-bottom: 10px;
+  }
+
+  .d {
+    width: 75%;
+    background-color: brown;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .sideBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .sideBar .b,
+  .sideBar .c {
+    width: calc(50% - 5px);
+  }
+
+}
+
+@media screen and (max-width:500px) {
+  .sideBar {
+    display: none;
+  }
+}

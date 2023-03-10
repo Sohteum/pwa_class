@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+}
+
+.a {
+  width: 95%;
+  max-width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: thistle;
+}
+
+.container {
+  width: 95%;
+  max-width: 800px;
+  margin: 10px auto;
+  background-color: blueviolet;
+}
+
+.sideBar .b,
+.sideBar .c {
+  background-color: tomato;
+}
+
+.d {
+  height: 410px;
+  background-color: peru;
+}
+
+.e {
+  width: 95%;
+  max-width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: thistle;
+}
+
+.sideBar {}
+
+@media screen and (min-width:1000px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sideBar .b,
+  .sideBar .c {
+    height: 200px;
+  }
+
+  .sideBar {
+    width: calc(25% - 10px);
+  }/* 너비를 줄때 %는 부모기준의 %니까 여기서는 b, c 한테 너비를 주면 sideBar의 50%라서 유의 */
+
+  .b {
+    margin-bottom: 10px;
+  }
+
+  .d {
+    width: 75%;
+  }
+
+}
+
+@media screen and (max-width:1000px) {
+  .sideBar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sideBar .b,
+  .sideBar .c {
+    width: calc(50% - 5px);
+    height: 200px;
+  }
+
+  .d {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .sideBar {
+    display: none;
+  }
+}
