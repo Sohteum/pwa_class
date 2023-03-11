@@ -1,72 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css"
+    />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/script.js"></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://code.jquery.com/jquery-latest.js"></script>
-  <script src="./js/script.js"></script>
-  <title>Document</title>
-</head>
+  <body>
+    <div class="ex1">
+      <p>1. 버튼을 클릭할 때마다 50px씩 움직여요</p>
+      <p>
+        <button>이동</button>
+      </p>
+      <div class="container">
+        <div class="box"></div>
+      </div>
+    </div>
+    <hr />
+    <div class="ex2">
+      <img
+        class="img1"
+        src="./image/img1.jpg"
+        alt=""
+      />
+      <img
+        class="img2"
+        src="./image/img2.jpg"
+        alt=""
+      />
+      <img
+        class="img3"
+        src="./image/img3.jpg"
+        alt=""
+      />
+      <img
+        class="img4"
+        src="./image/img4.jpg"
+        alt=""
+      />
+      <img
+        class="img5"
+        src="./image/img5.jpg"
+        alt=""
+      />
+      <div class="btns">
+        <button class="play">⭕</button>
+        <button class="pause">❌</button>
+      </div>
+    </div>
+    <hr />
+    <div class="ex3">
+      <p>3. 이동과 중지</p>
+      <p class="btns">
+        <button class="move">이동</button>
+        <button class="stop">중지</button>
+      </p>
+      <div class="container">
+        <div class="box"></div>
+      </div>
+    </div>
+    <hr />
+    <div class="ex4">
+      <p>4. 시간을 입력하고 타이머를 시작하세요</p>
+      <input type="text" />초
+      <button>시작</button>
+      <p class="output">타이머</p>
+    </div>
+    <hr />
+    <div class="ex5">
+      <p>5. 박스 불켜기</p>
+      <p class="btns">
+        <button class="start">시작</button>
+        <button class="stop">중지</button>
+      </p>
 
-<body>
-  <div class="ex1">
-    <p>1. 버튼을 클릭할 때마다 50px씩 움직여요</p>
-    <p>
-      <button>이동</button>
-    </p>
-    <div class="container">
-      <div class="box"></div>
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+      <div class="box4">4</div>
+      <div class="box5">5</div>
     </div>
-  </div>
-  <hr>
-  <div class="ex2">
-    <img class="img1" src="./image/img1.jpg" alt="">
-    <img class="img2" src="./image/img2.jpg" alt="">
-    <img class="img3" src="./image/img3.jpg" alt="">
-    <img class="img4" src="./image/img4.jpg" alt="">
-    <img class="img5" src="./image/img5.jpg" alt="">
-    <div class="btns">
-      <button class="play">⭕</button>
-      <button class="pause">❌</button>
-    </div>
-  </div>
-  <hr>
-  <div class="ex3">
-    <p>3. 이동과 중지</p>
-    <p class="btns">
-      <button class="move">이동</button>
-      <button class="stop">중지</button>
-    </p>
-    <div class="container">
-      <div class="box"></div>
-    </div>
-  </div>
-  <hr>
-  <div class="ex4">
-    <p>4. 시간을 입력하고 타이머를 시작하세요</p>
-    <input type="text">초
-    <button>시작</button>
-    <p class="output">타이머</p>
-  </div>
-  <hr>
-  <div class="ex5">
-    <p>5. 박스 불켜기</p>
-    <p class="btns ">
-      <button class="start">시작</button>
-      <button class="stop">중지</button>
-    </p>
-
-    <div class="box1">1</div>
-    <div class="box2">2</div>
-    <div class="box3">3</div>
-    <div class="box4">4</div>
-    <div class="box5">5</div>
-  </div>
-  <!-- 시작버튼 누르면 1번부터 차례대로 빨갛게 변한다 하나씩. 중지를 누르면 전부 원래 색으로 돌아온다
+    <!-- 시작버튼 누르면 1번부터 차례대로 빨갛게 변한다 하나씩. 중지를 누르면 전부 원래 색으로 돌아온다
   버튼 토글. 시작버튼 누르면 중지버튼 나옴 -->
-</body>
-
+  </body>
 </html>

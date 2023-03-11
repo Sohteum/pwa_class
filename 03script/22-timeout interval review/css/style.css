@@ -63,7 +63,7 @@
   background-color: red;
 }
 
-.ex5 .btns .stop{
+.ex5 .btns .stop {
   display: none;
 }
 
@@ -71,6 +71,6 @@
   display: none;
 }
 
-.ex5 .btns.active  .stop {
+.ex5 .btns.active .stop {
   display: inline-block;
 }

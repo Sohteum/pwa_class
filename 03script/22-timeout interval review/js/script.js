@@ -94,57 +94,58 @@ $(function () {
       $(`.ex4 .output`).text(num)
     }, 1000)
   })
-
 })
 
-
-$(function () {
-
-  var IntervalID
-  $(`.ex5 .start`).click(function () {
-    $(`.ex5 .btns`).addClass(`active`)
+$(`.ex4 button`).
 
 
 
-    var num = 1
-    $(`.ex5 .box${num}`).addClass(`active`)
+
+  /*   $(function () {
+  
+      var IntervalID
+      $(`.ex5 .start`).click(function () {
+        $(`.ex5 .btns`).addClass(`active`)
+  
+        var num = 1
+        $(`.ex5 .box${num}`).addClass(`active`)
+  
+        IntervalID = setInterval(function () {
+          ++num
+          if (num > 5) num = 1
+          $(`.ex5 div`).removeClass(`active`)
+          $(`.ex5 .box${num}`).addClass(`active`)
+        }, 800)
+      })
+  
+      $(`.ex5 .stop`).click(function () {
+        clearInterval(IntervalID)
+        $(`.ex5 div`).removeClass(`active`)
+        $(`.ex5 .btns`).removeClass(`active`)
+      })
+    }) */
 
 
-    IntervalID = setInterval(function () {
-      ++num
-      if (num > 5) num = 1
-      $(`.ex5 div`).removeClass(`active`)
-      $(`.ex5 .box${num}`).addClass(`active`)
-    }, 800)
-  })
+  $(function () {
+    var n = 0
+    var intervalID
 
-  $(`.ex5 .stop`).click(function () {
-    clearInterval(IntervalID)
-    $(`.ex5 div`).removeClass(`active`)
-    $(`.ex5 .btns`).removeClass(`active`)
-  })
-
-})
-
-/* $(function () {
-  var n
-  var intervalID
-  $(`.ex5 .start`).click(function () {
-    n = 0
-    $(`.ex5 p`).addClass('active')
-    clearInterval(intervalID)//시작마니해서 에러나서쓰는거잖아. 시작버튼이 없으니 필요없음
-    intervalID = setInterval(function () {
-      ++n
-      if (n > 5) n = 1
+    $(`.ex5 .start`).click(function () {
+      $(`.ex5 p`).addClass('active')
+      intervalID = setInterval(function () {
+        ++n
+        if (n > 5) { n = 1 }
+        $(`.ex5 div`).removeClass('active')
+        $(`.ex5 .box${n}`).addClass('active')
+      }, 1000)
+    })
+    $(`.ex5 .stop`).click(function () {
+      clearInterval(intervalID)
       $(`.ex5 div`).removeClass('active')
-      $(`.ex5 .box${n}`).addClass('active')
-    }, 1000)
-  })
-  $(`.ex5 .stop`).click(function () {
-    $(`.ex5 p`).removeClass('active')
-    clearInterval(intervalID)
-    $(`.ex5 div`).removeClass('active')
-  })
-})//ready ex5 */
 
+      $(`.ex5 .btns`).removeClass('active')
+    })
+  })
+//왜안될까??????????????????????????????????????????????????
+//스탑버튼 눌렀는데 div에 액티브가 리무브가 안됨.css도안먹음 
 
