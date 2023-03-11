@@ -10,7 +10,7 @@ $(function () {
       클릭가능 = true
     }, 300)
     위치 += 이동거리 //쁠쁠도 하고 마이너스도 해야되니까 변수로 만들기
-    if (위치 >= 250) { 이동거리 = -50; }
+    if (위치 > 250) { 위치 = 200; 이동거리 = -50; }
     if (위치 < 0) { 위치 = 50; 이동거리 = +50; }
     $(`.ex1 .box`).css({ 'transform': `translateX(${위치}px)` })
     /* 위치가 왜 300임? 너비가 300이니까?*/
@@ -106,9 +106,9 @@ $(function () {
 
 
 
-    var num = 1 
+    var num = 1
     $(`.ex5 .box${num}`).addClass(`active`)
-   
+
 
     IntervalID = setInterval(function () {
       ++num

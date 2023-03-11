@@ -12,7 +12,7 @@
   height: 50px;
   background-color: tan;
   /* css에서 쓸때는 매번 변해야함내가 계속 바꿔서 입력해줘야된다는 소리야.계산에의해서 속성값이 계속 변할때는 css을 사용해야함(자스에서) */
-  transition: left 1s;
+  transition: left 0.3s;
 }
 
 
@@ -24,24 +24,28 @@
   border: 3px solid black;
 }
 
+.ex9 img:not(.img1) {
+  display: none;
+}
+
 .ex9 .container .start,
-.ex9 .container .stop{
-  position:absolute;
+.ex9 .container .stop {
+  position: absolute;
   z-index: 99;
-  top: 250px;
-  left:160px;
+  top: 240px;
   border-radius: 20px;
   border: none;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
+  padding: 10px 20px 10px 20px;
 }
 
-.ex9 .container  .start{
-  left:90px;
+.ex9 .container .start {
+  left: 30px;
 }
 
-.ex9 div .stop{
-
+.ex9 .container .stop {
+  right: 30px;
 }
 
 .ex9 .img1,
@@ -51,4 +55,3 @@
 .ex9 .img5 {
   position: absolute;
 }
-

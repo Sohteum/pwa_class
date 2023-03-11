@@ -35,11 +35,10 @@ $(function () {
   $(`.ex3 button`).click(function () {
     clearTimeout(timeoutID)
     timeoutID = setTimeout(function () {
-      ++n
-      $(`.ex3 .output`).text(n)
+
+      $(`.ex3 .output`).text(++n)
     }, 1000)
   })
-
   /* 마지막 클릭 이후에 증가한다는것
   지연 후 실행되는것을 비동기라고 함
   다큐먼트레디도 그렇고 클릭도 그런셈이지.
@@ -48,6 +47,7 @@ $(function () {
   //스택이 쌓임. 나는 마지막 클릭 이후에 1을 올리려고 했는데 클릭을 여러번 하면 내가 클릭한 만큼 숫자가 올라가버림 그래서 아까클릭한거 취소 클릭 아까클릭한거 취소 클릭 이렇게. 그래서 클리어 타임아웃을 쓰고 셋타임아웃에 행동이름을 설정함. 클리어타임아웃에 행동이름을 넣음.그럼 취소하겠다는거지 /근데 또 언디파인 에러가 뜸 그래서 빈 예약번호를 한번 넣어줌timeoutID
   //처음시작할때 취소가 같이 실행되니까 실행도 안하고 취소해?이렇게 됨. 그래서 아직 취소 안햇지만 위에 변수이름으로 넣어주면 ..빈예약넘버...
 })
+
 
 $(function () {
   var n = 0
@@ -72,6 +72,28 @@ $(function () {
   //인터벌, 타임아웃 이벤트에서는 취소가 중요. 그러니 취소를 먼저만들자! 그냥 만들면 에러나니까 빈예약표를 먼저 만들자!예약번호는 같이 하는 애들끼리는 같이 줘야함. 그래야 둘다 한방에 멈출수있지요
 })
 
+/* ex4.연습
+$(function () {
+  var n = 0
+  var intervalID
+  $(`.ex4 .btn1`).click(function () {
+    clearInterval(intervalID)
+    intervalID = setInterval(function () {
+      $(`.ex4 .output`).text(++n)
+    }, 1000)
+  })
+  $(`.ex4 .btn2`).click(function () {
+    clearInterval(intervalID)
+    intervalID = setInterval(function () {
+      $(`.ex4 .output`).text(--n)
+    }, 1000)
+  })
+  $(`.ex4 .btn3`).click(function () {
+    clearInterval(intervalID)
+  })
+}) */
+
+
 $(function () {
   var n = 0
   var intervalID = setInterval(function () {
@@ -94,6 +116,31 @@ $(function () {
   })
 })
 
+
+/* ex5 연습
+$(document).ready(function () {
+  var n = 0
+  var IntervalID = setInterval(function () {
+    $(`.ex5 .output`).text(++n)
+  }, 1000)
+
+  $(`.ex5 .btn1`).click(function () {
+    clearInterval(IntervalID)
+    IntervalID = setInterval(function () {
+      $(`.ex5 .output`).text(++n)
+    }, 1000)
+  })
+  $(`.ex5 .btn2`).click(function () {
+    clearInterval(IntervalID)
+    IntervalID = setInterval(function () {
+      $(`.ex5 .output`).text(--n)
+    }, 1000)
+  })
+  $(`.ex5 .btn3`).click(function () {
+    clearInterval(IntervalID)
+  }) 
+})*/
+
 $(function () {
   var n = 0
   var 클릭가능 = true
@@ -109,12 +156,26 @@ $(function () {
     //3번에서 클리어를 했는데 여기서는 안하는 이유, 1초후에 1증가. 이거는 1초를 안기다리고 여러번클릭하면 문제가 생기는거.따다다 하고 여러번클릭하면 한번에 올라가잖아. 나는 여러번 연클릭해도 마지막 클릭 이후 한번만 올리고싶은거지.
     //여기서는 1초마다 클릭이 가능하니까 여러번 해봐야 1초 기다려야 클릭하면 숫자가늘어나지. 그러니까 
   })
-
-
 })
 
+/* ex6.연습
+$(document).ready(function () {
 
-$(function () {
+  var n = 0
+  var cl = true
+  $(`.ex6 button`).click(function () {
+    if (!cl) return false;
+    cl = false;
+    setTimeout(function () {
+      cl = true;
+    }, 1000)
+    $(`.ex6 .output`).text(++n)
+  })
+
+}) */
+
+
+/* $(function () {
   var n = 0
   var timeoutID
   var intervalID
@@ -130,12 +191,31 @@ $(function () {
     //연타 눌러보면 클리어 해야할지 알수잇음 눌러보자
     //그래서 클리어타임을 했는데 그래도 연타하면 이상해 왜냐면 클리어타임만 했지 인터벌은 그대로 계속 쌓이기때문.그러니까 클리어인터벌도 만들어주는거야
   })
+}) */
 
+
+$(function () {
+  var n = 0
+  var timeoutID
+  var intervalID
+  $(`.ex7 .btn1`).click(function () {
+    clearTimeout(timeoutID)
+    clearInterval(intervalID)
+    timeoutID = setTimeout(function () {
+      setInterval(function () {//여기는 왜 setTimeID안씀????????????????????????????
+        $(`.ex7 .output`).text(++n)
+      }, 1000)
+    }, 3000)
+  })
+  $(`.ex7 .btn2`).click(function () {
+    clearTimeout(timeoutID)
+    clearInterval(intervalID)
+    console.log(2); // 왜 안멈출까?????????????????????????????????
+  })
 })
 
 
-
- $(function () {
+/* $(function () {
   var x = 0
   var timeoutID
   $(`.ex8 button`).click(function () {
@@ -148,44 +228,52 @@ $(function () {
     }, 500);
   });
   //멈추면 그다음에 움직이게, 반대쪽으로 가는것도 만들어보기
-}) 
+}) */
+
+
+$(function () {
+  var n = 0
+  var turm = 50
+  var timeoutID
+  $(`.ex8 button`).click(function () {
+    clearTimeout(timeoutID)
+    timeoutID = setTimeout(function () {
+      n += turm
+      if (n > 250) { n = 200; turm = -50; }
+      if (n < 0) { n = 50; turm = +50; }
+      $(`.ex8 div`).css({ 'left': `${n}px` })
+    }, 300)
+  })
+})
+
 
 
 
 $(function () {
 
   function play() {
-    n++
+    ++n
     if (n > 5) { n = 1 }
-    if (n < 1) { n = 5 }
     $(`.ex9 img`).hide()
-    $(`.img${n}`).show()
+    $(`.ex9 .img${n}`).show()
   }
-  play()
 
-  var n = 0
-  var timeoutID
+
+  var n = 1
   var intervalID
-  timeoutID = setTimeout(function () {
-    intervalID = setInterval(function () {
-      ++n
-      play()
-    }, 500)
-  }, 0)
+  intervalID = setInterval(function () {
+    play()
+  }, 1000)
 
-  $(`.ex9 .container .start`).click(function () {
-    timeoutID = setTimeout(function () {
-      intervalID = setInterval(function () {
-        ++n
-        play()
-      }, 500)
-    }, 0)
-  })
-
-  $(`.ex9 .container .stop`).click(function () {
+  $(`.ex9 .start`).click(function () {
     clearInterval(intervalID)
-    clearsetTime(setTimeID)
+    intervalID = setInterval(function () {
+      play()
+    }, 1000)
   })
+  $(`.ex9 .stop`).click(function () {
+    clearInterval(intervalID)
+  })
+
 
 })
-
