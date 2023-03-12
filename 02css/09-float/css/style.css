@@ -1,5 +1,5 @@
 body {
-  background-color: antiquewhite;
+  background-color: whitesmoke;
   font-family: 'Russo One', sans-serif;
 }
 
@@ -50,6 +50,7 @@ li {
 .container1 .box {
   width: 300px;
 }
+
 .container1 .wbox {
   width: 460px;
 }
@@ -71,12 +72,14 @@ li {
   clear: both;
 
 }
+
 /* 
 6번은 옆으로 가고싶은데 자리 없으니까 클리어 안해줘도됨 */
 .container1 .box7 {
-  float:right;
+  float: right;
   margin-right: 20px;
 }
+
 /* 다음줄로 갈건데 클리어안주면 자리있는경우 무조건 그 자리로 감 */
 /* 클리어보스가 되면 거기까지 부모가 높이를 인식함 그밑에 플롯생기면 또 인식못해. 그밑에 클리어 생기면 또 인식해. 그러니 마지막에 클리어해줘야함*/
 /* 3번박스가 위에 형을 인지를 못해서 마진을 줄수가없음 그래서 마진줄려면 1번이 밀어줘야함
@@ -105,7 +108,7 @@ li {
 }
 
 .container2::after {
-  content:'';
+  content: '';
   display: block;
   clear: both;
 }
@@ -128,36 +131,67 @@ li {
 
 .container2 .box1,
 .container2 .box2,
-.container2 .box3, 
+.container2 .box3,
 .container2 .box4 {
   float: left;
   margin: 0 0 20px 20px;
 }
 
 .container2 .box5 {
-  clear:both;
+  clear: both;
 }
 
 .container2 .box5,
 .container2 .box6,
 .container2 .box7,
 .container2 .box8 {
-  float:right;
+  float: right;
   margin: 0 20px 20px 0;
 }
 
 
+/*-----------------------------  */
+.container3 {
+  width: 900px;
+  margin: 100px auto;
+  border: 1px solid #000;
+  background-color: white;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+.container3::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.container3 li {
+  width: 200px;
+  height: 200px;
+  background-color: tan;
+  font-size: 80px;
+  color: white;
+  text-align: center;
+}
 
 
+.container3 .box1,
+.container3 .box2 {
+  float: left;
+  margin: 0 0 20px 20px;
+}
 
+.container3 .box3 {
+  clear: both;
+  float: right;
+  margin: 0 20px 20px 0;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* .container2 .box5,
+.container2 .box6,
+.container2 .box7,
+.container2 .box8 {
+  float: right;
+  margin: 0 20px 20px 0;
+} */
