@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>each 이벤트</h1>
+  <p>엘리먼트의 숫자만큼 차례대로 반복해서(제이쿼리에만있음) 발생하는 이벤트 <br>
+    each 이벤트 안에서 $(this)는 순서에 해당하는 엘리먼트를 호출</p>
+  <hr>
+  <section class="ex1">
+    <p>1. 버튼을 클릭하면 박스의 색이 변해요
+    <p><button>버튼</button></p>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    </p>
+  </section>
+  <hr>
+  <section class="ex2">
+    <p>1. 버튼을 클릭하면 박스의 색이 변해요
+    <p><button>버튼</button></p>
+    <div class="box">red</div>
+    <div class="box">blue</div>
+    <div class="box">green</div>
+    <div class="box">yellow</div>
+    </p>
+  </section>
+  <hr>
+  <section class="ex3">
+    <p>3. 버튼을 클릭하면 박스의 크기가 랜덤하게(30~70) 변해요</p>
+    <p><button>버튼</button></p>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </section>
+  <hr>
+  <section class="ex4">
+    <p>4. 더하기문제</p>
+    <p>
+      <input type="text" size="1" readonly> +
+      <input type="text" size="1" readonly> +
+      <input type="text" size="1" readonly> +
+      <input type="text" size="1" readonly> +
+      <input type="text" size="1" readonly> =
+      <input class="user" type="text" size="1">
+      <button>결과보기</button>
+    <p class="output">결과</p>
+    </p>
+  </section>
+  <hr>
+  <section class="ex5">
+    <p>5. one에 해당하는 숫자를 선택하세요</p>
+    <p>
+      <input value="1" type="radio" name="radio5" id="">1
+      <input value="2" type="radio" name="radio5" id="">2
+      <input value="3" type="radio" name="radio5" id="">3
+    </p>
+    <button>결과보기</button>
+    <p class="output">결과</p>
+  </section>
+  <hr>
+  <section class="ex6">
+    <div>
+      <p> 6-1. one고르기</p>
+      <p>
+        <input value="o" type="radio" name="radio6-1" id="">1
+        <input value="x" type="radio" name="radio6-1" id="">2
+        <input value="x" type="radio" name="radio6-1" id="">3
+      </p>
+    </div>
+    <div>
+      <p> 6-2. two고르기</p>
+      <p>
+        <input value="x" type="radio" name="radio6-2" id="">1
+        <input value="o" type="radio" name="radio6-2" id="">2
+        <input value="x" type="radio" name="radio6-2" id="">3
+      </p>
+    </div>
+    <div>
+      <p> 6-3. three고르기</p>
+      <p>
+        <input value="x" type="radio" name="radio6-3" id="">1
+        <input value="x" type="radio" name="radio6-3" id="">2
+        <input value="o" type="radio" name="radio6-3" id="">3
+      </p>
+    </div>
+    <button>결과보기</button>
+    <p class="output">결과</p>
+    <!-- 맞힌개수만큼 점수. 문제의 개수만큼 반복.div 개수만큼 반복. -->
+  </section>
+  <hr>
+  <section class="ex7">
+    <p>7. 버튼을 누르면 박스의 색이 변해요</p>
+    <article class="log">
+      <p><button>버튼</button></p>
+      <div data-bg="red" class="box">r</div>
+      <div data-bg="green" class="box">g</div>
+      <div data-bg="blue" class="box">b</div>
+    </article>
+    <article class="log">
+      <p><button>버튼</button></p>
+      <div data-bg="red" class="box">r</div>
+      <div data-bg="green" class="box">g</div>
+      <div data-bg="blue" class="box">b</div>
+    </article>
+    <article class="log">
+      <p><button>버튼</button></p>
+      <div data-bg="red" class="box">r</div>
+      <div data-bg="green" class="box">g</div>
+      <div data-bg="blue" class="box">b</div>
+    </article>
+    <!-- 클릭했을때 해당 밑에 박스만 변하고 다른 줄 박스는 원래대로
+    클릭한 버튼의 부모p의 형제.div의 이치........  
+    글구 전부 초기화....  -->
+  </section>
+  <hr>
+  <section class="ex8">
+    <!-- 테스트투 만들어서 그대로 만들기 호스팅까지 할것 -->
+  </section>
+</body>
+
+</html>
