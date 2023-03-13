@@ -96,7 +96,6 @@ $(function () {
   })
 })
 
-$(`.ex4 button`).
 
 
 
@@ -127,10 +126,11 @@ $(`.ex4 button`).
 
 
   $(function () {
-    var n = 0
+  
     var intervalID
 
     $(`.ex5 .start`).click(function () {
+      var n = 0
       $(`.ex5 p`).addClass('active')
       intervalID = setInterval(function () {
         ++n
@@ -146,6 +146,7 @@ $(`.ex4 button`).
       $(`.ex5 .btns`).removeClass('active')
     })
   })
-//왜안될까??????????????????????????????????????????????????
-//스탑버튼 눌렀는데 div에 액티브가 리무브가 안됨.css도안먹음 
+/* 위에 이상한거 입력했는지 먼저 확인
+var의 선언 위치 확인 */
+
 
