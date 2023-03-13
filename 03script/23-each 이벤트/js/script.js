@@ -29,6 +29,16 @@ $(function () {
   })
 })
 
+/* $(`.ex3 button`).click(function () {
+  $(`.ex3 div`).each(function () {
+    var num = Math.floor(Math.random() * 41) + 30
+    $(this).css({
+      'width': `${num}px`,
+      'height': `${num}px`,
+    })
+  })
+})
+ */
 
 $(function () {
   $(`.ex4 input`).not('.user').each(function () {
@@ -77,11 +87,12 @@ $(function () {
 
 $(function () {
   $(`.ex7 button `).click(function () {
-    $(`.ex7 div`).each(function (){
+    $(`.ex7 article div`).each(function () {
+      $(this).parent().siblings(`article`).find(`div`).css({ 'background': `none` })
       var bg = $(this).attr(`data-bg`)
-    $(this).parent().siblings(`box`).css({ 'background': bg })
+      $(this).css({ 'background': bg })
+    })
   })
-})
 
 })
 
