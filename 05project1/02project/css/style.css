@@ -7,12 +7,23 @@
 
 :root {
   --main-color: #ffbbdb;
+  --sub-color: rgb(253, 212, 219);
+  --point-color: teal;
+  --dark-color: #1f1e1c;
 }
 
 body {
   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
 }
 
 .serif {
   font-family: 'Nanum Myeongjo', sans-serif;
+}
+
+h1 {
+  color: var(--main-color);
 }

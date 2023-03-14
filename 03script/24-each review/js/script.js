@@ -125,7 +125,7 @@ $(document).ready(function () {
     var point = 0
 
     $(`.ex5 div`).each(function () {
-      var 문제개수 = $(`.ex5 div input`).size()
+      var 문제개수 = $(this).children(`input`).size()
       var 정답체크개수 = 0
       $(this).children(`input`).each(function () {
         var val = $(this).val()
@@ -133,9 +133,7 @@ $(document).ready(function () {
         if ((checked === true && val === 'o')
           ||
           (checked === false && val === "x")
-        ) {
-          정답체크개수 += 1
-        }
+        ) { 정답체크개수 += 1 }
       })
       if (정답체크개수 === 문제개수) {
         ++point

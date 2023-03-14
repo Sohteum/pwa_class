@@ -8,17 +8,22 @@ header {
 }
 
 header .top .member,
-header .bottom .h1 {
+header .bottom {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+header .top .member {
+  text-align: right;
+  height: inherit;
+}
+
 header .top .member a {
-  text-align: end;
-  line-height: 35px;
+  margin-left: 7px;
   color: #aaa;
   font-size: 0.8em;
+  line-height: 35px;
 }
 
 header .top .member a:hover {
@@ -26,12 +31,31 @@ header .top .member a:hover {
 }
 
 header .top {
-  background-color: #1b1b1b;
+  background-color: var(--dark-color);
   height: 35px;
 }
 
 header .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: rgb(251, 255, 255);
+  height: calc(100% - 35px);
+}
+
+
+h1 {
+  height: 80%;
+}
+
+h1 img {
+  height: 100%;
+}
+
+.bottom .nav_bar a {
+  margin-left: 95px;
+  margin-right: 10px;
+  font-size: 1.1em;
 }
 
 
@@ -44,10 +68,9 @@ header .bottom {
     height: 130px;
   }
 
-  header .bottom {
-    height: calc(100% - 35px);
+  header .bottom .btn {
+    display: none;
   }
-
 }
 
 @media screen and (max-width:1000px) {
@@ -63,4 +86,19 @@ header .bottom {
     height: calc(100% - 35px);
   }
 
+  header .bottom .nav_bar {
+    display: none;
+  }
+
+  .btn {
+    width: 45px;
+    height: 45px;
+    background-color: var(--dark-color);
+    border-radius: 5px;
+  }
+
+  .btn i {
+    color: white;
+    font-size: 1.2em;
+  }
 }
