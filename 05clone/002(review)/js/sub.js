@@ -1,0 +1,1 @@
+console.log("sub-script입니다");

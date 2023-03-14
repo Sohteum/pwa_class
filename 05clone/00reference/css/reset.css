@@ -1,0 +1,49 @@
+/* 리젯css는 디자이너마다 스타일이 달라서 사용하면서 편하게 적용하면 됨 
+포폴에서 주석은 다 없앨것. 콘솔로그 없앨것*/
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* 리셋페이지는 동일하게 사용되지만 사이트마다 달라지는 부분을 스타일가이드라고 함
+내가 바디랑 세리프 지정한거, 테마컬러. 주조색, 보조색 이런거....를 세팅함 이런건 사이트마다 달라지잖아. 이런건 항상 다르게 씀. 회사마다 정해져있음. */
+
+li {
+  list-style: none;
+}
+
+iframe,
+img,
+svg,
+canvas {
+  display: block;
+}
+
+iframe {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input, textarea, select {
+box-sizing: border-box;
+}
+/* 패딩이랑 보더때문에 크기 안맞음 */
+
+button{
+  border:none;
+  background-color: none;
+}
+
+.hidden {
+  position: fixed;
+  left:-1000px;
+}

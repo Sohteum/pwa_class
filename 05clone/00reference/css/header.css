@@ -1,0 +1,98 @@
+header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* 높이를 줄 수 있다면 주는게 편함.
+  공통적인건 같이 주고 다른거는 분기 여기서는 2분기로 하자 */
+
+header .top {
+  height: 35px;
+  background-color: var(--dark-color);
+}
+
+header .top .member {
+  width: 95%;
+  height: inherit;
+  /* 만약 부모가 패딩이 들어가면 상속은 쓰면 안됨.100%해줘야함 */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+header .top .member a {
+  margin-left: 7px;
+  color: #aaa;
+  font-size: 0.9em;
+  /* 비율로 올릴때  */
+  line-height: 35px;
+}
+
+header .top .member a:hover {
+  color: #ddd;
+}
+
+/* 많이 쓰는 클래스명은 부모부터 적어주기 */
+
+header .center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1200px;
+  height: calc(100% - 35px);
+  margin: 0 auto;
+}
+
+h1 {
+  height: 80%;
+}
+
+h1 img {
+  height: 100%;
+}
+
+@media screen and (min-width:1000px) {
+  body {
+    padding-top: 130px;
+  }
+
+  header {
+    height: 130px;
+  }
+
+  .mBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  body {
+    padding-top: 100px;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  .mBtn {
+    width: 45px;
+    height: 45px;
+    background-color: var(--dark-color);
+    border-radius: 5px;
+  }
+
+  .mBtn i {
+    color: white;
+    font-size: 1.2em;
+  }
+
+  .gnb.lg {
+    display: none;
+  }
+}

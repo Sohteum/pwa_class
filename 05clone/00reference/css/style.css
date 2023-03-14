@@ -1,0 +1,29 @@
+ @import "reset.css";
+
+ @import "header.css";
+
+ :root {
+   /* html 과 같은 객체이다. 가장상위객체인 html스코프로 전체적에서 사용하기 위해 지정했습니다. */
+   --main-color: #9b8c7d;
+   --sub-color: #8e7760;
+   --point-color: #f99d1b;
+   --dark-color: #1f1d1d;
+ }
+
+ body {
+   color: #4b4b4b;
+   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+   /* 웹폰트를 다운받아서 사용해야함 영어숫자 먼저 몬세라토한테 하라고 하기 그래서 먼저 적는거야*/
+   font-size: 15px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+ }
+
+ .serif {
+   font-family: 'Nanum Myeongjo', sans-serif;
+ }
+
+ h1 {
+   color: var(--main-color);
+ }
