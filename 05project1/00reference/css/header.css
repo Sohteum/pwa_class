@@ -188,7 +188,6 @@ h1 img {
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f077";
   content: "\f078";
   transition: all 0.3s;
 }
@@ -258,15 +257,16 @@ h1 img {
   transition: all 0.3s;
 }
 
-.gnb.lg>ul>li>a>span{
+.gnb.lg>ul>li>a>span {
   display: block;
   height: 100%;
   transition: all 0.3s;
 }
-.gnb.lg>ul>li>a>span.en{
+
+.gnb.lg>ul>li>a>span.en {
   position: absolute;
-  top:45px;
-  left: 50%; 
+  top: 45px;
+  left: 50%;
   text-transform: uppercase;
   font-size: 0.9em;
   transform: translateX(-50%);
@@ -276,7 +276,7 @@ h1 img {
   margin-top: -45px;
 }
 
-.gnb.lg>ul>li:hover>a{
+.gnb.lg>ul>li:hover>a {
   color: var(--point-color);
 }
 
@@ -285,7 +285,8 @@ h1 img {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  white-space: nowrap;/* 줄내림 방지 */
+  white-space: nowrap;
+  /* 줄내림 방지 */
   background-color: var(--main-color);
   color: #FFF;
   /* 만약 a안에 텍스트가 길면 늘어나버림 이 상태를 없애려면 글자수를 작게 하거나 넓어지더라도 그대로 있게해야함. 그게 포지션이지. 부모너비에 영향을 못미치게 하면 되니까 근데 작으면 작은대로 문제임. 앱솔주면 너비가 없어져가지지구 그럼 부모li한테 렐러티브를 주고 자식ul한테는  앱솔에 민위드 */
@@ -298,10 +299,12 @@ h1 img {
   background-color: var(--sub-color);
 }
 
-.gnb.lg>ul>li>ul{
+.gnb.lg>ul>li>ul {
   position: absolute;
   display: none;
-  left:50%;
-  min-width:100%;/* 최소100%이상 */
-  transform: translateX(-50%);/* 가운데 오게하려고 left좌표 주고 -50하면 됨 */
+  left: 50%;
+  min-width: 100%;
+  /* 최소100%이상 */
+  transform: translateX(-50%);
+  /* 가운데 오게하려고 left좌표 주고 -50하면 됨 */
 }

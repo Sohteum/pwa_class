@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
-  <script src="./js/script.js"></script>
+  <script src="./js/nav.js"></script>
   <title>Document</title>
 </head>
 
@@ -22,6 +22,7 @@
         <a href="#">회원가입</a>
       </nav>
     </div>
+
     <div class="bottom">
       <h1>
         <a href="./index.php">
@@ -35,7 +36,10 @@
       <nav class="nav_bar sm">
         <?php include "nav-bar.php" ?>
       </nav>
-      <button class="btn"><i class="fa-solid fa-bars"></i></button>
+      <button class="btn">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark close"></i>
+      </button>
     </div>
 
   </header>
