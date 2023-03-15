@@ -240,3 +240,20 @@ $(document).ready(function () {
   })
 })
  */
+
+
+$(function(){
+  $(`.box1`).hover(function(){
+    $(`.box1`).addClass('active')
+  })
+})
+/* $(function(){
+  $(`.box1`).mouseenter(function(){
+    $(`.box1`).addClass('active')
+  })
+})
+$(function(){
+  $(`.box1`).mouseleave(function(){
+    $(`.box1`).addClass('active')
+  })
+}) */

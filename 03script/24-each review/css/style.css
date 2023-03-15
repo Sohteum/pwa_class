@@ -5,3 +5,16 @@
   border: 1px solid #000;
   vertical-align: middle;
 }
+
+.box1{
+  width: 100px;
+  height: 100px;
+  background-color: palevioletred;
+}
+/* .box1:hover{
+border-radius: 50%;
+}
+ */
+  .box1.active{
+    border-radius: 50%;
+  }
