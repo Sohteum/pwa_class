@@ -41,6 +41,7 @@ box-sizing: border-box;
 button{
   border:none;
   background-color: none;
+  cursor: pointer;
 }
 
 .hidden {

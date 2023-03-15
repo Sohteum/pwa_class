@@ -35,11 +35,11 @@ select {
 	box-sizing: border-box;
 }
 
-/* 패딩이랑 보더때문에 크기 안맞음 */
 
 button {
 	border: none;
 	background-color: none;
+	cursor: pointer;
 }
 
 .hidden {

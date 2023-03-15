@@ -23,3 +23,14 @@ font-family: 'Montserrat', sans-serif;
 
 제이쿼리cdn
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+가상선택자 아이콘
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";

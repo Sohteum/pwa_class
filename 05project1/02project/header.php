@@ -29,12 +29,11 @@
         </a>
         <span class="hidden">선샤인</span>
       </h1>
-      <nav class="nav_bar">
-        <a href="#">회사소개</a>
-        <a href="#">사업분야</a>
-        <a href="#">갤러리</a>
-        <a href="#">온라인문의</a>
-        <a href="#">커뮤니티</a>
+      <nav class="nav_bar lg">
+        <?php include "nav-bar.php" ?>
+      </nav>
+      <nav class="nav_bar sm">
+        <?php include "nav-bar.php" ?>
       </nav>
       <button class="btn"><i class="fa-solid fa-bars"></i></button>
     </div>

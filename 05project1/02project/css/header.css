@@ -68,6 +68,10 @@ h1 img {
     height: 130px;
   }
 
+  header .bottom .nav_bar.sm {
+    display: none !important;
+  }
+
   header .bottom .btn {
     display: none;
   }
@@ -86,19 +90,59 @@ h1 img {
     height: calc(100% - 35px);
   }
 
-  header .bottom .nav_bar {
+  .nav_bar.lg {
     display: none;
   }
 
-  .btn {
-    width: 45px;
-    height: 45px;
-    background-color: var(--dark-color);
-    border-radius: 5px;
-  }
+}
 
-  .btn i {
-    color: white;
-    font-size: 1.2em;
-  }
+.btn {
+  width: 45px;
+  height: 45px;
+  background-color: var(--dark-color);
+  border-radius: 5px;
+}
+
+.btn i {
+  color: white;
+  font-size: 1.2em;
+}
+
+.nav_bar.lg {
+  height: 45px;
+}
+
+.nav_bar.lg>ul {
+  display: flex;
+  height: 100%;
+}
+
+.nav_bar.lg>ul>li {
+  position: relative;
+  height: 100%;
+
+}
+
+.nav_bar.lg>ul>li>a {
+  display: block;
+  height: 100%;
+}
+
+.nav_bar.lg>ul>li>ul>li>a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 10px 10px;
+  background-color: var(--sub-color);
+
+}
+
+.nav_bar.lg>ul>li:hover>ul>a {
+  color:var(--point-color);
+}
+
+.nav_bar.lg>ul>li>ul {
+  position: absolute;
+  display: none;
 }
