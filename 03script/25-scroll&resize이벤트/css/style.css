@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+.dummy {
+  height: 3000px;
+  width: 3000px;
+}
+
+.banner {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  background-color: palegreen;
+  transition: all 0.5s;
+}
+
+.banner1 {}
+
