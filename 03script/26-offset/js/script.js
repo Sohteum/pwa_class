@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     $(`.box1`).each(function () {
 
-      var offsetTop = $(this).offset().top
+      var offsetTop = $(this).offset().top //top이랑 left있음
       var box1H = $(this).innerHeight()
 
       if (
