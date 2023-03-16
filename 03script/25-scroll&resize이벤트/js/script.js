@@ -93,7 +93,16 @@ $(document).ready(function () {
 })//each문 */
 
 
-
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scrTop = $(window).scrollTop
+    var scrLeft = $(window).scrollLeft
+    var winH = $(window).height
+    var winW = $(window).width
+    
+    $().
+  })
+})
 
 
 
