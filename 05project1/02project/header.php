@@ -26,7 +26,8 @@
     <div class="bottom">
       <h1>
         <a href="./index.php">
-          <img src="./img/icons/logo.png" alt="">
+          SunsHine
+          <!-- <img src="./img/icons/logo.png" alt=""> -->
         </a>
         <span class="hidden">선샤인</span>
       </h1>
