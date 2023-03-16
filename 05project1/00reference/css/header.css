@@ -308,3 +308,10 @@ h1 img {
   transform: translateX(-50%);
   /* 가운데 오게하려고 left좌표 주고 -50하면 됨 */
 }
+
+.gnb h6,
+.gnb>ul>.member,
+.gnb>ul>.member {
+  display: none;
+}
+

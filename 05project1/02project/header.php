@@ -37,7 +37,7 @@
         <?php include "nav-bar.php" ?>
       </nav>
       <button class="btn">
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars open"></i>
         <i class="fa-solid fa-xmark close"></i>
       </button>
     </div>

@@ -8,8 +8,6 @@ header {
 }
 
 
-
-
 header .top .member {
   width: 90%;
   height: inherit;
@@ -48,7 +46,6 @@ header .bottom {
   justify-content: space-between;
   width: 90%;
   max-width: 1200px;
-  background-color: rgb(251, 255, 255);
   height: calc(100% - 35px);
   margin: 0 auto;
 
@@ -233,9 +230,13 @@ header .bottom {
   transform: translateX(0%);
 }
 
-ul li a span:last-child {
-  display: none;
+.nav_bar.sm>ul>li:hover>a{
+  color:var(--point-color);
 }
+
+/* ul li a span:last-child {
+  display: none;
+} */
 
 .nav_bar.sm>ul>li>a {
   display: block;
@@ -290,4 +291,13 @@ ul li a span:last-child {
 
 .nav_bar.sm {
   display: none;
+}
+
+.nav_bar.sm>ul .member,
+.nav_bar.sm>ul .sns,
+.nav_bar.lg>ul .member,
+.nav_bar.lg>ul .sns,
+.nav_bar.sm>ul>li>h6,
+.nav_bar.lg>ul>li>h6 {
+  display:none;
 }

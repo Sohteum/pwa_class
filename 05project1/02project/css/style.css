@@ -4,12 +4,14 @@
 
 @import "reset.css";
 @import "header.css";
+@import "footer.css";
 
 :root {
-  --main-color: #ffbbdb;
-  --sub-color: rgb(253, 212, 219);
-  --point-color: teal;
-  --dark-color: #1f1e1c;
+  --main-color: #5F7161;
+  --sub-color: #6D8B74;
+  --sub2-color: #EFEAD8;
+  --point-color: #AA8B56;
+  --dark-color: #1f1d1d;
 }
 
 body {
