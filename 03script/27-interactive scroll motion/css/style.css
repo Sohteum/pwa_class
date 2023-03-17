@@ -1,0 +1,252 @@
+body {
+  margin: 0;
+}
+
+.ex1 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100px;
+  transition: all 0.5s;
+}
+
+
+/* 모션 */
+.ex1 {
+  border-radius: 0;
+  background-color: white;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.ex1.active {
+  border-radius: 50%;
+  background-color: thistle;
+  opacity: 1;
+}
+
+/* 보통 이런 순서로 작업을 함. 대부분 숨겨놨다가 나타나게 하는 방법을 많이 하는데 숨겨놓고는 작업을 하기 어려우니까 이렇게 모션부분을 나눠서 작업하는것 */
+
+.ex2 {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: tomato;
+  border: 1px solid #000;
+}
+
+.ex2 div {
+  width: 100px;
+  height: 100px;
+  background-color: tan;
+}
+
+/* 모션 */
+.ex2 div {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.ex2.active div {
+  /* 엑티브를 따로따로 주는게 아니라 부모에엑티브가 되면 자식이 변한다로 해준다. 자식이 많을경우 하나하나 다 지정할 수 없으니까.  */
+  opacity: 1;
+  transform: translateY(200px)
+}
+
+
+
+
+.ex3>div {
+  display: flex;
+  flex-wrap: wrap;
+  /* 랩 안하면 여러줄로 못서 */
+  width: 50%;
+  height: 100px;
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: rgb(1, 167, 167);
+}
+
+.ex3>div>div {
+  width: 50%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: teal;
+}
+
+
+@media screen and (min-width:1000px) {
+  .ex3>div {
+    flex: 1;
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .ex3>div {
+    width: 100%;
+    margin: 50px 0;
+  }
+}
+
+/* 모션은 반응형으로하면 안됨 모바일과 앱 둘다 같은모션을 구현 */
+
+/* 모션 */
+.ex3>div>div {
+  transform: scale(0.1);
+  transition: all 0.5s
+}
+
+.ex3>div.active>div {
+  transform: scale(1);
+}
+
+/* ------------------------- */
+.ex4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  max-width: 300px;
+  border: 1px solid #000;
+}
+
+.ex4>div {
+  box-sizing: border-box;
+  padding: 10px;
+  /* 여기서 간격을 패딩으로 설정하면 일정해서 좋아 여백처럼 딱 돼. 이거만 바꾸면 위아래가 다바뀌니까 편해 */
+  border: 1px solid red;
+}
+
+.ex4>div>div {
+  background: green;
+}
+
+@media screen and (min-width:600px) {
+  .ex4>div {
+    width: 33.333%;
+  }
+
+  .ex4>div>div {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .ex4>div {
+    width: 100%;
+  }
+
+  .ex4>div>div {
+    height: 100px;
+  }
+}
+
+/* 모션 */
+/* 모션은 녹색기준으로 잡을거야.!! 그리고 빨간색 기준으로 닿으면 녹색이 변하는거야 스크롤모션의 기준점은 변하면안된다. */
+.ex4>div>div {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.ex4>div.active>div {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ex5 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.ex5 span {
+  display: inline-block;
+  transform: scale(0);
+  /* 인라인레벨은 크기라는 개념이 없어서 트랜스폼이 적용이 안된다. */
+  transition: all 0.5s;
+}
+
+.ex5 span.active {
+  transform: scale(1);
+}
+
+.ex5 span.active:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.ex5 span.active:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.ex5 span.active:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.ex5 span.active:nth-child(5) {
+  transition-delay: 0.5s;
+  /* 주의!!딜레이애니메이션은 나타날때만 주기. 안그러면 스크롤이 왔다갔다 하면서 꼬임 그래서 나타날때만 효과를 주기위해 액티브를 넣어준다. */
+}
+
+/* ------------- */
+
+.ex6 {
+  /* 3>2>1칸씩 */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+.ex6 > div {
+  padding:10px;/* 여백용 */
+  box-sizing: border-box;
+
+}
+
+.ex6 > div > div {
+  height: 100px;
+  background-color: yellowgreen;
+}
+
+@media screen and (min-width:500px) {  /* 500이상 */
+  .ex6 > div {
+    width: 33.333%;
+  }
+  .ex6 > div.active:nth-of-type(3n+2)>div {
+    transition-delay: 0.6s;
+  }
+  .ex6 > div.active:nth-of-type(3n+3)>div {
+    transition-delay: 1.2s;
+  }
+
+}
+@media screen and (min-width:500px) and (max-width:1000px) { /* 500이상 1000이하 */
+  .ex6 > div {
+    width: 50%;
+  }
+
+  .ex6 > div.active:nth-of-type(2n+2)>div {
+    transition-delay: 0.9s;
+  }
+}
+
+@media screen and (max-width:500px) { /* 500이하 */
+  .ex6 > div {
+    width: 100%;
+  }
+}
+
+.ex6>div>div {
+  opacity: 0;
+  transition: all 1s;
+  }
+
+.ex6>div.active>div {
+  opacity : 1;
+}
