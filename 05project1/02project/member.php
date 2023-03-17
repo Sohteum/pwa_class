@@ -1,5 +1,5 @@
 <?php include "sub-header.php" ?>
 
-인사말본문
+회원정보수정 본문
 
 <?php include "sub-footer.php" ?>

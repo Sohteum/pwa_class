@@ -50,7 +50,7 @@
     <ul>
       <li><a class="menu5-1" href="./notice.php">공지사항</a></li>
       <li><a class="menu5-2" href="./FAQ.php">FAQ</a></li>
-      <li><a class="menu5-3" href="./freeboard.php">자유게시판</a></li>
+      <li><a class="menu5-3" href="./freeboard.php">자유게시판ㅀㅇ홍로롷오온옹</a></li>
     </ul>
   </li>
   <li class="member menu6">
