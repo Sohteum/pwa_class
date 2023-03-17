@@ -1,6 +1,8 @@
  @import "reset.css";
  @import "header.css";
  @import "footer.css";
+ @import "sub-layout.css";
+
 
  :root {
    /* html 과 같은 객체이다. 가장상위객체인 html스코프로 전체적에서 사용하기 위해 지정했습니다. */

@@ -51,6 +51,3 @@
     </div>
   </header>
 
-<main>
-  본문...
-</main>

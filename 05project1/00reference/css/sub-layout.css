@@ -1,0 +1,169 @@
+/* --- sub_visual --- */
+.sub_visual {
+  background-color: #000;
+}
+
+@media screen and (min-width:1000px) {
+  .sub_visual {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .sub_visual {
+    height: 200px;
+  }
+}
+
+/* --- sub_center --- */
+.sub_center {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* 화면이 작아져씅ㄹ때는 본문만 보이고(모바일), 1200만 안넘어가면됨 피씨에서는
+화면을 줄였을때 사이드바가 없어지는건 쫌.. 그래서 위로 올리자
+작은화면에서는 위에사이드바 아래 본문  
+큰화면에서는 좌우로 정렬  */
+
+@media screen and (min-width:1000px) {
+  .sub_center {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* 부모가 공간이 없어서 포지션 스티키를 못함 둘다 꽉차있잖아 근데 본문은 꽉차야하고 사이드바를 줄여주는거지 */
+  }
+}
+
+
+
+/* --- sidebar --- */
+
+.sidebar {
+
+  /* 부모가 너비가 퍼센트니까 자식도 퍼센트로 하는게 좋음.화면 작아졌을때는 너비 주면 안됨 백퍼잖아.백퍼 안ㅆ더대자나 블럭레벨이니까 */
+}
+
+.snb>ul>li {
+  display: none;
+}
+
+/* 라우팅처리라고 하는데 주소를 이용해서 화면을 나오게 하는거. 여기서 인사말.php라면 메뉴 1을 보여준다.를 해야함
+그리고 그 메뉴만 도드라지게. 액티브하게 만들것.. 그래서 클래스를 다 줌. */
+
+@media screen and (min-width:1000px) {
+  .sidebar {
+    width: 22%;
+  }
+
+  .snb h6 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+  }
+
+  .snb>ul>li>ul>li>a {
+    display: block;
+    padding: 10px;
+    font-weight: 500;
+    border-bottom: 1px dotted #CCC;
+  }
+
+  .snb>ul>li>ul>li>a::before {
+    content: '- ';
+  }
+
+  .snb>ul>li>ul>li>a:hover {
+    color: var(--point-color);
+  }
+
+  .snb>ul>li>ul>li>a.active {
+    background-color: var(--sub-color);
+    color: #FFF;
+  }
+
+  .snb>ul>li>ul>li>a.active::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.7em;
+    content: "\f00C";
+    margin-right: 5px;
+  }
+}
+
+
+@media screen and (max-width:1000px) {
+  .sidebar {
+    margin-bottom: 30px;
+  }
+
+  .snb>ul>li>h6 {
+    display: none;
+  }
+
+  .snb>ul>li>ul {
+    display: flex;
+    height: 50px;
+  }
+
+  .snb>ul>li>ul>li {
+    flex: 1;
+    margin-left: -1px;
+    /* 겹치는 선을 없애줄수있음 */
+
+    border: 1px solid var(--sub-color);
+  }
+
+  .snb>ul>li>ul>li>a.active {
+    background-color: var(--point-color);
+  }
+  .snb>ul>li>ul>li>a:hover {
+    background-color: var(--sub-color);
+  }
+
+  .snb>ul>li>ul>li>a {
+    display: block;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 0.9em;
+    text-align: center;
+    white-space: nowrap;
+    /* w줄내림없애기 */
+    /*     overflow: hidden; */
+    /*     text-overflow: ellipsis; */
+    line-height: 50px;
+    /* 플렉스가 되어있고, 부모가 있으니까 100%할수있는거  앵커를 100퍼를 해야 클릭 범위가 넓어짐*/
+    background-color: var(--main-color);
+    color: #FFF;
+    transition: background 0.3s;
+    /* 반응형에서는 트랜지션에 all보다는 정확하게 써줘야 우당탕탕안함 */
+  }
+}
+
+
+
+.snb>ul>li>a {
+  display: none;
+}
+
+/* --- sub_content --- */
+
+.sub_content {
+  background-color: yellowgreen;
+}
+
+@media screen and (min-width:1000px) {
+  .sub_content {
+    width: 75%;
+    min-height: 500px;
+  }
+}

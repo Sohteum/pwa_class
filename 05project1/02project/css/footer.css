@@ -86,9 +86,6 @@ footer .sitemap>ul>li.sns>ul>li {
   }
 }
 
-footer .sitemap>ul>li.sns>ul>li>a::before {
-  display: none;
-}
 
 /* --- info --- */
 
@@ -134,5 +131,8 @@ footer .info>li.sns>ul>li>a>i {
 /* --- hidden --- */
 
 footer .sitemap>ul>li>a>span {
+  display: none;
+}
+footer .sitemap>ul>li.sns>ul>li>a::before {
   display: none;
 }

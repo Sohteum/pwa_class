@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	text-decoration: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+
+li {
+	list-style: none;
+}
+
+iframe,
+img,
+svg,
+canvas {
+	display: block;
+}
+
+iframe {
+	border: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+input,
+textarea,
+select {
+	box-sizing: border-box;
+}
+
+
+button {
+	border: none;
+	background-color: none;
+	cursor: pointer;
+}
+
+.hidden {
+	position: fixed;
+	left: -1000px;
+}

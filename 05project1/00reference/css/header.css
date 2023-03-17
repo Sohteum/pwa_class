@@ -240,6 +240,7 @@ h1 img {
 .gnb.lg>ul>li {
   position: relative;
   height: 100%;
+
   /* 무적권 높이 주기 */
 }
 
@@ -252,7 +253,8 @@ h1 img {
   line-height: 42px;
   font-size: 1.1em;
   font-weight: 500;
-  padding: 0 50px;
+  padding: 0 40px;
+
   /* 너비를 주면 글자를 변경했을때 너비를 다시 맞춰줘야함.백그라운드 넣거나 보더가 들어가면 너비를 만들어도되는데 왜냐면 선이 들어가면 가운데라는게 보이니까 */
   transition: all 0.3s;
 }
@@ -311,7 +313,11 @@ h1 img {
 
 .gnb h6,
 .gnb>ul>.member,
-.gnb>ul>.member {
+.gnb>ul>.member,
+.gnb>ul>li.sns {
   display: none;
 }
 
+.gnb.sm .en {
+  display: none; 
+}
