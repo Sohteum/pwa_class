@@ -1,59 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/script.js"></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-latest.js"></script>
-  <script src="./js/script.js"></script>
-  <title>Document</title>
-</head>
+  <body>
+    <section class="ex1">
+      <p>1.남성의류</p>
+      <p class="prd">
+        <input
+          value="1000"
+          type="radio"
+          name="a"
+          checked
+        />
+        상의(1000)
+        <input
+          value="1500"
+          type="radio"
+          name="a"
+        />
+        하의(1500)
+        <input
+          value="2000"
+          type="radio"
+          name="a"
+        />
+        신발(2000)
+      </p>
+      <p class="option">
+        옵션 :
+        <select>
+          <option value="100">red(+100)</option>
+          <option value="200">black(+200)</option>
+          <option value="300">white(+300)</option>
+        </select>
+      </p>
+      <p class="cnt">
+        수량 :
+        <input
+          type="number"
+          value="0"
+        />
+      </p>
+      <p class="output">남성의류 : 0원</p>
+    </section>
+    <hr />
+    <section class="ex2">
+      <p>2.여성의류</p>
+      <p class="prd">
+        <input
+          value="1000"
+          type="radio"
+          name="b"
+          checked
+        />
+        상의(1000)
+        <input
+          value="1500"
+          type="radio"
+          name="b"
+        />
+        하의(1500)
+        <input
+          value="2000"
+          type="radio"
+          name="b"
+        />
+        신발(2000)
+      </p>
+      <p class="option">
+        옵션 :
+        <select>
+          <option value="100">red(+100)</option>
+          <option value="200">black(+200)</option>
+          <option value="300">white(+300)</option>
+        </select>
+      </p>
+      <p class="cnt">
+        수량 :
+        <input
+          type="number"
+          value="0"
+        />
+      </p>
+      <p class="output">여성의류 : 0원</p>
+    </section>
+    <hr />
+    <p class="total">총가격 : 0원</p>
 
-<body>
-  <section class="ex1">
-    <p>1.남성의류</p>
-    <p class="prd">
-      <input value="1000" type="radio" name="a" checked> 상의(1000)
-      <input value="1500" type="radio" name="a"> 하의(1500)
-      <input value="2000" type="radio" name="a"> 신발(2000)
-    </p>
-    <p class="option">
-      옵션 :
-      <select>
-        <option value="100">red(+100)</option>
-        <option value="200">black(+200)</option>
-        <option value="300">white(+300)</option>
-      </select>
-    </p>
-    <p class="cnt">
-      수량 : <input type="number" value="0">
-    </p>
-    <p class="output">남성의류 : 0원</p>
-  </section>
-  <hr>
-  <section class="ex2">
-    <p>2.여성의류</p>
-    <p class="prd">
-      <input value="1000" type="radio" name="b" checked> 상의(1000)
-      <input value="1500" type="radio" name="b"> 하의(1500)
-      <input value="2000" type="radio" name="b"> 신발(2000)
-    </p>
-    <p class="option">
-      옵션 :
-      <select>
-        <option value="100">red(+100)</option>
-        <option value="200">black(+200)</option>
-        <option value="300">white(+300)</option>
-      </select>
-    </p>
-    <p class="cnt">
-      수량 : <input type="number" value="0">
-    </p>
-    <p class="output">여성의류 : 0원</p>
-  </section>
-  <hr>
-  <p class="total">총가격 : 0원</p>
-</body>
-
+    <section class="prac">
+      <p>1. 남성의류샵에는 세가지 항목을 판다. 상의 1000원, 하의 1500원, 신발 2000원 옵션으로 red, black, white를 추가할 수 있으며 옵션추가비용은 각 100, 200, 300원이다. 1가지 항목을 선택 후 옵션과 수량을 입력했을때 자동으로 값을 구해주는 계산기를 만드시오.</p>
+      <p>
+        <input
+          value="1000"
+          type="radio"
+          name="a"
+        />상의(1000원)
+        <input
+          value="1500"
+          type="radio"
+          name="a"
+        />하의(1500원)
+        <input
+          value="2000"
+          type="radio"
+          name="a"
+        />신발(2000원)
+      </p>
+      <p>
+        <select>
+          <option value="100">red(+100)</option>
+          <option value="200">black(+200)</option>
+          <option value="300">white(+300)</option>
+        </select>
+      </p>
+      <input
+        placeholder="수량"
+        type="number"
+      />
+      <p class="output">가격</p>
+      <hr />
+      <p>2. 여성의류도 남성의류와 가격이 같다. 여성의류 계산기를 만드시오.</p>
+      <p>
+        <input
+          value="1000"
+          type="radio"
+          name="a"
+        />상의(1000원)
+        <input
+          value="1500"
+          type="radio"
+          name="a"
+        />하의(1500원)
+        <input
+          value="2000"
+          type="radio"
+          name="a"
+        />신발(2000원)
+      </p>
+      <p>
+        <select>
+          <option value="100">red(+100)</option>
+          <option value="200">black(+200)</option>
+          <option value="300">white(+300)</option>
+        </select>
+      </p>
+      <input
+        placeholder="수량"
+        type="number"
+      />
+      <p class="output">가격</p>
+      <hr />
+      <p>3. 남성의류와 여성의류를 모두 구입할 수 있는 옷가게이다. 총가격으로 남성의류만 선택했을때, 여성의류만 선택했을 때, 둘 다 선택했을 때 가격을 구하는 계산기를 만드시오.</p>
+      <p class="output">총가격</p>
+    </section>
+  </body>
 </html>
