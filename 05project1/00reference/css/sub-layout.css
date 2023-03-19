@@ -119,13 +119,15 @@
     flex: 1;
     margin-left: -1px;
     /* 겹치는 선을 없애줄수있음 */
-    overflow: hidden;/* 앵커가 늘어나도 늘어나지않고 숨기겠다 */
+    overflow: hidden;
+    /* 앵커가 늘어나도 늘어나지않고 숨기겠다 */
     border: 1px solid var(--sub-color);
   }
 
   .snb>ul>li>ul>li>a.active {
     background-color: var(--point-color);
   }
+
   .snb>ul>li>ul>li>a:hover {
     background-color: var(--sub-color);
   }
@@ -139,7 +141,8 @@
     white-space: nowrap;
     /* 줄내림없애기 그대신 텍스트가늘어나면 칸이 늘어남*/
     overflow: hidden;
-     text-overflow: ellipsis; /* 텍스트오버플로우할려면 오버플로우를 꼭해야함 */ 
+    text-overflow: ellipsis;
+    /* 텍스트오버플로우할려면 오버플로우를 꼭해야함 */
     line-height: 50px;
     /* 플렉스가 되어있고, 부모가 있으니까 100%할수있는거  앵커를 100퍼를 해야 클릭 범위가 넓어짐*/
     background-color: var(--main-color);

@@ -7,19 +7,19 @@
 
     <h6>회사소개</h6>
     <ul>
-      <li><a href="./greet.php">인사말</a></li>
-      <li><a href="./location.php">오시는길</a></li>
+      <li><a class="menu1-1" href="./greet.php">인사말</a></li>
+      <li><a class="menu1-2" href="./location.php">오시는길</a></li>
     </ul>
   </li>
   <li class="menu2">
     <a href="./biz-intro.php">
       <span class="en">business</span>
-      <span class="kor"></i>사업영역</span>
+      <span class="kor">사업영역</span>
     </a>
     <h6>사업영역</h6>
     <ul>
-      <li><a href="./biz-intro.php">사업소개</a></li>
-      <li><a href="./biz-area.php">사업분야</a></li>
+      <li><a class="menu2-1" href="./biz-intro.php">사업소개</a></li>
+      <li><a class="menu2-2" href="./biz-area.php">사업분야</a></li>
     </ul>
   </li>
   <li class="menu3">
@@ -29,7 +29,7 @@
     </a>
     <h6>갤러리</h6>
     <ul>
-      <li><a href="./gallery1.php">갤러리</a></li>
+      <li><a class="menu3-1" href="./gallery1.php">갤러리</a></li>
     </ul>
   </li>
   <li class="menu4">
@@ -39,7 +39,7 @@
     </a>
     <h6>온라인문의</h6>
     <ul>
-      <li><a href="./contact.php">온라인문의</a></li>
+      <li><a class="menu4-1" href="./contact.php">온라인문의</a></li>
     </ul>
   </li>
   <li class="menu5">
@@ -49,20 +49,20 @@
     </a>
     <h6>커뮤니티</h6>
     <ul>
-      <li><a href="./notice.php">공지사항</a></li>
-      <li><a href="./FAQ.php">FAQ</a></li>
-      <li><a href="./freeboard.php">자유게시판</a></li>
+      <li><a class="menu5-1" href="./notice.php">공지사항</a></li>
+      <li><a class="menu5-2" href="./FAQ.php">FAQ</a></li>
+      <li><a class="menu5-3" href="./freeboard.php">자유게시판</a></li>
     </ul>
   </li>
   <li class="member menu6">
-    <a href="./signIn.php">
+    <a href="./signin.php">
       <span class="en">member</span>
       <span class="kor">회원</span>
     </a>
     <h6>회원</h6>
     <ul>
-      <li><a href="./signIn.php">로그인</a></li>
-      <li><a href="./signUp.php">회원가입</a></li>
+      <li><a href="./signin.php">로그인</a></li>
+      <li><a href="./signup.php">회원가입</a></li>
       <li><a href="./member.php">회원정보수정</a></li>
     </ul>
   </li>

@@ -1,7 +1,7 @@
 $(function () {
   $(`.nav_bar.sm>ul>li>a`).click(function (e) {
     e.preventDefault()
-    $(`.nav_bar.sm>ul>li>ul`).slideUp(300)
+    $(`.nav_bar.sm>ul>li>ul`).stop().slideUp(300)
     $(this).siblings(`ul`).stop().slideToggle(300)
 
     $(`.nav_bar.sm>ul>li>a`).not($(this)).removeClass(`active`)

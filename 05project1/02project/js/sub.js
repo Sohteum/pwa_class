@@ -1,10 +1,10 @@
-$(document).ready(function(){
-var url = location.href
-var dep1
-var dep2
+$(document).ready(function () {
+  var url = location.href
+  var dep1
+  var dep2
 
-if(url.match('/greet.php')) {
-  dep1 = 1; dep2 = 1;
+  if (url.match('/greet.php')) {
+    dep1 = 1; dep2 = 1;
   } else if (url.match('/location.php')) {
     dep1 = 1; dep2 = 2;
   } else if (url.match('/biz-intro.php')) {
@@ -28,6 +28,6 @@ if(url.match('/greet.php')) {
   } else if (url.match('/member.php')) {
     dep1 = 6; dep2 = 3;
   }
-$(`.nav_bar .menu${dep1}`).show()
-$(`.nav_bar .menu${dep1}-${dep2}`).addClass('active')
+  $(`.snb .menu${dep1}`).show()
+  $(`.snb .menu${dep1}-${dep2}`).addClass('active')
 })

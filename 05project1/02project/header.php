@@ -8,22 +8,14 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
-  <script src="./js/nav.js"></script>
   <title>Document</title>
 </head>
 
 <body>
 
+  <script src="./js/nav.js"></script>
   <header>
     <div class="top">
-      <nav class="member">
-        <a href="./index.php">처음으로</a>
-        <a href="#">로그인</a>
-        <a href="#">회원가입</a>
-      </nav>
-    </div>
-
-    <div class="bottom">
       <h1>
         <a href="./index.php">
           SunsHine
@@ -36,6 +28,10 @@
       </nav>
       <nav class="nav_bar sm">
         <?php include "nav-bar.php" ?>
+      </nav>
+      <nav class="member">
+        <a title="Sign In" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+        <a title="Sign Up" href="#"><i class="fa-solid fa-user-plus"></i></a>
       </nav>
       <button class="btn">
         <i class="fa-solid fa-bars open"></i>
