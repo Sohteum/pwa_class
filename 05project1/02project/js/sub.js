@@ -30,4 +30,6 @@ $(document).ready(function () {
   }
   $(`.snb .menu${dep1}`).show()
   $(`.snb .menu${dep1}-${dep2}`).addClass('active')
+
+  $(`.sub_visual .visual${dep1}`).fadeIn().addClass(`active`)
 })

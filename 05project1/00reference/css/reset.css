@@ -9,6 +9,8 @@
   font-style: inherit;
   font-size: inherit;
   font-family: inherit;
+  word-break: keep-all;
+  /* 줄내림 할 때 단어별로 끊기 */
 }
 
 /* 리셋페이지는 동일하게 사용되지만 사이트마다 달라지는 부분을 스타일가이드라고 함
@@ -21,6 +23,7 @@ li {
 iframe,
 img,
 svg,
+video,
 canvas {
   display: block;
 }
@@ -33,18 +36,21 @@ table {
   border-collapse: collapse;
 }
 
-input, textarea, select {
-box-sizing: border-box;
+input,
+textarea,
+select {
+  box-sizing: border-box;
 }
+
 /* 패딩이랑 보더때문에 크기 안맞음 */
 
-button{
-  border:none;
+button {
+  border: none;
   background-color: none;
   cursor: pointer;
 }
 
 .hidden {
   position: fixed;
-  left:-1000px;
+  left: -1000px;
 }

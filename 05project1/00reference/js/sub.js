@@ -31,4 +31,29 @@ $(document).ready(function () {
   }
 $(`.snb .menu${dep1}`).show()
 $(`.snb .menu${dep1}-${dep2}`).addClass('active')
-})
+
+/* $(`.sub_visual .visual${dep1}`).show()
+setTimeout(function(){
+  $(`.sub_visual .visual${dep1}`).addClass('active')
+},1) 
+ 디스플레이를 블럭으로 바꿔서 보이게 함. 우리는 디스플레이 넌으로 숨김
+넌에서 쇼로 변한거임. 넌인상태에서는 트랜지션이 없는거랑 마찬가지. 
+적용자체가 안됨.
+쇼 상태를 만들어놓고 잠깐 있다가 액티브를 해야함. 
+넌에서 바로 쇼는 트랜지션 노노
+넌에서 쇼하고 좀있다가 트랜지션 오오
+그래서 셋타임아웃 사용 
+디스플레이 넌인상태에서는 트랜지션이 다 죽는다*/
+
+
+$(`.sub_visual .visual${dep1}`).fadeIn().addClass(`active`)
+/* 쇼를 여러번 반복하는거라서 페이드인은 가능
+바닐라는 페이드인이 없음 */
+
+
+
+
+
+})  
+
+

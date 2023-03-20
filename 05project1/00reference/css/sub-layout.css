@@ -1,11 +1,92 @@
 /* --- sub_visual --- */
 .sub_visual {
   background-color: #000;
+  position: relative;
+}
+
+.sub_visual figure {
+  position: relative;
+  height: 100%;
+}
+
+.sub_visual figure figcaption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 350px;
+  /* 너비를 잡아줘야함. 글자를 담아둘 */
+  text-align: center;
+  color: #FFF;
+  transform: translate(-50%, -50%);
+  /* 단어간의 떨어지는 방법을 정의함 리젯에서.워드브레이크 */
+}
+
+.sub_visual figure figcaption h5 {
+  margin-bottom: 10px;
+  font-size: 3em;
+  font-weight: 500;
+  /* 화면너비의 1% 1뷰포트, 화면너비에따라 결정됨 계속 미디어쿠ㅝ리하는것보다나음
+  가장 큰 크기와 작은 크기ㅏ를 고름 
+  작은화면에서 8vw라고 생각하면 화면이 커졌을때 너무 커짐. 맥스위드는 없음
+  그래서 미디어쿼리해서 2분기를 함. 가장 큰 크기를 고르고 */
+}
+
+@media screen and (max-width:700px) {
+
+  /* 글자가 너무 팍 줄어드는 느낌이 들면 최소화면을 크키를 키움800 1000 뭐이렇게 */
+  .sub_visual figure figcaption h5 {
+    font-size: 8vw;
+  }
+}
+
+.sub_visual figure figcaption h5::before,
+.sub_visual figure figcaption h5::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.5em;
+  vertical-align: top;
+  margin: 0 5px;
+  transform: translateY(50%);
+}
+
+.sub_visual figure figcaption h5::before {
+  content: '\f10d ';
+}
+
+.sub_visual figure figcaption h5::after {
+  content: ' \f10E';
+}
+
+
+
+.sub_visual figure figcaption P {
+  font-size: 0.9em;
+}
+
+/* .sub_visual figure figcaption h5 {
+  text-shadow: 1px 1px 0 #000;
+   가로세로 뿌얘지는 정도 색 
+} */
+
+.sub_visual figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* 이미지를 꽉 채우려고 100%를 줌 근데 하나만주면 빵꾸야. 그래서 오브젝트핏 이건 높이너비둘다했을때만 가능 그리고 중앙으로 맞춰줘야함*/
+  filter: brightness(0.5);
+  /* 글자를 잘 보이게 하기 위해 밝기를 내린다. */
 }
 
 @media screen and (min-width:1000px) {
   .sub_visual {
-    height: 500px;
+    height: 300px;
   }
 }
 
@@ -16,6 +97,7 @@
 }
 
 /* --- sub_center --- */
+
 .sub_center {
   width: 90%;
   max-width: 1200px;
@@ -152,11 +234,69 @@
   }
 }
 
+/*  모션  */
+
+.sub_visual figure {
+  overflow: hidden;
+  display: none;
+}
+
+.sub_visual figure figcaption h5,
+.sub_visual figure figcaption p {
+  opacity: 0;
+  transition: all 0.5s
+    /* 이런건 천천히 나오는게 좋음 */
+}
+
+.sub_visual figure figcaption h5 {
+  transform: translateY(-50px);
+}
+
+.sub_visual figure figcaption p {
+  transform: translateY(50px);
+}
+
+.sub_visual figure img {
+  transform: scale(1.5);
+  transition: all 10s;
+}
+
+.sub_visual figure.active img {
+  transform: scale(1);
+}
+
+.sub_visual figure.active figcaption h5,
+.sub_visual figure.active figcaption p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* 전체 박스에서 삐져나가면 안됨 피규어에서 오버플로유 */
+
+
+.sub_visual video {
+  pointer-events: none;
+  /* 마우스로 건들수없게 함. 사파리계열은 터치하면 동영상을 따로 재생하기때문 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: lighten;
+}
 
 
 .snb>ul>li>a {
   display: none;
 }
+
+.sub_visual figure {
+  display: none;
+}
+
 
 /* --- sub_content --- */
 
