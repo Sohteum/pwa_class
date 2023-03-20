@@ -6,7 +6,7 @@ $(function () {
     var offTop = $(`.ex1`).offset().top
     var h = $(`.ex1`).innerHeight()
     var meta = 0 + ((scr) - (offTop - winH * 0.5 + h * 0.5)) * -0.8 //음수면 오른쪽에서 옮. 숫자가 클수록 빨리옴
-    //내가 원하는 최종값(css) + (스크롤값-(스크롤목적지))* 속도 //스크롤이 목적지까지 됐을때 최종값이 나온다
+    //내가 원하는 최종값(css) + (스크롤값-(스크롤목적지))* 속도와방향 //스크롤이 목적지까지 됐을때 최종값이 나온다
 
 
     if (meta < 0) { //조건으로 0으로 막아줌.
@@ -71,9 +71,9 @@ $(function () {
       var offTop = $(this).offset().top //여기서 offsettop이 항상 each마다 변하니까 함수 안으로 들어오는거야
       var h = $(this).innerHeight() // 여기서 네개의 이너하잇을 구하는거니까 얘도 함수 안으로 들어오는거야. 
       var meta = 1 + Math.abs(scrTop - (offTop - winH * 0.5 + h * 0.5)) * -0.002
-        if (meta < 0) { meta = 0 }
-        $(this).children('div').css({ 'transform': `scale(${meta})` })
-      })
+      if (meta < 0) { meta = 0 }
+      $(this).children('div').css({ 'transform': `scale(${meta})` })
+    })
   }
   parallax()
   $(window).scroll(function () {
