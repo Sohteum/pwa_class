@@ -73,32 +73,3 @@ $(window).scroll(function () {
 })
 
 
-
-$(function () {
-
-
-})
-$(function () {
-
-
-})
-$(function () {
-
-
-})
-$(function () {
-
-
-})
-$(function () {
-
-
-})
-$(function () {
-
-
-})
-$(function () {
-
-
-})
