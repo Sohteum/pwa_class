@@ -6,6 +6,7 @@
 }
 
 .sub_visual figure {
+  position: relative;
   height: 100%;
 }
 
@@ -14,30 +15,34 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.8);
+  filter: brightness(0.9);
 }
 
 .sub_visual figure figcaption {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
   color: #DDD;
   transform: translate(-50%, -50%);
 }
 
 .sub_visual figure figcaption h5,
 .sub_visual figure figcaption p {
-  transition: all 1s;
+  transition: all 1.5s;
 }
 
 .sub_visual figure figcaption h5 {
-  font-size: 2.8em;
+  font-size: 2.7em;
+  font-weight: 500;
   text-align: center;
   margin-bottom: 30px;
 }
 
 .sub_visual figure figcaption p {
-  font-size: 0.9em;
+  font-size: 1.1em;
 
 }
 
@@ -45,7 +50,15 @@
 .sub_visual figure figcaption h5,
 .sub_visual figure figcaption p {
   opacity: 0;
-  transform: translateY(80%);
+}
+
+.sub_visual figure figcaption h5 {
+  transform: translateY(-90%);
+}
+
+.sub_visual figure figcaption p {
+  opacity: 0;
+  transform: translateY(90%);
 }
 
 .sub_visual figure.active figcaption h5,
@@ -53,9 +66,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-
-
 
 
 @media screen and (min-width:1000px) {
@@ -192,6 +202,32 @@
     min-height: 500px;
   }
 }
+
+/* --- motion ---*/
+
+.snb>ul>li {
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 1.5s;
+}
+
+
+.snb>ul>li.active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.sub_content {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 1.5s;
+}
+
+.sub_content.active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
 
 
 /* --- hidden --- */

@@ -7,6 +7,7 @@
 	font-style: inherit;
 	font-size: inherit;
 	font-family: inherit;
+	word-break: keep-all;
 }
 
 
@@ -17,6 +18,7 @@ li {
 iframe,
 img,
 svg,
+video,
 canvas {
 	display: block;
 }
