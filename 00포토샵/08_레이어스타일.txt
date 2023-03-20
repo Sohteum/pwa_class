@@ -1,0 +1,55 @@
+■ 레이어스타일
+
+  ● 개념과 주의사항
+    - 레이어에 특수한 효과를 적용
+    - effect를 편집하기 위해서는 rasterize를 선 적용해야함
+      · 레이어 우클릭 -> rasterize layer style
+      · 다른레이어와 merge
+    - fill옵션
+      · effect에는 적용되지 않는 투명도
+    - use Global Light옵션
+      · 레이어별로 광원의 방향을 다르게 설정할 경우 체크 해제
+
+  ● stroke
+    - 색이 적용된 영역에 선을 생성
+
+  ● drop shadow
+    - angle, spread(두께), size(퍼지는정도)
+    - spared와 size값이 0일때 선명한 그림자를 연출할 수 있음
+    - 레이어별로 그림자효과를 적용할 경우 merge이후에 적용
+    
+  ● bevel and emboss
+    - techinque
+      · smooth 
+      · hard 
+    - depth : 경사의 선명도
+    - size : 경사의 크기 (면의 크기에 따라 사이즈를 조정)
+    - angle : 광원의 느낌
+    - gloss contour : 재질의 느낌
+
+  ● outer glow
+    - 외부광선
+    - 배경색이 어두워야 광원효과를 연출할 수 있음
+    - 채도와 명도가 높은 색상을 사용하면 자연스러원 광원을 연출 가능
+    - spread(진하기) 옵션값이 size(퍼지는효과)값보다 작아야 함
+
+  ● inner glow  
+    - 내부 광선
+    - 레이어 색상과 동일한 색상을 사용할 경우 효과가 적용되지 않음
+
+  ● pattern overay
+    - 패턴제작
+      · 모양제작
+      · 사각선택툴로 패턴의 범위 선택
+      · edit / define pattern 메뉴로 등록
+    - fill을 이용한 패턴적용
+      · edit / fill (shift + f5)
+      · contents 옵션 pattern 적용
+      · pattern 선택 후 ok
+      · 단점 (패턴의 사이즈 설정이 어려움)
+    - pattern overay
+      · scale을 이용해 패턴의 크기를 제어할 수 있음
+      · vector레이어에 패턴을 적용할 수 있음
+    - pat파일사용법
+      · pattern 메뉴(기어아이콘) / import pattern을 이용해 pat파일을 선택
+    

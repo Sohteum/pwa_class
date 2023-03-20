@@ -1,0 +1,58 @@
+■ 리셋 : 런칭, ctrl + shift + alt
+
+■ 이미지출력방식
+  ● bitmap 방식
+    - 픽셀의 색정보를 출력
+    - alising 픽셀로 발생하는 계단현상, 
+    - anti alising 계단현상을 최소화하는 기술
+    - ram의존도가 높음
+    - 세밀한 표현이 가능, 고해상도의 작업이 어려움
+    - 사진작업
+    - png(비손실,비압축), jpg, gif, wep, ico
+  ● vector 방식
+    - 수학적 계산을 이용해서 형태를 출력하는 방삭
+    - alising현상이 존재하지 않는다
+    - cpu의존도가 높음
+    - 다양한 애니메이션이가능, 세밀한 표현이 어려움
+    - 고해상도출력물, 글자, 로고, 명함, 단순한 캐릭터, 폰트
+    - svg(코드)
+
+■ 단위(unit)
+  ● 물리적단위
+    cm, m, mm, inch(2.54cm), point(72분의1인치)
+  ● 논리적단위
+    px(화소, 화면을 구성하는 최소단위)
+  ● DotPerInch, DotPerCentiminter 
+    - 물리적 단위를 쪼개는 숫자
+    - dpi,dpc의 수치와 넓이높이의 사이즈가 용량과 밀접하다
+    - 논리적 단위에서 기본 dpi를 72로 관행적으로 설정한다
+■ 칼라  
+  ● bitmap (1bit->2의1승)
+  ● grayscale (8bit->2의8승->0~255)
+  ● Red,Green,Blue 
+    - 빛의삼원색
+    - R(8bit) * G(8bit) * B(8bit)
+    - 디바이스를 이용한 산출물에 사용
+  ● Cyan, Magenta,Yellow, blacK
+    - 감료의4원색
+    - C(8bit) * M(8bit) * Y(8bit) * K(8bit)
+    - 인쇄용 산출물에 사용
+  ● 색상표기법
+    - 고유색상명
+      red,blue,black등..
+    - 색상번호
+      · 16진수를 이용
+        0~9,a(10),b(11),c(12),d(13),e(14),f(15)
+        #ffffff, #000000, #0000ff
+        #FFF,#000,#00F
+    - rgb표기법
+      · rgba(0, 0, 0, 1)
+      · rgba(255, 255, 255, 1)
+      · rgba(10,10,10,1)
+      · rgba(255, 0, 0, 1)
+    - 투명도
+      opacity, transparent, alpha
+
+
+
+      

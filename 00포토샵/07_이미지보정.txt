@@ -1,0 +1,35 @@
+■ 색조 명채도  
+
+  ● image/Adjusments/hue saturation (색조, 채도, 명도)
+    - ctrl + u
+  ● image/Adjusments/Brightness Contrast (밝기, 대비)
+
+  ● image/Adjusments/Replace Color
+    - 스포이드 툴을 이용해 보정할 색상 영역을 선택
+    - 변경할 색상을 설정
+    - 영역을 추가(shift + 클릭)하면서 색상 설정
+    - 지우개툴을 이용해 색상 정리
+
+■ 다양한 보정 툴 
+
+  ● clone stamp tool (s, 이미지의 특정영역을 다른위치 복사)
+    - 우클릭 브러쉬 선택 (hardness 0)
+    - alt + 복사될 위치 선택
+    - 브러시를 이용해 수정
+
+  ● healing brush (j , 이미지의 특정질감을 다른위치 복사)
+    - 우클릭 브러쉬 설정 (hardness : 0)
+    - alt + 복사될 위치 선택
+
+  ● blur tool
+    - 픽셀을 섞어서 뿌옇게 만드는 효과
+    - 우클릭 브러쉬 선택 (hardness : 0)
+
+  ● dodge tool (o)
+    - 이미지의 명채도를 상승시킴
+    - tool option bar의 Exposure 옵션값을 설정
+
+  ● burn tool (o)
+    - 이미지의 명채도를 떨어뜨림
+    - tool option bar의 Exposure 옵션값을 설정
+

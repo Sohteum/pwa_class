@@ -1,0 +1,53 @@
+■ 인터페이스
+  ● 주의사항
+    - capslock 비활성화
+    - 한글키 상태에서는 단축키를 사용할 수 없음
+  ● 초기화 : 런칭 후 (ctrl + shift + alt)
+  ● zoom : 
+    - alt + wheel , 
+    - ctr + '+,-', 
+    - 하단바의 줌비율을 입력해서 설정할 수 있음
+    - space누른상태에서 우클릭을 이용해 100%사이즈로 변경할 수 있음
+  ● pan : space 누른상태에서 마우스로 이동
+  ● 스크린모드 :  f, fullscreen mode(작업표시줄과 상단의 메뉴가 사라질 수 있음)
+  ● UI구조
+    - 메뉴 (file, edit 등)
+    - 팔레트 (색상, 레이어 등)
+    - 툴바 (브러시, 지우개 등)
+    - 툴옵션바 (툴의 세부설정)
+
+■ 환경설정
+  ● ctrl + k
+  ● Unit & Ruler - ruler,type 을 pixel로 설정
+  ● Guide, Grid, Slice - unit을 pixel로 설정
+
+■ 디자인 보조 기능
+  ● Ruler : Ctrl + r , 룰러에서 우클릭을 이용해 unit를 변경할 수 있음
+  ● Grid : ctrl + ' , 스냅기능(view/snap)과 같이 사용 
+  ● Guide
+    - 룰러에서 드래그를 이용해 생성,
+    - 가이드제거 : view / Guide / clear Guide
+    - 가이드숨기기 : ctrl + ;
+
+■ 브러시, 지우개
+  ● b, e
+  ● 우클릭 / general brush
+    - soft, hard
+  ● 우클릭 / hardness옵션   
+    - 브러시 경계의 퍼지는 정도 값
+  ● [ , ] 브러시 크기 제어
+
+
+■ 히스토리 기능
+  ● undo 
+    - ctrl + z
+  ● redo
+    - ctrl + shift + z
+  ● 주의
+    - history를 수정할 경우 수정 후 작업과정은 모두 사라진다
+    
+■ 색채우기
+  ● fill foreground color
+    alt + delte
+  ● fill backgroud color
+    ctrl + delte

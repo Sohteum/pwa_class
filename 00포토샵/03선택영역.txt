@@ -1,0 +1,47 @@
+■ 선택영역기초
+  ● ctrl + a 
+    - 전체 영역 선택
+  ● ctrl + d
+    - 선택 영역 해제
+  ● shift
+    - 선택영역이 없을 경우 : 정비례유지(정원,정사각형)
+    - 선택영역이 있을 경우 : 선택영역 추가
+  ● alt
+    - 선택영역이 없을 경우 : 클릭시작점을 중심점으로 변경(방사형)
+    - 선택영역이 있을 경우 : 선택영역 제거
+  ● shift + alt
+    - 선택영역이 없을 경우 : 정비례 + 방사형선택
+    - 선택영역이 있을 경우 : 선택영역간의 겹치는 영역
+
+■ marquee
+  ● m, shift + m 
+  ● rectangular (사각)
+  ● elliptical (원)
+  ● feather 옵션 : 선택영역의 blur(퍼지는효과)값을 설정
+
+■ lasso
+  ● l , shift+l 
+  ● lasso 드래그를 이용해 선택영역 설정
+  ● polygon 클릭을 이용해 선택영역 설정
+  ● magnetic 색상을 자동으로 감지해 선택영역을 설정
+  
+■ magig wand
+  ● w , shift+w
+  ● 클릭한 색상과 유사색상 범위를 자동으로 선택
+  ● tool option bar
+    - tolerance : 동일한 색상 영역의 범위 
+    - contiguos : 체크가 해제되면 떨어져 있는 색상까지 선택
+    - sample all layers : 레이어 선택을 무시하고 색상 기준으로 선택
+
+■ inverse
+  ● ctrl + shift + i
+  ● 선택영역 반전
+
+■ select And Mask
+  ● 모든 선택툴을 클릭하면 option바에 위치함
+  ● 브러시 형태로 선택영역을 설정 (머리카락,털,등)
+  ● 사용법
+    - 브러시 기능으로 선택영역을 임의로 대충 설정 (hardness옵션을 설정)
+    - refine hair 버튼을 이용하여 영역 재 설정
+
+

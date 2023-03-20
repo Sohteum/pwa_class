@@ -1,0 +1,18 @@
+■ 타입툴
+  ● 글자크기단위설정 
+    - ctrl + k -> unit/ruller
+  ● 폰트명 한글 표기
+    - ctrl + k -> type -> Show Font Name in English해제
+  ● 글자 입력
+    - 드래그 : 글자의 입력 범위를 설정, 시안, 출판
+    - 클릭 : 타이포그래피 
+  ● 캐릭터 팔레트
+    - 타입툴 옵션바, line-heihgt, letter-spacing
+  ● Rasterize type
+    - 글자(vector)를 그림(bitmap)으로 변경
+  ● 주의사항
+    - 글자색은 타입툴 옵션바에서 변경 가능
+  ● Tip
+    - 웹문서에는 snas-sherif체를 사용하길 권장 (나눔고딕, 노토산스, 맑은 고딕)
+
+

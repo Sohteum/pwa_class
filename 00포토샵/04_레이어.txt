@@ -1,0 +1,84 @@
+■ 레이어개념
+ ● 투명영역(alpha채널)을 가진 종이개념
+ ● background레이어(jpg)
+  - 투명영역이 없음
+  - 일반레이어로 변경 : 더블클릭
+
+■ 레이어복제
+ ● moveTool(v) + alt
+  - 선택영역이 존재할경우 레이어가 생성되지 않는다
+ ● ctrl + j
+  - 선택영역이 없을경우 : 레이어 전체 복제 (duplicagte)
+  - 선택영역이 존재할경우 : 선택영역만 복제 (layer via copy)
+ ● ctrl + shift + j 
+  - 선택영역을 잘라내서 복제
+
+■ 레이어변형 (ctrl + t)
+ ● option bar
+  - 축을 설정
+  - aspect ratio (비례유지) 
+ ● shift
+  - 비례를 유지 않는다
+ ● ctrl
+  - 꼭지점 : 왜곡, distort 
+  - 변 : 기울기, skew
+  - 이등변삼각형 : ctrl + shift + alt
+
+■ 레이어반복복제
+  - ctrl + j
+  - ctrl + t 
+  - ctrl + shift + alt + t,
+  
+■ 레이어정렬
+  ● move툴의 옵션바에 정렬 옵션
+  ● align (줄)
+  ● distribute (간격)
+    - 기준점 (상하, 좌우 레이어 기준)
+
+■ 레이어선택
+  ● moveTool옵션바의 Auto Select활성화, layer선택
+  ● 다중레이어 선택
+    - moveTool선택 드래그
+    - shift + 클릭
+  ● 선택된 레이어 선택 해제
+    - shift + 클릭
+    - ctrl + shift + alt + 우클릭  
+    
+■ 레이어 그룹관리
+  ● 그룹만들기
+    - 레이어 선택후  ctrl + g
+    - 레이어 팔레트 폴더 아이콘을 이용해서 그룹 생성후 레이어를 안쪽으로 이동
+  ● 그룹해제
+    - 그룹선택후 ctrl + shift + g
+  ● 그룹이동
+    - moveTool선택, ctrl + 이동
+  ● 그룹복사
+    - moveTool선택, ctrl + alt + 이동
+
+■ 레이어상하이동
+  ● ctrl + ] (한단계씩 위로)
+  ● ctrl + [ (한단계씩 아래로)
+  ● ctrl + shift + ] (최상위로)
+  ● ctrl + shift + [ (최하위로)
+
+■ 레이어선택영역
+  ● ctrl + thumbnail 클릭
+  ● ctrl + shift + thumbnail 클릭 (레이어선택영역추가)
+  ● ctrl + alt + thumbnail 클릭 (레이어선택영역제거)
+  ● ctrl + shift + alt + thumbnail 클릭 (레이어공통선택영역)
+
+■ 레이어블렌딩모드
+  ● multiply : 겹칠수록 진해짐
+  ● overay : 상단레이어의 명도를 이용해 하단레이어의 명채도가 증감
+  ● screen : 상단레이어의 어두운 색을 출력하지 않는다
+  ● difference : 상단의 레이어의 색이 반전 됨
+  
+■ 레이어잠금기능
+  ● lock transparent
+    - 투명영역의 작업을 잠금
+  ● lock all 
+    - 모든 작업으로부터 잠금 
+
+■ 레이어단축키 
+ 레이어만들기 : ctrl + shift + n 
+ 레이어 merge : ctrl + e
