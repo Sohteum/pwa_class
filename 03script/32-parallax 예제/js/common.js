@@ -13,7 +13,7 @@ window.isIOS = false;
 if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
   isIOS = true;
 }
- 
+
 
 $(function () { //공통으로 사용할 js파일//헤드에 링크를 해두고 비동기로 객체를 찾으려고. 바디 안쪽에 있는애들은 파싱이 끝난 후 찾을 수 있다. 윈도우는 파싱전에도 찾을 수 있어. 다른 돔요소를 찾을 때도 있으니까 편의상 넣었다.
   var reqID
@@ -22,10 +22,10 @@ $(function () { //공통으로 사용할 js파일//헤드에 링크를 해두고
     window.scrL = $(window).scrollLeft()
     window.winW = $(window).width()
     window.winH = $(window).height()
-/*     console.log(scrT,scrL,winW,winH); */
+    /*     console.log(scrT,scrL,winW,winH); */
 
   }
-  
+
   fnGetWinInfo()
   $(window).scroll(function () {
     reqID = requestAnimationFrame(fnGetWinInfo)

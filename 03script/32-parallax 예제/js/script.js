@@ -1,14 +1,19 @@
 $(function () {
+    var reqID
+    function fnGetWinInfo() {
 
-
-
-
-/*     var offL = $(this).offset().left */
-    var offT = $(`section`).offset().top
-    var meta = 0 + Math.abs(scrT -(offT)) * 0.1
-    if (meta > 50) { meta = 50 }
-    $(`section`).css({'width': `${meta}`})
-
+        var offT = $(`section`).offset().top
+        var meta = 0 + Math.abs(scrT - (offT)) * 0.1
+        if (meta > 50) { meta = 50 }
+        $(`section`).children(`div`).css({ 'width': `${meta}px` })
+        console.log(meta);
+    }
+    fnGetWinInfo()
+    $(window).scroll(function () {
+        reqID = requestAnimationFrame(fnGetWinInfo)
+    }).resize(function () {
+        reqID = requestAnimationFrame(fnGetWinInfo)
+    })
 
 
 })

@@ -3,25 +3,28 @@
   padding: 0;
 }
 
-li {
-  list-style: none;
-  width: 50%;
-}
-main {
+main,
+body {
   width: 100%;
 }
+
 body {
   position: relative;
-  width: 100%;
 }
 
 
 ul {
   display: flex;
   justify-content: center;
-  width: 80%;
   max-width: 1000px;
+  margin: 0 auto;
 }
+
+li {
+  list-style: none;
+}
+
+img {}
 
 div {
   position: fixed;

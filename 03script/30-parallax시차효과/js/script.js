@@ -14,9 +14,9 @@ $(function () {
       } else {
         $(this).removeClass('active')
       }
-      var meta = 1+Math.abs(scrT-(offT-winH*0.5+elH*0.5))*-0.0005
-      if(meta<0){meta=0}
-      $(this).find(`img`).css({'transform':`scale(${meta})`})
+      var meta = 1 + Math.abs(scrT - (offT - winH * 0.5 + elH * 0.5)) * -0.0025
+      if (meta < 0) { meta = 0 }
+      $(this).find(`img`).css({ 'transform': `scale(${meta})` })
     })
   }
   fnHeaderMotion()
@@ -29,13 +29,14 @@ $(function () {
 
 $(function () {
   var reqID
-  function fnHeaderMotion() { 
-$(`.ex2 li`).each(function(){
-  var elH = $(this).innerHeight()
-  var offT = $(this).offset().top
-  var meta = 50 + Math.abs(scrT-(offT-winH*0.5+elH*0.5))* -0.1
-  $(this).find(`img`).css({'border-radius':meta})
-})
+  function fnHeaderMotion() {
+    $(`.ex2 li`).each(function () {
+      var elH = $(this).innerHeight()
+      var offT = $(this).offset().top
+      var meta = 50 + Math.abs(scrT - (offT - winH * 0.5 + elH * 0.5)) * -0.05
+      if (meta > 50) { meta = 50 }
+      $(this).find(`img`).css({ 'border-radius': meta })
+    })
   }
   fnHeaderMotion()
   $(window).scroll(function () {
