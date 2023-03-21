@@ -1,5 +1,5 @@
 <?php include "sub-header.php" ?>
 
-FAQ 본문
+<h2>FAQ</h2> 본문
 
 <?php include "sub-footer.php" ?>

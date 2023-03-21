@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<script src="header.js"></script>
+  <script src="header.js"></script>
   <script src="./js/nav.js"></script>
   <header>
     <div class="top">

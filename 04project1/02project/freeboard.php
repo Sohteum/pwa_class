@@ -1,5 +1,5 @@
 <?php include "sub-header.php" ?>
 
-자유게시판 본문
+<h2>자유게시판</h2> 본문
 
 <?php include "sub-footer.php" ?>

@@ -1,5 +1,5 @@
 <?php include "sub-header.php" ?>
 
-로그인 본문
+<h2>로그인</h2> 본문
 
 <?php include "sub-footer.php" ?>

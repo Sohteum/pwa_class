@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
 
 @import "reset.css";
 @import "header.css";
 @import "footer.css";
 @import "sub-layout.css";
+@import "greet.css";
 
 
 :root {
@@ -20,7 +21,7 @@
 }
 
 body {
-  font-family: 'Montserrat', 'Noto Sans KR', sans-serif, 'Roboto Slab', serif;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif, 'Roboto Slab', serif, 'Nanum Pen Script', cursive;
   font-size: 15px;
   font-weight: normal;
   font-style: normal;
@@ -29,6 +30,13 @@ body {
 
 .serif {
   font-family: 'Nanum Myeongjo', sans-serif;
+}
+
+.point {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5em;
+
+  color: var(--point-color);
 }
 
 h1 {
