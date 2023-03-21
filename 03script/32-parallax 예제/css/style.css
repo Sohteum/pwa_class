@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #000;
+
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  background-color: #FFF;
+  /* 부모가 높이가 없으니까. */
+}
+
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  /* 머리통 찧을때 0이 되어야함 모래시계인거징.....제일커진게 50이네 */
+}
+
+
+.left {
+  left: 0;
+  background-color: palegreen;
+}
+
+.right {
+  right: 0;
+  background-color: pink;
+}

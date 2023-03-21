@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.ex1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.ex1 li {
+  box-sizing: border-box;
+  padding: 10px;
+  overflow: hidden;
+  /* 스케일 적용이 되었을때 가로 스크롤이 생길 수 있으므로 오버플로우히든적용 */
+}
+
+.ex1 li figure {
+  transition: all 0.5s;
+}
+
+.ex1 li figure:hover {
+  transform: scale(1.2);
+}
+
+.ex1 li img {
+  display: block;
+  filter: grayscale(1) brightness(0.3);
+  width: 100%;
+  transition: filter 0.3s;
+  /* 트랜지션과 패럴렉스는 동시에 사용불가 
+  스크롤모션은 한번만 반영되잖아. 패럴렉스는 스크롤이 되는동안 변화가 계속일어남 이런애들한테는 속도지연이 되어서 속도 반영이 안됨.
+  all이라고 하면 스케일까지 다 들어가버리니까.*/
+}
+
+.ex1 li img:hover {
+  filter: grayscale(0) brightness(1);
+
+}
+
+@media screen and (min-width:1000px) {
+  .ex1 li {
+    width: 33.333%;
+  }
+}
+
+@media screen and (min-width:500px) and (max-width:1000px) {
+  .ex1 li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .ex1 li {
+    width: 100%;
+  }
+}
+
+/* -------------------motion----------------------- */
+
+.ex1 li {
+  opacity: 0;
+  transition: opacity 0.5s;
+  /* 크기나 그런거 변할때는 따로 적어주기 */
+}
+
+
+.ex1 li.active {
+  opacity: 1;
+}
+
+
+/* ----------------------ex2------------------------ */
+
+.ex2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.ex2 li {
+  border: 1px solid red;
+  padding: 10px;
+  box-sizing: border-box;
+  /* 마진이랑 패딩은 퍼센트로 지정시 모두 부모기준 */
+}
+
+.ex2 li figure {
+  position: relative;
+  padding-top: 100%;
+  /* 이렇게 만들면 패딩이 top의 100가 들어가니까 정사각형이되는거. */
+}
+
+.ex2 img {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* 비디오랑 이미지는 100%주면 가로세로 비율이 안맞으니까 오브젝트 핏커1ㅓ~~~~ 랑 포지션 중앙*/
+}
+
+
+@media screen and (min-width:1000px) {
+  .ex2 li {
+    width: 33.333%;
+  }
+}
+
+@media screen and (min-width:500px) and (max-width:1000px) {
+  .ex2 li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .ex2 li {
+    width: 100%;
+  }
+}

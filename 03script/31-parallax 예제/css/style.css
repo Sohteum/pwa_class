@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  width: 50%;
+}
+main {
+  width: 100%;
+}
+body {
+  position: relative;
+  width: 100%;
+}
+
+
+ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+div {
+  position: fixed;
+  border: 1px solid red;
+  width: 100%;
+  top: 50%
+}
+
+@media screen and (min-width:1000px) {
+  ul>li {
+    width: 33.333%;
+  }
+}
+
+
+@media screen and (max-width:500px) {
+  ul>li {
+    width: 100%;
+  }
+}
