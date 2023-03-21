@@ -1,5 +1,5 @@
 header {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   top: 0;
   left: 0;
@@ -10,6 +10,12 @@ header {
 
 /* 높이를 줄 수 있다면 주는게 편함.
   공통적인건 같이 주고 다른거는 분기 여기서는 2분기로 하자 */
+header.active {
+  position: fixed;
+  top: -35px;
+  /* 픽스드는 웹브라우저 기준. 검은 줄이있으니까 이렇게 고정 */
+
+}
 
 header .top {
   height: 35px;
@@ -321,7 +327,5 @@ h1 img {
 }
 
 .gnb.sm .en {
-  display: none; 
+  display: none;
 }
-
-

@@ -15,7 +15,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.9);
+  filter: brightness(0.5);
 }
 
 .sub_visual figure figcaption {
@@ -100,6 +100,9 @@
 
 /* --- sidebar --- */
 
+.sidebar {
+  position: sticky;
+}
 
 .snb>ul>li {
   display: none;
@@ -108,6 +111,7 @@
 @media screen and (min-width:1000px) {
   .sidebar {
     width: 22%;
+    top:130px;
   }
 
   .snb h6 {
@@ -140,6 +144,7 @@
 @media screen and (max-width:1000px) {
   .sidebar {
     margin-bottom: 30px;
+    top:80px;
   }
 
   .snb>ul>li>h6 {
@@ -154,9 +159,7 @@
   .snb>ul>li>ul>li {
     flex: 1;
     margin-left: -1px;
-    /* 겹치는 선을 없애줄수있음 */
     overflow: hidden;
-    /* 앵커가 늘어나도 늘어나지않고 숨기겠다 */
     border: 1px solid var(--sub2-color);
   }
 
@@ -175,16 +178,12 @@
     font-size: 0.9em;
     text-align: center;
     white-space: nowrap;
-    /* 줄내림없애기 그대신 텍스트가늘어나면 칸이 늘어남*/
     overflow: hidden;
     text-overflow: ellipsis;
-    /* 텍스트오버플로우할려면 오버플로우를 꼭해야함 */
     line-height: 50px;
-    /* 플렉스가 되어있고, 부모가 있으니까 100%할수있는거  앵커를 100퍼를 해야 클릭 범위가 넓어짐*/
     background-color: var(--sub-color);
     color: #FFF;
-    transition: background 0.3s;
-    /* 반응형에서는 트랜지션에 all보다는 정확하게 써줘야 우당탕탕안함 */
+    transition: background-color 0.3s;
   }
 }
 
@@ -192,14 +191,44 @@
 /* --- sub_content --- */
 
 .sub_content {
-
   background-color: palegreen;
+}
+
+.breadcrumb {
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.breadcrumb li::after {
+  content: '>';
+  margin: 0 10px;
+}
+
+.breadcrumb li {
+  font-size: 0.8em;
+  color:var(--dark-color);
+}
+
+.breadcrumb li.dep2 {
+  font-weight: 600;
+  color:var(--point-color);
+}
+
+.breadcrumb li:last-child:after {
+  display: none;
 }
 
 @media screen and (min-width:1000px) {
   .sub_content {
     width: 75%;
     min-height: 500px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .breadcrumb {
+    display: none;
   }
 }
 

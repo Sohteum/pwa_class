@@ -34,4 +34,9 @@ $(document).ready(function () {
 
   $(`.snb>ul>li`).addClass('active')
   $(`.sub_content `).addClass('active')
+
+  var dep1Title = $(`.nav_bar.lg .menu${dep1} h6`).text()
+  var dep2Title = $(`.nav_bar.lg .menu${dep1}-${dep2}`).text()
+  $(`.breadcrumb .dep1`).text(dep1Title)
+  $(`.breadcrumb .dep2`).text(dep2Title)
 })

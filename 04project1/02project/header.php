@@ -5,14 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/icons/favicon.ico">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/common.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 
 <body>
-
+<script src="header.js"></script>
   <script src="./js/nav.js"></script>
   <header>
     <div class="top">

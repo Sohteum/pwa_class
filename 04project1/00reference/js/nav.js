@@ -24,4 +24,5 @@ $(`.gnb.lg>ul>li`).mouseleave(function(){
   $(`.gnb.lg>ul>li>ul`).stop().slideUp()
 })
   
+
 })

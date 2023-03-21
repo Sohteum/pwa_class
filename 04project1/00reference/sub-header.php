@@ -60,3 +60,8 @@
     </nav>
   </aside>
   <main class="sub_content">
+    <ul class="breadcrumb">
+      <li><i class="fa-solid fa-house-chimney"></i></li><!-- 포지션이나 플롯을 이용해서 날려버림 -->
+      <li class="dep1"></li>
+      <li class="dep2"></li>
+    </ul>

@@ -2,6 +2,7 @@
  @import "header.css";
  @import "footer.css";
  @import "sub-layout.css";
+ @import "greet.css";
 
 
  :root {
@@ -30,3 +31,23 @@
  h1 {
    color: var(--main-color);
  }
+
+ /* 서브페이지 공통스타일은 여기서 잡을 것임 */
+.sub_title {
+  font-size: 1.4em;
+  font-weight: 500;
+  color:var(--main-color);
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+  border-bottom:1px solid var(--main-color)
+}
+
+.emphasis {
+  font-size: 1.15em;
+  font-weight: 500;
+}
+
+.point{
+  color:var(--point-color);
+  font-weight: 800;
+}

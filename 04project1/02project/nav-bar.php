@@ -4,7 +4,6 @@
       <span class="en">company</span>
       <span class="kor">회사소개</span>
     </a>
-
     <h6>회사소개</h6>
     <ul>
       <li><a class="menu1-1" href="./greet.php">인사말</a></li>

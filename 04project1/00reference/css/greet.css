@@ -1,0 +1,45 @@
+.greet_section p {
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* 너비 다 다르게 하고  */
+
+.greet_section p:nth-of-type(1) {
+  max-width: 500px;
+}
+
+.greet_section p:nth-of-type(2) {
+  max-width: 800px;
+}
+
+.greet_section p:nth-of-type(3) {
+  max-width: 500px;
+}
+
+.greet_section p:nth-of-type(4) {
+  max-width: 800px;
+}
+
+
+@media screen and (min-width:600px) {
+  .greet_section figure {
+    display: flex;
+
+    /* 이미지는 상황에 맞는 해상도를 써야함 여기선 600정도면 되는거고. 플렉스를 하면 이미지가 깨짐. 알고있어야함 */
+  }
+
+  .greet_section figure img {
+    flex: 1;
+    max-width: 50%;
+    /* 이미지랑 비디오는 블럭으로 바꿨다고 해서 쫙 커지거나 하지않음 */
+  }
+}
+
+@media screen and (max-width:600px) {
+  .greet_section figure img{
+    margin: 0 auto;
+    width: 100%;
+    /* 블럭레벨은 부모가 줄면 같이 주는데 이미지랑 비디오는 ㄱ ㅡ렇지않아서 직접 너비를 줘야함 */
+  }
+}
