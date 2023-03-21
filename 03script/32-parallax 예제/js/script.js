@@ -3,7 +3,8 @@ $(function () {
     function fnGetWinInfo() {
 
         var offT = $(`section`).offset().top
-        var meta = 0 + Math.abs(scrT - (offT)) * 0.1
+        var meta = 0 + Math.abs(scrT - (offT - winH * 0.5)) * 0.05
+
         if (meta > 50) { meta = 50 }
         $(`section`).children(`div`).css({ 'width': `${meta}px` })
         console.log(meta);
