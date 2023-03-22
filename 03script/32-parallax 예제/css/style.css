@@ -32,19 +32,53 @@ section {
 .left,
 .right {
   position: absolute;
-  top: 0;
   height: 100%;
-  width: 50%;
+  /* width: 50%; */
   /* 머리통 찧을때 0이 되어야함 모래시계인거징.....제일커진게 50이네 */
 }
 
 
 .left {
-  left: 0;
-  background-color: palegreen;
+  background: palegreen;
 }
 
 .right {
-  right: 0;
-  background-color: pink;
+
+  background: pink;
+}
+
+@media screen and (min-width:700px) {
+
+  .left,
+  .right {
+    height: 100% !important; 
+        /* 인라인스타일이어서 스크립트의 영향을 받으니까 임폴턴트
+    문이 좌우로 열림, 너비를 바꿀예정(스크립트) */
+  }
+
+  .left {
+    left:0;
+  }
+
+  .right {
+    right:0;
+  }
+}
+
+@media screen and (max-width:700px) {
+
+  .left,
+  .right {
+    width: 100% !important;
+        /* 인라인스타일이어서 스크립트의 영향을 받으니까 임폴턴트 
+    문이 ㅣ상하로 열림, 높이를 바꿀예정(스크립트)*/
+  }
+
+  .left {
+    top:0;
+  }
+
+  .right {
+    bottom:0;
+  }
 }

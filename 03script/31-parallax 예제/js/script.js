@@ -1,8 +1,8 @@
 
 
-$(function () {
-  /*   $(`div`). */
-  var reqID
+/* $(function () {
+
+   var reqID
   function fnMotion() {
     $(`ul li`).each(function () {
       var elH = $(this).innerHeight()
@@ -19,5 +19,32 @@ $(function () {
     reqID = requestAnimationFrame(fnMotion)
   }).resize(function () {
     reqID = requestAnimationFrame(fnMotion)
+  })
+})
+ */
+
+$(function () {
+  var reqID
+  function fnHeaderMotion() {
+    $(`li`).each(function () {
+      var offT = $(this).offset().top
+      var elH = $(this).innerHeight()
+      var metaR = 50 + Math.abs(scrT - offT + winH * 0.5) * -0.1
+      var metaS = 1 + Math.abs(scrT - offT * winH * 0.5) * -0.0025
+      //border-radius /transition도 다이아
+      /*       목적지+절대값(스크롤값-) */
+      if (metsS < 0) { metaS = 0 }
+      $(this).find(`figure`).css({
+        'border-radius': `${metaR}%`,
+        'transform': `scale(${metaS})`,
+
+      })
+    })
+  }
+  fnHeaderMotion()
+  $(window).scroll(function () {
+    reqID = requestAnimationFrame(fnHeaderMotion)
+  }).resize(function () {
+    reqID = requestAnimationFrame(fnHeaderMotion)
   })
 })
