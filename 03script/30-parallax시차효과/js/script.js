@@ -33,9 +33,9 @@ $(function () {
     $(`.ex2 li`).each(function () {
       var elH = $(this).innerHeight()
       var offT = $(this).offset().top
-      var meta = 50 + Math.abs(scrT - (offT - winH * 0.5 + elH * 0.5)) * -0.05
+      var meta = 50 + Math.abs(scrT - (offT - winH * 0.5 + elH * 0.5)) * -0.1
       if (meta > 50) { meta = 50 }
-      $(this).find(`img`).css({ 'border-radius': meta })
+      $(this).find(`img`).css({ 'border-radius': ` ${meta}%` })
     })
   }
   fnHeaderMotion()

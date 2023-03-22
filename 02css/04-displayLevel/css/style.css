@@ -218,3 +218,19 @@ h1 {
   background-color: bisque;
 } */
 
+div .a p {
+  background-color: antiquewhite;
+  margin: 10px 0;
+}
+
+div .a a {
+  background-color: rgb(177, 109, 21);
+  margin: 10px 0;
+}
+
+.b {}
+
+.b div {
+  display: inline-block;
+
+}

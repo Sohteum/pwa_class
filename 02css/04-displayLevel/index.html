@@ -1,122 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css"
+    />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Document</title>
-</head>
+  <body>
+    <main>
+      <h1>display level</h1>
+      test
+      <!-- h1의 넓이를 보면 메인과 바디가 블럭레벨인걸 알수있어, 100%로 태어남 -->
+      <section class="section1">
+        <h2>출력레벨(=출력방식)의 종류</h2>
+        <article>
+          <span>1</span>
+          <h3>block level</h3>
+          <ul>
+            <li>한줄을 통째로 차지하는 출력요소</li>
 
-<body>
-  <main>
-    <h1>display level</h1>
-    test
-    <!-- h1의 넓이를 보면 메인과 바디가 블럭레벨인걸 알수있어, 100%로 태어남 -->
-    <section class="section1">
-      <h2>출력레벨(=출력방식)의 종류</h2>
-      <article>
-        <span>1</span>
-        <h3>block level</h3>
-        <ul>
-          <li>한줄을 통째로 차지하는 출력요소</li>
-          
-          <li>크기속성이 적용됨(width와 height를 지정가능)</li>
-          <li>main,section,article,header,footer,nav,ul,ol,dl,li,dt,dd,div,h1~h6,p,form,table 등</li>
-
-        </ul>
-      </article>
-      <article>
-        <h3>inline level</h3>
-        <ul>
-          <li>한줄로 출력되는 요소</li>
-          <li>크기속성이 적용되지 않음</li>
-          <li>a,span,small,em,strong,i,label 등</li>
-        </ul>
-        <span>span</span>
-        <b>bold</b>
-      </article>
-      <article>
-        <h3>inline-block level</h3>
-        <ul>
-          <li>한줄로 출력되는 요소</li>
-          <li>크기속성이 적용됨</li>
-          <li>
-            img,input,select,textarea,button,inframe,svg,video
-          </li>
-        </ul>
-
-      </article>
-    </section>
-    <hr>
-    <section>
-      <h2>디스플레이레벨과 정렬</h2>
-      <article>
-        <h3>인라인레벨의 수직, 수평정렬</h3>
-        <ul>
-          <li>vertical-align(인라인계열만 적용가능)</li>
-          <li>line-height:element안쪽의 글자(인라인계열)를 중앙정렬 : 줄간격을 높이와 동일하게 설정(한줄일때만 사용가능);line-height</li>
-          <li>글자(인라인계열)을 수평정렬 할경우 부모요소에서 text-align속성을 적용</li>
-        </ul>
-        <div class="ex1">
-          <span>span1</span>
-          <span><b>span2</b></span>
-          <!-- 스판 안에있는 b의 위치를 옮기는거니까 스판에다가 라인하이트 -->
-          <span>span3</span>
-        </div>
-      </article>
-      <hr>
-      <article>
-        <h3>block레벨의 수평정렬</h3>
-        <ul>
-          <li>블록계열은 자기가 알아서 간다</li>
-          <li>블록을 수평안에서 정렬하려면 margin:auto,margin-left:auto,margin-right:auto사용</li>
-          <li></li>
-        </ul>
-        <div class="ex2">
-          <div>div1</div>
-          <div>div2</div>
-        </div>
-      </article>
-      <hr>
-      <article>
-        <h3>예제</h3>
-        <main></main>
-        <div class="ex3">
-          <span>span1</span>
-        </div>
-        <hr>
-        <div class="ex4">
-          <span>span1</span>
-        </div>
-        <hr>
-        <div class="ex5">
-          <span>span1</span>
-          <span>span2</span>
-        </div>
-        <hr>
-        <div class="ex6">
-          <span>span1</span>
-          <span>span2</span>
-        </div>
-        <hr>
-        <div class="ex7">
-          <span>span1</span>
-          <span>span2</span>
-          <span>span3</span>
-          <span>span4</span>
-        </div>
-        <hr>
-        <div class="ex8">
-          <canvas>span1</canvas>
-
-        </div>
-
-      </article>
-
-    </section>
-  </main>
-</body>
-
+            <li>크기속성이 적용됨(width와 height를 지정가능)</li>
+            <li>main,section,article,header,footer,nav,ul,ol,dl,li,dt,dd,div,h1~h6,p,form,table 등</li>
+          </ul>
+        </article>
+        <article>
+          <h3>inline level</h3>
+          <ul>
+            <li>한줄로 출력되는 요소</li>
+            <li>크기속성이 적용되지 않음</li>
+            <li>a,span,small,em,strong,i,label 등</li>
+          </ul>
+          <span>span</span>
+          <b>bold</b>
+        </article>
+        <article>
+          <h3>inline-block level</h3>
+          <ul>
+            <li>한줄로 출력되는 요소</li>
+            <li>크기속성이 적용됨</li>
+            <li>img,input,select,textarea,button,inframe,svg,video</li>
+          </ul>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <h2>디스플레이레벨과 정렬</h2>
+        <article>
+          <h3>인라인레벨의 수직, 수평정렬</h3>
+          <ul>
+            <li>vertical-align(인라인계열만 적용가능)</li>
+            <li>line-height:element안쪽의 글자(인라인계열)를 중앙정렬 : 줄간격을 높이와 동일하게 설정(한줄일때만 사용가능);line-height</li>
+            <li>글자(인라인계열)을 수평정렬 할경우 부모요소에서 text-align속성을 적용</li>
+          </ul>
+          <div class="ex1">
+            <span>span1</span>
+            <span><b>span2</b></span>
+            <!-- 스판 안에있는 b의 위치를 옮기는거니까 스판에다가 라인하이트 -->
+            <span>span3</span>
+          </div>
+        </article>
+        <hr />
+        <article>
+          <h3>block레벨의 수평정렬</h3>
+          <ul>
+            <li>블록계열은 자기가 알아서 간다</li>
+            <li>블록을 수평안에서 정렬하려면 margin:auto,margin-left:auto,margin-right:auto사용</li>
+            <li></li>
+          </ul>
+          <div class="ex2">
+            <div>div1</div>
+            <div>div2</div>
+          </div>
+        </article>
+        <hr />
+        <article>
+          <h3>예제</h3>
+          <main></main>
+          <div class="ex3">
+            <span>span1</span>
+          </div>
+          <hr />
+          <div class="ex4">
+            <span>span1</span>
+          </div>
+          <hr />
+          <div class="ex5">
+            <span>span1</span>
+            <span>span2</span>
+          </div>
+          <hr />
+          <div class="ex6">
+            <span>span1</span>
+            <span>span2</span>
+          </div>
+          <hr />
+          <div class="ex7">
+            <span>span1</span>
+            <span>span2</span>
+            <span>span3</span>
+            <span>span4</span>
+          </div>
+          <hr />
+          <div class="ex8">
+            <canvas>span1</canvas>
+          </div>
+          <div class="a">
+            <p>g</p>
+            <a href="">a</a>
+          </div>
+          <div class="b">
+            b
+            <div>c</div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
