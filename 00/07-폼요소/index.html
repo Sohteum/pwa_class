@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>폼요소</h1>
+  <ul>
+    <li>form요소는 데이터 전송범위를 의미</li>
+    <li>fieldset : 폼요소내에서 데이터의 범위를 구분</li>
+    <li>legend : fieldset의 제목</li>
+    <li>label : 폼 요소기때문에 인라인! 입력요소에 입력값의 참조할 내용, for와 id속성을 사용</li>
+    <li>placeholder속성 : 글자나 숫자를 입력하는 폼요소에 적용가능 </li>
+    <li>size속성 : text,password, email의 넓이를 설정하는 속성(크로싱브라우저를 준수하지 않는다)</li>
+    <li>maxlength속성 : text, password, email의 글자길이 제한</li>
+    <li>button type = submit, reset, button </li>
+    <li>option요소의 label속성은 텍스트를 대체하는 기능을 한다.</li>
+    <li>autocomplete속성 : 자동완성기능, name속성을 지정해야 함</li>
+    <li>file요소 : multiple(다수의 파일을 선택 할 수 있는 기능), accept(파일 유형을 선택할 수 있는 기능)</li>
+    <li>email : 유효성 검사(제대로 입력했나/틀렸나 맞나) 체크기능제공, mobile 사용시 키패드 ui환경을 제공(키패드가 알아서 튀어나오는)</li>
+    <li>date, time : 날짜와 시간을 입력</li>
+    <li>number, range : 숫자만 입력가능, min, max, step 속성이 허락됨</li>
+    
+
+    <!-- number, email, textarea, input_button, range, date, time -->
+    <hr>
+    <h2>시험</h2>
+    <form action=""> <!-- 전송기능이 있으니까 무조건 폼 안에서 활성화를 시켜야한다. 폼 없으면 작동 X-->
+      <fieldset>
+        <legend>회원가입</legend>
+        <p>
+          <label name="name1" autocapitalize="on" for="id1">아이디</label> : <input id="id1" type="text"
+            placeholder="영어와숫자조합만사용가능" size="10"> <!--이래야 둘이 짝꿍(연결)이 됨-->
+        </p>
+        <p>
+          <label for="pasw1">비밀번호</label> :
+          <input name="name2" autocapitalize="off" type="password" id="pasw1" placeholder="5글자이내" maxlength="5">
+        </p>
+        <p>
+          <label>성별</label> <!--짝퉁레이블 / 그치만 css를 위해-->
+
+          <lable for="id3-1">남</lable><!-- 실제 레이블-->
+          <input type="radio" name="a" id="id3-1" title="남자일경우">
+
+          <lable for="id3-2">여</lable>
+          <input type="radio" name="a" id="id3-2" title="여자일경우">
+
+        </p>
+        <p>
+          <label>취미</label>
+
+          <label for="id4-1">
+            <input type="checkbox" id="" title="영화가취미인경우">
+            영화
+          </label>
+
+          <label for="id4-2">
+            <input type="checkbox" id="" title="영화가취미인경우">
+            만화
+          </label>    <!-- css로 관리하기도 편하게 이렇게 배치하는게 좋긴하다. -->
+        </p>
+
+        <p>
+          <label for="">
+            가입경로
+          </label>
+          <select name="" id="id5">
+            <option value="" label="인터넷"></option>
+            <option value="" label="지인소개"></option>
+            <option value="" label="기타"></option>
+          </select>
+        </p>
+
+        <p>
+          <label for="id6">파일</label> <input id="id6" type="file" multiple accept="image/jpg,pdf">
+        </p>
+
+     
+        <p>
+          <label for="">이메일</label>
+          <input type="email" size="5"> <!-- 폼의 넓이 ! -->
+        </p>
+          
+        <p>
+          <label for="">연령</label>
+          <input type="number" min="0" max="900" step="5"> <!-- 여기만 사이즈랑 맥스랭스 여기는 적용 안됨-->
+        </p>
+
+        <p>
+          <label for="">전화번호</label>
+          <input type="tel" title="전화번호 첫번째 3자리"> -
+          <input type="tel" title="전화번호 첫번째 3자리"> -
+          <input type="tel" title="전화번호 첫번째 3자리">  <!-- 말그대로 전화번호 키패드가 나올 뿐 !-->
+        </p>
+
+        <p>
+          <label for="">생년월일</label>
+          <input type="date">
+        </p>  
+
+        <p>
+          <label for="">신장</label>
+          <input type="range" min="100" max="300" step="10"> <!-- 자바스크립트에서 change이벤트를 통해서 만들면 될듯 ! -->
+        </p>
+
+        <p>
+          <label for="">예약시간</label>
+          <input type="time"> <!-- 출력되는 방식은 브라우저마다 다르다. -->
+        </p>
+
+
+        <p>
+          <button type="submit">전송하기</button> <!-- 클릭하면 데이터를 전송하고 화면을 새로고침 -->
+          <button type="reset">다시작성하기</button> <!-- 폼 안에 내용을 다 날리기 -->
+          <button type="button">가입시확인사항</button> <!-- 순수하게 누루는 기능만 있는 / 사이즈랑 맥스랭스 가능-->
+        </p>
+
+      </fieldset>
+    </form>
+  </ul>
+</body>
+
+</html>
