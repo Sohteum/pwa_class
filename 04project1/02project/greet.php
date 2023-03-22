@@ -1,5 +1,5 @@
 <?php include "sub-header.php" ?>
-
+<script src="./js/greet.js"></script>
 <h2 class="sub_title">인사말</h2>
 <section class="greet_section">
   <p>

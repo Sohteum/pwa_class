@@ -124,6 +124,7 @@
 
 .sidebar {
   position: sticky;
+  z-index: 1;
   /* 부모가 너비가 퍼센트니까 자식도 퍼센트로 하는게 좋음.화면 작아졌을때는 너비 주면 안됨 백퍼잖아.백퍼 안ㅆ더대자나 블럭레벨이니까 */
 }
 
@@ -303,7 +304,10 @@
 /* --- sub_content --- */
 
 .sub_content {
+  position: relative;
   font-size: 0.9em;
+  z-index: 0;
+  /* 이것만 적용은안됨. 포지션 렐러티브 적용해줘야함 */
 }
 
 .breadcrumb {

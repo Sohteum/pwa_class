@@ -1,6 +1,6 @@
 <?php include "sub-header.php" ?>
 
-<h2>사업분야</h2> 본문
+<h2 class="sub_title">사업분야</h2> 
 
 <p>회사만의 특화되고 세분화된 사업영역을 바탕으로
   최고의 비즈니스를 제안합니다. </p>

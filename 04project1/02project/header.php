@@ -10,7 +10,7 @@
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="./js/common.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <title>SunSHine</title>
 </head>
 
 <body>

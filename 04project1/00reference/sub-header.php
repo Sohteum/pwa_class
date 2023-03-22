@@ -65,3 +65,4 @@
       <li class="dep1"></li>
       <li class="dep2"></li>
     </ul>
+    <!-- 메인전체에 z인덱스를 주면 됨. -->

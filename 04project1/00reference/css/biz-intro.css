@@ -1,0 +1,143 @@
+.biz_intro_section {
+  overflow: hidden;
+}
+
+
+.biz_intro_section>p {
+  margin: 40px auto;
+  max-width: 700px;
+  text-align: center;
+
+}
+
+@media screen and (min-width:1000px) {}
+
+@media screen and (min-width:500px) and (max-width:1000px) {}
+
+@media screen and (min-width:500px) {}
+
+
+.biz_intro_section ul {
+  display: flex;
+
+  /* 여기서 플렉스랩하면 두줄생기니깐...한줄할꺼야 그래서 지워버렷으 */
+}
+
+.biz_intro_section ul li {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.biz_intro_section ul li figure {
+  padding: 5px;
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  /* 여기는 위드하이트없으니까 박스사이징안핻도됨 */
+}
+.biz_intro_section ul li figure div {
+  overflow: hidden;
+}
+.biz_intro_section ul li figure div img {
+  width: 100%;
+    /* 위드 안주면 원래크기를 유지하려고 함 */
+}
+
+.biz_intro_section ul li figure figcaption {
+  background-color: var(--main-color);
+  color: #FFF;
+  padding: 5px;
+}
+
+.biz_intro_section ul li figure figcaption h3 {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #EEE;
+}
+
+
+@media screen and (min-width:900px) {
+  .biz_intro_section ul li {
+    flex: 1;
+    /* 플렉스박스 안에 li가 있으니까. 스트레팅이 되어있으니까 리스트가 플렉스 박스 안에 있으니까 피규어가 높이 주면 그걸 인식한ㅇㄴ다고?그냥 리스트면 안됨. */
+  }
+
+  .biz_intro_section ul li figure {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    
+  }
+
+  .biz_intro_section ul li figure figcaption {
+    flex:1;
+    /* 이렇게 지정해주면 글자가 넘쳐도 높이가 모두 같다. */
+  }
+}
+
+/* lg */
+
+@media screen and (max-width:900px) {
+  .biz_intro_section ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .biz_intro_section ul li {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* sm */
+
+
+/* p motion */
+
+.biz_intro_section>p {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.biz_intro_section>p:nth-of-type(odd) {
+  transform: translateX(100px);
+}
+
+.biz_intro_section>p:nth-of-type(even) {
+  transform: translateX(-100px);
+
+}
+
+.biz_intro_section>p.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* li motion */
+
+.biz_intro_section li {
+  opacity: 0;
+  filter: grayscale(1) blur(2px);
+  transition: filter 1s, opacity 1s;
+}
+
+.biz_intro_section li.active {
+  opacity: 1;
+  filter: grayscale(0) blur(0);
+}
+
+@media screen and (min-width:900px) {
+  .biz_intro_section li.active:nth-child(2) {
+    transition-delay: 0.5s;
+  }
+  .biz_intro_section li.active:nth-child(3) {
+    transition-delay: 1s;
+  }
+  /* 액티브를 꼭 달아주자!!!딜레이가 딜레이가 되는수가있다!! */
+}
+
+/* .biz_intro_section li img {
+   transform: scale(1.5) translateY(15%~-15%); 
+} */

@@ -6,8 +6,8 @@
     </a>
     <h6>회사소개</h6>
     <ul>
-      <li><a class="menu1-1" href="./greet.php">인사말</a></li>
-      <li><a class="menu1-2" href="./location.php">오시는길</a></li>
+      <li><a class="menu1-1" href="./greet.php">인사말<!-- <i class="fa-brands fa-ello"></i> --></a></li>
+      <li><a class="menu1-2" href="./location.php">오시는길<!-- <i class="fa-solid fa-map-location-dot"></i> --></a></li>
     </ul>
   </li>
   <li class="menu2">

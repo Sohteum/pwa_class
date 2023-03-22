@@ -24,3 +24,16 @@ font-family: 'Montserrat', sans-serif;
 
 제이쿼리cdn
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+  $(function(){
+var reqID
+function fnHeaderMotion() {
+
+}
+fnHeaderMotion()
+$(window).scroll(function(){
+  reqID = requestAnimationFrame(fnHeaderMotion)
+}).resize(function(){
+  reqID = requestAnimationFrame(fnHeaderMotion)
+})
+})

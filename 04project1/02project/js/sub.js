@@ -33,7 +33,7 @@ $(document).ready(function () {
   $(`.sub_visual .visual${dep1}`).fadeIn().addClass(`active`)
 
   $(`.snb>ul>li`).addClass('active')
-  $(`.sub_content `).addClass('active')
+  $(`.sub_title `).addClass('active')
 
   var dep1Title = $(`.nav_bar.lg .menu${dep1} h6`).text()
   var dep2Title = $(`.nav_bar.lg .menu${dep1}-${dep2}`).text()

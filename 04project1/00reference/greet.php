@@ -1,5 +1,7 @@
 <?php include 'sub-header.php' ?>
-<h2 class="sub_title">인사말본문</h2>
+<script src="./js/greet.js"></script>
+<!-- 헤더에서 제이쿼리랑 다뽑았음. 근데 그 위에서 적용하면 적용이 안됨. 반드시 적용위치 확인 -->
+<h2 class="sub_title">인사말</h2>
 <section class="greet_section">
 
   <p class="emphasis">정보화 시대에 <b class="point serif">빠른 정보를 원하는 우리들에게</b> 인터넷은
