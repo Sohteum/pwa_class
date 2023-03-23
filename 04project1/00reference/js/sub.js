@@ -55,7 +55,9 @@ $(document).ready(function () {
   $(`.breadcrumb .dep1`).text(dep1Title)
   $(`.breadcrumb .dep2`).text(dep2Title)
 
-
+$(`.site_guide button`).click(function(){
+  $(`.site_guide`).slideUp()
+})
 })
 
 

@@ -28,11 +28,12 @@ canvas {
   display: block;
 }
 
-iframe {
+iframe, fieldset {
   border: none;
 }
 
 table {
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
@@ -46,8 +47,9 @@ select {
 
 button {
   border: none;
-  background-color: none;
+  background: none;
   cursor: pointer;
+  /* 버튼은 이미 박스사이징을 가지고있음 */
 }
 
 .hidden {

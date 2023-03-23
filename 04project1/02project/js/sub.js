@@ -39,4 +39,8 @@ $(document).ready(function () {
   var dep2Title = $(`.nav_bar.lg .menu${dep1}-${dep2}`).text()
   $(`.breadcrumb .dep1`).text(dep1Title)
   $(`.breadcrumb .dep2`).text(dep2Title)
+
+  $(`.site_guide button`).click(function(){
+    $(`.site_guide`).slideUp()
+  })
 })

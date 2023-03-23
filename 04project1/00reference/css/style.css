@@ -4,6 +4,7 @@
  @import "sub-layout.css";
  @import "greet.css";
  @import "biz-intro.css";
+ @import "board.css";
 
 
  :root {
@@ -52,3 +53,26 @@
   color:var(--point-color);
   font-weight: 800;
 }
+
+.sub_desc {
+  margin-bottom: 40px;
+}
+
+.sub_desc .em{
+  display: block;
+}
+
+.site_guide {
+  position: relative;
+  padding: 20px;
+  background-color: #000;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.site_guide button {
+  position: absolute;
+  top:5px;
+  right: 5px;
+}
+

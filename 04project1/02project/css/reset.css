@@ -23,7 +23,7 @@ canvas {
 	display: block;
 }
 
-iframe {
+iframe, fieldset {
 	border: none;
 }
 
@@ -40,7 +40,7 @@ select {
 
 button {
 	border: none;
-	background-color: none;
+	background: none;
 	cursor: pointer;
 }
 

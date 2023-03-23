@@ -10,6 +10,8 @@
 @import "footer.css";
 @import "sub-layout.css";
 @import "greet.css";
+@import "biz-intro.css";
+@import "board.css";
 
 
 :root {
@@ -21,6 +23,7 @@
 }
 
 body {
+  color:#4b4b4b;
   font-family: 'Montserrat', 'Noto Sans KR', sans-serif, 'Roboto Slab', serif, 'Nanum Pen Script', cursive;
   font-size: 15px;
   font-weight: normal;
@@ -35,10 +38,55 @@ body {
 .point {
   font-family: 'Nanum Pen Script', cursive;
   font-size: 1.5em;
-
   color: var(--point-color);
 }
 
 h1 {
   color: var(--main-color);
+}
+
+
+/* Style */
+
+
+.sub_title {
+  font-size: 1.4em;
+  font-weight: 500;
+  color:var(--main-color);
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+  border-bottom:1px solid var(--main-color)
+}
+
+.emphasis {
+  font-size: 1.15em;
+  font-weight: 500;
+}
+
+.point{
+  color:var(--point-color);
+  font-weight: 800;
+}
+
+.sub_desc {
+  margin-bottom: 40px;
+
+}
+
+.sub_desc .em{
+  display: block;
+}
+
+.site_guide {
+  position: relative;
+  padding: 20px;
+  background-color: #000;;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.site_guide button {
+  position: absolute;
+  top:5px;
+  right: 5px;
 }
