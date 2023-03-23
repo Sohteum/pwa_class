@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+  <script>
+    $(function () {
+      /* 첫번째 버튼을 클릭했을경우 콘솔창에 출력되는 예상 값은? */
+      window.a = 0
+
+      function fn(param) {
+        var a = param + 1
+        a++
+        return (a >= 3) ? window.a : a
+      }
+
+      $(`button`).click(function () {
+        a = parseInt($(this).val())
+        result = fn(a)
+        console.log(result);
+      })
+
+    })
+  </script>
+  <title>Document</title>
+</head>
+
+<body>
+  <button value="1">one</button>
+  <button value="2">two</button>
+  <button value="3">three</button>
+  <button value="4">four</button>
+</body>
+
+</html>
