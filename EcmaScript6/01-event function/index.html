@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>이벤트</h1>
+  <ul>
+    <li>
+      onclick속성
+      장점 : 비동기스크립트 호출이 필요없다.
+      단점 : 반복적인 호출을 요구함. 이벤트리스너를 호출시 event예약어를 사용
+      <xmp>
+        <button onClick="fn1_1('안녕하세요')">버튼</button>
+      </xmp>
+    </li>
+    <li>
+      parsing관련(Dom)event <br>
+      DOMContentLoaded 구조만 파악. <br>
+      파싱이 끝난시점=렌더링 시작시점=화면에 나타나는시점
+      <xmp>
+        document.addEventListener(`DOMContentLoaded`, function () {})
+      </xmp>
+      window.load 소스가 로딩이 완료된 시점
+      <xmp>
+        $(window).load(function(){})
+      </xmp>
+    </li>
+    <li>
+      선택자
+      <pre>
+        getElementById('아이디이름'):객체 하나를 선택/이벤트바인딩 가능(addEventListener)
+        getElementByClassName('클래스이름'):배열로 선택
+        getElementByTagName('태그이름'):배열로 선택
+        querySelector('css선택자'):(여러개일때)첫번째 요소 하나를 선택/이벤트바인딩가능(addEventListener)
+        querySelectorAll('css선택자'):배열로 선택
+      </pre>
+    </li>
+    <li>
+      이벤트리스너.target(이게 제이쿼리 디스랑 같은거)
+      <xmp>
+        document.querySelector(`.ex3btn`).addEventListener(`click`, function (e) {
+        console.log(e.target); })
+      </xmp>
+    </li>
+
+  </ul>
+  <div class="ex1">
+    <!--   <button onClick="alert('hi!')">버튼</button> -->
+    <button onClick="fn1_1('안녕하세요')">버튼</button>
+    <!-- 따옴표는 html, 그 안은 스크립트.  -->
+    <button onClick="fn1_2(event)">버튼</button>
+    <!-- 온클릭 속성으로 호출한다. 단점은? 똑같은 일을 여러번할때 html에서 다 바꿔줘야함. 장점. 다큐멘트레디같은건 필요없음 온클릭은 html의 속성임. 속성으로 이벤트를 리슨.여기서는 꼭 이벤트라는 예약어를 사용해야함-->
+    <hr>
+    <div class="ex2">
+      <button>버튼</button>
+      <button id="ex2btn">버튼</button>
+      <button class="ex3btn">버튼</button>
+    </div>
+  </div>
+</body>
+
+</html>

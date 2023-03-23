@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <!-- 연기하다. 병렬처리. 읽기만 하고 웹문서 파싱이 끝나면 스크립트 실행을 함 /이전에는 직렬방식으로 파싱하다가 스크립트먼저 읽고 그다음 다시 html파싱하는수순이었다면 요즘은 병렬방식. -->
+  <!-- 우리가 아까 했던 로디드 , 레디펑션 비동기문법 -->
+  <!-- 디퍼 혹은 로디드 둘중하나만할것 -->
+  <title>Document</title>
+</head>
+<body>
+  <button>버튼</button>
+  <div class="ex1">
+    <p>1. var의 scope</p>
+    <button class="btn1">버튼</button>
+    <button class="btn2">버튼</button>
+  </div>
+  <hr>
+  <div class="ex2">
+    <p>1. let의 scope</p>
+    <button class="btn1">버튼</button>
+    <button class="btn2">버튼</button>
+  </div>
+</body>
+</html>
