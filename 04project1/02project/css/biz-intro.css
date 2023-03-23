@@ -22,12 +22,17 @@
   padding: 5px;
   background-color: #EEE;
   border: 1px solid #CCC;
+
 }
+
 .biz_intro_section ul li figure div {
   overflow: hidden;
 }
+
 .biz_intro_section ul li figure div img {
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .biz_intro_section ul li figure figcaption {
@@ -58,13 +63,14 @@
     box-sizing: border-box;
 
   }
+
   .biz_intro_section ul li figure>div>img {
     object-fit: cover;
     object-position: center;
   }
 
   .biz_intro_section ul li figure figcaption {
-    flex:1;
+    flex: 1;
   }
 }
 
@@ -123,6 +129,7 @@
   .biz_intro_section li.active:nth-child(2) {
     transition-delay: 0.5s;
   }
+
   .biz_intro_section li.active:nth-child(3) {
     transition-delay: 1s;
   }

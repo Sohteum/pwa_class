@@ -1,4 +1,4 @@
-.board_section .sub_desc{
+.board_section .sub_desc {
   font-size: 0.9em;
 }
 
@@ -72,39 +72,38 @@
 }
 
 .board_paging a.active {
-  color:var(--point-color)
-
+  color: var(--point-color)
 }
 
 .board_search {
   text-align: center;
   padding: 10px 0;
-  border-top: 1px solid #CCC;;
+  border-top: 1px solid #CCC;
+  ;
 }
 
 .board_search * {
-  padding:2px;
+  padding: 2px;
   height: 23px;
   vertical-align: middle;
 }
+
 .board_search button {
   width: 50px;
-  background-color: var(--dark-color);
-  color:#FFF;
+  background-color: var(--main-color);
+  color: #FFF;
   border-radius: 2px;
 }
+
 .board_search button:hover {
-  background-color: var(--main-color);
+  background-color: var(--point-color);
 }
 
 @media screen and (max-width:800px) {
 
-  .board tr> *:nth-child(1),
-  .board tr> *:nth-child(4),
-  .board tr> *:nth-child(5){
+  .board tr>*:nth-child(1),
+  .board tr>*:nth-child(4),
+  .board tr>*:nth-child(5) {
     display: none;
   }
 }
-
-
-

@@ -22,12 +22,11 @@ $(function () {
     window.scrL = $(window).scrollLeft()
     window.winH = $(window).height()
     window.winW = $(window).width()
-    console.log(scrT,scrL,winW,winH);
   }
   fnGetWinInfo()
-  $(window).scroll(function(){
+  $(window).scroll(function () {
     reqID = requestAnimationFrame(fnGetWinInfo)
-  }).resize(function(){
+  }).resize(function () {
     reqID = requestAnimationFrame(fnGetWinInfo)
   })
 

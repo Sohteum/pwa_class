@@ -69,6 +69,26 @@
     </tbody>
   </table>
 
+  <nav class="board_paging">
+    <a class="active" href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+  </nav>
+
+  <form class="board_search">
+    <fieldset>
+      <select>
+        <option label="내용" title="내용으로 검색할 경우 선택하세요">내용</option>
+        <option label="제목" title="제목으로 검색할 경우 선택하세요">제목</option>
+        <option label="작성자" title="작성자로 검색할 경우 선택하세요">작성자</option>
+      </select>
+      <label for="search_input" class="hidden">검색어를 입력하세요</label>
+      <input id="search_input" type="text">
+      <button>검색</button>
+    </fieldset>
+  </form>
+</section>
+
 </section>
 
 <?php include "sub-footer.php" ?>

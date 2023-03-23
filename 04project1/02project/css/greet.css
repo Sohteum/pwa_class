@@ -37,8 +37,9 @@
 
 .greet_section figure img {
   opacity: 0;
-  transition: all 1s;
+  transition: all 2s;
 }
+
 .greet_section figure img.active {
   opacity: 1;
 }
