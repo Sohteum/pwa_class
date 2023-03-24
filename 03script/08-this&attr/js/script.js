@@ -11,7 +11,7 @@ $(function () {
   })
 
 
-
+/* 
   function fn2(el, con) {
     $(`.ex2 .con${con} button`).not(el).css({ 'color': 'black' })
     el.css({ 'color': 'red' })
@@ -20,6 +20,25 @@ $(function () {
   $('.ex2 button').click(function () {
     var con = $(this).val()
     fn2($(this), con)
+  }) */
+
+function fncol(el, con) {
+  $(`.ex2 .con${con} button`).not($(this)).css({'color':`black`});
+  el.css({'color':`red`});
+}
+
+
+  $(`.ex2 .con1 button`).click(function(){
+    var con = $(this).val()
+    $(`.ex2 .con1 button`).not($(this)).css({'color':`black`});
+    $(this).css({'color':`red`});
+    fncol($(this), con)
+  })
+  $(`.ex2 .con2 button`).click(function(){
+    var con = $(this).val()
+    $(`.ex2 .con2 button`).not($(this)).css({'color':`black`});
+    $(this).css({'color':`red`});
+    fncol($(this), con)
   })
 
 

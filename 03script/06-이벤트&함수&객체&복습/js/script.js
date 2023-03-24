@@ -91,31 +91,14 @@ $('.ex2 .cnt input').bind('input', function () {
   }
 
   $('.prac1 input, .prac1 select').change(function () {
-        var price = parseInt($(`.prac1 input:checked`).val())
-        var opt = parseInt($(`.prac1 select`).val())
-        var num = parseInt($(`.prac1 .count`).val())
-        var sum = (price + opt) * num
-        $(`.prac1 .output1`).text(sum) 
     fn1()
   })
-  $('.prac1 .count').bind('input', function () {
-
-
+  $('.prac1 .count').bind('input', function () 
     fn1()
   })
   $('.prac2 input, .prac2 select').change(function () {
-    var price = parseInt($(`.prac2 input:checked`).val())
-    var opt = parseInt($(`.prac2 select`).val())
-    var num = parseInt($(`.prac2 .count`).val())
-    var sum = (price + opt) * num
-    $(`.prac2 .output2`).text(sum)
   })
   $('.prac2 .count').bind('input', function () {
-    var price = parseInt($(`.prac2 input:checked`).val())
-    var opt = parseInt($(`.prac2 select`).val())
-    var num = parseInt($(`.prac2 .count`).val())
-    var sum = (price + opt) * num
-    $(`.prac2 .output2`).text(sum)
   })
 
   $('.prac .output1, .prac2 .output2').change(function () {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>
+      event.currentTarget: 이벤트 바인딩 된 엘리먼트를 호출<br>
+      event.target: nested구조로 된 엘리먼트일경우 이벤트 위치에 존재하는 최 하위 요소 호출(맨 안에 있는 자식)
+    </li>
+    <li>
+      nested구조에서만 일어나는 일인거지.  <br>
+      capturing : 이벤트를 감지하는 순서(부모먼저)<br>
+      bubbling : 이벤트를 실행하는 순서(자식먼저)<br>
+    </li>
+    <li>
+      e.preventDefault: 브라우저에서 설정된 엘리먼트의 기본 행동을 막는다. <br>
+      e.stopPropagation :버블링을 중단한다(부모의 행동을 막는다)
+    </li>
+  </ul>
+  <div class="ex1">
+    <a href="http://www.naver.com">링크</a>
+  </div>
+</body>
+</html>
