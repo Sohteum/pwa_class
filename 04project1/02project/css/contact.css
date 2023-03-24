@@ -1,0 +1,127 @@
+.contact_form {
+  border-top: 1px double var(--main-color);
+}
+
+.contact_form div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid #CCC;
+
+  /* 인라인레벨은 너비를 못주고 , 블럭하면 다떨어짐. 
+플렉스를 하면 크기를 줄수있고 떨어지기도 함 */
+}
+
+
+.contact_form label:first-child {
+  display: flex;
+  justify-content: center;
+  /* 여기서 왜 first child인지 이해가 안감 확인할것 */
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: #EEE;
+}
+
+.contact_form span {
+  display: flex;
+  align-items: center;
+}
+
+
+.contact_form input,
+.contact_form textarea,
+.contact_form select {
+  padding: 3px;
+  margin: 4px;
+}
+
+.contact_form textarea {
+  height: 200px;
+  resize: vertical;
+}
+.contact_form  {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+
+.contact_form div:last-child {
+  justify-content: center;
+}
+
+.contact_form div button {
+  padding: 10px 20px;
+  margin: 5px 10px;
+  color: #FFF;
+}
+
+.contact_form div button:first-child {
+  background-color: var(--sub-color);
+}
+
+.contact_form div button:first-child:hover {
+  background-color: var(--point-color);
+}
+
+.contact_form div button:last-child {
+  background-color: #666;
+}
+
+.contact_form div button:last-child:hover {
+  background-color: #333;
+}
+
+@media screen and (min-width:1000px) {
+  .contact_form p {
+    display: flex;
+  }
+
+  .contact_form span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  .contact_form label:first-child {
+    width: 20%;
+    height: 100%;
+  }
+
+  .contact_form span input {
+    flex: 1;
+    width: 30%;
+  }
+
+  .contact_form input[type=text],
+  .contact_form input[type=email],
+  .contact_form textarea {
+    flex: 1;
+  }
+
+}
+
+@media screen and (max-width:1000px) {
+  .contact_form label:first-child {
+    width: 100%;
+  }
+  .contact_form label:nth-of-type(2) {
+    width: 100%;
+  }
+
+  .contact_form span input[type="tel"] {
+    flex: 1;
+  }
+
+  .contact_form input[type=text],
+  .contact_form input[type=email],
+  .contact_form textarea {
+    width: 100%;
+  }
+
+  .contact_form input[type="radio"] {
+    margin: 10px 5px;
+  }
+
+}

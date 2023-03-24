@@ -11,7 +11,7 @@
   </p>
 
   <p class="sub_desc">
-    <em class="emphasis">고객님의 소중한 의견을 주셔서 감사합니다.</em> <br> 언제나 고객님의 눈높이에 맞추어 최상의 서비스가 되기 위해 노력하겠습니다.
+    <em class="emphasis">고객님의 소중한 의견을 주셔서 감사합니다.</em> <br> 언제나 고객님의 눈높이에서 최상의 서비스가 되기 위해 노력하겠습니다.
   </p>
   <table class="board">
     <thead>
