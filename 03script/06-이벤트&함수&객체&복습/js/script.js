@@ -78,34 +78,46 @@ $('.ex2 .cnt input').bind('input', function () {
 
 */
 
-/* $(function () {
+$(function () {
 
-  function fn1(n,) {
+  function fn1(n, gender) {
     var price = parseInt($(`.prac${n} input:checked`).val())
     var opt = parseInt($(`.prac${n} select`).val())
     var num = parseInt($(`.prac${n} .count`).val())
     var sum = (price + opt) * num
-    $(`.prac${n} .output${n}`).text(sum)
+    $(`.prac${n} .output`).text(`${gender}성의류 : ${sum}원`)
     return sum
-    fn1()
+  }
+
+  function total() {
+    var sum1 = fn1(1, '남')
+    var sum2 = fn1(2, '여')
+    var sum3 = sum1 + sum2
+    $(`.output3`).text(`총가격 : ${sum3}원`)
   }
 
   $('.prac1 input, .prac1 select').change(function () {
-    fn1()
-  })
-  $('.prac1 .count').bind('input', function () 
-    fn1()
-  })
-  $('.prac2 input, .prac2 select').change(function () {
-  })
-  $('.prac2 .count').bind('input', function () {
+    total()
   })
 
-  $('.prac .output1, .prac2 .output2').change(function () {
-    $(`.output3 `).text(`${}`)
+  $('.prac1 .count').bind('input', function () {
+    total()
   })
+
+  $('.prac2 input, .prac2 select').change(function () {
+    total()
+  })
+
+  $('.prac2 .count').bind('input', function () {
+    total()
+  })
+
+  $('.prac .output, .prac2 .output').change(function () {
+    $(`.output3 `).text(`총가격 : ${sum3}원`)
+    total()
+  })
+
 })
- */
 
 
 

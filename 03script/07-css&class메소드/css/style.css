@@ -1,5 +1,22 @@
 .ex1 button {
-  color: blue !important;
+  color: blue;
+}
+
+.ex2 .box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 100px;
+
+}
+
+.ex3 .box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 100px;
 }
 
 .ex3 .box.tt {
@@ -18,17 +35,17 @@
 }
 
 
-.ex5 span {
+.ex5 div span {
   background-color: red;
   display: block;
   width: 100px;
   height: 100px;
   line-height: 100px;
-  margin-right:auto;
- }
+  margin-right: auto;
+}
 
 
-.ex5 span.rr {
+.ex5 div span.rr {
   background-color: red;
   display: block;
   margin-left: auto;
