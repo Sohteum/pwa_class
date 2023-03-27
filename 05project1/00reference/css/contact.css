@@ -21,8 +21,8 @@
 .contact_form input[type=tel]:focus,
 .contact_form select:focus,
 .contact_form textarea:focus {
-background-color: #000;
-color:#FFF;
+  background-color: #000;
+  color: #FFF;
 }
 
 .contact_form textarea {
@@ -71,9 +71,11 @@ color:#FFF;
 .contact_form fieldset>div.btns button:first-child:hover {
   background-color: var(--point-color);
 }
+
 .contact_form fieldset>div.btns button:last-child {
   background-color: #666;
 }
+
 .contact_form fieldset>div.btns button:last-child:hover {
   background-color: #000;
 }
@@ -84,7 +86,7 @@ color:#FFF;
 
 .contact_form fieldset>div>div.tel input {
   flex: 1;
-/*   min-width: 0; html에서 사이즈 ㄴ줘서 빼도됨*/
+  /*   min-width: 0; html에서 사이즈 ㄴ줘서 빼도됨*/
   /* 최소너비가 있어서 계속 인풋 상자가 삐져나오니까 민위드를 줘서 원래 상자 너비를 없애버림 */
 }
 

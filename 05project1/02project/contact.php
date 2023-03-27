@@ -16,12 +16,12 @@
     <fieldset>
       <div>
         <label for="id1">성명</label>
-       <div> <input id="id1" type="text" placeholder="단체인 경우 회사이름을 입력해주세요" required></div>
+        <div> <input id="id1" type="text" placeholder="단체인 경우 회사이름을 입력해주세요" required></div>
       </div>
 
       <div class="Pnumber">
         <label>연락처</label>
-        <div>
+        <div class="tel">
           <select>
             <option value="" title="하단의 옵션에서 통신사를 선택하세요">통신사</option>
             <option value="" label="KT">KT</option>
@@ -29,11 +29,13 @@
             <option value="" label="SKT">SKT</option>
           </select>
           <label class="hidden" for="id2-1">연락처 첫번째 세 자리 수 를 입력하세요</label>
-          <input size="1" type="tel" id="id2-1" required> -
+          <input type="tel" id="id2-1" required>
+          <span> - </span>
           <label class="hidden" for="id2-2">연락처 두번째 네 자리 수 를 입력하세요</label>
-          <input size="1" type="tel" id="id2-2" required> -
+          <input type="tel" id="id2-2" required>
+          <span> - </span>
           <label class="hidden" for="id2-3">연락처 세번째 네 자리 수 를 입력하세요</label>
-          <input size="1" type="tel" id="id2-3" required>
+          <input type="tel" id="id2-3" required>
         </div>
       </div>
 
@@ -66,7 +68,7 @@
 
       <div>
         <label for="id4">제목</label>
-       <div> <input id="id4" type="text" required></div>
+        <div> <input id="id4" type="text" required></div>
       </div>
 
       <div>
