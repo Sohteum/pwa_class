@@ -20,7 +20,8 @@ th {
   height: 40px;
   text-align: center;
   font-weight: 500;
-  /* vertical-align: middle; */
+  /* vertical-align: middle;
+  티디만 안쪽에 있는 애들 설정이 달라 */
 }
 
 .table1 thead th {

@@ -1,0 +1,62 @@
+[문항1]  아래의 설명 중 틀린 항목은? (배점:1)
+1) span, a, i, label 요소는 block레벨의 부모가 될 수 없음
+2) a, span, i, b, strong, em 요소는 inline 레벨에  해당함
+3) input, select, img, iframe, svg, canvas 요소는 inline-block 레벨에  해당함
+4) h1, p, div, a는  inline 레벨  또는 inline-block 레벨의 부모가 될 수 있음
+5) 미숙지
+
+정답 : 1
+------------------------------------------------------
+[문항2]  [보기]의 css코드 기준으로, a요소와 p요소간의 수직 거리는? (배점:1)
+p{margin:10px 0}
+a{margin:10px 0}
+1) 40px
+2) 30px
+3) 20px
+4) 10px
+5) 미숙지
+작성답안 : 
+
+정답 : 4
+------------------------------------------------------
+[문항3]  [보기]의 html 코드 기준으로, .box요소를 .container요소의 오른쪽으로 정렬시키는 올바른 항목은? (배점:1)
+<div class="container">
+  <div class="box">box</div>
+</div>
+1) .box요소에 display : inline-block 적용 후, .container요소에 text-align : right 적용
+2) .box요소에 display : inline-block 적용 후 margin-left : auto 적용
+3) .container요소에 display : inline-block 적용 후  text-align : right 적용
+4) .container요소에 display : inline-block 적용 후  margin-left : auto 적용
+5) 미숙지
+
+정답 : 1
+------------------------------------------------------
+[문항4]  [보기]의 css코드 기준으로, div의 출력되는 수평 위치를 바르게 예상한 항목은? (배점:1)
+div{
+  position : absolute;
+  left : 10px;
+  margin-left : -10px;
+  margin : 0 auto;
+}
+1) 수평 중앙
+2) 왼쪽
+3) 왼쪽으로부터 10px 거리
+4) 수평중앙의 왼쪽으로부터 10px 거리
+5) 수평중앙의 오른쪽으로부터 10px 거리
+
+정답 : 2
+------------------------------------------------------
+[문항5]  [보기]의 css코드 기준으로, div요소의 출력 넓이를 바르게 예상한 항목은? (배점:1)
+div{
+  width : 1px;
+  padding : 1px;
+  border: 1px solid red;
+}
+1) 2px
+2) 3px
+3) 4px
+4) 정답없음
+5) 미숙지
+
+정답 : 4
+------------------------------------------------------
