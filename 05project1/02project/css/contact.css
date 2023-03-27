@@ -1,0 +1,40 @@
+.contact_form>fieldset>div {
+  display: flex;
+  border-bottom:1px solid var(--sub-color);
+}
+
+.contact_form>fieldset>div>label {
+  background-color: var(--main-color);
+  color:#FFF;
+}
+
+
+
+.contact_form fieldset>div>div {
+padding: 4px;
+}
+
+
+@media screen and (min-width:1000px) {
+  .contact_form>fieldset>div:not(.btns) {
+    display: flex;
+  }
+
+  .contact_form>fieldset>div>label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+
+  .contact_form>fieldset>div>div {
+    width: 80%;
+
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .contact_form>fieldset>div>label {
+    display: block;
+    }
+}

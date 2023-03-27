@@ -1,0 +1,9 @@
+.container {
+  background-color: red;
+  text-align: right;
+}
+
+.container .box {
+  background-color: aqua;
+  display: inline-block;
+}

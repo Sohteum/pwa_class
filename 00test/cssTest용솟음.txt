@@ -1,4 +1,4 @@
-[문항1]  아래의 설명 중 틀린 항목은?1>5
+[문항1]  아래의 설명 중 틀린 항목은?5
 1) header, main, section, footer, nav, aside 요소는 block 레벨에 해당함
 2) a, span, i, b, strong, em 요소는 inline 레벨에  해당함
 3) input, select, img, iframe, svg, canvas 요소는 inline-block 레벨에  해당함
@@ -18,7 +18,7 @@ a{margin:10px 0}
 5) 0px
 6) ?
 
-[문항3]  [보기]의 html 코드 기준으로, .box요소를 .container요소의 오른쪽으로 정렬시키는 올바른 항목은?4>1
+[문항3]  [보기]의 html 코드 기준으로, .box요소를 .container요소의 오른쪽으로 정렬시키는 올바른 항목은?1
 ----------------------------
 <div class="container">
   <div class="box">box</div>
@@ -47,7 +47,7 @@ div{
 5) 수평중앙의 오른쪽으로부터 10px 거리
 6) ?
 
-[문항5]  [보기]의 css코드 기준으로, div요소의 출력 넓이를 바르게 예상한 항목은?3>5
+[문항5]  [보기]의 css코드 기준으로, div요소의 출력 넓이를 바르게 예상한 항목은?5
 ----------------------------
 div{
   width : 1px;
