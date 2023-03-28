@@ -41,7 +41,7 @@
   document.querySelector(`.ex4 button`).addEventListener(`click`, (e) => {
     for (let i = 2; i <= 9; i++) {
       for (let j = 1; j <= 9; j++) {
-        document.querySelector(`.ex4 .outout`).append(`${i}x${j}`);
+        document.querySelector(`.ex4 .output`).append(`${i}x${j}`);
         document
           .querySelector(`.ex4 .output`)
           .append(document.createElement(`br`));
@@ -53,44 +53,55 @@
   });
 }
 
-// {
-//   document.querySelector(`.ex5 button`).addEventListener(`click`, (e) => {
-//     for (let i = 1; i <= 5; i++) {
-//       for (let j = 1; j <= i; j++) {
-//         document.querySelector(`.ex5 .outout`).append(`🙌`);
-//         document
-//           .querySelector(`.ex5 .output`)
-//           .append(document.createElement(`br`));
-//       }
-//     }
-//   });
-// }
+{
+  document.querySelector(`.ex5 button`).addEventListener(`click`, (e) => {
+    for (let i = 1; i <= 5; i++) {
+      for (let j = 1; j <= i; j++) {
+        document.querySelector(`.ex5 .output`).append(`🙌`);
+      }
 
-// {
-//   document.querySelector(`.ex6 button`).addEventListener(`click`, (e) => {});
-//   for (let i = 1; i <= 5; i++) {
-//     for (let j = 1; j <= 5 - i; j++) {
-//       document.querySelector(`.ex6 .outout`).append(`💖`)
-//     for (let j = 1; j <= i; j++) {
-//       document.querySelector(`.ex6 .outout`).append(`😊`)
-//     }
-//       document.querySelector(`.ex6 .output`).append  (document.createElement(`br`))
-//     }
-//   }
-// } /* 첫번째 제이는 4번 돌아감. 12345, 43210, 12345 */
-
-/* {
-  document.querySelector(`.ex7 button`).addEventListener(`click`, (e) => {});
- for (let i =1; i<=3; i++) {
-  for (let j =1; i<=3-i; i++) {
-    for(let j=1; j<=(i*2-1); i++){
-      for(let j=1; j<=(3-i); i++){
-
-      } 
+      document
+        .querySelector(`.ex5 .output`)
+        .append(document.createElement(`br`));
     }
+  });
+}
+
+{
+  document.querySelector(`.ex6 button`).addEventListener(`click`, (e) => {
+    for (let i = 1; i <= 5; i++) {
+      for (let j = 1; j <= 5 - i; j++) {
+        document.querySelector(`.ex6 .output`).append(`💖`);
+      }
+
+      for (let j = 1; j <= i; j++) {
+        document.querySelector(`.ex6 .output`).append(`😊`);
+      }
+      document
+        .querySelector(`.ex6 .output`)
+        .append(document.createElement(`br`));
+    } /* 첫번째 제이는 4번 돌아감. 12345, 43210, 12345 */
+  });
+}
+
+{
+  document.querySelector(`.ex7 button`).addEventListener(`click`, e => {
+    for (let i = 1; i <= 3; i++) {
+      for (let j = 1; j <= 3 - i; j++) {
+        document.querySelector(`.ex7 .output`).append(`💖`);
+      }
+      for (let j = 1; j <= i * 2 - 1; j++) {
+        document.querySelector(`.ex7 .output`).append(`😊`);
+      }
+      for (let j = 1; j <= 3 - i; j++) {
+        document.querySelector(`.ex7 .output`).append(`💖`);
+    
+      }
+      document.querySelector(`.ex7 .output`).append(document.createElement(`br`));
   }
- }
-} */
+  });
+  
+}
 
 {
   let table = document.createElement(`table`);
