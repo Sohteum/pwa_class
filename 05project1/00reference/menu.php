@@ -8,6 +8,7 @@
     <ul>
       <li><a class="menu1-1" href="./greet.php">인사말</a></li>
       <li><a class="menu1-2" href="./location.php">오시는길</a></li>
+      <li><a class="menu1-3" href="./video.php">홍보영상</a></li>
     </ul>
   </li>
   <li class="menu2">

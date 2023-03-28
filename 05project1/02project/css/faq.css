@@ -1,6 +1,5 @@
 .faq_list li button {
   display: block;
-  /* 백퍼 너비가 들어가는 것은 아니기때문에 너비를 따로 줘야함 */
   width: 100%;
   padding: 10px;
   text-align: left;
@@ -40,5 +39,3 @@
   padding: 10px;
   background-color: #eee;
 }
-
-

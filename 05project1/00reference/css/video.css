@@ -1,0 +1,52 @@
+.youtube_wrap {
+  position: relative;
+  border:1px solid var(--sub-color);
+  padding: 15px;
+  background-color: var(--main-color);
+}
+
+.youtube_wrap::before {
+  content:'';
+  display: block;
+  padding-top: 56.25% ;
+  /* 넓이 비율로.....50인거면 2:1비율
+  그럼 유튜브는 560 315니까.이 비율을 구해서 넣으면 됨
+  높이를 너비로 나눠서 100을 곱함
+   */
+}
+
+.youtube_wrap iframe{
+position: absolute;
+top:10px;
+left:10px;
+width: calc(100% - 20px);
+height: calc(100% - 20px);
+}
+.videos_list {
+  margin-top:40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.videos_list li  {
+padding:5px;
+}
+
+.videos_list li button {
+  overflow: hidden;
+border:3px solid var(--main-color)
+}
+
+.videos_list li button img {
+  transform: scale(1.35);
+  filter: brightness(.5);
+  transition: all 0.3s;
+}
+
+.videos_list li button:hover img,
+.videos_list li button.active:hover img{
+  filter: brightness(1);
+transform: scale(1.5);
+}
+

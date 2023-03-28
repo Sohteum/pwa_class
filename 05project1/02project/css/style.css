@@ -13,6 +13,9 @@
 @import "biz-intro.css";
 @import "board.css";
 @import "contact.css";
+@import "faq.css";
+@import "location.css";
+@import "video.css";
 
 
 :root {

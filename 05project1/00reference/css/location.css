@@ -1,0 +1,43 @@
+.tab_menu {
+  position: relative;
+  display: flex;
+  height: 45px;
+  /*   background-color: RED; */
+}
+.tab_menu button {
+  height: 46px;
+  /* 덮어야되서 하이트를 46을 준것임 */
+  padding: 0 40px;
+  background-color: #eee;
+  color: #999;
+  font-weight: 700;
+  margin-left: 15px;
+  /* 위에서 플렉스를 주면 인라인블럭의 이상한 간격을 정확하게 줄수있음 */
+  border: 1px solid #ccc;
+  border-bottom-color: var(--main-color);
+}
+
+.tab_menu button.active {
+  color: #fff;
+  background-color: var(--main-color);
+  border: 1px solid var(--sub-color);
+  border-bottom-color: var(--main-color);
+}
+
+.pane {
+  padding: 15px;
+  background-color: var(--main-color);
+  border: 1px solid var(--sub-color);
+}
+.pane img,
+.pane iframe {
+  width: 100%;
+}
+
+.pane iframe {
+  height: 400px;
+}
+
+.pane img{
+  display: none;
+}
