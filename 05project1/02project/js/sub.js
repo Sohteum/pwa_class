@@ -7,6 +7,8 @@ $(document).ready(function () {
     dep1 = 1; dep2 = 1;
   } else if (url.match('/location.php')) {
     dep1 = 1; dep2 = 2;
+  } else if (url.match('/video.php')) {
+    dep1 = 1; dep2 = 3;
   } else if (url.match('/biz-intro.php')) {
     dep1 = 2; dep2 = 1;
   } else if (url.match('/biz-area.php')) {
@@ -40,7 +42,7 @@ $(document).ready(function () {
   $(`.breadcrumb .dep1`).text(dep1Title)
   $(`.breadcrumb .dep2`).text(dep2Title)
 
-  $(`.site_guide button`).click(function(){
+  $(`.site_guide button`).click(function () {
     $(`.site_guide`).slideUp()
   })
 })

@@ -19,7 +19,7 @@
         <div> <input id="id1" type="text" placeholder="단체인 경우 회사이름을 입력해주세요" required></div>
       </div>
 
-      <div class="Pnumber">
+      <div>
         <label>연락처</label>
         <div class="tel">
           <select>
@@ -28,14 +28,15 @@
             <option value="" label="LGu+">LGu+</option>
             <option value="" label="SKT">SKT</option>
           </select>
+          &nbsp;
           <label class="hidden" for="id2-1">연락처 첫번째 세 자리 수 를 입력하세요</label>
-          <input type="tel" id="id2-1" required>
+          <input size="1" type="tel" id="id2-1" required>
           <span> - </span>
           <label class="hidden" for="id2-2">연락처 두번째 네 자리 수 를 입력하세요</label>
-          <input type="tel" id="id2-2" required>
+          <input size="1" type="tel" id="id2-2" required>
           <span> - </span>
           <label class="hidden" for="id2-3">연락처 세번째 네 자리 수 를 입력하세요</label>
-          <input type="tel" id="id2-3" required>
+          <input size="1" type="tel" id="id2-3" required>
         </div>
       </div>
 

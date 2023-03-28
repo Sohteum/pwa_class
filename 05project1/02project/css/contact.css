@@ -1,12 +1,11 @@
-.contact_form>fieldset {
-  border-top: 3px double var(--sub-color);
+.contact_form {
+  border-top: 3px double var(--main-color);
 }
 
-
-.contact_form>fieldset>div {
-  display: flex;
-  border-bottom: 1px solid var(--sub-color);
-
+.contact_form input,
+.contact_form select,
+.contact_form textarea {
+  padding: 5px;
 }
 
 .contact_form input[type=text],
@@ -22,13 +21,32 @@
 .contact_form input[type=tel]:focus,
 .contact_form select:focus,
 .contact_form textarea:focus {
-  background-color: var(--sub2-color);
+  background-color: #000;
   color: #FFF;
 }
 
-.contact_form>fieldset>div>label {
-  background-color: var(--main-color);
+.contact_form textarea {
+  height: 200px;
+}
+
+.contact_form fieldset>div>div label {
+  margin-right: 7px;
+}
+
+.contact_form fieldset>div {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.contact_form fieldset>div>label {
+  background-color: var(--sub-color);
   color: #FFF;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.contact_form fieldset>div>div {
+  box-sizing: border-box;
+  padding: 3px;
 }
 
 .contact_form fieldset>div>div.tel {
@@ -36,31 +54,9 @@
   align-items: center;
 }
 
-.contact_form fieldset>div>div.tel span {
-  margin: 3px;
-}
-
-.contact_form fieldset>div>div.tel input {
-  flex: 1;
-  min-width: 0;
-}
-
-
-.contact_form fieldset>div>div {
-  padding: 4px;
-}
-
 .contact_form fieldset>div.btns {
   padding: 5px;
   text-align: center;
-}
-
-
-.contact_form fieldset>div.btns {
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  /*   text-align: center; */
 }
 
 .contact_form fieldset>div.btns button {
@@ -70,8 +66,6 @@
 
 .contact_form fieldset>div.btns button:first-child {
   background-color: var(--main-color);
-  border-radius: 10px;
-  margin-right: 10px;
 }
 
 .contact_form fieldset>div.btns button:first-child:hover {
@@ -80,12 +74,20 @@
 
 .contact_form fieldset>div.btns button:last-child {
   background-color: #666;
-  border-radius: 10px;
 }
 
 .contact_form fieldset>div.btns button:last-child:hover {
   background-color: #000;
 }
+
+.contact_form fieldset>div>div.tel span {
+  margin: 3px;
+}
+
+.contact_form fieldset>div>div.tel input {
+  flex: 1;
+}
+
 
 @media screen and (min-width:1000px) {
   .contact_form>fieldset>div:not(.btns) {
@@ -101,7 +103,6 @@
 
   .contact_form>fieldset>div>div {
     width: 80%;
-
   }
 }
 

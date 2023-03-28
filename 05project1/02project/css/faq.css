@@ -2,10 +2,11 @@
   display: block;
   width: 100%;
   padding: 10px;
+  font-size: 0.95em;
   text-align: left;
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  background-color: var(--main-color);
+  background-color: var(--sub-color);
 }
 
 .faq_list li button::after {
@@ -36,6 +37,8 @@
 
 .faq_list li p {
   display: none;
-  padding: 10px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  padding: 20px;
   background-color: #eee;
 }

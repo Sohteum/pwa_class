@@ -35,7 +35,7 @@
 }
 
 .board th {
-  background-color: var(--main-color);
+  background-color: var(--sub-color);
   color: #FFF;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .board td a:hover {
-  color: var(--point-color);
+  color: var(--sub-color);
 }
 
 .board_paging {
@@ -90,13 +90,13 @@
 
 .board_search button {
   width: 50px;
-  background-color: var(--main-color);
+  background-color: var(--sub-color);
   color: #FFF;
   border-radius: 2px;
 }
 
 .board_search button:hover {
-  background-color: var(--point-color);
+  background-color: var(--main-color);
 }
 
 @media screen and (max-width:800px) {
