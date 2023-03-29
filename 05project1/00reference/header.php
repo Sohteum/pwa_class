@@ -15,6 +15,7 @@
   <!-- css파일 링크걸때 무조건 폰트먼저 그다음리셋 그다음 스타일 그다음 스크립트 -->
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/hoverBox.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
