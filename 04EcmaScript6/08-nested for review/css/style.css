@@ -1,0 +1,22 @@
+table {
+  border-collapse: collapse;
+}
+
+td,th {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border:1px solid #000;
+}
+
+th {
+  background: turquoise;
+}
+
+td.orange {
+  background: orange;
+}
+td.yellow {
+  background: yellow;
+}
+
