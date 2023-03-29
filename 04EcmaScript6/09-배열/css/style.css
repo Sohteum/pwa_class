@@ -1,12 +1,10 @@
-
 /* .container {
   display: flex;
   justify-content: center;
   background-color: tomato;
-
 }
 
-.container span{
+.container span {
   width: 100px;
   height: 100px;
   background-color: teal;
