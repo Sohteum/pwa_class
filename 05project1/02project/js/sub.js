@@ -15,6 +15,14 @@ $(document).ready(function () {
     dep1 = 2; dep2 = 2;
   } else if (url.match('/gallery1.php')) {
     dep1 = 3; dep2 = 1;
+  } else if (url.match('/gallery2.php')) {
+    dep1 = 3; dep2 = 2;
+  } else if (url.match('/gallery3.php')) {
+    dep1 = 3; dep2 = 3;
+  } else if (url.match('/gallery4.php')) {
+    dep1 = 3; dep2 = 4;
+  } else if (url.match('/gallery5.php')) {
+    dep1 = 3; dep2 = 5;
   } else if (url.match('/contact.php')) {
     dep1 = 4; dep2 = 1;
   } else if (url.match('/notice.php')) {

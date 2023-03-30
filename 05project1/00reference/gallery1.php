@@ -16,8 +16,8 @@
   </p>
 
   <ul class="float_container">
-    <li>
-      <a href="#">
+    <li class="long_box">
+      <a href="./img/sub3/1.jpg">
         <figure>
           <img src="./img/sub3/1.jpg" alt="">
           <figcaption>
@@ -31,8 +31,8 @@
       </a>
     </li>
     
-    <li>
-      <a href="#">
+    <li class="box">
+      <a href="./img/sub3/2.jpg">
         <figure>
           <img src="./img/sub3/2.jpg" alt="">
           <figcaption>
@@ -44,8 +44,8 @@
         </figure>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li class="box">
+      <a href="./img/sub3/3.jpg">
         <figure>
           <img src="./img/sub3/3.jpg" alt="">
           <figcaption>
@@ -57,8 +57,8 @@
         </figure>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li class="box">
+      <a href="./img/sub3/4.jpg">
         <figure>
           <img src="./img/sub3/4.jpg" alt="">
           <figcaption>
@@ -71,8 +71,8 @@
       </a>
     </li>
    
-    <li>
-      <a href="#">
+    <li class="box">
+      <a href="./img/sub3/5.jpg">
         <figure>
           <img src="./img/sub3/5.jpg" alt="">
           <figcaption>
@@ -84,8 +84,8 @@
         </figure>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li class="box">
+      <a href="./img/sub3/6.jpg">
         <figure>
           <img src="./img/sub3/6.jpg" alt="">
           <figcaption>
@@ -97,8 +97,8 @@
         </figure>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li class="wide_box">
+      <a href="./img/sub3/7.jpg">
         <figure>
           <img src="./img/sub3/7.jpg" alt="">
           <figcaption>
@@ -110,8 +110,8 @@
         </figure>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li class="wide_box">
+      <a href="./img/sub3/8.jpg">
         <figure>
           <img src="./img/sub3/8.jpg" alt="">
           <figcaption>
@@ -123,8 +123,9 @@
         </figure>
       </a>
     </li>
-    <li>
-      <a href="#">
+    
+    <li class="box">
+      <a href="./img/sub3/9.jpg">
         <figure>
           <img src="./img/sub3/9.jpg" alt="">
           <figcaption>

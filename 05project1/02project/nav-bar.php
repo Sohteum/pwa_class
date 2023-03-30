@@ -29,7 +29,11 @@
     </a>
     <h6>갤러리</h6>
     <ul>
-      <li><a class="menu3-1" href="./gallery1.php">갤러리</a></li>
+      <li><a class="menu3-1" href="./gallery1.php">float</a></li>
+      <li><a class="menu3-2" href="./gallery2.php">flex</a></li>
+      <li><a class="menu3-3" href="./gallery3.php">grid</a></li>
+      <li><a class="menu3-4" href="./gallery4.php">masorny</a></li>
+      <li><a class="menu3-5" href="./gallery5.php">isotope</a></li>
     </ul>
   </li>
   <li class="menu4">

@@ -8,6 +8,8 @@
   <link rel="shortcut icon" href="./img/icons/favicon.ico">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/jquery.viewbox.js"></script>
+  <script src="./js/hoverBox.js"></script>
   <script src="./js/common.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
   <title>SunSHine</title>

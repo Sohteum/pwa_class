@@ -14,8 +14,9 @@
   <link rel="stylesheet" href="./css/style.css">
   <!-- css파일 링크걸때 무조건 폰트먼저 그다음리셋 그다음 스타일 그다음 스크립트 -->
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/jquery.viewbox.js"></script>
+  <script src="./js/hoverBox.js"></script> <!-- 모든 페이지에서 다 사용하기 위해 헤더에서 플러그인을 연결 제이쿼리플러그인은 반드시 제이쿼리밑으로 -->
   <script src="./js/common.js"></script>
-  <script src="./js/hoverBox.js"></script>
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
