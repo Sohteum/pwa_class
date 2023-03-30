@@ -89,13 +89,17 @@
 }
 
 {
-   let arr = ['홍길동', '아무개', '무명씨']
- 
-   document.querySelector(`.ex5 button`).addEventListener(`click`, e => {
-    for(let i=1; i<=arr.length; i++){
-      document.querySelector(`.ex5 .output`).append(randomN)
+  let arr = ['홍길동', '아무개', '무명씨']
+  document.querySelector(`.ex5 button`).addEventListener(`click`, e => {
+    let leng = arr.length
+    for (let i = 1; i <= leng; i++) {
+      let rand = Math.floor(Math.random() * arr.length)
+      document.querySelector(`.ex5 .output`).append(
+        arr[rand],
+      )
+      arr.splice(rand, 1)
     }
-   })
+  })
 }
 
 
