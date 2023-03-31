@@ -103,7 +103,7 @@
     }
     let leng = end - start + 1
     for (let i = 1; i <= leng; i++) { //만약 여기서 arr.length를 사용하면 아래에서 랜덤한거가 하나씩 삭제되어서 배열의 길이가 줄어버림. 그래서 상관없는 leng을 새로 선언해서 돌려줌.
-      rand = Math.floor(Math.random() * arr.length)  
+      rand = Math.floor(Math.random() * arr.length)
       document.querySelector(`.ex3 .output`).append(
         arr[rand],
         document.createElement(`br`)
@@ -148,3 +148,80 @@
 //   })
 
 // }
+
+
+// {
+//   let arr = []// 클릭할때마다 지워지면 안되니까 밖에 만들어줌
+//   for (let i = 1; i <= 10; i++) {//내가 다 적기 귀찮으니까 포구문 돌려줌
+//     arr.push(i)
+//   }// 포구문 돌린 값을 arr에  push함
+  
+//   document.querySelector(`.ex4 button`).addEventListener(`click`, e => {
+//     document.querySelector(`.ex4 .output`).innerHTML = ''
+
+//     let arr = []// 클릭할때마다 지워지면 안되니까 밖에 만들어줌
+//     for (let i = 1; i <= 10; i++) {//내가 다 적기 귀찮으니까 포구문 돌려줌
+//       arr.push(i)
+//     }//클릭한게 지워졌으니까 여기서 배열을 다시 만들어줘야함
+
+//     for (let i = 1; i <= 10; i++){
+//       let rand = Math.floor(Math.random()*arr.length)
+//       //랜덤번호뽑기 
+//       document.querySelector(`.ex4 .output`).append(arr[rand], ',')
+//       //하나 뽑고 그거 지워야함 그 배열값이 다시 나오면 안되니까
+//       arr.splice(rand,1)
+//     }
+//   })//언디파인 나오는 이유, 클릭하고 나면 배열을 지워버리니까. 두번째클릭할때는 
+
+// }
+
+
+{
+  // let arr = []//배열을 사용자가 넣은 값으로 해준고싶다면? 배열의 길이만큼 돌려주면 되고, 시작번호를 첫번째 애한테 끝번호를 두번째 애한테 주면 됨. 시작과 끝은 유저가 정하기로 함
+  // for (let i = start; i <=end; i++) {//내가 다 적기 귀찮으니까 포구문 돌려줌
+  //   arr.push(i)
+  // }// 포구문 돌린 값을 arr에  push함
+  
+  document.querySelector(`.ex4 button`).addEventListener(`click`, e => {
+    document.querySelector(`.ex4 .output`).innerHTML = ''
+    
+    let start = parseInt(document.querySelector(`.ex4 .start`).value)
+    let end = parseInt(document.querySelector(`.ex4 .end`).value)
+    let arr = []// 클릭할때마다 지워지면 안되니까 밖에 만들어줌
+    for (let i = start; i <= end; i++) {//내가 다 적기 귀찮으니까 포구문 돌려줌
+      arr.push(i)
+    }//클릭한게 지워졌으니까 여기서 배열을 다시 만들어줘야함
+
+    for (let i = start; i <= end; i++){
+      let rand = Math.floor(Math.random()*arr.length)
+      //랜덤번호뽑기 
+      document.querySelector(`.ex4 .output`).append(arr[rand], ',')
+      //하나 뽑고 그거 지워야함 그 배열값이 다시 나오면 안되니까
+      arr.splice(rand,1)
+    }
+  })//언디파인 나오는 이유, 클릭하고 나면 배열을 지워버리니까. 두번째클릭할때는 
+
+}
+
+{
+  document.querySelector(`.ex5 button`).addEventListener(`click`,e=>{
+    document.querySelector(`.ex5 .output`).innerHTML = ''
+    
+    let start = parseInt(document.querySelector(`.ex5 .start`).value)
+    let end = parseInt(document.querySelector(`.ex5 .end`).value)
+    let arr = []
+    for (let i = start; i <= end; i++) {
+      arr.push(i)
+    }
+    // let arrCopy = [...arr] //전개연산자(카피하는 방법임. 무조건 똑같이 카피하므로 랜덤으로 숫자를 바꿀수는 없어서 지금 사용할 수 없음 나중에 자세히 다룰예정)
+    let arrCopy = []
+    let leng = arr.length //원본 배열의 길이, 초기값을 적어두면 변해도 이걸 사용해서 변하지 않도록 해주는거야
+    for(let i=1; i<=leng; i++){//<이렇게 하면 계속 지우면서 길이가 바뀌는데 그럼 배열이 3번반복이었다가 지우고나면 2번반복이었다가 이렇게 반복이 다라지니까 안돼
+    let ranNum = Math.floor(Math.random()* arr.length) // 원본 배열의 길이에서 하나의 번호를 랜덤하게 뽑는다
+    arrCopy.push(arr[ranNum])//뽑힌 번호에 해당하는 원본배열의 값을 카피본에 집어넣는다
+    arr.splice(ranNum,1)//원본배열에서 뽑힌 번호를 제거(그래서 콘솔출력하면 원본이 안나오고 랜덤넘버만 나옴)
+    }
+    let str = arrCopy.join('/') //여기서 그냥 출력을 안하고 문자열 등으로 바꿔준다 중간에 뭘 넣을지는 내가 정하면 됨!!
+    document.querySelector(`.ex5 .output`).innerText= str//배열을 통ㅌ재로 출력하는건 굉장히 안좋은 습관임!
+  })
+}
