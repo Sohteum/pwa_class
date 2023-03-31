@@ -6,6 +6,8 @@
 
 
 @import "reset.css";
+@import "viewbox.css";
+@import "isotope.css";
 @import "header.css";
 @import "footer.css";
 @import "sub-layout.css";
@@ -22,7 +24,7 @@
 @import "gallery3.css";
 @import "gallery4.css";
 @import "gallery5.css";
-@import "viewbox.css";
+
 
 
 :root {

@@ -1,13 +1,8 @@
 
-$(function(){
-  var reqID
-  function fnHeaderMotion() {
-  
-  }
-  fnHeaderMotion()
-  $(window).scroll(function(){
-    reqID = requestAnimationFrame(fnHeaderMotion)
-  }).resize(function(){
-    reqID = requestAnimationFrame(fnHeaderMotion)
+$(function () {
+
+  $(window).load(function () {
+    $(`.masonry_container`).masonry({ itemSelector: `.masonry_container li` })
   })
-  })
+
+})

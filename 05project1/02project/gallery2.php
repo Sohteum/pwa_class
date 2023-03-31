@@ -3,7 +3,7 @@
 <h2 class="sub_title">갤러리2</h2> 
 <section class="gallery2_section"> 
   <p class="site_guide">
-    flex속성을 이용한 반응형 그리드 레이아웃을 설게 하였습니다.
+    flex속성을 이용한 반응형 그리드 레이아웃을 설계 하였습니다.
     <button>
       <i class="fa-regular fa-circle-xmark"></i>
     </button>

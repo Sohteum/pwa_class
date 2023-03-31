@@ -8,6 +8,8 @@
   <link rel="shortcut icon" href="./img/icons/favicon.ico">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/masonry-docs.min.js"></script>
+  <script src="./js/jquery.isotope.js"></script>
   <script src="./js/jquery.viewbox.js"></script>
   <script src="./js/hoverBox.js"></script>
   <script src="./js/common.js"></script>

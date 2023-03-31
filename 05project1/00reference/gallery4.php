@@ -14,5 +14,27 @@
     <em class="emphasis">갤러리 및 시공사례입니다.</em> <br>
     선샤인의 다양한 제작물을 살펴보실 수 있습니다.
   </p>
+
+
+  <ul class="masonry_container">
+  </ul>
+
+  <script>
+    for (let i = 1; i <= 9; i++) {
+      $(`.masonry_container`).append(`
+       <li>
+      <a href="#">
+        <figure>
+          <img src="./img/sub3/resize${i}.jpg" alt="">
+          <figcaption>
+            <h3>Title ${i}</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.  </p>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+      `)
+    }
+  </script>
 </section>
 <?php include 'sub-footer.php' ?>

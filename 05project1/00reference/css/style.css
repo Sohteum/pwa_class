@@ -1,59 +1,61 @@
- @import "reset.css";
- @import "header.css";
- @import "footer.css";
- @import "sub-layout.css";
- @import "greet.css";
- @import "biz-intro.css";
- @import "board.css";
- @import "contact.css";
- @import "faq.css";
- @import "location.css";
- @import "video.css";
- @import "biz-area.css";
- @import "gallery1.css";
- @import "gallery2.css";
- @import "gallery3.css";
- @import "gallery4.css";
- @import "gallery5.css";
- @import "viewbox.css";
+@import "viewbox.css";
+@import "isotope.css";
+
+@import "reset.css";
+@import "header.css";
+@import "footer.css";
+@import "sub-layout.css";
+@import "greet.css";
+@import "biz-intro.css";
+@import "board.css";
+@import "contact.css";
+@import "faq.css";
+@import "location.css";
+@import "video.css";
+@import "biz-area.css";
+@import "gallery1.css";
+@import "gallery2.css";
+@import "gallery3.css";
+@import "gallery4.css";
+@import "gallery5.css";
 
 
 
- :root {
-   /* html 과 같은 객체이다. 가장상위객체인 html스코프로 전체적에서 사용하기 위해 지정했습니다. */
-   --main-color: #9b8c7d;
-   --sub-color: #8e7760;
-   --point-color: #f99d1b;
-   --dark-color: #1f1d1d;
-   
- }
+:root {
+  /* html 과 같은 객체이다. 가장상위객체인 html스코프로 전체적에서 사용하기 위해 지정했습니다. */
+  --main-color: #9b8c7d;
+  --sub-color: #8e7760;
+  --point-color: #f99d1b;
+  --dark-color: #1f1d1d;
 
- body {
-   color: #4b4b4b;
-   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-   /* 웹폰트를 다운받아서 사용해야함 영어숫자 먼저 몬세라토한테 하라고 하기 그래서 먼저 적는거야*/
-   font-size: 15px;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
- }
+}
 
- .serif {
-   font-family: 'Nanum Myeongjo', sans-serif;
- }
+body {
+  color: #4b4b4b;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  /* 웹폰트를 다운받아서 사용해야함 영어숫자 먼저 몬세라토한테 하라고 하기 그래서 먼저 적는거야*/
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
 
- h1 {
-   color: var(--main-color);
- }
+.serif {
+  font-family: 'Nanum Myeongjo', sans-serif;
+}
 
- /* 서브페이지 공통스타일은 여기서 잡을 것임 */
+h1 {
+  color: var(--main-color);
+}
+
+/* 서브페이지 공통스타일은 여기서 잡을 것임 */
 .sub_title {
   font-size: 1.4em;
   font-weight: 500;
-  color:var(--main-color);
+  color: var(--main-color);
   padding-bottom: 10px;
   margin-bottom: 50px;
-  border-bottom:1px solid var(--main-color)
+  border-bottom: 1px solid var(--main-color)
 }
 
 .emphasis {
@@ -61,8 +63,8 @@
   font-weight: 500;
 }
 
-.point{
-  color:var(--point-color);
+.point {
+  color: var(--point-color);
   font-weight: 800;
 }
 
@@ -70,7 +72,7 @@
   margin-bottom: 40px;
 }
 
-.sub_desc .em{
+.sub_desc .em {
   display: block;
 }
 
@@ -84,7 +86,6 @@
 
 .site_guide button {
   position: absolute;
-  top:5px;
+  top: 5px;
   right: 5px;
 }
-
