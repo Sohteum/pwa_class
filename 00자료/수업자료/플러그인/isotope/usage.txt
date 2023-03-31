@@ -1,0 +1,27 @@
+1. css js 설치
+2. 아래의 스크립트를 적용
+	$(window).load(function(){
+		var $container = $('컨테이너객체');
+		var filterSelect ="*"
+		fn_isotope()
+		function fn_isotope(){
+			$container.isotope({
+				filter: filterSelect,
+				animationOptions: {
+					duration: 750,
+					easing: 'linear',
+					queue: false
+				}//animationOptions
+			})//isotope
+		}//fn
+		$('버튼').click(function(){
+			filterSelect = $(this).attr("data-")
+			fn_isotope()
+		})//click	
+		$(window).resize(function(){
+			fn_isotope()
+		})//resize
+	})//load
+
+3. li객체에 카테고리 클래스명을 설정
+4. 버튼객체에는 li객체 클래스명과 동일하게 data-속성을 설정

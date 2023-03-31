@@ -1,0 +1,11 @@
+1.load이벤트에서 호출, grid의 margin을 동일하게 할것, clearboth사용하지 말것
+
+2.그리드 넓이가 다를 경우 옵션설정
+columnWidth: '.grid-sizer', // 최소객체넓이, 실제 레이아웃에서는 사용하지 말고 css만 설정
+itemSelector: '.grid-item',
+percentPosition: true
+
+3.사용법
+$(window).load(function(){
+    $(".gallery2 ul").masonry({itemSelector:".gallery2 li"})
+})//load
