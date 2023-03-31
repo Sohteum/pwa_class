@@ -146,7 +146,8 @@
   document.querySelector(`.ex3 .add_check`).addEventListener(`click`, e => {
     document.querySelector(`.ex3 .output`).innerHTML='';
    // let br = document.createElement('br')
-    for (let i = 0; i <= todo.length; i++) {
+    for (let i = 0; i < todo.length; i++) {
+      //여기서 랭쓰에서 1을 빼던지 아니면 <=에서 <만 쓰던지
       document.querySelector(`.ex3 .output`).append(
         `일정명 : ${todo[i].name}`,
         document.createElement('br'),
