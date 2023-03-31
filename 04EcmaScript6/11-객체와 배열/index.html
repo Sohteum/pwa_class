@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="ex1">
+    <p>1. 객체의 생성과 출력</p>
+    <p> 이름 :<input class="name" type="text"></p>
+    <p> 나이 :<input class="age" type="text"></p>
+    <p> 성별 :
+      <input value="남" class="gender" name="ex1" type="radio">남
+      <input value="여" class="gender" name="ex1" type="radio">여
+    </p>
+    <p><button class="add">명단추가</button></p>
+    <p><button class="print">명단출력</button></p>
+    <p class="output"></p>
+    <!-- 인원수 3명(랭쓰)
+    이름 : 홍길동. 나이:10, 성별: 여 
+    이름 : 홍길동. 나이:10, 성별: 여 
+    이름 : 홍길동. 나이:10, 성별: 여 
+  -->
+    <!-- 명단을 추가할때마다 배열을 추가한다고 보면됨 -->
+  </div>
+
+  <div class="ex2">
+    <button>버튼</button>
+  </div>
+  <hr>
+  <div class="ex3">
+    <p>3. 일정을 추가하면 일정목록이 나와요</p>
+    <p>날짜 : <input type="date"></p>
+    <p>시간 : <input type="time"></p>
+    <p>일정명 : <input type="text"></p>
+    <button class="add_todo">일정추가</button>
+    <!-- 현재 추가한것만 보여줌
+      날짜 : 2023-02-23
+      시간 : AM:06:23
+      일정명 : 홍길동과 식사
+      (일정이 추가되었습니다.)
+      
+-할일
+    투두배열에 일정객체를 추가
+    output에는 객체를 이용해 내용출력
+     -->
+    <button class="add_check">일정목록확인</button>
+    <!-- 지금까지 추가한 제목들이 우르르 나옴
+      홍길동과 식사
+      영화보기
+      공부하기
+      밥먹기
+
+      투두배열의 길이만큼 for구문으로 반복해서 객체의 일정이름을 append
+     -->
+    <button class="del">목록지우기</button>
+    <!-- output지우기 -->
+    <p class="output"></p>
+
+  </div>
+</body>
+
+</html>
