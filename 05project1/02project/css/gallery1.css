@@ -1,13 +1,6 @@
-
-
-
-
-
-
-
-/* .float_container::after {
+.float_container::after {
   content: '';
-  display: block;  
+  display: block;
   clear: both;
 }
 
@@ -153,4 +146,4 @@
   .float_container li {
     width: 100%;
   }
-} */
+}

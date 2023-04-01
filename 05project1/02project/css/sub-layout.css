@@ -114,7 +114,7 @@
 
 @media screen and (min-width:1000px) {
   .sidebar {
-    width: 21%;
+    width: 19%;
     top: 130px;
     height: 300px;
     border-radius: 30px;
@@ -255,7 +255,7 @@
 
 @media screen and (min-width:1000px) {
   .sub_content {
-    width: 75%;
+    width: 78%;
     min-height: 500px;
   }
 }

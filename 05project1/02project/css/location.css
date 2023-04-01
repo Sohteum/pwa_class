@@ -12,6 +12,7 @@
   font-weight: 700;
   margin-left: 15px;
   border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
   border-bottom-color: var(--sub2-color);
 }
 

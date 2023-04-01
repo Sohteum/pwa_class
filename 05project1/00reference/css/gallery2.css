@@ -33,16 +33,21 @@
 
 .flex_container li a:hover img {
   transform: scale(1.2);
-  transition: filter 0.5s transform 5s;
+  transition: filter 0.5s, transform 5s;
   filter: grayscale(0);
 }
 
-.flex_container li a figcaption{
+.flex_container li a figcaption {
   transition: all 0.5s;
 }
-.flex_container li a:hover figcaption{
+
+.flex_container li a:hover figcaption {
   background-color: var(--sub-color);
 }
+
+
+/* ------------------ */
+
 
 .flex_container li a figure img {
   width: 100%;
@@ -87,5 +92,3 @@
 
   /* sm */
 }
-
-
