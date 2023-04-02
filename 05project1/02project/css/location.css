@@ -24,7 +24,7 @@
 }
 
 .pane {
-  padding: 15px;
+  padding: 10px;
   background-color: var(--sub2-color);
   border: 1px solid var(--sub2-color);
 }
