@@ -58,7 +58,7 @@
 
 @media screen and (min-width:600px) and (max-width:1200px) {
   .masonry_container li {
-    width: 50%;
+    width: 48%;
   }
 }
 

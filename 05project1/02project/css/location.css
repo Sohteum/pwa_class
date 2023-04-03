@@ -1,12 +1,12 @@
 .tab_menu {
   position: relative;
   display: flex;
-  height: 45px;
+  height: 39px;
 }
 
 .tab_menu button {
-  height: 46px;
-  padding: 0 40px;
+  height: 40px;
+  padding: 0 30px;
   background-color: #eee;
   color: rgba(0, 0, 0, 0.7);
   font-weight: 700;
@@ -24,7 +24,7 @@
 }
 
 .pane {
-  padding: 10px;
+  padding: 5px;
   background-color: var(--sub2-color);
   border: 1px solid var(--sub2-color);
 }
