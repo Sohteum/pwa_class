@@ -1,0 +1,25 @@
+.bubble-particle{
+  overflow: hidden;
+}
+.bubble-particle img{
+  position: absolute;
+  animation-name: bubble-particle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes bubble-particle{
+  0%{
+    top:110%;
+    opacity: 1;
+  }
+  50%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    top: -10%;
+    
+  }
+}

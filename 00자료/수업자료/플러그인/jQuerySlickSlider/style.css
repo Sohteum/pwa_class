@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider-container{
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 300px;
+  margin: 50px auto;
+  border:1px solid black;
+}
+
+.slider-container div.slick-track{/* 요소의 넓이는 스크립트로 설정됨*/
+  height: 100%;
+}
+
+.slider-container div.slick-track figure{
+  height: 100%;
+}
+
+.slider-container div.slick-track figure img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slider-container .slick-arrow{/* next , prev */
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+}
+
+.slider-container button.slick-prev{
+  z-index: 1;
+  left:10px;
+}
+
+.slider-container button.slick-next{
+  right:10px
+}
+
+.slider-container ul.slick-dots li button{
+  width: 30px;
+  height: 30px;
+}
+
+.slider-container ul.slick-dots{/*버튼 컨테이너*/
+  display: flex !important;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}
+
+.slider-container ul.slick-dots li.slick-active button{
+  background: red;
+  color:#FFF;
+}

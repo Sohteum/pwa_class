@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bubble-particle.css">
+  <style>
+    body,html{
+      height: 100%;
+      margin: 0;
+    }
+    #bubble{
+      position: relative;/* 임의의 position이  반드시 적용되어양 함 */
+      width: 100%;
+      height: 100%;
+      background: #CCC;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script src="./js/bubble.js"></script>
+  <script>
+    $(function(){
+      /*
+      img/bubble폴더 추가
+      bubble-particle.css 추가
+      bubble('아이디','물방울이미지경로')
+      다수 엘리먼트 적용시 독립적인 객체명으로 사용  
+        예시)
+        bubble('.bubble-container1','./img/bubble')
+        bubble('.bubble-container2','./img/bubble')
+      */
+      bubble('.bubble-container1','./img/bubble')
+    })
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    bubble-particle 클래스명은 변경하지 말것
+    position속성이 반드시 적용되어양 함
+  -->
+  <div id="bubble" class="bubble-container1 bubble-particle">
+
+  </div>
+</body>
+</html>
