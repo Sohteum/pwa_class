@@ -32,6 +32,7 @@
     ]
   document.querySelector(`.ex2 button`).addEventListener(`click`, e => {
     let idx = arr.findIndex(v => v.이름 === '아무개')
+    //let idx =  arr.findIndex((v) =>{return v.이름 === '아무개' })
     document.querySelector(`.ex2 .output`).innerText = idx;
 
   })
@@ -45,7 +46,7 @@
 //     ]
 //   document.querySelector(`.ex3 button`).addEventListener(`click`, e => {
 //     let name = document.querySelector(`.ex3 input`).value
-//     // let idx = arr.findIndex(v =>  v.이름 === `${name}`)
+//     // let idx = arr.findIndex(v =>  v.이름 === name)
 //     let idx = arr.findIndex((v) => {
 //       return v.이름 === name
 //     })
@@ -109,7 +110,7 @@
 {
   let engArr = ['sun', 'mon', 'tue', 'wen', 'thr', 'fri', 'sat']
   let korArr = ['일', '월', '화', '수', '목', '금', '토']
-  let rand = parseInt(Math.floor(Math.random() * 8))
+  let rand = (Math.floor(Math.random() * 8))
   document.querySelector(`.ex6 .eng`).innerText = engArr[rand]
 
   document.querySelector(`.ex6 button`).addEventListener(`click`, e => {
