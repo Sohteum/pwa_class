@@ -1,5 +1,6 @@
 @import "viewbox.css";
 @import "isotope.css";
+@import "style.css";
 
 @import "reset.css";
 @import "header.css";
@@ -18,6 +19,8 @@
 @import "gallery3.css";
 @import "gallery4.css";
 @import "gallery5.css";
+@import "home.css";
+
 
 
 

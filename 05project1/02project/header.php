@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./img/icons/favicon.ico">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./js/masonry-docs.min.js"></script>
   <script src="./js/jquery.isotope.js"></script>
   <script src="./js/jquery.viewbox.js"></script>

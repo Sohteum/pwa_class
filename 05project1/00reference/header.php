@@ -11,9 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" href="./css/style.css">
   <!-- css파일 링크걸때 무조건 폰트먼저 그다음리셋 그다음 스타일 그다음 스크립트 -->
+  
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./js/masonry-docs.min.js"></script>
   <script src="./js/jquery.isotope.js"></script>
   <script src="./js/jquery.viewbox.js"></script>

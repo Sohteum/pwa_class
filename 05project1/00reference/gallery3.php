@@ -10,9 +10,33 @@
   </p>
 
   <p class="sub_desc">
-
     <em class="emphasis">갤러리 및 시공사례입니다.</em> <br>
     선샤인의 다양한 제작물을 살펴보실 수 있습니다.
   </p>
+
+  <ul class="grid_container">
+  </ul>
+
+  <script>
+    for (let i = 1; i <= 9; i++) {
+      $(`.grid_container`).append(`
+      <li class="item${i}">
+      <a href="#">
+        <figure>
+          <img src="./img/sub3/${i}.jpg" alt="">
+          <figcaption>
+          <h3>
+            Title ${i}
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </figcaption>
+        </figure>
+      </a>
+    </li>
+            `)
+    }
+  </script>
 </section>
 <?php include 'sub-footer.php' ?>

@@ -1,0 +1,113 @@
+.home_visual {
+  position: relative;
+  background-color: black;
+}
+
+.home_visual>.slick-list {
+  height: 100%;
+  cursor: grab;
+}
+
+.home_visual>.slick-list:active {
+  cursor: grabbing;
+}
+
+.home_visual>.slick-list>.slick-track {
+  height: 100%;
+}
+
+.home_visual>.slick-list>.slick-track figure img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.7);
+  object-fit: cover;
+  object-position: center;
+}
+.home_visual figure {
+  position: relative;
+}
+
+.home_visual figure figcaption{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  color:#FFF;
+}
+
+.home_visual figure figcaption h5 {
+  margin-bottom: 10px;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.home_visual .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: #FFF;
+  font-size: 2em;
+  transition: all 0.5;
+  opacity: 0.5;
+}
+
+.home_visual .slick-arrow:hover {
+  opacity: 1;
+}
+
+.home_visual .slick-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+}
+
+.home_visual .slick-dots li {
+  margin: 0 7px;
+}
+
+.home_visual .slick-dots li button {
+  display: block;
+  /* 인라인블럭이라서 위가뜸. */
+  width: 10px;
+  height: 10px;
+  font-size: 0;
+  background-color: #FFF;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+.home_visual .slick-dots li.slick-active button {
+  opacity: 1;
+  background-color: var(--point-color);
+}
+
+
+.home_visual .slick-prev {
+  left: 20px;
+}
+
+.home_visual .slick-next {
+  right: 20px;
+}
+
+
+
+@media screen and (min-width:1000px) {
+  .home_visual {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .home_visual {
+    height: 350px;
+  }
+}
