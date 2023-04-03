@@ -29,7 +29,7 @@
   -->
     <!-- 명단을 추가할때마다 배열을 추가한다고 보면됨 -->
   </div>
-
+<hr>
   <div class="ex2">
     <button>버튼</button>
   </div>
@@ -62,8 +62,51 @@
     <button class="del">목록지우기</button>
     <!-- output지우기 -->
     <p class="output"></p>
-
   </div>
+  <hr>
+  <div class="ex4">
+    <p>4. 일정을 추가하면 일정목록이 나와요</p>
+    <p>날짜 : <input type="date"></p>
+    <p>시간 : <input type="time"></p>
+    <p>일정명 : <input type="text"></p>
+    <button class="add">일정추가</button>
+    <!-- 현재 추가한것만 보여줌
+      날짜 : 2023-02-23
+      시간 : AM:06:23
+      일정명 : 홍길동과 식사
+      (일정이 추가되었습니다.)
+      
+-할일
+    투두배열에 일정객체를 추가
+    output에는 객체를 이용해 내용출력
+     -->
+    <button class="print">일정목록확인</button>
+    <!-- 지금까지 추가한 제목들이 우르르 나옴
+      홍길동과 식사
+      영화보기
+      공부하기
+      밥먹기
+
+      투두배열의 길이만큼 for구문으로 반복해서 객체의 일정이름을 append
+     -->
+    <button class="del">목록지우기</button>
+    <!-- output지우기 -->
+    <p class="output"></p>
+  </div>
+  <hr>
+  <div class="ex5">
+    <p>5. 객체를 배열로 전환</p>
+    <pre>
+      {
+        1:'one'
+        2:'two'
+        3:'three'
+      }
+    </pre>
+    <button>버튼</button>
+    <p class="output"></p>
+  </div>
+
 </body>
 
 </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 비슷한 기능 사이에서 언제 쓰는지 구분을 확실히 해야함 -->
+  <div class="ex1">
+    <p>1. indexOf</p>
+    <ul>
+      <li>배열 안에서 특정값이 몇번째 인덱스에 있는지를 알아냄:무조건 숫자가 나옴</li>
+      <li>값이 존재하지 않으면 -1(음수)를 반환</li>
+      <li>동일한 값이 여러개 있더라도 첫번째 인덱스만 반환 후 종료
+        즉 값이 겹치면 먼저것만 나오고 끝남.대표적으로 아이디같은거 검색할때
+      </li>
+      <li>
+        객체는 검사를 못함 그때부터는 파인드인덱스를써야함
+      </li>
+    </ul>
+    <pre>
+      ['가', '나', '다']
+    </pre>
+    <button>버튼</button>
+    <p class="output"></p>
+  </div>
+  <hr>
+  <div class="ex2">
+    <p>2. findIndex</p>
+    <ul>
+  <li>배열 값으로 객체나 배열이 중첩되어있을 경우 인덱스 검색</li>
+  <li>콜백함수 내에서의 매개변수와 조건문과 리턴문을 사용</li>
+    </ul>
+    <pre>
+      [
+      {'이름': '홍길동' '나이';'35'},
+      {'이름':'아무개', '나이':'22'},
+      {'이름':'무명씨', '나이':'24'},
+      ]
+    </pre>
+    <button>버튼</button>
+    <p class="output"></p>
+
+  </div>
+  <hr>
+  <div class="ex3">
+    <p>3. findIndex</p>
+    <pre>
+      [
+      {'이름': '홍길동' '나이';'35'},
+      {'이름':'아무개', '나이':'22'},
+      {'이름':'무명씨', '나이':'24'},
+      ]
+    </pre>
+    <input type="text" name="" id="">
+    <button>연령은</button>
+    <p class="output"></p>
+    <!-- 없으면 없다. 있으면 누구다. -->
+
+  </div>
+  <hr>
+  <div class="ex4">
+    <p>4. forEach</p>
+    <ul>
+      <li>배열의 길이만큼 순환</li>
+      <li>콜백함수 내에서의 매개변수와 조건문과 리턴문을 사용 </li>
+    </ul>
+    <pre>
+      [
+      {'이름': '홍길동' '나이':'35', '성별':'남'},
+      {'이름':'아무개', '나이':'22','성별':'여'},
+      {'이름':'무명씨', '나이':'24','성별':'남'},
+      { '이름': '영이씨', '나이': '24', '성별': '여' },
+      ]
+    </pre>
+    <input type="text" >
+    <button>버튼</button>
+    <p class="output"></p>
+  </div>
+  <hr>
+<div class="ex5">
+  <p>5. 버튼을 틀릭하면 각각각의 숫자가 출력됨</p>
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+</div>
+<hr>
+<div class="ex6">
+  <p>6. 영어에 해당하는 요일을 글로 입력하시오</p>
+  <p class="eng">?</p>
+  <input type="text" class="kor" maxlength="1" size="1">
+  <button>결과보기</button>
+  <p class="output">결과</p>
+
+</div>
+</body>
+
+</html>

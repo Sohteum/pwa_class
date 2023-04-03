@@ -144,20 +144,20 @@
   })
 
   document.querySelector(`.ex3 .add_check`).addEventListener(`click`, e => {
-    document.querySelector(`.ex3 .output`).innerHTML='';
-   // let br = document.createElement('br')
+    document.querySelector(`.ex3 .output`).innerHTML = '';
+    // let br = document.createElement('br')
     for (let i = 0; i < todo.length; i++) {
       //여기서 랭쓰에서 1을 빼던지 아니면 <=에서 <만 쓰던지
       document.querySelector(`.ex3 .output`).append(
         `일정명 : ${todo[i].name}`,
         document.createElement('br'),
- 
+
       )
     }
   })
 
   document.querySelector(`.ex3 .del`).addEventListener(`click`, e => {
-    document.querySelector(`.ex3 .output`).innerHTML='';
+    document.querySelector(`.ex3 .output`).innerHTML = '';
   })
 }
 
@@ -167,3 +167,60 @@
 // 시간 : ${time} <br>
 //  일정명 : ${name} <br>
 // 일정이 추가되었습니다.`
+
+{
+  let arr = [] //클릭할때마다 배열이 초기화되면 안되니 밖에서 만들어야함
+  document.querySelector(`.ex4 .add`).addEventListener(`click`, e => {
+    let date = document.querySelector(`.ex4 input[type=date]`).value
+    let time = document.querySelector(`.ex4 input[type=time]`).value
+    let title = document.querySelector(`.ex4 input[type=text]`).value
+    let obj = {
+      date,
+      time,
+      title,
+    }
+    arr.push(obj)
+    document.querySelector(`.ex4 .output`).innerHTML = `
+일정이 추가되었습니다 <br>
+날짜 :${obj.date} <br>
+시간 :${obj.time}<br>
+일정명 :${obj.title}<br>
+`
+  })
+  document.querySelector(`.ex4 .print`).addEventListener(`click`, e => {
+    document.querySelector(`.ex4 .output`).innerHTML = ``;
+    for (let i = 0; i < arr.length; i++) {
+      /*     let br = document.createElement(`br`) //배열의 길이만큼 만든것. 그래서 상관없는데 배열의 밖에서 만들면 하나만 만든거라서 하나만 됨
+          let hr = document.createElement(`hr`)  */
+      document.querySelector(`.ex4 .output`).append(
+
+        `날짜 :${arr[i].date}`, document.createElement('br'),
+        `시간 :${arr[i].time}`, document.createElement('br'),
+        `일정명 :${arr[i].title}`, document.createElement('br'),
+
+      )
+    }
+  })
+}
+
+{
+  let obj = { //객체에 n개가 들어있는데 그걸 알아낼 방법이 없을때 객체를 배열로 변환하면 몇개가 들어있는지 알수있다. api사용할때 유용.innerhtml로는 한개씩이니까불가능하고 
+    1: 'one',
+    2: 'two',
+    3: 'three',
+  }
+
+  document.querySelector(`.ex5 button`).addEventListener('click', e => {
+    let objToArray = Object.entries(obj)
+    console.log(objToArray);
+    //Math도 하나의 객체야 내장객체. 그 안에 배열이 여러개 들어있는것. 랜덤도 내장함수라고 하잖니. 내장함수와 메소드는 같은말임. 대표적으로 alert내장함수인데 메소드라고 함. 원래 window.alert. 
+    //여기 오브젝트도 내장객체인데 여기안에 엔트리지라는 메소드가 있음
+    for (let i = 0; i < objToArray.length; i++) {
+      let br = document.createElement('br')
+      document.querySelector(`.ex5 .output`).append(
+
+        `${objToArray[i][0]} : ${objToArray[i][1]}`, br,
+      )
+    }
+  })
+}/* ex5 */
