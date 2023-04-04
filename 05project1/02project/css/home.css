@@ -19,7 +19,7 @@
 .home_visual>.slick-list>.slick-track figure img {
   width: 100%;
   height: 100%;
-  filter: brightness(0.7);
+
   object-fit: cover;
   object-position: center;
 }
@@ -41,7 +41,7 @@
 
 .home_visual figure figcaption h5 {
   margin-bottom: 10px;
-  font-size: 2.5em;
+  font-size: min(7vw, 3.5em);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -75,7 +75,6 @@
 
 .home_visual .slick-dots li button {
   display: block;
-  /* 인라인블럭이라서 위가뜸. */
   width: 10px;
   height: 10px;
   font-size: 0;
@@ -100,6 +99,7 @@
 }
 
 .home_visual #particles-js {
+  pointer-events: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -117,64 +117,196 @@
 
 @media screen and (max-width:1000px) {
   .home_visual {
-    height: 350px;
+    height: 300px;
   }
+}
+
+/* motion */
+
+.home_visual figure {
+  overflow: hidden;
+}
+
+.home_visual figure figcaption h5,
+.home_visual figure figcaption p {
+  opacity: 0;
+  transition: all 3s;
+}
+
+.home_visual figure figcaption h5 {
+  transform: translateX(-100%);
+}
+
+.home_visual figure figcaption p {
+  transform: translateX(100%);
+
+}
+
+.home_visual figure img {
+  transform: scale(1.2);
+  filter: grayscale(0.5) brightness(0.7);
+  transition: all 11s;
+}
+
+.home_visual figure.slick-active figcaption h5,
+.home_visual figure.slick-active figcaption p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.home_visual figure.slick-active img {
+  transform: scale(1);
+  filter: grayscale(0) brightness(0.9);
 }
 
 
 /* feature */
-
 .feature {
-  margin: 40px 0;
+  padding: 40px 0;
 }
 
 .feature ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 10px;
   margin: 0 auto;
-  box-sizing: border-box;
   width: min(95%, 1200px);
 }
 
 .feature ul li {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .feature ul li a {
-   padding: 5px;
-  background-color: var(--sub2-color); 
-
+  padding: 5px;
+  /*   background-color: var(--main-color);
+  border: 1px solid var(--sub-color); */
 }
 
 .feature ul li a figure {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
   overflow: hidden;
 }
 
+.feature ul li a figure figcaption {
+  position: relative;
+  flex: 1;
+  padding: 10px;
+  background-color: var(--dark-color);
+  height: 100%;
+  color: #FFF;
+}
+
+.feature ul li a figure figcaption h3 {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #FFF;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
 .feature ul li a figure img {
-height: 100%;
+  width: 100%;
 }
 
 @media screen and (min-width:1000px) {
   .feature ul li {
-    width: 23%;
+    width: 25%;
   }
 }
 
 @media screen and (min-width:600px) and (max-width:1000px) {
   .feature ul li {
-    width: 48%;
+    width: 50%;
   }
 }
 
 @media screen and (max-width:600px) {
   .feature ul li {
     width: 100%;
+    margin: 0 auto;
   }
+}
+
+/* hover */
+
+.feature img {
+  transition: all 0.5s;
+  filter: grayscale(0.5)
+}
+
+.feature a:hover img {
+  transform: scale(1.2);
+  filter: grayscale(0)
+}
+
+.feature a {
+  transition: background-color 0.5s;
+}
+
+.feature a:hover {
+  background-color: var(--dark-color);
+}
+
+.feature a figcaption {
+  transition: all 0.5s;
+}
+
+.feature a:hover figcaption {
+  background-color: var(--sub-color);
+}
+
+/* latest */
+
+.latest .news {
+  background-color: #DDD;
+  padding: 20px 0;
+}
+
+.latest .news .center {
+  margin: 0 auto;
+  width: min(95%, 1200px);
+}
+
+.latest .news .center h3 {
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.latest .news .center .rolling {
+  overflow: hidden;
+  height: 23px;
+  color: var(--dark-color);
+}
+
+.latest .news .center .rolling ul {
+  animation: rolling 10s linear infinite;
+}
+
+@keyframes rolling {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@media screen and (min-width:700px) {
+  .latest .news .center {
+    display: flex;
+  }
+
+  .latest .news .center h3 {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .latest .news .center {}
 }
