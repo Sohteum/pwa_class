@@ -20,6 +20,5 @@
   </figure>
 
 
-
 </section>
 <?php include 'sub-footer.php' ?>

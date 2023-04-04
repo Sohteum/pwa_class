@@ -23,19 +23,20 @@
   object-fit: cover;
   object-position: center;
 }
+
 .home_visual figure {
   position: relative;
 }
 
-.home_visual figure figcaption{
+.home_visual figure figcaption {
   position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 80%;
   max-width: 400px;
   text-align: center;
-  color:#FFF;
+  color: #FFF;
 }
 
 .home_visual figure figcaption h5 {
@@ -98,7 +99,15 @@
   right: 20px;
 }
 
-
+.home_visual #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
 
 @media screen and (min-width:1000px) {
   .home_visual {
@@ -109,5 +118,63 @@
 @media screen and (max-width:1000px) {
   .home_visual {
     height: 350px;
+  }
+}
+
+
+/* feature */
+
+.feature {
+  margin: 40px 0;
+}
+
+.feature ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: min(95%, 1200px);
+}
+
+.feature ul li {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+}
+
+.feature ul li a {
+   padding: 5px;
+  background-color: var(--sub2-color); 
+
+}
+
+.feature ul li a figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.feature ul li a figure img {
+height: 100%;
+}
+
+@media screen and (min-width:1000px) {
+  .feature ul li {
+    width: 23%;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:1000px) {
+  .feature ul li {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .feature ul li {
+    width: 100%;
   }
 }
