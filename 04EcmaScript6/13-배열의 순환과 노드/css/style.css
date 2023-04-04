@@ -1,0 +1,19 @@
+.ex6 button {
+  background-color: #FFF;;
+  border:1px solid #CCC;
+  cursor: pointer;
+}
+
+.ex6 button.active {
+  background-color: #000;
+color: #FFF;
+    cursor: pointer;
+}
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 1px solid #000;
+}

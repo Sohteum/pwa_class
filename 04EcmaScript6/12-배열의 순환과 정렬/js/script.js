@@ -110,7 +110,7 @@
 {
   let engArr = ['sun', 'mon', 'tue', 'wen', 'thr', 'fri', 'sat']
   let korArr = ['일', '월', '화', '수', '목', '금', '토']
-  let rand = (Math.floor(Math.random() * 8))
+  let rand = (Math.floor(Math.random() * 7))
   document.querySelector(`.ex6 .eng`).innerText = engArr[rand]
 
   document.querySelector(`.ex6 button`).addEventListener(`click`, e => {
