@@ -1,123 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css"
+    />
+    <script
+      defer
+      src="./js/script.js"
+    ></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <script defer src="./js/script.js"></script>
-  <title>Document</title>
-</head>
-
-<body>
-  <div class="ex1">
-    <p>1. indexOf</p>
-    <button>버튼</button>
-  </div>
-  <hr>
-  <div class="ex2">
-    <p>2. findIndex</p>
-    <button>버튼</button>
-  </div>
-  <hr>
-  <div class="ex3">
-    <p>3. find</p>
-    <ul>
-      <li>값 전체를 리턴</li>
-    </ul>
-    <button>버튼</button>
-    <p class="output"></p>
-  </div>
-  <hr>
-  <div class="ex4">
-    <p>4. 기본 노드 찾기</p>
-    <div>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
+  <body>
+    <div class="ex1">
+      <p>1. indexOf</p>
+      <button>버튼</button>
     </div>
+    <hr />
+    <div class="ex2">
+      <p>2. findIndex</p>
+      <button>버튼</button>
+    </div>
+    <hr />
+    <div class="ex3">
+      <p>3. find</p>
+      <ul>
+        <li>값 전체를 리턴</li>
+      </ul>
+      <button>버튼</button>
+      <p class="output"></p>
+    </div>
+    <hr />
+    <div class="ex4">
+      <p>4. 기본 노드 찾기</p>
+      <div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+      </div>
+    </div>
+    <hr />
+    <div class="ex5">
+      <p>5. this siblings</p>
+      <div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+      </div>
+      <!--무조건 형제찾을려면 부모있어야됨 -->
+    </div>
+    <hr />
+    <div class="ex6">
+      <p>6. toggleClass</p>
+      <div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+      </div>
+    </div>
+    <hr />
+    <div class="ex7">
+      <div>
+        <button>button</button>
+        <div class="box">red</div>
+        <div class="box">blue</div>
+        <div class="box">green</div>
+      </div>
+    </div>
+    <hr />
+    <div class="ex8">
+      <div>
+        <button>button</button>
+        <div class="box">red</div>
+        <div class="box">blue</div>
+        <div class="box">green</div>
+      </div>
+      <div>
+        <button>button</button>
+        <div class="box">red</div>
+        <div class="box">blue</div>
+        <div class="box">green</div>
+      </div>
+      <div>
+        <button>button</button>
+        <div class="box">red</div>
+        <div class="box">blue</div>
+        <div class="box">green</div>
+      </div>
+    </div>
+  </body>
+  <hr />
+  <div class="ex9">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
   </div>
-  <hr>
-  <div class="ex5">
-    <p>5. this siblings</p>
-    <div>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-    </div>
-    <!--무조건 형제찾을려면 부모있어야됨 -->
+  <hr />
+  <div class="ex10">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
   </div>
-  <hr>
-  <div class="ex6">
-    <p> 6. toggleClass</p>
-    <div>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-    </div>
+  <hr />
+  <div class="ex11">
+    <p>11. 아래 3개에 해당하는 요일을 한글로 입력하세요</p>
+    <p class="en"></p>
+    <p>
+      <input
+        type="text"
+        placeholder="여백없이 쉼표입력"
+      />
+    </p>
+    <button>결과보기</button>
+    <p class="output">정오답</p>
   </div>
-  <hr>
-  <div class="ex7">
-    <div>
-      <button>button</button>
-      <div class="box">red</div>
-      <div class="box">blue</div>
-      <div class="box">green</div>
-    </div>
-  </div>
-  <hr>
-  <div class="ex8">
-    <div>
-      <button>button</button>
-      <div class="box">red</div>
-      <div class="box">blue</div>
-      <div class="box">green</div>
-    </div>
-    <div>
-      <button>button</button>
-      <div class="box">red</div>
-      <div class="box">blue</div>
-      <div class="box">green</div>
-    </div>
-    <div>
-      <button>button</button>
-      <div class="box">red</div>
-      <div class="box">blue</div>
-      <div class="box">green</div>
-    </div>
-    <div>
-      <button>button</button>
-      <div class="box">red</div>
-      <div class="box">blue</div>
-      <div class="box">green</div>
-    </div>
-  </div>
-</body>
-<hr>
-<div class="ex9">
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-</div>
-<hr>
-<div class="ex10">
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-</div>
-<hr>
-<div class="ex11">
-  <p>11. 아래 3개에 해당하는 요일을 한글로 입력하세요</p>
-  <p class="en"></p>
-  <p><input type="text" placeholder="여백없이 쉼표입력"></p>
-  <button>결과보기</button>
-  <p class="output">정오답</p>
-</div>
-
 </html>

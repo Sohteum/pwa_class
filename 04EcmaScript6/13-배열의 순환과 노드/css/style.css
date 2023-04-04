@@ -1,13 +1,14 @@
 .ex6 button {
-  background-color: #FFF;;
-  border:1px solid #CCC;
+  background-color: #FFF;
+  ;
+  border: 1px solid #CCC;
   cursor: pointer;
 }
 
 .ex6 button.active {
   background-color: #000;
-color: #FFF;
-    cursor: pointer;
+  color: #FFF;
+  cursor: pointer;
 }
 
 

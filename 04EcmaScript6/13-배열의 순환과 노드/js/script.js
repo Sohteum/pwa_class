@@ -37,21 +37,25 @@
 
 
 {
+  // document.querySelector(`.ex4 button:nth-child(1)`).addEventListener(`click`, e => {
+  //   e.target.style.backgroundColor = 'red'
+  //   //타겟까지가 디스랑 똑같은거  만약에 자식이 있으면 커런트타게시
+  // })
   document.querySelector(`.ex4 button:nth-child(1)`).addEventListener(`click`, e => {
     e.target.parentElement.style.backgroundColor = 'red'
-    //타겟까지가 디스랑 똑같은거
+    //타겟까지가 디스랑 똑같은거  만약에 자식이 있으면 커런트타게시
   })
   document.querySelector(`.ex4 button:nth-child(2)`).addEventListener(`click`, e => {
     e.target.nextElementSibling.style.backgroundColor = "red"
-    //객체를 하나만 반환함. 배열의 색을 어떻게 바꿔. 객체가 리턴이 된다.
+    //뒤의 동생을 빨갛게 /객체를 하나만 반환함. 배열의 색을 어떻게 바꿔. 객체가 리턴이 된다.
   })
   document.querySelector(`.ex4 button:nth-child(3)`).addEventListener(`click`, e => {
     e.target.previousElementSibling.style.backgroundColor = 'yellow'
   })
   document.querySelector(`.ex4 button:nth-child(4)`).addEventListener(`click`, e => {
     Array.from(e.target.parentElement.children).forEach(v => {
-      //여기서 v는 네개의 버튼인데 , 클릭한애는 네번째.네번째에오면 동일한애가 됨. 동일한게 되면 폴스를 함. 그러면 내가 클릭한애만 빼고 나머지가 빨갛게됨.
-      //
+      //여기서 v는 네개의 버튼인데 , 클릭한애는 네번째.네번째에오면 v면서 e.target이됨. 폴스를 함. 그러면 내가 클릭한애만 빼고 나머지가 빨갛게됨.
+      //포이치는 배열에만 할 수 있음
       if (e.target === v) return false
       v.style.backgroundColor = 'red'
     })
@@ -98,32 +102,34 @@
 }
 
 {
-  // document.querySelector(`.ex7 button`).forEach(v => {
+  document.querySelector(`.ex7 button`).addEventListener(`click`, e => {
 
-  // Array.from(e.target.parentElement.children).forEach(v=>{
-  // if (e.target===v) return false
-  // v.style.background=v.innerText
-  // })
+    // Array.from(e.target.parentElement.children).forEach(v => {
+    //   if (e.target === v) return false
+    //   v.style.background = v.innerText
+    // })
 
-  // e.target.parentElement.querySelectorAll(`.box`).forEach(v=>{
-  //   v.style.background=v.innerText
-  // })
+    e.target.parentElement.querySelectorAll(`.box`).forEach(v => {
+      v.style.background = v.innerText
+    })
 
-  // })/* click */
+  })/* click */
 }
 {
   document.querySelectorAll(`.ex8 button`).forEach(v => {
     v.addEventListener(`click`, e => {
-      document.querySelectorAll(`.ex8 button`).forEach(v => {
-        v.style.backgroundColor = `none`
+
+      document.querySelectorAll(`.ex8 .box`).forEach(v => {
+        v.style.background = 'none'
       })
+
       e.target.parentElement.querySelectorAll(`.box`).forEach(v => {
-        v.style.backgroundColor = v.innerText
+        v.style.background = v.innerText
         //클릭한 박스 옆에있는 버튼 세개
       })
     })
   })
-}
+}// 여기서 왜 백그라운드 컬러하면 안됨?????????????????????????????????????????????
 
 {//prevAll(), nextAll()
   document.querySelector(`.ex9 button:nth-child(3)`).addEventListener(`click`, e => {
