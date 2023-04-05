@@ -121,6 +121,7 @@
 
       document.querySelectorAll(`.ex8 .box`).forEach(v => {
         v.style.background = 'none'
+        //백그라운드컬러할려면 트랜스패런트해줘야되고 넌이라는 속성이 없음
       })
 
       e.target.parentElement.querySelectorAll(`.box`).forEach(v => {
@@ -188,32 +189,65 @@
   let randArr2 = (Math.floor(Math.random() * 7))
   let randArr3 = (Math.floor(Math.random() * 7))
 
-  /*   let randArr = (Math.floor(Math.random() * 7)).append(
-      `${enArr[randArr]},`,
-      `${enArr[randArr]},`,
-      `${enArr[randArr]},`,
-    ) */
-  document.querySelector(`.ex11 .en`).append(
-    `${enArr[randArr1]},`,
-    ` ${enArr[randArr2]},`,
-    ` ${enArr[randArr3]}`,
-  )
+  document.querySelector(`.ex11 button`).addEventListener(`click`, e => {
+    document.querySelector(`.ex11 .en`).append(
+      `${enArr[randArr1]},`,
+      ` ${enArr[randArr2]},`,
+      ` ${enArr[randArr3]}`,
+    )
+    /*   document.querySelector(`.ex11 .en`).innerText = randArr */
 
-  /*   document.querySelector(`.ex11 .en`).innerText = randArr */
+    let userArr = document.querySelector(`.ex11 p input`).value
+    userArr.split(',')
 
-  let userArr = document.querySelector(`.ex11 p input`).value
-  userArr.split(',')
-
-
-
-
-
-  userArr.forEach((v, i) => {
-    if (i === koArr) { v++ }
-    document.querySelector(`.ex11 .output`).innerText = result
+    userArr.forEach((v, i) => {
+      if (i === koArr) { v++ }
+      document.querySelector(`.ex11 .output`).innerText = result
+    })
   })
+}
 
+{
+  let enArr = ['sun', 'mon', 'tue', 'wed', 'thr', 'fri', 'sat']
+  let koArr = ['일', '월', '화', '수', '목', '금', '토']
+  let enArrCopy = ['sun', 'mon', 'tue', 'wed', 'thr', 'fri', 'sat']
+  let enArrIdx = []
+  //하나씩 지워버리면 일월화 뽑았을 때 0,0,0을 뽑은게 되어버리니까 지우면 안됨.
+  //똑같은 배열을 하나더 만들고 거기서뽑는다. 그리고 몇번째에서 뽑았는지알기위해 원래거는보관
 
-
-
+  for (let i = 1; i <= 3; i++) {
+    let random = Math.floor(Math.random() * enArrCopy.length)
+    document.querySelector(`.ex12 .en`).append(
+      enArrCopy[random], ',')
+    //random -> 0, enArrCopy[0] wed, edArr.indexOf(enArrCopy[0])
+    //카피본에있는 배열이 원래 배열에 어디에 있는지를 확인하는 방법 이걸 세번 반복하고 내가 새로 만든 배열에 푸쉬해준다.
+    enArrIdx.push(enArr.indexOf(enArrCopy[random]))
+    enArrCopy.splice(random, 1)
+  
+  }
+  console.log(enArrIdx);
+  
+  /* console.log(enArrIdx); */
+  document.querySelector(`.ex12 button`).addEventListener(`click`, e => {
+    let inputArrIdx = [] //이거는 클릭안에서 선언을 해줘야 함
+    let inputArr = document.querySelector(`.ex12 input`).value.split(',')//여기서 이말은 쉼표를 지우고 배열로 만든다 라는 뜻. 여기 쉼표를 안적으면  ['금', ',', '토', ',', '수'] 이렇게 나옴
+    /*     console.log(inputArr); */
+    //koArr(inputArr[0]) ->0
+    //inputArrIdx.push()
+    //koArr(inputArr[1]) ->1
+    //inputArrIdx.push()
+    //koArr(inputArr[2]) ->2 
+    //inputArrIdx.push()
+    for (let i = 0; i <= 2; i++) {
+      inputArrIdx.push(koArr.indexOf(inputArr[i]))
+    }
+    /* console.log(inputArrIdx); */
+    let point = 0
+    for(let i=0; i<=2; i++){
+      if(inputArrIdx[i] === enArrIdx[i]) point++
+    }
+    let result = (point === 3)? '정답':'오답'
+    document.querySelector(`.ex12 .output`).innerHTML = result
+    console.log(inputArrIdx, enArrIdx);
+  })
 }
