@@ -32,9 +32,9 @@ $(function () {
  */
     $(`.latest article`).each(function () {
       var elT = $(this).offset().top
-      if(scrT >=elT-winH*0.8){
+      if (scrT >= elT - winH * 0.9) {
         $(this).addClass('active')
-      }else{
+      } else {
         $(this).removeClass('active')
 
       }

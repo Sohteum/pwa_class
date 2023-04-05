@@ -91,15 +91,15 @@
     </article>
 
     <article class="gallery">
-    <h3>gallery</h3>
+      <h3>gallery</h3>
       <ul></ul>
       <script>
-        for( var i =1; i <=4; i++){
+        for (var i = 1; i <= 3; i++) {
           $(`.gallery ul`).append(`
           <li>
-          <a href="#">
-          <img src="./img/sub3/${i}.jpg" alt>
-          </a>
+            <a href="#">
+              <img src="./img/sub3/${i}.jpg" alt>
+            </a>
           </li>
           `)
         }
