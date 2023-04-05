@@ -20,20 +20,28 @@ $(function () {
 
 
   var reqID
-  function fnHeaderMotion() {
+  function fn() {
     $(`.feature li`).each(function () {
       var elT = $(this).offset().top
       var elH = $(this).innerHeight()
       var meta = 1 + Math.abs(scrT - (elT - winH * 0.5 + elH * 0.5)) * -0.0005
-      if(meta<0){meta=0}
+      if (meta < 0) { meta = 0 }
       $(this).find(`a`).css({ 'transform': `scale(${meta})` })
     })
+    $(`.latest article`).each(function () {
+      var elT = $(this).offset().top
+      if(scrT >=elT-winH*0.8){
+        $(this).addClass('active')
+      }else{
+        $(this).removeClass('active')
 
+      }
+    })
   }
-  fnHeaderMotion()
+  fn()
   $(window).scroll(function () {
-    reqID = requestAnimationFrame(fnHeaderMotion)
+    reqID = requestAnimationFrame(fn)
   }).resize(function () {
-    reqID = requestAnimationFrame(fnHeaderMotion)
+    reqID = requestAnimationFrame(fn)
   })
 })

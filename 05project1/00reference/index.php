@@ -52,7 +52,7 @@
   <article class="news">
 
     <div class="center">
-     
+
       <h3> <i class="fa-solid fa-microphone-lines"></i> LATEST NEWS</h3>
       <div class="rolling">
         <ul>
@@ -62,8 +62,8 @@
           <li>뉴스 게시판 최신글 테스트 4번...</li>
           <li>뉴스 게시판 최신글 테스트 5번...</li>
         </ul>
-       </div>
-       <script>
+      </div>
+      <script>
         $(`.rolling ul`).clone().appendTo(`.rolling`)
         // 얘 안쪽에 넣을때 append인거고, 클론이 복사한다는거야. 근데 그러면 나는 유엘 밖에 넣고싶다 그럼 appendTo
 
@@ -72,9 +72,53 @@
         document.querySelector(`.rolling ul`).append(clone)
         카피하는데 자식요소까지 카피를 하겠다. 트루가 없으면 뽑아오겠다는 의미
         */
-       </script>
+      </script>
     </div>
   </article>
+
+  <div class="bottom">
+    <article class="notice">
+      <h3>notice</h3>
+      <ul>
+      </ul>
+      <script>
+        noticeArr.forEach(function(v) {
+          $(`.notice ul`).append(`
+          <li>
+            <a href="#">${v.desc}</a>
+            <time>${v.date}</time>
+          </li>
+          `)
+        })
+      </script>
+      <a class="more" href="./notice.php">more+</a>
+    </article>
+
+    <article class="customer">
+      <h3>customer</h3>
+      <p>문의전화를 주시면 친절히 상담해드립니다.</p>
+      <a class="tel" href="tel:01012345678"><i class="fa-solid fa-phone"></i> 010-1234-5678</a>
+      <a class="mail" href="./contact.php"><i class="fa-solid fa-envelope"></i> contact us</a>
+    </article>
+
+    <article class="gallery">
+      <h3>gallery</h3>
+      <ul></ul>
+      <script>
+        for( var i =1; i <=4; i++){
+          $(`.gallery ul`).append(`
+          <li>
+          <a href="#">
+          <img src="./img/sub3/${i}.jpg" alt>
+          </a>
+          </li>
+          `)
+        }
+      </script>
+      <a class="more" href="./gallery1.php">more+</a>
+    </article>
+
+  </div>
 
 </section>
 

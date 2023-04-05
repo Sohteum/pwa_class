@@ -27,6 +27,7 @@
 </head>
 
 <body>
+  <?php include 'preloader.php' ?>
   <script src="./js/header.js"></script>
   <script src="./js/nav.js"></script><!-- 어디에서 호출해도 상관없음 이 스크립트는 전체 페이지에서 호출될거야 -->
   <header>

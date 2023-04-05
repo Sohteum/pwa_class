@@ -30,6 +30,15 @@ $(function () {
       $(this).find(`a`).css({ 'transform': `scale(${meta})` })
     })
  */
+    $(`.latest article`).each(function () {
+      var elT = $(this).offset().top
+      if(scrT >=elT-winH*0.8){
+        $(this).addClass('active')
+      }else{
+        $(this).removeClass('active')
+
+      }
+    })
   }
   fnHeaderMotion()
   $(window).scroll(function () {
