@@ -1,0 +1,114 @@
+
+
+/* 선택자(nested) */
+
+.ex1,
+.ex2 {
+  > div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    > div {
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      div {
+        width: 30px;
+        height: 30px;
+        background-color: greenyellow;
+      }
+    }
+  }
+}
+
+/* 선택자(parent..중괄호선택자) */
+
+.ex3 {
+  div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    &:first-child:hover {
+      background-color: red;
+    }
+    &:last-child:hover {
+      background-color: blue;
+    }
+  }
+}
+
+/* 변수 */
+
+.ex4 {
+  $w1: 100px;
+  $w2: 200px;
+  $bg1: red;
+  $bg2: blue;
+  div {
+    display: inline-block;
+    height: 100px;
+    background-color: antiquewhite;
+    &:first-child {
+      width: $w1;
+      &:hover {
+        background-color: $bg1;
+      }
+    }
+    &:last-child {
+      width: $w2;
+      &:hover {
+        background-color: $bg2;
+      }
+    }
+  }
+}
+
+/* import */
+//scss변수를 외부파일에서 호출하기위해서는 호출 전에 import가 선행되어야함
+//그래서 최상단에 주로 적음
+//import되는 scss파일에서는 일반 css를 작성하지말것. scss문법만 작성. 중복을 막기 위해서. 변수 혹은 scss문법만 사용할 것
+
+//여기서 임폴트 파일을 변경했다면 그냥 사스와서도 저장을 한번 다시 해야함
+//특히 루트로 지정한건 괜찮은데 변수지정한것들은 저장을 다시해줘야함
+//import여러 파일에서 공통으로 사용되는 변수는 import를 사용하지 말것(여러 파일에서 다시 다 세이브 해줘야하니까)
+@import "./common.scss";
+
+$sub-color:rgb(90, 90, 18);
+//변수는 파일내에서 사용하는것이 좋다.변수는 임폴트하지말자/
+
+.ex5 {
+  div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    &:first-child {
+      background-color: var(--main-color);
+    }
+    &:last-child {
+      background-color: $sub-color;
+    } 
+  }
+} 
+
+
+/* 보간법 */
+//템플릿리터럴즈가 보간법임 여기서는 #{} 여기 안에 나중에 곱하기나 이런것도 가능해서 편리하게 사용가능
+//여기도 마찬가지로 변수선언한게 중괄호스코프임
+//나주에
+.ex6{
+  $w100:100;
+  $b:box; //따옴표 안써도 되는데 띄어쓰기 할때는 따옴표를 꼭 써야함
+  div{
+    display: inline-block;
+    height: 100px;
+    &.#{$b}1{
+      width: #{$w100}px;
+      background-color: red;
+    }
+    &.#{$b}2{
+      width: #{$w100}px;
+      background-color: blue
+    }
+  }
+}

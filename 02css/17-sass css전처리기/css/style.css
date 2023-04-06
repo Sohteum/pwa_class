@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* 선택자(nested) */
+.ex1 > div,
+.ex2 > div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.ex1 > div > div,
+.ex2 > div > div {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+}
+.ex1 > div > div div,
+.ex2 > div > div div {
+  width: 30px;
+  height: 30px;
+  background-color: greenyellow;
+}
+
+/* 선택자(parent..중괄호선택자) */
+.ex3 div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
+.ex3 div:first-child:hover {
+  background-color: red;
+}
+.ex3 div:last-child:hover {
+  background-color: blue;
+}
+
+/* 변수 */
+.ex4 div {
+  display: inline-block;
+  height: 100px;
+  background-color: antiquewhite;
+}
+.ex4 div:first-child {
+  width: 100px;
+}
+.ex4 div:first-child:hover {
+  background-color: red;
+}
+.ex4 div:last-child {
+  width: 200px;
+}
+.ex4 div:last-child:hover {
+  background-color: blue;
+}
+
+/* import */
+.ex5 div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.ex5 div:first-child {
+  background-color: var(--main-color);
+}
+.ex5 div:last-child {
+  background-color: rgb(90, 90, 18);
+}
+
+/* 보간법 */
+.ex6 div {
+  display: inline-block;
+  height: 100px;
+}
+.ex6 div.box1 {
+  width: 100px;
+  background-color: red;
+}
+.ex6 div.box2 {
+  width: 100px;
+  background-color: blue;
+}/*# sourceMappingURL=style.css.map */
