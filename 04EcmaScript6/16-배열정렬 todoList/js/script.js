@@ -132,13 +132,30 @@
           return v.id !== parseInt(liID)
         }) //새로운 배열이 나옴
       })
-      output.append(li)
     })
-    document.querySelector(`.ex5 .btnDate`).addEventListener(`click`, e => {
-      let objCopy = [...obj] 
-     objCopy.slice(0,2) //이걸 모든 배열에 다 지워야되는데
-      console.log(objCopy);
+    output.append(li)
+  })
+  document.querySelector(`.ex5 .btnDate`).addEventListener(`click`, e => {
+    let arrCopy = [...arr] //    html에서 받아오는 문자와 숫자 모두 글자임.
+    // let arrCopy.slice(0, 2) //이걸 모든 배열에 다 지워야되는데
+    arrCopy.sort((a, b) => {
+      if (a.date.time > b.date.time) return 1
+      if (a.date.time < b.date.time) return -1
+      if (a.date.time === b.date.time) return 0
+    })
+    /* 출력 */
 
+    let output = document.querySelector(`.ex5 .output`)
+    output.innerHTML = ''
+    arrCopy.forEach(v => {
+      let li = document.createElement(`li`)
+      li.innerHTML =
+        `
+        일정명 : ${v.name}, <br>
+        날짜 : ${v.date}, <br>
+        시간 : ${v.time},<br>
+        <button value=${v.id}>삭제</button>
+        `
     })
 
   })
