@@ -1,0 +1,43 @@
+.tab_menu {
+  position: relative;
+  display: flex;
+  height: 39px;
+}
+
+.tab_menu button {
+  height: 40px;
+  padding: 0 30px;
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  border-bottom-color: var(--sub2-color);
+}
+
+.tab_menu button.active {
+  color: var(--main-color);
+  background-color: var(--sub2-color);
+  border: 1px solid var(--sub2-color);
+  border-bottom-color: var(--sub2-color);
+}
+
+.pane {
+  padding: 5px;
+  background-color: var(--sub2-color);
+  border: 1px solid var(--sub2-color);
+}
+
+.pane img,
+.pane iframe {
+  width: 100%;
+}
+
+.pane iframe {
+  height: 400px;
+}
+
+.pane img {
+  display: none;
+}

@@ -1,0 +1,95 @@
+.greet_section {
+  overflow: hidden;
+
+}
+
+.greet_section p {
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* 너비 다 다르게 하고  */
+
+.greet_section p:nth-of-type(1) {
+  max-width: 500px;
+}
+
+.greet_section p:nth-of-type(2) {
+  max-width: 800px;
+}
+
+.greet_section p:nth-of-type(3) {
+  max-width: 500px;
+}
+
+.greet_section p:nth-of-type(4) {
+  max-width: 800px;
+}
+
+
+@media screen and (min-width:600px) {
+  .greet_section figure {
+    display: flex;
+
+    /* 이미지는 상황에 맞는 해상도를 써야함 여기선 600정도면 되는거고. 플렉스를 하면 이미지가 깨짐. 알고있어야함 */
+  }
+
+  .greet_section figure img {
+    flex: 1;
+    max-width: 50%;
+    /* 이미지랑 비디오는 블럭으로 바꿨다고 해서 쫙 커지거나 하지않음 */
+  }
+}
+
+@media screen and (max-width:600px) {
+  .greet_section figure img {
+    margin: 0 auto;
+    width: 100%;
+    /* 블럭레벨은 부모가 줄면 같이 주는데 이미지랑 비디오는 ㄱ ㅡ렇지않아서 직접 너비를 줘야함 */
+  }
+}
+
+/* motion */
+
+.greet_section p {
+  opacity: 0;
+  transition: all .5s
+    /* 호버도 없고 반응형도 없고 그러니까 그냥 올 하면 됨. 헷깔리면 그냥 다 적깅 */
+}
+
+.greet_section p:nth-of-type(odd) {
+  transform: translateX(-100px);
+}
+
+.greet_section p:nth-of-type(even) {
+  transform: translateX(100px);
+}
+
+.greet_section p.active {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+/* 트랜스폼이랑 오퍼시티 적용되면 제트인덱스가 적용되고, 나중에 만들어진애들이 무조건 위로올라옴 그래서 여기서도 얘들이 사이드바를 덮게됨.
+ */
+
+ .greet_section img{
+  opacity: 0;
+  filter:saturate(0);
+  transition: all 1s
+}
+
+.greet_section img:first-child {
+  transform: translateX(-100px);
+}
+
+.greet_section img:last-child {
+  transform: translateX(100px);
+}
+
+.greet_section img.active {
+  opacity: 1;
+  filter:saturate(1);
+  transform: translateX(0);
+  /* 액티브를 추가해도 맨밑에 두지 않으면 위에 translate가 우선순위가 높아져서 적용이 안된다. */
+}

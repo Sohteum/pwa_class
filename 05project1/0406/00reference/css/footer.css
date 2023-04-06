@@ -1,0 +1,149 @@
+footer .sitemap {
+  padding: 30px 0;
+  background-color: var(--dark-color);
+}
+
+footer .sitemap>ul {
+  display: flex;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 여기서 너비를 줘야하는이유는 블럭레벨이니까 한줄이 전체를 다먹고있음
+그래서 너비를 줘야하는데 작아졌을때랑 커졌을때 너비랑 맥스너비 줌 */
+
+
+/* 이제 1뎁스 li를 찾아서 하나씩 가로로 정렬을 함
+그리고 크기를 정확히 나눌려면 자식한테 플렉스1을 줌 */
+
+footer .sitemap>ul>li {
+  flex: 1;
+}
+
+/* 만약에 앵커를 앵커로 안쓰고 클릭이 안되는 h1으로 활용하고싶다면?
+같은 템플릿을 사용하는데 사용을 다르게 하는거지. 
+가장 작은 제목은 h6을 많이 씀*/
+
+footer .sitemap>ul>li>a {
+  display: none;
+}
+
+footer .sitemap h6::before {
+  content: '- ';
+}
+
+footer .sitemap h6 {
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #AAA;
+  margin-bottom: 10px;
+}
+
+footer .sitemap>ul>li>ul>li {
+  margin: 2px 0;
+}
+
+footer .sitemap>ul>li>ul>li a {
+  transition: all 0.3s;
+}
+
+footer .sitemap>ul>li>ul>li a::before {
+  content: ' · ';
+}
+
+footer .sitemap>ul>li>ul>li a:hover {
+  color: var(--point-color);
+}
+
+footer .sitemap>ul>li.sns>ul>li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+footer .sitemap>ul>li.sns>ul>li>a {
+  font-size: 1.5em;
+}
+
+footer .sitemap>ul>li.sns>ul>li>a::before {
+  /*   content:''; 이거보다 display:none이 좋음. 점에 마진을 줬을때 얘가 살아있으면 없는 점에 마진이 생겨버리니까 그냥 삭제하는게 좋음 */
+  display: none;
+}
+
+@media screen and (max-width:1000px) {
+  footer .sitemap>ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer .sitemap>ul>li:not(.sns)>ul {
+    display: none;
+  }
+
+  footer .sitemap>ul>li {
+    flex: none;
+    margin:0 5px;
+  }
+
+  footer .sitemap>ul>li.sns {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .sitemap>ul>li.sns h6 {
+    display: none;
+  }
+
+  footer .sitemap>ul>li>h6 {
+    font-size: 0.85em;
+    text-align: center;
+  }
+
+  footer .sitemap>ul>li>h6::before {
+    display: none;
+  }
+}
+
+/* 두줄부터는 플렉스1을 쓰면안됨. 플렉스1하면 적용이 안되니 */
+
+
+
+/* --- info --- */
+
+.info {
+  font-size: 0.9em;
+  text-align: center;
+  /* 상속되니까 여기서 해도 됨 */
+  padding: 20px;
+  background-color: #2f2f2f;
+}
+
+.info address,
+.info p {
+  margin: 10px auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+.info address {
+  color: #888;
+}
+
+.info address i {
+  display: inline-block;
+}
+
+/* i는 인라인이야. 인라인 블럭으로 만들어줘야 하나의 덩어리가 됨. 그전에는 뭣도 아님. 덩어리로 줄내림하려면!!  */
+
+.info address i::after {
+
+  content: ' /';
+  margin: 0 5px;
+  /* 마진을 주고싶으면 따로주지 말고 여기서 같이 줘야함 */
+}
+
+.info p {
+  font-weight: 500;
+  /* 일반적으로 카피라이트는 굵게해줌 */
+  color: #AAA;
+}
