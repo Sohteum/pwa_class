@@ -1,1 +1,41 @@
-$sub-color:rgb(180, 180, 168);
+//많이 쓰는 미디어쿼리를 변수로 만든다.
+//띄어쓰기 할 때는 전체적으로 따옴표로 감싸줘야함
+$min-lg: "screen and (min-width:1000px)";
+$max-lg: "screen and (max-width:1000px)";
+
+@mixin btn {
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  background-color: transparent;
+} //btn이라는 함수 설정//style.scss에서 한번더 저장해줘야 먹음
+//한번에 잘 만들어놔야함 안그럼 계속 저장해야해서 귀찮아짐
+
+@mixin btn-hover($bg) {
+  //여기서 이렇게 써주면 반드시 사용할때 파라미터 써줘야함
+  @include btn;
+  cursor: pointer;
+  &:hover {
+    //btn을 사용하는 애를 말함. 그럼 ex8의 버튼. 제이쿼리 디스랑 비슷
+    background-color: $bg;
+  }
+}
+// 함수는 항상 파라미터 즉 매개변수를 받을 수 있다.
+// 여기서 변수는 무조건 달러
+// 그냥 변수랑 함수에서 사용하는 파라미터는 다른거야
+
+@mixin icon($psuedo, $code) {
+  &::#{$psuedo} {
+    //선택자는 무조건 보간법
+    content: $code; //항상 같은 아이콘을 사용하지는 않으니까 이 값을 파라미터로
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+}
+
+
+

@@ -1,5 +1,3 @@
-
-
 /* 선택자(nested) */
 
 .ex1,
@@ -21,7 +19,7 @@
   }
 }
 
-/* 선택자(parent..중괄호선택자) */
+/* 엠파센드& 선택자(parent..자기가 살고있는 중괄호선택자) */
 
 .ex3 {
   div {
@@ -74,7 +72,7 @@
 //import여러 파일에서 공통으로 사용되는 변수는 import를 사용하지 말것(여러 파일에서 다시 다 세이브 해줘야하니까)
 @import "./common.scss";
 
-$sub-color:rgb(90, 90, 18);
+$sub-color: rgb(90, 90, 18);
 //변수는 파일내에서 사용하는것이 좋다.변수는 임폴트하지말자/
 
 .ex5 {
@@ -87,28 +85,131 @@ $sub-color:rgb(90, 90, 18);
     }
     &:last-child {
       background-color: $sub-color;
-    } 
+    }
   }
-} 
-
+}
 
 /* 보간법 */
-//템플릿리터럴즈가 보간법임 여기서는 #{} 여기 안에 나중에 곱하기나 이런것도 가능해서 편리하게 사용가능
-//여기도 마찬가지로 변수선언한게 중괄호스코프임
-//나주에
-.ex6{
-  $w100:100;
-  $b:box; //따옴표 안써도 되는데 띄어쓰기 할때는 따옴표를 꼭 써야함
-  div{
+//템플릿리터럴즈가 보간법임 여기서는 #{} 여기 안에 나중에 곱하기 등 가능해서 편리하게 사용가능
+//자스와 마찬가지로 변수선언한게 중괄호스코프임
+.ex6 {
+  $w100: 100;
+  $b: box; //따옴표 안써도 되는데 띄어쓰기 할때는 따옴표를 꼭 써야함
+  div {
     display: inline-block;
     height: 100px;
-    &.#{$b}1{
+    &.#{$b}1 {
       width: #{$w100}px;
       background-color: red;
     }
-    &.#{$b}2{
+    &.#{$b}2 {
       width: #{$w100}px;
-      background-color: blue
+      background-color: blue;
+    }
+  }
+}
+
+.ex7 {
+  width: 500px;
+  height: 100px;
+  border: 1px solid green;
+  @media #{$min-lg} {
+    background-color: khaki;
+    //이미 ex7안에 들어있으니까 적을필요가 없음
+  }
+  @media #{$max-lg} {
+    background-color: skyblue;
+  }
+}
+
+/*  @mixin, @include */
+
+.ex8 {
+  button {
+    @include btn;
+  }
+}
+
+.ex9 {
+  button {
+    &:nth-child(1) {
+      @include btn-hover(red);
+    }
+    &:nth-child(2) {
+      @include btn-hover(blue);
+    }
+    &:nth-child(3) {
+      @include btn-hover(green);
+    }
+  }
+}
+
+.ex10 {
+  a {
+    &:nth-child(even) {
+      @include icon(before, "\f002");
+    }
+    &:nth-child(odd) {
+      @include icon(after, "\f002");
+    }
+  }
+}
+
+/* 반복문 */
+
+.ex11 div {
+  display: inline-block;
+  height: 100px;
+  background-color: tan;
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      //선택자에서는 무조건 보간법
+      //  width: $i * 100px; 이건 될때도 있고 안될때도 있어서 나쁜습관
+      width: #{$i * 100}px;
+    }
+  }
+}
+
+.ex12 {
+  //  letter-spacing: -0.2em; //두가지 방법이 있음 이거랑 밑에거
+  font-size: 0;
+  b {
+    display: inline-block; //크기가 없으면 애니메이션 적용 안됨
+    font-size: 15px;
+    animation: jump 0.5s infinite alternate;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{($i - 1)*0.2}s; //변수명을 하나로 인식해서 띄어쓰기를 해줘야함
+      }
+    }
+  }
+  @keyframes jump {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+}
+.ex13 {
+  font-size: 0;
+  b {
+    display: inline-block;  
+    font-size: 15px;
+    animation: jump 0.5s infinite alternate;
+    @for $i from 1 through 16 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{($i - 1)*0.2}s;  
+      }
+    }
+  }
+  @keyframes jump {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
     }
   }
 }

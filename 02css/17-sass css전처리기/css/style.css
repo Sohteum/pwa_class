@@ -19,7 +19,7 @@
   background-color: greenyellow;
 }
 
-/* 선택자(parent..중괄호선택자) */
+/* 엠파센드& 선택자(parent..자기가 살고있는 중괄호선택자) */
 .ex3 div {
   display: inline-block;
   width: 100px;
@@ -77,4 +77,192 @@
 .ex6 div.box2 {
   width: 100px;
   background-color: blue;
+}
+
+.ex7 {
+  width: 500px;
+  height: 100px;
+  border: 1px solid green;
+}
+@media screen and (min-width:1000px) {
+  .ex7 {
+    background-color: khaki;
+  }
+}
+@media screen and (max-width:1000px) {
+  .ex7 {
+    background-color: skyblue;
+  }
+}
+
+/*  @mixin, @include */
+.ex8 button {
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  background-color: transparent;
+}
+
+.ex9 button:nth-child(1) {
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.ex9 button:nth-child(1):hover {
+  background-color: red;
+}
+.ex9 button:nth-child(2) {
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.ex9 button:nth-child(2):hover {
+  background-color: blue;
+}
+.ex9 button:nth-child(3) {
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.ex9 button:nth-child(3):hover {
+  background-color: green;
+}
+
+.ex10 a:nth-child(even)::before {
+  content: "\f002";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.ex10 a:nth-child(odd)::after {
+  content: "\f002";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/* 반복문 */
+.ex11 div {
+  display: inline-block;
+  height: 100px;
+  background-color: tan;
+}
+.ex11 div:nth-child(1) {
+  width: 100px;
+}
+.ex11 div:nth-child(2) {
+  width: 200px;
+}
+.ex11 div:nth-child(3) {
+  width: 300px;
+}
+
+.ex12 {
+  font-size: 0;
+}
+.ex12 b {
+  display: inline-block;
+  font-size: 15px;
+  animation: jump 0.5s infinite alternate;
+}
+.ex12 b:nth-child(1) {
+  animation-delay: 0s;
+}
+.ex12 b:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.ex12 b:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.ex12 b:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.ex12 b:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.ex12 b:nth-child(6) {
+  animation-delay: 1s;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.ex13 {
+  font-size: 0;
+}
+.ex13 b {
+  display: inline-block;
+  font-size: 15px;
+  animation: jump 0.5s infinite alternate;
+}
+.ex13 b:nth-child(1) {
+  animation-delay: 0s;
+}
+.ex13 b:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.ex13 b:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.ex13 b:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.ex13 b:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.ex13 b:nth-child(6) {
+  animation-delay: 1s;
+}
+.ex13 b:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.ex13 b:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.ex13 b:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.ex13 b:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.ex13 b:nth-child(11) {
+  animation-delay: 2s;
+}
+.ex13 b:nth-child(12) {
+  animation-delay: 2.2s;
+}
+.ex13 b:nth-child(13) {
+  animation-delay: 2.4s;
+}
+.ex13 b:nth-child(14) {
+  animation-delay: 2.6s;
+}
+.ex13 b:nth-child(15) {
+  animation-delay: 2.8s;
+}
+.ex13 b:nth-child(16) {
+  animation-delay: 3s;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }/*# sourceMappingURL=style.css.map */

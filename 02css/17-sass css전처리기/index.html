@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 
@@ -46,6 +48,60 @@
     <div class="box1"></div>
     <div class="box2"></div>
   </div>
+  <hr>
+  <div class="ex7">
+  </div>
+  <hr>
+  <div class="ex8">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+  <hr>
+  <div class="ex9">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+  <hr>
+  <div class="ex10">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+  </div>
+  <hr>
+  <div class="ex11">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <hr>
+  <div class="ex12">
+    <b>안</b><!-- 엔터치니까 간격이 벌어져 -->
+    <b>녕</b>
+    <b>&nbsp;</b><!-- 여백넣기 -->
+    <b>하</b>
+    <b>세</b>
+    <b>요</b>
+  </div>
+  <hr>
+  <div class="ex13">
+    안녕하세요. 여러분 반가워요. <!-- 여기서 하나씩 태그로 쌀려면  -->
+  </div>
+  <script>
+    let str = $(`.ex13`).text().trim()
+    let srtArr = str.split('')
+    console.log(srtArr.length); //몇글자인지 알아보고 사스에 적용
+    //$(`.ex13`).text('') //비우는거
+    $(`.ex13`).empty() //비우는거
+    srtArr.forEach(v=> {
+      let char = (v!==' ')? v:'&nbsp;'
+      $(`.ex13`).append(`<b>${char}</b>`)
+    })
+  </script>
+
+
 </body>
 
 </html>
