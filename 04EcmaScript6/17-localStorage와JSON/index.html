@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1>localStorage & JSON</h1>
+  <h2>localStorage</h2>
+  <ul>
+    <li>localStorage는 특정 어플리케이션이 데이터를 문자형태로 저장할 수 있는 하드디스크 공간(웹, 앱, 게임...등 윈도우가 알아서 관리함)</li>
+    <li>localStorage의 key, value는 모두 문자형으로 저장된다</li>
+    <li>key가 존재하지 않을 경우 null값을 리턴한다.</li>
+  </ul>
+  <h2>JSON 데이터</h2>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <hr>
+ <div class="ex1">
+  <p>1.로컬스토리지에서 테이터를 출력합니다.</p>
+  <button>버튼</button>
+  <p class="output"></p>
+ </div>
+  <hr>
+ <div class="ex2">
+  <p>2.로컬스토리지에서 배열테이터를 출력합니다.</p>
+  <button>버튼</button>
+  <p class="output"></p>
+ </div>
+  <hr>
+ <form class="ex3">
+  <p>3. todoApp.</p>
+  <p>날짜 : <input required type="date"></p>
+  <p>시간 : <input required type="time"></p>
+  <p>일정명 : <input required type="text"></p>
+  <p>내용 : <textarea required cols="30" rows="10"></textarea></p>
+  <button class="add" disabled>일정추가</button> <!-- 이걸 폴스로 해주면 버튼이 살아남 -->
+  <select class="sort" name="" id="">
+    <option value="Srecent">최신등록순</option>
+    <option value="Sname">일정명순</option>
+    <option value="Sdate">날짜순</option>
+  </select>
+  <ul class="output"> </ul>
+</form><!-- 유효성검사목적으로 폼으로 변경 -->
+</body>
+</html>
