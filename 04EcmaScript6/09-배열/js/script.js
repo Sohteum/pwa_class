@@ -104,3 +104,91 @@
 
 
 
+let fruits = ['apple', 'grape', 'orange']
+let number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+fruits = ['apple', 'grape', 'orange']
+
+fruits.unshift('banana')
+
+
+fruits.push('lemon')
+
+fruits.shift()
+
+fruits.pop()
+
+fruits.splice(2, 0, 'melon')
+
+fruits.splice(1, 2)
+
+
+// let str = 'hello'
+
+// str.split()
+// console.log(str);
+
+// let str = '안녕하세요'
+// str.split()
+// console.log(str); //배열의 길이가 하나 
+// str.split(str, 5)
+// console.log(str); //배열의 길이가 5
+
+
+// let str = {
+//   이름: '채치수',
+//   나이: '11',
+//   지역: '일본',
+//   성별: '남',
+// }
+// // str.split(',')
+// console.log(str);
+
+
+
+
+
+
+
+// let gosomi = ['go', 'so', 'mi']
+
+// let newGosomi = gosomi.join('')
+// newGosomi = gosomi.join(',')
+// console.log(newGosomi);
+
+//xxxxxxxxxxx
+// let gosomi = ['go', 'so', 'mi']
+
+// gosomi.join('')
+// gosomi.join(',')
+// console.log(gosomi);
+
+//xxxxxxxxxxx
+// let gosomi = ['go', 'so', 'mi']
+
+// // gosomi.join() xxxxx
+// // console.log(gosomi); xxxxx
+
+// console.log(gosomi.join());
+// console.log(gosomi.join(''));
+
+
+
+// let gosomi = ['go', 'so', 'mi']
+
+// // gosomi.fill(0);
+// gosomi.fill('🎀', 0, 2);
+// console.log(gosomi);
+// //배열 자체 수정
+
+
+
+
+//?????
+// let gosomi = ['go', 'so', 'mi']
+
+// let newGosomi = gosomi.split('')
+
+// console.log(newGosomi);
+
+
