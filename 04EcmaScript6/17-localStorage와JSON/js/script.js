@@ -72,6 +72,7 @@
   let todoArr = JSON.parse(localStorage.getItem(`todoArrStorage`))
   // console.log(todoArr);//스크립트에 사용하는거
 
+
   /* 앱 초기화시 일정목록 출력 */
   let outputList = (todoArrParam) => {
 
@@ -81,6 +82,9 @@
       let li = document.createElement('li')
       let { id, todoName, date, time } = v //이렇게 구조분해를 하면 아래 v를 쓰지 않아도됨
       //let id = v.id 이걸 위에서 간략하게 구조분해!새로운 문법
+      //let todoName = v.todoName 이걸 위에서 간략하게 구조분해!새로운 문법
+      //let date = v.date 이걸 위에서 간략하게 구조분해!새로운 문법
+      //let time = v.time 이걸 위에서 간략하게 구조분해!새로운 문법
       li.innerHTML =
         `
       ${todoName}<br>
@@ -95,36 +99,39 @@
       li.querySelector(`.delete`).addEventListener(`click`, e => {
 
         e.target.parentElement.remove()//이건 화면에서만 지우는거.만약 3개중에 2번을 클릭한다고 하면 2번을 뺀 나머지를 찾아서 교체 여기서는 반드시 원본이 지워져야함 그러니까 여기서는 원본을 받는게 맞아
-        todoArr = todoArr.filter(v => {
+        todoArr = todoArr.filter(v => { //필터로 내가 삭제한거가 아닌애를 필터로 골라주기
           return v.id !== parseInt(e.target.value) //클릭한 버튼id와 투두어레이의 v번째 id를 비교해서 다른것만 뽑아서 배열 여기서 이 어레이를 로컬스토리지에 저장해줘야함
         })
         localStorage.setItem('todoArrStorage', JSON.stringify(todoArr))
-//여기 백업도 원본 해야돼
+        //여기 로컬스토리지도 똑같이 만들어줘야지
       })//일정제거
 
     });//일정추가
-    //아이디번호를 심어놔야함 
   }
 
 
+
+  /* 유효성검사버튼 */
   document.querySelector(`.ex3`).addEventListener(`submit`, e => {
     e.preventDefault()//이거 안하면 submit됨
   })
 
   document.querySelector(`.ex3`).addEventListener(`input`, e => {
     document.querySelector(`.ex3 button`).disabled //=!true(false)
-      = !e.currentTarget.checkValidity()// 폼이 유효성검사 통과했는지 보는거, 폼안에 자식이 많으니까 커렌트타겟으로. 이게 트루나오면 버튼죽이기가 폴스가 되어야함
+      = !e.currentTarget.checkValidity()
+    // 폼이 유효성검사 통과했는지 보는거, 폼안에 자식이 많으니까 커렌트타겟으로. 이게 트루나오면 버튼죽이기가 폴스가 되어야함
 
     // if(e.currentTarget.checkValidity()) {
     //   document.querySelector(`.ex3 button`).disabled = false
     // }
   }) //폼에 적용하면 아무거나 건들면 인풋이벤트 발생
-  /* 유효성검사버튼 */
   outputList(todoArr)//시작할때 바로 출력하겠다는 뜻
+
+
 
   /* 버튼 일정 추가 기능 */
   document.querySelector(`.ex3 .add`).addEventListener(`click`, e => {
-    let id = Date.now()
+    let id = Date.now() //현재 찍힌 타임스탬프
     let todoName = document.querySelector(`.ex3 input[type=text]`).value
     let date = document.querySelector(`.ex3 input[type=date]`).value
     let time = document.querySelector(`.ex3 input[type=time]`).value
@@ -137,29 +144,29 @@
       desc,
     }
     todoArr.push(obj)
-    localStorage.setItem('todoArrStorage', JSON.stringify(todoArr))
+    localStorage.setItem('todoArrStorage', JSON.stringify(todoArr)) //받아온 정보를 제이슨형태로 바꿔서 로컬스토리지에 저장을 한다
     outputList(todoArr)
     // console.log(todoArr);
   })
 
-/* 정렬(소트) select 옵션(최신등록순) 구현 */
-//여기는 
-document.querySelector(`.ex3 .sort`).addEventListener(`change`, e=>{
-  let todoArrCopy = [...todoArr]  //스프레드 연산자
-  let sortOption = e.currentTarget.value
-  if(sortOption==='Srecent'){
-    todoArrCopy.reverse()
-  }else if(sortOption==='Sname'){
+  /* 정렬(소트) select 옵션(최신등록순) 구현 */
 
-  }else if(sortOption==='Sdate'){
+  document.querySelector(`.ex3 .sort`).addEventListener(`change`, e => {
+    let todoArrCopy = [...todoArr]  //스프레드 연산자
+    let sortOption = e.currentTarget.value
+    if (sortOption === 'Srecent') {
+      todoArrCopy.reverse()
+    } else if (sortOption === 'Sname') {
 
-  }
-  //여기서는 카피본 출력해야함. 위에서는 전부다 원본을 출력했음
-  outputList(todoArrCopy)
-})
+    } else if (sortOption === 'Sdate') {
 
-//원본어레이를 건들면 안됨. 원본이 
-//우리는 푸시를 했으인까 
+    }
+    //여기서는 카피본 출력해야함. 위에서는 전부다 원본을 출력했음. 여기서 소트로 원본을 바꿔버리면 안되니까
+    outputList(todoArrCopy)
+  })
+
+  //원본어레이를 건들면 안됨. 원본이 
+  //우리는 푸시를 했으인까 
 
 
 }
