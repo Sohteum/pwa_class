@@ -34,15 +34,15 @@
     document.querySelector(`.ex2 .output`).innerHTML = arr
   })
 }
-// {
-//   let str = '안녕하세요' 
-//   document.querySelector(`.ex3 .split`).addEventListener(`click`, e => {
-// // let arr = str.split()
-// // console.log(arr); //배열의 길이가 하나 
-// let arr = str.split('')
-// console.log(arr); //배열의 길이가 5
-// })
-// }
+{
+  let str = '안녕하세요' 
+  document.querySelector(`.ex3 .split`).addEventListener(`click`, e => {
+// let arr = str.split()
+// console.log(arr); //배열의 길이가 하나 
+let arr = str.split('')
+console.log(arr); //배열의 길이가 5
+})
+}
 // {
 // let str = '010-1231-0123' 
 // document.querySelector(`.ex3 .split`).addEventListener(`click`, e => {
@@ -51,16 +51,16 @@
 
 //   })
 // }
-// {
-// let str = '님 안녕하세요' 
-// document.querySelector(`.ex3 .split`).addEventListener(`click`, e => {
-// let arr = str.split('')
-// let user = document.querySelector(`.ex3 input`).value
-// arr.unshift(user)
-// console.log(arr); 
-// document.querySelector(`.ex3 .output`).innerHTML = arr
-//   })
-// }
+{
+let str = '님 안녕하세요' 
+document.querySelector(`.ex3 .split`).addEventListener(`click`, e => {
+let arr = str.split('')
+let user = document.querySelector(`.ex3 input`).value
+arr.unshift(user)
+console.log(arr); 
+document.querySelector(`.ex3 .output`).innerHTML = arr
+  })
+}
 {
   let str = '안녕 님'
   document.querySelector(`.ex3 .split`).addEventListener(`click`, e => {
@@ -182,13 +182,18 @@ fruits.splice(1, 2)
 // //배열 자체 수정
 
 
-
-
 //?????
 // let gosomi = ['go', 'so', 'mi']
 
 // let newGosomi = gosomi.split('')
 
 // console.log(newGosomi);
+
+
+let str = '010-1231-0123' 
+let arr = str.split('-')
+let str1 = '안녕하세요' 
+let arr1 = str1.split('')
+console.log(arr1);
 
 

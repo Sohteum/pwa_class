@@ -64,12 +64,12 @@
 
 {
   /* 로컬스토리지와 배열 초기화 */
-  if (!localStorage.getItem('todoArrStorage')) {//하드에저장된거
+  if (!localStorage.getItem('todoArr')) {//하드에저장된거
     let emptyArr = []
-    localStorage.setItem(`todoArrStorage`, JSON.stringify(emptyArr))
+    localStorage.setItem(`todoArr`, JSON.stringify(emptyArr))
   }
 
-  let todoArr = JSON.parse(localStorage.getItem(`todoArrStorage`))
+  let todoArr = JSON.parse(localStorage.getItem(`todoArr`))
   // console.log(todoArr);//스크립트에 사용하는거
 
 
@@ -91,9 +91,10 @@
       ${date}<br>
       ${time}<br>
       <button value=${id} class="delete">일정삭제</button>
-      <button value=${id} class="detail">일정내용보기</button>
+      <a href="./detail.html?id=${id}" value=${id} class="detail">일정내용보기</button>
       `
-      document.querySelector(`.ex3 .output`).append(li)
+      //세미콜론대신 엠파센드 주소뒤의 물음표:쿼리스트링
+       document.querySelector(`.ex3 .output`).append(li)
 
       /* delete, detail버튼 기능 구현 */
       li.querySelector(`.delete`).addEventListener(`click`, e => {
@@ -102,7 +103,7 @@
         todoArr = todoArr.filter(v => { //필터로 내가 삭제한거가 아닌애를 필터로 골라주기
           return v.id !== parseInt(e.target.value) //클릭한 버튼id와 투두어레이의 v번째 id를 비교해서 다른것만 뽑아서 배열 여기서 이 어레이를 로컬스토리지에 저장해줘야함
         })
-        localStorage.setItem('todoArrStorage', JSON.stringify(todoArr))
+        localStorage.setItem('todoArr', JSON.stringify(todoArr))
         //여기 로컬스토리지도 똑같이 만들어줘야지
       })//일정제거
 
@@ -123,6 +124,8 @@
 
     // if(e.currentTarget.checkValidity()) {
     //   document.querySelector(`.ex3 button`).disabled = false
+    // }else {
+    //  document.querySelector(`.ex3 button`).disabled = true
     // }
   }) //폼에 적용하면 아무거나 건들면 인풋이벤트 발생
   outputList(todoArr)//시작할때 바로 출력하겠다는 뜻
@@ -144,7 +147,7 @@
       desc,
     }
     todoArr.push(obj)
-    localStorage.setItem('todoArrStorage', JSON.stringify(todoArr)) //받아온 정보를 제이슨형태로 바꿔서 로컬스토리지에 저장을 한다
+    localStorage.setItem('todoArr', JSON.stringify(todoArr)) //받아온 정보를 제이슨형태로 바꿔서 로컬스토리지에 저장을 한다
     outputList(todoArr)
     // console.log(todoArr);
   })
@@ -154,12 +157,22 @@
   document.querySelector(`.ex3 .sort`).addEventListener(`change`, e => {
     let todoArrCopy = [...todoArr]  //스프레드 연산자
     let sortOption = e.currentTarget.value
-    if (sortOption === 'Srecent') {
+    if (sortOption === 'recent') {
       todoArrCopy.reverse()
-    } else if (sortOption === 'Sname') {
-
+    } else if (sortOption === 'name') {
+      todoArrCopy.sort((a, b) => {
+        if (a.todoName > b.todoName) return 1
+        if (a.todoName < b.todoName) return -1
+        if (a.todoName === b.todoName) return 0
+      })//a,b 객체
     } else if (sortOption === 'Sdate') {
-
+      todoArrCopy.sort((a, b) => {
+        let time1 = a.date+'-'+a.time
+        let time2 = b.date+'-'+b.time
+        if (time1 > time2) return 1
+        if (time1 < time2) return -1
+        if (time1 === time2) return 0
+      })
     }
     //여기서는 카피본 출력해야함. 위에서는 전부다 원본을 출력했음. 여기서 소트로 원본을 바꿔버리면 안되니까
     outputList(todoArrCopy)
@@ -167,6 +180,6 @@
 
   //원본어레이를 건들면 안됨. 원본이 
   //우리는 푸시를 했으인까 
-
-
+//페이지간의 변수를 주고받는것 = 쿼리스트링__-->어딘가 접속을 하면 앞에 프로덕트는 안바뀌는데 그 뒤에 주소만 바뀌는거
+//주소창에 변수를 담아서 다른페이지로 전달해즈는것.
 }
