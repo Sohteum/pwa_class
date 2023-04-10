@@ -17,30 +17,30 @@ document.querySelector(`.detail input[type=time]`).value = time
 document.querySelector(`.detail textarea`).value = desc
 
 
-document.querySelector(`.detail`).addEventListener(`submit`, e=> {
+document.querySelector(`.detail`).addEventListener(`submit`, e => {
   e.preventDefault()
 })
 
-document.querySelector(`detail .delete`).addEventListener(`click`, e=> {
-  todoArr = todoArr.filter(v=> parseInt(id) !== v.id)
+document.querySelector(`.detail .delete`).addEventListener(`click`, e => {
+  todoArr = todoArr.filter(v => parseInt(id) !== v.id)
   localStorage.setItem('todoArr', JSON.stringify(todoArr))
   location.href = './index.html'
   //리다이렉팅 주소를 강제로 바꿔버림
 })
-document.querySelector(`detail .edit`).addEventListener(`click`, e=> {
- let idx = todoArr.findIndex(v=> parseInt(id) === v.id)
- let todoName = document.querySelector(`.detail input[type=text]`).value = todoName
- let date = document.querySelector(`.detail input[type=date]`).value = date
- let time = document.querySelector(`.detail input[type=time]`).value = time
- let desc = document.querySelector(`.detail textarea`).value = desc
- todoArr[idx].todoName =todoName
- todoArr[idx].date =date
- todoArr[idx].time =time
- todoArr[idx].desc =desc
- localStorage.setItem('todoArr', JSON.stringify(todoArr))
- location.href = "./index.html"
+document.querySelector(`.detail .edit`).addEventListener(`click`, e => {
+  let idx = todoArr.findIndex(v => parseInt(id) === v.id)
+  let todoName = document.querySelector(`.detail input[type=text]`).value
+  let date = document.querySelector(`.detail input[type=date]`).value
+  let time = document.querySelector(`.detail input[type=time]`).value
+  let desc = document.querySelector(`.detail textarea`).value
+  todoArr[idx].todoName = todoName
+  todoArr[idx].date = date
+  todoArr[idx].time = time
+  todoArr[idx].desc = desc
+  localStorage.setItem('todoArr', JSON.stringify(todoArr))
+  location.href = "./index.html"
 })
-console.log(idx);
+
 
 
 
