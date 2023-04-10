@@ -3,6 +3,7 @@
   width: 300px;
   height: 400px;
   margin: 50px auto;
+  background-color: #000;
 }
 .ex1:hover .sheet {
   transform: rotateY(-180deg);
@@ -35,7 +36,6 @@
 }
 
 .ex2 {
-  position: relative;
   perspective: 1000px;
   width: 400px;
   height: 400px;
@@ -48,43 +48,37 @@
 .ex2:hover .sheet2 {
   transform: rotateX(-180deg);
 }
-.ex2 .sheet1 {
-  box-sizing: border-box;
+.ex2 .sheet {
+  transform-style: preserve-3d;
   position: relative;
   width: 400px;
   height: 200px;
-  transform-style: preserve-3d;
-  transform-origin: top center;
+  box-sizing: border-box;
   transition: transform 1s;
 }
-.ex2 .sheet1 .paper {
-  backface-visibility: hidden;
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  line-height: 200px;
-  text-align: center;
-  color: white;
-  font-size: 3em;
+.ex2 .sheet.sheet1 {
+  transform-origin: top center;
 }
-.ex2 .sheet1 .paper.front {
+.ex2 .sheet.sheet1 .paper.front {
   background-color: teal;
 }
-.ex2 .sheet1 .paper.back {
-  background-color: tomato;
+.ex2 .sheet.sheet1 .paper.back {
   transform: rotateX(180deg);
+  background-color: tomato;
 }
-.ex2 .sheet2 {
-  box-sizing: border-box;
+.ex2 .sheet.sheet2 {
+  transform-origin: bottom center;
   position: absolute;
   top: 200px;
-  width: 400px;
-  height: 200px;
-  transform-style: preserve-3d;
-  transform-origin: bottom center;
-  transition: transform 1s;
 }
-.ex2 .sheet2 .paper {
+.ex2 .sheet.sheet2 .paper.front {
+  background-color: teal;
+}
+.ex2 .sheet.sheet2 .paper.back {
+  transform: rotateX(-180deg);
+  background-color: tomato;
+}
+.ex2 .sheet .paper {
   backface-visibility: hidden;
   position: absolute;
   width: inherit;
@@ -94,12 +88,11 @@
   color: white;
   font-size: 3em;
 }
-.ex2 .sheet2 .paper.front {
+.ex2 .sheet .paper.front {
   background-color: teal;
 }
-.ex2 .sheet2 .paper.back {
+.ex2 .sheet .paper.back {
   background-color: tomato;
-  transform: rotateX(-180deg);
 }
 
 .ex3 {
@@ -129,8 +122,8 @@
   }
 }
 .ex3 .sheet {
-  position: relative;
   transform-style: preserve-3d;
+  position: relative;
   border: 3px solid lime;
   box-sizing: border-box;
   transition: all 1s;
@@ -160,11 +153,11 @@
   }
 }
 .ex3 .sheet .paper {
+  backface-visibility: hidden;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  backface-visibility: hidden;
   width: 100%;
   height: 100%;
   color: #fff;

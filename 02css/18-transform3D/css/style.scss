@@ -5,10 +5,11 @@
   width: 300px;
   height: 400px;
   margin: 50px auto;
+  background-color: #000;
   &:hover {
     .sheet {
       transform: rotateY(-180deg);
-      //d여기 적용을 하면 가끔 튐. 180도 돌았을때 안보일때 호버가 되면 호버에서 나갔다가고 생각하니까 ex1에 호버를 함
+      //sheet에 적용을 하면 가끔 튐. 180도 돌았을때 안보일때 호버가 되면 호버에서 나갔다가고 생각하니까 ex1에 호버를 함
     }
   }
   .sheet {
@@ -20,12 +21,12 @@
     transform-style: preserve-3d;
     //이걸 만들어야 뒷면이 나옴
     transform-origin: left center;
-    //왼쪽 중간에 못을 박고 그 기준으로 ...그럼 문 여는것처럼 나옴
+    //변형의 축. 왼쪽 중간에 못을 박고 그 기준으로 ...그럼 문 여는것처럼 나옴. 나중에 수치로 적용하면 적는 순서가 중요
     transition: transform 1s;
   }
   .paper {
     backface-visibility: hidden;
-    //한번 숨으면 영원히 숨는다. 그래서 위에서 돌려도 back이 안보염.부모의 회전각도에 따라 자식의 백페이스가 바뀌어야함 부보한테 적용
+    //90도이상이면 숨김, 한번 숨으면 영원히 숨는다. 그래서 위에서 돌려도 back이 안보염.부모의 회전각도에 따라 자식의 백페이스가 바뀌어야함 부보한테 적용하는게 transform style.
     position: absolute;
     width: inherit;
     height: inherit;
@@ -49,7 +50,6 @@
 }
 
 .ex2 {
-  position: relative;
   perspective: 1000px;
   width: 400px;
   height: 400px;
@@ -63,41 +63,39 @@
       transform: rotateX(-180deg);
     }
   }
-  .sheet1 {
-    box-sizing: border-box;
+  .sheet {
+    transform-style: preserve-3d;
     position: relative;
     width: 400px;
     height: 200px;
-    transform-style: preserve-3d;
-    transform-origin: top center;
+    box-sizing: border-box;
     transition: transform 1s;
-    .paper {
-      backface-visibility: hidden;
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      line-height: 200px;
-      text-align: center;
-      color: white;
-      font-size: 3em;
-      &.front {
-        background-color: teal;
-      }
-      &.back {
-        background-color: tomato;
-        transform: rotateX(180deg);
+    &.sheet1 {
+      transform-origin: top center;
+      .paper {
+        &.front {
+          background-color: teal;
+        }
+        &.back {
+          transform: rotateX(180deg);
+          background-color: tomato;
+        }
       }
     }
-  }
-  .sheet2 {
-    box-sizing: border-box;
-    position: absolute;
-    top: 200px;
-    width: 400px;
-    height: 200px;
-    transform-style: preserve-3d;
-    transform-origin: bottom center;
-    transition: transform 1s;
+    &.sheet2 {
+      transform-origin: bottom center;
+      position: absolute;
+      top: 200px;
+      .paper {
+        &.front {
+          background-color: teal;
+        }
+        &.back {
+          transform: rotateX(-180deg);
+          background-color: tomato;
+        }
+      }
+    }
     .paper {
       backface-visibility: hidden;
       position: absolute;
@@ -112,43 +110,12 @@
       }
       &.back {
         background-color: tomato;
-        transform: rotateX(-180deg);
       }
     }
   }
 }
-//1000px이상에서는 좌우로, 이하에서는 상하로,
 
-// .ex2 {
-//   perspective: 1000px;
-//   width: 400px;
-//   height: 400px;
-//   margin: 50px auto;
-//   background-color: #000;
-//   .sheet {
-//     position: relative;
-//     transform-style: preserve-3d;
-//     border: 3px solid lime;
-//     box-sizing: border-box;
-//     transition: all 1s;
-//     .paper {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       position: absolute;
-//       backface-visibility: hidden;
-//       width: 100%;
-//       height: 100%;
-//       color: #fff;
-//       &.front {
-//         background-color: red;
-//       }
-//       &.back {
-//         background-color: blue;
-//       }
-//     }
-//   }
-// }
+//1000px이상에서는 좌우로, 이하에서는 상하로,
 
 .ex3 {
   perspective: 1000px;
@@ -178,8 +145,8 @@
     }
   } //ex3sm
   .sheet {
-    position: relative;
     transform-style: preserve-3d;
+    position: relative;
     border: 3px solid lime;
     box-sizing: border-box;
     transition: all 1s;
@@ -204,11 +171,11 @@
       }
     } //ex3 sheet sm
     .paper {
+      backface-visibility: hidden;
+      position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: absolute;
-      backface-visibility: hidden;
       width: 100%;
       height: 100%;
       color: #fff;
@@ -233,12 +200,24 @@
   width: 300px;
   height: 300px;
   margin: 50px auto;
-  &.front .wrap{transform: rotateX(0) rotateY(0deg);}
-  &.back .wrap{transform: rotateX(0) rotateY(180deg);}
-  &.top .wrap{transform: rotateX(-90deg) rotateY(0);}
-  &.bottom .wrap{transform: rotateX(90deg) rotateY(0);}
-  &.right .wrap{transform: rotateX(0) rotateY(-90deg);}
-  &.left .wrap{transform: rotateX(0) rotateY(90deg);}
+  &.front .wrap {
+    transform: rotateX(0) rotateY(0deg);
+  }
+  &.back .wrap {
+    transform: rotateX(0) rotateY(180deg);
+  }
+  &.top .wrap {
+    transform: rotateX(-90deg) rotateY(0);
+  }
+  &.bottom .wrap {
+    transform: rotateX(90deg) rotateY(0);
+  }
+  &.right .wrap {
+    transform: rotateX(0) rotateY(-90deg);
+  }
+  &.left .wrap {
+    transform: rotateX(0) rotateY(90deg);
+  }
   .wrap {
     position: relative;
     width: inherit;
