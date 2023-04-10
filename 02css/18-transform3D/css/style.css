@@ -1,0 +1,252 @@
+.ex1 {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  margin: 50px auto;
+}
+.ex1:hover .sheet {
+  transform: rotateY(-180deg);
+}
+.ex1 .sheet {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  /* transform: rotateY(-180deg); */
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 1s;
+}
+.ex1 .paper {
+  backface-visibility: hidden;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  line-height: 400px;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+.ex1 .paper.front {
+  background-color: teal;
+}
+.ex1 .paper.back {
+  background-color: tomato;
+  transform: rotateY(180deg);
+}
+
+.ex2 {
+  position: relative;
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  margin: 50px auto;
+}
+.ex2:hover .sheet1 {
+  transform: rotateX(180deg);
+}
+.ex2:hover .sheet2 {
+  transform: rotateX(-180deg);
+}
+.ex2 .sheet1 {
+  box-sizing: border-box;
+  position: relative;
+  width: 400px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: transform 1s;
+}
+.ex2 .sheet1 .paper {
+  backface-visibility: hidden;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  line-height: 200px;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+.ex2 .sheet1 .paper.front {
+  background-color: teal;
+}
+.ex2 .sheet1 .paper.back {
+  background-color: tomato;
+  transform: rotateX(180deg);
+}
+.ex2 .sheet2 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 200px;
+  width: 400px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform-origin: bottom center;
+  transition: transform 1s;
+}
+.ex2 .sheet2 .paper {
+  backface-visibility: hidden;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  line-height: 200px;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+.ex2 .sheet2 .paper.front {
+  background-color: teal;
+}
+.ex2 .sheet2 .paper.back {
+  background-color: tomato;
+  transform: rotateX(-180deg);
+}
+
+.ex3 {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  background-color: #000;
+}
+@media screen and (min-width: 1000px) {
+  .ex3 {
+    display: flex;
+  }
+  .ex3:hover .sheet1 {
+    transform: rotateY(-180deg);
+  }
+  .ex3:hover .sheet2 {
+    transform: rotateY(180deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ex3:hover .sheet1 {
+    transform: rotateX(180deg);
+  }
+  .ex3:hover .sheet2 {
+    transform: rotateX(-180deg);
+  }
+}
+.ex3 .sheet {
+  position: relative;
+  transform-style: preserve-3d;
+  border: 3px solid lime;
+  box-sizing: border-box;
+  transition: all 1s;
+}
+@media screen and (min-width: 1000px) {
+  .ex3 .sheet {
+    width: 50%;
+    height: 100%;
+  }
+  .ex3 .sheet.sheet1 {
+    transform-origin: left center;
+  }
+  .ex3 .sheet.sheet2 {
+    transform-origin: right center;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ex3 .sheet {
+    width: 100%;
+    height: 50%;
+  }
+  .ex3 .sheet.sheet1 {
+    transform-origin: top center;
+  }
+  .ex3 .sheet.sheet2 {
+    transform-origin: center bottom;
+  }
+}
+.ex3 .sheet .paper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.ex3 .sheet .paper.front {
+  background-color: red;
+}
+.ex3 .sheet .paper.back {
+  background-color: blue;
+}
+@media screen and (min-width: 1000px) {
+  .ex3 .sheet .paper.back {
+    transform: rotateY(180deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ex3 .sheet .paper.back {
+    transform: rotateX(180deg);
+  }
+}
+
+.cube {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+}
+.cube.front .wrap {
+  transform: rotateX(0) rotateY(0deg);
+}
+.cube.back .wrap {
+  transform: rotateX(0) rotateY(180deg);
+}
+.cube.top .wrap {
+  transform: rotateX(-90deg) rotateY(0);
+}
+.cube.bottom .wrap {
+  transform: rotateX(90deg) rotateY(0);
+}
+.cube.right .wrap {
+  transform: rotateX(0) rotateY(-90deg);
+}
+.cube.left .wrap {
+  transform: rotateX(0) rotateY(90deg);
+}
+.cube .wrap {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transition: all 1s;
+}
+.cube .wrap .face {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  line-height: 300px;
+  font-size: 2em;
+  color: #fff;
+}
+.cube .wrap .face.front {
+  background-color: rgba(0, 255, 0, 0.5);
+  transform: rotateX(0deg) rotateY(0deg) translateZ(150px);
+}
+.cube .wrap .face.back {
+  background-color: rgba(0, 0, 255, 0.5);
+  transform: rotateX(0deg) rotateY(180deg) translateZ(150px);
+}
+.cube .wrap .face.top {
+  background-color: rgba(0, 255, 255, 0.5);
+  transform: rotateX(90deg) rotateY(0deg) translateZ(150px);
+}
+.cube .wrap .face.bottom {
+  background-color: rgba(255, 0, 255, 0.5);
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(150px);
+}
+.cube .wrap .face.right {
+  background-color: rgba(255, 0, 0, 0.5);
+  transform: rotateX(0deg) rotateY(90deg) translateZ(150px);
+}
+.cube .wrap .face.left {
+  background-color: rgba(255, 255, 0, 0.5);
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(150px);
+}/*# sourceMappingURL=style.css.map */

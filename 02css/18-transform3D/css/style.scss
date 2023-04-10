@@ -1,0 +1,294 @@
+.ex1 {
+  perspective: 1000px;
+  //값이 작을수록 원근감이 커짐 값이 크면 멀리 떨어져서 보는거고, 값이 작으면 가까이서 보는거. 너무 멀리서 보면 점으로 보이잖아.
+  //작은 객체는 작게, 큰객체는 크게. 700~1000 사이 정도면 괘ㅗㄴ찬하음
+  width: 300px;
+  height: 400px;
+  margin: 50px auto;
+  &:hover {
+    .sheet {
+      transform: rotateY(-180deg);
+      //d여기 적용을 하면 가끔 튐. 180도 돌았을때 안보일때 호버가 되면 호버에서 나갔다가고 생각하니까 ex1에 호버를 함
+    }
+  }
+  .sheet {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    /* transform: rotateY(-180deg); */
+    //소실점을 만들어주어야함 .ex1에서 그래야 찌부짜부로 안보임
+    transform-style: preserve-3d;
+    //이걸 만들어야 뒷면이 나옴
+    transform-origin: left center;
+    //왼쪽 중간에 못을 박고 그 기준으로 ...그럼 문 여는것처럼 나옴
+    transition: transform 1s;
+  }
+  .paper {
+    backface-visibility: hidden;
+    //한번 숨으면 영원히 숨는다. 그래서 위에서 돌려도 back이 안보염.부모의 회전각도에 따라 자식의 백페이스가 바뀌어야함 부보한테 적용
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    line-height: 400px;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    &.front {
+      background-color: teal;
+    }
+    &.back {
+      background-color: tomato;
+      transform: rotateY(180deg);
+      //돌릴때 방향이 있음
+      //x축에서 오른쪽에서 볼때 +, - 시계방향이면 +, 반시계는 -
+      //y축에서 아래쪽에서 볼때 시계방향이면 +, 반시계는 -
+      //우리가 그동안 했던 로테잇은 전부 z축
+      //이상태에서 지인덱스로는 안됨. 다시 뒤집어도 또 그대로일거아니야. 그래서 이때 사용할수있는ㄷ게 backface-visibility: hidden; 90도 이상 뒤집히면 사용가능
+    }
+  }
+}
+
+.ex2 {
+  position: relative;
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  margin: 50px auto;
+  &:hover {
+    .sheet1 {
+      transform: rotateX(180deg);
+    }
+    .sheet2 {
+      transform: rotateX(-180deg);
+    }
+  }
+  .sheet1 {
+    box-sizing: border-box;
+    position: relative;
+    width: 400px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    transition: transform 1s;
+    .paper {
+      backface-visibility: hidden;
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      line-height: 200px;
+      text-align: center;
+      color: white;
+      font-size: 3em;
+      &.front {
+        background-color: teal;
+      }
+      &.back {
+        background-color: tomato;
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  .sheet2 {
+    box-sizing: border-box;
+    position: absolute;
+    top: 200px;
+    width: 400px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform-origin: bottom center;
+    transition: transform 1s;
+    .paper {
+      backface-visibility: hidden;
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      line-height: 200px;
+      text-align: center;
+      color: white;
+      font-size: 3em;
+      &.front {
+        background-color: teal;
+      }
+      &.back {
+        background-color: tomato;
+        transform: rotateX(-180deg);
+      }
+    }
+  }
+}
+//1000px이상에서는 좌우로, 이하에서는 상하로,
+
+// .ex2 {
+//   perspective: 1000px;
+//   width: 400px;
+//   height: 400px;
+//   margin: 50px auto;
+//   background-color: #000;
+//   .sheet {
+//     position: relative;
+//     transform-style: preserve-3d;
+//     border: 3px solid lime;
+//     box-sizing: border-box;
+//     transition: all 1s;
+//     .paper {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       position: absolute;
+//       backface-visibility: hidden;
+//       width: 100%;
+//       height: 100%;
+//       color: #fff;
+//       &.front {
+//         background-color: red;
+//       }
+//       &.back {
+//         background-color: blue;
+//       }
+//     }
+//   }
+// }
+
+.ex3 {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  background-color: #000;
+  @media screen and (min-width: 1000px) {
+    display: flex;
+    &:hover {
+      .sheet1 {
+        transform: rotateY(-180deg);
+      }
+      .sheet2 {
+        transform: rotateY(180deg);
+      }
+    }
+  } //ex3lg
+  @media screen and (max-width: 1000px) {
+    &:hover {
+      .sheet1 {
+        transform: rotateX(180deg);
+      }
+      .sheet2 {
+        transform: rotateX(-180deg);
+      }
+    }
+  } //ex3sm
+  .sheet {
+    position: relative;
+    transform-style: preserve-3d;
+    border: 3px solid lime;
+    box-sizing: border-box;
+    transition: all 1s;
+    @media screen and (min-width: 1000px) {
+      width: 50%;
+      height: 100%;
+      &.sheet1 {
+        transform-origin: left center;
+      }
+      &.sheet2 {
+        transform-origin: right center;
+      }
+    } //ex3 sheet lg
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      height: 50%;
+      &.sheet1 {
+        transform-origin: top center;
+      }
+      &.sheet2 {
+        transform-origin: center bottom;
+      }
+    } //ex3 sheet sm
+    .paper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      backface-visibility: hidden;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      &.front {
+        background-color: red;
+      }
+      &.back {
+        background-color: blue;
+        @media screen and (min-width: 1000px) {
+          transform: rotateY(180deg);
+        } //ex3 sheet lg
+        @media screen and (max-width: 1000px) {
+          transform: rotateX(180deg);
+        } //ex3 sheet sm
+      }
+    }
+  }
+}
+
+.cube {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  &.front .wrap{transform: rotateX(0) rotateY(0deg);}
+  &.back .wrap{transform: rotateX(0) rotateY(180deg);}
+  &.top .wrap{transform: rotateX(-90deg) rotateY(0);}
+  &.bottom .wrap{transform: rotateX(90deg) rotateY(0);}
+  &.right .wrap{transform: rotateX(0) rotateY(-90deg);}
+  &.left .wrap{transform: rotateX(0) rotateY(90deg);}
+  .wrap {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    &:hover {
+      // transform: rotateX(0) rotateY(-90deg); //우측
+      // transform: rotateX(0) rotateY(90deg);//좌측
+      // transform: rotateX(0) rotateY(180deg);//백
+      // transform: rotateX(0) rotateY(0deg);//front
+      // transform: rotateX(-90deg) rotateY(0);//top
+      // transform: rotateX(90deg) rotateY(0);//bottom
+      //입체라서 마우스가 빠져나갈 일이 없음, 종이랑 다름
+    }
+    .face {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      text-align: center;
+      line-height: 300px;
+      font-size: 2em;
+      color: #fff;
+      &.front {
+        background-color: rgba(0, 255, 0, 0.5);
+        transform: rotateX(0deg) rotateY(0deg) translateZ(150px);
+      }
+      &.back {
+        background-color: rgba(0, 0, 255, 0.5);
+        transform: rotateX(0deg) rotateY(180deg) translateZ(150px);
+      }
+      &.top {
+        background-color: rgba(0, 255, 255, 0.5);
+        transform: rotateX(90deg) rotateY(0deg) translateZ(150px);
+        //옆에서 봤을때 시계로 돌리고 앞으로 가
+      }
+      &.bottom {
+        background-color: rgba(255, 0, 255, 0.5);
+        transform: rotateX(-90deg) rotateY(0deg) translateZ(150px);
+        //옆에서 봤을때 반시계로 돌리고 앞으로 가
+      }
+      &.right {
+        background-color: rgba(255, 0, 0, 0.5); //rgba(red,0.5);
+        //트랜스폼은 자기가 기준이라서 앞으로 가려면 z축으로 가는거임
+        transform: rotateX(0deg) rotateY(90deg) translateZ(150px); //순서를 맞춰서 적용해야함
+      }
+      &.left {
+        background-color: rgba(255, 255, 0, 0.5);
+        transform: rotateX(0deg) rotateY(-90deg) translateZ(150px);
+      }
+    }
+  } //wrap
+}

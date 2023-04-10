@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/common.js"></script>
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 뒤집힐때 삼차원으로 뒤집는걸로...flip
+  트랜스품 3d
+네개 만들거얌. 
+원근감
+안에 투명봉지
+안에 종이 두개 -->
+  <div class="ex1">
+    <div class="sheet">
+      <div class="paper front">front</div>
+      <div class="paper back">back</div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="ex2">
+    <div class="sheet sheet1">
+      <div class="paper front">front</div>
+      <div class="paper back">back</div>
+    </div>
+
+    <div class="sheet sheet2">
+      <div class="paper front">front</div>
+      <div class="paper back">back</div>
+    </div>
+  </div>
+
+
+
+  <hr>
+  <div class="ex3">
+    <div class="sheet sheet1"><!-- 왼쪽  위 -->
+      <div class="paper front">front1</div>
+      <div class="paper back">back1</div>
+    </div>
+
+    <div class="sheet sheet2"><!-- 오른쪽 아래 -->
+      <div class="paper front">front2</div>
+      <div class="paper back">back2</div>
+    </div>
+  </div>
+
+  <hr>
+ <div class="btns"> 
+  <button class="front">front</button>
+  <button class="right">right</button>
+  <button class="left">left</button>
+  <button class="top">top</button>
+  <button class="bottom">bottom</button>
+  <button class="back">back</button>
+</div>
+  <div class="cube">
+    <!-- 면 한개 기준으로 튜브를 만들면됨 -->
+    <div class="wrap">
+      <div class="face left">left</div>
+      <div class="face right">right</div>
+      <div class="face front">front</div>
+      <div class="face back">back</div>
+      <div class="face top">top</div>
+      <div class="face bottom">bottom</div>
+    </div>
+  </div>
+</body>
+
+</html>
