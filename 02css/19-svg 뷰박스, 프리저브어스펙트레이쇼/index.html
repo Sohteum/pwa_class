@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="ex1">
+    <!-- 
+      svg : 백터를 출력하는 그래픽 방식, 
+      canvas : 백터를 출력하는 그래픽 방식(게임 등 만들때) -->
+    <svg viewbox="0 0 200 200">
+      <!-- 왼쪽으로부터 200떨어진거, 그리고 높이, 뷰박스를 설정꼭해줘야함. 원래사이즈를 의미하는것. 내가 설정한 크기svg의 가로세로비율을 유지하기위한 방법, 그래야 가로나 세로 하나만 설정해도 그 비율을 유지할 수 있음/////inline-block -->
+      <circle />
+      <!-- <circle cx="100" cy="100" r="100"/>셀프클로징테그. 슬래시 해주고 닫아야함 xml문법 /원의 중심축을 어디로 할지, 반지름 -->
+      <rect />
+      <!-- 도형이 겹치면 아래 있는애가 위로 올라옴 -->
+    </svg>
+  </div>
+  <hr>
+  <div class="ex2">
+    <svg viewbox="0 0 200 200"
+      preserveAspectRatio="xMidYMid slice" >
+      <!-- 가로세로 너비를 하나로만 주고싶어서쓰는게 뷰박스, 이미지를 꽉맞출려고 쓰는게 두번제꺼 일부러 가세 비율을깨서 꼭맞추고싶을때 :none 으로 하면 비율이 깨지면서 꽉참-->
+      <!-- 
+        none : 비율이 깨진다.
+           slice : 원래 정사각형인 이미지를 직사각형박스에 넣는다고 했을때 cover로 하면 이미지가 짤리고 contain은 이미지가 들어가고 자리가 남음 //여기서 이미지  잘리는게 슬라이스. cover와 같다.
+            meet : 양쪽이나 위아래가 만나니까 meet // contain과 같다.
+            
+          object fit 이거 위에거
+          object position  이거 아래거
+                
+          xMidYMid:center center
+          xMinYMin:left top
+          xMaxYmax:right bottom
+          가운데 미디엄 위아래 민맥스 
+       -->
+      <circle />
+      <rect />
+    </svg>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+■ create-react-app
+  ● npm 사용시
+    ▶설치 : npm i -g create-react-app
+    i는 인스톨, g는 글로벌(이게 없으면 특정폴더에 설치하겠다는 말임)
+    이건 내 컴퓨터에 리액트를 설치하는거야 
+    ▶언인스톨 : npm uninstall -g create-react-app
+    ▶확인 : create-react-app -V (v대문자) 
+    ▶개발환경설치 : 해당폴더로 이동후 create-react-app .
+    새로운 폴더을 만든다음에 그 파일을 vscode로 열고 터미널에서 위에 저걸 실행하면 됨
+    그럼 이 폴더가 내가 지금부터 사용하는 리액트 폴더가 되는거지
+
+    이 폴더를 하나만 사용하길 권장하는 이유는 너무 무거워서
+    컴퓨터가 느려짐...
+    그러니까 매번 설치하면 모듈이 너무 많이 생기니까 프로젝트 끝나면
+    모듈폴더 빼고 나머지만 옮기고, 
+
+
+
+    
+    ▶실행 : npm run start
+    ▶빌드 : npm run build 
+  특정폴더 안에 배포를 해야할 때가 굉장히 많음. 그때는 package.json에 들어감
+  "homepage": "/app",이렇게 쓰면 앱이라는 폴더에 빌드를 하겠다는의미
+  그러면 서버에서 작업하는 폴더명도 동일한 이름이여야 함
+
+    ▶빌드테스트
+      npm install -g serve 또는 npx serve -s build
+    ▶배포 :
+      ▽ root폴더에 배포할 경우
+        build폴더안의 프로젝트 파일을 root경로에 업로드
+      ▽ 특정 하위 폴더에 배포할 경우
+        (http://site.com/blog/ 폴더에 배포 예시)
+        - package.json 파일에 "homepage": "/blog" 의 키값 추가
+        - 라우터사용시
+          <BrowserRouter basename="/blog">
+            <Link to="/home" /> // <a href="/blog/home">로 렌더링됨
+    ▶디플로이 퍼블릭 절대 경로
+      ▽ html 파일 
+          %PUBLIC_URL% 
+          ex) <Link rel="stylesheet" href="%PUBLIC_URL%/css/style.css">
+      ▽ js 파일 
+          process.env.PUBLIC_URL
+          <img src={`${process.env.PUBLIC_URL}/img/img.png`}>
+
+  ● 리액트앱을 깃에 배포할경우
+    ▶ npm을 사용해 gh-pages 패키지를 설치.
+      npm install --save gh-pages
+    ▶ package.json 추가수정
+      {
+        "homepage": "https://깃허브아이디.github.io/저장소이름",
+        "scripts": {
+          "predeploy": "npm run build",
+          "deploy": "gh-pages -d build"
+        },
+      }
+    ▶ 빌드
+      npm run deploy 
+      (최종 에러가 발생시 무시해도 무방함)
+      (!주의 : 빌드 완료 후 homepage속성을 수정하거나 삭제)   
+  /////////////////////////////////////////////////////////////////////        
+  ● yarn 사용시
+    ▶개발환경설치 : yarn create react-app .
+    ▶개발환경설치 : yarn create react-app .
+    ▶실행 : yarn start
+    ▶빌드 : yarn build
+    ▶yarn test
+  /////////////////////////////////////////////////////////////////////  
+  ● 앱구조
+    public폴더 : index.html  외 삭제
+    src폴더 : index.js , App.jsx 외 삭제
+
+    ▶ index.html 초기화
+      <!DOCTYPE html>
+      <html lang="ko">
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <title>React App</title>
+        </head>
+        <body>
+          <div id="root"></div>
+        </body>
+      </html>
+
+    ▶ index.js 초기화
+      /* eslint-disable */
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import App from './App';
+
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        <>
+          <App />
+        </>,
+      );
+
+    ▶ App.js(jsx) 초기화
+      /* eslint-disable */
+      const App = () => {
+        return (
+          <>
+            app
+          </>
+        );
+      };
+      export default App;
+
+  ● 파일 초기화 후 public폴더와 src폴더는 별도로 백업 
+    (다수의 프로젝트 진행시 프로젝트를 추가로 생성할 필요가 없어짐)
+/////////////////////////////////////////////////////////////////////  
+■ dotenv 
+  ● .env 파일을 루트에 생성
+  ● 설정하고 싶은 변수를 작성한다.
+    REACT_APP_KEY = "abcd" // 변수명은 대문자여야 하며 REACT_APP_로 시작함
+  ● 리액트 ver5 이상
+    REACT_APP_KEY=abcd //여백과 문자열 제거
+  ● 리액트 서버 재실행  
+■ 호출 및 관리
+  ● 스크립트코드
+    const key= process.env.REACT_API_KEY;
+    console.log(key) //abcd
+  ● .env 파일을 .gitignore에 추가해준다
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+▼ 외부파일 호출하기
+  import로 모듈을 불러오는 경우 사용하지 않는 코드들은 웹팩의 tree shaking에 의해 빌드 시 제거됨. 
+  결과적으로 코드량이 줄어들고 성능적으로 우수해짐.
+  ▷ 일반적인 사용법
+    public폴더안에 css및 img폴더를 생성하고 index.html기준으로 파일을 절대경로로 연동
+  ▷ require 예시
+    <img src={require("./img.jpg")}/>
+  ▷ import 예시
+    import imgfile from './imgfile.png';
+    <img src={imgfile} /> 
+  ▷ css
+    ▽ 기본사용법
+      import './css/style.css';
+    ▽ css 변수형 호출
+      import myStyle from './css/style.css';
+      <div className={myStyle.box}>
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+jQuery (제이쿼리)
+npm i jquery 
+import $ from "jquery";
+useEffect 라이플 사이클에서 사용 가능
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+외부 스크립트 호출 기본사용법1
+
+  ▷ 외부스크립트 생성 (예: %PUBLIC_URL%/js/script.js)
+    useEffect(()=>{
+      const script = document.createElement('script');
+      script.src = `${process.env.PUBLIC_URL}/js/script.js`;
+      script.defer = true;
+      document.body.appendChild(script); 
+    })
+
+  ▷ 외부 스크립트 호출 helmet 라이브러리
+    npm install --save react-helmet
+    import {Helmet} from "react-helmet";
+    <Helmet>
+      <script src={`${process.env.PUBLIC_URL}/path/to/resource.js`} type="text/javascript" />
+    </Helmet>
+/////////////////////////////////////////////////////////////////////////////////////////////////////  
+▼ PostCSS
+  ▷ css파일제작
+    css파일명 앞에 moudle확장자 추가 ex: style.module.css
+  ▷ css호출
+    import styles from './style.module.css';
+  ▷ css 적용
+    <div className={styles.button}>
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+▼ eslint warning 없애기
+  /* eslint-disable */

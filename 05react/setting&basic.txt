@@ -1,0 +1,60 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+▼ 비주얼스튜디오코드 jsx 자동완성 설정
+  ▶ 환경설정(ctrl+,) 상단오른쪽의 Json수정버튼 클릭
+  ▶ setting.json 하단의 옵션 추가
+  "emmet.includeLanguages":{
+      "javascript":"javascriptreact"
+  }
+▼ 비주얼스튜디오코드 터미널을 powershell대신 cmd로 대체할 경우
+  ▶ 환경설정(ctrl+,) 상단오른쪽의 Json수정버튼 클릭
+  ▶ setting.json 하단의 옵션 추가
+    "terminal.integrated.shell.windows":"cmd.exe" 
+
+▼ 비주얼스튜디오코드 익스텐션    
+  Reactjs code snippets (charalampos karypidis제작)
+  Auto Import  (steoates제작)
+
+▼ 비주얼스튜디오코드 터미널 변경하기
+  상단 탭 메뉴에서 터미널(terminal) 실행
+  하단 터미널 패널 '∨' 를 클릭 후 기본 프로필 선택
+  cmd 선택, 혹은 비주얼 스튜디오 관리자권한실행(호환성)
+	
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+▼ 크롬 확장프로그램
+  ▶ 크롬웹스토어
+    ▽ React Developer Tool
+      https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en
+    ▽ Redux DevTools
+  ▶ 설치 후 크롬 설정(상단우측버튼)
+    도구더보기/확장프로그램/React Developer Tools 세부정보/파일 URL에 대한 액세스 허용 체크 후 재부팅
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+▼ node js 설치
+  ▶ node js 터미널 버전확인 명령어
+    node -v
+    npm -v
+  ▶ node js 업그레이드
+    npm install -g n //모듈설치
+    n lts
+    n latest
+    n prune
+  ▶ npm 업그레이드  
+    npm install -g npm@latest
+    
+▼ yarn 설치
+  npm install --global yarn
+  ▶ yarn 명령어
+    yarn --version
+  
+▼ npm WARN config global '--global', '--local' are deprecated. Use '--location=global 오류 해결     
+  - PowerShell [관리자 권한] 실행 후 npm 버전을 업그레이드
+  - PowerShell [관리자 권한] 실행 후 Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force 입력 후 Enter
+  - npm install --global --production npm-windows-upgrade 입력 후 Enter
+  - npm-windows-upgrade 입력 후 Enter
+  - npm -v로 확인!   
+
+
+
+
+
+
+

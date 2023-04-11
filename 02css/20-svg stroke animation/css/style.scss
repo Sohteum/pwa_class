@@ -1,0 +1,148 @@
+.ex1 {
+  svg {
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #000;
+    rect {
+      x: 50px;
+      y: 50px;
+      width: 200px;
+      height: 200px;
+      stroke: palevioletred;
+      stroke-width: 10px;
+      stroke-dasharray: 30px; //점선
+      // stroke-dashoffset: 5px;
+      //점선의 시작점을 밀어내는게 오프셋.밀어내면 점선이 움직이는것처럼보임
+      fill: none;
+      animation: dash_offset 20s infinite linear;
+    }
+  }
+}
+@keyframes dash_offset {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -800px;
+  } //원래 길이와 동일하게 하는것이 자연스러움
+}
+
+//선의 길이가 100px이면 점선길이가 20이면 5개가 들어가겠지? 근데 점선의 길이를 100px까지 늘렸다고 생각하면 이건 점선이 아니고 선처럼 보임 근데 점선의 시작점을 밀어내는 대쉬오프셋을 사용한다면? 200을 주면 선이 반절이 안보일거고 400을 주면 아얘안보이겟지
+.ex2 {
+  svg {
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #000;
+    &:hover {
+      rect {
+        stroke-dashoffset: 0;
+      }
+    }
+    rect {
+      x: 50px;
+      y: 50px;
+      width: 200px;
+      height: 200px;
+      stroke: palevioletred;
+      stroke-width: 10px;
+      stroke-dasharray: 800px; //점선
+      stroke-dashoffset: 800px; // 점선이 안보영 밀렸엉
+      fill: none;
+      //여기서는 호버 안됨.
+      transition: stroke-dashoffset 5s; //선이 그려지는 애니메이션을 만들수있따.
+    }
+  }
+}
+
+.ex3 {
+  svg {
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #000;
+    // &:hover {
+    //   circle {
+    //     stroke-dashoffset: 0;
+    //   }
+    // }
+    circle {
+      //사각형은 되는데 그 이상의 다각형은 힘들잖아 그래서 방법이 있음!여기서 내가 원의 반지름을 구하는 3.14뭐시기를 모르면 안되장ㅎ아. 그래서....
+      cx: 150px;
+      cy: 150px;
+      r: 100px;
+      stroke: palevioletred;
+      stroke-width: 10px;
+      stroke-dasharray: 100px; //점선
+      stroke-dashoffset: 100px; // 점선이 안보영 밀렸엉
+      fill: none;
+      //여기서는 호버 안됨.
+      transition: stroke-dashoffset 5s; //선이 그려지는 애니메이션을 만들수있따.
+      pointer-events: all; //원래는 못받게 하는건데  이건 받게하는거
+      transform-origin: center center;
+      transform: rotate(-90deg); //원이 그려지는 시작점을 바꿀수있음
+      &:hover {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.ex4 {
+  svg {
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #000;
+    circle {
+      //사각형은 되는데 그 이상의 다각형은 힘들잖아 그래서 방법이 있음!여기서 내가 원의 반지름을 구하는 3.14뭐시기를 모르면 안되장ㅎ아. 그래서....
+      cx: 150px;
+      cy: 150px;
+      r: 100px;
+      fill: none;
+      //여기서는 호버 안됨.
+      transition: stroke-dashoffset 1s; //선이 그려지는 애니메이션을 만들수있따.
+      pointer-events: all; //원래는 못받게 하는건데  이건 받게하는거
+      transform-origin: center center;
+      transform: rotate(-90deg); //원이 그려지는 시작점을 바꿀수있음
+      &.circle1 {
+        stroke: #ccc;
+        stroke-width: 3px;
+      }
+      &.circle2 {
+        stroke: #000;
+        stroke-width: 10px;
+        stroke-dasharray: 360px; //점선
+        stroke-dashoffset: 360px;
+      }
+    }
+  }
+}
+
+.ex5 {
+  width: min(90%, 800px);
+  margin: 30px auto;
+  &.active {
+    svg path {
+      stroke-dashoffset: 0;
+      fill:#000;
+      transition-delay: 0s, 1s ;
+    }
+  }
+  svg {
+    display: block;
+    width: 100%;
+    path {
+      fill:#FFF;
+      stroke: #000;
+      stroke-dasharray: 25px;
+      stroke-dashoffset: 25px;
+      transition: stroke-dashoffset 2s, fill 1s;
+    }
+  }
+}

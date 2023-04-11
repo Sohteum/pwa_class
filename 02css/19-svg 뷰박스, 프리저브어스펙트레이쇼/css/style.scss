@@ -1,0 +1,62 @@
+.ex1 {
+  width: min(80%, 500px);
+  margin: 50px auto;
+  border: 2px solid plum;
+  svg {
+    display: block;
+    // margin:  30px auto;
+    width: 100%;
+    // height: 200px
+    border: 3px solid teal;
+    background-color: teal;
+    circle {
+      cx:100px;
+      cy:100px;
+      r:95px; //이걸 이렇게 해야 원이꽉참 
+      stroke: orangered;
+      stroke-width: 10px;
+      fill: none;
+    }
+    rect {
+      x:50px;// 사각형의 좌측상단에서의 위치?
+      y:50px;// 마진오토 이런거 없음, 포지션 이런거 없음.  
+      width: 100px;
+      height: 100px;
+      stroke: tan;
+      fill:thistle;
+      transform-origin: center center;//중심점이 좌측상단이어서 이걸 가운데로 변경해주어야함
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.ex2 {
+  width: 300px;
+  height: 400px;
+  margin: 50px auto;
+  border:5px solid pink;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%; //이렇게 넣어도 꽉 들어가지는 않음. 오브젝트 핏에 해당하는 속성을 넣어야함.
+    background-color: teal;
+    circle {
+      cx:100px;
+      cy:100px;
+      r:95px; //이걸 이렇게 해야 원이꽉참 
+      stroke: orangered;
+      stroke-width: 10px;
+      fill: none;
+    }
+    rect {
+      x:50px;// 사각형의 좌측상단에서의 위치?
+      y:50px;// 마진오토 이런거 없음, 포지션 이런거 없음.  
+      width: 100px;
+      height: 100px;
+      stroke: tan;
+      fill:thistle;
+      transform-origin: center center;//중심점이 좌측상단이어서 이걸 가운데로 변경해주어야함
+      transform: rotate(45deg);
+    }
+  }
+}

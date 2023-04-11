@@ -1,0 +1,123 @@
+.ex1 svg {
+  display: block;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000;
+}
+.ex1 svg rect {
+  x: 50px;
+  y: 50px;
+  width: 200px;
+  height: 200px;
+  stroke: palevioletred;
+  stroke-width: 10px;
+  stroke-dasharray: 30px;
+  fill: none;
+  animation: dash_offset 20s infinite linear;
+}
+
+@keyframes dash_offset {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -800px;
+  }
+}
+.ex2 svg {
+  display: block;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000;
+}
+.ex2 svg:hover rect {
+  stroke-dashoffset: 0;
+}
+.ex2 svg rect {
+  x: 50px;
+  y: 50px;
+  width: 200px;
+  height: 200px;
+  stroke: palevioletred;
+  stroke-width: 10px;
+  stroke-dasharray: 800px;
+  stroke-dashoffset: 800px;
+  fill: none;
+  transition: stroke-dashoffset 5s;
+}
+
+.ex3 svg {
+  display: block;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000;
+}
+.ex3 svg circle {
+  cx: 150px;
+  cy: 150px;
+  r: 100px;
+  stroke: palevioletred;
+  stroke-width: 10px;
+  stroke-dasharray: 100px;
+  stroke-dashoffset: 100px;
+  fill: none;
+  transition: stroke-dashoffset 5s;
+  pointer-events: all;
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+.ex3 svg circle:hover {
+  stroke-dashoffset: 0;
+}
+
+.ex4 svg {
+  display: block;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000;
+}
+.ex4 svg circle {
+  cx: 150px;
+  cy: 150px;
+  r: 100px;
+  fill: none;
+  transition: stroke-dashoffset 1s;
+  pointer-events: all;
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+.ex4 svg circle.circle1 {
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+.ex4 svg circle.circle2 {
+  stroke: #000;
+  stroke-width: 10px;
+  stroke-dasharray: 360px;
+  stroke-dashoffset: 360px;
+}
+
+.ex5 {
+  width: min(90%, 800px);
+  margin: 30px auto;
+}
+.ex5.active svg path {
+  stroke-dashoffset: 0;
+  fill: #000;
+  transition-delay: 0s, 1s;
+}
+.ex5 svg {
+  display: block;
+  width: 100%;
+}
+.ex5 svg path {
+  fill: #FFF;
+  stroke: #000;
+  stroke-dasharray: 25px;
+  stroke-dashoffset: 25px;
+  transition: stroke-dashoffset 2s, fill 1s;
+}/*# sourceMappingURL=style.css.map */

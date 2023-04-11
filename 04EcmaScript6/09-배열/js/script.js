@@ -129,10 +129,14 @@ fruits.splice(1, 2)
 // console.log(str);
 
 // let str = '안녕하세요'
-// str.split()
+// str = str.split('' )
 // console.log(str); //배열의 길이가 하나 
 // str.split(str, 5)
 // console.log(str); //배열의 길이가 5
+
+// 조인이랑 스플릿은 속성이 위에 애들이랑 다른거지. 위에 애들은 원래 배열에 어떤 무언가를 넣고 빼고 하는건데
+// 조인 스플릿은 원래 있던 배열을 찢은거야 조인도 따로 따로 있는애들이 갈곳이 없음. 그래서 어딘가에 담아주는거지.
+// 그게 원래 있던 배열 안일수도 있고 내가 새로 선언하는 변수나 배열 안일 수 있는것
 
 
 // let str = {
@@ -195,5 +199,7 @@ let arr = str.split('-')
 let str1 = '안녕하세요' 
 let arr1 = str1.split('')
 console.log(arr1);
+
+join
 
 
