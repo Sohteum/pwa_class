@@ -176,7 +176,14 @@
 
 
 document.querySelector(`.ex3 .add_todo`).addEventListener(`click`, e=>{
-  let date = document.querySelector(`.ex3 .da`)
+  let date = document.querySelector(`.ex3 input[type=date]`).value
+  let time = document.querySelector(`.ex3 input[type=time]`).value
+  let name = document.querySelector(`.ex3 input[type=text]`).value
+  let todoList ={
+    date,
+    time,
+    name,
+  }
 })
 
 
