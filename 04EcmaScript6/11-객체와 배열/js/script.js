@@ -45,22 +45,38 @@
 
 
 {
+  // let 명단배열 = []
+  // document.querySelector(`.ex1 .add`).addEventListener(`click`, e => {
+  //   let 이름 = document.querySelector(`.ex1 .name`).value
+  //   let 나이 = document.querySelector(`.ex1 .age`).value
+  //   let 성별 = document.querySelector(`.ex1 .gender:checked`).value
+  //   //변수의 이름과 객체의 키는 다른거야 확실히 알아두도록!!!
+  //   //하지만 위에 변수 이름이랑 아래 키값은 같아.
+  //   let 사람객체 = {
+  //     이름, // 이름 : 이름, 변수명과 키값이 같으면 생략가능
+  //     나이, // 나이 : 나이,
+  //     성별, // 성별 : 성별,
+  //   }
+  //   명단배열.push(사람객체)
+
+  //   console.log(명단배열, 사람객체);
+  // })
+
+
   let 명단배열 = []
   document.querySelector(`.ex1 .add`).addEventListener(`click`, e => {
     let 이름 = document.querySelector(`.ex1 .name`).value
     let 나이 = document.querySelector(`.ex1 .age`).value
     let 성별 = document.querySelector(`.ex1 .gender:checked`).value
-    //변수의 이름과 객체의 키는 다른거야 확실히 알아두도록!!!
-    //하지만 위에 변수 이름이랑 아래 키값은 같아.
     let 사람객체 = {
-      이름, // 이름 : 이름, 변수명과 키값이 같으면 생략가능
-      나이, // 나이 : 나이,
-      성별, // 성별 : 성별,
+      이름,
+      나이,
+      성별,
     }
     명단배열.push(사람객체)
-
     console.log(명단배열, 사람객체);
   })
+
 
   // document.querySelector(`.ex1 .print`).addEventListener(`click`, e=>{
   // document.querySelector(`.ex1 .output`).innerHTML=''
@@ -70,19 +86,34 @@
   // `)
   // })
 
+  // document.querySelector(`.ex1 .print`).addEventListener(`click`, e => {
+  //   document.querySelector(`.ex1 .output`).innerHTML =
+  //     `인원수 ${명단배열.length}명 <br>`
+  //   //여기서는 이너에 넣는거니까 br을 그냥 넣어도 되고 아래에 어팬드에서는 붙여넣는거니까 createElement로 만들어서 넣어주는거지
+  //   for (let i = 0; i < 명단배열.length; i++)
+  //     document.querySelector(`.ex1 .output`).append(
+  //       `이름 :${명단배열[i].이름}, `,
+  //       `나이 :${명단배열[i].나이}, `,
+  //       `성별 :${명단배열[i].성별}, `,
+  //       document.createElement('br')
+  //     )
+  //   //삼항연산자를 사용하면 되는데 콤마를 넣는게 아니고 ${}이런걸넣은다음에 어레이랭뜨가 ~하면 ${}는 안나와 하고 삼항연산하면 되는거지  
+  // })
+
   document.querySelector(`.ex1 .print`).addEventListener(`click`, e => {
-    document.querySelector(`.ex1 .output`).innerHTML =
-      `인원수 ${명단배열.length}명 <br>`
-    //여기서는 이너에 넣는거니까 br을 그냥 넣어도 되고 아래에 어팬드에서는 붙여넣는거니까 createElement로 만들어서 넣어주는거지
-    for (let i = 0; i < 명단배열.length; i++)
-      document.querySelector(`.ex1 .output`).append(
-        `이름 :${명단배열[i].이름}, `,
-        `나이 :${명단배열[i].나이}, `,
-        `성별 :${명단배열[i].성별}, `,
-        document.createElement('br')
-      )
-    //삼항연산자를 사용하면 되는데 콤마를 넣는게 아니고 ${}이런걸넣은다음에 어레이랭뜨가 ~하면 ${}는 안나와 하고 삼항연산하면 되는거지  
+    document.querySelector(`.ex1 .output`).innerHTML =  `인원수${명단배열.length}명<br>`
+    for(let i = 0; i< 명단배열.length; i++)
+    document.querySelector(`.ex1 .output`).append(
+      `이름:${명단배열[i].이름},`,
+      `나이:${명단배열[i].나이},`,
+      `성별:${명단배열[i].성별},`,
+      document.createElement('br')
+    )
   })
+
+
+
+
 }
 
 
@@ -142,6 +173,17 @@
 
     console.log(date, time, name, todoList);
   })
+
+
+document.querySelector(`.ex3 .add_todo`).addEventListener(`click`, e=>{
+  let date = document.querySelector(`.ex3 .da`)
+})
+
+
+
+
+
+
 
   document.querySelector(`.ex3 .add_check`).addEventListener(`click`, e => {
     document.querySelector(`.ex3 .output`).innerHTML = '';

@@ -19,6 +19,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     console.log(e.target);
     /* 여기서 이벤트불러올때는 e를 쓴느데 맘대로 하면되고 아까 온클릭방식에서는 꼭 이벤트를 써줘야함 */
   })
+  
 
   //   document.getElementsByClassName(`.ex3btn`)->배열찾는거 
   //   document.getElementsByTagName(`.ex3btn`)->배열찾는거 

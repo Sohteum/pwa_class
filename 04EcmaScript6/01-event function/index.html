@@ -14,7 +14,7 @@
   <h1>이벤트</h1>
   <ul>
     <li>
-      onclick속성
+      onclick속성(html속성으로 호출하는것)
       장점 : 비동기스크립트 호출이 필요없다.
       단점 : 반복적인 호출을 요구함. 이벤트리스너를 호출시 event예약어를 사용
       <xmp>
@@ -26,12 +26,12 @@
       DOMContentLoaded 구조만 파악. <br>
       파싱이 끝난시점=렌더링 시작시점=화면에 나타나는시점
       <xmp>
-        document.addEventListener(`DOMContentLoaded`, function () {})
+        document.addEventListener(`DOMContentLoaded`, function () {}) = document.ready(function(){})
       </xmp>
       window.load 소스가 로딩이 완료된 시점
       <xmp>
         $(window).load(function(){})
-      </xmp>
+             </xmp>
     </li>
     <li>
       선택자
