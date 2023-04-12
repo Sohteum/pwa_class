@@ -1,0 +1,57 @@
+.ex1 {
+  width: min(90%, 500px);
+  margin: 100px auto;
+}
+.ex1 svg {
+  display: block;
+  width: 100%;
+}
+.ex1 svg path {
+  fill: none;
+  stroke: tomato;
+}
+
+.ex2 {
+  width: min(90%, 500px);
+  margin: 100px auto;
+}
+.ex2 svg {
+  display: block;
+  width: 100%;
+}
+.ex2 svg path {
+  fill: black;
+}
+
+.ex3 {
+  text-align: center;
+}
+.ex3 button {
+  position: relative;
+  border: none;
+  background: none;
+  width: 200px;
+}
+.ex3 button svg {
+  display: block;
+  width: 100%;
+}
+.ex3 button svg path {
+  fill: none;
+  stroke: palevioletred;
+  stroke-width: 10px;
+  transition: stroke 1s;
+}
+.ex3 button span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
+  transition: stroke 1s;
+}
+.ex3 button:hover svg path {
+  stroke: blue;
+}
+.ex3 button:hover span {
+  color: blue;
+}/*# sourceMappingURL=style.css.map */

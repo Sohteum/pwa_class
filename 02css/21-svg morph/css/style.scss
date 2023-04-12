@@ -1,0 +1,58 @@
+.ex1 {
+  width: min(90%, 500px);
+  margin: 100px auto;
+  svg {
+    display: block;
+    width: 100%;
+    path {
+      fill: none;
+      stroke: tomato;
+    }
+  }
+}
+.ex2 {
+  width: min(90%, 500px);
+  margin: 100px auto;
+  svg {
+    display: block;
+    width: 100%;
+    path {
+      fill: black;
+    }
+  }
+}
+.ex3 {
+  text-align: center;
+  button {
+    position: relative;
+    border: none;
+    background: none;
+    width: 200px;
+
+    svg {
+      display: block;
+      width: 100%;
+      path {
+        fill: none;
+        stroke: palevioletred;
+        stroke-width: 10px;
+        transition: stroke 1s;
+      }
+    } //svg
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%);
+      transition: stroke 1s
+    }
+    &:hover {
+      svg path {
+        stroke: blue;
+      }
+      span {
+        color: blue;
+      }
+    }
+  }
+} //ex3
