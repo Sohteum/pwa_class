@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/morphsvg.js"></script>
+  <script src="./js/tweenmax.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="ex1">
+    <svg viewBox="0 0 1000 317.45">
+      <path id="ex1_path" fill="none" stroke="#000" stroke-miterlimit="10"
+        d="M0 158.73c398.59-254.91 402 315.14 994.05 0" />
+      <text>
+        <textpath href="#ex1_path"  ><!-- startOffset="50%" -->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque autem aut impedit quas labore.
+          <animate  attributeName="startOffset" from="-50%" to="100%"  dur="8s" repeatCount="indefinite"/> <!-- 속성을 가지고 조절하고싶을때 -->
+        </textpath>
+      </text>
+    </svg>
+  </div>
+
+  <hr>
+  <div class="ex2">
+    <svg viewBox="0 0 1000 317.45">
+      <path id="ex2_path" fill="none" stroke="#000" stroke-miterlimit="10"
+        d="M0 158.73c398.59-254.91 402 315.14 994.05 0" />
+        <defs>
+          <path class="path1" fill="none" d="M0,158.73c431.55,91.68,511.09-212.86,994.05,0"/>
+          <path class="path2" fill="none" stroke="#000" stroke-miterlimit="10"
+            d="M0 158.73c398.59-254.91 402 315.14 994.05 0" />
+        </defs>
+      <text>
+        <textpath href="#ex2_path"  ><!-- startOffset="50%" -->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque autem aut impedit quas labore.
+          <animate  attributeName="startOffset" values="-50%;100%;" dur="8s" repeatCount="indefinite"/> <!-- 속성을 가지고 조절하고싶을때 values를 사용하면 여러단계로 조절할 수 있다는 장점이 있음 -->
+        </textpath>
+      </text>
+    </svg>
+  </div>
+
+</body>
+
+</html>

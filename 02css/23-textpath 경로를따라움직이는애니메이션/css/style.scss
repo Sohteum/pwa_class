@@ -1,0 +1,27 @@
+.ex1 {
+  margin: 50px auto;
+  svg {
+    width: 100%;
+    /*     transform-origin: center center;
+    transform: scaleY(-100%); */
+    text {
+      font-size: 15px;
+      fill: palevioletred;
+      opacity: 0.8;
+    }
+  }
+}
+.ex2 {
+  margin: 50px auto;
+  svg {
+    width: 100%;
+    /*     transform-origin: center center;
+    transform: scaleY(-100%); */
+    text {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 18px;
+      fill: rgb(117, 138, 255);
+      opacity: 0.8;
+    }
+  }
+}
