@@ -1,0 +1,143 @@
+.scrollbar {
+  width: 300px;
+  height: 30px;
+  margin: 50px auto;
+  background-color: #ccc;
+}
+.scrollbar .scrollbtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(253, 171, 47);
+  cursor: pointer;
+}
+
+.container {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  border: 5px solid #000;
+  margin: 50px auto;
+}
+.container .wrap {
+  display: flex;
+  width: 1200px;
+  height: 300px;
+}
+.container .wrap div {
+  width: 300px;
+  height: 300px;
+  font-size: 4em;
+  text-align: center;
+  line-height: 300px;
+}
+.container .wrap div:nth-child(1) {
+  background-color: beige;
+}
+.container .wrap div:nth-child(2) {
+  background-color: palegreen;
+}
+.container .wrap div:nth-child(3) {
+  background-color: pink;
+}
+.container .wrap div:nth-child(4) {
+  background-color: thistle;
+}
+
+.scrollbar2 {
+  width: 300px;
+  height: 30px;
+  margin: 50px auto;
+  background-color: #ccc;
+}
+.scrollbar2 .scrollbtn2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(253, 171, 47);
+  cursor: pointer;
+}
+
+.container2 {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  cursor: grab;
+}
+.container2:active {
+  cursor: grabbing;
+}
+.container2 .wrap2 {
+  display: flex;
+  width: 1200px;
+  height: 300px;
+}
+.container2 .wrap2 div {
+  width: 300px;
+  height: 300px;
+  font-size: 4em;
+  text-align: center;
+  line-height: 300px;
+}
+.container2 .wrap2 div:nth-child(1) {
+  background-color: beige;
+}
+.container2 .wrap2 div:nth-child(2) {
+  background-color: palegreen;
+}
+.container2 .wrap2 div:nth-child(3) {
+  background-color: pink;
+}
+.container2 .wrap2 div:nth-child(4) {
+  background-color: thistle;
+}
+
+.scrollbar3 {
+  width: min(80%, 300px);
+  height: 30px;
+  margin: 50px auto;
+  background-color: #ccc;
+}
+.scrollbar3 .scrollbtn3 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(253, 171, 47);
+  cursor: pointer;
+}
+
+.container3 {
+  overflow: hidden;
+  width: min(90%, 500px);
+  height: 300px;
+  margin: 50px auto;
+  cursor: grab;
+}
+.container3:active {
+  cursor: grabbing;
+}
+.container3 .wrap3 {
+  display: flex;
+  width: 400% !important;
+  height: 300px;
+}
+.container3 .wrap3 div {
+  width: 25%;
+  height: 300px;
+  font-size: 4em;
+  text-align: center;
+  line-height: 300px;
+}
+.container3 .wrap3 div:nth-child(1) {
+  background-color: beige;
+}
+.container3 .wrap3 div:nth-child(2) {
+  background-color: palegreen;
+}
+.container3 .wrap3 div:nth-child(3) {
+  background-color: pink;
+}
+.container3 .wrap3 div:nth-child(4) {
+  background-color: thistle;
+}/*# sourceMappingURL=style.css.map */

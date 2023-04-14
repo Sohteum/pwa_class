@@ -1,0 +1,144 @@
+.scrollbar {
+  width: 300px;
+  height: 30px;
+  margin: 50px auto;
+  background-color: #ccc;
+  .scrollbtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(253, 171, 47);
+    cursor: pointer;
+  }
+}
+.container {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  border: 5px solid #000;
+  margin: 50px auto;
+  .wrap {
+    display: flex;
+    width: 1200px;
+    height: 300px;
+    div {
+      width: 300px;
+      height: 300px;
+      font-size: 4em;
+      text-align: center;
+      line-height: 300px;
+      &:nth-child(1) {
+        background-color: beige;
+      }
+      &:nth-child(2) {
+        background-color: palegreen;
+      }
+      &:nth-child(3) {
+        background-color: pink;
+      }
+      &:nth-child(4) {
+        background-color: thistle;
+      }
+    }
+  }
+}
+
+.scrollbar2 {
+  width: 300px;
+  height: 30px;
+  margin: 50px auto;
+  background-color: #ccc;
+  .scrollbtn2 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(253, 171, 47);
+    cursor: pointer;
+  }
+}
+.container2 {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  // border: 5px solid #000;
+  margin: 50px auto;
+  // box-sizing: border-box; //박스밑에 자리가 남으니까 이거 해줬오
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+  .wrap2 {
+    display: flex;
+    width: 1200px;
+    height: 300px;
+    div {
+      width: 300px;
+      height: 300px;
+      font-size: 4em;
+      text-align: center;
+      line-height: 300px;
+      &:nth-child(1) {
+        background-color: beige;
+      }
+      &:nth-child(2) {
+        background-color: palegreen;
+      }
+      &:nth-child(3) {
+        background-color: pink;
+      }
+      &:nth-child(4) {
+        background-color: thistle;
+      }
+    }
+  }
+}
+
+.scrollbar3 {
+  width: min(80%, 300px);
+  height: 30px;
+  margin: 50px auto;
+  background-color: #ccc;
+  .scrollbtn3 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(253, 171, 47);
+    cursor: pointer;
+  }
+}
+.container3 {
+  overflow: hidden;
+  width: min(90%, 500px);
+  height: 300px;
+  // border: 5px solid #000;
+  margin: 50px auto;
+  // box-sizing: border-box; //박스밑에 자리가 남으니까 이거 해줬오
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+  .wrap3 {
+    display: flex;
+    width: 400% !important;
+    height: 300px;
+    div {
+      width: 25%;
+      height: 300px;
+      font-size: 4em;
+      text-align: center;
+      line-height: 300px;
+      &:nth-child(1) {
+        background-color: beige;
+      }
+      &:nth-child(2) {
+        background-color: palegreen;
+      }
+      &:nth-child(3) {
+        background-color: pink;
+      }
+      &:nth-child(4) {
+        background-color: thistle;
+      }
+    }
+  }
+}

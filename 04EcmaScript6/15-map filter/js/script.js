@@ -3,7 +3,7 @@
   for (let i = 1; i <= 100; i++) {
     arr.push(i)
   }
-  console.log(arr);
+
   document.querySelector(`.ex1 button`).addEventListener(`click`, e => {
     // let arr2x = []
     // for(let i=0; i <= arr.length; i++) {
@@ -20,12 +20,12 @@
     arr.push(i)
   }
   document.querySelector(`.ex2 button`).addEventListener(`click`, e => {
-    arr.filter(v => {
+    const newArr = arr.filter(v => {
       return v % 2 === 0 //리턴뒤에 조건식이 항상 나옴
     })
-    console.log(arr);
+    console.log(newArr);
   })
-}/* ex2 */
+}/* ex2 *///filter도 값을 담아줄 그릇이 필요함
 
 {
   let arr = ['월', '화', '수', '목', '금', '토', '일']

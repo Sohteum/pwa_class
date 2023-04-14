@@ -1,46 +1,37 @@
 import { useState } from "react";
-import Sum from "./components/Sum";
-import CompModal from "./components/CompModal";
+import ComModal from "./components/ComModal";
+import CompSum from "./components/CompSum";
 
+let arrComp = []
+for (let i = 0; i < 5; i++) {
+  arrComp.push(i) //[0,1,2,3,4]
+}
 
 function App() {
 
-  const [_point, _setPoint] = useState(0)
+  const [_pointArr, _setPointArr] = useState(new Array(5).fill(''))//길이가 4인 배열을 만든것.속도가 느린 명령어//원래 이게더빨라[,,,,]
+  const [_arrComp, _setArrComp] = useState(arrComp)
   const [_showModal, _setShowModal] = useState(false)
 
-  const fnModalHandler = function () {
-    let point = 0
-    let inputs = document.querySelectorAll('form')
-    inputs.forEach(v => {
-      let userNum = parseInt(v.querySelector('.userNum').value)
-      let num1 = parseInt(v.querySelector('.num1').innerText)
-      let num2 = parseInt(v.querySelector('.num2').innerText)
-      if (num1 + num2 === userNum) _setPoint(prev => prev + 1)
-
-    })
-    console.log(point);
-    //    _setPoint(point)
+  const fnModalHandler = () => {
     _setShowModal(true)
   }
 
+
   return (
     <>
-      <h1>더하기 계산</h1>
+      <h1>더하기문제</h1>
       <hr />
-      <Sum _setPoint={_setPoint} _point={_point} />{/* 내가 이걸 물려주는데 나는 셋포인트라고 부르지만 너는 a라고 불러 너는 a라는 박스에 담아서 써 하지만 귀찮으니까 그냥 같은 이름으로 쓴다.*/}
-      <hr />
-      <Sum _setPoint={_setPoint} _point={_point} />
-      <hr />
-      <Sum _setPoint={_setPoint} _point={_point} />
-      <hr />
-      <Sum _setPoint={_setPoint} _point={_point} />
-      <hr />
-      <Sum _setPoint={_setPoint} _point={_point} />
-      <hr />
+      {
+        _arrComp.map((v, idx) => { //배열로 출력하는경우에는 key(키값,유니크한이름)라는 프롭스을 꼭 쓰래, i는 원래 쓰면 안돼
+          return <CompSum key={v} idx={idx} _setPointArr={_setPointArr} _pointArr={_pointArr}/>//배열은 둘다 가져와야 됨
+        })
+        /* 변수만 적어 문법은 못적어. 최종결과가 변수 한개, 배열은 한개니까 쓸수있어 */
+      }
+      {/* <CompSum _setPoint={_setPoint}/> 반복되는 컴포넌트는 적어주지 않고 반복문을 쓴다 */}
 
       <button onClick={fnModalHandler}>점수확인</button>
-      {(_showModal === true) && <CompModal _point={_point} />}
-
+      {(_showModal === true) && <ComModal _pointArr={_pointArr} _setShowModal={_setShowModal}/>}
     </>
   );
 }
