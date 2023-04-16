@@ -9,7 +9,7 @@
   &:hover {
     .sheet {
       transform: rotateY(-180deg);
-      //sheet에 적용을 하면 가끔 튐. 180도 돌았을때 안보일때 호버가 되면 호버에서 나갔다가고 생각하니까 ex1에 호버를 함
+      //sheet에 적용을 하면 가끔 튐. 180도 돌았을때 안보일때 호버가 되면 호버에서 나갔다가고 생각하니까 ex1에 호버를 함??????????????????????????????????????
     }
   }
   .sheet {
@@ -19,7 +19,7 @@
     /* transform: rotateY(-180deg); */
     //소실점을 만들어주어야함 .ex1에서 그래야 찌부짜부로 안보임
     transform-style: preserve-3d;
-    //이걸 만들어야 뒷면이 나옴
+    //이걸 만들어야 뒷면이 나옴 부모의 각과 자식의 각을 더해서 ..?뒷면이 나오게 만들어줌
     transform-origin: left center;
     //변형의 축. 왼쪽 중간에 못을 박고 그 기준으로 ...그럼 문 여는것처럼 나옴. 나중에 수치로 적용하면 적는 순서가 중요
     transition: transform 1s;
@@ -50,7 +50,7 @@
 }
 
 .ex2 {
-  perspective: 1000px;
+  perspective: 1000px; //소실점
   width: 400px;
   height: 400px;
   background-color: #000;
@@ -97,7 +97,7 @@
       }
     }
     .paper {
-      backface-visibility: hidden;
+      backface-visibility: hidden; //뒷면이 안보이게
       position: absolute;
       width: inherit;
       height: inherit;
