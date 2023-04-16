@@ -64,38 +64,12 @@
     }
   }
   .sheet {
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; //뒷면을 숨겨주는 기능
     position: relative;
     width: 400px;
     height: 200px;
     box-sizing: border-box;
     transition: transform 1s;
-    &.sheet1 {
-      transform-origin: top center;
-      .paper {
-        &.front {
-          background-color: teal;
-        }
-        &.back {
-          transform: rotateX(180deg);
-          background-color: tomato;
-        }
-      }
-    }
-    &.sheet2 {
-      transform-origin: bottom center;
-      position: absolute;
-      top: 200px;
-      .paper {
-        &.front {
-          background-color: teal;
-        }
-        &.back {
-          transform: rotateX(-180deg);
-          background-color: tomato;
-        }
-      }
-    }
     .paper {
       backface-visibility: hidden; //뒷면이 안보이게
       position: absolute;
@@ -112,8 +86,61 @@
         background-color: tomato;
       }
     }
+    &.sheet1 {
+      transform-origin: top center;
+      .paper {
+        &.back {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+    &.sheet2 {
+      transform-origin: bottom center;
+      position: absolute;
+      top: 200px;
+      .paper {
+        &.back {
+          transform: rotateX(-180deg);
+        }
+      }
+    }
   }
 }
+
+// .ex2 {
+//   perspective: 1000px; //소실점
+//   width: 400px;
+//   height: 400px;
+//   background-color: #000;
+//   margin: 50px auto;
+//   &:hover {
+//     .sheet1 {
+//       transform: rotateX(180deg);
+//     }
+//     .sheet2 {
+//       transform: rotateX(-180deg);
+//     }
+//   }
+//   .sheet {
+//     transform-style: preserve-3d;
+//     position: relative;
+//     width: 400px;
+//     height: 200px;
+//     box-sizing: border-box;
+//     .sheet1 {
+//       transform-origin: top center;
+//       .paper {
+//         &.front {
+//           background-color: teal;
+//         }
+//         &.back {
+//           transform: rotateX(180deg);
+//           background-color: tomato;
+//         }
+//       }
+//     }
+//   }
+// }
 
 //1000px이상에서는 좌우로, 이하에서는 상하로,
 
