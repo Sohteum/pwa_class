@@ -1,0 +1,29 @@
+.container{
+  overflow: hidden;
+  display: flex;
+  margin: 30px auto;
+  width: min(90%, 800px);
+  border: 1px solid red;
+  img{
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center; 
+    &:nth-child(1){
+      display: block;
+    }
+  }
+}
+.scrollbar{
+  margin: 30px auto;
+  width: min(90%, 800px);
+  height: 10px;
+  background: #000;
+  .scrollbtn{
+    width: 10%;
+    height: 10px;
+    background: red;
+    cursor: pointer;
+  }
+}

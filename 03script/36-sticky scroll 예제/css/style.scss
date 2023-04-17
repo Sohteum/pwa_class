@@ -1,23 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 
 .container {
   overflow: hidden;
+  display: flex;
   width: min(90%, 800px);
-  height: 50vh; 
   border: 1px solid #000;
-  margin-top: 200px;
   margin: 50px auto;
 }
 img {
-
+  display: none;
   width: 100%;
-  position: sticky;
-  top:0;
-  height: 50vh;
+  height: 100%;
   object-fit: contain;
   object-position: center;
   &:nth-child(1){
