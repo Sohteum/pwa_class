@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  overflow: hidden;
+  width: min(90%, 800px);
+  height: 50vh;
+  border: 1px solid #000;
+  margin-top: 200px;
+  margin: 50px auto;
+}
+
+img {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 50vh;
+  object-fit: contain;
+  object-position: center;
+}
+img:nth-child(1) {
+  display: block;
+}
+
+.scrollbar {
+  width: min(90%, 800px);
+  margin: 30px auto;
+  height: 10px;
+  background-color: #000;
+}
+.scrollbar .scrollbtn {
+  width: 8%;
+  height: 10px;
+  background-color: red;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
