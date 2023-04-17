@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sticky_container {
+  margin: 0 auto;
+  height: 400vh; //브라우저기준으로 높이를 주고 싶을때사용한다
+  width: min(90%, 800px);
+  border: 5px solid green;
+  .sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: palegoldenrod;
+    img {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      &:nth-child(1) {
+        display: block;
+      }
+    }
+  }
+}
