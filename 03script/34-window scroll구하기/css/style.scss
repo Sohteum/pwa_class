@@ -1,0 +1,52 @@
+.scrollspy1 {
+  position: fixed;
+  left: 100px;
+  top: calc(50% - 100px);
+  width: 5px;
+  height: 200px;
+  background-color: #ccc;
+  .progress {
+    background-color: yellowgreen;
+  }
+  .circle {
+    position: absolute;
+    left: -7px;
+    transform: translateY(-50%); ///다시 생각해보기
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: tomato;
+  }
+}
+
+.scrollspy2 {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 200px;
+  svg {
+    display: block;
+    width: 100%;
+    .path1 {
+      fill: none;
+      stroke: #ccc;
+      stroke-width: 5px;
+    }
+    .path2 {
+      fill: none;
+      stroke: #63ff97;
+      stroke-width: 5px;
+      stroke-dasharray: 1px; //점선만들기
+      /* stroke-dashoffset: 1px; */
+    }
+    circle {
+      fill: palevioletred;
+      offset-path: path(
+        "M25.43 21.43h25c13.75 0 25 11.25 25 25s-11.25 25-25 25-25 11.25-25 25 11.25 25 25 25 25 11.25 25 25-11.25 25-25 25-25 11.25-25 25 11.25 25 25 25 25 11.25 25 25-11.25 25-25 25-25 11.25-25 25 11.25 25 25 25 25 11.25 25 25-11.25 25-25 25-25 11.25-25 25 11.25 25 25 25h25"
+      ); //따라가기
+      // offset-distance: 100%;
+    }
+  }
+}

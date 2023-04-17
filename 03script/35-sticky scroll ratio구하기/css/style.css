@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sticky_container {
+  margin: 0 auto;
+  height: 400vh;
+  width: min(90%, 800px);
+  border: 5px solid green;
+}
+.sticky_container .sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: palegoldenrod;
+}
+.sticky_container .sticky img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.sticky_container .sticky img:nth-child(1) {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
