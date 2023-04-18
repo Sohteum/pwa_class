@@ -17,7 +17,7 @@
     document.querySelector(`.ex2 .output`).innerHTML = "";
     for (let i = 1; i <= 5; i++) {
       pow = pow * 2;
-      let result = i < 5 ? pow + " ," : pow + " ";
+      let result = i < 5 ? pow + " ," : pow + " "; //뒤에 쉼표 들어가는거 싫으면 참고
       document.querySelector(`.ex2 .output`).append(result);
       /* 여기는 한번 출력이 아니고 이어붙이니까 여기로 들어와야함 */
     }
@@ -36,6 +36,7 @@
     } /* for i end */
   });
 } /* 중첩 for구문 */
+//밖에 있는 for문이 1번 실행될 때마다 안에 있는 for문이 모든 반복을 실행하게 된다.그리고 안에 있는 for문의 동작이 완료되면 다시 밖에 있는 for문이 1번 반복하게 되고 안에 있는 for문이 다시 동작을 반복하는 것이다.
 
 {
   document.querySelector(`.ex4 button`).addEventListener(`click`, (e) => {
@@ -59,7 +60,6 @@
       for (let j = 1; j <= i; j++) {
         document.querySelector(`.ex5 .output`).append(`🙌`);
       }
-
       document
         .querySelector(`.ex5 .output`)
         .append(document.createElement(`br`));
@@ -90,7 +90,7 @@
       for (let j = 1; j <= 3 - i; j++) {
         document.querySelector(`.ex7 .output`).append(`💖`);
       }
-      for (let j = 1; j <= i * 2 - 1; j++) {
+      for (let j = 1; j <= i * 2 - i; j++) {
         document.querySelector(`.ex7 .output`).append(`😊`);
       }
       for (let j = 1; j <= 3 - i; j++) {
