@@ -1,0 +1,42 @@
+@use "mixin" as m; //요즘은 import대신 use사용 권장
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  transition: background-color 1s;
+  svg {
+    position: absolute;
+    top: 100%;
+    width: 100%; // 뷰박스가 있으니까 하잇은 자동으로 먹는다
+    // fill: rgba(#FFF,0);//넌은 색이 아니여서 트랜지션이 일어나지않음
+    // transition: all 1s;
+    transform: translateY(-17%);
+    @media #{m.$minLg} {
+      height: 25px;
+    }
+    @media #{m.$maxLg} {
+      height: 10px;
+    }
+    .line {
+      fill: rgba(#FFF, 0);
+      transition: fill 1s;
+      stroke: rgba(m.$mainColor, 0);
+      stroke-width: 10px;
+      stroke-dasharray: 1;
+      //   stroke-dashoffset: -1;
+      // }
+    }
+  }
+  &.active {
+    background-color: rgba(#FFF, 0.8);
+    svg {
+      .line {
+        fill: rgba(#FFF, 0.8);
+        stroke: rgba(m.$mainColor, 1);
+      }
+    }
+  }
+}

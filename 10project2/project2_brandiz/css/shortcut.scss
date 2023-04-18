@@ -1,0 +1,5 @@
+@use "mixin" as m; //요즘은 import대신 use사용 권장
+
+.shortcut {
+  background-color: rgba(rgb(206, 133, 133), 0.5);
+}

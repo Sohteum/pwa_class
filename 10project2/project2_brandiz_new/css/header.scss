@@ -1,0 +1,36 @@
+@use "mixin" as m;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  transition: background-color 1s;
+  svg.zigzag_horz {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    @media #{m.$minLg} {
+      height: 15px;
+    }
+    @media #{m.$maxLg} {
+      height: 10px;
+    }
+    .line {
+      fill: rgba(#fff, 0);
+      transition: fill 1s;
+      stroke: var(--main-color);
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+  }
+  &.active {
+    background-color: #fff;
+    svg.zigzag_horz {
+      .line1 {
+        fill: rgba(#fff, 1);
+      }
+    }
+  }
+}

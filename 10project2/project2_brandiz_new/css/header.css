@@ -1,0 +1,36 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  transition: background-color 1s;
+}
+header svg.zigzag_horz {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+@media screen and (min-width:1000px) {
+  header svg.zigzag_horz {
+    height: 15px;
+  }
+}
+@media screen and (max-width:1000px) {
+  header svg.zigzag_horz {
+    height: 10px;
+  }
+}
+header svg.zigzag_horz .line {
+  fill: rgba(255, 255, 255, 0);
+  transition: fill 1s;
+  stroke: var(--main-color);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+header.active {
+  background-color: #fff;
+}
+header.active svg.zigzag_horz .line1 {
+  fill: white;
+}/*# sourceMappingURL=header.css.map */
