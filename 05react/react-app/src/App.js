@@ -14,25 +14,26 @@ function App() {
   const [_showBtn, _setShowBtn] = useState(false)
   const [_reset, _setReset] = useState(true)
   const [_newColor, _setNewColor] = useState('#FFF')
-
+  const [_listCnt, _setListCnt] = useState(Math.ceil(Math.random()*3))
 
 
   return (
     <AppContext.Provider value={{
-      _pointArr, _setPointArr, fnChangePoint, _readOnly, _setReadOnly, _setShowBtn, _reset, _newColor, _setNewColor
+      _pointArr, _setPointArr, fnChangePoint, _readOnly, _setReadOnly, _setShowBtn, _reset, _newColor, _setNewColor, _listCnt, _setListCnt
     }}> {/* 전달할 수 있는 범위가 프로바이더, value는 보낼 객체..??그래서 중괄호를 하나 더 열어서 다 담아서 보낸다 */}
       <h1>context</h1>
       <hr />
       <CompUl />
       <hr />
       <CompResult />
-      {(_showBtn)&&<button onClick={e=>{
-        _setReset(prev=>!prev);//반대로 바꿔라!토글
+      {(_showBtn) && <button onClick={e => {
+        _setReset(prev => !prev);//반대로 바꿔라!토글
         _setReadOnly(false);
-        _setPointArr(  new Array(3).fill('x') )
+        _setPointArr(new Array(3).fill('x'))
         _setNewColor('#FFF')
-        }}
-        >다시하기</button>} {/* 조건부출력 */}
+        _setListCnt(Math.ceil(Math.random()*3))
+      }}
+      >다시하기</button>} {/* 조건부출력 */}
     </AppContext.Provider>
   );
 }
