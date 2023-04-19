@@ -1,30 +1,39 @@
-import { useState } from "react";
-import CompSumUl from "./components/CompSumUl";
-import CompPoint from "./components/CompPoint";
-import CompModal from "./components/CompModal";
+import { createContext, useState } from "react";
+import CompResult from "./components/CompResult";
+import CompUl from "./components/CompUl";
 
+export const AppContext = createContext() //전달해주고싶으면 크리에잇 컨텍스트. 익스폴트를 만드시 해줘야함. 그래서 앱 안에서 만들면 안됨. app이 익스폴트가 이미 되어있어서 밖에서 해야함
+
+const fnChangePoint = function (arr) {
+  return arr.filter(v => v === 'o').length
+}
 
 function App() {
+  const [_pointArr, _setPointArr] = useState(new Array(3).fill('x'))//점수출력용//함수()는 실행하겠다는뜻.여기선 ()쓰면 안됨
+  const [_readOnly, _setReadOnly] = useState(false)
+  const [_showBtn, _setShowBtn] = useState(false)
+  const [_reset, _setReset] = useState(true)
+  const [_newColor, _setNewColor] = useState('#FFF')
 
-  const [_showUl, _setShowUl] = useState(true)
-  const [_showModal, _setShowModal] = useState(false)
-  const [_point, _setPoint] = useState(new Array(3).fill('x'))//정답개수를 세려고 배열을 만듦
+
 
   return (
-    <>
-      <h1>중첩컴포넌트</h1>
+    <AppContext.Provider value={{
+      _pointArr, _setPointArr, fnChangePoint, _readOnly, _setReadOnly, _setShowBtn, _reset, _newColor, _setNewColor
+    }}> {/* 전달할 수 있는 범위가 프로바이더, value는 보낼 객체..??그래서 중괄호를 하나 더 열어서 다 담아서 보낸다 */}
+      <h1>context</h1>
       <hr />
-      {
-        _showUl && <CompSumUl _setShowUl={_setShowUl} _point={_point} _setPoint={_setPoint} _setShowModal={_setShowModal} />
-      }
-
+      <CompUl />
       <hr />
-      <CompPoint _point={_point} /> {/* 나중에는 드릴링을 안하려고 컨텍스트?? 같은 스테이트관리 훅스를 사용함 손주한테 건너뛸때는 스테잇 관리 툴을 사용 하지만 직계자손한테는 프롭스가 편하지*/}
-      {/*       <button onClick={e=>{_setShowUl(false)}}>문제삭제</button>
-      <button onClick={e=>{_setShowUl(true)}}>문제제출</button> */}
-      {_showModal&&<CompModal _setShowUl={_setShowUl} _setPoint={_setPoint} _setShowModal={_setShowModal}/>
-      }
-    </>
+      <CompResult />
+      {(_showBtn)&&<button onClick={e=>{
+        _setReset(prev=>!prev);//반대로 바꿔라!토글
+        _setReadOnly(false);
+        _setPointArr(  new Array(3).fill('x') )
+        _setNewColor('#FFF')
+        }}
+        >다시하기</button>} {/* 조건부출력 */}
+    </AppContext.Provider>
   );
 }
 
