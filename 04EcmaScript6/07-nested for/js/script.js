@@ -90,7 +90,7 @@
       for (let j = 1; j <= 3 - i; j++) {
         document.querySelector(`.ex7 .output`).append(`💖`);
       }
-      for (let j = 1; j <= i * 2 - i; j++) {
+      for (let j = 1; j <= i * 2 - 1; j++) {
         document.querySelector(`.ex7 .output`).append(`😊`);
       }
       for (let j = 1; j <= 3 - i; j++) {
