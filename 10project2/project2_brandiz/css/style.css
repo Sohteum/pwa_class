@@ -8,17 +8,37 @@ body {
 }
 
 :root {
-  --main-color:#1cbdb4;
-  --dark-color:#333;
-  --header-height:60px;
+  --main-color: #1cbdb4;
+  --dark-color: #333;
+  --header-height: 60px;
 }
+
 @media screen and (min-width:1000px) {
- :root{
-  --header-height:70px;
-} 
+  :root {
+    --header-height: 70px;
+  }
 }
+
 @media screen and (max-width:1000px) {
-  :root{
-    --header-height:60px;
-  } 
+  :root {
+    --header-height: 60px;
+  }
+}
+
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: -1; /* 안보임 */
+  }
+
+  30% {
+    stroke-dashoffset: 0;
+  }
+
+  70% {
+    stroke-dashoffset: 0;  /* 다보임 */
+  }
+
+  100% {
+    stroke-dashoffset: 1; /* 안보임 */
+  }
 }

@@ -7,7 +7,48 @@ header {
   width: 100%;
   height: var(--header-height);
   transition: background-color 1s;
-  svg.zigzag_horz {
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(95%, 1700px);
+    height: 100%;
+    margin: 0 auto;
+    h1{
+      position: relative;
+      z-index: 1;
+      height: 45%;
+      a{
+        svg:first-child{
+          height: 100%;
+          *{
+            fill:none;
+            stroke: #FFF;
+            stroke-width: 3px;
+            opacity: 0.6;
+            transition: stroke 1s;
+          }
+        }
+        svg:last-child{
+          position: absolute;
+          top:0;
+          left:0;
+          height: 100%;
+          *{
+            fill:none;
+            stroke: var(--dark-color);
+            stroke-width: 5px;
+            stroke-dasharray: 1;
+            animation: stroke 6s infinite linear;
+            transform: stroke 1s
+
+          }
+        }
+      };
+    }
+  }
+
+  >svg{
     position: absolute;
     top: 100%;
     width: 100%;
@@ -26,11 +67,45 @@ header {
     }
   }
   &.active {
-    background-color: #fff;
-    svg.zigzag_horz {
-      .line1 {
-        fill: rgba(#fff, 1);
+    background-color:rgba(#fff, 0.9);
+    .center {
+      h1 {
+        a {
+          svg:first-child {
+            * {
+              stroke: var(--dark-color);
+            }
+          }  
+          svg:last-child {
+            * {
+              stroke: var(--main-color);
+            }
+          }  
+        }
+      }  
+    }  
+    >svg {
+      .line {
+        fill: rgba(#fff, 0.9);
+        stroke: rgba(m.$mainColor, 0.3);
       }
     }
   }
+}
+
+.gnb_lg{
+  display: flex;
+
+  a{
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+    color:var(--dark-color);
+    transition: color 0.5s;
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+  
 }

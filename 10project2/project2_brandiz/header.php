@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,8 +27,31 @@
 
   <title>OnePage Parallax</title>
 </head>
+
 <body>
-<header>
-  header
-  <?php include 'img/svg/zigzag-horz.php' ?> <!-- 헤더기준으로 경로를 잡는다. 그리고 앞에./ 이런건 안씀 -->
-</header>
+  <header>
+    <div class="center">
+      <h1>
+        <span class="hidden">brandiz</span>
+        <a href="#">
+          <?php include "img/svg/logo.php" ?> <!-- 이미지 앞에 슬래시 있으면 안됨 -->
+          <?php include "img/svg/logo.php" ?> <!-- 이미지 앞에 슬래시 있으면 안됨 -->
+        </a>
+      </h1><!-- 무조건 텍스트 -->
+      <nav class="gnb gnb_lg">
+        <?php include "menu.php" ?>
+      </nav>
+      <button class="mBtn">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+      </button>
+    </div>
+    
+    
+    <nav class="gnb gnb_sm">
+      <?php include "menu.php" ?>
+    </nav>
+    <?php include 'img/svg/zigzag-horz.php' ?> <!-- 헤더기준으로 경로를 잡는다. 그리고 앞에./ 이런건 안씀 -->
+  </header>
+  <!-- 여기서는 내부링크로 하면 내가 원하는 위치제어가 안됨. top까지 올라가버림 스크립트로 해야함 -->

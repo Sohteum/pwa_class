@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,4 +25,20 @@
 
   <title>OnePage Parallax</title>
 </head>
+
 <body>
+  <header>
+    <div class="center">
+      <h1>
+        <span class="hidden">brandiz</span>
+        <a href="#">
+          <?php include "img/svg/logo.php" ?>
+          <?php include "img/svg/logo.php" ?>
+        </a>
+      </h1>
+      <nav class="gnb gnb_lg">
+        dd
+      </nav>
+    </div>
+    <?php include 'img/svg/zigzag-horz.php' ?>
+  </header>
