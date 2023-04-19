@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/header.css">
@@ -37,8 +39,16 @@
         </a>
       </h1>
       <nav class="gnb gnb_lg">
-        dd
+        <?php include "menu.php" ?>
       </nav>
+      <button class="mBtn">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+      </button>
     </div>
+    <nav class="gnb gnb_sm">
+      <?php include "menu.php" ?>
+    </nav>
     <?php include 'img/svg/zigzag-horz.php' ?>
   </header>

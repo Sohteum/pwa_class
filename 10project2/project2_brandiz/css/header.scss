@@ -1,4 +1,4 @@
-@use "mixin" as m; //요즘은 import대신 use사용 권장
+@use 'mixin' as m; //요즘은 import대신 use사용 권장
 
 header {
   position: fixed;
@@ -144,8 +144,8 @@ header {
       color: var(--main-color);
     }
     &.active {
-      background-color:var(--dark-color);
-      color:#fff;
+      background-color: var(--dark-color);
+      color: #fff;
     }
   }
   /*   display: none !important; */

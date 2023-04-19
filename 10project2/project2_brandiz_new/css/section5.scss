@@ -1,6 +1,7 @@
 @use 'mixin' as m;
 
 .section5 {
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
+
   background-color: rgb(27, 55, 211);
 }

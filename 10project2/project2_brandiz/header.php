@@ -42,13 +42,12 @@
         <?php include "menu.php" ?>
       </nav>
       <button class="mBtn">
-      <span class="bar1"></span>
-      <span class="bar2"></span>
-      <span class="bar3"></span>
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
       </button>
     </div>
-    
-    
+
     <nav class="gnb gnb_sm">
       <?php include "menu.php" ?>
     </nav>
