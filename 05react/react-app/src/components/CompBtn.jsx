@@ -1,15 +1,8 @@
- 
+import React from 'react';
 
-const CompBtn = ({ _setShow, _setShowBtn}) => {
-
-  function showBtnHandler(){
-    _setShow(true)
-    _setShowBtn(false)
-  }
-
-  
+const CompBtn = () => {
   return (
-    <button onClick={showBtnHandler} >시작</button>
+   <button>시작</button>
   );
 };
 
