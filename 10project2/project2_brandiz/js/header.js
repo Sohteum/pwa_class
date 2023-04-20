@@ -54,7 +54,7 @@ $(function () {
     var scrRatio = scrT / scrRange
     var dashoffset = -(1 - scrRatio)  //ratio:dashoffset 0:-1 0.5:-0.5 `:-0
     $(`header .line`).css({ 'stroke-dashoffset': dashoffset })
-    console.log(scrRatio);
+    // console.log(scrRatio);
 
   }
   fn()
@@ -82,10 +82,10 @@ $(function () {
     $(`.mBtn`).removeClass(`active`)
     var n = parseInt($(this).attr(`href`))
     // $('body,html').stop().animate({ 'scrollTop': offsetArr[n - 1] }) //없던시절에 부드럽게 할려면 에니메이트가 필요했음 트랜지션대신에 css속성을 천천히 변하게하고싶을때 사용
-    window.scrollTo({
-      top: offsetArr[n - 1],
-      behavior: 'smooth',
-    })
+    // window.scrollTo({
+    //   top: offsetArr[n - 1],
+    //   behavior: 'smooth',
+   // })//스무드스크롤 사용시 바닐라는 제이쿼리, 제이쿼리는 바닐라로 내부링크 짝을 맞춰야함
   })
 })
 

@@ -23,6 +23,7 @@
   <script src="./js/morphsvg.js"></script>
   <script src="./js/tweenmax.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/smoothScroll.js"></script>
   <script src="./js/header.js"></script>
   <script src="./js/footer.js"></script> 
 
