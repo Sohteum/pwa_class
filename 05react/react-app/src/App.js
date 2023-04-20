@@ -1,40 +1,50 @@
-import { createContext, useState } from "react";
-import CompResult from "./components/CompResult";
-import CompUl from "./components/CompUl";
+import { useEffect, useState } from "react";
+import CompTitle from "./CompTitle";
+import CompOutput from "./CompOutput";
+import CompBtn from "./CompBtn";
+import CompInterval from "./CompInterval";
 
-export const AppContext = createContext() //전달해주고싶으면 크리에잇 컨텍스트. 익스폴트를 만드시 해줘야함. 그래서 앱 안에서 만들면 안됨. app이 익스폴트가 이미 되어있어서 밖에서 해야함
-
-const fnChangePoint = function (arr) {
-  return arr.filter(v => v === 'o').length
-}
+console.log(`app outside`);//사이트 실행될때, 새로고침할때 실행
 
 function App() {
-  const [_pointArr, _setPointArr] = useState(new Array(3).fill('x'))//점수출력용//함수()는 실행하겠다는뜻.여기선 ()쓰면 안됨
-  const [_readOnly, _setReadOnly] = useState(false)
-  const [_showBtn, _setShowBtn] = useState(false)
-  const [_reset, _setReset] = useState(true)
-  const [_newColor, _setNewColor] = useState('#FFF')
-  const [_listCnt, _setListCnt] = useState(Math.ceil(Math.random()*3))
 
+  console.log(`app inside  업데이트 시작`);//업데이트시작되는순간 실행
+
+  const [_n, _setN] = useState(0)//n이 변경이 되면 app은 여기서부터 새로 그리는것. 바깥쪽을 새로그리지는 않는다.그래서 로그를 찍어보면 처음에는 둘다나오는데 클릭하면 사용하는애인 앱인 inside만 나옴. 즉 스테잇이 변경되면 랜더링이 일어난다. 인사이드만, 아웃사이드는 안일어나
+  //콘솔로그로 값을 알아보는건 좋은 방법은 아님
+  // const [_num, _setNum] = useState(1) 여기서 이거 안씀
+  const [_show, _setShow] = useState(true)
+
+
+  useEffect(() => {
+    console.log(`app inside  업데이트 완료`);// 가상돔이 만들어지는 순간 업데이트완료될때마다
+    document.querySelector('.btn').addEventListener(`click`, e => {
+      alert('tt') //업데이트 될때마다 alert를 하라는 의미. 그래서 버튼을 눌러서 숫자를 늘리면 그 숫자만큼 경고창이 계속 나옴
+    })
+  })//콘솔현재값알아볼때 사용하면 좋음. 콘솔확인시 한단계전단계가 나오니까
+
+
+  useEffect(() => {  //디펜던시유즈이펙트:최초업데이트시 실행되는 코드
+    document.querySelector('.btn').addEventListener(`click`, e => {
+      // alert('tt')
+    })
+    // setInterval(function () { //여기서 이거 안씀
+    //   _setNum(prev => prev + 1)
+    // }, 1000)
+  }, [])//셋인터벌 에드이벤트같은거 많이 쓰임
 
   return (
-    <AppContext.Provider value={{
-      _pointArr, _setPointArr, fnChangePoint, _readOnly, _setReadOnly, _setShowBtn, _reset, _newColor, _setNewColor, _listCnt, _setListCnt
-    }}> {/* 전달할 수 있는 범위가 프로바이더, value는 보낼 객체..??그래서 중괄호를 하나 더 열어서 다 담아서 보낸다 */}
-      <h1>context</h1>
+    <>
+      <CompTitle />
+      <button className="btn">useEffect event binding</button>
       <hr />
-      <CompUl />
+      <CompOutput _n={_n} />
+      <CompBtn _setN={_setN} />
       <hr />
-      <CompResult />
-      {(_showBtn) && <button onClick={e => {
-        _setReset(prev => !prev);//반대로 바꿔라!토글
-        _setReadOnly(false);
-        _setPointArr(new Array(3).fill('x'))
-        _setNewColor('#FFF')
-        _setListCnt(Math.ceil(Math.random()*3))
-      }}
-      >다시하기</button>} {/* 조건부출력 */}
-    </AppContext.Provider>
+      {_show && <CompInterval />}
+      <button onClick={e=>{_setShow(prev=>!prev)}}>인터벌토글</button>
+      <hr />
+    </>
   );
 }
 

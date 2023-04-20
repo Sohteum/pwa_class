@@ -1,7 +1,8 @@
-@use 'mixin' as m; //요즘은 import대신 use사용 권장
+@use "mixin" as m; //요즘은 import대신 use사용 권장
 
 header {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,10 +19,21 @@ header {
     h1 {
       position: relative;
       z-index: 1;
-      height: 45%;
+      // height: 45%;
+      @media #{m.$minLg} {
+        width: 170px;
+      }
+      @media #{m.$maxLg} {
+        width: 130px;
+      }
+      img {
+        width: 100%;
+      }
       a {
+        position: relative;
+        display: block;
         svg:first-child {
-          height: 100%;
+          width: 100%;
           * {
             fill: none;
             stroke: #fff;
@@ -32,6 +44,7 @@ header {
         }
         svg:last-child {
           position: absolute;
+          width: 100%;
           top: 0;
           left: 0;
           height: 100%;
@@ -54,21 +67,16 @@ header {
     // fill: rgba(#FFF,0);//넌은 색이 아니여서 트랜지션이 일어나지않음
     // transition: all 1s;
     transform: translateY(-17%);
-    @media #{m.$minLg} {
-      height: 25px;
-    }
-    @media #{m.$maxLg} {
-      height: 10px;
-    }
-    .line {
-      fill: rgba(#fff, 0);
-      transition: fill 1s;
-      stroke: rgba(m.$mainColor, 0);
-      stroke-width: 5px;
-      stroke-dasharray: 1;
-      //   stroke-dashoffset: -1;
-      // }
-    }
+    max-height: 30px; 
+  }
+  .line {
+    fill: rgba(#fff, 0);
+    transition: fill 1s;
+    stroke: rgba(m.$mainColor, 0);
+    stroke-width: 5px;
+    stroke-dasharray: 1;
+    //   stroke-dashoffset: -1;
+    // }
   }
   &.active {
     background-color: rgba(#fff, 0.9);
@@ -95,7 +103,7 @@ header {
       }
     }
   }
-} //header
+}//header
 
 .gnb_lg {
   display: flex;
@@ -211,3 +219,33 @@ header {
     display: none;
   }
 } //mBtn
+
+.scrollspy {
+  @include m.posRT(fixed, 1%, 50%, 0, -50%);
+  width: 30px;
+  //믹스블랜드모드는 형제끼리만가능함. 비슷한 색일때 안보이니까 그럴때 다른 색을 보여주는것
+  filter: drop-shadow(1px 1px 0 rgba(#000, 0.3));
+  svg {
+    width: 100%;
+    .curve {
+      fill: none;
+      stroke: var(--sub-color);
+      stroke-width: 3px;
+    }
+    .progress {
+      fill: none;
+      stroke: var(--main-color);
+      stroke-width: 6px;
+      stroke-dasharray: 1;
+      // stroke-dashoffset: 0.7; //다보임
+    }
+    .circle {
+      fill: var(--main-color);
+      offset-path: path("M37.5,25c50,50-50,50,0,100s-50,50,0,100s-50,50,0,100s-49.1,50,0,100");
+      // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
+    }
+  }
+  @media #{m.$maxLg} {
+    display: none;
+  }
+}

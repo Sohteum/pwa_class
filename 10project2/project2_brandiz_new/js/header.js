@@ -117,7 +117,6 @@ $(function () {
     if (scrT < offT2) {
       currentSection = 1
     } else if (scrT >= offT2 - 1 && scrT < offT3 - 1) {
-      /
       currentSection = 2
     } else if (scrT >= offT3 - 1 && scrT < offT4 - 1) {
       currentSection = 3

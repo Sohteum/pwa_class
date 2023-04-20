@@ -22,6 +22,7 @@ $(function () { //공통으로 사용할 js파일//헤드에 링크를 해두고
     window.scrL = $(window).scrollLeft()
     window.winW = $(window).width()
     window.winH = $(window).height()
+    window.docH = $(document).innerHeight()
 /*     console.log(scrT,scrL,winW,winH); */
 
   }

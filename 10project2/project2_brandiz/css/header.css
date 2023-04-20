@@ -1,5 +1,6 @@
 header {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,10 +18,26 @@ header .center {
 header .center h1 {
   position: relative;
   z-index: 1;
-  height: 45%;
+}
+@media screen and (min-width:1000px) {
+  header .center h1 {
+    width: 170px;
+  }
+}
+@media screen and (max-width:1000px) {
+  header .center h1 {
+    width: 130px;
+  }
+}
+header .center h1 img {
+  width: 100%;
+}
+header .center h1 a {
+  position: relative;
+  display: block;
 }
 header .center h1 a svg:first-child {
-  height: 100%;
+  width: 100%;
 }
 header .center h1 a svg:first-child * {
   fill: none;
@@ -31,6 +48,7 @@ header .center h1 a svg:first-child * {
 }
 header .center h1 a svg:last-child {
   position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
   height: 100%;
@@ -48,18 +66,9 @@ header > svg {
   top: 100%;
   width: 100%;
   transform: translateY(-17%);
+  max-height: 30px;
 }
-@media screen and (min-width:1000px) {
-  header > svg {
-    height: 25px;
-  }
-}
-@media screen and (max-width:1000px) {
-  header > svg {
-    height: 10px;
-  }
-}
-header > svg .line {
+header .line {
   fill: rgba(255, 255, 255, 0);
   transition: fill 1s;
   stroke: rgba(28, 189, 180, 0);
@@ -188,6 +197,38 @@ header.active > svg .line {
 }
 @media screen and (min-width:1000px) {
   .mBtn {
+    display: none;
+  }
+}
+
+.scrollspy {
+  position: fixed;
+  right: 1%;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 30px;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+}
+.scrollspy svg {
+  width: 100%;
+}
+.scrollspy svg .curve {
+  fill: none;
+  stroke: var(--sub-color);
+  stroke-width: 3px;
+}
+.scrollspy svg .progress {
+  fill: none;
+  stroke: var(--main-color);
+  stroke-width: 6px;
+  stroke-dasharray: 1;
+}
+.scrollspy svg .circle {
+  fill: var(--main-color);
+  offset-path: path("M37.5,25c50,50-50,50,0,100s-50,50,0,100s-50,50,0,100s-49.1,50,0,100");
+}
+@media screen and (max-width:1000px) {
+  .scrollspy {
     display: none;
   }
 }/*# sourceMappingURL=header.css.map */

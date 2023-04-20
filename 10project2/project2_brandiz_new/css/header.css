@@ -4,6 +4,7 @@ header {
   left: 0;
   width: 100%;
   height: var(--header-height);
+  height: 70px;
   transition: background-color 1s;
 }
 header .center {
@@ -86,7 +87,7 @@ header.active > svg .line {
 }
 .gnb_lg a {
   margin-left: 15px;
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: 500;
   color: var(--dark-color);
   transition: color 0.5;

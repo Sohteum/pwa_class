@@ -24,6 +24,7 @@
   <script src="./js/tweenmax.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/header.js"></script>
+  <script src="./js/footer.js"></script> 
 
   <title>OnePage Parallax</title>
 </head>
@@ -37,6 +38,7 @@
           <?php include "img/svg/logo.php" ?> <!-- 이미지 앞에 슬래시 있으면 안됨 -->
           <?php include "img/svg/logo.php" ?> <!-- 이미지 앞에 슬래시 있으면 안됨 -->
         </a>
+        <img src="./img/common/logo_title.png" alt="">
       </h1><!-- 무조건 텍스트 -->
       <nav class="gnb gnb_lg">
         <?php include "menu.php" ?>
@@ -52,5 +54,10 @@
       <?php include "menu.php" ?>
     </nav>
     <?php include 'img/svg/zigzag-horz.php' ?> <!-- 헤더기준으로 경로를 잡는다. 그리고 앞에./ 이런건 안씀 -->
+
+    <figure class="scrollspy">
+      <?php include 'img/svg/scrollspy.php' ?>
+    </figure>
+
   </header>
   <!-- 여기서는 내부링크로 하면 내가 원하는 위치제어가 안됨. top까지 올라가버림 스크립트로 해야함 -->
