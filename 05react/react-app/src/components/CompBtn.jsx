@@ -1,9 +1,11 @@
 import React from 'react';
 
-const CompBtn = () => {
-  return (
-   <button>시작</button>
-  );
+const CompBtn = ({ _setShow, _setShowBtn }) => {
+  function showBtnHandler() {
+    _setShow(true);
+    _setShowBtn(false);
+  }
+  return <button onClick={showBtnHandler}>시작</button>;
 };
 
 export default CompBtn;
