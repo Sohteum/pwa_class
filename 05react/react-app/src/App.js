@@ -14,17 +14,23 @@ function App() {
   useEffect(() => {
     console.log('App update');//정답일때만 업데이트가 일어난다 왜냐면 스테이트가 그때만 변경되잖아
   })
+  function fnresetHandler() {
+    _setUlKey(prev => prev * -1)
+    _setLiCnt(liCnt)
+    _setPointArr(new Array(liCnt).fill('x'))
+  }
+
 
   return (
     <AppContext.Provider value={{ //밖은 보간법중괄호, 안은 변수(객체)중괄호
-      _liCnt, _setLiCnt, 
+      _liCnt, _setLiCnt,
       _pointArr, _setPointArr
     }}>
       <h1>더하기 문제</h1>
       <CompUl key={_ulKey} />{/* //키를 계속 바꿔야 새로 태어나니까 스테잇으로 만들어버림 */}
       <hr />
       <CompResult />
-      <button onClick={()=>{_setUlKey(prev => prev* -1)}}>초기화</button>
+      <button onClick={fnresetHandler}>초기화</button>
     </AppContext.Provider>
   );
 }
