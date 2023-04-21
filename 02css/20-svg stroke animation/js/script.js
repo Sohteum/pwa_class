@@ -1,7 +1,7 @@
 $(function () {
   $(`.ex4 button`).click(function () {
     let leng = parseInt($(this).val())
-    console.log(leng);
+    // console.log(leng);
     $(`.ex4 .circle2`).css({ 'stroke-dashoffset': `${leng}px` })
   })
 

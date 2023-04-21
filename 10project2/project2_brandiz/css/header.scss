@@ -130,6 +130,7 @@ header {
   }
 }
 .gnb_sm {
+  display: none;
   position: absolute;
   width: 100%; //높이는 주지못함. 드롭다운메뉴니까
   top: 0;

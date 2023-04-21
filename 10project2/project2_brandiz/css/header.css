@@ -117,6 +117,7 @@ header.active > svg .line {
 }
 
 .gnb_sm {
+  display: none;
   position: absolute;
   width: 100%;
   top: 0;

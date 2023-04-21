@@ -7,6 +7,8 @@ $maxLg: "screen and (max-width:1000px)";
 $md: "screen and (min-width:600px) and (max-width:1000px)";
 $minSm: "screen and (min-width:600px)";
 $maxSm: "screen and (max-width:600px)";
+$landscape:'screen and (orientation:landscape)';//가로형
+$portrait:'screen and (orientation:portrait)';//세로형
 
 //mixin object fit(함수)
 @mixin objectFit($c) {

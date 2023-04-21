@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    .imgbox1 {
+      width: 50%;
+      overflow: hidden;
+      position: relative;
+      margin: 50px auto;
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    .imgbox1 img {
+      display: block;
+      width: 100%;
+      filter: url(#ripple-filter1);
+      transform: scale(1.5);
+    }
+
+    .imgbox2 {
+      width: 30%;
+      height: 500px;
+      position: relative;
+      margin-left: auto;
+
+    }
+
+    .imgbox2 img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: url(#ripple-filter2);
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/tweenmax.js"></script>
+  <script src="./js/fractalRipple.js"></script>
+  <script>
+    $(function () {
+      /* displacmentWave('요소선택자','필터아이디','필터이미지경로',웨이브시간:작을수록빨라짐,웨이브크기:값이클수록빨리짐) */
+      var wave1 = new displacmentWave('.imgbox1 img', '#ripple-filter1', './img/ripple.png', 5, 4)
+      var wave2 = new displacmentWave('.imgbox2 img', '#ripple-filter2', './img/ripple.png', 3, 4)
+      $('.imgbox1 img').mouseenter(function () {
+        wave1.wave()
+      })
+      setInterval(function () {
+        wave2.wave()
+      }, 3000)
+    })
+  </script>
+</head>
+
+<body>
+  <svg style="display: none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <filter id="ripple-filter1">
+        <feImage xlink="" x="0" y="0" result="rippleImage" xlink:href="./img/ripple.png" />
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" in2="rippleImage"
+          result="displacementMap" color-interpolation-filters="sRGB" scale="100" />
+        <feComposite operator="in" in2="rippleImage"></feComposite>
+      </filter>
+    </defs>
+  </svg>
+
+  <svg style="display: none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <filter id="ripple-filter2">
+        <feImage xlink="" x="0" y="0" result="rippleImage" xlink:href="./img/ripple.png" />
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" in2="rippleImage"
+          result="displacementMap" color-interpolation-filters="sRGB" scale="100" />
+        <feComposite operator="in" in2="rippleImage"></feComposite>
+      </filter>
+    </defs>
+  </svg>
+
+  <figure class="imgbox1">
+    <img class="img" src="./img.jpg" alt="">
+  </figure>
+
+  <figure class="imgbox2">
+    <img class="img" src="./img.jpg" alt="">
+  </figure>
+
+</body>
+
+</html>

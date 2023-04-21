@@ -22,10 +22,12 @@
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="./js/morphsvg.js"></script>
   <script src="./js/tweenmax.js"></script>
+  <script src="./js/fractalRipple.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/smoothScroll.js"></script>
   <script src="./js/header.js"></script>
   <script src="./js/footer.js"></script> 
+  <script src="./js/section1.js"></script> 
 
   <title>OnePage Parallax</title>
 </head>
