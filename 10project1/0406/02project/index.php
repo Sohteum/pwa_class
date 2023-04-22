@@ -33,7 +33,7 @@
         <figure>
           <img src="${v.path}" alt="">
           <figcaption>
-          <h3>${v.title}</h3>
+          <h5>${v.title}</h5>
           <p>${v.desc}</p>
           </figcaption>
         </figure>

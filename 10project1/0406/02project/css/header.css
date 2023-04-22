@@ -15,14 +15,14 @@ header {
   width: 100%;
   max-width: 1200px;
   height: inherit;
-  margin: auto;
+  margin: 0 auto;
   box-sizing: border-box;
-  padding: 20px 10px;
+  /* padding: 10px 10px; */
 }
 
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: 400;
   font-family: 'Roboto Slab';
   margin-left: 30px;
@@ -53,11 +53,11 @@ h1 {
 
 @media screen and (max-width:1055px) {
   body {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 
   header {
-    height: 80px;
+    height: 70px;
   }
 
   h1 {
@@ -114,7 +114,7 @@ nav.member a i {
 }
 
 .nav_bar.lg>ul>li>a {
-  
+
   position: relative;
   display: block;
   height: 100%;
@@ -142,26 +142,26 @@ nav.member a i {
 }
 
 .nav_bar.lg>ul>li:hover>a>span {
-    margin-top: -40px;
-  }
-  
-  .nav_bar.lg>ul>li:hover>a {
-    color: var(--point-color);
-  }
-  
-  .nav_bar.lg>ul>li>ul>li>a {
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 0.9em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding:0 10px;
-    background-color: var(--main-color);
-    color: #FFF;
-    transition: all 0.3s;
+  margin-top: -40px;
+}
+
+.nav_bar.lg>ul>li:hover>a {
+  color: var(--point-color);
+}
+
+.nav_bar.lg>ul>li>ul>li>a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  background-color: var(--main-color);
+  color: #FFF;
+  transition: all 0.3s;
 }
 
 .nav_bar.lg>ul>li>ul>li>a:hover {
