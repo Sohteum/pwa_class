@@ -5,9 +5,8 @@ $(window).load(function () {
     $(`.preloader`).addClass('active')
     $(`body`).css({ 'overflow': `auto` })
     setTimeout(function () {
-      $(`.preloader`).hide()
+      $(`.preloader`).fadeOut()
     }, 500)
   })
 })
 
-/* 바디나 이런것들 레디이벤트 안에 넣지 않아도 됨 */

@@ -20,6 +20,7 @@
 </head>
 
 <body>
+  <?php include "preloader.php" ?>
   <script src="header.js"></script>
   <script src="./js/nav.js"></script>
   <header>
