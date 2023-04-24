@@ -5,17 +5,22 @@
   <figure class="papers">
     <!-- 물방울을 랜덤하게 넣을 예정 -->
     <script>
-      for(let i=1; i<= 70; i++){
+      for (let i = 1; i <= 70; i++) {
         $(`.section1 .papers`).append(`
         <img src="img/paper/paper${Math.ceil(Math.random()*9)}.png" alt/>
         `)
         $(`.section1 .papers img:last-child`).css({
-          'left':`${Math.floor(Math.random()*100)}%`,//반응형이니까 퍼센트
-          'width':`${Math.random()*1+1}%`,
-          'animation-duration':`${Math.random()*5+5}s`
+          'left': `${Math.floor(Math.random()*100)}%`, //반응형이니까 퍼센트
+          'width': `${Math.random()*1+1}%`,
+          'animation-duration': `${Math.random()*5+5}s`
         })
       }
     </script>
+  </figure>
+  <figure class="boy">
+    <img class="original" src="./img/section1/section1_boy.png" alt="">
+    <img class="glitch glitch1" src="./img/section1/section1_boy.png" alt="">
+    <img class="glitch glitch2" src="./img/section1/section1_boy.png" alt="">
   </figure>
   <div class="desc">
     <figure class=title>
@@ -27,11 +32,6 @@
       <img src="./img/section1/section1_text_small.png" alt="">
     </figure>
   </div>
-  <figure class="boy">
-    <img class="original" src="./img/section1/section1_boy.png" alt="">
-    <img class="glitch glitch1" src="./img/section1/section1_boy.png" alt="">
-    <img class="glitch glitch2" src="./img/section1/section1_boy.png" alt="">
-  </figure>
 
   <svg style="display: none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>

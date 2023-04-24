@@ -8,7 +8,7 @@ $(function () {
       4, 4)
     setInterval(function () {
       wave1.wave()
-    }, 6000)
+    }, 10000)
   })//load
 
 
@@ -27,7 +27,7 @@ $(function () {
       $(`.section1`).addClass('active')
     }
     offT = $(`.section1`).offset().top
-    meta = 0 + (scrT - offT) * 0.3 //역삼각형//여기서 offt는 이미 0 이지만 걍 써줌
+    meta = 0 + (scrT - offT) * 0.1 //역삼각형//여기서 offt는 이미 0 이지만 걍 써줌
     $(`.section1 .boy`).css({ 'transform': `translateY(${meta}px)` })
 
     meta = 1 + (scrT - offT) * 0.001
