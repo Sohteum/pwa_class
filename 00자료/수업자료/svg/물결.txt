@@ -1,0 +1,8 @@
+<svg>
+<filter id="filter">
+<feTurbulence id="water" numOctaves="3" seed="1" baseFrequency="0.02 0.5" />
+<feDisplacementMap scale="10" in="SourceGraphic" />
+<animate href="#water" attributeName="baseFrequency" keyTimes="0;0.5;1"
+values="0.002;0.008;0.002" dur="10s" repeatCount="indefinite"/>
+</filter>
+</svg>

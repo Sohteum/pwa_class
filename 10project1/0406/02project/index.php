@@ -30,14 +30,14 @@
     $(`.feature ul`).append(`
     <li>
       <a href="${v.link}">
-        <figure>
-          <img src="${v.path}" alt="">
-          <figcaption>
-          <h5>${v.title}</h5>
-          <p>${v.desc}</p>
-          </figcaption>
-        </figure>
-      </a>
+           <figure>
+            <div><img src="${v.path}" alt=""></div>
+            <figcaption>
+            <h5>${v.title}</h5>
+            <p>${v.desc}</p>
+            </figcaption>
+          </figure>
+        </a>
     </li>
     `)
   })

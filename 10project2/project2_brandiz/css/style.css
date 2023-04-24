@@ -115,3 +115,13 @@ main {
 }
 
 /* 10에서 100은정상상태 */
+
+
+@keyframes bubble {
+  0%{top:110%;}
+  100%{top:-10%}
+}
+@keyframes glow {
+  0%{filter:drop-shadow(0 0 0 #FFF);}
+  100%{filter:drop-shadow(0 0 20px #FFF);}
+}

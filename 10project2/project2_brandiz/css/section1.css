@@ -103,6 +103,19 @@
   filter: saturate(300%) hue-rotate(150deg);
   animation: glitch 1.5s infinite 0.2s;
 }
+.section1 .bubbles {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.section1 .bubbles img {
+  position: absolute;
+  animation-name: bubble;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
 /* section1 motion */
 .section1 .desc .title svg * {

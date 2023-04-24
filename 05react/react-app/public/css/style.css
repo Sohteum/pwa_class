@@ -1,0 +1,22 @@
+body {
+  background-color: thistle;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  opacity: 0.2;
+  transition: all 1s;
+}
+.modal.active {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
