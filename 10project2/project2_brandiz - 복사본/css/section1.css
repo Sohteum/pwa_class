@@ -86,20 +86,20 @@
 }
 @media screen and (orientation:landscape) {
   .section1 .boy {
-    right: -10%;
-    bottom: -20%;
-    height: 90%;
+    right: 0%;
+    bottom: 50%;
+    height: 50%;
   }
 }
 @media screen and (orientation:portrait) {
   .section1 .boy {
-    right: max(-40%, -150px);
-    bottom: 0;
+    right: max(-10%, -150px);
+    bottom: 50px;
     height: 50%;
   }
 }
 .section1 .boy img {
-  height: 100%;
+  width: 100%;
 }
 .section1 .boy img.original {
   position: relative;

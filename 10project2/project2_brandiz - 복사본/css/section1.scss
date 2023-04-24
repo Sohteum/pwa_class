@@ -72,17 +72,20 @@
   .boy {
     position: absolute;
     @media #{m.$landscape} {
-      right: -10%;
-      bottom: -20%;
-      height: 90%;
+      right: 0%;
+      bottom: 50%;
+      height: 50%;
+      // width: min(20%, 300px);
     }
     @media #{m.$portrait} {
-      right: max(-40%, -150px);
-      bottom: 0;
+      right: max(-10%, -150px);
+      bottom: 50px;
       height: 50%;
+      // width: min(10%, 150px);
+
     }
     img {
-      height: 100%;
+      width: 100%;
       &.original {
         position: relative;
       }
