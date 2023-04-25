@@ -1,26 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CompPopup from "./components/CompPopup";
+
+// window,localStorage.setItem('expires','들어감')  //이렇게 해주면 스토리지가 생기기때문에 팝업이 안나온다. 주석처리 안해주면 계속 팝업 안나와
+
 
 function App() {
-  // const day = new Date()
-  // day.getTime()
-  let timeStamp = Date.now()//1000곱한 시간이 지금까지 흐른 초, 실시간으로 구해야함(업데이트되어야함, 그래서 셋인터벌)
-  //내가 만약 미래 특정시간(바뀌지 않는 시간)을 구하고 싶으면 미래시간 - 지금시간을 빼면 됨.
-  const dDayTimeStamp = new Date(2023,4,26).getTime() //이렇게 만들면 현재 날짜 아니면 안에 날짜를 넣어줘야 디데이가 됨
-  console.log(dDayTimeStamp);
-
+  const [_show, _setShow] = useState(true)
   useEffect(() => {
-    let intervalID = setInterval(() => {
-      timeStamp = Date.now()
-      // console.log(timeStamp);
-    }, 1000)//항상 습관적으로 클리어 할것
-    return (() => {
-      clearInterval(intervalID)
-    })
-  }, [])
-  // console.log(timeStamp);
+    if (window.localStorage.getItem('expires')) {//팝업숨기기 //여기가 유효기간. 이거보다 커지면 유효기간이 지난것.
+      if (Date.now()< parseInt(window.localStorage.getItem('expires'))) { //앱이 실행된 시간으로부터 팝업유효기간이 지나지 않았다면
+        _setShow(false)
+      } else {
+        _setShow(true)
+        window.localStorage.removeItem('expires')
+      }
+    }
+      //이런게 존재하니?지금은 없엉. 보여줄지 말지 결정할건데. 스토리지에 없으면 보여주고 스토리지에 있으면 안보여주고
+    }, [])
   return (
     <>
-      app
+      <h1>유효기간 팝업</h1>
+      {_show && <CompPopup _setShow={_setShow} />}
     </>
   );
 }
