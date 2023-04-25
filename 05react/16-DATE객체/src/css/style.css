@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(223, 208, 223);
+}
+
+.clock {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgb(23, 124, 102);
+}
+.clock .pin {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: center bottom;
+}
+.clock .hour {
+  width: 16px;
+  height: 70px;
+  left: calc(50% - 8px);
+  background-color: rgb(0, 0, 0);
+}
+.clock .min {
+  width: 10px;
+  height: 100px;
+  left: calc(50% - 5px);
+  background-color: rgb(255, 190, 104);
+}
+.clock .sec {
+  width: 4px;
+  height: 130px;
+  left: calc(50% - 2px);
+  background-color: rgb(255, 253, 255);
+}/*# sourceMappingURL=style.css.map */
