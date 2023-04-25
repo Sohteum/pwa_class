@@ -18,14 +18,7 @@
   }
 }
 
-// {
-//   localStorage.setItem('n',1)  //let n = 1을 이런식으로 쓴거야 문자형태로 저장됨 내가 저장해놨으니까 위에 이 문장을 지운다고 하더라도 하드에서 꺼내올 수 있음
-//   let n = localStorage.getItem('n')
-//   console.log(n);
-//   localStorage.removeItem('n')
-//   //console.log(n,parseInt(n));
-//   // 로컬스토리지에 들어가면 무조건 글자로 저장이됨. 그러니까 parseInt해준거
-// }
+
 
 // {
 //   let chk = true

@@ -1,4 +1,4 @@
-@use "mixin" as m; //요즘은 import대신 use사용 권장
+@use 'mixin' as m; //요즘은 import대신 use사용 권장
 
 header {
   position: fixed;
@@ -67,7 +67,7 @@ header {
     // fill: rgba(#FFF,0);//넌은 색이 아니여서 트랜지션이 일어나지않음
     // transition: all 1s;
     transform: translateY(-17%);
-    max-height: 30px; 
+    max-height: 30px;
   }
   .line {
     fill: rgba(#fff, 0);
@@ -103,7 +103,7 @@ header {
       }
     }
   }
-}//header
+} //header
 
 .gnb_lg {
   display: flex;
@@ -228,21 +228,20 @@ header {
   filter: drop-shadow(1px 1px 0 rgba(#000, 0.3));
   svg {
     width: 100%;
-    .curve {
+    .path {
       fill: none;
       stroke: var(--sub-color);
       stroke-width: 3px;
     }
-    .progress {
-      fill: none;
-      stroke: var(--main-color);
-      stroke-width: 6px;
-      stroke-dasharray: 1;
-      // stroke-dashoffset: 0.7; //다보임
-    }
-    .circle {
-      fill: var(--main-color);
-      offset-path: path("M37.5,25c50,50-50,50,0,100s-50,50,0,100s-50,50,0,100s-49.1,50,0,100");
+    // .progress {
+    //   fill: none;
+    //   stroke: var(--main-color);
+    //   stroke-width: 6px;
+    //   stroke-dasharray: 1;
+    //   // stroke-dashoffset: 0.7; //다보임
+    // }
+    image {
+      offset-path: path('M51.5 0v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275');
       // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
     }
   }
