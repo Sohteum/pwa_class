@@ -5,8 +5,20 @@
 </svg> -->
 
 
+<!-- <svg   viewBox="0 0 53 775">
+  <path     stroke-miterlimit="10"   d="M51.5 0v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275"/>
+</svg> -->
 
-<svg viewBox="0 0 53 775">
-	<image x="150" y="150" width="200" height="200" href="../section1/star.png" />
-	<path class="path" d="M51.5 0v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275" />
+
+
+<svg xml:space="preserve" viewBox="0 0 250 825">
+	<path class="path" fill="none" stroke-miterlimit="10" d="M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275" />
+	<image width="40	" height="40" x="-15" y="-20	" class="star" href="img/section1/star.png" />
 </svg>
+
+<!-- <svg viewBox="0 0 250 825">
+	<path class="path"   preserveAspectRatio="none" d="M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275"/>
+	<image width="50" height="50" x="-120" y="-120	" class="star" href="img/section1/star.png"/>
+</svg> -->
+
+<!-- preserveAspectRatio="none" -->

@@ -8,7 +8,9 @@
   <?php include "section4.php" ?>
   <?php include "section5.php" ?>
   <?php include "section6.php" ?>
-  
 </main>
+<?php include "modal.php" ?>
+
+
 
 <?php include "footer.php" ?>

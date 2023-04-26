@@ -85,7 +85,7 @@ $(function () {
     // window.scrollTo({
     //   top: offsetArr[n - 1],
     //   behavior: 'smooth',
-    // })//스무드스크롤 사용시 바닐라는 제이쿼리, 제이쿼리는 바닐라로 내부링크 짝을 맞춰야함
+   // })//스무드스크롤 사용시 바닐라는 제이쿼리, 제이쿼리는 바닐라로 내부링크 짝을 맞춰야함
   })
 })
 
@@ -132,9 +132,10 @@ $(function () {
     var scrRange = docH - winH
     var scrRatio = scrT / scrRange
 
-    $(`.scrollspy image`).css({ 'offset-distance': `${scrRatio * 100}%` })//동그라미움직이기
-    $(`.scrollspy .path`).css({ 'stroke-dashoffset': `${1 - scrRatio}px` })//선 움직이기
+    $(`.scrollspy .star`).css({ 'offset-distance': `${scrRatio * 100}%` })//동그라미움직이기
+    $(`.scrollspy .path`).css({ 'stroke-dashoffset': `${1-scrRatio}px` })//선 움직이기
   }//0일때 1이되어야하고 1일때 0이 되어야함
+
   fn()
   $(window).scroll(function () {
     reqID = requestAnimationFrame(fn)

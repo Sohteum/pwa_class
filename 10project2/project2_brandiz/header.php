@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/isotope.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/section1.css">
@@ -18,11 +19,17 @@
   <link rel="stylesheet" href="./css/section4.css">
   <link rel="stylesheet" href="./css/section5.css">
   <link rel="stylesheet" href="./css/section6.css">
+  <link rel="stylesheet" href="./css/modal.css">
   <script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+  <script src="./js/jquery.isotope.js"></script>
+  <script src="./js/hoverBox.js"></script>
+  <script src="./js/particles.js"></script>
   <script src="./js/morphsvg.js"></script>
   <script src="./js/tweenmax.js"></script>
   <script src="./js/fractalRipple.js"></script>
+  <script src="./js/jquery.ripples.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/smoothScroll.js"></script>
   <script src="./js/header.js"></script>

@@ -1,7 +1,7 @@
 <script src="./js/section2.js"></script>
 
 <section class="section2">
-  <script src="js/particles.js"></script>
+  <!-- <script src="js/particles.js"></script> -->
   <script src="js/app_particle_default.js"></script>
   <div id="particles-js"></div>
   <img class="bg" src="./img/section2/section2_bg.png" alt="">

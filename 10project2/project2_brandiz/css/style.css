@@ -62,7 +62,7 @@ main {
   }
 }
 
-@keyframes glitch  {
+@keyframes glitch {
   0% {
     transform: translate(-2%);
   }
@@ -104,12 +104,12 @@ main {
   }
 
   20% {
-    transform: translate(0%); 
+    transform: translate(0%);
     opacity: 0;
   }
 
   100% {
-    transform: translate(0%); 
+    transform: translate(0%);
     opacity: 0;
   }
 }
@@ -118,10 +118,43 @@ main {
 
 
 @keyframes bubble {
-  0%{top:110%;}
-  100%{top:-10%}
+  0% {
+    top: 110%;
+  }
+
+  100% {
+    top: -10%
+  }
 }
+
 @keyframes glow {
-  0%{filter:drop-shadow(0 0 0 #FFF);}
-  100%{filter:drop-shadow(0 0 20px #FFF);}
+  0% {
+    filter: drop-shadow(0 0 0 #FFF);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px #FFF);
+  }
+}
+
+.title {
+  position: relative;
+  width: min(95%, 1000px);
+  margin: 0 auto;
+  margin-bottom: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: min(10vw, 5em);
+  color: #FFF;
+  /* font-weight: 600; */
+
+}
+
+.title::before {
+  content: attr(data-content);
+  /*  가상엘리먼트의 컨텐트 속성에만 attr사용가능 */
+  position: absolute;
+  color:var(--main-color);
+  height: 50%;
+  overflow: hidden;
 }

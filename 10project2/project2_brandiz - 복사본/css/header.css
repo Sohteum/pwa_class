@@ -204,29 +204,23 @@ header.active > svg .line {
 
 .scrollspy {
   position: fixed;
-  right: 1%;
+  right: -2%;
   top: 50%;
   transform: translate(0, -50%);
-  width: 30px;
+  width: 12%;
   filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
 }
 .scrollspy svg {
   width: 100%;
 }
-.scrollspy svg .curve {
+.scrollspy svg .path {
   fill: none;
-  stroke: var(--sub-color);
+  stroke: var(--dark-color);
   stroke-width: 3px;
+  margin: 10px;
 }
-.scrollspy svg .progress {
-  fill: none;
-  stroke: var(--main-color);
-  stroke-width: 6px;
-  stroke-dasharray: 1;
-}
-.scrollspy svg .circle {
-  fill: var(--main-color);
-  offset-path: path("M37.5,25c50,50-50,50,0,100s-50,50,0,100s-50,50,0,100s-49.1,50,0,100");
+.scrollspy svg .star {
+  offset-path: path("M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275");
 }
 @media screen and (max-width:1000px) {
   .scrollspy {

@@ -1,4 +1,4 @@
-@use 'mixin' as m; //요즘은 import대신 use사용 권장
+@use "mixin" as m; //요즘은 import대신 use사용 권장
 
 header {
   position: fixed;
@@ -222,17 +222,32 @@ header {
 } //mBtn
 
 .scrollspy {
-  @include m.posRT(fixed, 1%, 50%, 0, -50%);
-  width: 30px;
+  @include m.posRT(fixed, -2%, 50%, 0, -50%);
+  width: 12%;
   //믹스블랜드모드는 형제끼리만가능함. 비슷한 색일때 안보이니까 그럴때 다른 색을 보여주는것
   filter: drop-shadow(1px 1px 0 rgba(#000, 0.3));
   svg {
     width: 100%;
+    // background-color: red;
     .path {
       fill: none;
-      stroke: var(--sub-color);
-      stroke-width: 3px;
+      stroke: var(--dark-color);
+      stroke-width: 3px; 
+      margin: 10px;
+      // background-color: red;
+    } 
+    .star {
+      
+      offset-path: path(
+        "M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275"
+      );
+      // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
     }
+    // .curve {
+    //   fill: none;
+    //   stroke: var(--sub-color);
+    //   stroke-width: 3px;
+    // }
     // .progress {
     //   fill: none;
     //   stroke: var(--main-color);
@@ -240,10 +255,11 @@ header {
     //   stroke-dasharray: 1;
     //   // stroke-dashoffset: 0.7; //다보임
     // }
-    image {
-      offset-path: path('M51.5 0v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275');
-      // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
-    }
+    // .circle {
+    //   fill: var(--main-color);
+    //   offset-path: path("M37.5,25c50,50-50,50,0,100s-50,50,0,100s-50,50,0,100s-49.1,50,0,100");
+    //   // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
+    // }
   }
   @media #{m.$maxLg} {
     display: none;
