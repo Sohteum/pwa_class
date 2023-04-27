@@ -6,7 +6,7 @@ $(function () {
     var meta = 0 + (scrT - (offT - 60)) * 0.05  //헤더 높이때문에 60 빼즘
     if (meta > 20) { meta = 20 }
     if (meta < -20) { meta = -20 }
-    $(`.section2 .bg`).css({ 'transform': `scale(1.1) translateY(${meta}%) translateX(-50%)` })//구멍 안생기게할려면 비율이 0.5이상 움직이면 안됨
+    $(`.section2 .bg`).css({ 'transform': `scale(1.4) translateY(${meta}%) translateX(-40%)` })//구멍 안생기게할려면 비율이 0.5이상 움직이면 안됨
 
   }
   fn()

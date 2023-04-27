@@ -73,12 +73,40 @@
             fill: none;
             stroke: var(--main-color);
             stroke-width: 15px;
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+            transition: stroke-dashoffset 2s;
+            transform-origin: center; //같은말적을때는 하나로
+            transform: rotate(-90deg);
           }
         }
         .textbox {
           text-align: center;
           @include m.posLT(absolute, 50%, 50%, -50%, -50%);
-          background-color: red;
+          i {
+            //폰트어썸에서 인라인블럭으로 바꿔줌 그래서
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            background-color: var(--main-color);
+            color: #fff;
+          }
+          h3 {
+            margin: 5px 0;
+            color: #FFF;
+            font-weight: 600;
+            text-shadow: 1px 1px 0 #000;
+          }
+          b {//클글자는 라인하이트를 조절하면 간격조절이 편함
+            line-height: 0.7em;
+            font-size: min(7vw, 3.5em); //가장 작은 사이즈에서 본다음에 최대 사이즈를 설정한다.
+            color: #fff;
+            text-shadow: 1px 1px 0 #000;
+          }
+        }
+        &.active .progress {
+          stroke-dashoffset: 0;
         }
       }
     }

@@ -33,7 +33,7 @@
     if (e.wheelDelta !== prevWheelDelta) scrollSpeed = 0 
     //지금 휠값!==아까휠값 
     e.preventDefault() //브라우저의 마우스 휠기능을 죽임
-    scrollSpeed += e.wheelDelta / -120 * 10
+    scrollSpeed += e.wheelDelta / -120 * 40
     
     prevWheelDelta = e.WheelDelta //120현재휠값 일단저장. 다음에 휠하면 이거랑 저거랑 비교할려고
 

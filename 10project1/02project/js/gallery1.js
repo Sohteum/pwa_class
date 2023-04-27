@@ -8,8 +8,8 @@ $(function () {
       var offT = $(this).offset().top
       var elH = $(this).innerHeight()
       var meta = 0 + (scrT - (offT - winH * 0.5 + elH * 0.5)) * 0.1
-      if (meta > 10) { meta = 10 }
-      if (meta < -10) { meta = -10 }
+      if (meta > 8) { meta = 8 }
+      if (meta < -8) { meta = -8 }
 
       $(this).children(`img`).css({ 'transform': `scale(1.3) translateY(${meta}%)` })
     })

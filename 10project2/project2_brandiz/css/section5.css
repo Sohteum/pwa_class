@@ -86,6 +86,11 @@
   fill: none;
   stroke: var(--main-color);
   stroke-width: 15px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2s;
+  transform-origin: center;
+  transform: rotate(-90deg);
 }
 .section5 .progress ul li .textbox {
   text-align: center;
@@ -93,5 +98,27 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: red;
+}
+.section5 .progress ul li .textbox i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  background-color: var(--main-color);
+  color: #fff;
+}
+.section5 .progress ul li .textbox h3 {
+  margin: 5px 0;
+  color: #FFF;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 #000;
+}
+.section5 .progress ul li .textbox b {
+  line-height: 0.7em;
+  font-size: min(7vw, 3.5em);
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+}
+.section5 .progress ul li.active .progress {
+  stroke-dashoffset: 0;
 }/*# sourceMappingURL=section5.css.map */

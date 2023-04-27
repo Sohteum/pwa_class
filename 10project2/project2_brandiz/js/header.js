@@ -132,7 +132,7 @@ $(function () {
     var scrRange = docH - winH
     var scrRatio = scrT / scrRange
 
-    $(`.scrollspy .progress`).css({ 'stroke-dashoffset': `${1 - scrRatio}` })//선 움직이기
+    $(`.scrollspy .progress`).css({ 'stroke-dashoffset': 1 - scrRatio })//선 움직이기
     $(`.scrollspy .circle`).css({ 'offset-distance': `${scrRatio * 100}%` })//동그라미움직이기
   }//0일때 1이되어야하고 1일때 0이 되어야함
 

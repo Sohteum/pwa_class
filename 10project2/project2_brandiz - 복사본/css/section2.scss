@@ -2,10 +2,11 @@
 
 .section2 {
   .bg {
-    position: relative;
+    // position: relative;
     height: 100vh;
-    object-fit: cover;
-    object-position: center;
+    width: 100vw;
+    // object-fit: contain;
+    // object-position: center;
     // animation: glow 5s infinite alternate;
   }
   .carousel {

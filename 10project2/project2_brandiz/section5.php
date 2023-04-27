@@ -26,7 +26,7 @@
         <div class="textbox">
           <i class="fa-regular fa-building"></i>
           <h3>설립년도</h3>
-          <b>2023</b>
+          <b data-t="2023" class="progress_n progress_n1">0</b>
         </div>
       </li>
       <li>
@@ -34,7 +34,7 @@
         <div class="textbox">
           <i class="fa-solid fa-hand-holding-dollar"></i>
           <h3>계약건수</h3>
-          <b>125</b>
+          <b data-t="125" class="progress_n  progress_n2">0</b>
         </div>
       </li>
       <li>
@@ -42,7 +42,7 @@
         <div class="textbox">
           <i class="fa-regular fa-handshake"></i>
           <h3>파트너</h3>
-          <b>130</b>
+          <b data-t="130" class="progress_n progress_n3">0</b>
         </div>
       </li>
       <li>
@@ -50,7 +50,7 @@
         <div class="textbox">
           <i class="fa-solid fa-id-card"></i>
           <h3>특허보유</h3>
-          <b>55</b>
+          <b data-t="55" class="progress_n progress_n4">0</b>
         </div>
       </li>
     </ul>
