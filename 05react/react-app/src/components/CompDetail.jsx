@@ -8,13 +8,16 @@ const CompDetail = () => {
   const { id } = params
 
   const obj = _todoArr.find(v => v.id === parseInt(id))
-
-  console.log(obj);
+  const { title, date, time, desc } = obj
 
 
   return (
     <div>
-      세부목록
+      <h2>세부일정내용</h2>
+      <p>{title}</p>
+      <p>{date}</p>
+      <p>{time}</p>
+      <p>{desc}</p>
     </div>
   );
 };
