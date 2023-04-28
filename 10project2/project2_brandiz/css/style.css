@@ -147,7 +147,6 @@ main {
   font-size: min(10vw, 5em);
   color: #FFF;
   /* font-weight: 600; */
-
 }
 
 .title::before {

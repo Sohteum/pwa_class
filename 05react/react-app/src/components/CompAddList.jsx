@@ -8,7 +8,7 @@ const CompAddList = () => {
   const navi = useNavigate()
 
   const fnSubmitHandler = function (e) {
-    let id = Date.now()
+    let id = Date.now() //출력할때 쓰려고, 반복되는게 리스트인데 ,배열로만들어야하는데, 배열로만들때는 무조건 전부다른 아이디를 가져야하니까
     e.preventDefault()
     let title = document.querySelector('.title').value
     let date = document.querySelector('.date').value
@@ -20,7 +20,7 @@ const CompAddList = () => {
     //  _setTodoArr(todoArr)
     _setTodoArr([..._todoArr, obj])//이말인 즉슨 새로운 배열로 만들어서 오비제이에 푸시해서 바꿔준다
     alert('일정이 등록되었습니다.')
-    navi('/')
+    navi('/') //lacation.href('/') vanila
   }
 
 
