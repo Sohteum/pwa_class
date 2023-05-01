@@ -143,6 +143,10 @@
       if (a.date.time < b.date.time) return -1
       if (a.date.time === b.date.time) return 0
     })
+// a-b 오름차순 정렬
+// b-a 내림차순 정렬
+
+
     /* 출력 */
 
     let output = document.querySelector(`.ex5 .output`)

@@ -1,0 +1,212 @@
+■ 플러그인 설치방법
+  ● 대시보드/플러그인/새로추가
+  ● 검색설치 혹은 플러그인파일(zip파일)을 업로드
+  ● 설치 후 활성화
+  ● 설치된 플러그인 메뉴는 대시보드메뉴에, 설정, 도구메뉴에 등록된다
+
+■ 플러그인 출력방법
+  ● shortcode를 관리자화면에서 추가, 코드편집기를 사용하길 권장
+    예시 : [shortcode]
+  ● 템플릿을 이용해 출력
+    예시 : <?php echo do_shortcode('[shortcode]');?> 
+    
+■ Remove Category URL 
+  ● url의 category출력을 제거
+  ● 별도의 설정이 필요하지 않음
+
+■ Breadcrumb NavXT
+  ● 웹사이트 Breadcrumb 출력
+  ● 대시보드/설정 안으로 메뉴가 등록됨
+  ● 사용법
+    -출력함수
+    <?php if(function_exists('bcn_display')){ bcn_display(); }?>
+  ● 세부옵션
+    - General / Breadcrumb Separator : 구분기호
+    - General / Home Template , Home Template (Unlinked) : 홈출력설정
+    - 페이지나 글 출력방식 설정
+      · Post Types / 글 template 안쪽의 내용은 여백 한칸 추가
+      · Post Types / 글 template 또는 페이지 template 태그를 수정
+      · Texonomies / 카테고리 template 태그를 수정
+
+■ Regenerate Thumbnails
+  ● 대표이미지 크기등을 일괄처리 재설정
+  ● 사용법
+    - 대시보드/설정/미디어/썸네일크기 변경후 저장
+    - 대시보드/도구/Regenerate thumbnails
+      · delete thumb... 체크, 
+      · 버튼클릭
+
+■ contact form 7 
+  ● 관리자(대시보드/설정/일반/관리자 이메일 주소)에게 메일보내기
+  ● 사용법
+    - 설치 후 대시보드/연락체 메뉴가 추가됨
+    - 제공되는 shortcode를 해당 페이지에서 출력
+
+■ kboard
+  ● 게시판 플러그인
+  ● 대시보드/kboard메뉴
+    ○ 게시판생성
+      - 기본설정  
+        · 출력될 페이지 선택
+        · 스킨
+        · 최근게시물 코드
+          <?php 
+            $homeURL = home_url(bloginfo('url'));
+            $kboardID = "1" ;		
+            $kboardPAGE = "notice";
+            $kboardCnt = "3";
+            $kboardSTR = '[kboard_latest id="1" url="'.$homeURL.$kboardPAGE.'" rpp="'.$kboardCnt.'"]'; 
+            echo do_shortcode( $kboardSTR ); 
+          ?>
+      - 권한설정
+        · 읽기, 쓰기 권한 
+        · 제한없음, 로그인사용자, 직접선택(관리자선택가능)
+    - 게시판목록 및 관리
+
+  ● 최신글
+    ○ 게시판설정
+      대시보드 / kboard / 게시판목록및관리 / 기본설정 / 최신글이동페이지 연동
+
+    ○ 출력코드
+      <?php 
+      $homeURL = home_url( '/' );
+      $kboardID = "1" ; //게시판id		
+      $kboardPAGE = "notice"; //페이지 슬러그
+      $kboardCnt = "5";
+      $kboardSTR = '[kboard_latest id="1" url="'.$homeURL.$kboardPAGE.'" rpp="'.$kboardCnt.'"]'; 
+      echo do_shortcode( $kboardSTR ); 
+      ?>
+
+
+■ Meta Box (Metabox.io)
+  ● 글의 메타정보를 추가로 설정할 수 있는 플러그인
+  ● functions.php
+  add_filter( 'rwmb_meta_boxes', 'your_prefix_meta_boxes' );
+  function your_prefix_meta_boxes( $meta_boxes ) {
+    $meta_boxes[] = array(
+      'title'      => '상품세부정보',
+      'post_types' => 'post',
+      'fields'     => array(
+        array(
+          'id'   => 'producer',
+          'name' => '제작사',
+          'type' => 'text',
+        ),
+        array(
+          'id'   => 'model-id',
+          'name' => '모델명',
+          'type' => 'text',
+        ),  
+        array(
+          'id'   => 'date',
+          'name' => '제작일자',
+          'type' => 'date',
+        ),
+        array(
+          'id'   => 'price',
+          'name' => '가격',
+          'type' => 'number',
+        ),
+        array(
+          'id'   => 'desc',
+          'name' => '상품설명',
+          'type' => 'text',
+        ),
+      ),
+    );
+    return $meta_boxes;
+  }
+  ● 출력함수
+  <?php echo rwmb_meta( '출력하고 싶은 목록의 아이디' );  ?>
+
+■ 요스트 글 복제
+
+■ Ultimate FAQs 
+  - 대시보드 메뉴에 추가됨
+  - FAQ category 생성
+  - add New (질문글 작성 후 카테고리선택)
+  - 출력할 페이지에 하단의 숏코드를 추가
+    [ultimate-faqs include_category='category1, category2'] 
+
+■ contact Form 7
+  - 메일 서버가 설치된 호스팅에서 사용 가능 
+  - 대시보드의 연락처 메뉴가 추가됨
+  - 연락처양식 쇼트코드를 이용해 출력
+  ● 메일설정
+    - 양식 (메일작성양식)
+      예시 :
+      데이터명이 your-name인 input type text
+      [text* your-name autocomplete:name]
+    - 메일 (메일수신양식)
+      보내신분 : [your-name]
+
+■ wp-members
+  - 관리자/설정/wp-members 메뉴 추가됨
+  - 설정 / 일반 / 멤버십 / 누구나 가입할 수 있습니다 옵션 체크해제 확인
+  - wp-members 메뉴 
+    Content Restriction 옵션을 Do Not Restriction으로 변경
+
+  ● 로그인 페이지 생성
+    [wpmem_form login]
+    <div class="logged-container">
+      <b class="login-message">로그인 완료,</b>
+      <b class="login-id">[wpmem_field field=user_login]</b>님 환영합니다.`
+    </div>
+    [/wpmem_form]
+
+  ● 회원가입 페이지 생성
+    [wpmem_form register]
+
+  ● 회원정보 페이지 생성
+    [wpmem_profile]
+
+  ● 페이지 생성 후 관리자/설정/wp-members 메뉴에서 해당 페이지 연동
+
+  ● 기타 shortcode
+    [wpmem_form user_edit]
+    [wpmem_form password]
+    https://rocketgeek.com/plugins/wp-members/docs/shortcodes/form/
+
+  ● 로그인 메뉴 생성
+  <ul>
+    <?php
+    if (is_user_logged_in()) {//로그인전 메뉴
+      echo '<li><a href="';
+      echo wp_logout_url( get_permalink() );//현재페이지
+      echo '">로그아웃</a></li>';
+      echo '<li><a href="';
+      bloginfo('url');
+      echo '/회원정보페이지주소입력">회원정보</a></li>';
+    } else {//로그인후 메뉴
+      echo '<li><a href="';
+      bloginfo('url');
+      echo '/로그인페이지주소입력">로그인</a></li>';
+      echo '<li><a href="';
+      bloginfo('url');
+      echo '/회원가입페이지주소입력">회원가입</a></li>';
+    }
+    ?>
+  </ul>
+
+■ YouTube Playlist Player
+  - 쇼트코드 활용
+    대시보드 / 설정 / YouTube Playlist Player / help usage 
+    [yt_playlist mainid="중앙비디오ID" vdid="ID2,ID3,ID4"]
+    
+/////////////////////////////////////////////////////////////////////////////////
+■ 위젯설정
+  ● functions.php 
+    register_sidebar( array(
+      'name' => __( '위젯이름' ),
+      'id'=> 'widjet1',  // 위젯 영역의 고유한 ID
+    ));
+  ● 대시보드/외모/위젯
+    - 위젯이름으로 생성된 위젯 추가버튼 후 모두보기
+    - 위젯 추가후 update
+  ● 출력
+    - 출력을 원하는 탬플릿에 하단의 코드 입력
+    <?php
+      if ( is_active_sidebar( 'widjet1' ) ) {
+        dynamic_sidebar( 'widjet1' );
+      }
+    ?> 

@@ -1,0 +1,126 @@
+■ 테마 (theme)
+  ● 주소설정
+    <?php bloginfo('url');?> //홈 url
+    <?php bloginfo('template_directory');?> //테마 url
+
+  ● 테마설정
+    - 워드프레스설치경로/wp-content/themes/폴더생성
+    - 테마구조설정
+      · index.php : 화면에 출력되는 문서
+      · functions.php : 기능을 관리하는 문서
+      · style.css : 테마 정보를 기록하는 문서
+      · screenshot.png : 테마 썸네일 (1200 x 900)
+    - 대시보드 / 외모 / 테마 / 테마활성화
+
+  ● 사이트구성
+    - page
+      수정이 빈번하게 발생하지 않는 디자인 페이지
+    - category
+      수정관리가 빈번하게 발생하는 목록
+    - single
+      카테고리목록의 세부 내용
+
+  ● 테마제작순서
+    - functions.php 구성
+      · 대표이미지기능추가
+        add_theme_support('post-thumbnails'); 
+      · 메뉴기능추가
+        register_nav_menus( array(
+          'menu' => 'menu',
+        ));
+       · 위젯추가
+        register_sidebar( array(
+          'name' => __( '위젯이름' ),
+          'id'=> 'widjet1',  // 위젯 영역의 고유한 ID
+        ));
+    - 대시보드 / 설정 / 미디어 / 썸네일크기 
+      · 대표이미지 크기를 적당히 설정
+    - 대시보드 / 설정 / 미디어 / 고유주소
+      · 사용자 정의 구조
+      · category , postname 권장
+    - 사이트맵구성(ia)
+      · page 와 category를 분류
+      · 대시보드/글/category 생성
+      · 대시보드 / 페이지 / 페이지생성
+    - 메뉴제작
+      · 대시보드/외모/메뉴
+      · 처음으로 메뉴만들경우만 메뉴생성클릭 후 새메뉴만들기
+      · 위치표시 선택 후 생성
+      · 2dep구조일경우 1dep링크는 사용자정의링크를 이용
+      · 출력할 템플릿에 출력함수를 이용
+      · 요소검사를 통해 메뉴구조 파악 후 css나 script를 적용
+      · 메뉴출력함수
+        <?php wp_nav_menu( array('theme_location' => 'menu'));?>
+    - header.php, footer.php 제작
+    - index.php와 동일한 구조로 home.php제작
+    - 서브템플릿 중 하나를 제작 후 
+      sub-header.php, sub-footer.php 제작
+    - page.php, category.php, single.php, search.php, 404.php
+
+■ 독립템플릿 제작
+  ● page (page-주소이름.php를 이용해도 무방)
+    1) page-파일명.php 생성 (!주의 : 이미사용되고 있는 주소명으로 설정하지 말것)
+    2) 파일의 최상단에 아래의 코드를 추가
+    <?/*
+      Template Name: 양식이름
+      Template Post Type: page, 파일명
+    */?>
+    3) 대시보드/페이지/페이지메뉴/템플릿 선택
+  
+  ● category (category-주소이름.php를 이용해도 무방)
+    1) category-파일명.php 생성 (!주의 : 이미사용되고 있는 주소명으로 설정하지 말것)
+    2) 파일의 최상단에 아래의 코드를 추가
+    <?/*
+      Template Name: 양식이름
+      Template Post Type: category, 파일명
+    */?>
+    3) 대시보드/글/템플릿/템플릿 선택
+    
+  ● single 
+    1) single-파일명.php 생성 (!주의 : 이미사용되고 있는 주소명으로 설정하지 말것)
+    2) 파일의 최상단에 아래의 코드를 추가
+    <?/*
+      Template Name: 양식이름
+      Template Post Type: post, 파일명
+    */?>
+    3) 대시보드/글/템플릿/템플릿 선택
+
+■ 링크관련     
+  ● 메뉴 구현
+    ○ page또는 category주소일경우
+      - 현재 주소에 해당하는 1dep li객체는 current-menu-parent클래스명이 추가됨
+      - 서브메뉴출력예시:
+        .snb > div > ul > li{
+          display: none;
+        }
+        .snb > div > ul > li.current-menu-parent{
+          display: block;
+        }
+      - 링크 active 구현 예시: 
+        .gnb a[aria-current]{color:red;}  
+        .snb a[aria-current]{color:red;} 
+
+    ○ single 주소일 경우
+      현재 주소에 해당하는 2dep li요소는 current-post-parent클래스명이 추가됨
+      - 링크 active 구현 예시
+        .gnb>div>ul>li>ul>li.current-post-parent>a{
+          color:red;
+        }
+      - 서브메뉴출력예시:  
+        $('.snb>div>ul>li>ul>li.current-post-parent').parent().parent().show()
+        
+■ 워드프레스 편집기
+  ● 입력방식
+    - 옵션메뉴 / 코드편집기 : html코드를 입력시
+    - 옵션메뉴 / 비주얼편집기 : 일반적인 문서 작성방법
+      · enter키는 p태그를 생성
+      · shift + enter키는 br태그
+    - 페이지탭
+      · 문서의 정보(url, 대표이미지, 카테고리구성 등)를 설정
+    - 블록탭
+      · 문서의 서식 관련 메뉴를 제공
+    - 이미지 업로드시 최대사이즈 100% 설정  
+    - 글작성시 카테고리, 태그, 대표이미지, 요약글을 설정
+    - 페이지작성시 부모페이지, url 설정
+
+

@@ -1,0 +1,55 @@
+■ CMS (Contents Management System)
+  다양한 웹서비스를 쉽게 구축할 수 있는 프레임워크 (솔루션)
+  자유도의 제약을 받음  
+
+■ 워드프레스 설치
+  ● 개발환경구축
+    - amp 환경 설정 
+      로컬 개발환경이 deploy대상 호스트와 호환이 되어야 함
+      (호환목록 apache, mysql, php)
+    - DBMS(mysql) 비밀번호 설정
+      · http://127.0.0.1/phpmyadmin/ 접속
+      · 사용자계정메뉴 페이지 이동
+      · root, localhost 계정 권한수정 
+      · change password
+      · 새로고침 후 에러메세지 확인
+      · c://xampp/phpMyAdmin/config.inc.php 수정
+        $cfg['Servers'][$i]['password'] = '수정한비밀번호';
+
+  ● 설치과정      
+    - 워드프레스 다운로드
+      · https://ko.wordpress.org/download/
+    - All relase클릭 (전체버전 페이지로 이동)
+    - 워드프레스 파일과 폴더를 서버의 루트폴더로 이동
+    - DB생성
+      · mysql 접속
+      . 데이터베이스 페이지로 이동 후 db생성
+    - 브라우저 주소창에 도메인 입력
+    - 데이터베이스이름, mysql 사용자명, mysql 비밀번호 입력 후 제출, 설치실행
+    - 사이트정보입력
+      · 사이트이름, 사이트관리자id, 사이트관리자비밀번호 등을 입력
+      · 검색옵션은 차단 후 개발완료 후에 변경
+      
+■ 워드프레스 배포 (deploy)
+  - 워드프레스 소스파일 백업
+  - db 백업
+    · mysql 접속
+    · 워드프레스가 설치된 db를 선택 (클릭)
+    · 내보내기
+  - 라이브 호스팅으로 이전(마이그레이션) 
+    · 호스팅 초기화 
+      닷홈예시) 닷홈사이트 로그인 후 마이닷홈 / 상세보기 / 초기화
+    · 워드프레스의 wp-config.php파일을 수정
+      수정목록
+         DB_NAME, DB_USER, DB_PASSWORD 
+      아래두줄 추가
+        define('WP_HOME', 'http://kjhweb1.dothome.co.kr');
+        define('WP_SITEURL','http://kjhweb1.dothome.co.kr');
+    · ftp 접속 후 루트폴더에 파일 업로드
+       (전송중 덮어쓰기 메세지가 나올경우 전체 덮어쓰기)
+    · 라이브서버의 mysql접속
+      (닷홈의 경우 도메인/myadmin)   
+    · db선택 (클릭) 후 가져오기 / 파일선택 / 실행
+    · 라이브서버 도메인의 워드프레스관리자 모드로 접속
+      도메인/wp-admin
+    · 대시보드메뉴 / 설정 / 고유주소 / 변경사항저장
