@@ -1,0 +1,15 @@
+body {
+  background-color: powderblue;
+  aside {
+    > ul {
+      > li {
+        > a {
+          display: none;
+        }
+        > ul > li > a.active {
+          color: red;
+        }
+      }
+    }
+  }
+}
