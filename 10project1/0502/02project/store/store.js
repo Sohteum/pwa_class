@@ -2,22 +2,22 @@ window.homeVisualArr = [
   {
     path: './img/home/main01.jpg',
     title: 'Explore the Unexpected',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: 'Explore new things you have never felt before.',
   },
   {
     path: './img/home/main02.jpg',
     title: 'Get Creative Idea',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: 'Come up with creative ideas you never thought of in a new destination.',
   },
   {
     path: './img/home/main03.jpg',
     title: 'Find Your Dream',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: `The world you've been dreaming of is right in front of you.`,
   },
   {
     path: './img/home/main04.jpg',
     title: 'Discover Story',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: `Discover stories you haven't experienced before with your loved ones..`,
   }
 
 ]
