@@ -1,0 +1,77 @@
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+body {
+  background: #eee;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+.btn1 {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.btn1::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(at 20% 20%, #fff, #CCC);
+}
+.btn1 span {
+  position: relative;
+  color: transparent;
+  text-shadow: -1px -1px 1px rgb(255, 255, 255), 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.btn1:active::before {
+  background: radial-gradient(at 80% 80%, #fff, #CCC);
+}
+.btn1:active span {
+  text-shadow: 1px 1px 1px rgb(255, 255, 255), -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.btn2 {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.btn2 span {
+  position: relative;
+  color: transparent;
+  text-shadow: -1px -1px 1px rgb(255, 255, 255), 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.btn2:active {
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.btn2:active span {
+  text-shadow: 1px 1px 1px rgb(255, 255, 255), -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  border: 1px solid #fff;
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+input:focus {
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=style.css.map */
