@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { fnGetTheme } from '../../script/CompMenu';
+
 
 const CompMenu = () => {
-  const [_theme, _setTheme] = useState({ 1: true, 2: false, 3: false })
+  const [_theme, _setTheme] = useState({ 1: false, 2: false, 3: false })
+
+useEffect(()=>{
+  _setTheme(fnGetTheme())
+},[])
+
   return (
     <section className='menu'>
       <h1>Neumorphi Calculator</h1>
