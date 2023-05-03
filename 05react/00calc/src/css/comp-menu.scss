@@ -1,0 +1,63 @@
+@use "./mixin" as m;
+
+#root {
+  section.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+
+    form.theme {
+      legend {
+        margin-bottom: 10px;
+        font-weight: 800;
+        font-size: 0.8em;
+        text-align: center;
+      }
+      div {
+        display: flex;
+        width: 180px;
+        height: 30px;
+        border: 1px solid rgb(255, 255, 255, 0.1);
+        border-radius: 30px;
+        overflow: hidden; /////???????
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+        input {
+          display: none;
+          &:checked + label::before {
+            display: inline-block;
+          }
+        }
+        label {
+          position: relative;
+          flex: 1;
+          cursor: pointer;
+          opacity: 0.3;
+          &:hover {
+            opacity: 1;
+          }
+          @include m.icon(before, "\f00c");
+          &[for="radio1"] {
+            background-color: #ccc;
+          }
+          &[for="radio2"] {
+            background-color: skyblue;
+          }
+          &[for="radio3"] {
+            background-color: bisque;
+          }
+          &::before {
+            display: none;
+            @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+            color:#FFF;
+          }
+        }
+      }
+    }
+    nav {
+    }
+  }
+} //root

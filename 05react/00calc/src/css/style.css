@@ -1,0 +1,63 @@
+body {
+  color: #666;
+  font-family: "Orbitron", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --blue: #00aae5;
+  --orange: #f68b1e;
+  --green: #8cc63f;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none;
+}
+
+body {
+  height: 100vh;
+}
+body.gray {
+  background: linear-gradient(#f6f6f6, #ccc);
+}
+body.gray #root {
+  color: #999;
+}
+body.beige {
+  background: linear-gradient(#fff4eb, #ffe4cf);
+}
+body.beige #root {
+  color: #e6ac7c;
+}
+body.skyblue {
+  background: linear-gradient(#e0ebf7, #d5e8fc);
+}
+body.skyblue #root {
+  color: #488fd7;
+}
+body #root {
+  position: fixed;
+  width: min(95%, 400px);
+  height: min(95%, 600px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+body #root section h1,
+body #root section h2 {
+  margin-bottom: 20px;
+  font-weight: 900;
+  font-size: 1.7em;
+  text-shadow: -2px -2px 1px rgb(255, 255, 255), 2px 2px 1px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=style.css.map */
