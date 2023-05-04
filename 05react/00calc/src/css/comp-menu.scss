@@ -9,10 +9,12 @@
     height: 100%;
     box-sizing: border-box;
     padding: 10px;
-
+    h1 {
+      margin-bottom: 60px;
+    }
     form.theme {
       legend {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         font-weight: 800;
         font-size: 0.8em;
         text-align: center;
@@ -52,12 +54,32 @@
           &::before {
             display: none;
             @include m.posLT(absolute, 50%, 50%, -50%, -50%);
-            color:#FFF;
+            color: #fff;
           }
         }
       }
     }
     nav {
+      margin-top: 45px;
+      font-weight: 900;
+      text-transform: uppercase;
+
+      a {
+        display: block;
+        margin: 20px 0;
+        padding: 7px 20px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+        &:hover {
+          text-shadow: -2px -2px 1px rgba(255, 255, 255, 1), 2px 2px 1px rgba(0, 0, 0, 0.1);
+        }
+        &:active {
+          box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgba(255, 255, 255, 1);
+        }//가상선택자의 일종. 누르고있는동안
+        i {
+        }
+      }
     }
   }
 } //root
