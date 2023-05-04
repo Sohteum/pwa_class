@@ -6,10 +6,16 @@ import Comp from "./Comp";
 
 
 function App() {
-  const [_arr , _setArr] = useState([])
-  const fnAddHandler = function (){
+  const [_arr, _setArr] = useState([])
+  const fnAddHandler = function () {
   }
-  
+  // for (let i = 1; i <= 5; i++) {
+    const i [_arr.length]+1
+    const arr =  [..._arr, i]
+    _arr.map(i)
+    // _setArr(n)
+  // }
+  console.log(_arr);
   return (
     <>
       <Comp />
