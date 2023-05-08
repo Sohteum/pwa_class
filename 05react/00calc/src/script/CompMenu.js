@@ -3,6 +3,7 @@ export const fnGetTheme = () => {
   let themeStorage = window.localStorage.getItem('themeStorage')
   let theme
   let className
+  
   //  console.log(themeStorage);
   if (themeStorage) {//두번째부터는 무조건 여기 걸리게된다.
     theme = JSON.parse(window.localStorage.getItem('themeStorage'))

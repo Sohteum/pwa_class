@@ -59,7 +59,7 @@ body.beige #root {
     background-color: #f5f5f5;
   }
   body.beige #root::-webkit-scrollbar-thumb {
-    background-color: #e6ac7c;
+    background-color: #ffc596;
   }
 }
 body.skyblue {
@@ -93,10 +93,43 @@ body #root {
   border: 1px solid #eee;
   box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
+body #root section {
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+}
 body #root section h1,
 body #root section h2 {
   margin-bottom: 20px;
   font-weight: 900;
   font-size: 1.7em;
   text-shadow: -2px -2px 1px rgb(255, 255, 255), 2px 2px 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+body #root .back-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3em;
+  line-height: 40px;
+  text-align: center;
+  transform: scale(-1);
+}
+body #root .back-btn:hover {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes motion {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -13,7 +13,7 @@ const CompAdd = () => {
     const date = document.querySelector('input[type=date]').value;
     const time = document.querySelector('input[type=time]').value;
     const desc = document.querySelector('textarea').value;
-    const obj = { id, title, date, time, desc }; //여기서 리스트한데 아이디를 넘겨줬다고 할 수 있는건가?????????????
+    const obj = { id, title, date, time, desc };
     const arr = [..._orgArr, obj]; //
     _setOrgArr(arr);
     _setOutputArr(arr);
