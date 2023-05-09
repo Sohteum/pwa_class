@@ -1,26 +1,25 @@
 import React, { createContext, useState } from 'react';
-import { btnArr } from '../../script/btnsArr';
-import CompBtn from './CompBtn';
 import { AppContext } from '../../App';
+import CompOutput from './CompOutput';
+import CompBtnContainer from './CompBtnContainer';
+import CompModal from './CompModal';
 
 export const CalcContext = createContext()
 
 const CompCalc = () => {
-  const [_output, _setOutput] =useState('dddsdfgdfgsdfgsdfgsdfsdfsdfsdsdsd')
+  const [_output, _setOutput] = useState('')
+  const [_showModal, _setShowModal] = useState(false)
+  const [_errMsg, _setErrMsg] = useState()
+
 
   return (
 
     <section className='calc'>
       <h2> calculator</h2>
-      <CalcContext.Provider value={{_output,_setOutput}}>
-      <p className="output">
-      <span>{_output}</span> {/* 인라인블록 절대노노 */}
-      </p>
-      <ul className="btn-container">
-        {
-          btnArr.map(v=><CompBtn key={v.id} data={v}/>)
-        }
-      </ul>
+      <CalcContext.Provider value={{ _output, _setOutput, _showModal, _setShowModal, _errMsg, _setErrMsg }}>
+        <CompOutput />
+        <CompBtnContainer/>
+        {_showModal&&<CompModal/>}
       </CalcContext.Provider>
     </section>
   );

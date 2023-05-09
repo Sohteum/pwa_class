@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+
+      font-size: 15px;
+      font-weight: normal;
+    }
+    .type_container {
+      position: relative;
+      padding: 10px;
+    }
+    
+  .addTypeEffectCursor::after {
+      position: absolute;
+      content: "|";
+      animation: cursor 0.2s infinite;
+    }
+    @keyframes cursor {
+      0% {opacity: 0;}
+      49% {opacity: 0;}
+      50% {opacity: 1;}
+      100% { opacity: 1;}
+    }
+  
+    .type_container2{
+      position: relative;
+      padding: 10px;
+      text-align: center;
+      background: #EEE;
+    }
+    .type_container2 h1{
+      position: relative;
+      display: inline-block;
+      background: yellow;
+    }
+  </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous"> 
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="./type_effect.js"></script>
+  <script>
+    $(function () {
+      var myType = new Type_effect('.type_container',50)
+      
+      $(".play").click(function(){
+        myType.play()
+      })
+      $(".reverse").click(function(){
+        myType.reverse()
+      })
+      $(".toggle").click(function(){
+        myType.toggle()
+      })
+
+      var myType2 = new Type_effect('.type_container2',50)
+      myType2.toggle()
+
+    })//ready
+  </script>
+</head>
+
+<body>
+  <!--
+    ※사용법
+    예시: h1에 타이핑효과를 적용할 경우 부모노드인 type_container를 플러그인 선택자로 설정하세요
+    ※type_container 
+    1.중복되는 선택자는 절대 사용하지 마세요 (클래스명이나 아이디명 변경가능)
+    2.한개의 자식노드 이외에 아무내용도 추가하지 마세요
+    3.postion속성(abs,rel,fix)을 적용하세요
+    4.inline객체는 display level을 변경하세요
+  -->
+  <button class="play">play</button>
+  <button class="reverse">reverse</button>
+  <button class="toggle">toggle</button>
+
+  <div class="type_container">
+    <h1>
+      <span>Lorem</span>
+      <b>Ipsum</b>
+      dummy text!
+    </h1>
+  </div><!-- my_type -->
+
+  <div class="type_container2">
+    <h1>
+      <span>Lorem</span>
+      <br>
+      <b>Ipsum</b>
+      <br>
+      dummy text!
+    </h1>
+  </div><!-- my_type -->
+</body>
+
+</html>
