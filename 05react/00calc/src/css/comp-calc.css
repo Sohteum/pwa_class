@@ -53,4 +53,18 @@ section.calc ul.btn-container li button:active {
 }
 section.calc ul.btn-container li button:active:hover {
   font-size: 1.7em;
+}
+
+.calc-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFF;
 }/*# sourceMappingURL=comp-calc.css.map */
