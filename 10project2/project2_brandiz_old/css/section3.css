@@ -1,0 +1,4 @@
+.section3 {
+  height: calc(100vh - var(--header-height));
+  background-color: rgb(157, 255, 0);
+}/*# sourceMappingURL=section3.css.map */

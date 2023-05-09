@@ -1,0 +1,75 @@
+.section2 {
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--main-color);
+  background-image: url(../img/section2/pattern.png);
+  background-size: 10px;
+}
+.section2 #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.section2 .bg {
+  position: relative;
+  height: 100%;
+  left: 55%;
+  animation: glow 5s infinite alternate;
+}
+.section2 .carousel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 800px);
+}
+.section2 .carousel img {
+  width: 100%;
+}
+.section2 .carousel img.dummy {
+  opacity: 0;
+}
+.section2 .carousel img.img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+.section2 .carousel img.img1 {
+  display: block;
+  top: 0;
+  opacity: 1;
+}
+.section2 .carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 3px solid var(--dark-color);
+  opacity: 0.5;
+}
+.section2 .carousel button:hover {
+  opacity: 1;
+}
+.section2 .carousel button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--dark-color);
+}
+.section2 .carousel button.prev {
+  left: 25px;
+}
+.section2 .carousel button.next {
+  right: 9px;
+}/*# sourceMappingURL=section2.css.map */
