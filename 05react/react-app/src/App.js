@@ -2,9 +2,23 @@ import { useState } from "react";
 import CompBtn from "./CompBtn";
 import CompDiv from "./CompDiv";
 
-function App() {
-  const [_listArr, _setListArr] = useState([])
+const fnSetArr = () => {
+  const arr = [
+    {
+      id:,
+      title,
+      date,
+      time,
+      desc,
+    },
+  ]
+  return arr
+}
 
+function App() {
+  const [_listArr, _setListArr] = useState(fnSetArr)
+
+  console.log(_listArr);
 
   //타임스템프, 날짜와 시간정보 여러개니까 객체로 받음
   // {
@@ -22,8 +36,8 @@ function App() {
         브라우저를 종료후 다시 실행할 경우 div의 숫자는 이전과 동일하게 출력되어야 합니다.
       </p>
       <hr />
-      {_listArr.length!==0?<CompDiv />:"<p>목록이 없어요</p>"}
-      <CompBtn _listArr={_listArr} _setListArr={_setListArr}/>
+      {_listArr.length !== 0 ? <CompDiv /> : "<p>목록이 없어요</p>"}
+      <CompBtn _listArr={_listArr} _setListArr={_setListArr} />
     </>
   );
 }
