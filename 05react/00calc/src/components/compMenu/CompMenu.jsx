@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fnGetTheme } from '../../script/CompMenu';
 import { AppContext } from '../../App';
 
 
@@ -50,8 +49,8 @@ const CompMenu = () => {
       </form>
       <nav>
         <Link to='/calc'><i className="fa-solid fa-calculator"></i> calculator</Link>
-        <Link to='/bmi'><i class="fa-solid fa-weight-scale"></i> bmi</Link>
-        <Link to='/dday'><i class="fa-solid fa-calendar-days"></i> dday</Link>
+        <Link to='/bmi'><i className="fa-solid fa-weight-scale"></i> bmi</Link>
+        <Link to='/dday'><i className="fa-solid fa-calendar-days"></i> dday</Link>
       </nav>
     </section>
   );

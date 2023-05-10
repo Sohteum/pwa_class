@@ -107,6 +107,7 @@ body #root section h2 {
   text-align: center;
 }
 body #root .back-btn {
+  z-index: 10;
   position: absolute;
   right: 0;
   top: 0;
