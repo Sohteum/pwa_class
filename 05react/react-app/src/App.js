@@ -5,6 +5,7 @@ import CompDiv from "./CompDiv";
 function App() {
   const [_listArr, _setListArr] = useState([])
 
+
   //타임스템프, 날짜와 시간정보 여러개니까 객체로 받음
   // {
   //   id: ,
@@ -22,7 +23,7 @@ function App() {
       </p>
       <hr />
       {_listArr.length!==0?<CompDiv />:"<p>목록이 없어요</p>"}
-      <CompBtn />
+      <CompBtn _listArr={_listArr} _setListArr={_setListArr}/>
     </>
   );
 }
