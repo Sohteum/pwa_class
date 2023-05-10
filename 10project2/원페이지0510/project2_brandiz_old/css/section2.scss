@@ -1,0 +1,60 @@
+@use 'mixin' as m;
+
+.section2 {
+  .bg {
+    // position: relative;
+    height: 100vh;
+    width: 100vw;
+    // object-fit: contain;
+    // object-position: center;
+    // animation: glow 5s infinite alternate;
+  }
+  .carousel {
+    @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+    width: min(90%, 800px);
+    img {
+      width: 100%;
+      &.dummy {
+        opacity: 0;
+      }
+      &.img {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+      }
+      &.img1 {
+        display: block;
+        top: 0;
+        opacity: 1;
+      }
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 3px solid var(--dark-color);
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+      &::before {
+        content: '';
+        @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--dark-color);
+      }
+      &.prev {
+        left: 25px;
+      }
+      &.next {
+        right: 9px;
+      }
+    }
+  }
+}

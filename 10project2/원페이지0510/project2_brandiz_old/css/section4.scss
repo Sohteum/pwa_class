@@ -1,0 +1,6 @@
+@use "mixin" as m;
+
+.section4 {
+  min-height: calc(100vh - var(--header-height)); //최소 100으로 내용물에 따라 늘어날수도있음
+  background-color: rgb(0, 255, 0);
+}

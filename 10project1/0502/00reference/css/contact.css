@@ -1,0 +1,116 @@
+.contact_form {
+  border-top: 3px double var(--main-color);
+}
+
+.contact_form input,
+.contact_form select,
+.contact_form textarea {
+  padding: 5px;
+}
+
+.contact_form input[type=text],
+.contact_form input[type=email],
+.contact_form input[type=file],
+.contact_form textarea {
+  width: 100%;
+}
+
+.contact_form input[type=text]:focus,
+.contact_form input[type=email]:focus,
+.contact_form input[type=file]:focus,
+.contact_form input[type=tel]:focus,
+.contact_form select:focus,
+.contact_form textarea:focus {
+  background-color: #000;
+  color: #FFF;
+}
+
+.contact_form textarea {
+  height: 200px;
+}
+
+.contact_form fieldset>div>div label {
+  margin-right: 7px;
+}
+
+.contact_form fieldset>div {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.contact_form fieldset>div>label {
+  background-color: var(--sub-color);
+  color: #FFF;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.contact_form fieldset>div>div {
+  box-sizing: border-box;
+  padding: 3px;
+}
+
+.contact_form fieldset>div>div.tel {
+  display: flex;
+  align-items: center;
+}
+
+.contact_form fieldset>div.btns {
+  padding: 5px;
+  text-align: center;
+}
+
+.contact_form fieldset>div.btns button {
+  padding: 10px 15px;
+  color: #FFF;
+}
+
+.contact_form fieldset>div.btns button:first-child {
+  background-color: var(--main-color);
+}
+
+.contact_form fieldset>div.btns button:first-child:hover {
+  background-color: var(--point-color);
+}
+
+.contact_form fieldset>div.btns button:last-child {
+  background-color: #666;
+}
+
+.contact_form fieldset>div.btns button:last-child:hover {
+  background-color: #000;
+}
+
+.contact_form fieldset>div>div.tel span {
+  margin: 3px;
+}
+
+.contact_form fieldset>div>div.tel input {
+  flex: 1;
+  /*   min-width: 0; html에서 사이즈 ㄴ줘서 빼도됨*/
+  /* 최소너비가 있어서 계속 인풋 상자가 삐져나오니까 민위드를 줘서 원래 상자 너비를 없애버림 */
+}
+
+
+@media screen and (min-width:1000px) {
+  .contact_form>fieldset>div:not(.btns) {
+    display: flex;
+    /* 마지막 버튼애들은 플렉스되면 좌측정렬되어있어 그러니까 플렉스해제하고  */
+  }
+
+  .contact_form>fieldset>div>label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+
+  .contact_form>fieldset>div>div {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .contact_form>fieldset>div>label {
+    display: block;
+  }
+}

@@ -1,0 +1,44 @@
+.faq_list li button {
+  display: block;
+  /* 백퍼 너비가 들어가는 것은 아니기때문에 너비를 따로 줘야함 */
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--main-color);
+}
+
+.faq_list li button::after {
+  float: right;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\2b";
+}
+
+.faq_list li button.active::after {
+  float: right;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f068";
+}
+
+.faq_list li button.active {
+  background-color: var(--point-color);
+}
+
+.faq_list li p {
+  display: none;
+  padding: 10px;
+  background-color: #eee;
+}
+
+

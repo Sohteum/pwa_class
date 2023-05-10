@@ -1,0 +1,50 @@
+http://d.cafe24.com/preview/?productCode=PTHD759326&frame=P
+
+나눔고딕
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+font-family: 'Nanum Gothic', sans-serif;
+
+노토산스
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+font-family: 'Noto Sans KR', sans-serif;
+
+몬세라토(영어)
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+font-family: 'Montserrat', sans-serif;
+
+
+나눔명조
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+
+폰트어썸키트
+<script src="https://kit.fontawesome.com/10bf1730a7.js" crossorigin="anonymous"></script>
+
+제이쿼리cdn
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+가상선택자 아이콘
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+
+
+  $(function(){
+var reqID
+function fnHeaderMotion() {
+
+}
+fnHeaderMotion()
+$(window).scroll(function(){
+  reqID = requestAnimationFrame(fnHeaderMotion)
+}).resize(function(){
+  reqID = requestAnimationFrame(fnHeaderMotion)
+})
+})
