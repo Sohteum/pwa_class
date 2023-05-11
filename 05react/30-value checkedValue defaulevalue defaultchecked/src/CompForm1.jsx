@@ -1,42 +1,52 @@
 import React, { useEffect, useState } from 'react';
 
 const CompForm1 = () => {
-  const [_input, _setInput] = useState('')
+  const [_input, _setInput] = useState('');
 
   const fnResetHandler = function (e) {
-    e.preventDefault()
-    _setInput('')
-    document.querySelector('.form1 input[type=radio]').checked = true    //가상돔이 리얼돔으로 바꾸니 뒤니까 여기 쿼리셀렉터 써도됨
-    document.querySelector('.form1 input[type=text]').value = ''    
-  }
+    e.preventDefault();
+    _setInput('');
+    document.querySelector('.form1 input[type=radio]').checked = true; //가상돔이 리얼돔으로 바꾸니 뒤니까 여기 쿼리셀렉터 써도됨
+    document.querySelector('.form1 input[type=text]').value = '';
+  };
 
   const fnInputHandler = function (e) {
-    _setInput(e.target.value)
-  }
+    _setInput(e.target.value);
+  };
 
   useEffect(() => {
-    document.querySelector('.form1 input[type=radio]').checked = true     //쿼리셀렉터는 하나만 찾고 종료되니까 여기서 첫째 애는 찾을필요없음
+    document.querySelector('.form1 input[type=radio]').checked = true; //쿼리셀렉터는 하나만 찾고 종료되니까 여기서 첫째 애는 찾을필요없음
+  }, []); //디펜던시는 처음시작할때 한번만 해줘 라는 의미
 
-
-  }, [])//디펜던시는 처음시작할때 한번만 해줘 라는 의미
-
-  return ( //여긴 가상돔.가상돔에서 리얼돔으로 바뀌는 그 순간이 유즈이펙트
+  return (
+    //여긴 가상돔.가상돔에서 리얼돔으로 바뀌는 그 순간이 유즈이펙트
     <form className='form1'>
       <fieldset>
         <legend>자바스크립트 문법 활용하기</legend>
         <p>
-          <input value="1" type="radio" name='radio1' />라디오1
-          <input value="2" type="radio" name='radio1' />라디오2
+          <input
+            value='1'
+            type='radio'
+            name='radio1'
+          />
+          라디오1
+          <input
+            value='2'
+            type='radio'
+            name='radio1'
+          />
+          라디오2
         </p>
         <p>
-          <input onInput={fnInputHandler} type="text" />
+          <input
+            onInput={fnInputHandler}
+            type='text'
+          />
         </p>
         <p>
           <button onClick={fnResetHandler}>초기화하기</button>
         </p>
-        <p>
-          {_input}
-        </p>
+        <p>{_input}</p>
       </fieldset>
     </form>
   );
