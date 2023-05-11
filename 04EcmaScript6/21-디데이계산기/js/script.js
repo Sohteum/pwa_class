@@ -13,7 +13,7 @@ function fnGetDDay(dday, now) {
 }
 
 let timeStamp = Date.now()
-const dDayTimeStamp = new Date(2023, 3, 26).getTime()
+const dDayTimeStamp = new Date(2023, 3, 26).getTime()   ////???과거시간부터 현재까지 나오는데 그걸 빼는게 이해안감
 const { date, hour, min, sec } = fnGetDDay(dDayTimeStamp, timeStamp)
 
 
