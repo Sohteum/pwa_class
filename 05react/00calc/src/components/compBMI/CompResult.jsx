@@ -1,17 +1,15 @@
 import React, { useContext } from 'react';
 import { BMIContext } from './CompBMI';
-
+import { fnSetObj } from '../../script/bmi';
 
 
 const CompResult = () => {
 
-  const { _active, _setActive, _setChk, _setRadioKey1, _setRadioKey2 } = useContext(BMIContext)
+  const { _active, _setActive, _setChkObj} = useContext(BMIContext)
 
   const fnResetHandler = function () {
-    _setActive('')
-    _setChk(false)
-    _setRadioKey1(c => c + 2)
-    _setRadioKey2(c => c + 2)
+    _setActive('') //css구현을 위함  
+    _setChkObj(fnSetObj(1))
   }
 
   return (

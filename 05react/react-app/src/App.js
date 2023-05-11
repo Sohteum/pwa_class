@@ -1,44 +1,30 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import CompBtn from "./CompBtn";
 import CompDiv from "./CompDiv";
 
-const fnSetArr = () => {
-  const arr = [
-    {
-      id:,
-      title,
-      date,
-      time,
-      desc,
-    },
-  ]
-  return arr
-}
+export const AppContext =  createContext()
 
 function App() {
-  const [_listArr, _setListArr] = useState(fnSetArr)
+  const [_listArr, _setListArr] = useState([]) //div 반복출력할려고 만든거야 listArr//배열이 늘어날때 div가 늘어나게하고파
 
-  console.log(_listArr);
 
-  //타임스템프, 날짜와 시간정보 여러개니까 객체로 받음
-  // {
-  //   id: ,
-  //   month:
-  //   date:
-  //   hour:
 
-  // }
   return (
-    <>
+    <AppContext.Provider value={{_listArr, _setListArr}}>
       <p>
         버튼을 클릭할때마다 div가 추가됩니다. <br />
         div의 키값으로는 timeStamp를 사용하세요 <br />
         브라우저를 종료후 다시 실행할 경우 div의 숫자는 이전과 동일하게 출력되어야 합니다.
       </p>
       <hr />
-      {_listArr.length !== 0 ? <CompDiv /> : "<p>목록이 없어요</p>"}
-      <CompBtn _listArr={_listArr} _setListArr={_setListArr} />
-    </>
+      {_listArr.length === 0 ?
+        <p>목록이 없어요</p>
+        :
+        _listArr.map(v => <CompDiv key={v.key} />)
+        /*  [<CompDiv />,<CompDiv />] */
+      } {/* 배열의 길이만큼 새로운 배열(배열이 필요하니까. 근데 리턴문안에서는 1개밖에 리턴못하자나 그니까 배열로 리턴해야지)을 만들겠다 */}
+      <CompBtn  />
+    </AppContext.Provider>
   );
 }
 
