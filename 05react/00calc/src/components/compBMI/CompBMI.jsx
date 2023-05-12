@@ -9,9 +9,10 @@ const CompBMI = () => {
 
   const [_active, _setActive] = useState('')
   const [_gender, _setGender] = useState()
-  const [_cm, _setCm] = useState()
+  const [_cm, _setCm] = useState()//여기서 0 을 넣어버리면 placeholder가 안나옴
   const [_kg, _setKg] = useState()
-  const [_chkObj, _setChkObj] = useState(fnSetObj(1))
+  const [_chkObj, _setChkObj] = useState(fnSetObj(0))
+  const [_bmiResultObj, _setBmiResultObj] = useState({})
 
 
   return (
@@ -21,6 +22,7 @@ const CompBMI = () => {
       _cm, _setCm,
       _kg, _setKg,
       _chkObj, _setChkObj,
+      _bmiResultObj, _setBmiResultObj,
        }}>
       <section className='bmi'>
         <h2>bmi</h2>
@@ -33,8 +35,3 @@ const CompBMI = () => {
 
 export default CompBMI;
 
-/* 
-1. 처음에는 디폴트체크드로 Male체크
-2. 체크가 변경이 가능하도록 변경
-3. 입력하면 뜨는 모달창에서 다시측정하기 누르면(결과화면에서) 원래대로 돌아가기(male체크되어있기) 
-*/

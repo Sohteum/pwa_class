@@ -62,6 +62,8 @@
         · 읽기, 쓰기 권한 
         · 제한없음, 로그인사용자, 직접선택(관리자선택가능)
     - 게시판목록 및 관리
+    - contact-form 스킨 사용시 기본설정 메뉴/관리자 페이지에서 게시판보기/활성화
+    - 고급설정/아이프레임으로보기/활성화
 
   ● 최신글
     ○ 게시판설정
@@ -123,7 +125,7 @@
 
 ■ Ultimate FAQs 
   - 대시보드 메뉴에 추가됨
-  - FAQ category 생성
+  - FAQ category 생성(카테고리제목과 슬러그를 동일하게 설정)
   - add New (질문글 작성 후 카테고리선택)
   - 출력할 페이지에 하단의 숏코드를 추가
     [ultimate-faqs include_category='category1, category2'] 
@@ -158,7 +160,9 @@
     [wpmem_form register]
 
   ● 회원정보 페이지 생성
+   <div class="wp-member-profile">
     [wpmem_profile]
+   </div>
 
   ● 페이지 생성 후 관리자/설정/wp-members 메뉴에서 해당 페이지 연동
 

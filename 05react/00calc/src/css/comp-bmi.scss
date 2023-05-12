@@ -1,3 +1,5 @@
+@use "./mixin" as m;
+
 section.bmi {
   position: relative;
   overflow: hidden;
@@ -7,10 +9,15 @@ section.bmi {
   form {
     div.radios {
       p {
+        position: relative;
         display: flex;
         text-align: center;
         input {
-          display: none;
+          // display: none; //오류나서 안됨.리콰이어드 속성이 안먹게됨. 경고메세지발생
+          border: none;
+          background-color: none;
+          opacity: 0;
+          @include m.posLT(absolute, 50%, 50%, -50%, -50%);
           &:checked + label {
             //체크가 된 뒤에 있는 라벨
             text-shadow: 1px 1px 1px rgba(255, 255, 255, 1), -1px -1px 1px rgba(0, 0, 0, 0.1); //글자가 움푹 페인 느낌
@@ -85,9 +92,33 @@ section.bmi {
       left: 0;
     }
     div.output {
+      position: relative;
+      height: 75%;
       margin-bottom: 30px;
       background-color: #fff;
       border: 1px solid rgba(#eee, 0.5);
+      .morph{
+        @include m.posLT(absolute,50%, 50%, -50%, -50%);
+        height:100%;
+        .org{
+          fill:#8FACCA;
+        }
+      }
+      .board {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        opacity: 0.8;
+        .pin {
+          position: absolute;
+          bottom: 0;
+          right: 50%;
+          width: 35%; //트랜스폼은 css로 하면 안되고 스크립트에서 해야함. 대신에 먼저 이미지의 축을 정확하게 맞춰주기위해
+          transform-origin: 93% center;
+          transition: transform 1s ease-in-out;
+          transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+        }
+      }
     }
     button {
       padding: 10px;
