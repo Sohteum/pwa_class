@@ -16,30 +16,30 @@ export const fnCheckBMI = (gender, cm, kg) => {
   const bmi = (kg / (m * m)).toFixed(2)
   let bmiNum
   let bmiResult
-  let fill=''
+  let fill = ''
 
   if (gender === 'male') {
 
     if (bmi < 15) {
       bmiResult = '저체중'
       bmiNum = 'man1'
-      fill='#8FACCA'
+      fill = '#8FACCA'
     } else if (bmi => 15 && bmi < 20) {
       bmiResult = '마름'
       bmiNum = 'man2'
-      fill='#99CC00'
+      fill = '#99CC00'
     } else if (bmi => 20 && bmi < 25) {
       bmiResult = '정상'
       bmiNum = 'man3'
-      fill='#FFD600'
+      fill = '#FFD600'
     } else if (bmi => 25 && bmi < 30) {
       bmiResult = '과체중'
       bmiNum = 'man4'
-      fill='#FF8900'
+      fill = '#FF8900'
     } else {
       bmiResult = '비만'
       bmiNum = 'man5'
-      fill='#FF4D00'
+      fill = '#FF4D00'
     }
   }
 
@@ -48,23 +48,23 @@ export const fnCheckBMI = (gender, cm, kg) => {
     if (bmi < 20) {
       bmiResult = '저체중'
       bmiNum = 'women1'
-      fill='#8FACCA'
+      fill = '#8FACCA'
     } else if (bmi => 20 && bmi < 25) {
       bmiResult = '마름'
       bmiNum = 'women2'
-      fill='#99CC00'
+      fill = '#99CC00'
     } else if (bmi => 25 && bmi < 30) {
       bmiResult = '정상'
       bmiNum = 'women3'
-      fill='#FFD600'
+      fill = '#FFD600'
     } else if (bmi => 30 && bmi < 35) {
       bmiResult = '과체중'
       bmiNum = 'women4'
-      fill='#FF8900'
+      fill = '#FF8900'
     } else {
       bmiResult = '비만'
       bmiNum = 'women5'
-      fill='#FF4D00'
+      fill = '#FF4D00'
     }
   }
   return { bmi, bmiNum, bmiResult, fill }
@@ -72,13 +72,13 @@ export const fnCheckBMI = (gender, cm, kg) => {
 }
 
 export const fnSetDegree = (gender, bmi) => {
-let min = (gender==='male')?15:20
-let max = (gender==='male')?40:45
-let ratio = (bmi-min)/(max-min)
-if(ratio<0){ratio = 0}
-if(ratio>1){ratio = 1}
-let deg = ratio*180
-return deg
+  let min = (gender === 'male') ? 15 : 20
+  let max = (gender === 'male') ? 40 : 45
+  let ratio = (bmi - min) / (max - min)
+  if (ratio < 0) { ratio = 0 }
+  if (ratio > 1) { ratio = 1 }
+  let deg = ratio * 180
+  return deg
 
   // let ratio  
   // let result  
@@ -89,14 +89,14 @@ return deg
   //   }
   //   ratio = (bmi - 15) / (40 - 15)
   //   result = ratio * 180
- 
+
   // }
 
   // if (gender === 'female') {
   //   ratio = (bmi - 20) / (45 - 20)
   //   result = ratio * 180
   // }
-  
+
   // return {result}
 
 }
