@@ -97,13 +97,42 @@ section.bmi {
       margin-bottom: 30px;
       background-color: #fff;
       border: 1px solid rgba(#eee, 0.5);
-      .morph{
-        @include m.posLT(absolute,50%, 50%, -50%, -50%);
-        height:100%;
-        .org{
-          fill:#8FACCA;
+      &.result {
+        background-color: #fff;
+        p {
+          @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+          font-size: 3em;
+          font-weight: 600;
+          opacity: 0.8;
         }
       }
+      &.err {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+          position: relative;
+          margin: 20px 0;
+          color: rgba(#fff, 0.5);
+          i {
+            font-size: 8em;
+            color: rgba(#fff, 0.5);
+          } //i
+          i:last-child {
+            font-size: 15em;
+            @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+          }
+        } //p
+        background-color: #000;
+      }
+      .morph {
+        @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+        height: 100%;
+        .org {
+          fill: #8facca;
+        }
+      } //morph
       .board {
         position: absolute;
         width: 100%;
@@ -117,9 +146,9 @@ section.bmi {
           transform-origin: 93% center;
           transition: transform 1s ease-in-out;
           transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
-        }
-      }
-    }
+        } //pin
+      } //board
+    } //output
     button {
       padding: 10px;
       border: 2px solid #fff;

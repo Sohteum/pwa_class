@@ -138,9 +138,44 @@
     - 양식 (메일작성양식)
       예시 :
       데이터명이 your-name인 input type text
-      [text* your-name autocomplete:name]
+      [text* your-name autocomplete:name placeholder "띄어쓰고 양식적기"]
     - 메일 (메일수신양식)
       보내신분 : [your-name]
+
+예시---------------------------------------------
+      <div>
+  <label for="mail-id1">성명</label>
+  [text* Client-name id:mail-id1 placeholder '이름이나 회사명을 입력해주세요']
+</div>
+
+<div>
+  <label for="mail-id2">연락처</label>
+  [tel* Client-tell id:mail-id2 placeholder '숫자만 입력해주세요']
+</div>
+
+<div>
+  <label for="mail-id3">이메일</label>
+  [email* Client-email id:mail-id3 placeholder '회신받으실 이메일 주소를 입력해주세요']
+</div>
+
+<div>
+  <label for="mail-id4">제목</label>
+  [text* Client-title id:mail-id4 placeholder '문의내용의 제목을 입력해주세요']
+</div>
+
+<div>
+  <label for="mail-id5">내용</label>
+  [textarea* Client-desc id:mail-id5 placeholder '문의내용을 상세하게 입력해주세요']
+</div>
+
+<div>
+  [acceptance acceptance id:mail-id6 optional] 개인정보 제공에 동의합니다 [/acceptance]
+</div>
+
+<div>
+  [submit "문의하기"]
+</div>
+예시끝----------------------------------------------------
 
 ■ wp-members
   - 관리자/설정/wp-members 메뉴 추가됨
@@ -196,6 +231,20 @@
   - 쇼트코드 활용
     대시보드 / 설정 / YouTube Playlist Player / help usage 
     [yt_playlist mainid="중앙비디오ID" vdid="ID2,ID3,ID4"]
+
+
+    예시-----------------------website prsentation 검색
+      [yt_playlist mainid="nJTsbZojero" vdid="nJTsbZojero,AmHEfTSBXiY,PeLMrSityJE,91Q6RvKvd7o,U1-ZldScOSA,PF84q-9YWkA,_re9OAYCmzk,sklF74OW3eI,2rMSP6WcXpc,eGv6ju_5egA"]
+    nJTsbZojero
+    AmHEfTSBXiY
+    PeLMrSityJE
+    91Q6RvKvd7o
+    U1-ZldScOSA
+    PF84q-9YWkA
+    _re9OAYCmzk
+    sklF74OW3eI
+    2rMSP6WcXpc
+    eGv6ju_5egA
     
 /////////////////////////////////////////////////////////////////////////////////
 ■ 위젯설정

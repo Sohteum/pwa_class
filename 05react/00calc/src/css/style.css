@@ -23,12 +23,13 @@ html {
 
 body {
   height: 100vh;
+  background-size: 10px, 100%;
 }
 body.gray {
-  background: linear-gradient(#f6f6f6, #ccc);
+  background-image: url(../assets/img/pattern2.png), linear-gradient(#f6f6f6, #ddd);
 }
 body.gray #root {
-  color: #999;
+  background: linear-gradient(#f6f6f6, #ddd);
 }
 @media (hover: hover) {
   body.gray #root::-webkit-scrollbar-track {
@@ -44,10 +45,10 @@ body.gray #root {
   }
 }
 body.beige {
-  background: linear-gradient(#e0d8d0, #dfcdc0);
+  background-image: url(../assets/img/pattern3.png), linear-gradient(#fff3e7, #eee2da);
 }
 body.beige #root {
-  color: #e6ac7c;
+  background: linear-gradient(#fff3e7, #eee2da);
 }
 @media (hover: hover) {
   body.beige #root::-webkit-scrollbar-track {
@@ -63,10 +64,10 @@ body.beige #root {
   }
 }
 body.skyblue {
-  background: linear-gradient(#e0ebf7, #d5e8fc);
+  background-image: url(../assets/img/pattern4.png), linear-gradient(#e0ebf7, #d5e8fc);
 }
 body.skyblue #root {
-  color: #488fd7;
+  background: linear-gradient(#e0ebf7, #d5e8fc);
 }
 @media (hover: hover) {
   body.skyblue #root::-webkit-scrollbar-track {

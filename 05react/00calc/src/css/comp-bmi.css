@@ -94,6 +94,41 @@ section.bmi div.bmi-result div.output {
   background-color: #fff;
   border: 1px solid rgba(238, 238, 238, 0.5);
 }
+section.bmi div.bmi-result div.output.result {
+  background-color: #fff;
+}
+section.bmi div.bmi-result div.output.result p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+section.bmi div.bmi-result div.output.err {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+section.bmi div.bmi-result div.output.err p {
+  position: relative;
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+section.bmi div.bmi-result div.output.err p i {
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.5);
+}
+section.bmi div.bmi-result div.output.err p i:last-child {
+  font-size: 15em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 section.bmi div.bmi-result div.output .morph {
   position: absolute;
   left: 50%;
@@ -102,7 +137,7 @@ section.bmi div.bmi-result div.output .morph {
   height: 100%;
 }
 section.bmi div.bmi-result div.output .morph .org {
-  fill: #8FACCA;
+  fill: #8facca;
 }
 section.bmi div.bmi-result div.output .board {
   position: absolute;

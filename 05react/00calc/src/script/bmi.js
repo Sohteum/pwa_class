@@ -12,94 +12,76 @@ export const fnSetObj = (n) => {
 
 
 export const fnCheckBMI = (gender, cm, kg) => {
-  const m = cm / 100
-  const bmi = (kg / (m * m)).toFixed(2)
-  let bmiNum
-  let bmiResult
-  let fill = ''
+  let m = cm / 100
+  let bmi = (kg / (m * m)).toFixed(2)
+  let fillColor  //사람 색
+  let morphN //사람번호
+  let deg
 
-  if (gender === 'male') {
+  /* 
+  fill:#8EACC9;
+  fill:#99CC00;
+  fill:#FF8900;
+  fill:#FF4D00;
+  fill:#8FACCA;
+  */
 
-    if (bmi < 15) {
-      bmiResult = '저체중'
-      bmiNum = 'man1'
-      fill = '#8FACCA'
-    } else if (bmi => 15 && bmi < 20) {
-      bmiResult = '마름'
-      bmiNum = 'man2'
-      fill = '#99CC00'
-    } else if (bmi => 20 && bmi < 25) {
-      bmiResult = '정상'
-      bmiNum = 'man3'
-      fill = '#FFD600'
-    } else if (bmi => 25 && bmi < 30) {
-      bmiResult = '과체중'
-      bmiNum = 'man4'
-      fill = '#FF8900'
-    } else {
-      bmiResult = '비만'
-      bmiNum = 'man5'
-      fill = '#FF4D00'
-    }
+
+  /* 사람번호, 사람색  */
+  if ((gender === 'male' && bmi < 15) || (gender === 'female' && bmi < 20)) {//마름
+    morphN = 1;
+    fillColor = '#8eaCC9'
+
+  } else if ((gender === 'male' && bmi >= 15 && bmi < 20) || (gender === 'female' && bmi >= 20 && bmi < 25)) {//저체중
+    morphN = 2;
+    fillColor = '#97c93c'
+  } else if ((gender === 'male' && bmi >= 20 && bmi < 25) || (gender === 'female' && bmi >= 25 && bmi < 30)) {//정상
+    morphN = 3;
+    fillColor = '#fdd500'
+  } else if ((gender === 'male' && bmi >= 25 && bmi < 30) || (gender === 'female' && bmi >= 30 && bmi < 35)) {//과체중
+    morphN = 4;
+    fillColor = '#f5881f'
+  } else {//비만
+    morphN = 5;
+    fillColor = '#ef5023'
   }
 
+  /* 저울 각도구하기 */
 
-  if (gender === 'female') {
-    if (bmi < 20) {
-      bmiResult = '저체중'
-      bmiNum = 'women1'
-      fill = '#8FACCA'
-    } else if (bmi => 20 && bmi < 25) {
-      bmiResult = '마름'
-      bmiNum = 'women2'
-      fill = '#99CC00'
-    } else if (bmi => 25 && bmi < 30) {
-      bmiResult = '정상'
-      bmiNum = 'women3'
-      fill = '#FFD600'
-    } else if (bmi => 30 && bmi < 35) {
-      bmiResult = '과체중'
-      bmiNum = 'women4'
-      fill = '#FF8900'
-    } else {
-      bmiResult = '비만'
-      bmiNum = 'women5'
-      fill = '#FF4D00'
-    }
-  }
-  return { bmi, bmiNum, bmiResult, fill }
+  let max = (gender === 'male') ? 35 : 40
+  let min = (gender === 'male') ? 10 : 15
+  deg = ((bmi - min) / (max - min)) * 180
+  if (deg < 0) deg = 0
+  if (deg > 150) deg = 180
+
+  /* 에러여부확인 */
+  // let err = (bmi <= 5 || bmi > 55) ? true : false 삼항연산자
+  let err = (bmi < 8 || bmi > 55) && true //이항연산자
+
+  if (!err) {
+    let timeoutID
+    clearTimeout(timeoutID)
+    timeoutID = setTimeout(() => {
+      window.TweenMax.to('.manorg', 1, { morphSVG: `.man${morphN}`, fill: fillColor, ease: window.Linear.easeNone })
+      window.TweenMax.to('.womanorg', 1, { morphSVG: `.woman${morphN}`, fill: fillColor, ease: window.Linear.easeNone })
+    }, 500)
+  }//에러가 없을때만 에니메이션 하겠다
+  return { bmi, deg, err }
 
 }
 
-export const fnSetDegree = (gender, bmi) => {
-  let min = (gender === 'male') ? 15 : 20
-  let max = (gender === 'male') ? 40 : 45
-  let ratio = (bmi - min) / (max - min)
-  if (ratio < 0) { ratio = 0 }
-  if (ratio > 1) { ratio = 1 }
-  let deg = ratio * 180
-  return deg
+// export const fnSetDegree = (gender, bmi) => {
+//   let min = (gender === 'male') ? 15 : 20
+//   let max = (gender === 'male') ? 40 : 45
+//   let ratio = (bmi - min) / (max - min)
+//   if (ratio < 0) { ratio = 0 }
+//   if (ratio > 1) { ratio = 1 }
+//   let deg = ratio * 180
+//   return deg
 
-  // let ratio  
-  // let result  
 
-  // if (gender === 'male') {
-  //   if(ratio>1&&ratio<0){
 
-  //   }
-  //   ratio = (bmi - 15) / (40 - 15)
-  //   result = ratio * 180
-
-  // }
-
-  // if (gender === 'female') {
-  //   ratio = (bmi - 20) / (45 - 20)
-  //   result = ratio * 180
-  // }
-
-  // return {result}
-
-}
+// }
 
 /* 
 //여기서 0~180 사이가 나오게 되는데 남자는 15(비율로0)에서 
