@@ -39,20 +39,19 @@ function fnGetDDay(dday, now) {
 }
 
 function App() {
-  
+
   let timeStamp = Date.now()
   const dDayTimeStamp = new Date(2023, 5, 20).getTime()//월의 인덱스를 0부터 시작하기때문에 월은 -1해주는것
   //반대로 출력할때는 0월부터 시작하니까 +1을 해줘야함
-  
+
   const [_year, _setYear] = useState()
   const [_month, _setMonth] = useState()
   const [_date, _setDate] = useState()
   const [_hour, _setHour] = useState()
   const [_min, _setMin] = useState()
   const [_sec, _setSec] = useState()
-  
-  const dDay = fnGetDDay(dDayTimeStamp, timeStamp)
 
+  const dDay = fnGetDDay(dDayTimeStamp, timeStamp)
 
   function fnSetDDay() {
     const { year, month, date, hour, min, sec } = fnGetDDay(dDayTimeStamp, timeStamp)
