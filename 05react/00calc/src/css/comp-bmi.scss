@@ -57,7 +57,7 @@ section.bmi {
           background-color: rgba(#fff, 0.7);
         }
         &::placeholder {
-          color: rgba(#000, 0.2);
+          color: inherits;
         }
       } //input
     } //div

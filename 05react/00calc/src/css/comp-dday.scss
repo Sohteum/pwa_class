@@ -1,0 +1,130 @@
+@use "./mixin" as m;
+
+section.dday {
+  display: flex;
+  flex-direction: column;
+  article.dday-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url(../assets/img/timer-icon-bg.gif);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center 30%;
+      mix-blend-mode: overlay;
+      opacity: 0.7;
+      filter: grayscale(0.8) brightness(60%);
+    } //before
+    ul {
+      /* 
+      flex:1 -> flex-grow:1 남은 너비를 가짐, flex-shrink:1 부모를 넘는 너비를 갖지 못함, flex-basis:auto;기본너비. 오토를 주면 알아서 가져
+      */
+      overflow: hidden;
+      position: relative;
+      flex: 1 0 1px;
+      overflow: auto; //오버플로우가 적용이 되었을때만.
+      margin: 15px 0;
+
+      p.now {
+      } //p.now
+    }
+    .btn-add {
+      width: 100%;
+      padding: 10px 0;
+      outline: none;
+      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+      img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 30px;
+        mix-blend-mode: exclusion;
+        filter: grayscale(1);
+      }
+      &:focus {
+        background: rgba(#fff, 0.1);
+      }
+      &:active {
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+      } //button:active
+    } //ul
+  } //article.dday-list
+
+  form.dday-add {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      padding: 15px 0;
+      border-top:  2px groove rgba(#FFF, 0.2);
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        border: none;
+        background: rgba(#fff, 0.4);
+        outline: none;
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+        &:focus {
+          background: rgba(#fff, 0.8);
+        }
+        &::placeholder {
+          color: inherit
+        }
+        &::-webkit-calendar-picker-indicator{
+          filter: invert(10%);
+          mix-blend-mode: color-burn;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px 0;
+      outline: none;
+      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+      &:focus {
+        background: rgba(#fff, 0.1);
+      }
+      &:active {
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+      } //button:active+
+    }
+  } //form.dday-add
+
+
+div.now {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(#000,0.5);
+  border-radius: 5px;
+  color:#FFF;
+  time{
+    display: block;
+    b, small {
+      margin: 0 3px;
+    }
+    small{
+      font-size: 0.9em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+    
+}
+
+} //section.dday
