@@ -1,4 +1,4 @@
-@use "./mixin" as m;
+@use './mixin' as m;
 
 section.dday {
   display: flex;
@@ -10,7 +10,7 @@ section.dday {
     flex: 1;
     &::before {
       pointer-events: none;
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 100%;
@@ -24,7 +24,7 @@ section.dday {
     } //before
     ul {
       /* 
-      flex:1 -> flex-grow:1 남은 너비를 가짐, flex-shrink:1 부모를 넘는 너비를 갖지 못함, flex-basis:auto;기본너비. 오토를 주면 알아서 가져
+      flex:1 ->이 세가지를 합친것. flex-grow:1 남은 너비를 가짐, flex-shrink:1 부모를 넘는 너비를 갖지 못함, flex-basis:auto;기본너비. 오토를 주면 알아서 가져
       */
       overflow: hidden;
       position: relative;
@@ -40,14 +40,16 @@ section.dday {
       padding: 10px 0;
       outline: none;
       box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+
       img {
         display: inline-block;
         vertical-align: middle;
         margin-right: 10px;
         width: 30px;
-        mix-blend-mode: exclusion;
-        filter: grayscale(1);
+        mix-blend-mode: overlay; // exclusion
+        filter: grayscale(1); //brightness(150%)
       }
+
       &:focus {
         background: rgba(#fff, 0.1);
       }
@@ -65,7 +67,7 @@ section.dday {
 
     p {
       padding: 15px 0;
-      border-top:  2px groove rgba(#FFF, 0.2);
+      border-top: 2px groove rgba(#fff, 0.2);
       label {
         display: block;
         margin-bottom: 10px;
@@ -82,9 +84,9 @@ section.dday {
           background: rgba(#fff, 0.8);
         }
         &::placeholder {
-          color: inherit
+          color: inherit;
         }
-        &::-webkit-calendar-picker-indicator{
+        &::-webkit-calendar-picker-indicator {
           filter: invert(10%);
           mix-blend-mode: color-burn;
         }
@@ -106,25 +108,23 @@ section.dday {
     }
   } //form.dday-add
 
-
-div.now {
-  text-align: center;
-  padding: 10px;
-  background-color: rgba(#000,0.5);
-  border-radius: 5px;
-  color:#FFF;
-  time{
-    display: block;
-    b, small {
-      margin: 0 3px;
-    }
-    small{
-      font-size: 0.9em;
-      font-weight: 600;
-      text-transform: uppercase;
+  div.now {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(#000, 0.5);
+    border-radius: 5px;
+    color: #fff;
+    time {
+      display: block;
+      b,
+      small {
+        margin: 0 3px;
+      }
+      small {
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
     }
   }
-    
-}
-
 } //section.dday
