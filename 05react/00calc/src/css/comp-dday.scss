@@ -1,4 +1,4 @@
-@use './mixin' as m;
+@use "./mixin" as m;
 
 section.dday {
   display: flex;
@@ -10,54 +10,137 @@ section.dday {
     flex: 1;
     &::before {
       pointer-events: none;
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
       background-image: url(../assets/img/timer-icon-bg.gif);
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center 30%;
+      background-position: center center;
       mix-blend-mode: overlay;
       opacity: 0.7;
       filter: grayscale(0.8) brightness(60%);
     } //before
-    ul {
+    > ul {
       /* 
       flex:1 ->이 세가지를 합친것. flex-grow:1 남은 너비를 가짐, flex-shrink:1 부모를 넘는 너비를 갖지 못함, flex-basis:auto;기본너비. 오토를 주면 알아서 가져
       */
-      overflow: hidden;
+      overflow: auto;
       position: relative;
       flex: 1 0 1px;
       overflow: auto; //오버플로우가 적용이 되었을때만.
       margin: 15px 0;
-
-      p.now {
-      } //p.now
-    }
-    .btn-add {
-      width: 100%;
-      padding: 10px 0;
-      outline: none;
-      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
-
-      img {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-        width: 30px;
-        mix-blend-mode: overlay; // exclusion
-        filter: grayscale(1); //brightness(150%)
-      }
-
-      &:focus {
-        background: rgba(#fff, 0.1);
-      }
-      &:active {
-        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
-      } //button:active
+      > li {
+        padding: 15px 0;
+        border-bottom: 2px groove rgba(#fff, 0.5); //2px이상 넣어야 그루브 들어감
+        div.meta {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            max-width: 50%;
+            font-weight: 600;
+            font-size: 1.1em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; //너무 길면 ...으로 나오도록
+          }
+          p {
+            time {
+              display: block; //인라인블럭이니까 바꿔줌
+              text-align: center;
+              font-size: 0.8em;
+              em,
+              small {
+                margin: 0 2px;
+              }
+              small {
+                font-size: 0.8em;
+                font-weight: 800;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+        > ul.timer-output {
+          margin-top: 10px;
+          display: flex;
+          > li {
+            flex: 1;
+            padding: 5px;
+            figure {
+              position: relative;
+              margin-bottom: 5px;
+              svg{
+                transform: rotate(-90deg);
+                width: 100%;
+                circle{
+                  // transition: all 0.5s; //stroke-dashoffset 이거 트랜지션 되는지 확인해볼것
+                  fill:none;
+                  &:nth-child(1){
+                    stroke-width: 2;
+                    stroke:rgba(#ebebeb, 0.7);
+                  }
+                  &:nth-child(2){
+                    stroke-width: 5;
+                    stroke:#fff;
+                  }
+                }//circle
+              }//svg
+              figcaption{
+                @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+                font-size: 1.2em;
+                font-weight: 900;
+              }
+            } //figure
+            p {
+              text-align: center;
+              font-size: 0.8em;
+              em {
+                display: block;
+                font-weight: 600;
+                text-transform: uppercase;
+              }
+              small {
+              }
+            } //p
+          }
+        } //timer-output
+      } //li
     } //ul
   } //article.dday-list
+
+  .no-msg {
+    @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+    text-align: center;
+    width: 90%;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+
+  .btn-add {
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 30px;
+      mix-blend-mode: overlay; // exclusion
+      filter: grayscale(1); //brightness(150%)
+    }
+
+    &:focus {
+      background: rgba(#fff, 0.1);
+    }
+    &:active {
+      box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+    } //button:active
+  } //btn-add
 
   form.dday-add {
     flex: 1;

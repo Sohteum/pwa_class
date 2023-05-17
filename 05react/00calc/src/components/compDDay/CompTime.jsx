@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { fnGetNow } from '../../script/dday';
+import { fnGetDateInfo } from '../../script/dday';
 
 const CompTime = () => {
 
@@ -15,7 +15,7 @@ const CompTime = () => {
   const [_sec, _setSec] = useState()
 
   const fnSetState = function () {
-    const { day, year, month, date, ap, hour, min, sec } = fnGetNow(new Date())//현재날짜
+    const { day, year, month, date, ap, hour, min, sec } = fnGetDateInfo(new Date())//현재날짜
     _setDay(day)
     _setYear(year)
     _setMonth(month)
