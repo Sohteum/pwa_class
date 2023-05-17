@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css"> 
+  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script> 
+  <script src="carousel_3d.js"></script>
+  <script>
+    $(function(){
+      //carousel3d(el,interval_delay, rotate_duration)
+      carousel3d(".carousel",2000,1000) 
+    })
+  </script>
+</head>
+<body> 
+  <div class="carousel">  
+    <ul class="polygon3d"><!-- 클래스명동일하게사용 -->
+      <li><img src="./img/img1.jpg" alt=""></li>
+      <li><img src="./img/img2.jpg" alt=""></li>
+      <li><img src="./img/img3.jpg" alt=""></li>
+      <li><img src="./img/img4.jpg" alt=""></li>
+      <li><img src="./img/img5.jpg" alt=""></li>
+      
+    </ul>
+    <div class="indicator">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div><!-- carousel -->
+</body>
+</html>
