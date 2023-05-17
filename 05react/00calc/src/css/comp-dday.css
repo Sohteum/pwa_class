@@ -96,7 +96,7 @@ section.dday article.dday-list > ul > li > ul.timer-output > li figure figcaptio
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 900;
 }
 section.dday article.dday-list > ul > li > ul.timer-output > li p {

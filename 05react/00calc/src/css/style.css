@@ -87,8 +87,8 @@ body.skyblue #root {
 }
 body #root {
   position: fixed;
-  width: min(95%, 400px);
-  height: min(95%, 600px);
+  width: min(95%, 500px);
+  height: min(95%, 800px);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
