@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/flipBook.css">
+  <style>
+    body,html{
+      height: 100%;
+    }
+    body{
+      margin: 0;
+      
+      align-items: center;
+      justify-content: center;
+    }
+    .flip-book1{
+      margin: 50px auto;
+      width: 80%;
+      height: 80%; 
+      max-width: 1000px;
+      max-height: 700px;
+    } 
+    .btns{
+      display: block;
+      text-align: center;
+    }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/flipBook.js"></script>
+  <script>
+    $(function(){
+      var flipBook1 = new flipBook('.flip-book1')
+      $('.btns button').click(function(){
+
+        var n = parseInt($(this).text())
+        flipBook1.flip(n)
+      })
+    })
+  </script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="flip-book flip-book1">
+    <div class="sheet sheet1 ">
+      <div class="page page-odd page1 ">
+        page1
+      </div><!-- page0 -->
+      <div class="page page-even page2">
+        page2
+      </div><!-- page1 -->
+    </div><!-- sheet1 -->
+
+    <div class="sheet sheet2 ">
+      <div class="page page-odd page3 ">
+        page3
+      </div><!-- page0 -->
+      <div class="page page-even page4">
+        page4
+      </div><!-- page1 -->
+    </div><!-- sheet2 -->
+
+    <div class="sheet sheet3 ">
+      <div class="page page-odd page5 ">
+        page5
+      </div><!-- page0 -->
+      <div class="page page-even page6">
+        page6
+      </div><!-- page1 -->
+    </div><!-- sheet3 -->
+    
+    <div class="sheet sheet4 ">
+      <div class="page page-odd page7 ">
+        page7
+      </div><!-- page0 -->
+      <div class="page page-even page8">
+        뒷표지
+      </div><!-- page1 -->
+    </div><!-- sheet4 -->
+
+  </div><!--flip-book-->
+
+  <div class="btns">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+  </div>
+</body>
+</html>
