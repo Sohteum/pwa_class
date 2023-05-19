@@ -41,6 +41,9 @@ section.dday article.dday-list > ul > li {
 section.dday article.dday-list > ul > li.active {
   background-color: rgba(255, 192, 203, 0.5);
 }
+section.dday article.dday-list > ul > li.deactive {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 section.dday article.dday-list > ul > li div.meta {
   display: flex;
   align-items: center;

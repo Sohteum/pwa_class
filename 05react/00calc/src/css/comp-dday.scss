@@ -35,6 +35,9 @@ section.dday {
         &.active {
           background-color: rgba(pink, 0.5);
         }
+        &.deactive{
+          background-color: rgba(#000, 0.5);
+        }
         padding: 15px 5px;
         border-bottom: 2px groove rgba(#fff, 0.5); //2px이상 넣어야 그루브 들어감
         border-radius: 10px;
@@ -105,8 +108,6 @@ section.dday {
                 display: block;
                 font-weight: 600;
                 text-transform: uppercase;
-              }
-              small {
               }
             } //p
           }
