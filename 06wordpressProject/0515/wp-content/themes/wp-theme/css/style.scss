@@ -1,0 +1,57 @@
+@use "./mixin" as m;
+
+body {
+  color: #666;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --blue: #00aae5;
+  --orange: #f68b1e;
+  --green: #8cc63f;
+  --dark: #012633;
+  @media #{m.$minLg} {
+    --header-height: 125px;
+  }
+  @media #{m.$maxLg} {
+    --header-height: 100px;
+  }
+}
+
+.theme-guide {
+  position: relative;
+  width: min(90%, 500px);
+  margin: 30px auto;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px 20px;
+  background-color: var(--dark);
+  color: #fff;
+  button {
+    @include m.posRT(absolute, 0, 0, 50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--dark);
+    color: #fff;
+    &:hover {
+      background-color: var(--orange);
+    }
+    // position: absolute;
+    // top: 7px;
+    // right: 7px;
+  }
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none;
+}

@@ -1,0 +1,68 @@
+@use "./mixin" as m;
+
+.wpcf7 {
+  //플러그인 컨테이너
+  .screen-reader-response {
+    display: none;
+  }
+  .wpcf7-form {
+    //전송폼
+    > div {
+      //양식한줄
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(#000, 0.1);
+      &:nth-last-child(2) {
+        border-bottom: none;
+      }
+      > p {
+        //플러그인 자체출력
+        br {
+          //플러그인 자체출력
+          display: none;
+        }
+        label {
+          display: inline-block;
+          margin-bottom: 10px;
+          background-color: var(--dark);
+          padding: 5px 20px;
+          font-size: 0.9em;
+          border-radius: 10px;
+          color: #fff;
+        } //label
+        .wpcf7-form-control-wrap {
+          display: block;
+          input:not([type="radio"], [type="checkbox"]),
+          textarea,
+          select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 7px;
+            border-radius: 5px;
+            border: 1px solid var(--dark);
+            &:focus {
+              outline: none;
+              background-color: var(--blue);
+                color: #fff;
+              &::placeholder {
+                color: rgba(#fff, 0.7);
+              }
+            }
+          }
+        } //wpcf7-form-control-wrap
+        input[type="submit"] {
+          display: block;
+          margin: 0 auto;
+          background-color: #fff;
+          border: 1px solid var(--blue);
+          padding: 5px 20px;
+          border-radius: 10px;
+          color: var(--blue);
+          &:hover {
+            background-color: var(--blue);
+            color: #fff;
+          }
+        } //input
+      } //p
+    } //div
+  } //wpcf7-form-form
+} //div.wpcf7

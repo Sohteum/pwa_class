@@ -1,0 +1,201 @@
+.sub-visual {
+  position: relative;
+  height: max(30vh, 200px);
+  background-color: #000;
+}
+.sub-visual .breadcrumb {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  z-index: 2;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.sub-visual .breadcrumb > * {
+  margin: 0 3px;
+}
+@media screen and (max-width:600px) {
+  .sub-visual .breadcrumb {
+    display: none;
+  }
+}
+.sub-visual #particles-js {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.sub-visual figure {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.sub-visual figure img {
+  filter: brightness(0.7);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.sub-visual figure figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 400px);
+  color: #fff;
+  box-sizing: border-box;
+  padding-left: 15px;
+  border-left: 3px solid var(--blue);
+}
+.sub-visual figure figcaption h6 {
+  display: inline-block;
+  background-color: var(--blue);
+  padding: 5px 23px;
+  margin-bottom: 7px;
+  border-radius: 0 25px 0 25px;
+  font-size: 0.9em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.sub-visual figure {
+  display: none;
+}
+.sub-visual figure img {
+  transform: scale(1.2);
+}
+.sub-visual figure figcaption h6,
+.sub-visual figure figcaption p {
+  position: relative;
+}
+.sub-visual figure.active {
+  display: none;
+}
+.sub-visual figure.active img {
+  transform: scale(1);
+  transition: transform 20s;
+  transition-timing-function: linear;
+}
+
+.snb {
+  height: 50px;
+  background-color: var(--dark);
+  background-image: url(../img/sub/sub1.png);
+  background-size: 5px;
+}
+.snb > div {
+  width: min(95%, 1200px);
+  margin: 0 auto;
+  height: inherit;
+}
+.snb > div > ul {
+  height: inherit;
+}
+.snb > div > ul > li {
+  display: none;
+  height: inherit;
+}
+.snb > div > ul > li.current-menu-parent {
+  display: block;
+}
+.snb > div > ul > li > a {
+  display: none;
+}
+.snb > div > ul > li > ul {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 50px;
+}
+.snb > div > ul > li > ul > li {
+  flex: 1;
+  max-width: 200px;
+  height: inherit;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+}
+.snb > div > ul > li > ul > li:last-child {
+  border: none;
+}
+.snb > div > ul > li > ul > li.current-post-parent > a {
+  background-color: var(--orange);
+}
+.snb > div > ul > li > ul > li > a {
+  display: block;
+  height: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 15px;
+  color: #fff;
+  background-color: var(--blue);
+}
+.snb > div > ul > li > ul > li > a[aria-current] {
+  color: #fff;
+  background-color: var(--orange);
+}
+
+main.sub-content {
+  width: min(95%, 1200px);
+  margin: 30px auto;
+}
+main.sub-content h2.sub-title {
+  position: relative;
+  text-align: center;
+  font-size: min(7vw, 2em);
+  font-weight: 500;
+  color: var(--blue);
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 30px;
+}
+main.sub-content h2.sub-title::first-letter {
+  font-size: 1.2em;
+  color: var(--orange);
+}
+main.sub-content h2.sub-title::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 25px);
+  top: 0;
+  margin: 0 auto;
+  width: 50px;
+  height: 3px;
+  background-color: var(--green);
+}
+main.sub-content .sub-desc {
+  position: relative;
+  width: min(90%, 500px);
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: center;
+  color: var(--dark);
+  font-weight: 600;
+}
+main.sub-content .sub-desc b {
+  font-size: 1.2em;
+  color: var(--blue);
+}
+main.sub-content .sub-desc::after, main.sub-content .sub-desc::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--orange);
+}
+main.sub-content .sub-desc::after {
+  left: 0;
+  top: 0;
+  border-right: none;
+  border-bottom: none;
+}
+main.sub-content .sub-desc::before {
+  right: 0;
+  bottom: 0;
+  border-left: none;
+  border-top: none;
+}/*# sourceMappingURL=sub.css.map */
