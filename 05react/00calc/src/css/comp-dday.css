@@ -34,12 +34,8 @@ section.dday article.dday-list > ul {
   margin: 15px 0;
 }
 section.dday article.dday-list > ul > li {
-  padding: 15px 5px;
+  padding: 15px 0;
   border-bottom: 2px groove rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-}
-section.dday article.dday-list > ul > li.active {
-  background-color: rgba(255, 192, 203, 0.5);
 }
 section.dday article.dday-list > ul > li.deactive {
   background-color: rgba(0, 0, 0, 0.5);
@@ -92,7 +88,7 @@ section.dday article.dday-list > ul > li > ul.timer-output > li figure svg circl
 }
 section.dday article.dday-list > ul > li > ul.timer-output > li figure svg circle:nth-child(1) {
   stroke-width: 2;
-  stroke: rgba(0, 0, 0, 0.1);
+  stroke: rgba(235, 235, 235, 0.7);
 }
 section.dday article.dday-list > ul > li > ul.timer-output > li figure svg circle:nth-child(2) {
   stroke-width: 5;
@@ -190,16 +186,6 @@ section.dday form.dday-add button:focus {
 }
 section.dday form.dday-add button:active {
   box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-section.dday form.dday-add .fa-circle-left {
-  font-size: 1.5em;
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-  cursor: pointer;
-}
-section.dday form.dday-add .fa-circle-left.active {
-  transform: scale(1.2);
 }
 section.dday div.now {
   text-align: center;

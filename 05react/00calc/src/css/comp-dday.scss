@@ -32,6 +32,7 @@ section.dday {
       overflow: auto; //오버플로우가 적용이 되었을때만.
       margin: 15px 0;
       > li {
+<<<<<<< HEAD
         &.active {
           background-color: rgba(pink, 0.5);
         }
@@ -39,8 +40,10 @@ section.dday {
           background-color: rgba(#000, 0.5);
         }
         padding: 15px 5px;
+=======
+        padding: 15px 0;
+>>>>>>> parent of 4c445e6a (.)
         border-bottom: 2px groove rgba(#fff, 0.5); //2px이상 넣어야 그루브 들어감
-        border-radius: 10px;
         div.meta {
           display: flex;
           align-items: center;
@@ -87,7 +90,7 @@ section.dday {
                   fill:none;
                   &:nth-child(1){
                     stroke-width: 2;
-                    stroke:rgba(#000, 0.1);
+                    stroke:rgba(#ebebeb, 0.7);
                   }
                   &:nth-child(2){
                     stroke-width: 5;
@@ -179,7 +182,6 @@ section.dday {
           mix-blend-mode: color-burn;
         }
       }
-
     }
 
     button {
@@ -194,16 +196,6 @@ section.dday {
       &:active {
         box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
       } //button:active+
-    }
-    .fa-circle-left{
-      font-size: 1.5em;
-      display: block;
-      margin: 0 auto;
-      margin-top:20px;
-      cursor: pointer;
-      &.active {
-        transform: scale(1.2);
-      }
     }
   } //form.dday-add
 

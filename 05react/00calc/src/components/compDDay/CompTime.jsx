@@ -15,8 +15,6 @@ const CompTime = () => {
   const [_sec, _setSec] = useState()
 
   const fnSetState = function () {
-    const now = new Date()
- 
     const { day, year, month, date, ap, hour, min, sec } = fnGetDateInfo(new Date())//현재날짜
     _setDay(day)
     _setYear(year)

@@ -51,10 +51,10 @@
         · 스킨
         · 최근게시물 코드
           <?php 
-            $homeURL = home_url();
+            $homeURL = home_url(bloginfo('url'));
             $kboardID = "1" ;		
-            $kboardPAGE = "/community/notice";
-            $kboardCnt = "5";
+            $kboardPAGE = "notice";
+            $kboardCnt = "3";
             $kboardSTR = '[kboard_latest id="1" url="'.$homeURL.$kboardPAGE.'" rpp="'.$kboardCnt.'"]'; 
             echo do_shortcode( $kboardSTR ); 
           ?>
