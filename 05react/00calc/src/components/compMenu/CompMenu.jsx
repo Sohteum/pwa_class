@@ -1,11 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
+import CompCoachMark from './CompCoachMark';
 
+const fnSetShowCoatch = function () {
+  return (window.localStorage.getItem('localCoatch') ? false : true)
+}
 
 const CompMenu = () => {
-  const {_theme, _setTheme} = useContext(AppContext)
+  const { _theme, _setTheme } = useContext(AppContext)
   const [_key, _setKey] = useState(1)
+  const [_showCoatch, _setShowCoatch] = useState(fnSetShowCoatch())
 
   const fnChangeHandler = function (e) {
     let theme
@@ -23,7 +28,7 @@ const CompMenu = () => {
     } else {
       theme = 'beige'
     }
-    document.body.setAttribute('class', theme) //app 은 root안에있으니가 강제로 바디를 찾아서 적어준것.
+    document.body.setAttribute('class', theme) //app 은 root안에 있으니가 강제로 바디를 찾아서 적어준것.
 
   }
   useEffect(() => { //화면에 나타나는 순간 어떤애로 시작할지 결정이 됨
@@ -52,6 +57,7 @@ const CompMenu = () => {
         <Link to='/bmi'><i className="fa-solid fa-weight-scale"></i> bmi</Link>
         <Link to='/dday'><i className="fa-solid fa-calendar-days"></i> dday</Link>
       </nav>
+      {(_showCoatch) && <CompCoachMark _setShowCoatch={_setShowCoatch} />}
     </section>
   );
 };

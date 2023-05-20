@@ -1,0 +1,59 @@
+body {
+  color: #666;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --blue: #00aae5;
+  --orange: #f68b1e;
+  --green: #8cc63f;
+  --dark: #012633;
+}
+@media screen and (min-width:1000px) {
+  :root {
+    --header-height: 125px;
+  }
+}
+@media screen and (max-width:1000px) {
+  :root {
+    --header-height: 100px;
+  }
+}
+
+.theme-guide {
+  position: relative;
+  width: min(90%, 500px);
+  margin: 30px auto;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px 20px;
+  background-color: var(--dark);
+  color: #fff;
+}
+.theme-guide button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid var(--dark);
+  color: #fff;
+}
+.theme-guide button:hover {
+  background-color: var(--orange);
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

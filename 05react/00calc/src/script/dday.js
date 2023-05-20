@@ -61,7 +61,12 @@ export const fnTimer = function (ddayTimeStamp) {//현재타임스탬프와 디�
   remain = parseInt(remain % (60 * 60))
   let remainMinutes = parseInt(remain / 60)
   let remainSecs = parseInt(remain % 60)
+  if(diffTimeStamp<0){
+     remainDays=0; remainHours=0; remainMinutes=0; remainSecs=0; 
+  }
+
   return { diffSec, remainDays, remainHours, remainMinutes, remainSecs }
+
 }
 
 //초를 하루로 나누고 계속 나눠가지는거지. 그게[ ]

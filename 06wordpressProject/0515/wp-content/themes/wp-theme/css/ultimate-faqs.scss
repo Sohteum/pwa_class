@@ -1,0 +1,29 @@
+.ewd-ufaq-faq-list{//질문답변 전체 컨테이너
+  .ewd-ufaq-faqs{//컨테이너 inner
+    .ewd-ufaq-faq-div{//질문답변 목록 1개
+      .ewd-ufaq-faq-title{//질문
+        border-bottom: 1px dotted #CCC;
+        span{//icon
+          display: block;
+          transform: scale(0.5); 
+        }//icon
+      }//질문
+      .ewd-ufaq-faq-body{//답변
+        background: var(--dark);
+        color:#FFF;
+      }//답변
+
+      &.ewd-ufaq-post-active{//질문답변 목록 활성화
+        .ewd-ufaq-faq-title{//질문
+          h4{//질문내용
+            color:var(--blue);
+            font-weight: 600;
+          }//질문내용
+          span{//아이콘
+            color:var(--blue);
+          }//아이콘
+        }//질문
+      }////질문답변 목록 활성화
+    }//질문답변 목록 1개
+  }//컨테이너 inner
+}//질문답변 전체 컨테이너

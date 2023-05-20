@@ -15,18 +15,22 @@ const CompListItem = ({ item }) => {
   const [_stroke3, _setStroke3] = useState(60)
   const [_stroke4, _setStroke4] = useState(60)
   const [_isActive, _setIsActive] = useState('')
+  const [_isDeActive, _setIsDeActive] = useState('')
 
   const {      //dday일정(객체)를 담고있는 배열
     _ddayArr, _setDdayArr,
     //dday일정을 가공해서 출력할 배열
-    _ddayOutputArr, _setDdayOutputArr} = useContext(DDayContext)
+    _ddayOutputArr, _setDdayOutputArr } = useContext(DDayContext)
 
 
-  const { title, dday ,id} = item //item은 부모로부터 받은 props객체를 구조분해{id, title,  dday}
+  const { title, dday, id } = item //item은 부모로부터 받은 props객체를 구조분해{id, title,  dday}
   const { day, year, month, date, ap, hour, min, sec, timeStamp } = fnGetDateInfo(dday)
 
   const fnTimerSetState = function () {
-    let { diffSec, remainDays, remainHours, remainMinutes, remainSecs } = fnTimer(timeStamp)// 계속 똑같은거 써야하니까 함수로 만들어 set을 마니마니해야해
+    let { remainDays, remainHours, remainMinutes, remainSecs } = fnTimer(timeStamp)// 계속 똑같은거 써야하니까 함수로 만들어 set을 마니마니해야해
+    if (!remainDays && !remainHours && !remainMinutes && !remainSecs) {
+      _setIsDeActive('deactive')
+    }
     _setRemainSeconds(remainSecs)
     _setRemainDays(remainDays)
     _setRemainHours(remainHours)
@@ -66,7 +70,7 @@ const CompListItem = ({ item }) => {
   }, [])
 
   return (
-    <li className={_isActive} onMouseDown={fnMouseDownHandler} onClick={fnDelHandler} >
+    <li className={_isActive + ' ' + _isDeActive} onMouseDown={fnMouseDownHandler} onClick={fnDelHandler} >
       <div className='meta'>
         <h3>{title}</h3>
         <p>
