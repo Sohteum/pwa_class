@@ -1,0 +1,165 @@
+section.bmi {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.bmi form div.radios p {
+  position: relative;
+  display: flex;
+  text-align: center;
+}
+section.bmi form div.radios p input {
+  border: none;
+  background-color: none;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+section.bmi form div.radios p input:checked + label {
+  text-shadow: 1px 1px 1px rgb(255, 255, 255), -1px -1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+section.bmi form div.radios p label {
+  flex: 1;
+  cursor: pointer;
+  padding: 10px 0;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+section.bmi form div.radios p label:first-of-type {
+  border-radius: 30px 0 0 30px;
+}
+section.bmi form div.radios p label:last-of-type {
+  border-radius: 0 30px 30px 0;
+}
+section.bmi form > div {
+  padding: 15px 0;
+  border-bottom: 2px groove rgba(0, 0, 0, 0.1);
+}
+section.bmi form > div > label {
+  display: block;
+  margin-bottom: 15px;
+}
+section.bmi form > div input[type=number] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+section.bmi form > div input[type=number]:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+section.bmi form > div input[type=number]::placeholder {
+  color: inherits;
+}
+section.bmi form button {
+  outline: none;
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+section.bmi form button:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+section.bmi form button:active {
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+section.bmi div.bmi-result {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 15px;
+  left: 100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.5s;
+}
+section.bmi div.bmi-result.active {
+  left: 0;
+}
+section.bmi div.bmi-result div.output {
+  position: relative;
+  height: 75%;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 1px solid rgba(238, 238, 238, 0.5);
+}
+section.bmi div.bmi-result div.output.result {
+  background-color: #fff;
+}
+section.bmi div.bmi-result div.output.result p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+section.bmi div.bmi-result div.output.err {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+section.bmi div.bmi-result div.output.err p {
+  position: relative;
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+section.bmi div.bmi-result div.output.err p i {
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.5);
+}
+section.bmi div.bmi-result div.output.err p i:last-child {
+  font-size: 15em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+section.bmi div.bmi-result div.output .morph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+section.bmi div.bmi-result div.output .morph .org {
+  fill: #8facca;
+}
+section.bmi div.bmi-result div.output .board {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  opacity: 0.8;
+}
+section.bmi div.bmi-result div.output .board .pin {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  width: 35%;
+  transform-origin: 93% center;
+  transition: transform 1s ease-in-out;
+  transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+}
+section.bmi div.bmi-result button {
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+section.bmi div.bmi-result button:active {
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=comp-bmi.css.map */

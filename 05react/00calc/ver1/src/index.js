@@ -8,13 +8,13 @@ import './css/comp-calc.css';
 import './css/comp-bmi.css';
 import './css/comp-dday.css';
 import './css/coatch-mark.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename='/calc'>
+  <HashRouter>
     <App />
-  </BrowserRouter >
+  </HashRouter >
 );
 
 

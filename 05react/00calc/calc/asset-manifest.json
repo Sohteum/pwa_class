@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/calc/static/css/main.1d4ab280.css",
-    "main.js": "/calc/static/js/main.a0dba090.js",
+    "main.js": "/calc/static/js/main.b9ed8c11.js",
     "static/media/timer-icon-bg.gif": "/calc/static/media/timer-icon-bg.406c969fcc14f97281d0.gif",
     "static/media/coachmark.png": "/calc/static/media/coachmark.65cfb8093d6149791a35.png",
     "static/media/bmiBoard.svg": "/calc/static/media/bmiBoard.971a6257ab2692efcf172d9f51d69166.svg",
     "index.html": "/calc/index.html",
     "static/media/bmiPin.svg": "/calc/static/media/bmiPin.df19dc82ac53e14cfb8ebbd972370bca.svg",
     "main.1d4ab280.css.map": "/calc/static/css/main.1d4ab280.css.map",
-    "main.a0dba090.js.map": "/calc/static/js/main.a0dba090.js.map"
+    "main.b9ed8c11.js.map": "/calc/static/js/main.b9ed8c11.js.map"
   },
   "entrypoints": [
     "static/css/main.1d4ab280.css",
-    "static/js/main.a0dba090.js"
+    "static/js/main.b9ed8c11.js"
   ]
 }
