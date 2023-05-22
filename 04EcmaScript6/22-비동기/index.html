@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>비동기</h1>
+  <!-- 로그인 시스템 등을 만들때 컴에서 서버까지 데이터가 날라감. 그리고 다시 쏴주는걸 받음. 그 시간이 걸림. 그래서 사용자가 클릭을 했을때 정보를 받아오고 나서 정상적인 처리가 가능함.통신이 갔다가 정상적으로 온다면, 처리를 계속하는거지 그게 비동기 -->
+  <p>
+    밀(키우는데 얼마나 걸리는지 모름) -> 밀가루(얼마나걸리는지 모름)-> 빵(얼마나걸리는지모름) ->포장된빵
+  </p>
+  <div class="ex1">
+    <p>1. 콜백지옥</p>
+    <button>빵만들기</button>
+  </div>
+  <hr>
+  <div class="ex2">
+    <p>2. promise/then</p>
+    <button>빵만들기</button>
+  </div>
+  <hr>
+  <div class="ex3">
+    <p>3. async/await</p><!-- es6에서 나옴. 프로미스 덴이랑 큰 차이는 없으나 ..비동긷\를 중첩으로 만들어야할때가 있음 그때는 이걸 쓰면 가독성도 올라가고 편함 -->
+    <button>빵만들기</button>
+  </div>
+</body>
+
+</html>
