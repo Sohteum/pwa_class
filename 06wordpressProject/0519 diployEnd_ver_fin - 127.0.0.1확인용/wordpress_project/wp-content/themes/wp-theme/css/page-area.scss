@@ -1,0 +1,36 @@
+@use "./mixin" as m;
+
+.page-section-area {
+  > p {
+    margin: 30px auto;
+    max-width: 400px;
+    text-align: center;
+    &:nth-last-child(2) {
+      max-width: 500px;
+    }
+  } //p
+  figure {
+    img {
+      width: 100%;
+    }
+  } //figure
+  /* ---------------------motion------------------ */
+  p {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 1s;
+    &:last-of-type{
+      transform: translateX(100px);
+    }
+  }
+  figure {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 1s;
+  } //figure
+  p.active,
+  figure.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
