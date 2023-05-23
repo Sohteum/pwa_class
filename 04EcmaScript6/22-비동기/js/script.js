@@ -53,10 +53,10 @@
   }//빵만들기
   const 빵포장함수 = (재료) => {
     console.log(`${재료}를 받아서 빵포장 시작`)
-      setTimeout(() => {
-        console.log('빵포장 완성');
-        resolve('빵완성') //다음 함수를 실행해도 괜찮아^^라는 뜻이고 그럼 그 다음 함수가 재료를 쓸수있게 넘겨줌. 
-      }, Math.ceil(Math.random() * 3) * 1000)
+    setTimeout(() => {
+      console.log('빵포장 완성');
+      resolve('빵완성') //다음 함수를 실행해도 괜찮아^^라는 뜻이고 다음 함수가 재료를 쓸수있게 넘겨줌. 
+    }, Math.ceil(Math.random() * 3) * 1000)
   }//빵포장
 
   document.querySelector('.ex2 button').addEventListener('click', e => {
@@ -65,7 +65,7 @@
         return 밀가루만들기함수(result)
       }).then((result) => {//여기서는 밀가루
         return 빵만들기함수(result)
-      }).then((result)=>{
+      }).then((result) => {
         빵포장함수(result)
       })
   })
@@ -109,24 +109,24 @@
     return new Promise((resolve) => {
       setTimeout(() => {
         console.log('빵 완성');
-        resolve('빵') //다음 함수를 실행해도 괜찮아^^라는 뜻이고 그럼 그 다음 함수가 재료를 쓸수있게 넘겨줌. 
+        resolve('빵')
       }, Math.ceil(Math.random() * 3) * 1000)
     })
   }//빵만들기
-  const 빵포장함수 = (재료) => {
+  const 빵포장함수 = (재료) => {//마지막에는 리턴뉴프로미스 안써도됨. 그다음에 할일이없으니까
     console.log(`${재료}를 받아서 빵포장 시작`)
-      setTimeout(() => {
-        console.log('빵포장 완성');
-        resolve('빵완성') //다음 함수를 실행해도 괜찮아^^라는 뜻이고 그럼 그 다음 함수가 재료를 쓸수있게 넘겨줌. 
-      }, Math.ceil(Math.random() * 3) * 1000)
+    setTimeout(() => {
+      console.log('빵포장 완성');
+      resolve('빵완성')
+    }, Math.ceil(Math.random() * 3) * 1000)
   }//빵포장
 
   document.querySelector('.ex3 button').addEventListener('click', async (e) => {
     let 재료
     재료 = await 밀만들기함수('밀씨앗') //await를 사용하는 중괄호 앞에 반드시 async가 붙어야함
-    재료 = await 밀가루만들기함수(재료) //await를 사용하는 중괄호 앞에 반드시 async가 붙어야함
-    재료 = await 빵만들기함수(재료) //awiat를 사용하는 중괄호 앞에 반드시 async가 붙어야함
-     빵포장함수(재료) //awiat를 사용하는 중괄호 앞에 반드시 async가 붙어야함
+    재료 = await 밀가루만들기함수(재료)
+    재료 = await 빵만들기함수(재료)
+    빵포장함수(재료) //프로미스 안썼으면 await도 안씀 에러는 안나지만 쓰지말자
   })
 
   /* 

@@ -119,7 +119,6 @@ section.dday {
       overflow: auto; //오버플로우가 적용이 되었을때만.
       margin: 15px 0;
       > li {
-<<<<<<< Updated upstream
         &.active {
           background-color: rgba(pink, 0.5);
         }
@@ -129,24 +128,6 @@ section.dday {
         padding: 15px 5px;
         border-bottom: 2px groove rgba(#fff, 0.5); //2px이상 넣어야 그루브 들어감
         border-radius: 10px;
-=======
-<<<<<<< HEAD
-        &.active {
-          background-color: rgba(pink, 0.5);
-        }
-<<<<<<< HEAD:05react/00calc/src/css/comp-dday.scss
-        &.deactive{
-=======
-        &.deactive {
->>>>>>> fb4f9defca256fce7efbfd06259ea9f0bafac87b:05react/00calc/ver1/src/css/comp-dday.scss
-          background-color: rgba(#000, 0.5);
-        }
-        padding: 15px 5px;
-=======
-        padding: 15px 0;
->>>>>>> parent of 4c445e6a (.)
-        border-bottom: 2px groove rgba(#fff, 0.5); //2px이상 넣어야 그루브 들어감
->>>>>>> Stashed changes
         div.meta {
           display: flex;
           align-items: center;
@@ -193,15 +174,7 @@ section.dday {
                   fill: none;
                   &:nth-child(1) {
                     stroke-width: 2;
-<<<<<<< Updated upstream
                     stroke: rgba(#000, 0.1);
-=======
-<<<<<<< HEAD:05react/00calc/src/css/comp-dday.scss
-                    stroke:rgba(#ebebeb, 0.7);
-=======
-                    stroke: rgba(#000, 0.1);
->>>>>>> fb4f9defca256fce7efbfd06259ea9f0bafac87b:05react/00calc/ver1/src/css/comp-dday.scss
->>>>>>> Stashed changes
                   }
                   &:nth-child(2) {
                     stroke-width: 5;
@@ -308,11 +281,6 @@ section.dday {
         box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
       } //button:active+
     }
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD:05react/00calc/src/css/comp-dday.scss
-=======
->>>>>>> Stashed changes
     .fa-circle-left {
       font-size: 1.5em;
       display: block;
@@ -323,10 +291,6 @@ section.dday {
         transform: scale(1.2);
       }
     }
-<<<<<<< Updated upstream
-=======
->>>>>>> fb4f9defca256fce7efbfd06259ea9f0bafac87b:05react/00calc/ver1/src/css/comp-dday.scss
->>>>>>> Stashed changes
   } //form.dday-add
 
   div.now {
