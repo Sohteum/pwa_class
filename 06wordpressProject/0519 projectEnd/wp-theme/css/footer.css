@@ -1,0 +1,84 @@
+footer {
+  padding: 40px 0;
+  background-color: var(--dark);
+  color: #fff;
+  text-align: center;
+}
+footer .center {
+  width: min(90%, 600px);
+  margin: 0 auto;
+}
+footer .center address {
+  margin: 10px 0;
+}
+footer .center address i {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 0.8em;
+}
+footer .center address i::after {
+  content: " /";
+  margin: 0 3px;
+}
+footer .center address i:last-child::after {
+  display: none;
+}
+footer .center p {
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.fnb button {
+  width: 100%;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 0;
+  background-color: rgba(238, 238, 238, 0.2);
+}
+.fnb button:hover {
+  color: var(--blue);
+}
+.fnb button.active {
+  background-color: var(--blue);
+  color: #fff;
+}
+@media screen and (min-width:1000px) {
+  .fnb button {
+    display: none;
+  }
+}
+@media screen and (max-width:1000px) {
+  .fnb > div {
+    display: none;
+  }
+}
+@media screen and (min-width:1000px) {
+  .fnb > div > ul > li {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+  .fnb > div > ul > li:not(:last-child)::after {
+    content: " |";
+  }
+  .fnb > div > ul > li > a:hover {
+    color: var(--blue);
+  }
+}
+@media screen and (max-width:1000px) {
+  .fnb > div > ul > li > a {
+    display: block;
+    padding: 7px 0;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  }
+  .fnb > div > ul > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--blue);
+  }
+}
+.fnb > div > ul > li > a {
+  text-transform: uppercase;
+}
+.fnb > div > ul > li > ul {
+  display: none;
+}/*# sourceMappingURL=footer.css.map */

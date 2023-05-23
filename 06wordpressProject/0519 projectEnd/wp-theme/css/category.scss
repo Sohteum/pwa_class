@@ -1,0 +1,196 @@
+@use "./mixin" as m;
+
+ul.page-numbers {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 30px;
+  border-top: 1px dotted #ccc;
+  li {
+    margin: 0 5px;
+    a {
+      &:hover {
+        color: (--blue);
+      }
+    }
+    span {
+      color: var(--orange);
+      font-weight: 600;
+    }
+  }
+}
+
+.category-gallery-section {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      box-sizing: border-box;
+      padding: 5px;
+      a {
+        display: block;
+        padding: 5px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        //인라인은 레이아웃에서 없는거나 마찬가지.
+        //삐뜔빼뚤에서는 메이져니 사용하면 가장 편하게 바꿀수있음 이미지 크기가 다르면 안예쁘게 나오니까 플러그인을 이용해서 격자안으로 넣어버림
+        figure {
+          margin: 0;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: auto; //반응형으로 줄였을때 이미지가 깨져서 이렇게 하이트를 오토로 줘서 높이를 없애면 비율을 유지할수있음
+            transition: transform 0.5s;
+            transform: scale(1.1);
+          }
+          figcaption {
+            position: relative; //이렇게 하면 이미지 위로 올라가니까 이미지가 얘를 가릴일이 없어짐
+            padding: 10px;
+            background-color: var(--dark);
+            transition: all 0.3s;
+            h3 {
+              padding-bottom: 5px;
+              margin-bottom: 5px;
+              color: #fff;
+              font-weight: 600;
+              border-bottom: 1px dotted rgba(#fff, 0.3);
+            }
+            p {
+              color: rgba(#fff, 0.8);
+            }
+          }
+        }
+        &:hover {
+          figure {
+            img {
+              transform: scale(1.2);
+              transition: all 10s; //커질때는 10초동안 천천히
+              filter: url(#filter);
+            }
+            figcaption {
+              background-color: var(--blue);
+            }
+          } //figure
+        } //a:hover
+      } //a
+      @media #{m.$minLg} {
+        //자동적으로 이미지를 찍을때 이미지 사이즈를 계산해서 스스로 출력함. 그래서 높이를 없애야 이미지가 찌부짜부가 안됨
+        width: 33%;
+      }
+      @media #{m.$md} {
+        width: 50%;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
+    } //li
+  } //ul
+} //category-gallery-section
+
+.category-webzin-section {
+  ul {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      padding: 10px;
+      box-sizing: border-box;
+      &:hover {
+        img {
+          transform: scale(1.2);
+          transition: all 10s; //커질때는 10초동안 천천히
+          filter: url(#filter);
+        }
+      }
+      .meta {
+        border-top: 1px solid rgba(#aaa, 0.9);
+        padding: 7px;
+        background-color: var(--blue);
+        color: #fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        > * {
+          display: inline-block;
+        }
+        address {
+          font-weight: bold;
+          margin-right: 5px;
+        }
+        time {
+        }
+        b {
+          float: right;
+        }
+      } //meta
+      figure {
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 10px solid var(--blue);
+        img {
+          transform: scale(1.1);
+          transition: all 0.5s;
+          width: 100%;
+          height: auto;
+        }
+      } //figure
+      .textbox {
+        @include m.clearfix;
+        h3 {
+          font-weight: 600;
+          font-size: 1.15em;
+        }
+        p {
+          margin: 10px 0;
+        }
+        a {
+          float: right;
+          // display: inline-block; //플롯을 줬기때문에 이건 필요없다
+          padding: 5px 15px;
+          background-color: #fff;
+          color: var(--blue);
+          border: 1px solid var(--blue);
+          border-radius: 10px;
+          &:hover {
+            background-color: var(--blue);
+            color: #fff;
+          }
+        }
+      } //textbox
+      @media #{m.$minLg} {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        .meta {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        figure {
+          width: 40%;
+          margin-right: 30px;
+        }
+        .textbox {
+          // width: 60%;
+          flex: 1;
+        }
+      } //minLg
+      @media #{m.$md} {
+        width: 50%;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
+      @media #{m.$maxLg} {
+        //1000이하 위에 두개 합친거
+        figure {
+          margin: 0;
+        }
+        .textbox {
+          background-color: var(--dark);
+          padding: 10px;
+          color: #fff;
+        }
+      } //maxLg
+    } //li
+  } //ul
+}

@@ -1,0 +1,224 @@
+@use "./mixin" as m;
+body {
+  padding-top: var(--header-height);
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  height: var(--header-height);
+  transition: background-color 0.5s;
+  &.active {
+    position: fixed;
+    top: -35px;
+    background-color: rgba(#fff, 0.9);
+  }
+  // @media #{m.$minLg} {
+  //   height: 125px;
+  // }
+  // @media #{m.$maxLg} {
+  //   height: 100px;
+  // }
+  .top {
+    height: 35px;
+    background-color: var(--blue);
+    ul {
+      display: flex;
+      justify-content: right;
+      width: min(95%, 1200px);
+      margin: 0 auto;
+      height: inherit;
+      li {
+        height: inherit;
+        border-left: 1px solid rgba(#FFF, 0.7);
+        a {
+          display: block;
+          height: inherit;
+          background-color: var(--dark);
+          line-height: 35px;
+          color:#FFF;
+          font-size: 0.9em;
+          padding: 0 15px;
+          transition: all 0.3s;
+          &:hover{
+            background-color: var(--orange);
+          }
+        }
+      }
+    }
+  }
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(90%, 1200px);
+    height: calc(100% - 35px);
+    margin: 0 auto;
+    h1 {
+      height: 70%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.gnb {
+  > div > ul > li#menu-item-156 {
+    display: none;
+  }
+}
+
+.gnb-lg {
+  > div > ul {
+    display: flex;
+    > li {
+      position: relative;
+      height: 45px;
+      &:hover {
+        > a {
+          color: var(--blue);
+        }
+      }
+      > a {
+        display: block;
+        line-height: 45px;
+        padding: 0 45px;
+        height: 45px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #222;
+        transition: color 0.5s;
+      } //1deps ul
+      > ul {
+        min-width: 100%;
+        @include m.posLT(absolute, 50%, 100%, -50%, 0);
+        display: none;
+
+        > li {
+          > a {
+            display: block;
+            padding: 7px 10px;
+            background-color: var(--blue);
+            color: #fff;
+            text-align: center;
+            transition: background-color 0.5s;
+
+            &:hover {
+              background-color: var(--orange);
+            }
+          }
+        }
+      }
+    } //1deps ul
+  } //1deps ul
+  @media #{m.$maxLg} {
+    display: none;
+  }
+}
+.gnb-sm {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  #particles-js-star {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  h6 {
+    @include m.posLT(absolute, 50%, 20%, -50%, 0);
+    width: min(90%, 300px);
+    text-align: center;
+    color: #fff;
+    font-weight: 200;
+    font-size: min(10vw, 3em);
+    text-transform: uppercase;
+  }
+  video {
+    @include m.objectFit(cover);
+  }
+  background-color: rgb(186, 250, 186, 0.8);
+  @media #{m.$minLg} {
+    display: none !important;
+  }
+  > div {
+    @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+    width: min(90%, 300px);
+    background-color: rgba(#fff, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    > ul {
+      > li {
+        > a {
+          @include m.icon(after, "\f07b");
+          display: block;
+          padding: 7px 0;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: var(--blue);
+          border-bottom: 1px solid var(--blue);
+          &::after {
+            float: right;
+          }
+          &.active {
+            &::after {
+              content: "\f07c";
+            }
+          }
+        }
+
+        > ul {
+          display: none;
+          > li {
+            > a {
+              display: block;
+              padding: 7px 10px;
+              color: #222;
+              font-size: 0.9em;
+              border-bottom: 1px dotted #fff;
+              transition: color 0.5s;
+              &:hover {
+                color: var(--orange);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mbtn {
+  width: 40px;
+  height: 40px;
+  font-size: 1.4em;
+  border-radius: 10%;
+  transition: transform 0.3s;
+  &.mbtn-open {
+    color: var(--blue);
+  }
+  &.mbtn-close {
+    position: absolute;
+    right: 2.5%;
+    top: 30px;
+    color: #fff;
+  }
+  &:hover {
+    background-color: var(--blue);
+    color: #fff;
+    font-size: 1.3em;
+  }
+  @media #{m.$minLg} {
+    display: none;
+  }
+}

@@ -1,0 +1,91 @@
+@use "./mixin" as m;
+
+footer {
+  padding: 40px 0;
+  background-color: var(--dark);
+  color: #fff;
+  text-align: center;
+  .center {
+    width: min(90%, 600px);
+    margin: 0 auto;
+    address {
+      margin: 10px 0;
+      i {
+        display: inline-block;
+        font-weight: 300;
+        font-size: 0.8em;
+        &::after {
+          content: " /";
+          margin: 0 3px;
+        }
+        &:last-child::after {
+          display: none;
+        }
+      }
+    }
+    p {
+      font-weight: 600;
+      font-size: 0.8em;
+    }
+  }
+}
+
+.fnb {
+  button {
+    width: 100%;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(#fff, 0.2);
+    padding: 10px 0;
+    background-color: rgba(#eee, 0.2);
+    &:hover {
+      color: var(--blue);
+    }
+    &.active {
+      background-color: var(--blue);
+      color: #fff;
+    }
+    @media #{m.$minLg} {
+      display: none;
+    }
+  }
+  > div {
+    @media #{m.$maxLg} {
+      display: none;
+    }
+    > ul {
+      > li {
+        @media #{m.$minLg} {
+          display: inline-block;
+          font-weight: 600;
+          font-size: 0.9em;
+          &:not(:last-child)::after {
+            content: " |";
+          }
+          // &:last-child::after {
+          //   display: none;
+          // }
+          > a:hover {
+            color: var(--blue);
+          }
+        }
+        @media #{m.$maxLg} {
+          > a {
+            display: block;
+            padding: 7px 0;
+            border-bottom: 1px dotted rgba(#fff, 0.2);
+            &:hover{
+              background-color: rgba(#fff, 0.2);
+              color:var(--blue);
+            }
+          }
+        }
+        > a {
+          text-transform: uppercase;
+        }
+        > ul {
+          display: none;
+        }
+      }
+    }
+  } //div
+}

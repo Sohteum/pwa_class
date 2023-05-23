@@ -1,0 +1,18 @@
+■ openweather API
+  ● https://openweathermap.org/API
+  ● 회원가입
+  ● 인증메일 확인
+  ● api key 확인 (우측상단 회원 메뉴의 my api keys 항목)
+■ 서비스신청
+  ● 상단메뉴 api 에서 제공되는 서비스 목록
+  ● subscribe(구독) 
+    - One Call API 3.0
+    - 영문주소입력 (영문주소변환 : https://www.jusoen.com/)
+    - 신용카드 입력 (카드정보와 동일하게 입력)
+  ● 사용할 api목록의 doc파일 확인
+  ● 브라우저 주소창에 제공되는 API입력 후 테스트 (결제 후 승인까지 10분이상 시간 소요 됨)
+  ● 날씨 메시지 코드
+    https://openweathermap.org/weather-conditions
+
+  
+
