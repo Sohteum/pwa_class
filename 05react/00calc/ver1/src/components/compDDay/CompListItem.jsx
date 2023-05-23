@@ -23,11 +23,14 @@ const CompListItem = ({ item }) => {
 
 
   const { title, dday, id } = item //item은 부모로부터 받은 props객체를 구조분해{id, title,  dday}
+<<<<<<< HEAD:05react/00calc/src/components/compDDay/CompListItem.jsx
 =======
 
 
   const { title, dday } = item //item은 부모로부터 받은 props객체를 구조분해{id, title,  dday}
 >>>>>>> parent of 4c445e6a (.)
+=======
+>>>>>>> fb4f9defca256fce7efbfd06259ea9f0bafac87b:05react/00calc/ver1/src/components/compDDay/CompListItem.jsx
   const { day, year, month, date, ap, hour, min, sec, timeStamp } = fnGetDateInfo(dday)
 
   const fnTimerSetState = function () {
@@ -57,11 +60,15 @@ const CompListItem = ({ item }) => {
   }, [])
 
   return (
+<<<<<<< HEAD:05react/00calc/src/components/compDDay/CompListItem.jsx
 <<<<<<< HEAD
     <li className={_isActive + ' ' + _isDeActive} onMouseDown={fnMouseDownHandler} onClick={fnDelHandler} >
 =======
     <li>
 >>>>>>> parent of 4c445e6a (.)
+=======
+    <li className={_isActive + ' ' + _isDeActive} onMouseDown={fnMouseDownHandler} onClick={fnDelHandler} >
+>>>>>>> fb4f9defca256fce7efbfd06259ea9f0bafac87b:05react/00calc/ver1/src/components/compDDay/CompListItem.jsx
       <div className='meta'>
         <h3>{title}</h3>
         <p>
