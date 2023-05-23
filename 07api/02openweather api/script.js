@@ -32,6 +32,7 @@ const fnInitMap = (lat, lng) => { //  지도를 만드는 함수
     let address = await fnGetAddress(lat, lng)
 
     fnOutputAddress(address)
+    fnWeatherChangeHandler(lat,lng)
   })//click
 }//fn
 
@@ -109,20 +110,21 @@ const fnSetWeather = (data) => {//받아온 날시 정보를 출력용으로 변
 const fnWeatherHandler = async () => {//날씨 출력 비동기로 날씨정보 제이슨 데이터 수신
   const { lat, lng } = await fnGetLatLng()
   const weatherData = await fnGetweather(lat, lng)
+
   const { year, month, date, hour, min, day, desc, temp } = fnSetWeather(weatherData.current)
-  document.querySelector('.time').innterText = `${year}-${month}-${date}, ${hour}:${min}, ${day}요일`
-  document.querySelector('.data').innterText = `${desc}`
-  document.querySelector('.temp').innterText = `${temp}`
+  document.querySelector('.time').innerText = `${year}-${month}-${date}, ${hour}:${min}, ${day}요일`
+  document.querySelector('.data').innerText = `${desc}`
+  document.querySelector('.temp').innerText = `${temp}`
 
 }//fnOutputWeather
 
 
 const fnWeatherChangeHandler = async (lat, lng) => {//날씨 출력 비동기로 날씨정보 제이슨 데이터 수신
-  const { lat, lng } = await fnGetLatLng()
+  const weatherData = await fnGetweather(lat, lng)
   const { year, month, date, hour, min, day, desc, temp } = fnSetWeather(weatherData.current)
-  document.querySelector('.time').inerText = `${year}-${month}-${date}, ${hour}:${min}, ${day}요일`
-  document.querySelector('.data').inerText = `${desc}`
-  document.querySelector('.temp').inerText = `${temp}`
+  document.querySelector('.time').innerText = `${year}-${month}-${date}, ${hour}:${min}, ${day}요일`
+  document.querySelector('.data').innerText = `${desc}`
+  document.querySelector('.temp').innerText = `${temp}`
 
 }//fnWeatherChangeHandler
 
