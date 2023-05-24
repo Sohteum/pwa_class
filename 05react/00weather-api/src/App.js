@@ -1,16 +1,51 @@
+import { createContext, useLayoutEffect, useState } from "react";
 import CompCurrent from "./components/compCurrent/CompCurrent";
 import CompDaily from "./components/compDaily/CompDaily";
 import CompHourly from "./components/compHourly/CompHourly";
 import CompMap from "./components/compMap/CompMap";
+import { fnGetAddress, fnGetLatLng } from "./js/map";
+import { fnGetWeatherData } from "./js/weather";
+
+export const AppContext = createContext()
+
 
 function App() {
+
+  const [_latLng, _setLatLng] = useState(null)//위경도상태
+  const [_weatherData, _setWeatherData] = useState(null)//날씨데이터
+  const [_address, _setAddress] = useState(null)
+
+  const fnAppInit = async () => {//위경도,주소, 날씨정보초기화(받아오는거)세팅
+    let latlngObj = await fnGetLatLng() //위도와 경도를 객체로 반환
+    _setLatLng(latlngObj)
+    let address = await fnGetAddress(latlngObj) //주소를 리턴하는 함수
+    _setAddress(address)
+    const weatherData = await fnGetWeatherData(latlngObj)//api비동기 통신으로 날씨정보 리턴(이걸로 스테잇을 바꿔야하니 만들어야지)
+    _setWeatherData(weatherData)
+  }
+
+  //가상돔이 리얼돔으로 바뀌는 시점. 렌더링이 되기전. 화면이 잠시 끊기는 현상을 제어//유즈이펙트보다 한단계빠름 가상돔이 리얼돔으로 바꾸고 렌더링이 된 시점//비동기일때는 의미없음.비동기자체가 시간이 걸리니까
+  useLayoutEffect(() => {
+    fnAppInit()//비동기로 위경도를 받아옴
+  }, [])
+
+
+
   return (
-    <div className="app-inner">
-      <CompCurrent/>
-      <CompDaily/>
-      <CompHourly/>
-      <CompMap/>
-    </div>
+    <AppContext.Provider value={{
+       _latLng, _setLatLng ,
+       _weatherData, _setWeatherData,
+       _address, _setAddress,
+        }}>
+      <h1><img src={`${process.env.PUBLIC_URL}/img/main/title.png`} alt=""/></h1>
+
+      <div className="app-inner">
+        <CompCurrent />
+        <CompMap />
+        <CompHourly />
+        <CompDaily />
+      </div>
+    </AppContext.Provider>
   );
 }
 

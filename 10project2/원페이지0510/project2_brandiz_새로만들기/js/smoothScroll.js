@@ -27,6 +27,8 @@
   })
   //중요한 애들 다 나열을 해줌. 그리고 막아줌*/
 
+  
+
   let prevWheelDelta
 
   window.addEventListener('mousewheel', e => {

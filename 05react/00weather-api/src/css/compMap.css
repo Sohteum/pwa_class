@@ -1,0 +1,10 @@
+@media screen and (max-width: 900px) {
+  .comp-map .section-inner {
+    height: 500px;
+  }
+}
+.comp-map .section-inner #map {
+  filter: brightness(110%);
+  height: 100%;
+  border-radius: 10px;
+}/*# sourceMappingURL=compMap.css.map */

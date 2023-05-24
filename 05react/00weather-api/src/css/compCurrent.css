@@ -1,0 +1,53 @@
+@media screen and (max-width: 900px) {
+  section.comp-current {
+    margin-top: 40px !important;
+  }
+}
+section.comp-current .section-inner .current-output {
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: #FFF;
+}
+@media screen and (min-width: 900px) {
+  section.comp-current .section-inner .current-output {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  section.comp-current .section-inner .current-output {
+    padding: 10px;
+  }
+}
+section.comp-current .section-inner .current-output address {
+  margin-bottom: 10px;
+}
+section.comp-current .section-inner .current-output .circle-container {
+  position: relative;
+  width: min(85%, 300px);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+section.comp-current .section-inner .current-output .circle-container::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  background-color: palegreen;
+  border-radius: 50%;
+}/*# sourceMappingURL=compCurrent.css.map */

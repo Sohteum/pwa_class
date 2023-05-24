@@ -81,6 +81,7 @@ const fnGoogleMapInit = async () => {// 현재 위치를 받아서 지도를 그
 const fnGetweather = (lat, lng) => {
   return new Promise((resolve) => {
     let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lng}&exclude={part}&appid=8031d24621d3a80ad232693f11f57a1f`
+  
     fetch(url)
       .then((data) => {
         resolve(data.json())

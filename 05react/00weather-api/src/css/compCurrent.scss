@@ -1,0 +1,46 @@
+@use "./mixin" as m;
+
+section.comp-current {
+  @media screen and (max-width: 900px) {
+    margin-top: 40px !important;
+  }
+  .section-inner {
+    .current-output {
+      border-radius: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      color:#FFF;
+      @media screen and (min-width: 900px) {
+        height: 100%;
+      } //output min
+      @media screen and (max-width: 900px) {
+        padding: 10px;
+      } //output max
+      address {
+        margin-bottom: 10px;
+      }
+      .circle-container {
+        position: relative;
+        width: min(85%, 300px);
+        @include m.square;
+        border-radius: 50%;
+        background-color: rgba(#000, 0.3);
+        .circle-inner {
+          @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          height: 90%;
+          background-color: palegreen;
+          border-radius: 50%;
+        } //circle-inner
+      } //circle-container
+    } // current-output
+  } //section-inner
+} //current
