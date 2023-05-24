@@ -1,0 +1,147 @@
+@use 'mixin' as m;
+
+.section1 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  .bg {
+    height: 100%;
+
+    background-image: url(../img/section1/section1-block.jpg);
+    background-size: cover;
+    background-position: center;
+    img {
+      @include m.objectFit(cover);
+      filter: url(#ripple-filter1);
+    }
+  }
+  .desc {
+    @media #{m.$landscape} {
+      @include m.posLT(absolute, 10%, 50%, 0, -50%);
+      height: 60%;
+    }
+    @media #{m.$portrait} {
+      @include m.posLT(absolute, 5%, 35%, 0, -50%);
+      height: 40%;
+    }
+    .title {
+      position: relative;
+      height: 75%;
+      svg {
+        position: relative;
+        height: 100%;
+        * {
+          fill: none;
+          stroke: #fff;
+          stroke-width: 3px;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+      img {
+        position: absolute;
+        width: 20%;
+        animation: updown 2s infinite alternate; //얼터너티브 위로 올라갔다 내려갔다
+      }
+      .deco2 {
+        @include m.posRT(absolute, 5%, 50%, 0, -50%);
+      }
+    }
+    .slogun {
+      height: 25%;
+      img {
+        height: 100%;
+        filter: drop-shadow(0 0 5px #ffffff);
+      }
+    }
+  }
+
+  .boy {
+    position: absolute;
+    @media #{m.$minLg} {
+      right: 10%;
+      bottom: -40%;
+      width: 60%;
+    }
+    @media #{m.$md} {
+      right: 5%;
+      bottom: 0%;
+      width: 50%;
+    }
+    @media #{m.$maxSm} {
+      right: max(-10%, -150px);
+      bottom: 30%;
+      height: 30%;
+    }
+    img {
+      height: 100%;
+      &.original {
+        position: relative;
+      }
+      &.glitch {
+        position: absolute;
+        top: 0;
+        // mix-blend-mode: overlay;
+        opacity: 0.5;
+      }
+      &.glitch1 {
+        filter: saturate(300%) hue-rotate(300deg);
+        animation: glitch 1.5s infinite;
+      }
+      &.glitch2 {
+        filter: saturate(300%) hue-rotate(150deg);
+        animation: glitch 1.5s infinite 0.2s;
+      }
+    } //img
+  } //boy
+
+  .papers {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    img {
+      position: absolute;
+      animation-name: paper;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+} //section1
+
+/* section1 motion */
+.section1 {
+  .desc {
+    .title {
+      svg {
+        * {
+          stroke-dashoffset: 1;
+          transition: all 2s;
+        }
+      }
+    }
+    .slogun {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 2s;
+    }
+  }
+}
+
+.section1.active {
+  .desc {
+    .title {
+      svg {
+        * {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+    .slogun {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+} //active
+//section2에서 기준을 잡아서 섹션1이보이기시작할때 에드, 안보이기시작할때 리무브

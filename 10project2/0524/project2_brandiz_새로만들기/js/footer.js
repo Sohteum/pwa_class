@@ -1,0 +1,12 @@
+$(function(){
+  var reqID
+  function fn() {
+  $(`.footer_height`).height($(`footer`).innerHeight())
+  }
+  fn()
+  $(window).scroll(function(){
+    reqID = requestAnimationFrame(fn)
+  }).resize(function(){
+    reqID = requestAnimationFrame(fn)
+  })
+  })
