@@ -46,22 +46,22 @@ $(function () {
     }, 5000)
   }
 
-    $(`.carousel .next`).click(function () {
-      n++//이미지를 오른쪽으로 확 주고 왼쪽으로 천천히
-      change()
-      $(`.carousel .img`).stop().animate({ 'left': `-20%`, 'opacity': `0` })
-      $(`.carousel .img${n}`).css({ 'left': `20%` })
-      $(`.carousel .img${n}`).stop().animate({ 'left': `0`, 'opacity': `1` })
-      autoplay()
-    })
-
-    $(`.carousel .prev`).click(function () {
-      n--
-      change()
-      $(`.carousel .img`).stop().animate({ 'left': `20%`, 'opacity': `0` })
-      $(`.carousel .img${n}`).css({ 'left': `-20%` })
-      $(`.carousel .img${n}`).stop().animate({ 'left': `0`, 'opacity': `1` })
-      autoplay()
-    })
-
+  $(`.carousel .next`).click(function () {
+    n++//이미지를 오른쪽으로 확 주고 왼쪽으로 천천히
+    change()
+    $(`.carousel .img`).stop().animate({ 'left': `-20%`, 'opacity': `0` })
+    $(`.carousel .img${n}`).css({ 'left': `20%` })
+    $(`.carousel .img${n}`).stop().animate({ 'left': `0`, 'opacity': `1` })
+    autoplay()
   })
+
+  $(`.carousel .prev`).click(function () {
+    n--
+    change()
+    $(`.carousel .img`).stop().animate({ 'left': `20%`, 'opacity': `0` })
+    $(`.carousel .img${n}`).css({ 'left': `-20%` })
+    $(`.carousel .img${n}`).stop().animate({ 'left': `0`, 'opacity': `1` })
+    autoplay()
+  })
+
+})

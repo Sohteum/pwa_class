@@ -1,4 +1,4 @@
-@use "mixin" as m; //요즘은 import대신 use사용 권장
+@use 'mixin' as m; //요즘은 import대신 use사용 권장
 
 header {
   position: fixed;
@@ -12,7 +12,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: min(95%, 1700px);
+    width: min(95%, 1800px);
     height: inherit; //100%(부모가 있고, 패딩이 없으면 inherit사용가능. 포지션앱솔도 생각해보기)
     margin: 0 auto;
     // background-color: rgb(255, 255, 255);
@@ -225,22 +225,19 @@ header {
   @include m.posRT(fixed, -2%, 50%, 0, -50%);
   width: 12%;
   //믹스블랜드모드는 형제끼리만가능함. 비슷한 색일때 안보이니까 그럴때 다른 색을 보여주는것
-  filter: drop-shadow(1px 1px 0 rgba(#000, 0.3));
+  filter: drop-shadow(1px 1px 0 rgba(#fff, 0.3));
   svg {
     width: 100%;
     // background-color: red;
     .path {
       fill: none;
       stroke: var(--dark-color);
-      stroke-width: 3px; 
+      stroke-width: 3px;
       margin: 10px;
       // background-color: red;
-    } 
+    }
     .star {
-      
-      offset-path: path(
-        "M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275"
-      );
+      offset-path: path('M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275');
       // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
     }
     // .curve {

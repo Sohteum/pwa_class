@@ -5,7 +5,7 @@
   <figure class="papers">
     <!-- 물방울을 랜덤하게 넣을 예정 -->
     <script>
-      for (let i = 1; i <= 70; i++) {
+      for (let i = 1; i <= 50; i++) {
         $(`.section1 .papers`).append(`
         <img src="img/paper/paper${Math.ceil(Math.random()*9)}.png" alt/>
         `)
