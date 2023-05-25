@@ -37,6 +37,7 @@ body {
   }
 }
 h1 {
+  z-index: 1;
   perspective: 700px;
   position: absolute;
   left: 50%;
@@ -71,7 +72,7 @@ h1 {
   padding: 5px;
   border: 1px solid rgba(#fff, 0.7);
   animation: grow 2s infinite alternate;
-  @media screen and (min-width:900px) {
+  @media screen and (min-width: 900px) {
     min-height: 760px;
   }
   @keyframes grow {
@@ -122,14 +123,15 @@ h1 {
           left: 0;
           top: 0;
           background-color: #4b87b6;
-        }//loader
+        } //loader
       } //section-inner
     } //section
   } //inner 안으로 스크롤바 만들려고 미디어를 안으로 줌
 } //root 여기 스크롤바 달 예정
 
 .app-inner,
-.section-inner, body {
+.section-inner,
+body {
   @media (hover: hover) {
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
@@ -145,8 +147,6 @@ h1 {
     }
   } //media hover
 }
-
-
 
 /* preloader */
 
@@ -176,13 +176,16 @@ h1 {
   }
   10%,
   59% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em,
+      -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em,
+      -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+      -0.82em -0.09em 0 -0.477em;
   }
   100% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
@@ -198,13 +201,16 @@ h1 {
   }
   10%,
   59% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em,
+      -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em,
+      -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+      -0.82em -0.09em 0 -0.477em;
   }
   100% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
@@ -228,5 +234,14 @@ h1 {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

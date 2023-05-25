@@ -33,11 +33,12 @@ function App() {
 
   return (
     <AppContext.Provider value={{
-       _latLng, _setLatLng ,
-       _weatherData, _setWeatherData,
-       _address, _setAddress,
-        }}>
-      <h1><img src={`${process.env.PUBLIC_URL}/img/main/title.png`} alt=""/></h1>
+      fnAppInit,
+      _latLng, _setLatLng,
+      _weatherData, _setWeatherData,
+      _address, _setAddress,
+    }}>
+      <h1><img src={`${process.env.PUBLIC_URL}/img/main/title.png`} alt="" /></h1>
 
       <div className="app-inner">
         <CompCurrent />

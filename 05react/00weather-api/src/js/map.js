@@ -283,11 +283,13 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
     let marker = new window.google.maps.Marker({ position: center, map: map });//항상 윈도우!!
 
     map.addListener('click', async (e) => {
+        const result = window.confirm('해당위치로 날씨정보를 갱신하시겠습니까?')
+        if(result){
         let lat = e.latLng.lat()
         let lng = e.latLng.lng()
-        marker.setPosition({lat,lng})
-        fn(1)
-        console.log(`클릭한 위경도${lat} ${lng}`);
+        marker.setPosition({ lat, lng })
+        //클릭한 위치의 위경도를 받아서 주소, 날씨정보 갱신
+        fn({ lat, lng })}
     })//click
 }//fnInitMap
 
@@ -297,9 +299,9 @@ export const fnGetAddress = (latlngObj) => { //위경도를 받아서 주소를 
         let address
         geocoder.geocode({ 'location': latlngObj }, function (results, status) {
             try { //try catch구문. 에러가 발생이 되면 캐치문을 이용해서 에러를 내지 않고 아래 문구를 호출하게 됨
-                address = results[3].formatted_address //status가 주소가 없으면 false가 나오는거얌 아니면 주소 리턴
+                address = `${results[3].formatted_address} | ${results[0].formatted_address}` //status가 주소가 없으면 false가 나오는거얌 아니면 주소 리턴
             } catch {// formatted_address정보가 없을경우 예외처리
-                address = "해당위치의 주소가 존재하지 않습니다"
+                address = `'해당위치의 주소가 존재하지 않습니다. 위치를 확인 후 다시 검색해주세요'`
             }
             resolve(address)
         });
