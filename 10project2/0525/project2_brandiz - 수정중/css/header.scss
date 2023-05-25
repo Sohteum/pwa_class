@@ -1,0 +1,251 @@
+@use 'mixin' as m; //요즘은 import대신 use사용 권장
+
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  transition: background-color 1s;
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(95%, 1800px);
+    height: inherit; //100%(부모가 있고, 패딩이 없으면 inherit사용가능. 포지션앱솔도 생각해보기)
+    margin: 0 auto;
+    // background-color: rgb(255, 255, 255);
+    h1 {
+      position: relative;
+      z-index: 1;
+      // height: 45%;
+      @media #{m.$minLg} {
+        width: 170px;
+      }
+      @media #{m.$maxLg} {
+        width: 130px;
+      }
+      img {
+        width: 100%;
+      }
+      a {
+        position: relative;
+        display: block;
+        svg:first-child {
+          width: 100%;
+          * {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 3px;
+            opacity: 0.6;
+            transition: stroke 1s;
+          }
+        }
+        svg:last-child {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          height: 100%;
+          * {
+            fill: none;
+            stroke: var(--dark-color);
+            stroke-width: 5px;
+            stroke-dasharray: 1;
+            animation: stroke 6s infinite linear;
+            transition: stroke 1s;
+          }
+        }
+      }
+    }
+  }
+  > svg {
+    position: absolute;
+    top: 100%;
+    width: 100%; // 뷰박스가 있으니까 하잇은 자동으로 먹는다
+    // fill: rgba(#FFF,0);//넌은 색이 아니여서 트랜지션이 일어나지않음
+    // transition: all 1s;
+    transform: translateY(-17%);
+    max-height: 30px;
+  }
+  .line {
+    fill: rgba(#fff, 0);
+    transition: fill 1s;
+    stroke: rgba(m.$mainColor, 0);
+    stroke-width: 5px;
+    stroke-dasharray: 1;
+    //   stroke-dashoffset: -1;
+    // }
+  }
+  &.active {
+    background-color: rgba(#fff, 0.9);
+    .center {
+      h1 {
+        a {
+          svg:first-child {
+            * {
+              stroke: var(--dark-color);
+            }
+          } //백그라운드
+          svg:last-child {
+            * {
+              stroke: var(--main-color);
+            }
+          } //
+        }
+      } //h1
+    } //center
+    > svg {
+      .line {
+        fill: rgba(#fff, 0.9);
+        stroke: rgba(m.$mainColor, 0.5);
+      }
+    }
+  }
+} //header
+
+.gnb_lg {
+  display: flex;
+  align-items: center;
+  a {
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--dark-color);
+    transition: color 0.5;
+    &:hover {
+      color: var(--main-color);
+    }
+    &.active {
+      padding: 5px 7px;
+      border-radius: 5px;
+      background-color: var(--main-color);
+      color: #fff;
+    }
+  }
+  @media #{m.$maxLg} {
+    display: none;
+  }
+}
+.gnb_sm {
+  display: none;
+  position: absolute;
+  width: 100%; //높이는 주지못함. 드롭다운메뉴니까
+  top: 0;
+  padding-top: 60px;
+  left: 0;
+  background-color: rgba(#fff, 0.9); ///여기로 옮겨서 전체 백그라운드로 바꿔줌
+
+  a {
+    display: block;
+    height: 45px;
+    padding: 0 20px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--dark-color);
+    border-bottom: 1px solid rgba(#000, 0.1);
+    transition: color 1s;
+    &:hover {
+      color: var(--main-color);
+    }
+    &.active {
+      background-color: var(--dark-color);
+      color: #fff;
+    }
+  }
+  /*   display: none !important; */
+  @media #{m.$minLg} {
+    display: none !important;
+  }
+}
+
+.mBtn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  span {
+    position: absolute;
+    left: 0;
+    top: 19px;
+
+    height: 2px;
+    background-color: var(--main-color);
+    &.bar1 {
+      margin-top: -7px;
+      width: 20px;
+    }
+    &.bar2 {
+      width: 30px;
+    }
+    &.bar3 {
+      margin-top: 7px;
+      width: 40px;
+    }
+    transition: width 0.5s, margin-top 0.5s, transform 0.5s;
+    transition-delay: 0.5s, 0s, 0s;
+  }
+
+  &:hover {
+    span {
+      width: 40px;
+      margin-top: 0;
+      transition-delay: 0s, 0.5s, 0s;
+    }
+  }
+
+  &.active {
+    span {
+      width: 40px;
+      margin-top: 0;
+      transition-delay: 0s, 0.5s, 0.6s;
+
+      &.bar1 {
+        transform: rotate(45deg);
+      }
+      &.bar2 {
+        opacity: 0;
+      }
+      &.bar3 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @media #{m.$minLg} {
+    display: none;
+  }
+} //mBtn
+
+.scrollspy {
+  @include m.posRT(fixed, -2%, 50%, 0, -50%);
+  width: 12%;
+  //믹스블랜드모드는 형제끼리만가능함. 비슷한 색일때 안보이니까 그럴때 다른 색을 보여주는것
+  filter: drop-shadow(1px 1px 0 rgba(#fff, 0.3));
+  svg {
+    width: 100%;
+    // background-color: red;
+    .path {
+      fill: none;
+      stroke: var(--dark-color);
+      stroke-width: 3px;
+      margin: 10px;
+      // background-color: red;
+    }
+    .star {
+      offset-path: path('M150 25v275s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v75s0 25-25 25-25-25-25-25 0-25 25-25 25 25 25 50v275');
+      // offset-distance: 50%; 스크롤이 0일때 0. 1일때 100%
+    }
+  }
+  @media #{m.$maxLg} {
+    display: none;
+  }
+  @media screen and (max-height:750px) {  
+    display: none;
+  }
+}
+
