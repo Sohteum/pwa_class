@@ -28,20 +28,20 @@ const CompDailyLi = ({ data }) => {
             <em> {tempMin} / {tempMax} &#176;c</em>
           </span>
           {
-            (rain) ?
+            (rain!==0) &&
             <span>
               <i className="fa-solid fa-umbrella"></i>
               <em>{rain}mm</em>
             </span>
-            :''
+          
           }
           {
-            (snow) ?
+            (snow!==0) &&
             <span>
               <i className="fa-solid fa-snowflake"></i>
               <em>{snow}mm</em>
             </span>
-            :''
+        //스트릭트 표현식을 사용해야 언디파인으로 나옴. 안그러면 폴스출력해서 0을 리턴
           }
         </p>
       </a>

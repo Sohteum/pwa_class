@@ -11,21 +11,17 @@ const CompDaily = () => {
   return (
     <section className='comp-daily'>
       <div className="section-inner">
-        <div className="wrap">
-
-          <h2>Daily</h2>
-          <ul>
-            {
-              (_weatherData)
-                ?
-                _weatherData.daily.map(v => <CompDailyLi key={v.dt} data={v} />)
-                :
-                <CompLoader />
-            }
-          </ul>
-        </div>
+        <h2>Daily</h2>
+        <ul>
+          {
+            (_weatherData)
+              ?
+              _weatherData.daily.map(v => <CompDailyLi key={v.dt} data={v} />)
+              :
+              <CompLoader />
+          }
+        </ul>
       </div>
-
     </section>
   );
 };

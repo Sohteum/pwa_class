@@ -1,35 +1,47 @@
-.comp-daily .section-inner .wrap {
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 10px;
+.comp-daily .section-inner {
+  padding-top: 0 !important;
 }
-.comp-daily .section-inner .wrap ul li {
+.comp-daily .section-inner ul li {
   padding: 5px;
   border-bottom: 1px solid rgba(67, 120, 163, 0.2);
 }
-.comp-daily .section-inner .wrap ul li a {
+.comp-daily .section-inner ul li a {
   display: block;
   width: 100%;
   padding: 10px 0;
   text-align: left;
 }
-.comp-daily .section-inner .wrap ul li a .date {
+.comp-daily .section-inner ul li a .date {
   font-size: 0.9em;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
-.comp-daily .section-inner .wrap ul li a .date span.desc {
+.comp-daily .section-inner ul li a .date span.desc {
   font-style: italic;
 }
-.comp-daily .section-inner .wrap ul li a .date i {
+.comp-daily .section-inner ul li a .date i {
   margin-right: 2px;
 }
-.comp-daily .section-inner .wrap ul li a .date .fa-arrow-down {
+.comp-daily .section-inner ul li a .date .fa-arrow-down {
   float: right;
 }
-.comp-daily .section-inner .wrap ul li .detail {
-  background-color: rgba(29, 50, 68, 0.5);
+.comp-daily .section-inner ul li a .info img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+  width: 50px;
+}
+.comp-daily .section-inner ul li a .info span {
+  margin-right: 10px;
+}
+.comp-daily .section-inner ul li a .info span i {
+  margin-right: 5px;
+}
+.comp-daily .section-inner ul li a .info span em {
+  font-weight: 500;
+}
+.comp-daily .section-inner ul li .detail {
+  background-color: rgba(11, 48, 80, 0.5);
   color: #fff;
   padding: 10px;
 }/*# sourceMappingURL=compDaily.css.map */

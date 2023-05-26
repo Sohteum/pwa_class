@@ -93,23 +93,23 @@ const CompCurrentOutput = () => {
 
             </span>
             {
-              (rain) ?
+              (rain!==0) &&
                 <span className="rain">
                   <i className="fa-solid fa-umbrella"></i>
                   <b>{rain}</b>
                   <small>mm/h</small>
                 </span>
-                : ''
+                
             }
             {
-              (snow) ?
+              (snow!==0)&&
               <span className="snow">
                 <i className="fa-solid fa-snowflake"></i>
                 <b>{snow}</b>
                 <small>mm/h</small>
               </span>
-              :''
-            }
+               
+            }{/* 스트릭트표현식을 사용하면 언디파인이 나와서 출력값이 없는거고, 눈이 있다면~이렇게 쓰면 폴스가 나와서 0이 리턴 */}
           </p>
 
           <p className='time-date'>

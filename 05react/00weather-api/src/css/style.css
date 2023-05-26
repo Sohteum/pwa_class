@@ -152,7 +152,7 @@ h1 img {
 @media screen and (min-width: 900px) {
   #root > div.app-inner section .section-inner h2 {
     position: sticky;
-    top: 10px;
+    top: 0;
   }
 }
 

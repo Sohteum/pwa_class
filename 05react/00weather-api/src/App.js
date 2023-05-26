@@ -34,7 +34,7 @@ function App() {
     const weatherData = await fnGetWeatherData(latlngObj)//api비동기 통신으로 날씨정보 리턴(이걸로 스테잇을 바꿔야하니 만들어야지)
     _setWeatherData(weatherData)
   }
-  console.log(_weatherData);
+  // console.log(_weatherData);
 
   //가상돔이 리얼돔으로 바뀌는 시점. 렌더링이 되기전. 화면이 잠시 끊기는 현상을 제어//유즈이펙트보다 한단계빠름 가상돔이 리얼돔으로 바꾸고 렌더링이 된 시점//비동기일때는 의미없음.비동기자체가 시간이 걸리니까
   useLayoutEffect(() => {
