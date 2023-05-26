@@ -1,0 +1,113 @@
+@use 'mixin' as m;
+
+.section5{
+  article, .dummy-scroll{
+    height: calc(100vh - var(--header-height));
+  }
+  .bg{
+    position: sticky;
+    top: var(--header-height);
+    img{
+      @include m.objectFit(cover);
+    }
+    video{
+      @include m.objectFit(cover);
+      position: absolute;
+      top: 0;
+      mix-blend-mode: screen;
+      opacity: 0.4;
+    }
+  }
+  .earth{
+    position: sticky;
+    top: var(--header-height);
+    mix-blend-mode: overlay;
+    figure{
+      @include m.posLT(absolute,50%,50%,-50%,-50%);
+      width: min(90%, 600px);
+      img{
+        width: 100%;
+      }
+      .dummy{
+        opacity: 0;
+      } //보이면 안 된다
+      .img{
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  .progress{
+    position: sticky;
+    top: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      li{
+        position: relative;
+        box-sizing: border-box;
+        padding: 10px;
+        max-width: 330px;
+        @media #{m.$minLg}{
+          width: 25%;
+        }
+        @media #{m.$maxLg}{
+          width: 50%;
+        }
+        svg{
+          width: 100%;
+          .poly-circle{
+            fill: rgba(#FFF,0.4);
+            stroke: var(--main-color);
+            stroke-width: 7px;
+          }
+          .circle{
+            fill: rgba(#FFF,0.4);
+          }
+          .progress{
+            fill: none;
+            stroke: var(--main-color);
+            stroke-width: 15px;
+            stroke-dasharray: 1; //점선과 선의 길이 똑같이 맞춰놓은 거
+            stroke-dashoffset: 1;
+            transform-origin: center; //center center -> 같은 말 사용시 center만 사용해도 된다 svg의 축을 가운데로 옮긴다
+            transform: rotate(-90deg); //시작점을 바꾼다
+            transition: stroke-dashoffset 2s;
+          }
+        }
+        .textbox{
+          @include m.posLT(absolute,50%,50%,-50%,-50%);
+          text-align:center;
+          i{
+            width: 40px;
+            height: 40px;
+            line-height: 40px; //아이콘 수직 정렬
+            border-radius: 50%;
+            color: #FFF;
+            background: var(--main-color);
+          } //fontawsome에서 inline-block으로 만들어줌
+          h3{
+            margin: 5px 0;
+            color: #FFF;
+            font-weight: 600;
+            text-shadow: 1px 1px 0 #000;
+            font-size: 1.2em;
+          }
+          b{
+            line-height: 0.7em;
+            font-size: min(7vw, 3em);
+            color: #FFF;
+            text-shadow: 1px 1px 0 #000;
+          }
+        }
+        &.active .progress{
+          stroke-dashoffset: 0;
+        }
+      } //li
+    }
+  }
+}
