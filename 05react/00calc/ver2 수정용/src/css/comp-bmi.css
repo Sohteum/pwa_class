@@ -59,9 +59,11 @@ section.bmi form > div input[type=number]::placeholder {
   color: inherits;
 }
 section.bmi form button {
+  margin-top: 15px;
   outline: none;
   width: 100%;
   padding: 10px 0;
+  border-radius: 25px;
   box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 section.bmi form button:focus {

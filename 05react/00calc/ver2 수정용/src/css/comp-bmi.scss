@@ -1,4 +1,4 @@
-@use "./mixin" as m;
+@use './mixin' as m;
 
 section.bmi {
   position: relative;
@@ -45,7 +45,7 @@ section.bmi {
         display: block;
         margin-bottom: 15px;
       }
-      input[type="number"] {
+      input[type='number'] {
         box-sizing: border-box;
         width: 100%;
         padding: 10px;
@@ -62,9 +62,11 @@ section.bmi {
       } //input
     } //div
     button {
+      margin-top: 15px;
       outline: none;
       width: 100%;
       padding: 10px 0;
+      border-radius: 25px;
       box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
       &:focus {
         background-color: rgba(#fff, 0.1);

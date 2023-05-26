@@ -26,14 +26,18 @@ section.dday {
 
     .filter-btn {
       position: absolute;
-      z-index: 1;
-      left: calc(50% - 20px);
-      border-radius: 0 0 5px 5px;
+      z-index: 10;
+      left: 3%;
+      top: -0%;
       width: 40px;
       height: 40px;
-      background-color: rgba(#000, 0.5);
-      color: #fff;
-      transition: all 0.2s;
+      font-size: 1.1em;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      text-shadow: -2px -2px 1px rgba(255, 255, 255, 1), -1px 1px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s;
       &:hover {
         font-size: 1.4em;
       }
@@ -215,7 +219,8 @@ section.dday {
     width: 100%;
     padding: 10px 0;
     outline: none;
-    box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px rgba(0, 0, 0, 0.2);
 
     img {
       display: inline-block;
@@ -273,7 +278,8 @@ section.dday {
       margin-top: 15px;
       padding: 10px 0;
       outline: none;
-      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+      box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px rgba(0, 0, 0, 0.2);
       &:focus {
         background: rgba(#fff, 0.1);
       }
@@ -290,8 +296,7 @@ section.dday {
       text-align: center;
       font-size: 1.1em;
       border-radius: 20px;
-      background-color: #d4d4d4;
-      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: -2px -2px 10px rgba(255, 255, 255, 1), 3px 3px 15px rgba(0, 0, 0, 0.2);
       text-shadow: -1px -1px 1px rgba(255, 255, 255, 1), -1px 1px 1px rgba(0, 0, 0, 0.1);
       &:hover {
         box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgba(255, 255, 255, 1);

@@ -10,13 +10,14 @@
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 4px 4px 25px rgba(0, 0, 0, 0.5);
     height: 100%;
     img.circle {
       width: 40%;
-      padding: 8px;
+      padding: 5px;
       background-color: rgba(#fff, 0.2);
       border-radius: 50%;
-      box-shadow: -1px -1px 5px rgba(255, 255, 255, 1), 2px 2px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 4px 4px 25px rgba(0, 0, 0, 0.5);
       margin: 20px 0 35px 0;
     }
     h1 {
@@ -25,7 +26,7 @@
     }
     form.theme {
       legend {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         font-weight: 800;
         font-size: 0.8em;
         text-align: center;
@@ -36,8 +37,8 @@
         height: 30px;
         border: 1px solid rgb(255, 255, 255, 0.1);
         border-radius: 30px;
-        overflow: hidden; /////???????
-        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        box-shadow: -2px -2px 7px rgba(255, 255, 255, 1), 3px 3px 15px rgba(0, 0, 0, 0.1);
         input {
           display: none;
           &:checked + label::before {
@@ -71,17 +72,17 @@
       }
     }
     nav {
-      margin-top: 45px;
+      margin-top: 30px;
       font-weight: 900;
       text-transform: uppercase;
 
       a {
         display: block;
-        margin: 20px 0;
-        padding: 7px 20px;
+        margin: 23px 0;
+        padding: 8px 20px;
         text-align: center;
         border-radius: 20px;
-        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: -2px -2px 7px rgba(255, 255, 255, 1), 3px 3px 13px rgba(0, 0, 0, 0.1);
         &:hover {
           text-shadow: -2px -2px 1px rgba(255, 255, 255, 1), 2px 2px 1px rgba(0, 0, 0, 0.1);
         }
