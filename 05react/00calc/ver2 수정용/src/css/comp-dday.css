@@ -77,7 +77,7 @@ section.dday article.dday-list .filter-form fieldset legend {
   padding: 5px 10px;
   font-size: 0.9em;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #FFF;
+  color: #fff;
   border-radius: 5px;
 }
 section.dday article.dday-list .filter-form fieldset button {
@@ -86,7 +86,7 @@ section.dday article.dday-list .filter-form fieldset button {
   padding: 10px 0;
   outline: none;
   box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
-  background: #FFF;
+  background: #fff;
 }
 section.dday article.dday-list .filter-form fieldset button:active {
   box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -101,7 +101,7 @@ section.dday article.dday-list .filter-form fieldset input {
 }
 section.dday article.dday-list .filter-form fieldset input:focus {
   background: #000;
-  color: #FFF;
+  color: #fff;
 }
 section.dday article.dday-list > ul {
   /* 
@@ -271,15 +271,26 @@ section.dday form.dday-add button:focus {
 section.dday form.dday-add button:active {
   box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
-section.dday form.dday-add .fa-circle-left {
-  font-size: 1.5em;
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
+section.dday form.dday-add .fa-arrow-left {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.1em;
+  border-radius: 20px;
+  background-color: #d4d4d4;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+  text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+section.dday form.dday-add .fa-arrow-left:hover {
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgb(255, 255, 255);
   cursor: pointer;
 }
-section.dday form.dday-add .fa-circle-left.active {
+section.dday form.dday-add .fa-arrow-left:hover.active {
   transform: scale(1.2);
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgb(255, 255, 255);
 }
 section.dday div.now {
   text-align: center;

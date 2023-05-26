@@ -6,9 +6,20 @@
   height: 100%;
   box-sizing: border-box;
   padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+#root section.menu img.circle {
+  width: 40%;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: -1px -1px 5px rgb(255, 255, 255), 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 20px 0 35px 0;
 }
 #root section.menu h1 {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  font-size: 2em;
 }
 #root section.menu form.theme legend {
   margin-bottom: 15px;

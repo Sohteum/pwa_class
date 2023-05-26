@@ -1,4 +1,4 @@
-@use "./mixin" as m;
+@use './mixin' as m;
 
 section.dday {
   display: flex;
@@ -11,7 +11,7 @@ section.dday {
     flex: 1;
     &::before {
       pointer-events: none;
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 100%;
@@ -70,7 +70,7 @@ section.dday {
       }
       fieldset {
         margin-bottom: 15px;
-        padding:10px;
+        padding: 10px;
         background-color: rgba(#000, 0.3);
         border-radius: 5px;
         // border: 1px solid rgba(#000,0.3);
@@ -78,21 +78,21 @@ section.dday {
           padding: 5px 10px;
           font-size: 0.9em;
           background-color: rgba(#000, 0.7);
-          color:#FFF;
+          color: #fff;
           border-radius: 5px;
-        }//legend
+        } //legend
         button {
           width: 100%;
           margin-top: 10px;
           padding: 10px 0;
           outline: none;
           box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
-          background: #FFF;
-        
+          background: #fff;
+
           &:active {
             box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
           } //button:active
-        }//button
+        } //button
 
         input {
           width: 100%;
@@ -103,10 +103,10 @@ section.dday {
           box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
           &:focus {
             background: #000;
-            color:#FFF;
+            color: #fff;
           }
-        }//input
-      }//fieldset
+        } //input
+      } //fieldset
     } //filter-form
 
     > ul {
@@ -281,14 +281,25 @@ section.dday {
         box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
       } //button:active+
     }
-    .fa-circle-left {
-      font-size: 1.5em;
-      display: block;
-      margin: 0 auto;
-      margin-top: 20px;
-      cursor: pointer;
-      &.active {
-        transform: scale(1.2);
+    .fa-arrow-left {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: 20px auto;
+      line-height: 40px;
+      text-align: center;
+      font-size: 1.1em;
+      border-radius: 20px;
+      background-color: #d4d4d4;
+      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+      text-shadow: -1px -1px 1px rgba(255, 255, 255, 1), -1px 1px 1px rgba(0, 0, 0, 0.1);
+      &:hover {
+        box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgba(255, 255, 255, 1);
+        cursor: pointer;
+        &.active {
+          transform: scale(1.2);
+          box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgba(255, 255, 255, 1);
+        }
       }
     }
   } //form.dday-add
