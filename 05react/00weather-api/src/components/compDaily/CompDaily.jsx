@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from '../../App';
+import $ from "jquery";
+import CompLoader from '../compLoader/CompLoader';
+import CompDailyLi from './CompDailyLi';
 
 const CompDaily = () => {
+
+  const { _weatherData } = useContext(AppContext)
+
   return (
-    <section>
+    <section className='comp-daily'>
       <div className="section-inner">
-      daily
+        <div className="wrap">
+
+          <h2>Daily</h2>
+          <ul>
+            {
+              (_weatherData)
+                ?
+                _weatherData.daily.map(v => <CompDailyLi key={v.dt} data={v} />)
+                :
+                <CompLoader />
+            }
+          </ul>
+        </div>
       </div>
+
     </section>
   );
 };

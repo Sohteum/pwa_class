@@ -11,15 +11,17 @@ const CompCurrentOutput = () => {
     _weatherData,
     _address, _setAddress,
     fnAppInit,
+
   } = useContext(AppContext)
 
+
+
   const {
-    temp, sunriseHours, sunriseApm, sunriseMinutes,
-    sunsetHours, sunsetApm, sunsetMinutes,
+    temp, snow,
     icon, bg, desc, windDeg, windSpeed,
     humidity, rain, uvi, uviDesc,
-    hour, apm, min, year, month, date, day
-  } = fnSetWeatherInfo(_weatherData.current)
+    sunrise, sunset, date, day, time, apm
+  } = fnSetWeatherInfo(_weatherData.current, _weatherData.timezone)
 
 
 
@@ -30,16 +32,16 @@ const CompCurrentOutput = () => {
   // },[])
 
 
-const fnResetHandler =()=>{
-  let result = window.confirm('현재위치로 날씨 정보를 갱신하시겠습니까?')
-  if(result) fnAppInit()
-}
+  const fnResetHandler = () => {
+    let result = window.confirm('현재위치로 날씨 정보를 갱신하시겠습니까?')
+    if (result) fnAppInit()
+  }
 
   return (
     <div className='current-output' style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/img/weather/${bg}.jpg)` }}>{/* 퍼블릭폴더 dksdp dlTsmsrj ckwdmfEo */}
 
       <button onClick={fnResetHandler} className='reload'>
-        <i class="fa-solid fa-arrows-rotate"></i>
+        <i className="fa-solid fa-arrows-rotate"></i>
       </button>
 
       <address>{/* 애니메이션 할려면 무조건 두개 필요 스판은 줄내림이 되면안되고 옆으로 두개를 나란히세움 그리고 두개를 동시에 움직이는데 두번째꺼가 나올때 원래위치로 돌려버리면 보는사람은 계속 돌아가는것처럼 보임. 줄내림 안되게 할려면  */}
@@ -51,15 +53,10 @@ const fnResetHandler =()=>{
         <div className="sunset">
           <CompSvg currentData={_weatherData.current} />
           <time className='riseTime'>
-            <small>{sunriseApm}</small>
-            <b>{sunriseHours}:</b>
-            <b>{sunriseMinutes}</b>
+            {sunrise}
           </time>
-
           <time className='setTime'>
-            <small>{sunsetApm}</small>
-            <b>{sunsetHours}:</b>
-            <b>{sunsetMinutes}</b>
+            {sunset}
           </time>
 
         </div>{/* sunset */}
@@ -95,18 +92,33 @@ const fnResetHandler =()=>{
               <small>{uviDesc}</small>
 
             </span>
-            <span className="rain">
-              <i className="fa-solid fa-umbrella"></i>
-              <b>{rain}</b>
-              <small>mm/h</small>
-
-            </span>
+            {
+              (rain) ?
+                <span className="rain">
+                  <i className="fa-solid fa-umbrella"></i>
+                  <b>{rain}</b>
+                  <small>mm/h</small>
+                </span>
+                : ''
+            }
+            {
+              (snow) ?
+              <span className="snow">
+                <i className="fa-solid fa-snowflake"></i>
+                <b>{snow}</b>
+                <small>mm/h</small>
+              </span>
+              :''
+            }
           </p>
 
           <p className='time-date'>
-            <time className="time">{hour}:{min} {apm}</time>
+            <time className="time">
+              <small>{apm}</small>
+              {time}
+            </time>
             <br />
-            <time className="date">{year}년{month}월{date}일({day})</time>
+            <time className="date">{date} ({day}) </time>
 
           </p>
         </div>

@@ -1,0 +1,47 @@
+@use "./mixin" as m;
+
+.comp-daily {
+  .section-inner {
+    .wrap {
+      //여기서 div로 한번 더 싸야 크기가 맞아짐
+      background-color: rgba(#fff, 0.4);
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      ul {
+        li {
+          padding: 5px;
+          border-bottom: 1px solid rgba(#4378a3, 0.2);
+          a {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            text-align: left;
+            .date {
+              font-size: 0.9em;
+              font-weight: 500;
+              margin-bottom: 5px;
+              span.desc {
+                  font-style: italic;
+                }
+              
+              i {
+                margin-right: 2px;
+              }
+              .fa-arrow-down {
+                float: right;
+              }
+            }
+            .info {
+            }
+          } //a
+          .detail {
+            background-color: rgba(#1d3244, 0.5);
+            color: #fff;
+            padding: 10px;
+          }
+        } //li
+      } //ul
+    } //wrap
+  } //section-inner
+} //comp-daily

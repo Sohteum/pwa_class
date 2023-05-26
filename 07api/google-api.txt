@@ -2,6 +2,51 @@
   ● 구글API콘솔 접속
     https://console.cloud.google.com/apis (2023.5월 기준)
 	약관 전부 동의할것
+///////////////////////////////////////////////////////////////////////////////
+세계시계만들기
+time zone api 라이브러리에서 검색하여 사용누르기
+햄버거메뉴-사용설정된 api및 서비스에서 현재 사용하고 있는 api확인가능
+https://developers.google.com/maps/documentation/timezone/overview?hl=ko
+
+ https://maps.googleapis.com/maps/api/timezone/json
+    ?location=39.6034810%2C-119.6822510
+    &timestamp=1331161200
+    &key=YOUR_API_KEY
+
+
+    사용방법 그대로 가져옴
+
+우리는 타임존 아이디가 필요함 이걸 주소창에 넣으면 이렇게 나옴. 결과값으로 객체를 반환
+{
+   "dstOffset" : 0,
+   "rawOffset" : -28800,
+   "status" : "OK",
+   "timeZoneId" : "America/Los_Angeles",
+   "timeZoneName" : "Pacific Standard Time"
+}
+
+cdn으로도 제공하고 익스텐션도 있는데  모멘트를 설치 
+- npm i moment 
+- npm i moment-timezone 
+설치하면 패키지제이슨에서 설치확인가능
+
+임폴트할때 꼭 이렇게 써야함
+import moment from "moment-timezone";
+
+console.log(
+  moment(Date.now()).format('YYYY-MM-DD , HH-mm-ss')
+);
+ //아무것도 안넣으면 (Date.now)=timestamp또는 '2023-05-04', '2023년5월4일'모두 가능
+ //YYYY년MM월DD일 , HH시mm분ss초
+ //YYYY년MM월DD일 , H시m분s초 ->절대시 18시
+ //YYYY년MM월DD일 , hh시m분s초 A -> 그냥시간 6시 대문자 A는 am, pm해줌
+ 예시1 : moment(timestamp).format('YYYY-MM-DD일 , HH:mm:ss')
+ 예시2 : moment('2021-10-09T00:00').format('Y년M월D일 , H시m분s초')
+ 예시3 : moment(Date.now()).tz('America/Los_Angeles').format('YYYY년M월D일 , hh시mm분ss초 A')
+ 예시4 : moment(Date.now()).tz('America/Los_Angeles').format('YYYY년M월D일 , hh시mm분ss초 dddd A') //dddd는 요일을 풀로 리턴
+ 예시4 : moment().day() //요일을 숫자로 리턴
+
+/////////////////////////////////////////////////////////////////////////////////
   ● 프로젝트만들기 실행
   ● 프로젝트명 입력후 create실행
   ● 상단의 프로젝트 선택 메뉴 / 해당프로젝트 이동
@@ -138,5 +183,29 @@
 
 
 
+      순서도
       
+      시작(App.js)
+      -위경도구하기
+      -타임존구하기
+      -위경도를 이용해 주소정보 받아오기
+      -위경도를 이용해 날씨정보 받아오기
+      -위경도를 이용해 지도출력
+
+      지도를 클릭(CompMap.jsx)
+      -위경도구하기
+      -타임존구하기
+      -위경도를 이용해 주소정보 받아오기
+      -위경도를 이용해 날씨정보 받아오기
+      -위경도를 이용해 지도출력
+
+      데이터출력(CompCurrent, CompDaily, CompHourly)
+      -fnSetWeatherInfo(카테고리를 넣는거.현재날씨 또는 일자별 날씨등. timeZone) 데이터 가공
+      (시간, 날짜, 온도, 등..) ->출력
+      -이제 이 함수에 타임존을 먹여줘야 세계시를 받아올 수 있음
+
+
+
+
+
 

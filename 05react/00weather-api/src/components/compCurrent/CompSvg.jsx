@@ -7,23 +7,32 @@ const CompSvg = ({ currentData }) => {
 
 
   const fnDetDegree = () => {
-    let range = sunset - sunrise
-    let ratio = (dt - sunrise) / range
+    let range
+    let ratio
+    let offSet
+    let distance
+
+    if(sunrise){
+    range = sunset - sunrise
+     ratio = (dt - sunrise) / range
     if (ratio > 1) ratio = 1
     if (ratio < 0) ratio = 0
-    let offSet = 1 - ratio
-
-    let sun = ratio * 100
-    return { offSet, sun }
+     offSet = 1 - ratio
+     distance = ratio * 100
+    }else{
+      offSet = 1
+      distance = 0
+    }
+    return { offSet, distance }
   }
 
-  const { offSet, sun } = fnDetDegree()
+  const { offSet, distance } = fnDetDegree()
 
   return (
     <svg viewBox="0 0 400 200">
       <path className="line" d="M25,200c0-96.65,78.35-175,175-175s175,78.35,175,175" />
       <path style={{ strokeDashoffset: `${offSet}` }} className="dash" pathLength="1" d="M25,200c0-96.65,78.35-175,175-175s175,78.35,175,175" />
-      <path style={{ offsetDistance: `${sun}%` }} className="sun" d="M0-18.77c-10.37,0-18.77,8.41-18.77,18.77S-10.37,18.77,0,18.77S18.77,10.37,18.77,0S10.37-18.77,0-18.77z
+      <path style={{ offsetDistance: `${distance}%` }} className="sun" d="M0-18.77c-10.37,0-18.77,8.41-18.77,18.77S-10.37,18.77,0,18.77S18.77,10.37,18.77,0S10.37-18.77,0-18.77z
 		M0-20.03c1.04,0,1.88-0.84,1.88-1.88v-6.26c0-1.04-0.84-1.88-1.88-1.88s-1.88,0.84-1.88,1.88v6.26C-1.88-20.87-1.04-20.03,0-20.03
 		z M-12.58-18.03c0.35,0.6,0.98,0.94,1.63,0.94c0.32,0,0.64-0.08,0.94-0.25c0.9-0.52,1.21-1.67,0.69-2.56l-3.13-5.42
 		c-0.52-0.9-1.67-1.21-2.56-0.69c-0.9,0.52-1.21,1.67-0.69,2.56L-12.58-18.03z M-25.33-12.46l5.42,3.13

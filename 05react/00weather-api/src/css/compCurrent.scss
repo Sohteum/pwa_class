@@ -102,15 +102,10 @@ section.comp-current {
           } //svg
           time {
             display: inline-block;
-            font-size: 0.85em;
+            font-size: 0.75em;
             padding: 3px 5px;
             border-radius: 10px;
             background-color: rgba(255, 208, 0, 0.932);
-            small {
-              font-size: 0.8em;
-              font-weight: 600;
-              margin-right: 2px;
-            }
             &.riseTime {
               transform: translateX(-30%);
             }
@@ -118,7 +113,7 @@ section.comp-current {
               float: right;
               transform: translateX(30%);
             }
-          }
+          }//time
         } //sunset
         .circle-container-inner {
           @include m.posLT(absolute, 50%, 50%, -50%, -50%);
@@ -160,12 +155,12 @@ section.comp-current {
             margin-top: -20px;
           }
           .etc {
-            width: 80%;
+            width: 75%;
             margin: 10px auto;
             background-color: rgba(#000, 0.4);
             border-radius: 40px;
             text-align: center;
-            padding: 5px;
+            padding: 3px;
             box-sizing: border-box;
             span {
               margin: 3px 5px;
@@ -192,6 +187,10 @@ section.comp-current {
             .time {
               font-size: 1.1em;
               margin-top: -10px;
+              small{
+                font-size: 0.8em;
+                margin-right: 3px;
+              }
             }
           }
         } //circle-container-inner

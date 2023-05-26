@@ -284,12 +284,13 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
 
     map.addListener('click', async (e) => {
         const result = window.confirm('해당위치로 날씨정보를 갱신하시겠습니까?')
-        if(result){
-        let lat = e.latLng.lat()
-        let lng = e.latLng.lng()
-        marker.setPosition({ lat, lng })
-        //클릭한 위치의 위경도를 받아서 주소, 날씨정보 갱신
-        fn({ lat, lng })}
+        if (result) {
+            let lat = e.latLng.lat()
+            let lng = e.latLng.lng()
+            marker.setPosition({ lat, lng })
+            //클릭한 위치의 위경도를 받아서 주소, 날씨정보 갱신
+            fn({ lat, lng })
+        }
     })//click
 }//fnInitMap
 
@@ -306,4 +307,18 @@ export const fnGetAddress = (latlngObj) => { //위경도를 받아서 주소를 
             resolve(address)
         });
     })
-}//
+}//fnGetAddress
+
+
+// export const fnGetTimezone = (latlngObj) => {
+//     return new Promise((resolve) => {
+//         const { lat, lng } = latlngObj
+//         fetch(
+//             `https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lng}&timestamp=0&key=${process.env.REACT_APP_OPEN_GOOGLE_KEY}`
+//         ).then((data) => { //글자로 들어오니까 스크립트 형태로 바꿔줘야함  //한줄로 해야함 패치할때 여백인식,백틱엔터노노 타임스탬프는 0으로 넣어도 상관없음 없애면 안되고 뭔가 넣긴 해야함
+
+//             resolve(data.json())
+//         })
+//     })
+// }//fnGetTimezone
+//지금 필요없음 나중에 쓸일없으면 지우기
