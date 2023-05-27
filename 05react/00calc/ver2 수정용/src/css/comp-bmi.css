@@ -160,6 +160,7 @@ section.bmi div.bmi-result button {
   padding: 10px;
   border: 2px solid #fff;
   background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
   box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 section.bmi div.bmi-result button:active {

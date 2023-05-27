@@ -1,6 +1,6 @@
 body {
   color: #666;
-  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-family: 'Montserrat', 'Gowun Dodum', 'Noto Sans KR', sans-serif;
   font-size: 15px;
   text-decoration: none;
   font-weight: normal;
@@ -23,10 +23,9 @@ html {
 
 body {
   height: 100vh;
-  background-size: 10px, 100%;
 
   &.gray {
-    background-image: url(../assets/img/pattern2.png), linear-gradient(#f6f6f6, #c8c8c8);
+    background-color: #c8c8c8;
     #root {
       background: linear-gradient(#e8e8e8, #c8c8c8);
       color: #878787;
@@ -50,10 +49,10 @@ body {
   }
 
   &.skyblue {
-    background-image: url(../assets/img/pattern4.png), linear-gradient(#e0ebf7, #d5e8fc);
+    background-color: #c6dffd;
     #root {
-      background: linear-gradient(#e4eefb, #ccddf0);
-      color: #8ba9c6;
+      background: linear-gradient(#e4f1ff, #c6dffd);
+      color: #8a9bba;
       //스크롤바스타일
       article.dday-list ul {
         @media (hover: hover) {
@@ -74,7 +73,7 @@ body {
   }
 
   &.beige {
-    background-image: url(../assets/img/pattern3.png), linear-gradient(#fffbf9, #fcf2e8);
+    background-color: #ede4da;
     #root {
       background: linear-gradient(#efebe9, #ede4da);
       color: #9f9993;
@@ -99,16 +98,16 @@ body {
 
   #root {
     position: fixed;
-    width: min(93%, 500px);
-    height: min(93%, 800px);
+    width: min(90%, 450px);
+    height: min(90%, 800px);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
     overflow-y: auto;
-    border: 1px solid #eee;
+    border: 1px solid #dfdfdf;
     border-radius: 40px;
-    box-shadow: -2px -2px 20px rgba(255, 255, 255, 1), 2px 2px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: -1px -1px 15px rgba(255, 255, 255, 0.6), 2px 2px 20px rgba(0, 0, 0, 0.4);
 
     section {
       min-height: 100%;
@@ -117,8 +116,8 @@ body {
 
       h1,
       h2 {
-        margin-bottom: 20px;
-        font-weight: 900;
+        margin-bottom: 18px;
+        font-weight: 700;
         font-size: 1.7em;
         text-shadow: -2px -2px 1px rgba(255, 255, 255, 1), 2px 2px 1px rgba(0, 0, 0, 0.1);
         text-align: center;
