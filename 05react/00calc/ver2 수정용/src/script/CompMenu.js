@@ -3,14 +3,14 @@ export const fnGetTheme = () => {
   let themeStorage = window.localStorage.getItem('themeStorage')
   let theme
   let className
-  
+
   //  console.log(themeStorage);
   if (themeStorage) {//두번째부터는 무조건 여기 걸리게된다.
     theme = JSON.parse(window.localStorage.getItem('themeStorage'))
     if (theme[1]) {
       className = 'gray'
     } else if (theme[2]) {
-      className = 'skyblue'
+      className = 'purpleblue'
     } else {
       className = 'beige'
     }

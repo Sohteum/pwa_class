@@ -38,24 +38,24 @@ body.gray #root {
     background-color: #999;
   }
 }
-body.skyblue {
-  background-color: #c6dffd;
+body.purpleblue {
+  background-color: #d0d5fd;
 }
-body.skyblue #root {
-  background: linear-gradient(#e4f1ff, #c6dffd);
-  color: #8a9bba;
+body.purpleblue #root {
+  background: linear-gradient(#dde0fa, #d0d5fd);
+  color: #868ab6;
 }
 @media (hover: hover) {
-  body.skyblue #root article.dday-list ul::-webkit-scrollbar-track {
+  body.purpleblue #root article.dday-list ul::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #f5f5f5;
+    background-color: #dde0fa;
   }
-  body.skyblue #root article.dday-list ul::-webkit-scrollbar {
+  body.purpleblue #root article.dday-list ul::-webkit-scrollbar {
     width: 6px;
-    background-color: #f5f5f5;
+    background-color: #d0d5fd;
   }
-  body.skyblue #root article.dday-list ul::-webkit-scrollbar-thumb {
-    background-color: #7097bd;
+  body.purpleblue #root article.dday-list ul::-webkit-scrollbar-thumb {
+    background-color: #868ab6;
   }
 }
 body.beige {
@@ -89,7 +89,7 @@ body #root {
   overflow-y: auto;
   border: 1px solid #dfdfdf;
   border-radius: 40px;
-  box-shadow: -1px -1px 15px rgba(255, 255, 255, 0.6), 2px 2px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5), 5px 5px 25px rgba(0, 0, 0, 0.5);
 }
 body #root section {
   min-height: 100%;
@@ -101,7 +101,7 @@ body #root section h2 {
   margin-bottom: 18px;
   font-weight: 700;
   font-size: 1.7em;
-  text-shadow: -2px -2px 1px rgb(255, 255, 255), 2px 2px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.5), 2px 2px 1px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 body #root .back-btn {
@@ -115,7 +115,7 @@ body #root .back-btn {
   line-height: 40px;
   text-align: center;
   border-radius: 50%;
-  text-shadow: -2px -2px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 body #root .back-btn:hover {

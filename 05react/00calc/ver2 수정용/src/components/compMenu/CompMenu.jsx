@@ -24,7 +24,7 @@ const CompMenu = () => {
     if (n === '1') {
       theme = 'gray';
     } else if (n === '2') {
-      theme = 'skyblue';
+      theme = 'purpleblue';
     } else {
       theme = 'beige';
     }

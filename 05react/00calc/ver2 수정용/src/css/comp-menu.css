@@ -66,10 +66,10 @@
   background-color: #ccc;
 }
 #root section.menu form.theme div label[for=radio2] {
-  background-color: skyblue;
+  background-color: #a4a8d5;
 }
 #root section.menu form.theme div label[for=radio3] {
-  background-color: bisque;
+  background-color: rgb(227, 207, 183);
 }
 #root section.menu form.theme div label::before {
   display: none;

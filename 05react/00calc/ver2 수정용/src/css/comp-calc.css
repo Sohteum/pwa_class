@@ -47,7 +47,7 @@ section.calc ul.btn-container li {
 section.calc ul.btn-container li button {
   width: 90%;
   height: 90%;
-  border-radius: 30%;
+  border-radius: 30px;
   box-shadow: -2px -2px 2px white, 2px 2px 2px rgba(0, 0, 0, 0.1);
   transition: font-size 0.2s;
 }
