@@ -1,5 +1,6 @@
 @charset "UTF-8";
 section.dday {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -27,8 +28,8 @@ section.dday article.dday-list::before {
 section.dday article.dday-list .filter-btn {
   position: absolute;
   z-index: 10;
-  left: 3%;
-  top: 0%;
+  left: -3%;
+  top: -3%;
   width: 40px;
   height: 40px;
   font-size: 1.1em;

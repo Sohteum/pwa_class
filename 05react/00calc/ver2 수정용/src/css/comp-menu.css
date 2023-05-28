@@ -12,14 +12,14 @@
 }
 #root section.menu img.circle {
   width: 40%;
-  padding: 4px;
+  padding: 5px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6), 4px 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.6), 4px 4px 20px rgba(0, 0, 0, 0.5);
   margin: 20px 0 30px 0;
 }
 #root section.menu h1 {
-  margin-bottom: 50px;
+  margin-bottom: 45px;
   font-size: 2em;
 }
 #root section.menu form.theme legend {
@@ -35,7 +35,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.8), 3px 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.8), 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
 #root section.menu form.theme div input {
   display: none;
@@ -90,6 +90,7 @@
   padding: 8px 20px;
   text-align: center;
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: -2px -2px 15px rgba(255, 255, 255, 0.7), 3px 3px 13px rgba(0, 0, 0, 0.3);
 }
 #root section.menu nav a:hover {
