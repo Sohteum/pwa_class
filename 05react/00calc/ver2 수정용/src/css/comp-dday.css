@@ -90,7 +90,7 @@ section.dday article.dday-list .filter-form fieldset button {
   margin-top: 10px;
   padding: 10px 0;
   outline: none;
-  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
   background: #fff;
 }
 section.dday article.dday-list .filter-form fieldset button:active {
@@ -215,7 +215,7 @@ section.dday .btn-add {
   padding: 10px 0;
   outline: none;
   border-radius: 25px;
-  box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 section.dday .btn-add img {
   display: inline-block;

@@ -104,10 +104,10 @@ body #root section h2 {
   text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.5), 2px 2px 1px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
-body #root .back-btn {
+body #root .filter-btn {
   z-index: 10;
   position: absolute;
-  right: 3%;
+  left: 4%;
   top: 2%;
   width: 40px;
   height: 40px;
@@ -116,7 +116,24 @@ body #root .back-btn {
   text-align: center;
   border-radius: 50%;
   text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+body #root .filter-btn:hover {
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgb(255, 255, 255);
+}
+body #root .back-btn {
+  z-index: 10;
+  position: absolute;
+  right: 4%;
+  top: 2%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1em;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 body #root .back-btn:hover {
   box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgb(255, 255, 255);
