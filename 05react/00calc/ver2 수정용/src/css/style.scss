@@ -25,9 +25,9 @@ body {
   height: 100vh;
 
   &.gray {
-    background-color: #c8c8c8;
+    background-color: #d4d4d4;
     #root {
-      background: linear-gradient(#e8e8e8, #c8c8c8);
+      background: linear-gradient(#eeeeee, #d9d9d9, #d9d9d9);
       color: #878787;
       //스크롤바스타일
       article.dday-list ul {
@@ -49,10 +49,10 @@ body {
   }
 
   &.purpleblue {
-    background-color: #d0d5fd;
+    background-color: #d6dafb;
     #root {
-      background: linear-gradient(#dde0fa, #d0d5fd);
-      color: #868ab6;
+      background: linear-gradient(#e2e3f6, #dcdff8, #d3d7f9);
+      color: #9195c8;
       //스크롤바스타일
       article.dday-list ul {
         @media (hover: hover) {
@@ -73,10 +73,10 @@ body {
   }
 
   &.beige {
-    background-color: #ede4da;
+    background-color: #f4e8da;
     #root {
-      background: linear-gradient(#efebe9, #ede4da);
-      color: #9f9993;
+      background: linear-gradient(#efebe8, #f4ece3, #f1e8dd);
+      color: #aea8a1;
       //스크롤바스타일
       article.dday-list ul {
         @media (hover: hover) {
@@ -107,7 +107,7 @@ body {
     overflow-y: auto;
     border: 1px solid #dfdfdf;
     border-radius: 40px;
-    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.8), 10px 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.8), 10px 10px 35px rgba(0, 0, 0, 0.2);
 
     section {
       min-height: 100%;
@@ -118,7 +118,7 @@ body {
         margin-bottom: 18px;
         font-weight: 700;
         font-size: 1.7em;
-        text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.5), 2px 2px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.5), 2px 2px 1px rgba(0, 0, 0, 0.2);
         text-align: center;
       }
     } //section
