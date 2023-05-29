@@ -134,6 +134,7 @@ body #root .back-btn {
   border-radius: 50%;
   text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
 }
 body #root .back-btn:hover {
   box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgb(255, 255, 255);

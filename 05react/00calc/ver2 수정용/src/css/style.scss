@@ -113,7 +113,6 @@ body {
       min-height: 100%;
       box-sizing: border-box;
       padding: 15px;
-
       h1,
       h2 {
         margin-bottom: 18px;
@@ -153,6 +152,7 @@ body {
       border-radius: 50%;
       text-shadow: -1px -1px 1px rgba(255, 255, 255, 1), -1px 1px 1px rgba(0, 0, 0, 0.2);
       box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s;
       &:hover {
         box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgba(255, 255, 255, 1);
       }

@@ -90,11 +90,11 @@ section.dday article.dday-list .filter-form fieldset button {
   margin-top: 10px;
   padding: 10px 0;
   outline: none;
-  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.2);
   background: #fff;
 }
 section.dday article.dday-list .filter-form fieldset button:active {
-  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 section.dday article.dday-list .filter-form fieldset input {
   width: 100%;
@@ -215,7 +215,7 @@ section.dday .btn-add {
   padding: 10px 0;
   outline: none;
   border-radius: 25px;
-  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px -1px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 section.dday .btn-add img {
   display: inline-block;
@@ -270,7 +270,7 @@ section.dday form.dday-add button {
   padding: 10px 0;
   outline: none;
   border-radius: 25px;
-  box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px -2px 10px rgb(255, 255, 255), 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 section.dday form.dday-add button:focus {
   background: rgba(255, 255, 255, 0.1);
@@ -287,8 +287,9 @@ section.dday form.dday-add .fa-arrow-left {
   text-align: center;
   font-size: 1.1em;
   border-radius: 20px;
-  box-shadow: -2px -2px 10px rgb(255, 255, 255), 3px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px -2px 10px rgb(255, 255, 255), 3px 3px 10px rgba(0, 0, 0, 0.3);
   text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
 }
 section.dday form.dday-add .fa-arrow-left:hover {
   box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2), 3px 3px 5px rgb(255, 255, 255);
