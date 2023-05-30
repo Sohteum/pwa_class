@@ -6,6 +6,7 @@ import './css/style.css';
 import './css/compMap.css';
 import './css/compCurrent.css';
 import './css/compDaily.css';
+import './css/compHourly.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

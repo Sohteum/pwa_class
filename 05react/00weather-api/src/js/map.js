@@ -294,19 +294,22 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
     })//click
 }//fnInitMap
 
-export const fnGetAddress = (latlngObj) => { //위경도를 받아서 주소를 리턴하는 함수
+export const fnGetAddress = (latlngObj, lang) => { //위경도를 받아서 주소를 리턴하는 함수
     return new Promise((resolve) => {
         let geocoder = new window.google.maps.Geocoder;
         let address
-        geocoder.geocode({ 'location': latlngObj }, function (results, status) {
+        geocoder.geocode({ 'location': latlngObj, 'language' : lang}, function (results, status) {
             try { //try catch구문. 에러가 발생이 되면 캐치문을 이용해서 에러를 내지 않고 아래 문구를 호출하게 됨
-                address = `${results[3].formatted_address} | ${results[0].formatted_address}` //status가 주소가 없으면 false가 나오는거얌 아니면 주소 리턴
+                address = `${results[3].formatted_address}` //status가 주소가 없으면 false가 나오는거얌 아니면 주소 리턴
             } catch {// formatted_address정보가 없을경우 예외처리
-                address = `'해당위치의 주소가 존재하지 않습니다. 위치를 확인 후 다시 검색해주세요'`
+                address =  (lang==='ko')
+                ? `해당위치의 주소가 존재하지 않습니다. 위치를 확인 후 다시 검색해주세요`
+                : `Failed to get address information for that location`
+              
             }
             resolve(address)
-        });
-    })
+        });//geocode
+    })//promise
 }//fnGetAddress
 
 

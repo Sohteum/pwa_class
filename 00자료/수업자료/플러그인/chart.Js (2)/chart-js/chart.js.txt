@@ -1,0 +1,128 @@
+■ document
+https://www.chartjs.org/docs/latest/
+https://react-chartjs-2.js.org/
+https://chartjs-plugin-datalabels.netlify.app/
+
+■ cdn
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+■ react module install
+  npm install --save chart.js react-chartjs-2
+  npm install chartjs-plugin-datalabels --save
+
+■ react module sample
+  ● import
+  import 'chart.js/auto';
+  import { Chart } from 'react-chartjs-2';
+  import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+  ● script
+  const data = {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: 'myGraph',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1,
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.2,
+    }]
+  }
+  const options ={
+    scales: {
+      x:{
+        display:true,
+        grid:{
+          display:true,
+        },
+        ticks: {
+          display:true,
+        },
+      },
+      y: {
+        display:true,
+        beginAtZero: true,
+        min: -100,
+        max: 100,
+        stepSize:10,
+        grid: {
+          display: true,
+        },
+        ticks: {
+          color: "white",
+          stepSize: 10,
+          beginAtZero: true,
+          display:true,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          color: 'rgb(255, 99, 132)'
+        },
+      },
+      datalabels: {
+        display: true,
+        color: "white",
+        align: 'top',
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+  }
+
+  ● return
+  <Chart type='line' data={data} options={options} plugins={[ChartDataLabels]} />
+
+■ sample code
+  ● html
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+  
+  ● script
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: 'myGraph',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1,
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.2,
+      }]
+    },//data
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          min: -100,
+          max: 100,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            stepSize:10,
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: {
+            color: 'rgb(255, 99, 132)'
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+    }//options
+  })

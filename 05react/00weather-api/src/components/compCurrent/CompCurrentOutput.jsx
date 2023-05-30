@@ -9,21 +9,17 @@ const CompCurrentOutput = () => {
 
   const {
     _weatherData,
-    _address, _setAddress,
+    _address, _setAddress, _addressKo, _addressEn,
     fnAppInit,
 
   } = useContext(AppContext)
 
-
-
   const {
     temp, snow,
-    icon, bg, desc, windDeg, windSpeed,
+    icon, bg, desc, windDeg, windSpeed, feelsLike,
     humidity, rain, uvi, uviDesc,
     sunrise, sunset, date, day, time, apm
   } = fnSetWeatherInfo(_weatherData.current, _weatherData.timezone)
-
-
 
 
   //console.log(_weatherData);//바로 찾을 수 있는 이유: 웨더데이터가 유효해야 출력이 되므로 _weatherData데이터를 바로 사용할 수 있음
@@ -45,8 +41,9 @@ const CompCurrentOutput = () => {
       </button>
 
       <address>{/* 애니메이션 할려면 무조건 두개 필요 스판은 줄내림이 되면안되고 옆으로 두개를 나란히세움 그리고 두개를 동시에 움직이는데 두번째꺼가 나올때 원래위치로 돌려버리면 보는사람은 계속 돌아가는것처럼 보임. 줄내림 안되게 할려면  */}
-        <span>{_address}</span>
-        <span>{_address}</span>
+        <span>[ {_addressKo} {_addressEn} ]</span>
+        <span>[ {_addressKo} {_addressEn} ]</span>
+        <span></span>
       </address>
 
       <div className="circle-container">
@@ -67,7 +64,8 @@ const CompCurrentOutput = () => {
             <span>
               <i className="fa-solid fa-user"></i>
               {/* <i>Feel</i> */}
-              <b>23<sup>&#176;c</sup></b>
+              <b>{feelsLike}<sup>&#176;c</sup></b>
+           
             </span>
           </p>
           <p className="desc">"{desc}"</p>

@@ -63,7 +63,7 @@ h1 {
 }
 
 #root {
-  @include m.posLT(absolute, 50%, 50%, -50%, -48%);
+  @include m.posLT(fixed, 50%, 50%, -50%, -48%);
   width: min(95%, 1100px);
   height: min(90%, 800px);
   background-color: rgba(#fff, 0.7);
@@ -85,6 +85,7 @@ h1 {
   }
   > div.app-inner {
     height: 100%;
+    position: relative;
     @media screen and (min-width: 900px) {
       display: flex;
       flex-wrap: wrap;
@@ -93,6 +94,7 @@ h1 {
     @media screen and (max-width: 900px) {
       overflow: hidden;
       overflow-y: auto;
+      overflow-x: hidden;
     }
     section {
       box-sizing: border-box;
@@ -108,6 +110,7 @@ h1 {
         padding: 10px;
         border-radius: 10px;
         position: relative;
+        min-height: 250px;
         @media screen and (min-width: 900px) {
           //스크롤바 생긴다는 뜻
           height: 100%;
@@ -134,6 +137,8 @@ h1 {
           @media screen and (min-width: 900px) {
             position: sticky;
             top: 0;
+            left: 0;
+            z-index: 1;
           }
         }
       } //section-inner

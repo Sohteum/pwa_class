@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { DDayContext } from './CompDDay';
 import CompListItem from './CompListItem';
 import CompFilterForm from './CompFilterForm';
-import CompMoreBtn from '../compBackBtn/CompMoreBtn';
 
 const CompList = () => {
   const [_filterActive, _setFilterActive] = useState('');
@@ -21,23 +20,23 @@ const CompList = () => {
     _setDdayOutputArr,
   } = useContext(DDayContext);
 
-  // const fnFilterHandelr = function (e) {
-  //   e.currentTarget.classList.toggle('active'); //버튼이 자식이 둘이나 있어서 커런트로 써야됨
-  //   _setFilterActive((c) => (c !== 'active' ? 'active' : '')); //현재값이 액티브가 아니라면 액티브를 달아주겠당
-  //   _setSearchText('');
-  // };
+  const fnFilterHandelr = function (e) {
+    e.currentTarget.classList.toggle('active'); //버튼이 자식이 둘이나 있어서 커런트로 써야됨
+    _setFilterActive((c) => (c !== 'active' ? 'active' : '')); //현재값이 액티브가 아니라면 액티브를 달아주겠당
+    _setSearchText('');
+  };
 
   return (
     <>
       <article className='dday-list'>
-        {/* <button
+        <button
           onClick={fnFilterHandelr}
           className='filter-btn'
-        > 
+        >
           <i className='fa-solid fa-magnifying-glass-plus'></i>
           <i className='fa-solid fa-magnifying-glass-minus'></i>
-        </button>*/}
-        <CompMoreBtn />
+        </button>
+
         {
           _ddayOutputArr.length ? (
             <ul>

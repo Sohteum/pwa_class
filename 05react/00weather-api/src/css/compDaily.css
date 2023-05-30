@@ -6,9 +6,10 @@
   border-bottom: 1px solid rgba(67, 120, 163, 0.2);
 }
 .comp-daily .section-inner ul li a {
+  position: relative;
   display: block;
-  width: 100%;
-  padding: 10px 0;
+  padding: 10px;
+  transition: all 0.5s;
   text-align: left;
 }
 .comp-daily .section-inner ul li a .date {
@@ -21,9 +22,6 @@
 }
 .comp-daily .section-inner ul li a .date i {
   margin-right: 2px;
-}
-.comp-daily .section-inner ul li a .date .fa-arrow-down {
-  float: right;
 }
 .comp-daily .section-inner ul li a .info img {
   display: inline-block;
@@ -40,8 +38,43 @@
 .comp-daily .section-inner ul li a .info span em {
   font-weight: 500;
 }
+.comp-daily .section-inner ul li a.active {
+  background-color: var(--sky);
+  color: #FFF;
+}
+.comp-daily .section-inner ul li a.active .fa-chevron-down {
+  transform: translateY(-50%) rotate(180deg);
+}
+.comp-daily .section-inner ul li a .fa-chevron-down {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3em;
+  transition: all 0.3s;
+}
 .comp-daily .section-inner ul li .detail {
+  display: none;
   background-color: rgba(11, 48, 80, 0.5);
   color: #fff;
   padding: 10px;
+}
+.comp-daily .section-inner ul li .detail p {
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+}
+.comp-daily .section-inner ul li .detail p:last-child {
+  border: none;
+}
+.comp-daily .section-inner ul li .detail p span {
+  margin-right: 15px;
+}
+.comp-daily .section-inner ul li .detail p span b {
+  margin: 0 5px;
+}
+.comp-daily .section-inner ul li .detail p span em {
+  font-weight: 600;
+}
+.comp-daily .section-inner ul li .detail p span em small {
+  font-size: 0.85em;
 }/*# sourceMappingURL=compDaily.css.map */

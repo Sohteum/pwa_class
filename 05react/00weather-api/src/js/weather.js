@@ -22,14 +22,14 @@ export const fnSetWeatherInfo = (weatherDataObj, timezone) => {
 
   let sunrise; let sunset;
   if (weatherDataObj.sunrise) {
-    sunrise = moment(weatherDataObj.sunrise * 1000).tz(timezone).format('A hh:mm:ss')
-    sunset = moment(weatherDataObj.sunset * 1000).tz(timezone).format('A hh:mm:ss')
+    sunrise = moment(weatherDataObj.sunrise * 1000).tz(timezone).format('A hh:mm')
+    sunset = moment(weatherDataObj.sunset * 1000).tz(timezone).format('A hh:mm')
   } else {
     sunrise = sunset = '-- : -- : --'
   }
   let date = moment(weatherDataObj.dt * 1000).tz(timezone).format('YYYY년 M월 D일')
   let mmdd = moment(weatherDataObj.dt * 1000).tz(timezone).format('M월 D일')
-  let time = moment(weatherDataObj.dt * 1000).tz(timezone).format('hh:mm:ss')
+  let time = moment(weatherDataObj.dt * 1000).tz(timezone).format('hh:mm')
   let apm = moment(weatherDataObj.dt * 1000).tz(timezone).format('A')
 
   let dayArr = ['일', '월', '화', '수', '목', '금', '토']
@@ -45,6 +45,12 @@ export const fnSetWeatherInfo = (weatherDataObj, timezone) => {
     temp = (weatherDataObj.temp - 273.15).toFixed(1)
   }
 
+  let feelsLike
+  if (typeof (weatherDataObj.feels_like) === 'object') {
+    feelsLike = (weatherDataObj.feels_like.day-273.15).toFixed(1)
+  } else {
+    feelsLike =(weatherDataObj.feels_like-273.15).toFixed(1)
+  }
 
   let icon = weatherDataObj.weather[0].icon
   let bg = weatherDataObj.weather[0].main
@@ -70,10 +76,12 @@ export const fnSetWeatherInfo = (weatherDataObj, timezone) => {
   else if (uvi >= 6 && uvi < 8) uviDesc = '높음'
   else if (uvi >= 8 && uvi < 11) uviDesc = '매우높음'
   else uviDesc = '위험'
+  let clouds = weatherDataObj.clouds
+let pressure = weatherDataObj.pressure
 
 
 
 
-
-  return { temp, icon, bg, desc, windDeg, windSpeed, humidity, rain, uvi, uviDesc, sunrise, sunset, date, day, time, apm, mmdd, tempMin, tempMax, tempMorn, tempDay, tempNight, snow }
+  return { 
+    clouds, pressure,feelsLike,temp, icon, bg, desc, windDeg, windSpeed, humidity, rain, uvi, uviDesc, sunrise, sunset, date, day, time, apm, mmdd, tempMin, tempMax, tempMorn, tempDay, tempNight, snow }
 }//fnSetWeatherInfo

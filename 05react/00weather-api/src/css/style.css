@@ -62,7 +62,7 @@ h1 img {
 }
 
 #root {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -48%);
@@ -90,6 +90,7 @@ h1 img {
 }
 #root > div.app-inner {
   height: 100%;
+  position: relative;
 }
 @media screen and (min-width: 900px) {
   #root > div.app-inner {
@@ -102,6 +103,7 @@ h1 img {
   #root > div.app-inner {
     overflow: hidden;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 #root > div.app-inner section {
@@ -123,6 +125,7 @@ h1 img {
   padding: 10px;
   border-radius: 10px;
   position: relative;
+  min-height: 250px;
 }
 @media screen and (min-width: 900px) {
   #root > div.app-inner section .section-inner {
@@ -153,6 +156,8 @@ h1 img {
   #root > div.app-inner section .section-inner h2 {
     position: sticky;
     top: 0;
+    left: 0;
+    z-index: 1;
   }
 }
 

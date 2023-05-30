@@ -14,7 +14,8 @@ function App() {
 
   const [_latLng, _setLatLng] = useState(null)//위경도상태
   const [_weatherData, _setWeatherData] = useState(null)//날씨데이터
-  const [_address, _setAddress] = useState(null)
+  const [_addressEn, _setAddressEn] = useState(null)
+  const [_addressKo, _setAddressKo] = useState(null)
   const [_timezone, _setTimezone] = useState(null)
  
 
@@ -28,8 +29,10 @@ function App() {
   
     //타입존 상태설정
    
-    let address = await fnGetAddress(latlngObj) //주소를 리턴하는 함수
-    _setAddress(address)
+    let addressKo = await fnGetAddress(latlngObj, 'ko') //주소를 리턴하는 함수
+    _setAddressKo(addressKo)
+    let addressEn = await fnGetAddress(latlngObj, 'en') //주소를 리턴하는 함수
+    _setAddressEn(addressEn)
 
     const weatherData = await fnGetWeatherData(latlngObj)//api비동기 통신으로 날씨정보 리턴(이걸로 스테잇을 바꿔야하니 만들어야지)
     _setWeatherData(weatherData)
@@ -49,7 +52,8 @@ function App() {
       fnAppInit,
       _latLng, _setLatLng,
       _weatherData, _setWeatherData,
-      _address, _setAddress,
+      _addressEn, _setAddressEn,
+      _addressKo, _setAddressKo,
     
     }}>
       <h1><img src={`${process.env.PUBLIC_URL}/img/main/title.png`} alt="" /></h1>

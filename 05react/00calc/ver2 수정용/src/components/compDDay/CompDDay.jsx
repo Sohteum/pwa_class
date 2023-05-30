@@ -5,7 +5,6 @@ import { createContext } from 'react';
 import CompAdd from './CompAdd';
 import CompTime from './CompTime';
 import { fnDdayArrInit, fnTimer } from '../../script/dday';
-import CompMoreBtn from '../compBackBtn/CompMoreBtn';
 
 export const DDayContext = createContext();
 
@@ -29,7 +28,7 @@ const CompDDay = () => {
       }}
     >
       <section className='dday'>
-        <CompMoreBtn />
+   
         <h2>D-Day</h2>
 
         <CompTime />
