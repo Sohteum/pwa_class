@@ -26,7 +26,10 @@ const CompMap = () => {
     const weatherData = await fnGetWeatherData(latlngObj)//api비동기 통신으로 날씨정보 리턴(이걸로 스테잇을 바꿔야하니 만들어야지)
     _setWeatherData(weatherData)
     _setIsActive(false)
- 
+    document.querySelector('.app-inner').scrollTo({top:0, behavior:'smooth'})
+    document.querySelectorAll('.section-inner').forEach((el)=>{
+      el.scrollTo({top:0, left:0, behavior:'smooth'})
+    })
   }
   //함수끼리 꼬여있는거 컬링펌. 이게 싫으면 간단하게 만드는게 컴포넌트에 넣어버리면 됨. 컴포넌트에서 useState를 쓰면 되니까
   //콘솔에서 없는것 호출하면 에러뜨니 콘솔도 주의하자!
@@ -42,10 +45,7 @@ const CompMap = () => {
       <div className='btns'>
         <button onClick={()=>{_setIsActive(true)}}><i className="fa-solid fa-map-location-dot"></i></button>
         <button onClick={()=>{_setIsActive(false)
-        document.querySelector('.app-inner').scrollTo({top:0, behavior:'smooth'})
-        document.querySelectorAll('.section-inner').forEach((el)=>{
-          el.scrollTo({top:0, left:0, behavior:'smooth'})
-        })
+ 
         }}><i className="fa-solid fa-xmark"></i></button>
 
       </div>

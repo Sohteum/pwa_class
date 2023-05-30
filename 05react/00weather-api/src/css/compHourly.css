@@ -18,7 +18,7 @@
 }
 @media screen and (min-width: 900px) {
   .comp-hourly .section-inner .wrap {
-    flex: 1;
+    height: 100%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -28,14 +28,30 @@
 }
 .comp-hourly .section-inner .wrap ul {
   display: inline-flex;
+  height: 100%;
 }
 .comp-hourly .section-inner .wrap ul li {
-  width: 100px;
-  border: 1px solid yellowgreen;
+  width: 70px;
+  padding-top: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.comp-hourly .section-inner .wrap ul li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.comp-hourly .section-inner .wrap ul li p {
+  text-align: center;
+  margin: 3px 0;
+  font-size: 0.9em;
+}
+.comp-hourly .section-inner .wrap ul li p img {
+  display: inline-block;
+  width: 80%;
 }
 .comp-hourly .section-inner .wrap .chart-wrap {
   position: absolute;
-  width: 100%;
-  height: 70%;
+  width: calc(100% - 37px);
   bottom: 0;
+  left: 5px;
+  height: 50%;
 }/*# sourceMappingURL=compHourly.css.map */

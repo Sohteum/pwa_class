@@ -30,6 +30,8 @@ export const fnSetWeatherInfo = (weatherDataObj, timezone) => {
   let date = moment(weatherDataObj.dt * 1000).tz(timezone).format('YYYY년 M월 D일')
   let mmdd = moment(weatherDataObj.dt * 1000).tz(timezone).format('M월 D일')
   let time = moment(weatherDataObj.dt * 1000).tz(timezone).format('hh:mm')
+  let hhmm = moment(weatherDataObj.dt * 1000).tz(timezone).format('HH:mm')
+
   let apm = moment(weatherDataObj.dt * 1000).tz(timezone).format('A')
 
   let dayArr = ['일', '월', '화', '수', '목', '금', '토']
@@ -83,5 +85,7 @@ let pressure = weatherDataObj.pressure
 
 
   return { 
-    clouds, pressure,feelsLike,temp, icon, bg, desc, windDeg, windSpeed, humidity, rain, uvi, uviDesc, sunrise, sunset, date, day, time, apm, mmdd, tempMin, tempMax, tempMorn, tempDay, tempNight, snow }
+    clouds, pressure,feelsLike,temp, icon, bg, desc,hhmm,
+     windDeg, windSpeed, humidity, rain, uvi, uviDesc, sunrise, sunset, 
+     date, day, time, apm, mmdd, tempMin, tempMax, tempMorn, tempDay, tempNight, snow }
 }//fnSetWeatherInfo

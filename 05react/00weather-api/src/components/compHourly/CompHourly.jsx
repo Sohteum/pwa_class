@@ -42,13 +42,19 @@ const CompHourly = () => {
           min: -50,
           max: 50,
           stepSize: 10, //10씩 단위 끊어서 표시해준다는거
-          grid: {
+          border: {
+            display: true,
+            color:'#8ed1f1',
+            width: 1,
+            dash: [2, 2]//왼쪽기준선
+          },
+          grid: {//수평선 색상
             color: '#8ed1f1'
           },
-          ticks: {
+          ticks: {//왼쪽 좌표
             display: true,
             color: "#8ed1f1",
-            border: 0,
+            border: 1,
           },
         },
       },
