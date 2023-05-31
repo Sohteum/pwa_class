@@ -18,6 +18,8 @@ const CompSignUp = () => {
     navi('/signin')
   }
 
+
+  
   return (
     <section>
       <h3>회원가입</h3>

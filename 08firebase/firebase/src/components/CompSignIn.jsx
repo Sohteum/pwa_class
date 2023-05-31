@@ -1,20 +1,22 @@
 import React, { useContext, useState } from 'react';
-import { auth, fnCheckEmailVerification, fnSignIn, fnSignOut } from '../fb/auth';
+import { auth, fnCheckEmailVerification, fnSetPersistence, fnSignIn, fnSignOut } from '../fb/auth';
 import { Appcontext } from '../App';
 import { Navigate } from 'react-router-dom';
 
 const CompSignIn = () => {
-const {navi} = useContext(Appcontext)
+  const { navi } = useContext(Appcontext)
   const [_email, _setEmail] = useState('')
   const [_password, _setPassword] = useState('')
+  const [_checked, _setChecked] = useState(false)
 
-  const fnSignInHandler = async(e) => {
+  const fnSignInHandler = async (e) => {
     e.preventDefault()
+    await fnSetPersistence(_checked)
     await fnSignIn(_email, _password)
-    if(fnCheckEmailVerification()){
+    if (fnCheckEmailVerification()) {
       alert(`${auth.currentUser.displayName}님 환영합니다`)
       navi('/')
-    }else{
+    } else {
       await fnSignOut()
       _setEmail('')
       _setPassword('')
@@ -31,6 +33,7 @@ const {navi} = useContext(Appcontext)
           비밀번호 : <input value={_password} onChange={(e) => { _setPassword(e.target.value) }} type="password" required />
         </p>
         <button>로그인</button>
+        <p><input type="checkbox" checked={_checked} onChange={()=>{_setChecked(c=>!c)}}/> 기억하기</p>
 
       </form>
     </section>

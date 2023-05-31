@@ -30,11 +30,11 @@ export const fnUpdateRrofile = (nickName) => {
 export const fnSignIn = (email, password) => {
   return new Promise((resolve) => {
     signInWithEmailAndPassword(auth, email, password)
-    .then((result) => {
-      resolve()
-    }).catch((error) => {
-      alert(error.message)
-    });
+      .then((result) => {
+        resolve()
+      }).catch((error) => {
+        alert(error.message)
+      });
   })
 }
 
@@ -49,10 +49,40 @@ export const fnsendEmailVerification = () => {
 }
 
 export const fnCheckEmailVerification = () => {
-  return(
+  return (
     (auth.currentUser.emailVerified) ? true : false
   )
 }//fnCheckEmailVerification 
+
+
+export const fnSetPersistence = (checked) => {
+  return new Promise((resolve) => {
+    if (checked) {
+      setPersistence(auth, browserLocalPersistence)
+        .then(() => {
+          resolve()
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    } else {
+      setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+          resolve()
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }//if else
+  })
+
+}//fnSetPersistence
+
+
 
 export const fnSignOut = () => {
   return new Promise((resolve) => {
@@ -62,5 +92,17 @@ export const fnSignOut = () => {
       }).catch((error) => {
         alert(error.message)
       });
+  })
+}
+
+
+export const fnDeleteUser = () => {
+  return new Promise((resolve) => {
+    deleteUser(auth.currentUser)
+    .then(() => {
+      resolve()
+    }).catch((error) => {
+      alert(error.message)
+    });
   })
 }

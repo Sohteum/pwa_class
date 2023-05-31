@@ -1,0 +1,124 @@
+.section4 {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  padding: 16vh 0;
+  background-image: url(../img/section4/section4_bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.section4 div.bg2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.section4 #particles-js2 {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  mix-blend-mode: overlay;
+}
+.section4 .btns {
+  z-index: 6;
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.section4 .btns button {
+  padding: 7px 30px;
+  background: #fff;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #bbb;
+  border-radius: 20px;
+  transition: color 0.3s background-color 0.3s;
+}
+.section4 .btns button:hover {
+  color: var(--main-color);
+}
+.section4 .btns button.active {
+  background: var(--main-color);
+  color: #fff;
+  border-color: var(--main-color);
+}
+@media screen and (max-width:600px) {
+  .section4 .btns button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+.section4 .portfolio {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: min(95%, 1000px);
+  margin: 0 auto;
+}
+.section4 .portfolio li {
+  box-sizing: border-box;
+  padding: 1px;
+}
+@media screen and (min-width:1000px) {
+  .section4 .portfolio li {
+    width: 33%;
+  }
+}
+@media screen and (min-width:600px) and (max-width:1000px) {
+  .section4 .portfolio li {
+    width: 49.5%;
+  }
+}
+@media screen and (max-width:600px) {
+  .section4 .portfolio li {
+    width: 100%;
+  }
+}
+.section4 .portfolio li a {
+  display: block;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.section4 .portfolio li a figure {
+  position: relative;
+  overflow: hidden;
+}
+.section4 .portfolio li a figure:hover div {
+  transform: scale(1.2);
+}
+.section4 .portfolio li a figure div {
+  transition: all 0.3s;
+}
+.section4 .portfolio li a figure div img {
+  width: 100%;
+}
+.section4 .portfolio li a figure figcaption {
+  position: absolute;
+  top: -10000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 128, 0, 0.8);
+  color: #fff;
+}
+.section4 .portfolio li a figure figcaption h3 {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background: var(--dark-color);
+  color: #fff;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 600;
+}/*# sourceMappingURL=section4.css.map */

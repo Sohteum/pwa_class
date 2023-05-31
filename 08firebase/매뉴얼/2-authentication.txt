@@ -230,7 +230,7 @@
     // ...
   });
 ------------------------------------------------------------------------------------------------
-■ 사용자관리
+■ 사용자관리 //사용자가 상태가 변할때마다 어떤 일을 하도록 하는것(로그인 후라던지..이벤트와동일함. 이벤트는 한번 주면 계속 그 상태가 되면 동작하는것처럼 이것도 마찬가지)
   ● 사용자 상태관찰 리스너 
   import { getAuth , onAuthStateChanged} from "firebase/auth";
   const auth = getAuth();
@@ -241,6 +241,7 @@
       //로그아웃된상태
     }
   });
+  app.js에서 useEffect에 넣어주고 auth와 onauthstatechanged빵 해줌
   
   ● auth 객체 
     auth.currentUser.key
@@ -258,7 +259,7 @@ import { getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPers
 const auth = getAuth();
 setPersistence(auth, browserSessionPersistence)
   .then(() => {
-    return signInWithEmailAndPassword(auth, email, password);
+    console.log('인증지속성이 변경되었습니다')
   })
   .catch((error) => {
     // Handle Errors here.

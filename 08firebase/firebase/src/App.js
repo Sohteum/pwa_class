@@ -19,16 +19,19 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        _setIsLogged(true)
         console.log(auth.currentUser);
       } else {
-        console.log('로그인전');
-
+        _setIsLogged(false)
       }
     });
   }, [])
 
   return (
-    <Appcontext.Provider value={{ navi }}>
+    <Appcontext.Provider value={{
+       navi,
+       _isLogged, _setIsLogged,
+        }}>
       <CompHeader />
 
       <Routes>
