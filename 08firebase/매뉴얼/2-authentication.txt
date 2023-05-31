@@ -1,0 +1,269 @@
+■ 인증작업전 개발환경
+  ● 파이어베이스 콘솔 설정
+    빌드 /  Authenthication 메뉴에서 인증방법 추가
+  ● 파이어베이스 Authenthication 메뉴
+    Users : 회원목록
+    Sign-in-method : 제공업체관리
+    Template : 가입,로그인,비밀번호변경,인증확인등에 필요한 메세지 및 알림기능 설정
+  ● 파이어베이스 Authenthication / 승인된도메인 / 도메인 네임추가 
+  ● npm 환경 
+    import "firebase/auth"; 
+  ● cdn 환경
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+------------------------------------------------------------------------------------------------
+● import 
+    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, deleteUser ,onAuthStateChanged, setPersistence, browserSessionPersistence, browserLocalPersistence } from "firebase/auth";
+------------------------------------------------------------------------------------------------
+■ 이메일 인증
+  ● 가입
+    import { getAuth, sendEmailVerification, updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, '이메일주소', '비밀번호').then((result) => {
+      let user = result.user
+    }).catch((error) => {
+      alert(error.message)
+    });
+
+ ● 회원정보 업데이트
+  import { getAuth, updateProfile } from "firebase/auth";
+  const auth = getAuth();
+  updateProfile(auth.currentUser, {
+    displayName: "홍길동", 
+    photoURL: "https://example.com/jane-q-user/profile.jpg"
+  }).then(() => {
+    alert('회원정보수정완료')
+  }).catch((error) => {
+    alert(error.message)
+  });
+
+
+  ● 인증메일보내기
+    import { getAuth, sendEmailVerification } from "firebase/auth";
+    const auth = getAuth();
+    sendEmailVerification('로그인된사용자').then(() => {
+     alert('인증 메일을 확인해주세요')
+    });
+
+  ● 로그인
+    import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, '이메일주소', '비밀번호').then((result) => {
+      const user = result.user; // auth.currentUser와 동일
+    }).catch((error) => {
+      alert(error.message)
+    });
+  
+  ● 비밀번호설정 인증 이메일 발송
+    (회원으로 등록된 이메일 주소로만 발송 가능)
+    import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, '이메일주소').then(() => {
+      // Password reset email sent!
+    }).catch((error) => {
+      // An error ocurred
+    });
+
+  ● 비밀번호 변경
+    import { getAuth, updatePassword } from "firebase/auth";
+    const auth = getAuth();
+    const user = auth.currentUser;
+    //const newPassword = getASecureRandomPassword();//자동비밀번호생성
+    updatePassword(user, '비밀번호').then(() => {
+      // Update successful.
+    }).catch((error) => {
+      // An error ocurred
+    });
+  
+  ● 인증 후 리디렉션 설정  
+    - 템플릿 언어 한글 변경
+    - 커스텀이메일작업
+      https://firebase.google.com/docs/auth/custom-email-handler
+    - firebase콘솔 / Authentication / Templates / edit / 작업 URL 직접입력
+------------------------------------------------------------------------------------------------
+■ 구글 인증
+  ● 구글 API 신청
+    ▶ 프로젝트 생성
+      - https://console.cloud.google.com/apis
+      - 프로젝트만들기 실행
+      - 프로젝트명 입력후 create실행
+      - 생성 대기 후 프로젝트 선택
+    ▶ APIKEY 생성  
+      - 좌측 콘솔메뉴 / 사용자인증정보
+      - 상단메뉴의 사용자 인증 정보 만들기클릭 / API키 클릭
+    ▶ OAuth Client ID 동의 화면
+      - 상단의 사용자 인증 정보 만들기 링크 클릭 / OAuth 클라이언트 ID 만들기
+      - OAuth 동의화면 구성
+        · (앱게시는 개발 완료 후 설정 후, 승인 uri와 리디렉션 uri의 https 도메인으로 변경)
+        · 외부
+      - 앱정보
+        · 앱이름 
+        · 지원이메일
+        · 개발자 연락처 이메일
+      - 범위설정 (저장후계속)
+      - 테스트사용자 (저장후계속)
+    ▶ OAuth Client ID 생성
+      - 상단의 사용자 인증 정보 만들기 링크 클릭 / OAuth 클라이언트 ID 만들기
+      - 어플리케이션 유형 선택
+      - 사용자인증정보 페이지 이동(왼쪽대시보드메뉴)
+      - OAuth Client ID  생성 (상단의 사용자 인증 정보 만들기 링크 클릭)
+    ▶ URI 설정  
+      ! 개발이 완료된 후 디플로이 할 도메인을 반드시 추가해야 함,
+      ! 개발 완료 후 OAuth동의화면에서 앱게시 후 승인 uri와 리디렉션 uri를 https 도메인으로 변경
+      ! 가급적 파이어베이스콘솔 / Authenthication / 승인된도메인 과 동일하게 설정
+      - 사용자 인증정보 클릭 / OAuth 2.0 클라이언트 ID / 해당아이디 클릭
+        · 승인된 자바스크립트 원본 uri 
+            예) http://localhost
+        · 승인된 리디렉션 uri (테스트 단계에서도 https만 사용 가능)
+          승인도메인/__/auth/handler를 사용
+          예) https://파이어베이스프로젝트ID.firebaseapp.com/__/auth/handler
+    ▶ 테스트 사용자 추가
+      - 테스트에 사용할 구글 계정을 등록  
+
+  ● 파이어베이스 연동
+    - 사용자인증정보 / OAuth 2.0 클라이언트 ID 클릭 후 id와 비밀키 확인
+    - 파이어베이스콘솔 / Authentication / Sign-in method / 제공업체추가 / 구글추가
+    - 구글 로그인 수정 (우측 연필 아이콘)
+    - 웹 SDK 구성 클릭후 id와 비밀번호 입력
+
+  ● 팝업로그인
+    //팝업로그인시 팝업창이 해제되어야 있어야 함
+    import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+
+    signInWithPopup(auth,provider).then((result) => {
+      let credential = result.credential;
+      let user = result.user;
+    }).catch((error) => {
+      alert(error.message)
+    });
+------------------------------------------------------------------------------------------------
+■ facebook 인증
+  ● 설정
+    - 빌드 /  Authenthication / Sign-in Mehtod / 제공업체추가 / 하단의 OAuth 리디렉션 URI 복사
+    - 페이스북 디벨로퍼 앱설정 페이지(https://developers.facebook.com/)
+      · 내앱 / 앱만들기 / 소비자 / 앱이름추가(앱만들기) / facebook로그인(설정) / 웹 / 빈주소입력 후 완료/
+      · 대쉬보드 / facebook 로그인 / 설정 / 유효한 OAuth 리디렉션 URI 입력란에 파이어베이스에서 제공된 uri입력
+      · 대쉬보드 / 설정 / 앱Id 와 앱시크릿코드 확인
+    - 파이어베이스의 페이스북 제공업체 추가 옵션란에 앱id와 앱비밀번호 입력
+      const provider = new FacebookAuthProvider();
+
+  ● 팝업로그인
+    import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+    const auth = getAuth();
+    signInWithPopup(auth, provider).then((result) => {
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      const accessToken = credential.accessToken;
+      const user = result.user; // auth.currentUser와 동일
+    })
+    .catch((error) => {
+      alert(error.message)
+    });
+------------------------------------------------------------------------------------------------
+■ twitter 인증 
+  ● 설정
+    - 파이어베이스 Authentication / Sign-in method 페이지에서 새제공업체 twiiter추가
+    - 트위터 전화인증이 된 계정으로 로그인해야함
+      트위터페이지 / 더보기  / 설정및개인정보 / 계정정보 / 휴대폰 변경
+    - 트위터개발자 페이지로 ( https://developer.twitter.com/en/apps ) 이동
+    - create an App
+      · 개발자 계정이 없는 경우 등록메세지 동의 (전화번호인증계정만 등록가능)
+      · 국가, 사용용도, 정부기관사용여부
+      · 약관동의
+      · 이메일인증
+      · App name 입력 후 getKey입력 
+      · API Key 와 API Key Secret key, Bearer Token 값 백업 
+      · firebase  twiiter API Key 와 API Key Secret key 입력란에 해당키 추가 후 확인
+    - dashboard로 이동  
+    - project&APPs/ projectNumber / 생성된 앱 이름 선택 후 Keys And Tockens 페이지로 이동
+    - Access Token and Secret 항목 생성후 Access Token,Access Token Secret를 백업
+    - project&APPs/ projectNumber / 생성된 앱 이름 선택 후 setup페이지로 이동
+    - OAuth 최신버전 활성화
+    - Type of App : web
+    - Callback URI / Redirect URL : 파이어베이스에서 제공받은 OAuth 리디렉션 URI 입력
+    - Website URL : 최종 배포할 deplpoy url
+    - save 후 Client ID와 Client Secret 키값 백업
+    - 개발자등록
+      · Developer Portal / Products / twiiter API v2 / Elevated / apply버튼
+      · skill level 입력
+      · How will you use the Twitter API or Twitter Data? (영어로 사용 설명)
+        예시(
+          i'm studying personal project Login App using firebase. 
+          i would like develope firebase login system with twitter API.
+          To do that i need twitter API and Dveloper Account.
+          My App will used only studying case.
+        )
+      · 추가질문 no
+        1. Are you planning to analyze Twitter data?
+        2. Will your app use Tweet, Retweet, like, follow, or Direct Message functionality?
+        3. Do you plan to display Tweets or aggregate data about Twitter content outside
+        of Twitter?
+        4. Will your product, service or analysis make Twitter content or derived
+      · Developer agreement & policy 동의
+  ● 팝업로그인
+    import { getAuth, signInWithPopup, TwitterAuthProvider } from "firebase/auth";
+    const provider = new TwitterAuthProvider();
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+      }).catch((error) => {
+        alert(error.message)
+      });
+------------------------------------------------------------------------------------------------
+■ 로그아웃 
+  import { getAuth, signOut } from "firebase/auth";
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    alert('로그아웃 되었습니다')
+  }).catch((error) => {
+    alert(error.message)
+  });
+------------------------------------------------------------------------------------------------
+■ 회원삭제(탈퇴)
+  import { getAuth, deleteUser } from "firebase/auth";
+  const auth = getAuth();
+  deleteUser(auth.currentUser).then(() => {
+    // User deleted.
+  }).catch((error) => {
+    // An error ocurred
+    // ...
+  });
+------------------------------------------------------------------------------------------------
+■ 사용자관리
+  ● 사용자 상태관찰 리스너 
+  import { getAuth , onAuthStateChanged} from "firebase/auth";
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      //로그인된상태
+    } else {
+      //로그아웃된상태
+    }
+  });
+  
+  ● auth 객체 
+    auth.currentUser.key
+    auth.currentUser.uid
+    auth.currentUser.displayName
+    auth.currentUser.email
+    auth.currentUser.emailVerified
+    auth.currentUser.phoneNumber
+    auth.currentUser.photoURL
+------------------------------------------------------------------------------------------------
+■ 인증 지속성
+
+import { getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
+
+const auth = getAuth();
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    return signInWithEmailAndPassword(auth, email, password);
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+
