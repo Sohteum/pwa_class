@@ -21,6 +21,9 @@
       margin: 20px 0 30px 0;
     }
     h1 {
+      @media screen and (max-width:500px) {
+        margin-top: -10px;
+      }
       margin-bottom: 45px;
       font-size: 2em;
     }
@@ -72,13 +75,19 @@
       }
     }
     nav {
-      margin-top: 25px;
+      @media screen and (max-width:500px) {
+        margin-top: 10px;
+      }  
+      margin-top: 20px;
       font-weight: 900;
       text-transform: uppercase;
 
       a {
+        @media screen and (max-width:500px) {
+          margin: 15px 0;
+        } 
         display: block;
-        margin: 23px 0;
+        margin: 20px 0;
         padding: 8px 20px;
         text-align: center;
         border-radius: 20px;

@@ -5,6 +5,10 @@ section.bmi {
   flex-direction: column;
   justify-content: center;
 }
+section.bmi h2 {
+  padding-bottom: 20px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.2);
+}
 section.bmi form div.radios p {
   position: relative;
   display: flex;
@@ -40,6 +44,7 @@ section.bmi form > div {
   border-bottom: 2px groove rgba(0, 0, 0, 0.1);
 }
 section.bmi form > div > label {
+  font-size: 1.1em;
   display: block;
   margin-bottom: 15px;
 }
@@ -59,6 +64,7 @@ section.bmi form > div input[type=number]::placeholder {
   color: inherits;
 }
 section.bmi form button {
+  margin-bottom: 20px;
   margin-top: 15px;
   outline: none;
   width: 100%;

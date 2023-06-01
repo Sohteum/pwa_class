@@ -3,6 +3,10 @@ section.calc {
   display: flex;
   flex-direction: column;
 }
+section.calc h2 {
+  padding-bottom: 20px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.2);
+}
 section.calc p.output {
   display: flex;
   align-items: center;

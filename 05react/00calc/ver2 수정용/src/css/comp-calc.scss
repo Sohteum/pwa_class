@@ -2,6 +2,10 @@ section.calc {
   height: 100%;
   display: flex;
   flex-direction: column;
+  h2{
+    padding-bottom: 20px;
+    border-bottom: 2px groove rgba(#fff, 0.2);
+  }
   p.output {
     display: flex;
     align-items: center;

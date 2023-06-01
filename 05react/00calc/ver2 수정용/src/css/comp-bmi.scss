@@ -1,4 +1,4 @@
-@use './mixin' as m;
+@use "./mixin" as m;
 
 section.bmi {
   position: relative;
@@ -6,12 +6,26 @@ section.bmi {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  h2{
+    padding-bottom: 20px;
+    border-bottom: 2px groove rgba(#fff, 0.2);    
+  }
   form {
     div.radios {
+
+      // img.heart{
+      //   display: block;
+      //   margin: 0 auto;
+      //   width: 50%;
+      //   margin-bottom: 20px;
+      //   mix-blend-mode: overlay;
+      //   filter:brightness(-100%)
+      // }
       p {
         position: relative;
         display: flex;
         text-align: center;
+
         input {
           // display: none; //오류나서 안됨.리콰이어드 속성이 안먹게됨. 경고메세지발생
           border: none;
@@ -25,6 +39,7 @@ section.bmi {
           }
         } //input
         label {
+          
           flex: 1;
           cursor: pointer;
           padding: 10px 0;
@@ -42,10 +57,12 @@ section.bmi {
       padding: 15px 0;
       border-bottom: 2px groove rgba(#000, 0.1);
       > label {
+      font-size: 1.1em;
+
         display: block;
         margin-bottom: 15px;
       }
-      input[type='number'] {
+      input[type="number"] {
         box-sizing: border-box;
         width: 100%;
         padding: 10px;
@@ -62,6 +79,8 @@ section.bmi {
       } //input
     } //div
     button {
+      margin-bottom: 20px; //for아래 위 여백
+
       margin-top: 15px;
       outline: none;
       width: 100%;

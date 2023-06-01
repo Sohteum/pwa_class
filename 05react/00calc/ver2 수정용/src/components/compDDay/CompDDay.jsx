@@ -18,7 +18,7 @@ const CompDDay = () => {
       value={{
         //dday목록화면과 dday추가화면 중에 하나를 보여주는 스테이트 . 값이 list이면 complist를 보여주고 add면 compadd가 나옴
         _showComp,
-        _setShowComp, //트룸면 목록이 폴스면 에드폼이 나옴
+        _setShowComp, //트루면 목록이 폴스면 에드폼이 나옴
         //dday일정(객체)를 담고있는 배열
         _ddayArr,
         _setDdayArr,

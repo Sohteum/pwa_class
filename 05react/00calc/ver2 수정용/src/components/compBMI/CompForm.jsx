@@ -56,6 +56,11 @@ const CompForm = () => {
   return (
     <form onSubmit={fnSubmitHandler}>
       <div className='radios'>
+        {/* <img 
+         className='heart'
+          src={require('../../assets/img/heart.png')}
+         alt='' 
+        /> */}
         <label>
           <i className='fa-solid fa-venus-mars'></i> 성별을 입력해주세요
         </label>

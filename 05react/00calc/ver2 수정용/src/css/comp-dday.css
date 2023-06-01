@@ -4,6 +4,10 @@ section.dday {
   display: flex;
   flex-direction: column;
 }
+section.dday h2 {
+  padding-bottom: 20px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.2);
+}
 section.dday article.dday-list {
   overflow: hidden;
   position: relative;
@@ -74,35 +78,37 @@ section.dday article.dday-list .filter-form.active {
 }
 section.dday article.dday-list .filter-form fieldset {
   margin-bottom: 15px;
-  padding: 10px;
+  padding: 13px;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 section.dday article.dday-list .filter-form fieldset legend {
-  padding: 5px 10px;
+  padding: 7px 15px;
   font-size: 0.9em;
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 section.dday article.dday-list .filter-form fieldset button {
   width: 100%;
   margin-top: 10px;
   padding: 10px 0;
   outline: none;
-  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  box-shadow: -2px -2px 5px rgb(255, 255, 255), 3px 3px 5px rgba(0, 0, 0, 0.4);
   background: #fff;
 }
 section.dday article.dday-list .filter-form fieldset button:active {
-  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 section.dday article.dday-list .filter-form fieldset input {
   width: 100%;
   box-sizing: border-box;
+  border-radius: 30px;
   padding: 10px;
   border: none;
   outline: none;
-  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -2px -2px 5px rgb(255, 255, 255), inset 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 section.dday article.dday-list .filter-form fieldset input:focus {
   background: #000;
@@ -119,9 +125,9 @@ section.dday article.dday-list > ul {
   margin: 15px 0;
 }
 section.dday article.dday-list > ul > li {
-  padding: 15px 5px;
+  padding: 10px 5px;
   border-bottom: 2px groove rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 section.dday article.dday-list > ul > li.active {
   background-color: rgba(255, 192, 203, 0.5);
