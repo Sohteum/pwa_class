@@ -15,10 +15,11 @@ export const fnCreateUser = (email, password) => {
 }//fn
 //비동기니까 끝나고다음애가 기다리고있는것. 회원가입할동안 기다리고있다가 끝나면 이메일 보내줄거야
 
-export const fnUpdateRrofile = (nickName) => {
+export const fnUpdateRrofile = (nickName, photoURL) => {
   return new Promise((resolve) => {
     updateProfile(auth.currentUser, {
       displayName: nickName,
+      photoURL: photoURL,
     }).then(() => {
       resolve()//안에 아무것도 안넣어도됨. 다음걸 진행하라는 뜻. 받아서 쓸게 없으면 굳이
     }).catch((error) => {
@@ -54,7 +55,6 @@ export const fnCheckEmailVerification = () => {
   )
 }//fnCheckEmailVerification 
 
-
 export const fnSetPersistence = (checked) => {
   return new Promise((resolve) => {
     if (checked) {
@@ -82,8 +82,6 @@ export const fnSetPersistence = (checked) => {
 
 }//fnSetPersistence
 
-
-
 export const fnSignOut = () => {
   return new Promise((resolve) => {
     signOut(auth)
@@ -94,7 +92,6 @@ export const fnSignOut = () => {
       });
   })
 }
-
 
 export const fnDeleteUser = () => {
   return new Promise((resolve) => {

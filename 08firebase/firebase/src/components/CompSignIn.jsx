@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { auth, fnCheckEmailVerification, fnSetPersistence, fnSignIn, fnSignOut } from '../fb/auth';
 import { Appcontext } from '../App';
-import { Navigate } from 'react-router-dom';
+
 
 const CompSignIn = () => {
   const { navi } = useContext(Appcontext)
@@ -29,9 +29,7 @@ const CompSignIn = () => {
       <h3>로그인</h3>
       <form onSubmit={fnSignInHandler}>
         <p>이메일 : <input value={_email} onChange={(e) => { _setEmail(e.target.value) }} type="email" required /></p>
-        <p>
-          비밀번호 : <input value={_password} onChange={(e) => { _setPassword(e.target.value) }} type="password" required />
-        </p>
+        <p>비밀번호 : <input value={_password} onChange={(e) => { _setPassword(e.target.value) }} type="password" required /></p>
         <button>로그인</button>
         <p><input type="checkbox" checked={_checked} onChange={()=>{_setChecked(c=>!c)}}/> 기억하기</p>
 
