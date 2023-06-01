@@ -10,12 +10,12 @@ export const fnUploadFile = (folder, file) => {
     .then((snapshot) => {
       getDownloadURL(snapshot.ref)
       .then((url) => {
-        resolve()
+        resolve(url)
       }).catch((error) => {
-        console.log('error.message')
+        console.log(error.message)
       })//getDownloadURL  then catch
     }).catch((error) => {
-      console.log('error.message')
+      console.log(error.message)
     })//uploadBytes then catch
   })
 }//fnUploadFile

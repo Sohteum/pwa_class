@@ -18,7 +18,7 @@
     ▶ rules탭의 권한설정 true로 변경
 
 ■  import
-  import { getFirestore, Timestamp, collection, doc, addDoc, setDoc, getDoc, getDocs, updateDoc, deleteDoc, writeBatch, query, where, orderBy, limit, onSnapshot,  arrayUnion, arrayRemove, startAt, startAfter, endAt, endBefore, limit} from "firebase/firestore";
+  import { getFirestore, Timestamp, collection, doc, addDoc, setDoc, getDoc, getDocs, updateDoc, deleteDoc, writeBatch, query, where, orderBy, limit, onSnapshot,  arrayUnion, arrayRemove, startAt, startAfter, endAt, endBefore} from "firebase/firestore";
 
 ■ 문서 추가-------------------------------------------------------------------------------------------
   ● setDoc() //id수동생성
@@ -69,14 +69,14 @@
   ● 단일문서 가져오기
     import { doc, getDoc, getFirestore } from "firebase/firestore";
     const db = getFirestore();
-    const docRef = doc(db, "컬렉션네임", "문서id");
-    const docSnap = getDoc(docRef).then((docSnap)=>{
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-      } else {
-        console.log("No such document!");
-      }
-    })//getDoc then
+   const docRef = doc(db, collectionName, docid);
+    getDoc(docRef).then((doc) => {
+        doc.data()
+    }).catch((error)=>{
+      alert(error.message)
+    })   
+   
+  })//getDoc then
 
   ● 콜렉션의 전체문서 가져오기
     import { collection, getDocs, getFirestore} from "firebase/firestore";
@@ -139,9 +139,9 @@
   ● 컬렉션 업데이트 리스너 추가 
     import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
     const db = getFirestore();
-    try{
+
       onSnapshot(
-        collection(firstore, collectionName),
+        collection(firstore, 컬렉션이름),
         (snapshot) => {
           /* 
           snapshot.docs.forEach(doc => {
@@ -154,9 +154,7 @@
         (error) => {
           console.log('db access error')    
         })
-    }catch{
-      console.log('onsnapshot error');
-    }
+ 
 
   ● 문서 업데이트 리스너 
     import { doc, onSnapshot ,getFirestore} from "firebase/firestore";

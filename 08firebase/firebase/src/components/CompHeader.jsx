@@ -27,7 +27,7 @@ const CompHeader = () => {
         (_isLogged)
           ?
           <div>
-            <img style={{width:'50px',height:'50px'}} src={auth.currentUser.photoURL} alt="" />
+            <img style={{width:'50px',height:'50px',objectFit:"cover",objectPosition:"center"}} src={auth.currentUser.photoURL} alt="" />
             <b>{auth.currentUser.displayName}</b>
             <button onClick={fnSignOutHandler}>로그아웃</button>
             <button onClick={fnDeleteUserHandeler}>회원탈퇴</button>
