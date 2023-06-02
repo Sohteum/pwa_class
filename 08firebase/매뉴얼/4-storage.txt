@@ -7,7 +7,7 @@
     파이어베이스 콘솔 / storage / 폴더아이콘
 ------------------------------------------------------------------------------------------------
 ● import 
-  import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
+  import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll } from "firebase/storage";
 ------------------------------------------------------------------------------------------------
 ■ 저장소 관리
   ● 파일업로드
@@ -15,7 +15,7 @@
     const storage = getStorage();
     const storageRef = ref(storage, '저장소폴더/파일명.확장자');
     uploadBytes(storageRef,업로드할파일).then((snapshot) => {
-      getDownloadURL(storageRef).then((url)=>{
+      getDownloadURL(snapshot.ref).then((url)=>{
         console.log("업로드완료, 다운로드url ",url)
       }).catch((error)=>{
         console.log('url확인중 오류')
@@ -44,7 +44,27 @@
       }
     );//uploadTask.on
 
-  ● 삭제
+  ● 폴더안의 모든 파일 삭제
+    import { getStorage, ref, listAll  } from "firebase/storage";
+    const storage = getStorage();
+ 
+    const folderRef = ref(storage, folder);
+    listAll(folderRef)
+      .then((dir) => {
+        dir.items.forEach((v) => {
+          const fileRef = ref(storage, `${folderRef.fullPath}/${v.name}`);
+          deleteObject(fileRef)
+        });
+                console.log('모든 파일이 삭제되었습니다')
+        dir.prefixes.forEach((folderRef) => {
+          //recursive function
+          //fnDelteFolder(folderRef.fullPath)
+        });
+      }).catch((error) => {
+        alert(error.message)
+      });
+
+  ● 파일삭제
     import { getStorage, ref, deleteObject } from "firebase/storage";
     const storage = getStorage();
     const storageRef= ref(storage, '폴더명/파일명');

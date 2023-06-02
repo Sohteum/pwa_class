@@ -1,0 +1,57 @@
+@use "./mixin" as m;
+
+.comp-hourly {
+  .section-inner {
+    padding-top: 0 !important;
+    overflow: auto;
+
+    h2 {
+      position: sticky;
+      left: 0;
+    }
+    @media screen and (min-width: 900px) {
+      display: flex;
+      flex-direction: column;
+    } //min-width:900px
+    .wrap {
+      //랩이 늘어나는게 중요함그래서 인라인플렉스가근데 여기서 안되서 테이블로변경//자동으로 자식의 크기에 따라 늘어나는 테이블 방식
+      display: inline-table;
+      position: relative;
+      @media screen and (min-width: 900px) {
+        height: 100%;
+      } //min-width:900px
+      @media screen and (max-width: 900px) {
+        height: 400px;
+      } //max-width:900px
+      ul {
+        display: inline-flex; //안쪽li가 계속 커지면 ul도 같이 늘어나야하기땨문에 이렇게
+        height: 100%;
+        li {
+          width: 70px;
+          padding-top: 20px;
+          height: 100%;
+          box-sizing: border-box;
+          &:nth-child(even) {
+            background-color: rgba(#fff, 0.5);
+          }
+          p {
+            text-align: center;
+            margin: 3px 0;
+            font-size: 0.9em;
+            img {
+              display: inline-block;
+              width: 80%;
+            }
+          }
+        }
+      } //ul
+      .chart-wrap {
+        position: absolute;
+        width: calc(100% - 37px);
+        bottom: 0;
+        left: 5px;
+        height: 50%;
+      } //chart-wrap
+    } //wrap
+  } //section
+} //comp-hourly

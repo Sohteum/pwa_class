@@ -1,0 +1,200 @@
+@use "./mixin" as m;
+
+section.comp-current {
+  @media screen and (max-width: 900px) {
+    margin-top: 30px !important;
+  }
+  .section-inner {
+    .current-output {
+      position: relative;
+      border-radius: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      @media screen and (min-width: 900px) {
+        height: 100%;
+      } //output min
+      @media screen and (max-width: 900px) {
+        padding: 5px;
+      } //output max
+
+      button.reload {
+        z-index: 3;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 15%;
+        right: 5%;
+        font-size: 1.6em;
+        opacity: 0.7;
+        transition: all 1s;
+        &:active,
+        &:hover {
+          opacity: 1;
+          transform: rotate(360deg);
+        }
+      } //button
+
+      address {
+        margin-bottom: 10px;
+        width: min(90%, 350px);
+        display: flex; //화이트스페이스노랩도 가능하지만  하면 간격이 하나 생김. 플랙스로 하면 간격 없이 딱맞음
+        overflow: hidden;
+        padding: 5px;
+        background-color: rgba(#000, 0.3);
+        border-radius: 30px;
+        color: #fff;
+        span {
+          white-space: nowrap; //줄내림 방지
+          display: inline-block;
+          font-size: 0.9em;
+          animation: marquee 25s linear infinite;
+        }
+      } //address
+      .circle-container {
+        position: relative;
+        width: min(85%, 300px);
+        @include m.square;
+        border-radius: 50%;
+        background-color: rgba(#000, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .sunset {
+          position: absolute;
+          width: 100%;
+          height: 50%;
+          left: 0;
+          top: 0;
+          svg {
+            width: 100%;
+            .sun {
+              fill: rgb(255, 217, 0);
+              offset-path: path("M25,200c0-96.65,78.35-175,175-175s175,78.35,175,175");
+              animation: sun 7s linear infinite;
+              // offset-distance: 100%;
+              @keyframes sun {
+                0% {
+                  transform: scale(0.6) rotate(0deg);
+                }
+                100% {
+                  transform: scale(0.6) rotate(360deg);
+                }
+              }
+            } //path.sun
+            .line {
+              fill: none;
+              stroke: rgba(#fff, 0.7);
+            } //line
+            .dash {
+              fill: none;
+              stroke: rgba(255, 208, 0, 0.5);
+              stroke-width: 6px;
+              stroke-dasharray: 1;
+              //stroke-dashoffset: .5;//1에서 0으로 바뀌는거 1이면 해가 안떳다. 0이면 해가 지는시간 .5면 해가 중앙에 있는 시간
+            } //dash
+          } //svg
+          time {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 3px 5px;
+            border-radius: 10px;
+            background-color: rgba(255, 208, 0, 0.932);
+            &.riseTime {
+              transform: translateX(-30%);
+            }
+            &.setTime {
+              float: right;
+              transform: translateX(30%);
+            }
+          }//time
+        } //sunset
+        .circle-container-inner {
+          @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+          width: 85%;
+          .temp {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+              position: absolute;
+              transform: translate(50px, 10px);
+              i {
+                margin-right: 3px;
+              }
+            }
+
+            em {
+              font-size: 2.8em;
+              position: relative;
+              margin-right: -40px;
+              z-index: 2;
+              text-shadow: 1px 1px 0 var(--color);
+              sup {
+                font-size: 0.5em;
+              }
+            }
+            img {
+              width: 90px;
+              mask-image: url(../assets/img/mask.png);
+              mask-size: 100%;
+              mask-position: center;
+              mask-repeat: no-repeat;
+            }
+          } //temp
+          .desc {
+            font-size: 1.3em;
+            text-align: center;
+            margin-top: -20px;
+          }
+          .etc {
+            width: 75%;
+            margin: 10px auto;
+            background-color: rgba(#000, 0.4);
+            border-radius: 40px;
+            text-align: center;
+            padding: 3px;
+            box-sizing: border-box;
+            span {
+              margin: 3px 5px;
+              font-size: 0.8em;
+              display: inline-block;
+              .fa-location-arrow {
+                font-size: 0.9em;
+                margin-right: 3px;
+              }
+              em {
+                i {
+                  margin-right: 3px;
+                  font-size: 0.8em;
+                }
+                small {
+                  font-size: 0.8em;
+                }
+              }
+            }
+          } //etc
+          .time-date {
+            text-align: center;
+            color: #fff;
+            .time {
+              font-size: 1.1em;
+              margin-top: -10px;
+              small{
+                font-size: 0.8em;
+                margin-right: 3px;
+              }
+            }
+          }
+        } //circle-container-inner
+      } //circle-container
+    } // current-output
+  } //section-inner
+} //current

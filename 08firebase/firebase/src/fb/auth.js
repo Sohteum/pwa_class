@@ -39,6 +39,17 @@ export const fnSignIn = (email, password) => {
   })
 }
 
+export const fnSignInGoogle = () => {
+  return new Promise((resolve) => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider).then((result) => {
+      resolve()
+    }).catch((error) => {
+      alert(error.message)
+    });
+  })
+}
+
 export const fnsendEmailVerification = () => {
   return new Promise((resolve) => {
     sendEmailVerification(auth.currentUser) //현재 로그인된 사용자에게 메일을 보내겠다는뜻
@@ -96,10 +107,15 @@ export const fnSignOut = () => {
 export const fnDeleteUser = () => {
   return new Promise((resolve) => {
     deleteUser(auth.currentUser)
-    .then(() => {
-      resolve()
-    }).catch((error) => {
-      alert(error.message)
-    });
+      .then(() => {
+        resolve()
+      }).catch((error) => {
+        if (error.message === 'auth/requires-recent-login') {
+          alert('로그아웃 후 재로그인 하신 후 회원탈퇴를 실행해주세요\n강제로그아웃이 됩니다');
+          fnSignOut()
+        } else {
+          alert(error.message)
+        }
+      });
   })
 }
