@@ -68,3 +68,23 @@ export const fnDeleteDoc = (collectionName, docid) => {
   })
 }
 
+
+export const fnDeleteCollection = (collectionName) => {
+  return new Promise((resolve) => {
+    const batch = writeBatch(db);
+    const querySnapshot = getDocs(collection(db, collectionName))
+      .then((querySnapshot) => {
+        querySnapshot.forEach((v) => {
+          const docRef = doc(db, collectionName, v.id);
+          batch.delete(docRef);
+        })//forEach
+        batch.commit().then(() => {
+          resolve()
+        })//batch then
+      })//getDoc then
+      .catch((error) => {
+        alert(error.message)
+      })
+  })//promise
+}
+

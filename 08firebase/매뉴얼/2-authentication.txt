@@ -12,11 +12,12 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 ------------------------------------------------------------------------------------------------
 ● import 
-    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, deleteUser ,onAuthStateChanged, setPersistence, browserSessionPersistence, browserLocalPersistence } from "firebase/auth";
+    import { getAuth, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, deleteUser ,onAuthStateChanged, setPersistence, browserSessionPersistence, browserLocalPersistence } from "firebase/auth";
 ------------------------------------------------------------------------------------------------
 ■ 이메일 인증
   ● 가입
-    import { getAuth, sendEmailVerification, updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
+    import { getAuth, sendEmailVerification, createUserWithEmailAndPassword } from "firebase/auth";
+    
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, '이메일주소', '비밀번호').then((result) => {
       let user = result.user
@@ -35,7 +36,6 @@
   }).catch((error) => {
     alert(error.message)
   });
-
 
   ● 인증메일보내기
     import { getAuth, sendEmailVerification } from "firebase/auth";
@@ -80,7 +80,7 @@
       https://firebase.google.com/docs/auth/custom-email-handler
     - firebase콘솔 / Authentication / Templates / edit / 작업 URL 직접입력
 ------------------------------------------------------------------------------------------------
-■ 구글 인증
+■ 구글 인증 ( 2023년 이후로는 oAuth 등록과정 필요없음)
   ● 구글 API 신청
     ▶ 프로젝트 생성
       - https://console.cloud.google.com/apis
@@ -119,18 +119,20 @@
     ▶ 테스트 사용자 추가
       - 테스트에 사용할 구글 계정을 등록  
 
-  ● 파이어베이스 연동
+
+  ● 파이어베이스 연동 
     - 사용자인증정보 / OAuth 2.0 클라이언트 ID 클릭 후 id와 비밀키 확인
     - 파이어베이스콘솔 / Authentication / Sign-in method / 제공업체추가 / 구글추가
     - 구글 로그인 수정 (우측 연필 아이콘)
+    (여기부터 하면 됨/2023이후 업데이트. 제공업체만 추가하면 사용가능)
     - 웹 SDK 구성 클릭후 id와 비밀번호 입력
 
   ● 팝업로그인
     //팝업로그인시 팝업창이 해제되어야 있어야 함
     import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-    const provider = new GoogleAuthProvider();
     const auth = getAuth();
 
+    const provider = new GoogleAuthProvider();
     signInWithPopup(auth,provider).then((result) => {
       let credential = result.credential;
       let user = result.user;
@@ -226,11 +228,14 @@
   deleteUser(auth.currentUser).then(() => {
     // User deleted.
   }).catch((error) => {
-    // An error ocurred
-    // ...
+    if (error.message === 'auth/requires-recent-login') {
+      alert('로그아웃 후 다시 로그인 하신 후 회원탈퇴를 실행해주세요');
+    } else {
+      alert(error.message)
+    }
   });
 ------------------------------------------------------------------------------------------------
-■ 사용자관리 //사용자가 상태가 변할때마다 어떤 일을 하도록 하는것(로그인 후라던지..이벤트와동일함. 이벤트는 한번 주면 계속 그 상태가 되면 동작하는것처럼 이것도 마찬가지)
+■ 사용자관리
   ● 사용자 상태관찰 리스너 
   import { getAuth , onAuthStateChanged} from "firebase/auth";
   const auth = getAuth();
@@ -241,7 +246,6 @@
       //로그아웃된상태
     }
   });
-  app.js에서 useEffect에 넣어주고 auth와 onauthstatechanged빵 해줌
   
   ● auth 객체 
     auth.currentUser.key

@@ -17,7 +17,7 @@ let dday = new Date(yymmdd)
   month = (month < 10) ? '0' + month : month //이항연산자는 아님. 이게 아니면 폴스를 리턴하겠다는 뜻이기때문에. 조건문으로 적어도 된다
   let date = dday.getDate()
   date = (date < 10) ? '0' + date : date
-  let ap = (dday.getHours() <= 12) ? 'am' : 'pm'
+  let ap = (dday.getHours() < 12) ? 'am' : 'pm'
   let hour = (dday.getHours() <= 12) ? dday.getHours() : dday.getHours() - 12
   hour = (hour < 10) ? '0' + hour : hour
   let min = dday.getMinutes()

@@ -1,0 +1,58 @@
+.comp-hourly .section-inner {
+  padding-top: 0 !important;
+  overflow: auto;
+}
+.comp-hourly .section-inner h2 {
+  position: sticky;
+  left: 0;
+}
+@media screen and (min-width: 900px) {
+  .comp-hourly .section-inner {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.comp-hourly .section-inner .wrap {
+  color: var(--color2);
+  display: inline-table;
+  position: relative;
+}
+@media screen and (min-width: 900px) {
+  .comp-hourly .section-inner .wrap {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .comp-hourly .section-inner .wrap {
+    height: 400px;
+  }
+}
+.comp-hourly .section-inner .wrap ul {
+  display: inline-flex;
+  height: 100%;
+}
+.comp-hourly .section-inner .wrap ul li {
+  width: 70px;
+  padding-top: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.comp-hourly .section-inner .wrap ul li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.comp-hourly .section-inner .wrap ul li p {
+  text-align: center;
+  margin: 3px 0;
+  font-size: 0.9em;
+}
+.comp-hourly .section-inner .wrap ul li p img {
+  display: inline-block;
+  width: 80%;
+}
+.comp-hourly .section-inner .wrap .chart-wrap {
+  position: absolute;
+  width: calc(100% - 37px);
+  bottom: 0;
+  left: 5px;
+  height: 50%;
+}/*# sourceMappingURL=compHourly.css.map */

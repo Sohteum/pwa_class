@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Appcontext } from '../App';
 import { auth, fnDeleteUser, fnSignOut } from '../fb/auth';
 import { Link } from 'react-router-dom';
+import { fnDeleteCollection } from '../fb/db';
+import { fnDeleteStorage } from '../fb/storage';
 
 const CompHeader = () => {
   const { navi, _isLogged, } = useContext(Appcontext)
@@ -14,6 +16,8 @@ const CompHeader = () => {
   const fnDeleteUserHandeler = async () => {
     const result = window.confirm('회원을 탈퇴하시겠습니까?')
     if (result) {
+      await fnDeleteCollection(auth.currentUser.uid)
+      await fnDeleteStorage(auth.currentUser.uid)
       await fnDeleteUser()
       alert('회원탈퇴가 되었습니다')
       navi('/signin')

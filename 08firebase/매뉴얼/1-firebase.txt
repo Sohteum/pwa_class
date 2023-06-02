@@ -2,8 +2,6 @@
   https://firebase.google.com/
   https://firebase.google.com/docs (도움말)
 
-  장점 : 앱웹 사용방법 유사, 어떤 디비든 호환가능, 여러가지서비스 쉽게 적용가능, 소셜로그인.플러그인 등 
-
 ■ Firebase 세팅
   ● 로그인 후 프로젝트 생성
   ● 관리자메뉴 프로젝트 설정의 서비스 선택

@@ -1,37 +1,31 @@
-import { useContext } from 'react';
-import { Appcontext } from '../App';
-import React from 'react';
-import { useState } from 'react';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../App';
 
 const CompHeader = () => {
 
-  const { navi, _isLogged, _setIsLogged } = useContext(Appcontext)
-
-  const fnSignOutHandler = async () => {
-    navi('/signin')
-  }
-
-  const fnSignInHandler = () => {
-
-  }
-
+  const { _user, _setUser } = useContext(AppContext)
+  const navi = useNavigate()
+  
   return (
     <header>
-      <h2>로고</h2>
-
       {
-        (_isLogged)
-          ?
-          <div><button onClick={fnSignOutHandler}>사용자로그아웃</button></div>
-
+        _user ?
+          <div>(로그인후)
+            <p>{_user.name}님 환영합니다</p>
+            <button onClick={() => {
+              _setUser(null)
+              localStorage.removeItem('localStorageUser')
+              navi('/signin')
+            }}>로그아웃</button>
+          </div>
           :
           <div>
-            <button onClick={fnSignInHandler}>로그인</button>
+            (로그인전) <br />
+            <Link to='signin'>로그인</Link>
           </div>
-
-
       }
-
+      <hr />
     </header>
   );
 };
