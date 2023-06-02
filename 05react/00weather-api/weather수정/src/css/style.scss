@@ -37,17 +37,21 @@ body {
   }
 }
 h1 {
+  @media screen and (max-width:500px) {
+    top: 0;
+  }
   z-index: 3;
   perspective: 700px;
   position: absolute;
   left: 50%;
-  top: -2%;
-  width: min(50%, 350px);
+  top: -3%;
+  width: min(70%, 350px);
   transform: translate(-50%, -50%); //수평중앙
   img {
     width: 100%;
     opacity: 0.7;
     animation: rotate 7s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
   }
   @keyframes rotate {
     0% {
@@ -67,7 +71,7 @@ h1 {
   width: min(95%, 1100px);
   height: min(90%, 800px);
   // background-color: rgba(#fff, 0.7);
-  background: linear-gradient(-45deg,  rgb(255, 246, 197), rgb(255, 236, 218),);
+  background: linear-gradient(-45deg,  rgb(255, 242, 168), rgb(255, 211, 251));
   border-radius: 10px;
   box-sizing: border-box;
   padding: 5px;
