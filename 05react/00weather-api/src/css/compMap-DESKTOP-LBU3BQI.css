@@ -1,0 +1,53 @@
+@media screen and (max-width: 900px) {
+  .comp-map {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    font-size: 1.5em;
+    transform: translatex(100%);
+    transition: transform 0.5s;
+  }
+  .comp-map.active {
+    transform: translateX(0%);
+  }
+}
+.comp-map .btns {
+  display: flex;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: -50px;
+  width: 100px;
+  height: 50px;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.comp-map .btns button {
+  font-size: 1.2em;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background-color: #EA4335;
+}
+.comp-map .btns button:last-child {
+  background-color: #FBBC05;
+}
+@media screen and (min-width: 900px) {
+  .comp-map .btns {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .comp-map .section-inner {
+    height: 100%;
+  }
+}
+.comp-map .section-inner #map {
+  filter: brightness(110%);
+  height: 100%;
+  border-radius: 10px;
+}/*# sourceMappingURL=compMap.css.map */
