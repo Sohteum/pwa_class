@@ -142,7 +142,7 @@ section.comp-current .section-inner .current-output .circle-container .circle-co
   position: relative;
   margin-right: -40px;
   z-index: 2;
-  text-shadow: 1px 1px 0 var(--color);
+  text-shadow: 1px 1px 0 var(--color2);
 }
 section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp em sup {
   font-size: 0.5em;
@@ -155,6 +155,7 @@ section.comp-current .section-inner .current-output .circle-container .circle-co
   mask-repeat: no-repeat;
 }
 section.comp-current .section-inner .current-output .circle-container .circle-container-inner .desc {
+  color: var(--color2);
   font-size: 1.3em;
   text-align: center;
   margin-top: -20px;

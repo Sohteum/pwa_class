@@ -13,6 +13,7 @@
   text-align: left;
 }
 .comp-daily .section-inner ul li a .date {
+  color: var(--color2);
   font-size: 0.9em;
   font-weight: 500;
   margin-bottom: 10px;
@@ -31,6 +32,7 @@
 }
 .comp-daily .section-inner ul li a .info span {
   margin-right: 10px;
+  color: var(--color2);
 }
 .comp-daily .section-inner ul li a .info span i {
   margin-right: 5px;
@@ -43,9 +45,11 @@
   color: #FFF;
 }
 .comp-daily .section-inner ul li a.active .fa-chevron-down {
+  color: var(--color2);
   transform: translateY(-50%) rotate(180deg);
 }
 .comp-daily .section-inner ul li a .fa-chevron-down {
+  color: var(--color2);
   position: absolute;
   right: 10px;
   top: 50%;
@@ -55,8 +59,8 @@
 }
 .comp-daily .section-inner ul li .detail {
   display: none;
-  background-color: rgba(11, 48, 80, 0.5);
-  color: #fff;
+  background-color: rgb(229, 250, 198);
+  color: var(--color2);
   padding: 10px;
 }
 .comp-daily .section-inner ul li .detail p {
@@ -73,7 +77,7 @@
   margin: 0 5px;
 }
 .comp-daily .section-inner ul li .detail p span em {
-  font-weight: 600;
+  font-weight: 400;
 }
 .comp-daily .section-inner ul li .detail p span em small {
   font-size: 0.85em;

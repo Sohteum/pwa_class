@@ -52,6 +52,7 @@ section.comp-current {
         span {
           white-space: nowrap; //줄내림 방지
           display: inline-block;
+
           font-size: 0.9em;
           animation: marquee 25s linear infinite;
         }
@@ -136,7 +137,7 @@ section.comp-current {
               position: relative;
               margin-right: -40px;
               z-index: 2;
-              text-shadow: 1px 1px 0 var(--color);
+              text-shadow: 1px 1px 0 var(--color2);
               sup {
                 font-size: 0.5em;
               }
@@ -150,6 +151,7 @@ section.comp-current {
             }
           } //temp
           .desc {
+            color:var(--color2);
             font-size: 1.3em;
             text-align: center;
             margin-top: -20px;

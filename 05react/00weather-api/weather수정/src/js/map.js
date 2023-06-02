@@ -26,80 +26,38 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
         zoom: 8,
         styles: [
             {
-                "featureType": "all",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#7c93a3"
-                    },
-                    {
-                        "lightness": "-10"
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative.country",
+                "featureType": "landscape.man_made",
                 "elementType": "geometry",
                 "stylers": [
                     {
-                        "visibility": "on"
+                        "color": "#f7f1df"
                     }
                 ]
             },
             {
-                "featureType": "administrative.country",
-                "elementType": "geometry.stroke",
+                "featureType": "landscape.natural",
+                "elementType": "geometry",
                 "stylers": [
                     {
-                        "color": "#a0a4a5"
+                        "color": "#d0e3b4"
                     }
                 ]
             },
             {
-                "featureType": "administrative.province",
-                "elementType": "geometry.stroke",
+                "featureType": "landscape.natural.terrain",
+                "elementType": "geometry",
                 "stylers": [
                     {
-                        "color": "#62838e"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#dde3e3"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.man_made",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "color": "#3f4a51"
-                    },
-                    {
-                        "weight": "0.30"
+                        "visibility": "off"
                     }
                 ]
             },
             {
                 "featureType": "poi",
-                "elementType": "all",
+                "elementType": "labels",
                 "stylers": [
                     {
-                        "visibility": "simplified"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.attraction",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "on"
+                        "visibility": "off"
                     }
                 ]
             },
@@ -113,59 +71,20 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
                 ]
             },
             {
-                "featureType": "poi.government",
-                "elementType": "all",
+                "featureType": "poi.medical",
+                "elementType": "geometry",
                 "stylers": [
                     {
-                        "visibility": "off"
+                        "color": "#fbd3da"
                     }
                 ]
             },
             {
                 "featureType": "poi.park",
-                "elementType": "all",
+                "elementType": "geometry",
                 "stylers": [
                     {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.place_of_worship",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.school",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.sports_complex",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "saturation": "-100"
-                    },
-                    {
-                        "visibility": "on"
+                        "color": "#bde6ab"
                     }
                 ]
             },
@@ -174,7 +93,16 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
                 "elementType": "geometry.stroke",
                 "stylers": [
                     {
-                        "visibility": "on"
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
                     }
                 ]
             },
@@ -183,7 +111,7 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
                 "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "color": "#bbcacf"
+                        "color": "#ffe15f"
                     }
                 ]
             },
@@ -192,36 +120,12 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
                 "elementType": "geometry.stroke",
                 "stylers": [
                     {
-                        "lightness": "0"
-                    },
-                    {
-                        "color": "#bbcacf"
-                    },
-                    {
-                        "weight": "0.50"
+                        "color": "#efd151"
                     }
                 ]
             },
             {
-                "featureType": "road.highway",
-                "elementType": "labels",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "labels.text",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway.controlled_access",
+                "featureType": "road.arterial",
                 "elementType": "geometry.fill",
                 "stylers": [
                     {
@@ -230,50 +134,29 @@ export const fnInitMap = (latlngObj, fn) => {//위경도를 받아서 구글맵�
                 ]
             },
             {
-                "featureType": "road.highway.controlled_access",
-                "elementType": "geometry.stroke",
+                "featureType": "road.local",
+                "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "color": "#a9b4b8"
+                        "color": "black"
                     }
                 ]
             },
             {
-                "featureType": "road.arterial",
-                "elementType": "labels.icon",
+                "featureType": "transit.station.airport",
+                "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "invert_lightness": true
-                    },
-                    {
-                        "saturation": "-7"
-                    },
-                    {
-                        "lightness": "3"
-                    },
-                    {
-                        "gamma": "1.80"
-                    },
-                    {
-                        "weight": "0.01"
-                    }
-                ]
-            },
-            {
-                "featureType": "transit",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
+                        "color": "#cfb2db"
                     }
                 ]
             },
             {
                 "featureType": "water",
-                "elementType": "geometry.fill",
+                "elementType": "geometry",
                 "stylers": [
                     {
-                        "color": "#a3c7df"
+                        "color": "#a2daf2"
                     }
                 ]
             }

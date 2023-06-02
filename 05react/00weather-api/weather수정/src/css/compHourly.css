@@ -13,6 +13,7 @@
   }
 }
 .comp-hourly .section-inner .wrap {
+  color: var(--color2);
   display: inline-table;
   position: relative;
 }
