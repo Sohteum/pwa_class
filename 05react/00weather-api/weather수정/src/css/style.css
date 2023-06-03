@@ -147,7 +147,7 @@ h1 img {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: #4b87b6;
+  background-color: rgb(255, 211, 251);
 }
 #root > div.app-inner section .section-inner h2 {
   padding: 5px 10px;
