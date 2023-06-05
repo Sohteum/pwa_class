@@ -76,6 +76,7 @@ $portrait: "screen and (orientation:portrait)";
   }
 }
 
+ 
 @mixin inputWrap($path, $before) {
   position: relative;
   margin: 10px 0;
@@ -92,12 +93,11 @@ $portrait: "screen and (orientation:portrait)";
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      background-image: url("../assets/img/#{$path}");
+      background-image: url(../assets/img/#{$path});
     }
-  } //before
+  } //before 
   input:not([type="checkbox"], [type="radio"]),
   textarea {
-
     outline: none;
     width: 100%;
     padding: 10px;
@@ -126,12 +126,37 @@ $portrait: "screen and (orientation:portrait)";
     height: 200px;
     resize: none;
   }
-  button{
+  button {
     display: block;
     margin: 0 auto;
-    img{
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    &:active {
+      animation: pulse 0.5s;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale3d(1, 1, 1);
+      }
+      25% {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+      50% {
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+      75% { 
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+      100% {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    img {
       height: 50px;
-      
+     
     }
   }
-} //mixinInputwrap
+} //mixinInputwrap 

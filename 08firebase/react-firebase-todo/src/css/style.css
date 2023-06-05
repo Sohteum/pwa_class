@@ -41,7 +41,6 @@ body {
   }
 }
 #root main {
-  z-index: 1;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -49,7 +48,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: min(90%, 500px);
-  height: min(90%, 700px);
+  height: min(90%, 750px);
   border: 1px solid red;
 }
 #root main img.main-bg {
@@ -80,12 +79,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 #root main article section h2 {
-  width: 80%;
-  margin-bottom: 15px;
-  max-width: 300px;
+  width: 60%;
+  margin-bottom: 10px;
+  max-width: 220px;
 }
 #root main article section h2 img {
   width: 100%;
@@ -124,7 +123,7 @@ body {
   pointer-events: none;
 }
 #root footer .gif {
-  width: min(60%, 190px);
+  width: min(60%, 150px);
   margin: 0 auto;
   margin-bottom: -10px;
 }

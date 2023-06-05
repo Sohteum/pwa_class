@@ -1,10 +1,38 @@
-@use './mixin' as m;
-
-.section-signin{
-  form{
+@use "mixin" as m;
+ 
+.section-signin {
+  form {
     width: 100%;
-    p.input-wrap{
-      @include m.inputWrap('login/icon-email.png', true)
+    .email {
+      @include m.inputWrap("login/icon-email.png", true);
+    }
+    .password {
+      @include m.inputWrap("login/icon-key.png", true); 
+    }
+    .btn {
+      @include m.inputWrap("login/icon-email.png", false); 
+    }
+    .remember {
+      border-top: 2px dotted var(--green);
+      padding-bottom: 10px;
+      input:checked ~ label {
+        img:first-child {
+          display: none;
+        }
+        img:last-child {
+          display: block;
+        }
+      }
+      label { 
+        cursor: pointer;
+        img {
+          height: 35px; 
+          margin: 0 auto;
+          &:last-child {
+            display: none;
+          }
+        }
+      }
     }
     // p.input-wrap{
     //   @include m.inputWrap('login/icon-key.png')

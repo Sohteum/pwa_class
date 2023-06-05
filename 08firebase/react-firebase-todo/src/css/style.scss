@@ -42,12 +42,11 @@ body {
   } //img.deco-top
 
   main {
-    z-index: 1;
     display: flex;
     flex-direction: column;
     @include m.posLT(absolute, 50%, 50%, -50%, -50%);
     width: min(90%, 500px);
-    height: min(90%, 700px);
+    height: min(90%, 750px);
     border: 1px solid red;
     img.main-bg {
       @include m.posLT(absolute, 50%, 2%, -50%, 0);
@@ -75,11 +74,11 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 15px 0;;
+        margin: 10px 0;;
         h2 {
-          width: 80%;
-          margin-bottom: 15px;
-          max-width: 300px;
+          width: 60%;
+          margin-bottom: 10px;
+          max-width: 220px;
           img {
             width: 100%;
           }
@@ -118,7 +117,7 @@ body {
     mix-blend-mode: multiply; //형제들끼리만 가능함
     pointer-events: none;
     .gif {
-      width: min(60%, 190px);
+      width: min(60%, 150px);
       margin: 0 auto;
       margin-bottom: -10px;
     }

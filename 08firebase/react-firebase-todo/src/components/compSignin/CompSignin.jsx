@@ -6,11 +6,24 @@ const CompSignin = () => {
       <h2><img src={require('../../assets/img/login/title-sign-in.png')} alt="" /></h2>
       {/* <div className="list-wrap">
       </div> */}
-      <form action="">
-        <p className='input-wrap'><input type="text" placeholder='가나다' /></p>
-        <p className='input-wrap'><textarea ></textarea></p>
-        <p className='input-wrap'><input type="date"  /></p>
-        <p className='input-wrap'><button><img src={require('../../assets/img/add/btn-add-list.png')} alt="" /></button></p>
+      <form>
+        <p className='email'>
+          <input type="text" placeholder='가입하신 이메일 주소를 입력하세요' />
+        </p>
+        <p className='password'>
+          <input type="password" placeholder='가입하신 비밀번호를 입력하세요' />
+        </p>
+        <p className='btn'>
+          <button><img src={require('../../assets/img/login/btn-login.png')} alt="" /></button>
+          <button><img src={require('../../assets/img/login/btn-google-login.png')} alt="" /></button>
+        </p>
+        <p className='remember'>
+          <input id='remember' type="checkbox" className='hidden' />
+          <label htmlFor="remember">
+            <img src={require('../../assets/img/login/remember-check.png')} alt="" />
+            <img src={require('../../assets/img/login/remember-checked.png')} alt="" />
+          </label>
+        </p>
       </form>
 
     </section>
