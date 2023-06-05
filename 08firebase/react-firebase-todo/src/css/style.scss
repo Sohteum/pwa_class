@@ -1,0 +1,135 @@
+@use "mixin" as m;
+
+html {
+  --orange: #e17332;
+  --green: #4fc962;
+  --red: #c91d1c;
+  --sky: #1bbae5;
+  --beige:rgba(255,247,203);
+}
+
+body {
+  color: var(--orange);
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------------------- */
+
+#root {
+  position: fixed;
+  //좌표지정금지
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/common/bg-pattern.jpg);
+  img.deco-top {
+    @include m.posLT(fixed, 50%, 0, -50%, 0);
+    width: min(80%, 500px);
+    mix-blend-mode: multiply;
+    animation: updown 2s alternate linear infinite;
+    @keyframes updown {
+      0% {
+        top: 0;
+      }
+      100% {
+        top: -15px;
+      }
+    }
+  } //img.deco-top
+
+  main {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+    width: min(90%, 500px);
+    height: min(90%, 700px);
+    border: 1px solid red;
+    img.main-bg {
+      @include m.posLT(absolute, 50%, 2%, -50%, 0);
+      height: 100%;
+      width: 110%;
+    }
+    h1 {
+      position: relative;
+      img {
+        width: 100%;
+      }
+    }
+    article {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      header {
+      } //header
+      section {
+        border: 1px solid red;
+        flex: 1 0 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0;;
+        h2 {
+          width: 80%;
+          margin-bottom: 15px;
+          max-width: 300px;
+          img {
+            width: 100%;
+          }
+        }//h2
+        .scroll-wrap {
+          flex: 1 0 1px;
+          overflow-y: auto;
+          width: 100%;
+          box-sizing: border-box;
+          margin-bottom: 15px;
+          padding: 0 15px;
+          background-color: yellow;
+          overflow-y: auto;
+          @media (hover: hover) {
+            &::-webkit-scrollbar-track {
+              -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+              background-color: var(--orange);
+            }
+            &::-webkit-scrollbar {
+              width: 6px;
+              height: 6px;
+              background-color: var(--orange);
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: var(--sky);
+            }
+          } //media hover
+        }
+      } //section
+    }
+  } //main
+
+  footer {
+    @include m.posLB(fixed, 50%, 10px, -50%, 0);
+    width: min(95%, 650px);
+    mix-blend-mode: multiply; //형제들끼리만 가능함
+    pointer-events: none;
+    .gif {
+      width: min(60%, 190px);
+      margin: 0 auto;
+      margin-bottom: -10px;
+    }
+    p {
+      font-size: 0.75em;
+      text-align: center;
+    }
+    .pencil {
+      width: 95%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+} //root

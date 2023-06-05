@@ -1,0 +1,88 @@
+■ 저장소설정
+
+  ● 파이어베이스 콘솔 설정
+    빌드 /  storage 클릭
+  ● rules탭의 권한설정 true로 변경
+  ● 저장소 폴더 설정
+    파이어베이스 콘솔 / storage / 폴더아이콘
+------------------------------------------------------------------------------------------------
+● import 
+  import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll } from "firebase/storage";
+------------------------------------------------------------------------------------------------
+■ 저장소 관리
+  ● 파일업로드
+    import { getStorage, ref, uploadBytes } from "firebase/storage";
+    const storage = getStorage();
+    const storageRef = ref(storage, '저장소폴더/파일명.확장자');
+    uploadBytes(storageRef,업로드할파일).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url)=>{
+        console.log("업로드완료, 다운로드url ",url)
+      }).catch((error)=>{
+        console.log('url확인중 오류')
+      })//getDownloadURL  then catch
+    }).catch((error)=>{
+      console.log('업로드중 오류')
+    })//uploadBytes then catch
+    
+  ● 업로드 스테이트 관리
+    import { getStorage, ref ,uploadBytesResumable,getDownloadURL} from "firebase/storage";
+    const storage = getStorage();
+    const storageRef = ref(storage, '저장소폴더/파일명.확장자');
+    const uploadTask  = uploadBytesResumable(storageRef, 업로드할파일)
+    uploadTask.on('state_changed', 
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('업로드진행률 ' + progress + '%');
+      },
+      (error) => {
+        log('업로드중 오류발생')
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log('업로드성공,파일경로는 ', downloadURL);
+        });
+      }
+    );//uploadTask.on
+
+  ● 폴더안의 모든 파일 삭제
+    import { getStorage, ref, listAll  } from "firebase/storage";
+    const storage = getStorage();
+ 
+    const folderRef = ref(storage, '폴더명');
+    listAll(folderRef)
+      .then((dir) => {
+        dir.items.forEach((v) => {
+          const fileRef = ref(storage, `${folderRef.fullPath}/${v.name}`);
+          deleteObject(fileRef)
+        })
+        console.log('모든파일이 삭제되었습니다')
+        dir.prefixes.forEach((folderRef) => {
+          //recursive function
+          //fnDelteFolder(folderRef.fullPath)
+        })
+      }).catch((error) => {
+        alert(error.message)
+      })
+
+  ● 파일삭제
+    import { getStorage, ref, deleteObject } from "firebase/storage";
+    const storage = getStorage();
+    const storageRef= ref(storage, '폴더명/파일명');
+    deleteObject(storageRef).then(() => {
+      // 삭제완료
+    }).catch((error) => {
+      // 삭제중오류
+    });
+
+  ● 참조 (찾기)
+    import { getStorage, ref } from "firebase/storage";
+    const storage = getStorage();
+    const storageRef = ref(storage, '폴더/파일명');
+    const imagePath = storageRef.fullPath; //스토리지 기준의 경로
+    const parentFolder = storageRef.parent; //해당파일의 스토리지 폴더참조
+    const rootFolder = storageRef.root;//최상위폴더참조
+
+  ● 주의
+    파일 다운로드 및 화면 출력시 getDownloadURL 경로 참조
+    파일 삭제시 스토리지경로의 fullPath
+

@@ -1,0 +1,16 @@
+npm run build
+npm i -g firebase-tools
+권한허용 y
+firebase login
+firebase init (hosting선택)
+use an existing project
+project선택
+배포폴더 입력 (build)
+single page 옵션 선택 (y,n)
+깃허브 자동 빌드 선택 (y,n)
+index.html 생성 후 덮어쓰기 옵션 (y,n)
+firebase deploy
+hosting url 확인
+콘솔/빌드/호스팅 상세내역 확인
+재배포 (npm run build, firebase deploy)
+

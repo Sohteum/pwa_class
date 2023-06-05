@@ -1,0 +1,11 @@
+header {
+  position: relative;
+  height: 10%;
+}
+header img.pin {
+  position: absolute;
+  left: 51%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  height: 90%;
+}/*# sourceMappingURL=header.css.map */

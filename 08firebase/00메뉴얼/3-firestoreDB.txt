@@ -1,0 +1,263 @@
+■ Firestore 세팅
+  ● 파이어베이스 콘솔 메뉴
+    빌드 / firestore Database 
+    데이터베이스 만들기
+    임의의 개발 모드 선택 (개발시 test 모드 설정 후 배포시 product모드로 변경)
+    위치설정
+      서울 : asia-northeast3(seoul)
+      (참고 : https://firebase.google.com/docs/functions/locations?hl=ko)
+    ▶ 회원시스템 : Authenthication 
+      - 시작하기버튼 클릭  
+      - 필요한 기능 추가
+    ▶ 데이터베이스 : Firestore Database
+      - 데이터베이스 만들기 클릭
+      - 프로덕션 모드에서 시작
+      - 위치 설정
+    ▶ 저장소 : Storage
+    ▶ 호스팅 : Hosting
+    ▶ rules탭의 권한설정 true로 변경
+
+■  import
+  import { getFirestore, Timestamp, collection, doc, addDoc, setDoc, getDoc, getDocs, updateDoc, deleteDoc, writeBatch, query, where, orderBy, limit, onSnapshot,  arrayUnion, arrayRemove, startAt, startAfter, endAt, endBefore, } from "firebase/firestore";
+
+■ 문서 추가-------------------------------------------------------------------------------------------
+  ● setDoc() //id수동생성
+    import { doc, setDoc, getFirestore } from "firebase/firestore";
+    const db = getFirestore();
+    setDoc(doc(db, 컬렉션네임, 문서id), {
+      id: "123456789",
+      name: "홍길동",
+      country: "대한민국"
+    }).then((doc)=>{
+      console.log(doc.id)
+    })
+    
+  ● addDoc() //id자동생성
+    import { collection, doc, addDoc, getFirestore} from "firebase/firestore";
+    var data = {
+      id: "123456789",
+      name: "홍길동",
+      country: "대한민국",
+      favorites : {
+        hobby : '영화',
+        color : '노랑색'
+      }
+    }
+    const db = getFirestore();
+    addDoc(collection(db,"컬렉션네임"),data).then((doc)=>{
+      console.log(doc.id)
+    })
+    
+  ● 중첩컬렉션 문서추가
+    import { collection, doc, setDoc, getFirestore } from "firebase/firestore"; 
+    var data = {
+      name: "jane",
+      gender: "femail",
+      tel:"010-000-0000",
+      favorites : {
+        hobby : 'movie',
+        color : 'red'
+      }
+    }
+    const db = getFirestore();
+    const refCollection = doc(collection(db,"student/docID/friends"));
+    setDoc(refCollection, data).then((doc)=>{
+      console.log(doc.id)
+    })
+
+■ 문서 가져오기 (읽기, 참조)
+  ● 단일문서 가져오기
+    import { doc, getDoc, getFirestore } from "firebase/firestore";
+    const db = getFirestore();
+    const docRef = doc(db, collectionName, docid);
+    getDoc(docRef).then((doc) => {
+        doc.data()
+    }).catch((error)=>{
+      alert(error.message)
+    })
+
+  ● 콜렉션의 전체문서 가져오기
+    import { collection, getDocs, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    getDocs(collection(db, "컬렉션네임")).then((querySnapshot)=>{
+      querySnapshot.docs.forEach((doc) => {
+        console.log(doc.id, " : ", doc.data());
+      });
+    })
+
+  ● 중첩컬렉션 전체 문서 가져오기  
+    import { getDocs, collection, getFirestore} from "firebase/firestore"; 
+    const db = getFirestore();
+    getDocs(collection(db,'컬렉션이름/문서id/서브컬렉션이름')).then((snapShot)=>{
+      snapShot.docs.forEach((doc) => { 
+        console.log (doc.id, doc.data())
+      })//forEach
+    })//then
+
+  ● 필터 쿼리
+    //주의 : 필터와 정렬을 두개이상 동시에 사용해야 할 경우 관리자 모드 / Cloud Firestore / 색인설정
+    import { collection, query, where, getDocs, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    const q = query(collection(db, "컬렉션네임"), where("키이름", "==", "키값"));
+    getDocs(q).then((querySnapshot)=>{
+      querySnapshot.docs.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+      })//forEach
+    })//getDocs then
+
+  ● 정렬 및 제한 쿼리
+    //주의 : 필터와 정렬을 두개이상 동시에 사용해야 할 경우 관리자 모드 / Cloud Firestore / 색인설정
+    import { query, orderBy, limit, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    const q = query(collection(db, "컬렉션네임"), orderBy("키이름","asc"), limit(3)); //오름차순
+    //const q = query(collection(db, "컬렉션네임"), orderBy("키이름","desc"), limit(3)); //내림차순
+    //const q = query(collection(db, "컬렉션네임"), orderBy("키이름1"), orderBy("키이름1","desc"),); //여러필드기준정렬
+    getDocs(q).then((querySnapshot)=>{
+      querySnapshot.docs.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+      });
+    })//then
+
+  ● 색인관리
+    https://firebase.google.com/docs/firestore/query-data/indexing?hl=ko#exemptions
+
+  ● 컬렉션 문서 갯수 가져오기
+    
+    getCountFromServer( collection(db, "컬렉션네임")).
+      then((snapshot)=>{
+        console.log(snapshot.data().count)
+      })
+    
+
+  ● 페이지네이션
+  import { collection, getDocs, getFirestore, startAt, limit} from "firebase/firestore";
+  const db = getFirestore();
+
+  getDocs(collection(db, 컬렉션이름))
+    .then((querySnapshot) => {
+      const startFile = querySnapshot.docs[시작번호]
+      if (startCnt < querySnapshot.docs.length) {
+        getDocs(query(collection(db, 컬렉션이름), startAt(startFile), limit(출력갯수)))
+          .then((querySnapshot) => {
+            console.log(querySnapshot.docs)
+          })
+      }
+    })
+■  실시간 업데이트 리스너
+  ● 컬렉션 업데이트 리스너 추가 
+    import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    onSnapshot(
+      collection(db, 컬렉션이름),
+      (snapshot) => {
+        /* 
+        snapshot.docs.forEach(v => {
+          console.log("Current data: ", v.data());
+        })
+        */
+        console.log(snapshot.docs);
+        return(snapshot.docs)
+      },
+      (error) => {
+        console.log('db access error')    
+      })
+
+
+  ● 문서 업데이트 리스너 
+    import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    try{
+      onSnapshot(
+        collection(db, "컬렉션이름","문서id"), 
+        (doc) => {
+          console.log("Current data: ", doc.data());
+        },
+        (error) => {
+          console.log('db access error')  
+        }
+      )
+    }catch{
+      console.log('onsnapshot error')   
+    }
+
+  ● 실시간 업데이트 리스너 제거
+  import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
+  const db = getFirestore();
+  onSnapshot(collection(db, "컬렉션이름"), () => {});
+
+■ 문서 업데이트-------------------------------------------------------------------------------------------
+  ● updateDoc
+    import { doc, updateDoc, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    const docRef = doc(db, "컬렉션이름", 문서id);
+    updateDoc(docRef, {
+      필드네임1: '값',
+      '필드네임2.color': 'blue', //필드네임2 값이 객체일경우 예시
+    }).then((doc)=>{
+      console.log (doc.id, doc.data())
+    })//updateDoc then
+
+  ● 중첩컬렉션 문서 업데이트
+    import { collection , doc, updateDoc, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    const snapShot = doc(db,'컬렉션이름/문서id/서브컬렉션이름', '서브문서id');
+    updateDoc(snapShot, {
+      필드네임1:'값1',
+      필드네임2:'값2'
+    }).then((doc)=>{
+      console.log (doc.id, doc.data())
+    })//updateDoc then
+
+■ 문서 삭제
+  ● 단일 문서 삭제
+    import { doc, deleteDoc, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    deleteDoc(doc(db, "컬렉션이름", "문서id")).then(()=>{
+      console.log ('문서삭제완료')
+    })//deleteDoc then
+  
+  ● 문서 필드 삭제
+    import { doc, updateDoc, deleteField, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    const docRef = doc(db, '컬렉션이름', '문서id');
+    updateDoc(docRef, {
+        필드네임: deleteField()
+    }).then(()=>{
+      console.log ('필드삭제완료')
+    })//updateDoc then
+
+  ● 중첩 문서 삭제
+    import { doc, deleteDoc, getFirestore} from "firebase/firestore";
+    const db = getFirestore();
+    deleteDoc(doc(db, '컬렉션이름/문서id/서브컬렉션이름', '서브문서id')).then(()=>{
+      console.log ('문서삭제완료')
+    })//deleteDoc then
+
+■ 문서 일괄 작업
+  ● 컬렉션 전체 문서 필드 수정
+    import {collection, doc, deleteDoc, getFirestore,writeBatch} from "firebase/firestore
+    const db = getFirestore();
+    const batch = writeBatch(db);
+    getDocs(collection(db, "컬렉션네임")).then((querySnapshot)=>{
+      querySnapshot.forEach((v) => {
+          const docRef = doc(db, "컬렉션네임", v.id);
+          batch.update(docRef,{필드명:필드값}); 
+      })//forEach
+      batch.commit().then(()=>{
+        console.log('전체문서업데이트완료')
+      })//batch then
+    })//getDocs then
+
+  ● 컬렉션 전체 문서 삭제
+    import {collection, doc, deleteDoc, getFirestore,writeBatch} from "firebase/firestore
+    const db = getFirestore();
+    const batch = writeBatch(db);
+    const querySnapshot =  getDocs(collection(db, '컬렉션이름')).then((querySnapshot)=>{
+      querySnapshot.forEach((v) => {
+        const docRef = doc(db, '컬렉션이름', v.id);
+        batch.delete(docRef);
+      })//forEach
+      batch.commit().then(()=>{
+        console.log('전체문서삭제완료')
+      })//batch then
+    })//getDoc then

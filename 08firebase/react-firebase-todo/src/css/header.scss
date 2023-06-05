@@ -1,0 +1,11 @@
+@use './mixin' as m;
+
+header{
+  position: relative;
+  height: 10%;
+  img.pin{
+    @include m.posLB(absolute, 51%, 10%, -50%, 0);
+    height:90%;
+  }
+
+ }

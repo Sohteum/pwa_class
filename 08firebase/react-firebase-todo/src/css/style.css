@@ -1,0 +1,139 @@
+html {
+  --orange: #e17332;
+  --green: #4fc962;
+  --red: #c91d1c;
+  --sky: #1bbae5;
+  --beige:rgba(255,247,203);
+}
+
+body {
+  color: var(--orange);
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------------------- */
+#root {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/common/bg-pattern.jpg);
+}
+#root img.deco-top {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: min(80%, 500px);
+  mix-blend-mode: multiply;
+  animation: updown 2s alternate linear infinite;
+}
+@keyframes updown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -15px;
+  }
+}
+#root main {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 500px);
+  height: min(90%, 700px);
+  border: 1px solid red;
+}
+#root main img.main-bg {
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  transform: translate(-50%, 0);
+  height: 100%;
+  width: 110%;
+}
+#root main h1 {
+  position: relative;
+}
+#root main h1 img {
+  width: 100%;
+}
+#root main article {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+#root main article section {
+  border: 1px solid red;
+  flex: 1 0 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+#root main article section h2 {
+  width: 80%;
+  margin-bottom: 15px;
+  max-width: 300px;
+}
+#root main article section h2 img {
+  width: 100%;
+}
+#root main article section .scroll-wrap {
+  flex: 1 0 1px;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  background-color: yellow;
+  overflow-y: auto;
+}
+@media (hover: hover) {
+  #root main article section .scroll-wrap::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+    background-color: var(--orange);
+  }
+  #root main article section .scroll-wrap::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: var(--orange);
+  }
+  #root main article section .scroll-wrap::-webkit-scrollbar-thumb {
+    background-color: var(--sky);
+  }
+}
+#root footer {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 0);
+  width: min(95%, 650px);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+#root footer .gif {
+  width: min(60%, 190px);
+  margin: 0 auto;
+  margin-bottom: -10px;
+}
+#root footer p {
+  font-size: 0.75em;
+  text-align: center;
+}
+#root footer .pencil {
+  width: 95%;
+  max-width: 500px;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */

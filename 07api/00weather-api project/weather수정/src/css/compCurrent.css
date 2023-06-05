@@ -1,0 +1,199 @@
+@media screen and (max-width: 900px) {
+  section.comp-current {
+    margin-top: 30px !important;
+  }
+}
+section.comp-current .section-inner .current-output {
+  position: relative;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+@media screen and (min-width: 900px) {
+  section.comp-current .section-inner .current-output {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  section.comp-current .section-inner .current-output {
+    padding: 5px;
+  }
+}
+section.comp-current .section-inner .current-output button.reload {
+  z-index: 3;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 15%;
+  right: 5%;
+  font-size: 1.6em;
+  opacity: 0.7;
+  transition: all 1s;
+}
+section.comp-current .section-inner .current-output button.reload:active, section.comp-current .section-inner .current-output button.reload:hover {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+section.comp-current .section-inner .current-output address {
+  margin-bottom: 10px;
+  width: min(90%, 350px);
+  display: flex;
+  overflow: hidden;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  color: #fff;
+}
+section.comp-current .section-inner .current-output address span {
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 0.9em;
+  animation: marquee 25s linear infinite;
+}
+section.comp-current .section-inner .current-output .circle-container {
+  position: relative;
+  width: min(85%, 300px);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.comp-current .section-inner .current-output .circle-container::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+section.comp-current .section-inner .current-output .circle-container .sunset {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 0;
+}
+section.comp-current .section-inner .current-output .circle-container .sunset svg {
+  width: 100%;
+}
+section.comp-current .section-inner .current-output .circle-container .sunset svg .sun {
+  fill: rgb(255, 217, 0);
+  offset-path: path("M25,200c0-96.65,78.35-175,175-175s175,78.35,175,175");
+  animation: sun 7s linear infinite;
+}
+@keyframes sun {
+  0% {
+    transform: scale(0.6) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.6) rotate(360deg);
+  }
+}
+section.comp-current .section-inner .current-output .circle-container .sunset svg .line {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.7);
+}
+section.comp-current .section-inner .current-output .circle-container .sunset svg .dash {
+  fill: none;
+  stroke: rgba(255, 208, 0, 0.5);
+  stroke-width: 6px;
+  stroke-dasharray: 1;
+}
+section.comp-current .section-inner .current-output .circle-container .sunset time {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 3px 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 208, 0, 0.932);
+}
+section.comp-current .section-inner .current-output .circle-container .sunset time.riseTime {
+  transform: translateX(-30%);
+}
+section.comp-current .section-inner .current-output .circle-container .sunset time.setTime {
+  float: right;
+  transform: translateX(30%);
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp span {
+  position: absolute;
+  transform: translate(50px, 10px);
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp span i {
+  margin-right: 3px;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp em {
+  font-size: 2.8em;
+  position: relative;
+  margin-right: -40px;
+  z-index: 2;
+  text-shadow: 1px 1px 0 var(--color2);
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp em sup {
+  font-size: 0.5em;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp img {
+  width: 90px;
+  mask-image: url(../assets/img/mask.png);
+  mask-size: 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .desc {
+  color: #FFF;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: -20px;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .etc {
+  width: 75%;
+  margin: 10px auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+  text-align: center;
+  padding: 3px;
+  box-sizing: border-box;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .etc span {
+  margin: 3px 5px;
+  font-size: 0.8em;
+  display: inline-block;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .etc span .fa-location-arrow {
+  font-size: 0.9em;
+  margin-right: 3px;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .etc span em i {
+  margin-right: 3px;
+  font-size: 0.8em;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .etc span em small {
+  font-size: 0.8em;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .time-date {
+  text-align: center;
+  color: #fff;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .time-date .time {
+  font-size: 1.1em;
+  margin-top: -10px;
+}
+section.comp-current .section-inner .current-output .circle-container .circle-container-inner .time-date .time small {
+  font-size: 0.8em;
+  margin-right: 3px;
+}/*# sourceMappingURL=compCurrent.css.map */

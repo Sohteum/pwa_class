@@ -1,0 +1,13 @@
+@use './mixin' as m;
+
+.section-signin{
+  form{
+    width: 100%;
+    p.input-wrap{
+      @include m.inputWrap('login/icon-email.png', true)
+    }
+    // p.input-wrap{
+    //   @include m.inputWrap('login/icon-key.png')
+    // }
+  }
+}
