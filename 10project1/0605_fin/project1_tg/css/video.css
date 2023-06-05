@@ -1,0 +1,48 @@
+.youtube_wrap {
+  position: relative;
+  border:1px solid var(--sub-color);
+  padding: 15px;
+  background-color: var(--main-color);
+}
+
+.youtube_wrap::before {
+  content:'';
+  display: block;
+  padding-top: 56.25% ;
+}
+
+.youtube_wrap iframe{
+position: absolute;
+top:10px;
+left:10px;
+width: calc(100% - 20px);
+height: calc(100% - 20px);
+}
+.videos_list {
+  margin-top:40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.videos_list li  {
+padding:5px;
+}
+
+.videos_list li button {
+  overflow: hidden;
+border:3px solid var(--main-color)
+}
+
+.videos_list li button img {
+  transform: scale(1.35);
+  filter: brightness(.5);
+  transition: all 0.3s;
+}
+
+.videos_list li button:hover img,
+.videos_list li button.active:hover img{
+  filter: brightness(1);
+transform: scale(1.5);
+}
+

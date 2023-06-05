@@ -1,0 +1,136 @@
+.biz_intro_section {
+  overflow: hidden;
+}
+
+
+.biz_intro_section>p {
+  margin: 40px auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.biz_intro_section ul {
+  display: flex;
+}
+
+.biz_intro_section ul li {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.biz_intro_section ul li figure {
+  padding: 5px;
+  background-color: #EEE;
+  border: 1px solid #CCC;
+
+}
+
+.biz_intro_section ul li figure div {
+  overflow: hidden;
+}
+
+.biz_intro_section ul li figure div img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.biz_intro_section ul li figure figcaption {
+  background-color: var(--main-color);
+  color: #FFF;
+  padding: 5px;
+
+}
+
+.biz_intro_section ul li figure figcaption h3 {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #EEE;
+}
+
+
+@media screen and (min-width:900px) {
+  .biz_intro_section ul li {
+    flex: 1;
+  }
+
+  .biz_intro_section ul li figure {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+
+  }
+
+  .biz_intro_section ul li figure>div>img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .biz_intro_section ul li figure figcaption {
+    flex: 1;
+  }
+}
+
+/* lg */
+
+@media screen and (max-width:900px) {
+  .biz_intro_section ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .biz_intro_section ul li {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* sm */
+
+
+/* p motion */
+
+.biz_intro_section>p {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.biz_intro_section>p:nth-of-type(odd) {
+  transform: translateX(100px);
+}
+
+.biz_intro_section>p:nth-of-type(even) {
+  transform: translateX(-100px);
+
+}
+
+.biz_intro_section>p.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* li motion */
+
+.biz_intro_section li {
+  opacity: 0;
+  filter: grayscale(1) blur(2px);
+  transition: filter 1s, opacity 1s;
+}
+
+.biz_intro_section li.active {
+  opacity: 1;
+  filter: grayscale(0) blur(0);
+}
+
+@media screen and (min-width:900px) {
+  .biz_intro_section li.active:nth-child(2) {
+    transition-delay: 0.5s;
+  }
+
+  .biz_intro_section li.active:nth-child(3) {
+    transition-delay: 1s;
+  }
+}

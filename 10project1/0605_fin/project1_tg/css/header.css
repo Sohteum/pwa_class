@@ -1,0 +1,295 @@
+header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+header.active {
+  position: fixed;
+  top: -35px;
+}
+
+header .top {
+  height: 35px;
+  background-color: var(--dark-color);
+}
+
+header .top .member {
+  width: 95%;
+  height: inherit;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+header .top .member a {
+  margin-left: 7px;
+  color: #AAA;
+  font-size: 0.9em;
+  line-height: 35px;
+}
+
+header .top .member a:hover {
+  color: #DDD;
+
+}
+
+header .center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1200px;
+  height: calc(100% - 35px);
+  margin: 0 auto;
+}
+
+h1 {
+  height: 80%;
+}
+
+h1 img {
+  height: 100%;
+}
+
+@media screen and (min-width:1000px) {
+  body {
+    padding-top: 130px;
+  }
+
+  header {
+    height: 130px;
+  }
+
+  .mBtn,
+  nav.gnb.sm {
+    display: none !important;
+  }
+
+}
+
+@media screen and (max-width:1000px) {
+  body {
+    padding-top: 100px;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  .gnb.lg {
+    display: none;
+  }
+}
+
+/* sm------------------------------------- */
+/* mBtn -----------------------------------------------------*/
+.mBtn {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  background-color: var(--dark-color);
+  border-radius: 5px;
+}
+
+.mBtn i {
+  position: absolute;
+  top: 50;
+  left: 50;
+  color: #FFF;
+  font-size: 1.2em;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+
+.mBtn .close {
+  opacity: 0;
+}
+
+.mBtn.active .open {
+  opacity: 0;
+}
+
+.mBtn.active .close {
+  opacity: 1;
+}
+
+/* nav--------------------------------------------------- */
+
+.gnb.sm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.gnb.sm>ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: auto;
+  width: 230px;
+  height: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  padding-top: 110px;
+  transform: translateX(100%);
+  transition: all 0.5s;
+
+}
+
+.gnb.sm.active>ul {
+  transform: translateX(0%);
+}
+
+.gnb.sm>ul>li>a {
+  display: block;
+  padding: 10px 10px;
+  font-size: 1.15em;
+  font-weight: 500;
+  border-bottom: 1px solid #CCC;
+  transition: all 0.3s;
+}
+
+
+
+.gnb.sm>ul>li>a::after {
+  float: right;
+  margin-top: 3px;
+  margin-right: 10px;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f078";
+  transition: all 0.3s;
+}
+
+.gnb.sm>ul>li>a.active {
+  color: var(--point-color);
+}
+
+.gnb.sm>ul>li>a.active::after {
+  transform: rotateX(180deg);
+}
+
+
+.gnb.sm>ul>li>ul>li>a {
+  display: block;
+  padding: 10px 15px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--sub-color);
+  ;
+  color: white;
+  background-color: var(--main-color);
+  transition: all 0.3s;
+}
+
+.gnb.sm>ul>li>ul>li>a:hover {
+  background-color: var(--sub-color);
+}
+
+.gnb.sm>ul>li>ul {
+  display: none;
+}
+
+.gnb.sm {
+  display: none;
+}
+
+/* lg----------------------------------------------------------------- */
+.gnb.lg {
+  height: 45px;
+}
+
+.gnb.lg>ul {
+  display: flex;
+  height: 100%;
+}
+
+.gnb.lg>ul>li {
+  position: relative;
+  height: 100%;
+
+}
+
+.gnb.lg>ul>li>a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  line-height: 42px;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 0 40px;
+
+  transition: all 0.3s;
+}
+
+.gnb.lg>ul>li>a>span {
+  display: block;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.gnb.lg>ul>li>a>span.en {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transform: translateX(-50%);
+}
+
+.gnb.lg>ul>li:hover>a>span {
+  margin-top: -45px;
+}
+
+.gnb.lg>ul>li:hover>a {
+  color: var(--point-color);
+}
+
+.gnb.lg>ul>li>ul>li>a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: var(--main-color);
+  color: #FFF;
+
+  transition: all 0.3s;
+}
+
+.gnb.lg>ul>li>ul>li>a:hover {
+  background-color: var(--sub-color);
+}
+
+.gnb.lg>ul>li>ul {
+  position: absolute;
+  display: none;
+  left: 50%;
+  min-width: 100%;
+  transform: translateX(-50%);
+}
+
+.gnb h6,
+.gnb>ul>.member,
+.gnb>ul>.member,
+.gnb>ul>li.sns {
+  display: none;
+}
+
+.gnb.sm .en {
+  display: none;
+}

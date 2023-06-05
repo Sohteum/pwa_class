@@ -1,0 +1,165 @@
+.grid_container li {
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.grid_container li a {
+  display: block;
+}
+
+.grid_container li a figure {
+  overflow: hidden;
+  position: relative;
+}
+
+.grid_container li a figure img {
+  width: 100%;
+}
+
+.grid_container li a figure figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.grid_container li a figure figcaption h3 {
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  font-weight: 600;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.grid_container li a figure figcaption p {
+  color: #FFF;
+}
+
+
+@media screen and (min-width:1200px) {
+  .grid_container {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'a a b'
+      'c d b'
+      'c e e'
+      'f g h'
+      'i g h'
+  }
+
+  .grid_container .item4::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  .grid_container .item1 {
+    grid-area: a;
+  }
+
+  .grid_container .item2 {
+    grid-area: b;
+  }
+
+  .grid_container .item3 {
+    grid-area: c;
+  }
+
+  .grid_container .item4 {
+    grid-area: d;
+  }
+
+  .grid_container .item5 {
+    grid-area: e;
+  }
+
+  .grid_container .item6 {
+    grid-area: f;
+  }
+
+  .grid_container .item7 {
+    grid-area: g;
+  }
+
+  .grid_container .item8 {
+    grid-area: h;
+  }
+
+  .grid_container .item9 {
+    grid-area: i;
+  }
+
+  .grid_container li a {
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 5px;
+    left: 5px;
+  }
+
+  .grid_container li a figure {
+    height: 100%;
+  }
+
+  .grid_container li a figure img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .grid_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width:700px) and (max-width:1200px) {
+  .grid_container li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .grid_container li {
+    width: 100%;
+  }
+}
+
+/* hover */
+
+.grid_container li a figure figcaption {
+  transform: scale(0);
+  transition:all 1s
+}
+.grid_container li a:hover figure figcaption {
+  transform: scale(1);
+}
+
+.grid_container li:nth-child(3n+1) a figure img {
+  filter: brightness(0.5)  grayscale(1) ;
+}
+.grid_container li:nth-child(3n+2) a figure img {
+  filter: brightness(1)  grayscale(1);
+}
+.grid_container li:nth-child(3n+3) a figure img {
+  filter: brightness(1  )  grayscale(1) ;
+}
+.grid_container li a figure img {
+transition: filter 1s;
+}
+
+.grid_container li:hover a figure img{
+filter: brightness(1)  grayscale(0);
+}

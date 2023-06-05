@@ -1,0 +1,138 @@
+footer .sitemap {
+  background-color: var(--dark-color);
+  padding: 30px;
+}
+
+footer .sitemap>ul {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .sitemap h6 {
+  font-weight: 500;
+  font-size: 0.95em;
+  color: #AAA;
+  margin-bottom: 10px;
+}
+
+footer .sitemap h6::before {
+  content: '· ';
+}
+
+footer .sitemap>ul>li {
+  flex: 1;
+}
+
+footer .sitemap>ul>li>ul>li {
+  font-size: 0.85em;
+}
+
+
+footer .sitemap>ul>li>a>span {
+  color: #b9b9b9;
+}
+
+footer .sitemap>ul>li>ul>li>a {
+  color: #AAA;
+}
+
+footer .sitemap>ul>li>ul>li a::before {
+  content: '  -  ';
+}
+
+footer .sitemap>ul>li>ul>li a:hover {
+  color: var(--point-color);
+}
+
+footer .sitemap>ul>li.sns>ul>li {
+  display: inline-block;
+  font-size: 1.8em;
+  margin-right: 5px;
+}
+
+@media screen and (max-width:1000px) {
+  footer .sitemap>ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer .sitemap>ul>li:not(.sns)>ul {
+    display: none;
+  }
+
+  footer .sitemap>ul>li {
+    flex: none;
+    margin: 0 5px;
+  }
+
+  footer .sitemap>ul>li.sns {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .sitemap>ul>li.sns h6 {
+    display: none;
+  }
+
+  footer .sitemap>ul>li>h6 {
+    font-size: 0.85em;
+    text-align: center;
+  }
+
+  footer .sitemap>ul>li>h6::before {
+    display: none;
+  }
+}
+
+
+/* --- info --- */
+
+
+footer .info {
+  padding: 30px;
+  font-size: 0.85em;
+  text-align: center;
+  background-color: #2f2f2f;
+}
+
+footer .info address i {
+  display: inline-block;
+}
+
+.info address i::after {
+  content: ' /';
+  margin: 0 5px;
+}
+
+footer .info address,
+footer .info p {
+  margin: 10px auto;
+  width: 90%;
+  max-width: 600px;
+  color: #888;
+}
+
+footer .info address {
+  color: #888;
+  font-weight: 400;
+}
+
+footer .info p {
+  font-weight: 500;
+}
+
+footer .info>li.sns>ul>li>a>i {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* --- hidden --- */
+
+footer .sitemap>ul>li>a>span {
+  display: none;
+}
+footer .sitemap>ul>li.sns>ul>li>a::before {
+  display: none;
+}
