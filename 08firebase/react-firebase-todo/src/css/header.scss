@@ -1,11 +1,56 @@
-@use './mixin' as m;
+@use "./mixin" as m;
 
-header{
+header {
   position: relative;
   height: 10%;
-  img.pin{
+  border-bottom: 1px solid red;
+  img.pin {
     @include m.posLB(absolute, 51%, 10%, -50%, 0);
-    height:90%;
+    height: 90%;
   }
-
- }
+  > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      height: 80%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .logged-before {
+  }
+  .logged-after {
+    .user {
+      width: 45%;
+      display: flex;
+      align-items: center;
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border:3px solid var(--beige)
+      }//img
+      em{
+        flex:1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 0.9em;
+        letter-spacing: 0;
+      }
+    }//user
+    .btns{
+      display: flex;
+      align-items: center;
+      button{
+        margin-left: 10px;
+      }
+    }
+  }
+}

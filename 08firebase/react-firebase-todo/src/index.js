@@ -9,6 +9,7 @@ import './css/section-home.css'
 import './css/section-signup.css'
 import './css/section-add.css'
 import './css/section-detail.css'
+import './css/loader.css'
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

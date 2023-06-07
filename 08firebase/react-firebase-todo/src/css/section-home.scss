@@ -4,6 +4,9 @@
   .scroll-wrap {
     ul {
       li {
+        &:nth-child(even){
+          background-color: var(--beige);
+        }
         a {
           position: relative;
           display: flex;

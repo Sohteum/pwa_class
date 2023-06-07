@@ -13,6 +13,7 @@ const CompHome = () => {
       <div className="scroll-wrap">
         <ul>
           <CompItem />
+
         </ul>
       </div>
       <p className="add-btn-wrap">
