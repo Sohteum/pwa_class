@@ -1,0 +1,68 @@
+@use "./mixin" as m;
+
+.section-add {
+  form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .date-wrap {
+      width: 50%;
+      box-sizing: border-box;
+      padding-right: 5px;
+      @include m.inputWrap("icons/icon-calendar.png", false);
+    }
+    .time-wrap {
+      width: 50%;
+      box-sizing: border-box;
+      padding-left: 5px;
+      @include m.inputWrap("icons/icon-clock.png", false);
+    }
+    .title-wrap {
+      width: 100%;
+      @include m.inputWrap("icons/icon-pencil.png", true);
+    }
+    .desc-wrap {
+      width: 100%;
+      @include m.inputWrap("icons/icon-balloon.png", true);
+    }
+    .photo-wrap {
+      width: 100%;
+      @include m.inputWrap("icons/icon-photo.png", true);
+      label{
+        padding: 10px;
+      }
+    }
+    
+  } //form
+  .btn-wrap {
+    text-align: center;
+    button {
+      width: 45%;
+      max-width: 200px;
+      &:active {
+        animation: pulse 0.5s;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale3d(1, 1, 1);
+        }
+        25% {
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+        50% {
+          transform: scale3d(0.9, 0.9, 0.9);
+        }
+        75% {
+          transform: scale3d(1.05, 1.05, 1.05);
+        }
+        100% {
+          transform: scale3d(1, 1, 1);
+        }
+      } //keyframes
+      img {
+        max-width: 100%;
+      }
+    }
+  } //btn-wrap
+}

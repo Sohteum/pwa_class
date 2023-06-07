@@ -1,0 +1,8 @@
+@use './mixin' as m;
+
+.section-home{
+
+  p.add-btn-wrap{
+    @include m.inputWrap('icons/icon-email.png', false)
+  }//p.add-btn-wr
+}//section-home

@@ -1,0 +1,455 @@
+.section-signup form {
+  width: 100%;
+}
+.section-signup form .email {
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-signup form .email::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-email.png);
+}
+.section-signup form .email input:not([type=checkbox], [type=radio]),
+.section-signup form .email textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-signup form .email input:not([type=checkbox], [type=radio])::placeholder,
+.section-signup form .email textarea::placeholder {
+  color: #ffc876;
+}
+.section-signup form .email input:not([type=checkbox], [type=radio]):focus,
+.section-signup form .email textarea:focus {
+  background-color: #fff;
+}
+.section-signup form .email input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-signup form .email input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-signup form .email textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-signup form .email textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-email.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-signup form .email input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-signup form .email textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-signup form .email input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-signup form .email textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-signup form .email textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-signup form .email button,
+.section-signup form .email a {
+  display: block;
+  margin: 0 auto;
+}
+.section-signup form .email button:active,
+.section-signup form .email a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-signup form .email button img,
+.section-signup form .email a img {
+  height: 50px;
+}
+.section-signup form .password {
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-signup form .password::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-key.png);
+}
+.section-signup form .password input:not([type=checkbox], [type=radio]),
+.section-signup form .password textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-signup form .password input:not([type=checkbox], [type=radio])::placeholder,
+.section-signup form .password textarea::placeholder {
+  color: #ffc876;
+}
+.section-signup form .password input:not([type=checkbox], [type=radio]):focus,
+.section-signup form .password textarea:focus {
+  background-color: #fff;
+}
+.section-signup form .password input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-signup form .password input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-signup form .password textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-signup form .password textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-key.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-signup form .password input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-signup form .password textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-signup form .password input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-signup form .password textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-signup form .password textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-signup form .password button,
+.section-signup form .password a {
+  display: block;
+  margin: 0 auto;
+}
+.section-signup form .password button:active,
+.section-signup form .password a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-signup form .password button img,
+.section-signup form .password a img {
+  height: 50px;
+}
+.section-signup form .nickname {
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-signup form .nickname::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-nickname.png);
+}
+.section-signup form .nickname input:not([type=checkbox], [type=radio]),
+.section-signup form .nickname textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-signup form .nickname input:not([type=checkbox], [type=radio])::placeholder,
+.section-signup form .nickname textarea::placeholder {
+  color: #ffc876;
+}
+.section-signup form .nickname input:not([type=checkbox], [type=radio]):focus,
+.section-signup form .nickname textarea:focus {
+  background-color: #fff;
+}
+.section-signup form .nickname input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-signup form .nickname input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-signup form .nickname textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-signup form .nickname textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-nickname.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-signup form .nickname input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-signup form .nickname textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-signup form .nickname input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-signup form .nickname textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-signup form .nickname textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-signup form .nickname button,
+.section-signup form .nickname a {
+  display: block;
+  margin: 0 auto;
+}
+.section-signup form .nickname button:active,
+.section-signup form .nickname a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-signup form .nickname button img,
+.section-signup form .nickname a img {
+  height: 50px;
+}
+.section-signup form .btn {
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-signup form .btn input:not([type=checkbox], [type=radio]),
+.section-signup form .btn textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-signup form .btn input:not([type=checkbox], [type=radio])::placeholder,
+.section-signup form .btn textarea::placeholder {
+  color: #ffc876;
+}
+.section-signup form .btn input:not([type=checkbox], [type=radio]):focus,
+.section-signup form .btn textarea:focus {
+  background-color: #fff;
+}
+.section-signup form .btn input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-signup form .btn input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-signup form .btn textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-signup form .btn textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-email.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-signup form .btn input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-signup form .btn textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-signup form .btn input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-signup form .btn textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-signup form .btn textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-signup form .btn button,
+.section-signup form .btn a {
+  display: block;
+  margin: 0 auto;
+}
+.section-signup form .btn button:active,
+.section-signup form .btn a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-signup form .btn button img,
+.section-signup form .btn a img {
+  height: 50px;
+}
+.section-signup form .photo-wrap {
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-signup form .photo-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-photo.png);
+}
+.section-signup form .photo-wrap input:not([type=checkbox], [type=radio]),
+.section-signup form .photo-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-signup form .photo-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-signup form .photo-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-signup form .photo-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-signup form .photo-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-signup form .photo-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-signup form .photo-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-signup form .photo-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-signup form .photo-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-photo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-signup form .photo-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-signup form .photo-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-signup form .photo-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-signup form .photo-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-signup form .photo-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-signup form .photo-wrap button,
+.section-signup form .photo-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-signup form .photo-wrap button:active,
+.section-signup form .photo-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-signup form .photo-wrap button img,
+.section-signup form .photo-wrap a img {
+  height: 50px;
+}/*# sourceMappingURL=section-signup.css.map */

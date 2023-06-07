@@ -1,7 +1,13 @@
+import fb from "./fb/config";
 import { useState } from "react";
 import CompHeader from "./components/compHeader/CompHeader";
-import fb from "./fb/config";
 import CompSignin from "./components/compSignin/CompSignin";
+import { Route, Routes } from "react-router-dom";
+import CompHome from "./components/compHome/CompHome";
+import Comp404 from "./components/comp404/Comp404";
+import CompSignup from "./components/compSignup/CompSignup";
+import CompAdd from "./components/compAdd/CompAdd";
+import CompDetail from "./components/compDetail/CompDetail";
 
 
 
@@ -17,7 +23,15 @@ function App() {
       </h1>
       <article>
         <CompHeader />
-        <CompSignin/>
+        <Routes>
+          <Route path="/" element={<CompHome/>}/>
+          <Route path="/signin" element={<CompSignin/>}/>
+          <Route path="/signup" element={<CompSignup/>}/>
+          <Route path="/add" element={<CompAdd/>}/>
+          <Route path="/detail" element={<CompDetail/>}/>
+          <Route path="*" element={<Comp404/>}/>
+        </Routes>
+      
       </article>
     </main>
   );

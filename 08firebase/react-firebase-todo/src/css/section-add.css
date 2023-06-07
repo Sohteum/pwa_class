@@ -1,0 +1,487 @@
+.section-add form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.section-add form .date-wrap {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 5px;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-add form .date-wrap input:not([type=checkbox], [type=radio]),
+.section-add form .date-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-add form .date-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-add form .date-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-add form .date-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-add form .date-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-add form .date-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-add form .date-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-add form .date-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-add form .date-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-calendar.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-add form .date-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-add form .date-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-add form .date-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-add form .date-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-add form .date-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-add form .date-wrap button,
+.section-add form .date-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-add form .date-wrap button:active,
+.section-add form .date-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-add form .date-wrap button img,
+.section-add form .date-wrap a img {
+  height: 50px;
+}
+.section-add form .time-wrap {
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: 5px;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-add form .time-wrap input:not([type=checkbox], [type=radio]),
+.section-add form .time-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-add form .time-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-add form .time-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-add form .time-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-add form .time-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-add form .time-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-add form .time-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-add form .time-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-add form .time-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-clock.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-add form .time-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-add form .time-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-add form .time-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-add form .time-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-add form .time-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-add form .time-wrap button,
+.section-add form .time-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-add form .time-wrap button:active,
+.section-add form .time-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-add form .time-wrap button img,
+.section-add form .time-wrap a img {
+  height: 50px;
+}
+.section-add form .title-wrap {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-add form .title-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-pencil.png);
+}
+.section-add form .title-wrap input:not([type=checkbox], [type=radio]),
+.section-add form .title-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-add form .title-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-add form .title-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-add form .title-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-add form .title-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-add form .title-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-add form .title-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-add form .title-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-add form .title-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-pencil.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-add form .title-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-add form .title-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-add form .title-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-add form .title-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-add form .title-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-add form .title-wrap button,
+.section-add form .title-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-add form .title-wrap button:active,
+.section-add form .title-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-add form .title-wrap button img,
+.section-add form .title-wrap a img {
+  height: 50px;
+}
+.section-add form .desc-wrap {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-add form .desc-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-balloon.png);
+}
+.section-add form .desc-wrap input:not([type=checkbox], [type=radio]),
+.section-add form .desc-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-add form .desc-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-add form .desc-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-add form .desc-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-add form .desc-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-add form .desc-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-add form .desc-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-add form .desc-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-add form .desc-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-balloon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-add form .desc-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-add form .desc-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-add form .desc-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-add form .desc-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-add form .desc-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-add form .desc-wrap button,
+.section-add form .desc-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-add form .desc-wrap button:active,
+.section-add form .desc-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-add form .desc-wrap button img,
+.section-add form .desc-wrap a img {
+  height: 50px;
+}
+.section-add form .photo-wrap {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-add form .photo-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-photo.png);
+}
+.section-add form .photo-wrap input:not([type=checkbox], [type=radio]),
+.section-add form .photo-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-add form .photo-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-add form .photo-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-add form .photo-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-add form .photo-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-add form .photo-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-add form .photo-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-add form .photo-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-add form .photo-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-photo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-add form .photo-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-add form .photo-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-add form .photo-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-add form .photo-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-add form .photo-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-add form .photo-wrap button,
+.section-add form .photo-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-add form .photo-wrap button:active,
+.section-add form .photo-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-add form .photo-wrap button img,
+.section-add form .photo-wrap a img {
+  height: 50px;
+}
+.section-add form .photo-wrap label {
+  padding: 10px;
+}
+.section-add .btn-wrap {
+  text-align: center;
+}
+.section-add .btn-wrap button {
+  width: 45%;
+  max-width: 200px;
+}
+.section-add .btn-wrap button:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-add .btn-wrap button img {
+  max-width: 100%;
+}/*# sourceMappingURL=section-add.css.map */

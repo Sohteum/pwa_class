@@ -1,0 +1,80 @@
+.section-home p.add-btn-wrap {
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-home p.add-btn-wrap input:not([type=checkbox], [type=radio]),
+.section-home p.add-btn-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-home p.add-btn-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-home p.add-btn-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-home p.add-btn-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-home p.add-btn-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-home p.add-btn-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-home p.add-btn-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-home p.add-btn-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-home p.add-btn-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-email.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-home p.add-btn-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-home p.add-btn-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-home p.add-btn-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-home p.add-btn-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-home p.add-btn-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-home p.add-btn-wrap button,
+.section-home p.add-btn-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-home p.add-btn-wrap button:active,
+.section-home p.add-btn-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-home p.add-btn-wrap button img,
+.section-home p.add-btn-wrap a img {
+  height: 50px;
+}/*# sourceMappingURL=section-home.css.map */
