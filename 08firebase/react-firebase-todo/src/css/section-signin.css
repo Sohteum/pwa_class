@@ -282,7 +282,7 @@
 }
 .section-signin form .remember-wrap {
   border-top: 2px dotted var(--green);
-  padding-bottom: 10px;
+  padding: 10px 0;
 }
 .section-signin form .remember-wrap input:checked ~ label img:first-child {
   display: none;
@@ -299,4 +299,38 @@
 }
 .section-signin form .remember-wrap label img:last-child {
   display: none;
+}
+.section-signin form .password-email-wrap {
+  text-align: center;
+}
+.section-signin form .password-email-wrap button {
+  padding: 7px 10px;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-signin form .password-email-wrap button:hover {
+  background-color: #fff;
+}
+.section-signin form .password-email-wrap button:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-signin form .password-email-wrap button img {
+  height: 30px;
 }/*# sourceMappingURL=section-signin.css.map */

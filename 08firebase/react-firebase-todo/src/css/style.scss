@@ -5,7 +5,7 @@ html {
   --green: #4fc962;
   --red: #c91d1c;
   --sky: #1bbae5;
-  --beige:rgba(255,247,203);
+  --beige: rgba(255, 247, 203);
 }
 
 body {
@@ -46,8 +46,7 @@ body {
     flex-direction: column;
     @include m.posLT(absolute, 50%, 50%, -50%, -50%);
     width: min(90%, 500px);
-    height: min(90%, 750px);
-    border: 1px solid red;
+    height: min(83%, 750px);
     img.main-bg {
       @include m.posLT(absolute, 50%, 2%, -50%, 0);
       height: 100%;
@@ -65,23 +64,21 @@ body {
       display: flex;
       flex-direction: column;
 
-
       section {
-        border: 1px solid red;
+ 
         flex: 1 0 1px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 10px 0;;
+        margin-bottom: 30px;
         h2 {
           width: 60%;
-          margin-bottom: 10px;
           max-width: 220px;
           img {
             width: 100%;
           }
-        }//h2
+        } //h2
         .scroll-wrap {
           flex: 1 0 1px;
           overflow-y: auto;
@@ -89,7 +86,6 @@ body {
           box-sizing: border-box;
           margin-bottom: 15px;
           padding: 0 15px;
-          background-color: yellow;
           overflow-y: auto;
           @media (hover: hover) {
             &::-webkit-scrollbar-track {

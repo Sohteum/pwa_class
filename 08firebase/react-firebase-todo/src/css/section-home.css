@@ -1,3 +1,74 @@
+.section-home .scroll-wrap ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 5px;
+  background-image: url(../assets/img/list/line-dashed.png);
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.section-home .scroll-wrap ul li a .thumbnail {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 10px;
+  box-sizing: border-box;
+  background-color: var(--beige);
+}
+.section-home .scroll-wrap ul li a .metabox {
+  width: calc(100% - 70px);
+}
+.section-home .scroll-wrap ul li a .metabox p {
+  display: flex;
+}
+.section-home .scroll-wrap ul li a .metabox p em,
+.section-home .scroll-wrap ul li a .metabox p time {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.section-home .scroll-wrap ul li a .metabox p em img,
+.section-home .scroll-wrap ul li a .metabox p time img {
+  margin-right: 5px;
+}
+.section-home .scroll-wrap ul li a .metabox p time {
+  font-size: 0.9em;
+  letter-spacing: 0em;
+}
+.section-home .scroll-wrap ul li a .metabox p .date {
+  color: var(--green);
+}
+.section-home .scroll-wrap ul li a .metabox p .time {
+  color: var(--sky);
+}
+.section-home .scroll-wrap ul li a .metabox p .title {
+  display: block;
+  max-width: 300px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-home .scroll-wrap ul li a .metabox p .title img {
+  display: inline-block;
+}
+.section-home .scroll-wrap ul li a .more {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+@media screen and (max-width:600px) {
+  .section-home .scroll-wrap ul li a .more {
+    display: none;
+  }
+}
+.section-home .scroll-wrap ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 .section-home p.add-btn-wrap {
   position: relative;
   margin: 10px 0;

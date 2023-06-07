@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CompItem from './CompItem';
 
 
 
 const CompHome = () => {
   return (
     <section className='section-home'>
-     <h2>
+      <h2>
         <img src={require('../../assets/img/list/title-list.png')} alt="" />
       </h2>
       <div className="scroll-wrap">
-        목록
+        <ul>
+          <CompItem />
+        </ul>
       </div>
       <p className="add-btn-wrap">
         <Link to='/add'>

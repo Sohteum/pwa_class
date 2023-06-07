@@ -3,7 +3,7 @@ html {
   --green: #4fc962;
   --red: #c91d1c;
   --sky: #1bbae5;
-  --beige:rgba(255,247,203);
+  --beige: rgba(255, 247, 203);
 }
 
 body {
@@ -48,8 +48,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: min(90%, 500px);
-  height: min(90%, 750px);
-  border: 1px solid red;
+  height: min(83%, 750px);
 }
 #root main img.main-bg {
   position: absolute;
@@ -72,17 +71,15 @@ body {
   flex-direction: column;
 }
 #root main article section {
-  border: 1px solid red;
   flex: 1 0 1px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin-bottom: 30px;
 }
 #root main article section h2 {
   width: 60%;
-  margin-bottom: 10px;
   max-width: 220px;
 }
 #root main article section h2 img {
@@ -95,7 +92,6 @@ body {
   box-sizing: border-box;
   margin-bottom: 15px;
   padding: 0 15px;
-  background-color: yellow;
   overflow-y: auto;
 }
 @media (hover: hover) {

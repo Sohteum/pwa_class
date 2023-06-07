@@ -1,8 +1,80 @@
-@use './mixin' as m;
+@use "./mixin" as m;
 
-.section-home{
+.section-home {
+  .scroll-wrap {
+    ul {
+      li {
+        a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding: 15px 5px;
+          background-image: url(../assets/img/list/line-dashed.png);
+          background-size: contain;
+          background-position: center bottom;
+          background-repeat: no-repeat;
+          .thumbnail {
+            width: 60px;
+            height: 60px;
+            padding: 5px;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 10px;
+            box-sizing: border-box;
+            background-color: var(--beige);
+          } //thumbmail
+          .metabox {
+            width: calc(100% - 70px);
+            p {
+              display: flex;
+              em,
+              time {
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
 
-  p.add-btn-wrap{
-    @include m.inputWrap('icons/icon-email.png', false)
-  }//p.add-btn-wr
-}//section-home
+                img {
+                  margin-right: 5px;
+                }
+              }
+              time {
+                font-size: 0.9em;
+                letter-spacing: 0em;
+              }
+              .date {
+                color: var(--green);
+              }
+              .time {
+                color: var(--sky);
+              }
+              .title {
+                display: block;
+                max-width: 300px;
+                color: #000;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                img {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+          .more {
+            @include m.posRT(absolute, 5px, 50%, 0, -50%);
+            @media #{m.$maxSm} {
+              display: none;
+            }
+          } //more
+          &:hover {
+            background-color: rgba(#fff, 0.2);
+          }
+        } //a
+      } //li
+    } //ul
+  } //scroll-wrap
+
+  p.add-btn-wrap {
+    @include m.inputWrap("icons/icon-email.png", false);
+  } //p.add-btn-wr
+} //section-home

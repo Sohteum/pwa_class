@@ -1,1 +1,502 @@
-/*# sourceMappingURL=section-detail.css.map */
+.section-detail form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.section-detail form .date-wrap {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 5px;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-detail form .date-wrap input:not([type=checkbox], [type=radio]),
+.section-detail form .date-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-detail form .date-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-detail form .date-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-detail form .date-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-detail form .date-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-detail form .date-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-detail form .date-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-detail form .date-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-detail form .date-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-calendar.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-detail form .date-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-detail form .date-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-detail form .date-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-detail form .date-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-detail form .date-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-detail form .date-wrap button,
+.section-detail form .date-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-detail form .date-wrap button:active,
+.section-detail form .date-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-detail form .date-wrap button img,
+.section-detail form .date-wrap a img {
+  height: 50px;
+}
+.section-detail form .time-wrap {
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: 5px;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-detail form .time-wrap input:not([type=checkbox], [type=radio]),
+.section-detail form .time-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-detail form .time-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-detail form .time-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-detail form .time-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-detail form .time-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-detail form .time-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-detail form .time-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-detail form .time-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-detail form .time-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-clock.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-detail form .time-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-detail form .time-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-detail form .time-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-detail form .time-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-detail form .time-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-detail form .time-wrap button,
+.section-detail form .time-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-detail form .time-wrap button:active,
+.section-detail form .time-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-detail form .time-wrap button img,
+.section-detail form .time-wrap a img {
+  height: 50px;
+}
+.section-detail form .title-wrap {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-detail form .title-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-pencil.png);
+}
+.section-detail form .title-wrap input:not([type=checkbox], [type=radio]),
+.section-detail form .title-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-detail form .title-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-detail form .title-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-detail form .title-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-detail form .title-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-detail form .title-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-detail form .title-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-detail form .title-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-detail form .title-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-pencil.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-detail form .title-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-detail form .title-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-detail form .title-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-detail form .title-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-detail form .title-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-detail form .title-wrap button,
+.section-detail form .title-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-detail form .title-wrap button:active,
+.section-detail form .title-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-detail form .title-wrap button img,
+.section-detail form .title-wrap a img {
+  height: 50px;
+}
+.section-detail form .desc-wrap {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-detail form .desc-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-balloon.png);
+}
+.section-detail form .desc-wrap input:not([type=checkbox], [type=radio]),
+.section-detail form .desc-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-detail form .desc-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-detail form .desc-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-detail form .desc-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-detail form .desc-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-detail form .desc-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-detail form .desc-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-detail form .desc-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-detail form .desc-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-balloon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-detail form .desc-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-detail form .desc-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-detail form .desc-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-detail form .desc-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-detail form .desc-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-detail form .desc-wrap button,
+.section-detail form .desc-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-detail form .desc-wrap button:active,
+.section-detail form .desc-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-detail form .desc-wrap button img,
+.section-detail form .desc-wrap a img {
+  height: 50px;
+}
+.section-detail form .check-wrap input:checked + label img.img-check {
+  display: none;
+}
+.section-detail form .check-wrap input:checked + label img.img-checked {
+  display: block;
+}
+.section-detail form .check-wrap label {
+  cursor: pointer;
+}
+.section-detail form .check-wrap label img {
+  width: 180px;
+}
+.section-detail form .check-wrap label img.img-checked {
+  display: none;
+}
+.section-detail form .photo-wrap {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  display: block;
+}
+.section-detail form .photo-wrap::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  transform: translate(0, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/img/icons/icon-photo.png);
+}
+.section-detail form .photo-wrap input:not([type=checkbox], [type=radio]),
+.section-detail form .photo-wrap textarea {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  background: var(--beige);
+  border: 1px dotted var(--orange);
+}
+.section-detail form .photo-wrap input:not([type=checkbox], [type=radio])::placeholder,
+.section-detail form .photo-wrap textarea::placeholder {
+  color: #ffc876;
+}
+.section-detail form .photo-wrap input:not([type=checkbox], [type=radio]):focus,
+.section-detail form .photo-wrap textarea:focus {
+  background-color: #fff;
+}
+.section-detail form .photo-wrap input:not([type=checkbox], [type=radio])[type=date]::-webkit-calendar-picker-indicator, .section-detail form .photo-wrap input:not([type=checkbox], [type=radio])[type=time]::-webkit-calendar-picker-indicator,
+.section-detail form .photo-wrap textarea[type=date]::-webkit-calendar-picker-indicator,
+.section-detail form .photo-wrap textarea[type=time]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/icons/icon-photo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-detail form .photo-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label,
+.section-detail form .photo-wrap textarea[type=file] ~ label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--beige);
+  border: 1px dotted var(--orange);
+  color: #ffc876;
+}
+.section-detail form .photo-wrap input:not([type=checkbox], [type=radio])[type=file] ~ label:hover,
+.section-detail form .photo-wrap textarea[type=file] ~ label:hover {
+  background-color: #FFF;
+  color: var(--orange);
+}
+.section-detail form .photo-wrap textarea {
+  display: block;
+  height: 200px;
+  resize: none;
+}
+.section-detail form .photo-wrap button,
+.section-detail form .photo-wrap a {
+  display: block;
+  margin: 0 auto;
+}
+.section-detail form .photo-wrap button:active,
+.section-detail form .photo-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-detail form .photo-wrap button img,
+.section-detail form .photo-wrap a img {
+  height: 50px;
+}
+.section-detail form .photo-wrap label {
+  padding: 10px;
+}
+.section-detail .btn-wrap {
+  text-align: center;
+}
+.section-detail .btn-wrap button {
+  width: 45%;
+  max-width: 150px;
+}
+.section-detail .btn-wrap button:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.section-detail .btn-wrap button img {
+  max-width: 100%;
+}/*# sourceMappingURL=section-detail.css.map */

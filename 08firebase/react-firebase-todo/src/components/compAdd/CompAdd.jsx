@@ -19,7 +19,7 @@ const CompAdd = () => {
         </p>
         <p className='photo-wrap'>
           <input type="file" id='file' className='hidden'/>
-          <label htmlFor="일정관련 사진을 업로드해주세요"></label>
+          <label htmlFor="file">일정관련 사진을 업로드해주세요</label>
         </p>
         <p className='btn-wrap'><button><img src={require('../../assets/img/add/btn-add-list.png')} alt="" /></button>
           <button><img src={require('../../assets/img/add/btn-backto-list.png')} alt="" /></button></p>

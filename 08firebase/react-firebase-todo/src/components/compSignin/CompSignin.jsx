@@ -16,7 +16,7 @@ const CompSignin = () => {
 
         <p className='btn-wrap'>
           <button><img src={require('../../assets/img/login/btn-login.png')} alt="" /></button>
-          <button><img src={require('../../assets/img/login/btn-google-login.png')} alt="" /></button>
+          <button type="button"><img src={require('../../assets/img/login/btn-google-login.png')} alt="" /></button>
         </p>
         <p className='remember-wrap'>
           <input id='remember' type="checkbox" className='hidden' />
@@ -25,9 +25,13 @@ const CompSignin = () => {
             <img src={require('../../assets/img/login/remember-checked.png')} alt="" />
           </label>
         </p>
-      </form>
+        <p className='password-email-wrap' >
+          <button type="button"><img src={require('../../assets/img/login/password-email.png')} alt="" /></button>
+        </p>
+    
+    </form>
 
-    </section>
+    </section >
   );
 };
 
