@@ -59,6 +59,7 @@ body {
   width: 110%;
 }
 #root main h1 {
+  z-index: 1;
   position: relative;
 }
 #root main h1 img {

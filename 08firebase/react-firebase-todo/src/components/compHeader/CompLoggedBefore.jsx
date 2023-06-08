@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CompLoggedBefore = () => {
   return (
     <div className='logged-before'>
-      <button>
+      <Link  to='signin'>
         <img src={require('../../assets/img/header/btn-sign-in.png')} alt="" />
-      </button>
-      <button>
+      </Link>
+      <Link to='signup'>
         <img src={require('../../assets/img/header/btn-register.png')} alt="" />
-      </button>
+      </Link>
       
     </div>
   );
