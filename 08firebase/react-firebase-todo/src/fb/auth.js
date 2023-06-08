@@ -28,7 +28,15 @@ export const fnUpdateProfile = (displayName, photoURL) => {
 export const fnSignOut = () => {
   return new Promise((resolve) => {
     signOut(auth).then(() => {
-      alert('로그아웃 되었습니다')
+      resolve()
     })
+  })
+}
+
+export const fnSendEmailVerification = ()=>{
+  return new Promise((resolve)=>{
+    sendEmailVerification(auth.currentUser).then(() => {
+      resolve()
+     });
   })
 }

@@ -40,7 +40,7 @@
   ● 인증메일보내기
     import { getAuth, sendEmailVerification } from "firebase/auth";
     const auth = getAuth();
-    sendEmailVerification('로그인된사용자').then(() => {
+    sendEmailVerification(auth.currentUser).then(() => {
      alert('인증 메일을 확인해주세요')
     });
 
