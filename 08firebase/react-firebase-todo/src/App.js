@@ -17,7 +17,10 @@ function App() {
   const [_isLogged, _setIsLogged] = useState(null)
 
   return (
-    <AppContext.Provider value={{}}>
+    <AppContext.Provider value={{
+      _isLogged, _setIsLogged,
+      
+    }}>
       <main>
         <img className="main-bg" src={require('./assets/img/common/main-bg.png')} alt="" />
         <h1>
@@ -35,8 +38,8 @@ function App() {
           </Routes>
 
         </article>
+      {/* <CompLoader /> */}
       </main>
-      <CompLoader />
     </AppContext.Provider>
   );
 }
