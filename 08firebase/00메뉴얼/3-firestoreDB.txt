@@ -18,7 +18,7 @@
     ▶ rules탭의 권한설정 true로 변경
 
 ■  import
-  import { getFirestore, Timestamp, collection, doc, addDoc, setDoc, getDoc, getDocs, updateDoc, deleteDoc, writeBatch, query, where, orderBy, limit, onSnapshot,  arrayUnion, arrayRemove, startAt, startAfter, endAt, endBefore, } from "firebase/firestore";
+  import { getFirestore, Timestamp, collection, doc, addDoc, setDoc, getDoc, getDocs, updateDoc, deleteDoc, writeBatch, query, where, orderBy, limit, onSnapshot,  arrayUnion, arrayRemove, startAt, startAfter, endAt, endBefore, getCountFromServer} from "firebase/firestore";
 
 ■ 문서 추가-------------------------------------------------------------------------------------------
   ● setDoc() //id수동생성
@@ -34,7 +34,8 @@
     
   ● addDoc() //id자동생성
     import { collection, doc, addDoc, getFirestore} from "firebase/firestore";
-    var data = {
+    const db = getFirestore();
+    var 문서데이터 = {
       id: "123456789",
       name: "홍길동",
       country: "대한민국",
@@ -43,13 +44,13 @@
         color : '노랑색'
       }
     }
-    const db = getFirestore();
-    addDoc(collection(db,"컬렉션네임"),data).then((doc)=>{
+    addDoc(collection(db,"컬렉션네임"),문서데이터).then((doc)=>{
       console.log(doc.id)
     })
     
   ● 중첩컬렉션 문서추가
     import { collection, doc, setDoc, getFirestore } from "firebase/firestore"; 
+    const db = getFirestore();
     var data = {
       name: "jane",
       gender: "femail",
@@ -59,7 +60,6 @@
         color : 'red'
       }
     }
-    const db = getFirestore();
     const refCollection = doc(collection(db,"student/docID/friends"));
     setDoc(refCollection, data).then((doc)=>{
       console.log(doc.id)
@@ -69,7 +69,7 @@
   ● 단일문서 가져오기
     import { doc, getDoc, getFirestore } from "firebase/firestore";
     const db = getFirestore();
-    const docRef = doc(db, collectionName, docid);
+    const docRef = doc(db, "컬렉션이름", "문서아이디");
     getDoc(docRef).then((doc) => {
         doc.data()
     }).catch((error)=>{
@@ -96,67 +96,51 @@
 
   ● 필터 쿼리
     //주의 : 필터와 정렬을 두개이상 동시에 사용해야 할 경우 관리자 모드 / Cloud Firestore / 색인설정
-    import { collection, query, where, getDocs, getFirestore} from "firebase/firestore";
-    const db = getFirestore();
-    const q = query(collection(db, "컬렉션네임"), where("키이름", "==", "키값"));
-    getDocs(q).then((querySnapshot)=>{
-      querySnapshot.docs.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-      })//forEach
-    })//getDocs then
+    import { query, orderBy, where, limit, getFirestore} from "firebase/firestore";
 
-  ● 정렬 및 제한 쿼리
-    //주의 : 필터와 정렬을 두개이상 동시에 사용해야 할 경우 관리자 모드 / Cloud Firestore / 색인설정
-    import { query, orderBy, limit, getFirestore} from "firebase/firestore";
     const db = getFirestore();
-    const q = query(collection(db, "컬렉션네임"), orderBy("키이름","asc"), limit(3)); //오름차순
-    //const q = query(collection(db, "컬렉션네임"), orderBy("키이름","desc"), limit(3)); //내림차순
-    //const q = query(collection(db, "컬렉션네임"), orderBy("키이름1"), orderBy("키이름1","desc"),); //여러필드기준정렬
+    const q = query(collection(db, "컬렉션네임"),  where("키네임", "==", "키값"), orderBy("키네임","정렬방법"), limit(3)); 
     getDocs(q).then((querySnapshot)=>{
       querySnapshot.docs.forEach((doc) => {
         console.log(doc.id, " => ", doc.data());
       });
     })//then
 
-  ● 색인관리
-    https://firebase.google.com/docs/firestore/query-data/indexing?hl=ko#exemptions
-
   ● 컬렉션 문서 갯수 가져오기
-    
     getCountFromServer( collection(db, "컬렉션네임")).
       then((snapshot)=>{
         console.log(snapshot.data().count)
       })
-    
 
   ● 페이지네이션
-  import { collection, getDocs, getFirestore, startAt, limit} from "firebase/firestore";
-  const db = getFirestore();
+    import { collection, getDocs, getFirestore, startAfter, limit} from "firebase/firestore";
+    const db = getFirestore();
 
-  getDocs(collection(db, 컬렉션이름))
-    .then((querySnapshot) => {
-      const startFile = querySnapshot.docs[시작번호]
-      if (startCnt < querySnapshot.docs.length) {
-        getDocs(query(collection(db, 컬렉션이름), startAt(startFile), limit(출력갯수)))
-          .then((querySnapshot) => {
-            console.log(querySnapshot.docs)
-          })
-      }
-    })
+    //pagenation init
+    getDocs(query(collection(db, "컬렉션네임"), orderBy('키네임', '정렬방법'), limit(출력갯수)))
+      .then((querySnapshot) => {
+        console.log({
+          docsArr: querySnapshot.docs,
+          nextDoc: querySnapshot.docs[querySnapshot.docs.length - 1]
+      })
+      })//getDocs
+
+    //pagenation append
+    getDocs(query(collection(db, "컬렉션네임"), orderBy('키네임', '정렬방법'), startAfter(시작문서), limit(출력갯수)))
+      .then((querySnapshot) => {
+       console.log({
+          docsArr: querySnapshot.docs,
+          nextDoc: querySnapshot.docs[querySnapshot.docs.length - 1]
+      })
+      })//getDocs
+
 ■  실시간 업데이트 리스너
   ● 컬렉션 업데이트 리스너 추가 
     import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
-    const db = getFirestore();
+    const db = getFirestore()
     onSnapshot(
-      collection(db, 컬렉션이름),
-      (snapshot) => {
-        /* 
-        snapshot.docs.forEach(v => {
-          console.log("Current data: ", v.data());
-        })
-        */
-        console.log(snapshot.docs);
-        return(snapshot.docs)
+      collection(db, 컬렉션이름), (snapshot) => {
+        console.log(snapshot.docs)
       },
       (error) => {
         console.log('db access error')    
@@ -165,7 +149,7 @@
 
   ● 문서 업데이트 리스너 
     import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
-    const db = getFirestore();
+    const db = getFirestore()
     try{
       onSnapshot(
         collection(db, "컬렉션이름","문서id"), 
@@ -183,7 +167,7 @@
   ● 실시간 업데이트 리스너 제거
   import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
   const db = getFirestore();
-  onSnapshot(collection(db, "컬렉션이름"), () => {});
+  onSnapshot(collection(db, "컬렉션이름"), () => {})
 
 ■ 문서 업데이트-------------------------------------------------------------------------------------------
   ● updateDoc

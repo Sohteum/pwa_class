@@ -4,11 +4,14 @@ import { AppContext } from '../../App';
 const CompLoader = () => {
 
   const { _setShowLoader,
-    _fadeOut,_setFadeOut } = useContext(AppContext)
+    _fadeOut, _setFadeOut } = useContext(AppContext)
 
 
   return (
-    <div onTransitionEnd={() => { _setShowLoader(false); _setFadeOut(false) }} className={`loader ${_fadeOut && 'fade-out'}`}>
+    <div onTransitionEnd={() => {
+      _setShowLoader(false);
+      _setFadeOut(false);
+    }} className={`loader ${_fadeOut && 'fade-out'}`}>
       <h6> <img src={require('../../assets/img/header/title-main.png')} alt="" />      </h6>
       <img className='main-bg' src={require('../../assets/img/common/main-bg.png')} alt="" />
       <figure>

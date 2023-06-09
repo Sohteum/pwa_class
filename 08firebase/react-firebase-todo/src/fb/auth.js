@@ -85,3 +85,14 @@ export const fnSendPasswordResetEmail = (email) => {
     })
   })
 }
+
+export const fnDeleteUser = (setFadeOut) => {
+  return new Promise((resolve) => {
+    deleteUser(auth.currentUser).then(() => {
+      resolve()
+    }).catch((error) => {
+      alert('로그아웃 후 다시 로그인 하신 후 회원탈퇴를 실행해주세요');
+      setFadeOut(true)
+    });
+  })
+}

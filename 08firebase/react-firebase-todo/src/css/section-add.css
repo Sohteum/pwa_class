@@ -43,6 +43,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -126,6 +129,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -220,6 +226,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -314,6 +323,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -408,6 +420,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -458,11 +473,12 @@
 .section-add .btn-wrap {
   text-align: center;
 }
-.section-add .btn-wrap button {
+.section-add .btn-wrap button, .section-add .btn-wrap a {
+  display: inline-block;
   width: 45%;
   max-width: 200px;
 }
-.section-add .btn-wrap button:active {
+.section-add .btn-wrap button:active, .section-add .btn-wrap a:active {
   animation: pulse 0.5s;
 }
 @keyframes pulse {
@@ -482,6 +498,6 @@
     transform: scale3d(1, 1, 1);
   }
 }
-.section-add .btn-wrap button img {
+.section-add .btn-wrap button img, .section-add .btn-wrap a img {
   max-width: 100%;
 }/*# sourceMappingURL=section-add.css.map */

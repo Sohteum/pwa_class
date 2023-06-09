@@ -27,28 +27,41 @@ header {
       width: 45%;
       display: flex;
       align-items: center;
+
       img {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
+   
         object-fit: cover;
         object-position: center;
         border-radius: 50%;
         box-sizing: border-box;
-        border:3px solid var(--beige)
-      }//img
-      em{
-        flex:1;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        border: 3px solid var(--beige);
+      } //img
+      span {
+        flex: 1;
         overflow: hidden;
-        font-size: 0.9em;
-        letter-spacing: 0;
+        em {
+          margin-left: 5px;
+          display: block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 0.85em;
+          letter-spacing: 0;
+          &:first-child{
+            color:var(--sky);
+          }
+          &:last-child{
+            color:var(--green);
+          }
+        }
       }
-    }//user
-    .btns{
+    } //user
+    .btns {
       display: flex;
       align-items: center;
-      button{
+      button {
         margin-left: 10px;
       }
     }

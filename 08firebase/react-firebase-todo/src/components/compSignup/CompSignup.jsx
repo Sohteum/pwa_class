@@ -58,10 +58,9 @@ const CompSignup = () => {
             _setFile(e.target.files[0]);
             (e.target.files[0])&&_setFileLabel(e.target.files[0].name)
           }} type="file" id='file' className='hidden' />
-          <label htmlFor="file"
-          >{_fileLabel}</label>
+          <label htmlFor="file">{_fileLabel}</label>
         </p>
-        <p className='btn'>
+        <p className='btn-wrap'>
           <button><img src={require('../../assets/img/register/btn-register.png')} alt="" /></button>
         </p>
       </form>

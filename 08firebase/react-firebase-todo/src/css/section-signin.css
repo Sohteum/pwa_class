@@ -50,6 +50,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -143,6 +146,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -236,6 +242,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;

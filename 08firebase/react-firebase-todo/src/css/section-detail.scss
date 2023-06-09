@@ -1,6 +1,5 @@
 @use "./mixin" as m;
 
-
 .section-detail {
   form {
     width: 100%;
@@ -54,10 +53,15 @@
       }
     }
   } //form
-  .btn-wrap {
+  .btn-wrap,
+  a {
     text-align: center;
-    button {
-      width: 45%;
+
+    button,
+    a {
+      vertical-align: middle;
+      margin: 0 5px;
+      width: 37%;
       max-width: 150px;
       &:active {
         animation: pulse 0.5s;
@@ -80,7 +84,15 @@
         }
       } //keyframes
       img {
-        max-width: 100%;
+        // max-width: 100%;
+        width: 100%;
+      }
+    } //button
+    a {
+      display: inline-block;
+      width: 13%;
+      img {
+        width: 100%;
       }
     }
   } //btn-wrap

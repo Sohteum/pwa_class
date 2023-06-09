@@ -19,7 +19,7 @@ const CompSignin = () => {
 
   const fnSigninHandler = async (e) => {
     e.preventDefault()
-    _setFadeOut(false)
+    // _setFadeOut(false)
     _setShowLoader(true)
     //클리어는 연타하는경우에 해주는거고 지금은 모달이 덮으니까 필요없음
     //setTimeout(()=>{_setFadeOut(true)},5000)
@@ -27,7 +27,7 @@ const CompSignin = () => {
 
     await fnSetPersistence(_checked, _setFadeOut)
     await fnSignin(_email, _password, _setFadeOut)
-    console.log('tt');
+ 
     if (auth.currentUser.emailVerified) {
       alert(`${auth.currentUser.displayName}님 환영합니다\n일정페이지로 이동합니다`)
       //onauthState 이벤트에서 home으로 이동됨

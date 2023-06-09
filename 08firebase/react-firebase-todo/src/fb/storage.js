@@ -2,7 +2,7 @@
 import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll } from "firebase/storage";
 export const storage = getStorage();
 
-export const fnUploadFile = ( uid, file) => {
+export const fnUploadFile = (uid, file) => {
 
   return new Promise((resolve) => {
     const storageRef = ref(storage, `${uid}/${Date.now()}-${file.name}`);
@@ -20,4 +20,20 @@ export const fnUploadFile = ( uid, file) => {
     })//uploadBytes then catch
   })//Promise
 }//fnUploadFile
+
+
+export const fnDeleteFolder = (folderName) => {
+  return new Promise((resolve) => {
+    const folderRef = ref(storage, folderName);
+    listAll(folderRef)
+      .then((dir) => {
+        dir.items.forEach((v) => {
+          const fileRef = ref(storage, `${folderRef.fullPath}/${v.name}`);
+          deleteObject(fileRef)
+        })
+        resolve()
+      })
+  })
+}
+
 

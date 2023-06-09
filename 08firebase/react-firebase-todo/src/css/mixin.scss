@@ -95,6 +95,15 @@ $portrait: "screen and (orientation:portrait)";
       background-image: url(../assets/img/#{$path});
     }
   } //before
+
+  // &::after{
+  //   content: '';
+  //   position: absolute;
+  //   top:calc(50% - 2px);
+  //   width: 4px;
+  //   height: 4px;
+  //   border-radius: 50%;
+  // }
   input:not([type="checkbox"], [type="radio"]),
   textarea {
     outline: none;
@@ -123,6 +132,9 @@ $portrait: "screen and (orientation:portrait)";
       display: block;
       padding: 10px;
       cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       background-color: var(--beige);
       border: 1px dotted var(--orange);
       color:#ffc876;

@@ -43,6 +43,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -126,6 +129,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -220,6 +226,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -314,6 +323,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -423,6 +435,9 @@
   display: block;
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background-color: var(--beige);
   border: 1px dotted var(--orange);
   color: #ffc876;
@@ -470,14 +485,23 @@
 .section-detail form .photo-wrap label {
   padding: 10px;
 }
-.section-detail .btn-wrap {
+.section-detail .btn-wrap,
+.section-detail a {
   text-align: center;
 }
-.section-detail .btn-wrap button {
-  width: 45%;
+.section-detail .btn-wrap button,
+.section-detail .btn-wrap a,
+.section-detail a button,
+.section-detail a a {
+  vertical-align: middle;
+  margin: 0 5px;
+  width: 37%;
   max-width: 150px;
 }
-.section-detail .btn-wrap button:active {
+.section-detail .btn-wrap button:active,
+.section-detail .btn-wrap a:active,
+.section-detail a button:active,
+.section-detail a a:active {
   animation: pulse 0.5s;
 }
 @keyframes pulse {
@@ -497,6 +521,18 @@
     transform: scale3d(1, 1, 1);
   }
 }
-.section-detail .btn-wrap button img {
-  max-width: 100%;
+.section-detail .btn-wrap button img,
+.section-detail .btn-wrap a img,
+.section-detail a button img,
+.section-detail a a img {
+  width: 100%;
+}
+.section-detail .btn-wrap a,
+.section-detail a a {
+  display: inline-block;
+  width: 13%;
+}
+.section-detail .btn-wrap a img,
+.section-detail a a img {
+  width: 100%;
 }/*# sourceMappingURL=section-detail.css.map */

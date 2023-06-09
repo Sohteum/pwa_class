@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CompDetail = () => {
   return (
@@ -30,7 +31,8 @@ const CompDetail = () => {
         </p>
         <p className='btn-wrap'>
           <button><img src={require('../../assets/img/detail/btn-update-list.png')} alt="" /></button>
-          <button><img src={require('../../assets/img/detail/btn-delete-list.png')} alt="" /></button></p>
+          <button><img src={require('../../assets/img/detail/btn-delete-list.png')} alt="" /></button>
+          <Link to='/'><img src={require('../../assets/img/detail/btn-goto-list.png')} alt="" /></Link></p>
       </form>
     </section>
   );
