@@ -149,10 +149,14 @@ section.comp-current .section-inner .current-output .circle-container .circle-co
 }
 section.comp-current .section-inner .current-output .circle-container .circle-container-inner .temp img {
   width: 90px;
-  mask-image: url(../assets/img/mask.png);
-  mask-size: 100%;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: url(../assets/img/mask.png);
+          mask-image: url(../assets/img/mask.png);
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 section.comp-current .section-inner .current-output .circle-container .circle-container-inner .desc {
   font-size: 1.3em;
