@@ -1,8 +1,9 @@
 @use "./mixin" as m;
 
 html {
-  --sky: #8ed1f1;
-  --color: #4b87b6;
+  --sky: #fff4cb;
+  --color: #fff065;
+  --color2: #4a6159;
 }
 
 body {
@@ -23,8 +24,8 @@ body {
     width: 100%;
     height: 100%;
     background-image: url(../assets/img/weather-icos.gif);
-    opacity: 0.3;
-    background-size: 1000px;
+    opacity: 0.5;
+    background-size: 100px;
     animation: bg 5000s linear infinite;
     @keyframes bg {
       0% {
@@ -41,8 +42,8 @@ h1 {
   perspective: 700px;
   position: absolute;
   left: 50%;
-  top: 0;
-  width: min(40%, 200px);
+  top: -3%;
+  width: min(70%, 350px);
   transform: translate(-50%, -50%); //수평중앙
   img {
     width: 100%;
@@ -66,7 +67,7 @@ h1 {
   @include m.posLT(fixed, 50%, 50%, -50%, -48%);
   width: min(95%, 1100px);
   height: min(90%, 800px);
-  background-color: rgba(#fff, 0.7);
+  background: linear-gradient(-45deg, #fff2a8, #ffd3fb);
   border-radius: 10px;
   box-sizing: border-box;
   padding: 5px;
@@ -112,9 +113,8 @@ h1 {
         position: relative;
         min-height: 250px;
         @media screen and (min-width: 900px) {
-          //스크롤바 생긴다는 뜻
-          height: 100%;
-          overflow: auto; //부모가 오버플로우면 스크롤바가 생기겠지 그러면 아래 h2도 스티키가 부모기준이 된다
+           height: 100%;
+          overflow: auto; 
         }
         .preloader {
           display: flex;
@@ -125,14 +125,14 @@ h1 {
           height: 100%;
           left: 0;
           top: 0;
-          background-color: #4b87b6;
+          background-color: #ffd3fb;
         } //loader
         h2 {
           padding: 5px 10px;
           font-weight: 600;
           text-transform: uppercase;
           background-color: var(--color);
-          color: #fff;
+          color: #167c16;
           border-radius: 10px;
           @media screen and (min-width: 900px) {
             position: sticky;
