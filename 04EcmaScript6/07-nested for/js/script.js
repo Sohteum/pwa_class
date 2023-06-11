@@ -7,7 +7,7 @@
       sum += 1;
     }
     document.querySelector(`.ex1 .output`).innerText = sum;
-    /* 결과는 한번만 출력 여기서 ㅎㅏ면됨 */
+    /* 결과는 한번만 출력 여기서 하면됨 */
   });
 }
 
@@ -103,7 +103,7 @@
   
 }
 
-{
+{//8 10x10 table
   let table = document.createElement(`table`);
   table.innerHTML = `
   <thead></thead>
@@ -137,5 +137,5 @@
   }
 }
 
-/* iinethtml은 내가 쓴 내용을 지우고 넣어버리는거라서 지금 크리에잇을ㅇ 하고 어펜드를 해줌
+/* iinethtml은 내가 쓴 내용을 지우고 넣어버리는거라서 지금 크리에잇을 하고 어펜드를 해줌
 여기서는 빈 테이블을 하나 만들었고 거기에 빈공간에 innerhtml을 넣어준것.  */
