@@ -1,13 +1,13 @@
 @use "./mixin" as m;
 
 html {
-  --sky: #fff4cb;
+  --beige: #fff4cb;
   --color: #fff065;
   --color2: #4a6159;
 }
 
 body {
-  color: var(--color);
+  color: var(--color2);
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-size: 15px;
   text-decoration: none;

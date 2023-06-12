@@ -38,9 +38,9 @@ export const fnGetDocsCnt =(collectionName)=>{
 export const fnGetDocs = (collectionName, limitCnt, nextDoc = null) => {
   return new Promise((resolve) => {
     const queryString = nextDoc ?
-      query(collection(db, collectionName), orderBy('timeStamp', 'desc'), startAfter(nextDoc), limit(limitCnt))
+      query(collection(db, collectionName), orderBy('timestamp', 'desc'), startAfter(nextDoc), limit(limitCnt))
       :
-      query(collection(db, collectionName), orderBy('timeStamp', 'desc'), limit(limitCnt))
+      query(collection(db, collectionName), orderBy('timestamp', 'desc'), limit(limitCnt))
 
     getDocs(queryString)
       .then((querySnapshot) => {
@@ -50,6 +50,26 @@ export const fnGetDocs = (collectionName, limitCnt, nextDoc = null) => {
         })
        
       })//getDocs
+  })
+}
+
+
+export const fnGetDoc =(collectionName, docid)=>{
+  return new Promise((resolve)=>{
+    const docRef = doc(db, collectionName, docid);
+    getDoc(docRef).then((doc) => {
+      resolve(doc.data()) //data붙여줘야함
+    })
+  })
+}
+
+
+export const fnUpdateDoc =(collectionName, docid, data)=>{//data무조건 객체
+  return new Promise((resolve)=>{
+    const docRef = doc(db, collectionName, docid);
+    updateDoc(docRef, data).then((doc)=>{
+      resolve(doc.id, doc.data())
+    })//updateDoc then
   })
 }
 

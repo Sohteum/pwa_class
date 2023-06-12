@@ -6,16 +6,35 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    .date-wrap {
-      width: 50%;
+    .thumbnail {
+      width: 80%;
+      max-width: 250px;
+      padding: 10px;
       box-sizing: border-box;
-      padding-right: 5px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      background: var(--beige);
+    }
+    .date-wrap {
+      @media #{m.$minSm} {
+        width: 50%;
+        padding-right: 5px;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
+      box-sizing: border-box;
       @include m.inputWrap("icons/icon-calendar.png", false);
     }
     .time-wrap {
-      width: 50%;
+      @media #{m.$minSm} {
+        width: 50%;
+        padding-right: 5px;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
       box-sizing: border-box;
-      padding-left: 5px;
       @include m.inputWrap("icons/icon-clock.png", false);
     }
     .title-wrap {
@@ -27,18 +46,27 @@
       @include m.inputWrap("icons/icon-balloon.png", true);
     }
     .check-wrap {
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
       input:checked + label img {
         &.img-check {
           display: none;
         }
         &.img-checked {
-          display: block;
+          display: inline-block;
         }
       }
       label {
         cursor: pointer;
         img {
-          width: 180px;
+          width: 25px;
+          display: inline-block;
+
+          vertical-align: top;
           &.img-checked {
             display: none;
           }

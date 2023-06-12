@@ -39,8 +39,8 @@
   font-weight: 500;
 }
 .comp-daily .section-inner ul li a.active {
-  background-color: var(--sky);
-  color: #FFF;
+  background-color: #ffeeb3;
+  color: #547754;
 }
 .comp-daily .section-inner ul li a.active .fa-chevron-down {
   transform: translateY(-50%) rotate(180deg);

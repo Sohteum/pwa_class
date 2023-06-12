@@ -36,3 +36,17 @@
   
   }
 } //loader
+
+.list-loader{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  mix-blend-mode: multiply;
+  filter:  sepia(100%);
+  img{
+    width: 80%;
+    @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+  }
+}//list-loader

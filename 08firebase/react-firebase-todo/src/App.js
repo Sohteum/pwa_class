@@ -38,7 +38,9 @@ function App() {
         _setIsLogged(true)
         onSnapshot(collection(db, auth.currentUser.uid), async()=>{
           const docsCnt = await fnGetDocsCnt(auth.currentUser.uid)
-          const {docsArr, nextDoc} = await fnGetDocs(auth.currentUser.uid, 5)
+          
+          const {docsArr, nextDoc} = await fnGetDocs(auth.currentUser.uid, 3)
+          console.log(docsCnt, docsArr);
           _setDocsCnt(docsCnt);_setDocsArr(docsArr);_setDocsOutputArr(docsArr);_setNextDocs(nextDoc);
         })
         navi('/')
@@ -77,7 +79,7 @@ function App() {
             <Route path="/signin" element={<CompSignin />} />
             <Route path="/signup" element={<CompSignup />} />
             <Route path="/add" element={<CompAdd />} />
-            <Route path="/detail" element={<CompDetail />} />
+            <Route path="/detail/:id" element={<CompDetail />} />
             <Route path="*" element={<Comp404 />} />
           </Routes>
 

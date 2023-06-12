@@ -84,7 +84,7 @@ $(function () {
   /* scroll spy */
   var reqID
   function fn() {
-    if (scrT < offT2) {
+    if (scrT < offT2 - 1) {
       currentSection = 1
     } else if (scrT >= offT2 - 1 && scrT < offT3 - 1) {
       currentSection = 2

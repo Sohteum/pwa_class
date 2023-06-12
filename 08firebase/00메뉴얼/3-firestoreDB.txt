@@ -175,7 +175,7 @@
     const db = getFirestore();
     const docRef = doc(db, "컬렉션이름", 문서id);
     updateDoc(docRef, {
-      필드네임1: '값',
+      '필드네임1': '값',
       '필드네임2.color': 'blue', //필드네임2 값이 객체일경우 예시
     }).then((doc)=>{
       console.log (doc.id, doc.data())

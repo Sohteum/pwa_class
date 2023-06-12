@@ -2,9 +2,22 @@
 
 .section-home {
   .scroll-wrap {
+    position: relative;
     ul {
       li {
-        &:nth-child(even){
+        opacity: 0;
+        animation: show 1s ;
+        animation-delay: .5s;
+        animation-fill-mode: both;
+        @keyframes show {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        &:nth-child(even) {
           background-color: var(--beige);
         }
         a {
@@ -75,8 +88,13 @@
         } //a
       } //li
     } //ul
+    .no-list {
+      @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+    } //img
   } //scroll-wrap
-
+  .scroll-trigger {
+    height: 80px;
+  }
   p.add-btn-wrap {
     @include m.inputWrap("icons/icon-email.png", false);
   } //p.add-btn-wr

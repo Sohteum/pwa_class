@@ -66,7 +66,7 @@ body {
       flex-direction: column;
 
       section {
- 
+        position: relative;
         flex: 1 0 1px;
         display: flex;
         flex-direction: column;
@@ -126,6 +126,5 @@ body {
       max-width: 500px;
       margin: 0 auto;
     }
-  }//footer
-
+  } //footer
 } //root

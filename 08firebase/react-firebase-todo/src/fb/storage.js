@@ -36,4 +36,15 @@ export const fnDeleteFolder = (folderName) => {
   })
 }
 
+export const fnDeleteObject =(path)=>{
+  return new Promise((resolve)=>{
+    const storageRef= ref(storage, path);
+    deleteObject(storageRef).then(() => {
+      resolve()
+    }).catch((error) => {
+      // 삭제중오류
+    });
+  })
+}
+
 

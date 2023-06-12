@@ -7,15 +7,25 @@
     flex-wrap: wrap;
     justify-content: center;
     .date-wrap {
-      width: 50%;
+      @media #{m.$minSm} {
+        width: 50%;
+        padding-right: 5px;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
       box-sizing: border-box;
-      padding-right: 5px;
       @include m.inputWrap("icons/icon-calendar.png", false);
     }
     .time-wrap {
-      width: 50%;
+      @media #{m.$minSm} {
+        width: 50%;
+        padding-right: 5px;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
       box-sizing: border-box;
-      padding-left: 5px;
       @include m.inputWrap("icons/icon-clock.png", false);
     }
     .title-wrap {

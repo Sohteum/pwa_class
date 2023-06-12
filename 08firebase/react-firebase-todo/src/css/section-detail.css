@@ -4,13 +4,31 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.section-detail form .date-wrap {
-  width: 50%;
+.section-detail form .thumbnail {
+  width: 80%;
+  max-width: 250px;
+  padding: 10px;
   box-sizing: border-box;
-  padding-right: 5px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background: var(--beige);
+}
+.section-detail form .date-wrap {
+  box-sizing: border-box;
   position: relative;
   margin: 10px 0;
   display: block;
+}
+@media screen and (min-width:600px) {
+  .section-detail form .date-wrap {
+    width: 50%;
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width:600px) {
+  .section-detail form .date-wrap {
+    width: 100%;
+  }
 }
 .section-detail form .date-wrap input:not([type=checkbox], [type=radio]),
 .section-detail form .date-wrap textarea {
@@ -91,12 +109,21 @@
   height: 50px;
 }
 .section-detail form .time-wrap {
-  width: 50%;
   box-sizing: border-box;
-  padding-left: 5px;
   position: relative;
   margin: 10px 0;
   display: block;
+}
+@media screen and (min-width:600px) {
+  .section-detail form .time-wrap {
+    width: 50%;
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width:600px) {
+  .section-detail form .time-wrap {
+    width: 100%;
+  }
 }
 .section-detail form .time-wrap input:not([type=checkbox], [type=radio]),
 .section-detail form .time-wrap textarea {
@@ -370,17 +397,26 @@
 .section-detail form .desc-wrap a img {
   height: 50px;
 }
+.section-detail form .check-wrap {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .section-detail form .check-wrap input:checked + label img.img-check {
   display: none;
 }
 .section-detail form .check-wrap input:checked + label img.img-checked {
-  display: block;
+  display: inline-block;
 }
 .section-detail form .check-wrap label {
   cursor: pointer;
 }
 .section-detail form .check-wrap label img {
-  width: 180px;
+  width: 25px;
+  display: inline-block;
+  vertical-align: top;
 }
 .section-detail form .check-wrap label img.img-checked {
   display: none;

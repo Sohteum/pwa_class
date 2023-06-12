@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../App';
 import CompHomeOutput from './CompHomeOutput';
+import CompListLoader from '../compLoader/CompListLoader';
 
 
 
@@ -20,7 +21,7 @@ const CompHome = () => {
       {
         _docsArr
           ? <CompHomeOutput />
-          : <p>데이터를 불러오는중</p>
+          : <CompListLoader/>
       }
     </section>
   );

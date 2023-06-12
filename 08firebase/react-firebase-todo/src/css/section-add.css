@@ -5,12 +5,21 @@
   justify-content: center;
 }
 .section-add form .date-wrap {
-  width: 50%;
   box-sizing: border-box;
-  padding-right: 5px;
   position: relative;
   margin: 10px 0;
   display: block;
+}
+@media screen and (min-width:600px) {
+  .section-add form .date-wrap {
+    width: 50%;
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width:600px) {
+  .section-add form .date-wrap {
+    width: 100%;
+  }
 }
 .section-add form .date-wrap input:not([type=checkbox], [type=radio]),
 .section-add form .date-wrap textarea {
@@ -91,12 +100,21 @@
   height: 50px;
 }
 .section-add form .time-wrap {
-  width: 50%;
   box-sizing: border-box;
-  padding-left: 5px;
   position: relative;
   margin: 10px 0;
   display: block;
+}
+@media screen and (min-width:600px) {
+  .section-add form .time-wrap {
+    width: 50%;
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width:600px) {
+  .section-add form .time-wrap {
+    width: 100%;
+  }
 }
 .section-add form .time-wrap input:not([type=checkbox], [type=radio]),
 .section-add form .time-wrap textarea {

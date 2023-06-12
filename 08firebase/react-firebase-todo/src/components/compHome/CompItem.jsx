@@ -1,22 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-const CompItem = () => {
+const CompItem = ({ data, docid }) => {
+
+  let { timestamp,  date, outputUrl, time, title } = data
+  outputUrl = outputUrl ? outputUrl : 'https://firebasestorage.googleapis.com/v0/b/todoapp-7c8a2.appspot.com/o/common%2Fno-image.jpg?alt=media&token=76820abd-b1c2-442b-8dae-f2dd9c982910'
+
+
   return (
     <li>
-      <Link to={`/detail`}>
-        <img src={require('../../assets/img/list/no-image.jpg')} className='thumbnail' alt="" />
+      <Link to={`/detail/${docid}`}>
+        <img src={`${outputUrl}`} className='thumbnail' alt="" />
         <div className="metabox">
           <p>
             <time className='date'><img src={require('../../assets/img/list/icon-calendar.png')} alt="" />
-              2022-04-01
+             {date}
             </time>
             <time className='time'><img src={require('../../assets/img/list/icon-clock.png')} alt="" />
-              17:20
+             {time}
             </time>
           </p>
           <p>
-            <em className='title'><img src={require('../../assets/img/list/icon-pencil.png')} alt="" />일정이름 dlfwjd\dkfslkdflksf</em>
+            <em className='title'><img src={require('../../assets/img/list/icon-pencil.png')} alt="" />{title}</em>
           </p>
         </div>
         <img src={require('../../assets/img/list/more.png')} className='more' alt="" />
