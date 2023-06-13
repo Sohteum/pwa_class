@@ -79,7 +79,7 @@ function App() {
             <Route path="/signin" element={<CompSignin />} />
             <Route path="/signup" element={<CompSignup />} />
             <Route path="/add" element={<CompAdd />} />
-            <Route path="/detail/:id" element={<CompDetail />} />
+            <Route path="/detail/:docid" element={<CompDetail />} />
             <Route path="*" element={<Comp404 />} />
           </Routes>
 

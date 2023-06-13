@@ -25,12 +25,12 @@ export const fnDeleteCollection = (collectionName) => {//파일 전체 지우는
   })
 }
 
-export const fnGetDocsCnt =(collectionName)=>{
-  return new Promise((resolve)=>{
-    getCountFromServer( collection(db, collectionName)).
-    then((snapshot)=>{
-      resolve(snapshot.data().count)
-    })
+export const fnGetDocsCnt = (collectionName) => {
+  return new Promise((resolve) => {
+    getCountFromServer(collection(db, collectionName)).
+      then((snapshot) => {
+        resolve(snapshot.data().count)
+      })
 
   })
 }
@@ -48,14 +48,14 @@ export const fnGetDocs = (collectionName, limitCnt, nextDoc = null) => {
           docsArr: querySnapshot.docs,
           nextDoc: querySnapshot.docs[querySnapshot.docs.length - 1]
         })
-       
+
       })//getDocs
   })
 }
 
 
-export const fnGetDoc =(collectionName, docid)=>{
-  return new Promise((resolve)=>{
+export const fnGetDoc = (collectionName, docid) => {
+  return new Promise((resolve) => {
     const docRef = doc(db, collectionName, docid);
     getDoc(docRef).then((doc) => {
       resolve(doc.data()) //data붙여줘야함
@@ -64,18 +64,21 @@ export const fnGetDoc =(collectionName, docid)=>{
 }
 
 
-export const fnUpdateDoc =(collectionName, docid, data)=>{//data무조건 객체
-  return new Promise((resolve)=>{
+export const fnUpdateDoc = (collectionName, docid, data) => {//data무조건 객체
+  return new Promise((resolve) => {
     const docRef = doc(db, collectionName, docid);
-    updateDoc(docRef, data).then((doc)=>{
+    updateDoc(docRef, data).then((doc) => {
       resolve(doc.id, doc.data())
     })//updateDoc then
   })
 }
 
 
-// export const fnAddDoc =()=>{
-//   return new Promise((resolve)=>{
-
-//   })
-// }
+export const fnDeleteDoc = (collectionName, docid) => {
+  return new Promise((resolve) => {
+    const db = getFirestore();
+    deleteDoc(doc(db, collectionName, docid)).then(() => {
+      resolve()
+    })//deleteDoc then
+  })
+}

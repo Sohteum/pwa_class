@@ -5,14 +5,15 @@ export const storage = getStorage();
 export const fnUploadFile = (uid, file) => {
 
   return new Promise((resolve) => {
-    const storageRef = ref(storage, `${uid}/${Date.now()}-${file.name}`);
+    const path = `${uid}/${Date.now()}-${file.name}`
+    const storageRef = ref(storage, path);
     uploadBytes(storageRef, file).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((outputUrl) => {
 
         //사용자가 업로드했던 오리지널 네임일 필요한거 지금은 내가 임의로 Date.now붙였으니까
         resolve({
           outputUrl,
-          storageUrl: `${uid}/${Date.now()}-${file.name}`,
+          storageUrl: path,
           orgUrl: file.name,
         })
 
