@@ -33,6 +33,9 @@ const CompHomeOutput = () => {
       }
     })//observer
     observer.observe(refScrollTrigger.current)
+    return(()=>{
+      observer.disconnect()
+    })
   }, [])
 
 

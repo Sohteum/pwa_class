@@ -67,8 +67,8 @@ export const fnGetDoc = (collectionName, docid) => {
 export const fnUpdateDoc = (collectionName, docid, data) => {//data무조건 객체
   return new Promise((resolve) => {
     const docRef = doc(db, collectionName, docid);
-    updateDoc(docRef, data).then((doc) => {
-      resolve(doc.id, doc.data())
+    updateDoc(docRef, data).then(() => {
+      resolve()
     })//updateDoc then
   })
 }
@@ -82,3 +82,4 @@ export const fnDeleteDoc = (collectionName, docid) => {
     })//deleteDoc then
   })
 }
+

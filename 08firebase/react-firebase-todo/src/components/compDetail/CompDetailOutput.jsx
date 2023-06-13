@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { fnDeleteObject } from '../../fb/storage';
-import { fnDeleteDoc } from '../../fb/db';
+import { fnDeleteObject, fnUploadFile } from '../../fb/storage';
+import { fnDeleteDoc, fnGetDoc, fnUpdateDoc } from '../../fb/db';
 import { auth } from '../../fb/auth';
 import App, { AppContext } from '../../App';
 
@@ -19,8 +19,9 @@ const CompDetailOutput = ({ docData, docid }) => {
   const [_file, _setFile] = useState('')//스토리지에 업로드할때 쓰는거 지금 없는거라서 꺼내쓰는거 아님
   const [_fileLabel, _setFileLabel] = useState('이미지를 업로드하세요')
   const [_orgUrl, _setOrgUrl] = useState(orgUrl)
-  //const [_outputUrl, _setOutputUrl] = useState(outputUrl) //이 두개는 지금 값이 계속 변하는게 아니여서 스테이트관리는 필요없음. 초기에 한번만 찍어내면 됨. 스테이트는 값이 변경될때마다 화면을 변경하는게 목적이잖슴. 
-  // const [_storageUrl, _setStorageUrl] = useState(storageUrl) 
+
+  const [_checked, _setChecked] = useState(false)
+
   const navi = useNavigate()
 
   const fnDeleteHandler = async () => {//v파일을 먼저 지우고 문서를 지워야함 문서 먼저지우면 파일의정보를 찾을수없음
@@ -31,6 +32,36 @@ const CompDetailOutput = ({ docData, docid }) => {
     navi('/')
     _setFadeOut(true)
   }//fnDeleteHandler
+
+  const fnUpdateHandler = async () => {
+    if (_checked) {
+      await fnDeleteObject(storageUrl)
+      orgUrl = ''; outputUrl = ''; storageUrl = '';//다 지워줫으니까 빈데이터 설정
+    }
+
+    if (_file) {//파일을 등록했을경우
+      if (!orgUrl) {//이전파일을 삭제했을경우
+        await fnDeleteObject(storageUrl)
+      }
+      const urls = await fnUploadFile(auth.currentUser.uid, _file)
+      orgUrl = urls.orgUrl
+      outputUrl = urls.outputUrl
+      storageUrl = urls.storageUrl
+    }
+
+    const data = {
+      date: _date,
+      desc: _desc,
+      time: _time,
+      title: _title,
+      orgUrl,
+      outputUrl,
+      storageUrl,
+    }
+    await fnUpdateDoc(auth.currentUser.uid, docid, data)
+    alert('일정이 수정되었습니다\n일정목록으로 이동합니다')
+    navi('/')
+  }//fnUpdateHandler
 
   return (
     < >
@@ -52,7 +83,7 @@ const CompDetailOutput = ({ docData, docid }) => {
         {
           (orgUrl) &&
           <p className='check-wrap'>
-            <input id="check" type="checkbox" className='hidden' />
+            <input id="check" onChange={(e) => { _setChecked(e.target.checked) }} checked={_checked} type="checkbox" className='hidden' />
             <label htmlFor="check">
               <img className='img-check' src={require('../../assets/img/detail/check.png')} alt="" />
               <img className='img-checked' src={require('../../assets/img/detail/checked.png')} alt="" />
@@ -70,7 +101,7 @@ const CompDetailOutput = ({ docData, docid }) => {
 
       </form>
       <p className='btn-wrap'>
-        <button><img src={require('../../assets/img/detail/btn-update-list.png')} alt="" /></button>
+        <button onClick={fnUpdateHandler}><img src={require('../../assets/img/detail/btn-update-list.png')} alt="" /></button>
         <button onClick={fnDeleteHandler}><img src={require('../../assets/img/detail/btn-delete-list.png')} alt="" /></button>
         <Link to='/'><img src={require('../../assets/img/detail/btn-goto-list.png')} alt="" /></Link>
       </p>

@@ -7,7 +7,7 @@ import CompListLoader from '../compLoader/CompListLoader';
 
 const CompHome = () => {
 
-  const { _docsArr } = useContext(AppContext)
+  const { _isPending } = useContext(AppContext)
 
   useEffect(() => {
 
@@ -19,9 +19,9 @@ const CompHome = () => {
     <section className='section-home'>
 
       {
-        _docsArr
-          ? <CompHomeOutput />
-          : <CompListLoader/>
+        _isPending
+          ? <CompListLoader/> //대기중일때 스피너를 보여줘
+          : <CompHomeOutput />
       }
     </section>
   );

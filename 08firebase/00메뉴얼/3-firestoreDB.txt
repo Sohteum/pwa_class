@@ -24,6 +24,7 @@
   ● setDoc() //id수동생성
     import { doc, setDoc, getFirestore } from "firebase/firestore";
     const db = getFirestore();
+
     setDoc(doc(db, 컬렉션네임, 문서id), {
       id: "123456789",
       name: "홍길동",
@@ -119,50 +120,54 @@
     //pagenation init
     getDocs(query(collection(db, "컬렉션네임"), orderBy('키네임', '정렬방법'), limit(출력갯수)))
       .then((querySnapshot) => {
-        console.log({
+         console.log({
           docsArr: querySnapshot.docs,
           nextDoc: querySnapshot.docs[querySnapshot.docs.length - 1]
-      })
+        })
       })//getDocs
 
     //pagenation append
     getDocs(query(collection(db, "컬렉션네임"), orderBy('키네임', '정렬방법'), startAfter(시작문서), limit(출력갯수)))
       .then((querySnapshot) => {
-       console.log({
+        console.log({
           docsArr: querySnapshot.docs,
           nextDoc: querySnapshot.docs[querySnapshot.docs.length - 1]
-      })
+        })
       })//getDocs
 
 ■  실시간 업데이트 리스너
   ● 컬렉션 업데이트 리스너 추가 
     import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
     const db = getFirestore()
-    onSnapshot(
-      collection(db, 컬렉션이름), (snapshot) => {
+    onSnapshot( 
+      collection(db, 컬렉션이름), 
+      (snapshot) => {
         console.log(snapshot.docs)
-      },
-      (error) => {
-        console.log('db access error')    
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+            console.log('일부 문서가 추가됨')
+          }else if (change.type === "modified") {
+            console.log('일부 문서가 수정됨')
+          }else if (change.type === "removed") {
+            console.log('일부 문서가 삭제됨')
+          }
+        })
+      },(error) => {
+        alert(error.message)
       })
-
 
   ● 문서 업데이트 리스너 
     import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
     const db = getFirestore()
-    try{
-      onSnapshot(
-        collection(db, "컬렉션이름","문서id"), 
-        (doc) => {
-          console.log("Current data: ", doc.data());
-        },
-        (error) => {
-          console.log('db access error')  
-        }
-      )
-    }catch{
-      console.log('onsnapshot error')   
-    }
+    onSnapshot(
+      collection(db, "컬렉션이름","문서id"), 
+      (doc) => {
+        console.log("Current data: ", doc.data());
+      },
+      (error) => {
+        console.log('db access error')  
+      }
+    )
 
   ● 실시간 업데이트 리스너 제거
   import { doc, onSnapshot ,getFirestore} from "firebase/firestore";
@@ -170,15 +175,15 @@
   onSnapshot(collection(db, "컬렉션이름"), () => {})
 
 ■ 문서 업데이트-------------------------------------------------------------------------------------------
-  ● updateDoc
+  ● updateDoc (특정필드 업데이트, 문서아이디를 알고있는 상태에서 문서 전체내용을 덮어쓰려면 setDoc를 이용)
     import { doc, updateDoc, getFirestore} from "firebase/firestore";
     const db = getFirestore();
-    const docRef = doc(db, "컬렉션이름", 문서id);
+    const docRef = doc(db, "컬렉션이름", "문서id");
     updateDoc(docRef, {
       '필드네임1': '값',
       '필드네임2.color': 'blue', //필드네임2 값이 객체일경우 예시
-    }).then((doc)=>{
-      console.log (doc.id, doc.data())
+    }).then(()=>{
+      console.log('업데이트 완료')
     })//updateDoc then
 
   ● 중첩컬렉션 문서 업데이트
