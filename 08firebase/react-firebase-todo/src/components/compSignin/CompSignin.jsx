@@ -28,7 +28,7 @@ const CompSignin = () => {
     await fnSetPersistence(_checked, _setFadeOut)
     await fnSignin(_email, _password, _setFadeOut)
  
-    if (auth.currentUser.emailVerified) {
+    if (auth.currentUser.emailVerified || auth.currentUser.email === 'guest@mail.com') {
       alert(`${auth.currentUser.displayName}님 환영합니다\n일정페이지로 이동합니다`)
       //onauthState 이벤트에서 home으로 이동됨
     } else {

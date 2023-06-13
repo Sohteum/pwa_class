@@ -25,6 +25,11 @@ const CompDetailOutput = ({ docData, docid }) => {
   const navi = useNavigate()
 
   const fnDeleteHandler = async () => {//v파일을 먼저 지우고 문서를 지워야함 문서 먼저지우면 파일의정보를 찾을수없음
+    if (auth.currentUser.email === 'guest@mail.com') {
+      alert('게스트 회원님은 삭제 권한이 부여되지 않았습니다')
+      return false
+    }
+
     _setShowLoader(true)
     storageUrl && await fnDeleteObject(storageUrl)
     await fnDeleteDoc(auth.currentUser.uid, docid)
@@ -34,6 +39,10 @@ const CompDetailOutput = ({ docData, docid }) => {
   }//fnDeleteHandler
 
   const fnUpdateHandler = async () => {
+    if (auth.currentUser.email === 'guest@mail.com') {
+      alert('게스트 회원님은 수정 권한이 부여되지 않았습니다')
+      return false
+    }
     if (_checked) {
       await fnDeleteObject(storageUrl)
       orgUrl = ''; outputUrl = ''; storageUrl = '';//다 지워줫으니까 빈데이터 설정

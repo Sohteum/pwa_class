@@ -32,22 +32,27 @@ function App() {
 
   const navi = useNavigate()
 
+  const fnGetDocsHandler = async () => {
+    _setIsPending(true)
+    const { docsArr, nextDoc } = await fnGetDocs(auth.currentUser.uid, 3)
+    const docsCnt = await fnGetDocsCnt(auth.currentUser.uid)//순서, onsnapshot안쪽에서는 캐싱이되는걸로 보임
+
+    _setDocsCnt(docsCnt); _setDocsArr(docsArr); _setDocsOutputArr(docsArr); _setNextDocs(nextDoc);
+    _setIsPending(false)
+  }
+
   useEffect(() => {
 
-    onAuthStateChanged(auth, (user) => {
-      if (user && auth.currentUser.emailVerified) {//로그인
+    onAuthStateChanged(auth, () => {
+      if (auth.currentUser && (auth.currentUser.emailVerified || auth.currentUser.email === 'guest@mail.com')) {//로그인
         _setIsLogged(true)
         navi('/')
+        fnGetDocsHandler()
         onSnapshot(collection(db, auth.currentUser.uid), (snapshot) => {
 
-          snapshot.docChanges().forEach(async(change) => {
+          snapshot.docChanges().forEach(async (change) => {
             if (change.type === "added" || change.type === "removed") {
-              _setIsPending(true)
-              const { docsArr, nextDoc } = await fnGetDocs(auth.currentUser.uid, 3)
-              const docsCnt = await fnGetDocsCnt(auth.currentUser.uid)//순서, onsnapshot안쪽에서는 캐싱이되는걸로 보임
-
-              _setDocsCnt(docsCnt); _setDocsArr(docsArr); _setDocsOutputArr(docsArr); _setNextDocs(nextDoc);
-              _setIsPending(false)
+              fnGetDocsHandler()
             }//if
           })//forEach
         })//snapshot

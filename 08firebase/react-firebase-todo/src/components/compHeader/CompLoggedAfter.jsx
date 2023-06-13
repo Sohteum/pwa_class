@@ -16,6 +16,11 @@ const CompLoggedAfter = () => {
   }
 
   const fbDeleteUserHandler = async () => {
+    if (auth.currentUser.email === 'guest@mail.com') {
+      alert('게스트 회원님은 탈퇴 권한이 부여되지 않았습니다')
+      return false
+    }
+
     const result = window.confirm('회원님과 관련된 모든 정보가 삭제됩니다\n정말 탈퇴하시겠습니까?')
     if (!result) return false
 

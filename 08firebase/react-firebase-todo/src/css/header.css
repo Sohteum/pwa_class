@@ -1,7 +1,7 @@
 header {
   position: relative;
   height: 10%;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid rgba(136, 28, 28, 0.1);
 }
 header img.pin {
   position: absolute;

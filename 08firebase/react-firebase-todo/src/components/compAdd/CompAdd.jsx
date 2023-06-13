@@ -19,6 +19,11 @@ const CompAdd = () => {
   const navi = useNavigate()
 
   const fnAddDocHandler = async () => {
+    if (auth.currentUser.email === 'guest@mail.com') {
+      alert('게스트 회원님은 쓰기 권한이 부여되지 않았습니다')
+      return false
+    }
+
     if (!_validity) {
       alert('시간,날짜,일정명은 필수 입력항목입니다')
       return false
