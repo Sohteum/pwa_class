@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import CompItem from './CompItem';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
@@ -6,6 +6,9 @@ import { fnGetDocs } from '../../fb/db';
 import { auth } from '../../fb/auth';
 
 const CompHomeOutput = () => {
+
+  const [_isActive, _setIsActive] = useState(false)
+  const [_keyword, _setKeyword] = useState('')
 
   const {
     _docsCnt, _setDocsCnt,
@@ -18,16 +21,36 @@ const CompHomeOutput = () => {
 
   const refScrollTrigger = useRef()
   const scrollWrap = useRef()
+  const refInput = useRef()
 
   const fnScrollHandler = (e) => {
     //$(window).scrollTop()->window.scrollY(스크롤와이는 윈도우에만 쓸수있는거 브라우저우측에달린스크롤바말이야)
     _setScrollTop(e.target.scrollTop)
 
+  }//fnScrollHandler
+
+  const fnSearchHandler = (e) => {
+    _setKeyword(e.target.value);//내용바꿈
+    _setDocsOutputArr(_docsArr.filter(v => v.data().title.includes(e.target.value)))
+  }//fnSearchHandler
+
+  const fnSubmitHandler = (e) => {
+    e.preventDefault();
+    _setIsActive(false);
+    _setKeyword('');
+    _setDocsOutputArr([..._docsArr])
+
   }
 
+  const fnSearchBtnClickHandler = () => {
+    _setKeyword('')
+    refInput.current.focus()
+    _setDocsOutputArr([..._docsArr])
+    _setIsActive(c => !c)
+  }//fnSearchBtnClickHandler
 
   useEffect(() => {
-    scrollWrap.current.scrollTo({top:_scrollTop, behavior:'smooth'})//스크롤할때마다 마지막 스크롤 위치를 기억하고 갱신
+    scrollWrap.current.scrollTo({ top: _scrollTop, behavior: 'smooth' })//스크롤할때마다 마지막 스크롤 위치를 기억하고 갱신
 
     let docsArrRef = [..._docsArr] //이게배열
     let nextDocRef = _nextDoc //이건문서
@@ -52,6 +75,7 @@ const CompHomeOutput = () => {
 
 
 
+
   return (
     <>
       <h2>
@@ -61,26 +85,29 @@ const CompHomeOutput = () => {
 
         {
           _docsOutputArr.length //맨첨엔 내가 5개만 꺼내옴 app에서, 그리고 내가 가진거 이상으로 나오면 안되니까 설정해줘야지
-            ?
-            <ul className='list-container'>
+            ? <ul className='list-container'>
               {
                 _docsOutputArr.map(v => <CompItem key={v.data().timestamp} data={v.data()} docid={v.id} />)
               }
             </ul>
-            :
-            <img className='no-list' src={require('../../assets/img/list/alert-no-list.png')} alt="" />
+            : <img className='no-list' src={require('../../assets/img/list/alert-no-list.png')} alt="" />
         }
         <div ref={refScrollTrigger} className="scroll-trigger"></div>
+
       </div>
+
+      <form onSubmit={fnSubmitHandler} className={`search-form ${_isActive ? 'active' : ''}`}>
+        <input ref={refInput} onChange={fnSearchHandler} value={_keyword} type="text" placeholder='검색어를 입력하세요' />
+      </form>
 
       <p className="btn-wrap">
         <Link to='/add'>
           <img src={require('../../assets/img/list/btn-add-list.png')} alt="" />
         </Link>
-        <button>
+        <button onClick={fnSearchBtnClickHandler}>
           <img src={require('../../assets/img/list/search.png')} alt="" />
         </button>
-      </p>
+      </p >
     </>
   );
 };

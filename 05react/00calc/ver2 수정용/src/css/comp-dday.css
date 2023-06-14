@@ -91,7 +91,7 @@ section.dday article.dday-list .filter-form fieldset legend {
 }
 section.dday article.dday-list .filter-form fieldset button {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 10px 0;
   outline: none;
   border-radius: 30px;
@@ -244,7 +244,7 @@ section.dday form.dday-add {
   justify-content: center;
 }
 section.dday form.dday-add p {
-  padding: 15px 0;
+  padding: 10px 0;
   border-top: 2px groove rgba(255, 255, 255, 0.2);
 }
 section.dday form.dday-add p label {
@@ -272,7 +272,6 @@ section.dday form.dday-add p input::-webkit-calendar-picker-indicator {
 }
 section.dday form.dday-add button {
   width: 100%;
-  margin-top: 15px;
   padding: 10px 0;
   outline: none;
   border-radius: 25px;
@@ -307,7 +306,7 @@ section.dday form.dday-add .fa-arrow-left:hover.active {
 }
 section.dday div.now {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: #fff;

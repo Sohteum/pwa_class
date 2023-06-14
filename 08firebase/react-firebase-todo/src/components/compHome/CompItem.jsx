@@ -13,7 +13,9 @@ const CompItem = ({ data, docid }) => {
       _docsOutputArr, _setDocsOutputArr,
       fnGetDocsHandler, _loadedCnt
     } = useContext(AppContext)
+
   let { timestamp, date, outputUrl, time, title, storageUrl, completed } = data
+  
   const navi = useNavigate()
 
   outputUrl = outputUrl ? outputUrl : 'https://firebasestorage.googleapis.com/v0/b/todoapp-7c8a2.appspot.com/o/common%2Fno-image.jpg?alt=media&token=76820abd-b1c2-442b-8dae-f2dd9c982910'
