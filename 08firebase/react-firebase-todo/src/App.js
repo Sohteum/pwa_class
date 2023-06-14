@@ -1,7 +1,7 @@
 import fb from "./fb/config";
 import { auth } from "./fb/auth";
 import { onAuthStateChanged } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import CompHeader from "./components/compHeader/CompHeader";
 import CompSignin from "./components/compSignin/CompSignin";
 import { Route, Routes, useNavigate } from "react-router-dom";
@@ -25,21 +25,24 @@ function App() {
   const [_showLoader, _setShowLoader] = useState(true)
   const [_fadeOut, _setFadeOut] = useState(false)
   const [_docsCnt, _setDocsCnt] = useState(0)
+  const [_loadedCnt, _setLoadedCnt] = useState(0) //문서가 하나도 안불러와졌으니까 0
   const [_docsArr, _setDocsArr] = useState(null)
   const [_docsOutputArr, _setDocsOutputArr] = useState(null)
   const [_nextDoc, _setNextDocs] = useState(null)
   const [_isPending, _setIsPending] = useState(true)//처음에는 대기상태로 만들어줌>변화가 있을때마다 대기하도록 만들어줌>송신이 끝나면 목록출력
+  const [_scrollTop, _setScrollTop] = useState(true)
 
   const navi = useNavigate()
 
-  const fnGetDocsHandler = async () => {
-    _setIsPending(true)
-    const { docsArr, nextDoc } = await fnGetDocs(auth.currentUser.uid, 3)
-    const docsCnt = await fnGetDocsCnt(auth.currentUser.uid)//순서, onsnapshot안쪽에서는 캐싱이되는걸로 보임
+  const fnGetDocsHandler = useCallback(//함수에 함수를 싸서 하이오더펑션이라고 하는데 리액트훅스. 앱 리랜더링될때 다시 안읽음. 새로 쓰지 말라는뜻(최적화)
+    async (cnt) => {
+      _setIsPending(true)
+      const { docsArr, nextDoc } = await fnGetDocs(auth.currentUser.uid, cnt )
+      const docsCnt = await fnGetDocsCnt(auth.currentUser.uid)//순서, onsnapshot안쪽에서는 캐싱이되는걸로 보임
 
-    _setDocsCnt(docsCnt); _setDocsArr(docsArr); _setDocsOutputArr(docsArr); _setNextDocs(nextDoc);
-    _setIsPending(false)
-  }
+      _setDocsCnt(docsCnt); _setDocsArr(docsArr); _setDocsOutputArr(docsArr); _setNextDocs(nextDoc); _setLoadedCnt(cnt);
+      _setIsPending(false);
+    },[])
 
   useEffect(() => {
 
@@ -47,13 +50,15 @@ function App() {
       if (auth.currentUser && (auth.currentUser.emailVerified || auth.currentUser.email === 'guest@mail.com')) {//로그인
         _setIsLogged(true)
         navi('/')
-        fnGetDocsHandler()
-        onSnapshot(collection(db, auth.currentUser.uid), (snapshot) => {
+        fnGetDocsHandler(5)//문서를 처음부터 5개만 가져온다
 
+        onSnapshot(collection(db, auth.currentUser.uid), (snapshot) => {//데이터베이스가 변화감지
           snapshot.docChanges().forEach(async (change) => {
-            if (change.type === "added" || change.type === "removed") {
-              fnGetDocsHandler()
-            }//if
+            if (change.type === "added" || change.type === "removed") {//문서를 추가하거나 삭제했을때
+              _setScrollTop(0)//스크롤위치 처음으로 조정
+              fnGetDocsHandler(5)//앱이 시작했을때 문서를 처음부터 5개만 가져옴
+
+            }
           })//forEach
         })//snapshot
       } else {//로그아웃
@@ -80,6 +85,9 @@ function App() {
       _docsOutputArr, _setDocsOutputArr,
       _nextDoc, _setNextDocs,
       _isPending, _setIsPending,
+      _loadedCnt, _setLoadedCnt,
+      fnGetDocsHandler,
+      _scrollTop, _setScrollTop,
     }}>
       <main>
         <img className="main-bg" src={require('./assets/img/common/main-bg.png')} alt="" />

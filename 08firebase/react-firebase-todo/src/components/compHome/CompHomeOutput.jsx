@@ -12,11 +12,22 @@ const CompHomeOutput = () => {
     _docsArr, _setDocsArr,
     _docsOutputArr, _setDocsOutputArr,
     _nextDoc, _setNextDocs,
+    _loadedCnt, _setLoadedCnt,
+    _scrollTop, _setScrollTop,
   } = useContext(AppContext)
 
   const refScrollTrigger = useRef()
+  const scrollWrap = useRef()
+
+  const fnScrollHandler = (e) => {
+    //$(window).scrollTop()->window.scrollY(스크롤와이는 윈도우에만 쓸수있는거 브라우저우측에달린스크롤바말이야)
+    _setScrollTop(e.target.scrollTop)
+
+  }
+
 
   useEffect(() => {
+    scrollWrap.current.scrollTo({top:_scrollTop, behavior:'smooth'})//스크롤할때마다 마지막 스크롤 위치를 기억하고 갱신
 
     let docsArrRef = [..._docsArr] //이게배열
     let nextDocRef = _nextDoc //이건문서
@@ -30,13 +41,15 @@ const CompHomeOutput = () => {
         _setDocsOutputArr([...docsArrRef])
         _setNextDocs(nextDoc)
         nextDocRef = nextDoc
+        _setLoadedCnt(c => c + 2)
       }
     })//observer
     observer.observe(refScrollTrigger.current)
-    return(()=>{
+    return (() => {
       observer.disconnect()
     })
   }, [])
+
 
 
   return (
@@ -44,14 +57,14 @@ const CompHomeOutput = () => {
       <h2>
         <img src={require('../../assets/img/list/title-list.png')} alt="" />
       </h2>
-      <div className="scroll-wrap">
+      <div ref={scrollWrap} onScroll={fnScrollHandler} className="scroll-wrap">
 
         {
           _docsOutputArr.length //맨첨엔 내가 5개만 꺼내옴 app에서, 그리고 내가 가진거 이상으로 나오면 안되니까 설정해줘야지
             ?
             <ul className='list-container'>
               {
-                _docsOutputArr.map(v => <CompItem key={v.data().timestamp} data={v.data() } docid={v.id}/>)
+                _docsOutputArr.map(v => <CompItem key={v.data().timestamp} data={v.data()} docid={v.id} />)
               }
             </ul>
             :
@@ -60,10 +73,13 @@ const CompHomeOutput = () => {
         <div ref={refScrollTrigger} className="scroll-trigger"></div>
       </div>
 
-      <p className="add-btn-wrap">
+      <p className="btn-wrap">
         <Link to='/add'>
-          <img src={require('../../assets/img/list/btn-add-new-list.png')} alt="" />
+          <img src={require('../../assets/img/list/btn-add-list.png')} alt="" />
         </Link>
+        <button>
+          <img src={require('../../assets/img/list/search.png')} alt="" />
+        </button>
       </p>
     </>
   );

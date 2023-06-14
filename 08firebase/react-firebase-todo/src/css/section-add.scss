@@ -45,35 +45,5 @@
     }
     
   } //form
-  .btn-wrap {
-    text-align: center;
-    button, a {
-      display: inline-block;
-      width: 45%;
-      max-width: 200px;
-      &:active {
-        animation: pulse 0.5s;
-      }
-      @keyframes pulse {
-        0% {
-          transform: scale3d(1, 1, 1);
-        }
-        25% {
-          transform: scale3d(1.1, 1.1, 1.1);
-        }
-        50% {
-          transform: scale3d(0.9, 0.9, 0.9);
-        }
-        75% {
-          transform: scale3d(1.05, 1.05, 1.05);
-        }
-        100% {
-          transform: scale3d(1, 1, 1);
-        }
-      } //keyframes
-      img {
-        max-width: 100%;
-      }
-    }
-  } //btn-wrap
+ 
 }

@@ -110,6 +110,37 @@ body {
     background-color: var(--sky);
   }
 }
+#root main article section .btn-wrap {
+  text-align: center;
+}
+#root main article section .btn-wrap button, #root main article section .btn-wrap a {
+  display: inline-block;
+  width: 45%;
+  max-width: 200px;
+}
+#root main article section .btn-wrap button:active, #root main article section .btn-wrap a:active {
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  75% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+#root main article section .btn-wrap button img, #root main article section .btn-wrap a img {
+  max-width: 100%;
+}
 #root footer {
   position: fixed;
   left: 50%;

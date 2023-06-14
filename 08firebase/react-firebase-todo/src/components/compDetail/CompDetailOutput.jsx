@@ -8,7 +8,7 @@ import App, { AppContext } from '../../App';
 
 const CompDetailOutput = ({ docData, docid }) => {
 
-  const { _setShowLoader, _setFadeOut } = useContext(AppContext)
+  const { _setShowLoader, _setFadeOut, fnGetDocsHandler, _loadedCnt } = useContext(AppContext)
 
   let { date, time, desc, title, orgUrl, outputUrl, storageUrl } = docData
 
@@ -19,24 +19,11 @@ const CompDetailOutput = ({ docData, docid }) => {
   const [_file, _setFile] = useState('')//스토리지에 업로드할때 쓰는거 지금 없는거라서 꺼내쓰는거 아님
   const [_fileLabel, _setFileLabel] = useState('이미지를 업로드하세요')
   const [_orgUrl, _setOrgUrl] = useState(orgUrl)
-
   const [_checked, _setChecked] = useState(false)
 
   const navi = useNavigate()
 
-  const fnDeleteHandler = async () => {//v파일을 먼저 지우고 문서를 지워야함 문서 먼저지우면 파일의정보를 찾을수없음
-    if (auth.currentUser.email === 'guest@mail.com') {
-      alert('게스트 회원님은 삭제 권한이 부여되지 않았습니다')
-      return false
-    }
 
-    _setShowLoader(true)
-    storageUrl && await fnDeleteObject(storageUrl)
-    await fnDeleteDoc(auth.currentUser.uid, docid)
-    alert('일정을 삭제했습니다\n일정목록으로 이동합니다')
-    navi('/')
-    _setFadeOut(true)
-  }//fnDeleteHandler
 
   const fnUpdateHandler = async () => {
     if (auth.currentUser.email === 'guest@mail.com') {
@@ -58,16 +45,9 @@ const CompDetailOutput = ({ docData, docid }) => {
       storageUrl = urls.storageUrl
     }
 
-    const data = {
-      date: _date,
-      desc: _desc,
-      time: _time,
-      title: _title,
-      orgUrl,
-      outputUrl,
-      storageUrl,
-    }
+    const data = { date: _date, desc: _desc, time: _time, title: _title, orgUrl, outputUrl, storageUrl, }
     await fnUpdateDoc(auth.currentUser.uid, docid, data)
+    fnGetDocsHandler(_loadedCnt)
     alert('일정이 수정되었습니다\n일정목록으로 이동합니다')
     navi('/')
   }//fnUpdateHandler
@@ -110,9 +90,8 @@ const CompDetailOutput = ({ docData, docid }) => {
 
       </form>
       <p className='btn-wrap'>
-        <button onClick={fnUpdateHandler}><img src={require('../../assets/img/detail/btn-update-list.png')} alt="" /></button>
-        <button onClick={fnDeleteHandler}><img src={require('../../assets/img/detail/btn-delete-list.png')} alt="" /></button>
-        <Link to='/'><img src={require('../../assets/img/detail/btn-goto-list.png')} alt="" /></Link>
+        <button onClick={fnUpdateHandler}><img src={require('../../assets/img/detail/btn-edit-list.png')} alt="" /></button>
+        <Link to='/'><img src={require('../../assets/img/detail/btn-backto-list.png')} alt="" /></Link>
       </p>
     </ >
   );

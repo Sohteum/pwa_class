@@ -7,7 +7,7 @@ import { AppContext } from '../../App';
 
 const CompAdd = () => {
 
-  const { _setShowLoader, _setFadeOut} = useContext(AppContext)
+  const { _setShowLoader, _setFadeOut } = useContext(AppContext)
 
   const [_date, _setDate] = useState('')
   const [_time, _setTime] = useState('')
@@ -19,10 +19,10 @@ const CompAdd = () => {
   const navi = useNavigate()
 
   const fnAddDocHandler = async () => {
-    if (auth.currentUser.email === 'guest@mail.com') {
-      alert('게스트 회원님은 쓰기 권한이 부여되지 않았습니다')
-      return false
-    }
+    // if (auth.currentUser.email === 'guest@mail.com') {
+    //   alert('게스트 회원님은 쓰기 권한이 부여되지 않았습니다')
+    //   return false
+    // }
 
     if (!_validity) {
       alert('시간,날짜,일정명은 필수 입력항목입니다')
@@ -30,7 +30,7 @@ const CompAdd = () => {
     }
     _setShowLoader(true)
     const { outputUrl, storageUrl, orgUrl } = _file
-   ? await fnUploadFile(auth.currentUser.uid, _file) //아래 주석한거 세개가 객체로 나옴. 
+      ? await fnUploadFile(auth.currentUser.uid, _file) //아래 주석한거 세개가 객체로 나옴. 
       : { outputUrl: '', storageUrl: '', orgUrl: '' }
 
     const data = {
@@ -75,10 +75,14 @@ const CompAdd = () => {
           }} type="file" id='file' className='hidden' />
           <label htmlFor="file">{_fileLabel}</label>
         </p>
-        <p className='btn-wrap'>
-          <button onClick={fnAddDocHandler}><img src={require('../../assets/img/add/btn-add-list.png')} alt="" /></button>
-          <Link to='/'><img src={require('../../assets/img/add/btn-backto-list.png')} alt="" /></Link></p>
       </form>
+      <p className='btn-wrap'>
+        <button onClick={fnAddDocHandler}>
+          <img src={require('../../assets/img/add/btn-add-list.png')} alt="" />
+        </button>
+        <Link to='/'><img src={require('../../assets/img/add/btn-backto-list.png')} alt="" />
+        </Link>
+      </p>
     </section>
 
   );
