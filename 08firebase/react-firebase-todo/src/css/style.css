@@ -21,6 +21,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
+  min-height: 650px;
   background-image: url(../assets/img/common/bg-pattern.jpg);
 }
 #root img.deco-top {
@@ -116,10 +117,14 @@ body {
 #root main article section .btn-wrap button, #root main article section .btn-wrap a {
   display: inline-block;
   width: 45%;
-  max-width: 200px;
+  max-width: 180px;
 }
 #root main article section .btn-wrap button:active, #root main article section .btn-wrap a:active {
   animation: pulse 0.5s;
+}
+#root main article section .btn-wrap button img, #root main article section .btn-wrap a img {
+  width: 100%;
+  object-fit: contain;
 }
 @keyframes pulse {
   0% {
@@ -138,11 +143,8 @@ body {
     transform: scale3d(1, 1, 1);
   }
 }
-#root main article section .btn-wrap button img, #root main article section .btn-wrap a img {
-  max-width: 100%;
-}
 #root footer {
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 10px;
   transform: translate(-50%, 0);

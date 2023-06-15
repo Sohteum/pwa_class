@@ -40,8 +40,10 @@ const CompSignin = () => {
   }
 
   const fnSignInWithPopupHandler = async () => {
+    _setShowLoader(true)
     await fnSignInWithPopup(_setFadeOut)
     alert("구글 계정으로 로그인 하셨습니다")
+    _setFadeOut(true)
   }
 
   const fnSendPasswordResetEmailHandler = async () => {

@@ -42,7 +42,8 @@
   width: 100%;
 }
 
-.list-loader, .detail-loader {
+.list-loader,
+.detail-loader {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -51,10 +52,68 @@
   mix-blend-mode: multiply;
   filter: sepia(100%);
 }
-.list-loader img, .detail-loader img {
+.list-loader img,
+.detail-loader img {
   width: 80%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.coatch {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100%, 540px);
+  height: min(100%, 740px);
+  background-color: yellow;
+  background-image: url(../assets/img/coatch/bg.png);
+  background-size: cover;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: opacity 1s;
+}
+.coatch.deactive {
+  opacity: 0;
+}
+.coatch .wrap {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.coatch .wrap .coatch-img {
+  width: 100%;
+}
+.coatch .wrap .check-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+.coatch .wrap .check-wrap input:checked ~ label .check {
+  display: none;
+}
+.coatch .wrap .check-wrap input:checked ~ label .checked {
+  display: block;
+}
+.coatch .wrap .check-wrap label {
+  display: block;
+  max-width: 350px;
+  margin: 0 auto;
+  margin-top: -20px;
+  cursor: pointer;
+}
+.coatch .wrap .check-wrap label img {
+  width: 100%;
+}
+.coatch .wrap .check-wrap label img.checked {
+  display: none;
+}
+.coatch .wrap .check-wrap button {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+}
+.coatch .wrap .check-wrap button img {
+  width: 100%;
 }/*# sourceMappingURL=loader.css.map */

@@ -14,3 +14,26 @@ hosting url 확인
 콘솔/빌드/호스팅 상세내역 확인
 재배포 (npm run build, firebase deploy)
 
+
+
+
+  콘솔의 빌드메뉴에서 호스팅 추가
+  다음 누르기
+  다음
+  콘솔로이동
+
+  npm run build
+
+  firebase login 터미널에서 입력
+  firebase init터미널에서 입력
+  q에 y답하기
+  >(*) Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+  선택하기
+
+  해당프로젝트선택
+  ? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
+? File build/index.html already exists. Overwrite? No
+
+재배포(npm run build, firebase deploy)

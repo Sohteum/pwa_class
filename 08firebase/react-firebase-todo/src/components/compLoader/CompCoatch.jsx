@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useContext, useRef, useState } from 'react';
+import { AppContext } from '../../App';
+
 
 const CompCoatch = () => {
-  return (
-    <div>
-      <p>
-        게스트 회원 이메일과 비밀번호로
-        <em>
-          email : guest@mail.com <br />
-          password : 123456
-        </em>
-        앱을 사용하실 수 있습니다. <br />
 
-        <em>
-          게스트 회원은 <u>쓰기 및 편집권한</u>이 제한됩니다
-        </em>
-      </p>
+  const [_checked, _setChecked] = useState(false)
+  const { _coatchShow, _setCoatchShow } = useContext(AppContext)
+  const refCoatch = useRef()
+
+  const fnCoatchCloseHandler = () => {
+    _checked && window.localStorage.setItem('coatchExpires', Date.now()+60*1000*60*24)//60*1000*60*24
+    refCoatch.current.classList.add('deactive')
+  }
+
+  return (
+    <div onTransitionEnd={e => { _setCoatchShow(false) }} ref={refCoatch} className='coatch'>
+      <div className="wrap">
+        <img className='coatch-img' src={require('../../assets/img/coatch/coatch.png')} alt="" />
+        <div className="check-wrap">
+          <input onChange={e => { _setChecked(e.target.checked) }} checked={_checked} type="checkbox" id="chk-view" className='hidden' />
+          <label htmlFor="chk-view">
+            <img className='check' src={require('../../assets/img/coatch/check.png')} alt="" />
+            <img className='checked' src={require('../../assets/img/coatch/checked.png')} alt="" />
+          </label>
+          <button onClick={fnCoatchCloseHandler}>
+            <img src={require('../../assets/img/coatch/close.png')} alt="" />
+          </button>
+        </div>
+
+      </div>
     </div>
   );
 };
