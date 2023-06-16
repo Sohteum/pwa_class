@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="cur">
+
+  </div>
+  <br><br><br><br><br>
+  <button>버튼</button>
+  <a href="">hello</a>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- 여기서 br을 많이 넣으면 pageX의 크기만 달라지게 되는데 그 이유는?
+  클라이언트는 브라우저기준
+  하지만 페이지는 페이지기준
+  긍까 앱솔루트면 페이지에 대입을하고(엡솔은 총 큰 페이지 스크롤 페이지 그거 기준인거지)
+  픽스드는 클라이언트 기준이겠지(클라이언트는 브라우저기준이니까)
+  -->
+  <!-- 총 네개 있는데 세개만 알면 됨 -->
+  <div class="ex1">
+    <p>1.마우스좌표를 출력합니다.</p>
+    <br>
+    clientX:<span class="client-x"></span>
+    clientY:<span class="client-y"></span>
+    <br>
+    pageX:<span class="page-x"></span>
+    pageY:<span class="page-y"></span>
+    <br>
+    offsetX:<span class="offset-x"></span>
+    offsetY:<span class="offset-y"></span>
+    <!-- 객체기준으로 브라우저와는 상관이 없음
+    
+    1. 제이쿼리의 경우에는 오프셋y100=클라이언트100, page1000인경우 이렇게 구한다!
+    -마우스좌표를 페이지y로 구함 그럼 
+    -jquery : (마우스의)pageY(1200)-box.offsetTop(1100)
+    -vanila : (마우스의)clientY(200)-box.getBoundingclientrect().width(100) 이거는 무조건 브라우저기준으로 동작함
+    자바스크립트만 오프셋을 제공하기때문에 이 방법을 기억해야함
+  겟바운딩클라이언트렉트?라는걸 하면 상하좌우 얼마나떨어져있는지 정함
+  -->
+  </div>
+  <hr>
+
+  <div class="ex2">
+    <p>2.vanila mouse offset</p>
+    <br>
+    offsetX:<span class="offset-x"></span>
+    offsetY:<span class="offset-y"></span>
+  </div>
+
+
+
+
+</body>
+
+</html>

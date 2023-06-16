@@ -9,8 +9,8 @@ body {
 
 :root {
   --main-color: #FF2A2A;
+  --sub-color: #F4CD0A;
   --dark-color: #333;
-  --sub-color: #FF5555;
   --header-height: 60px;
 }
 

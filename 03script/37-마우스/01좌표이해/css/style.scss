@@ -1,0 +1,68 @@
+// *{
+//   cursor: url(../img/KakaoTalk_20230616_114530023.png) 0 40 ,pointer; //지워졌을때 웹브라우저에 지정된 모양으로 쓰라는 뜻
+// }
+button,
+a {
+  &:hover {
+    color: red;
+  }
+}
+
+body{
+  background-color: #FFF;
+}
+// button, a{
+//   cursor: url(../img/KakaoTalk_20230616_115338842.png) 0 40 ,pointer;
+// }
+@media (hover: hover) {
+  //모바일에서는 절대 나오면 안됨. 데스크탑에서만 사용함. 모바일을 감지하는 미디어쿼리는 없고 데스크탑에서만 만들겠다고 생각하면 됨 그게 hover:hover
+*{  cursor: none;}
+  .cur {
+    pointer-events: none;
+    mix-blend-mode: difference;
+    opacity: 0;//가만히 있을때는 보여주지않기
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: border-radius .5s , transform .5s;
+    &.active{
+      border-radius: 0;
+      &::before{
+        border-radius: 0;
+
+      }
+      transform: translate(-50%, -50%) rotate(720deg);
+    }
+    &::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: #ffffff;
+      border-radius: 10%;
+    }
+  }
+}
+
+.ex1 {
+  position: fixed;
+  width: 300px;
+  right: 0;
+  top: 0;
+  background-color: #eee;
+}
+
+.ex2 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  background-color: tan;
+  margin: 300px auto;
+}
