@@ -1,0 +1,76 @@
+@use './mixin' as m;
+
+body {
+}
+
+header {
+  position: absolute; //fixed가 아니고 앱솔인 이유는?
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  @media #{m.$minLg} {
+    height: 125px;
+  }
+  @media #{m.$maxLg} {
+    height: 100px;
+  }
+  .top {
+    height: 35px;
+    background-color: var(--blue);
+  }
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    height: calc(100% - 35px);
+    h1 {
+      height: 70%;
+      background-color: green;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.gnb-lg {
+  > div > ul {
+    display: flex;
+    > li {
+      position: relative;
+      height: 45px;
+      &:hover {
+        > a {
+          color: var(--blue);
+        }
+      }
+      > a {
+        display: block;
+        padding: 0 40px;
+        height: 45px;
+        line-height: 45px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #222;
+        transition: color 0.5s;
+      }
+      > ul {
+        min-width: 100%;
+        @include m.posLT(absolute, 50%, 100%, -50%, 0);
+        background-color: red;
+      }
+    }
+  }
+  @media #{m.$maxLg} {
+    display: none;
+  }
+}
+.gnb-sm {
+  @media #{m.$minLg} {
+    display: none;
+  }
+}
