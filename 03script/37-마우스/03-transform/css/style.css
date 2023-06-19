@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+.ex1 {
+  background-color: #000;
+  display: flex;
+  max-width: 1000px;
+  margin: 30px auto;
+  justify-content: center;
+}
+.ex1 figure {
+  width: 30%;
+  margin: 0 2%;
+  perspective: 1000px;
+}
+.ex1 figure img {
+  width: 100%;
+}
+.ex1 figure img.deactive {
+  transition: transform 0.5s;
+  transform: rotateY(0) !important;
+}/*# sourceMappingURL=style.css.map */
