@@ -48,7 +48,7 @@
   </li>
   <li class="menu5">
     <a href="./notice.php">
-      <span class="en">comunity</span>
+      <span class="en">community</span>
       <span class="kor">커뮤니티</span>
     </a>
     <h6>커뮤니티</h6>
