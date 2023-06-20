@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.wrap {
+  overflow: hidden;
+  width: 500px;
+  height: 200px;
+  margin: 50px auto;
+  border: 1px solid #000;
+  p {
+    display: inline-flex; //쭉 늘어남
+    white-space: nowrap;
+    background-color: thistle;
+    height: 100%;
+    cursor: move;
+    user-select: none; //글자 드레그 안되게 하는거
+  }
+}
