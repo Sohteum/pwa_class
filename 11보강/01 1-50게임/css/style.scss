@@ -1,0 +1,133 @@
+body {
+  color: #666;
+  font-family: "Raleway", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #000;
+}
+
+main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(100%, 450px);
+  height: min(100%, 700px);
+  min-height: 650px;
+  padding: 10px;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &.active {
+      animation: jello 1s;
+    }
+  }
+} //main
+.ui {
+  background: lightblue;
+  text-align: center;
+  .wrap-bottom {
+    display: flex;
+    align-items: center;
+    b.next-num {
+      width: 40%;
+      height: 100px;
+      line-height: 100px;
+      background-color: lightgreen;
+      font-size: 3rem;
+      font-weight: 500;
+    }
+    div.wrap-right {
+      flex: 1;
+      background-color: lightcyan;
+      button.btn-restart {
+        width: 100%;
+        height: 50px;
+        background-color: lightseagreen;
+        color: #fff;
+      }
+      em.sec {
+        background-color: greenyellow;
+        margin-top: 10px;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  button {
+    background-color: rebeccapurple;
+    position: relative;
+    width: 20%;
+    border: 1px solid #000;
+    &:disabled {
+      //찍은거 표시
+      cursor: none;
+      opacity: 0.5;
+    }
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+    }
+  }
+}
+
+div.init {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #666;
+  button.btn-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: #666;
+  }
+}
+
+div.game-over {
+  display: none; /* flex */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #666;
+  p {
+    font-size: 1.5em;
+    color: red;
+  }
+  .btn-again {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+  }
+}
