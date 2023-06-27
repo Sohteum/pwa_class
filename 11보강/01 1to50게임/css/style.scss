@@ -108,7 +108,7 @@ div.init {
   }
 }
 
-div.game-over {
+div.game-over, .game-completed {
   display: none; /* flex */
   flex-direction: column;
   align-items: center;

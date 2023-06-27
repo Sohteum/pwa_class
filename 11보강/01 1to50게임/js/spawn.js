@@ -14,7 +14,8 @@ fnSetArr = (start, end) => {//배열이 있어야 중복 안되게 뽑을 수 �
 }//fnSetArr
 
 fnSpawnBtn = () => {//배열이 만들어지면 하나씩 출력을 해야돼
-  for (let i = 1; i <= 25; i++) {
+  document.querySelector('.board').innerHTML = '';//비워줘야 다시 안붙음
+  for (let i = startNum; i <= finishNum / 2; i++) {
     let ranN = Math.floor(Math.random() * btnArr.length)//창고에들어있는 버튼의 개수만큼만 뽑아야하니까(계속 지우니까 길이가 계속 달라져서 )
     // let button = btnArr[ranN]//뽑은거 나와
     document.querySelector('.board').append(btnArr[ranN])
@@ -27,15 +28,34 @@ fnSpawnBtn = () => {//배열이 만들어지면 하나씩 출력을 해야돼
 fnBtnHandler = () => {
   document.querySelectorAll('.board button').forEach(v => {//배열은 이벤트 못주니까 여기선 포이치, v는 버튼
     v.addEventListener('click', (e) => {
-      if (parseInt(e.currentTarget.value) === nextNum) {
-        alert('정답')
-        e.currentTarget.disabled = true
+      if (parseInt(e.currentTarget.value) === nextNum) {//2번이 되어야하니까 넥스트넘을 계속 증가
+        fnPositive(e.currentTarget)
       } else {
-        time -= 10 * 10
-        document.querySelector('section').classList.add('active')
+        fnNagative()
       }//if
 
     })
 
   })
 }//fnBtnHandler
+
+fnPositive = (el) => {
+  el.disabled = true
+  nextNum++
+  document.querySelector('.next-num').innerText = nextNum
+  if (nextNum === finishNum / 2 + 1) {//배열을 다시 만들어주어야함
+    fnSetArr(finishNum / 2 + 1, finishNum)
+    fnSpawnBtn()
+    fnBtnHandler()
+  }
+  if (nextNum === finishNum+1) {//게임이 끝났다면.
+    document.querySelector('.game-completed').style.display = 'flex'
+  }
+
+
+
+}
+fnNagative = () => {
+  time -= 10 * 10
+  document.querySelector('section').classList.add('active')
+}

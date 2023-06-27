@@ -108,7 +108,7 @@ div.init button.btn-start {
   background-color: #666;
 }
 
-div.game-over {
+div.game-over, .game-completed {
   display: none; /* flex */
   flex-direction: column;
   align-items: center;
@@ -120,11 +120,11 @@ div.game-over {
   left: 0;
   background-color: #666;
 }
-div.game-over p {
+div.game-over p, .game-completed p {
   font-size: 1.5em;
   color: red;
 }
-div.game-over .btn-again {
+div.game-over .btn-again, .game-completed .btn-again {
   margin-top: 20px;
   width: 200px;
   height: 40px;
