@@ -24,7 +24,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    position: relative; //여기서 relative준 이유?
     width: 100%;
     height: 100%;
     &.active {
