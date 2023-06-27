@@ -1,0 +1,84 @@
+body {
+  color: #666;
+  font-family: "Raleway", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(100%, 400px);
+  height: min(100%, 700px);
+  min-height: 630px;
+  transform: translate(-50%, -50%);
+  background-color: lightsalmon;
+  color: #fff;
+}
+main h1 {
+  height: 40px;
+  line-height: 40px;
+  background-color: yellowgreen;
+  text-align: center;
+}
+main .desc {
+  height: 40px;
+  line-height: 40px;
+  background-color: rgb(50, 182, 205);
+  text-align: center;
+  color: #fff;
+  border-bottom: 1px dotted #666;
+}
+main .board {
+  flex: 1;
+  overflow: auto;
+}
+main .board div {
+  width: 95%;
+  margin: 10px auto;
+  display: flex;
+}
+main .board div span {
+  position: relative;
+  flex: 1;
+}
+main .board div span::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+main .board div span input {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  border: 1px solid #000;
+  color: #000;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  outline: none;
+}
+main .board div span input.grey {
+  background-color: #666;
+  color: #333;
+}
+main .board div span input.yellow {
+  background-color: yellow;
+  color: orange;
+}
+main .board div span input.green {
+  background-color: greenyellow;
+  color: green;
+}
+main .btn-choice {
+  height: 50px;
+  width: 100%;
+  background-color: yellowgreen;
+}/*# sourceMappingURL=style.css.map */

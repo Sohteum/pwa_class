@@ -48,7 +48,8 @@ fnPositive = (el) => {
     fnSpawnBtn()
     fnBtnHandler()
   }
-  if (nextNum === finishNum+1) {//게임이 끝났다면.
+  if (nextNum === finishNum + 1) {//게임이 끝났다면.
+    clearInterval(intervalID)//타이머가 돌아가서 fail이뜨니까 타이머를 클리어함
     document.querySelector('.game-completed').style.display = 'flex'
   }
 
