@@ -82,4 +82,56 @@ main {
     width: 100%;
     background-color: yellowgreen;
   }
+  .over {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+    em {
+      font-size: 2rem;
+      color: red;
+    }
+    p {
+      margin: 20px 0;
+    }
+    button.btn-again {
+      margin-top: 20px;
+      width: 100px;
+      height: 40px;
+      background-color: green;
+    }
+  } //over
+  .words {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #302b2b;
+    .output {
+      p {
+        button:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .btn-cancel {
+      margin-top: 50px;
+      width: 150px;
+      height: 40px;
+      color: #fda1a1;
+      background-color: #333;
+    }
+  }
 }
