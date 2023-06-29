@@ -86,7 +86,8 @@ window.fnPrintKeys = () => {
 
 window.fnSetMarks = () => {
   puzzle.markArr.forEach(mark => {
-    document.querySelector(`.board tr:nth-child(${mark.row + 1}) td:nth-child(${mark.col + 1})`).insertAdjacentHTML('beforeend', `<span class="mark">${mark.num}</span>`)
+    document.querySelector(`.board tr:nth-child(${mark.row + 1}) td:nth-child(${mark.col + 1})`)
+    .insertAdjacentHTML('beforeend', `<span class="mark">${mark.num}</span>`)
   })
 }//fnSetMarks
 
