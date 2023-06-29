@@ -6,31 +6,31 @@ window.puzzleArr = [puzzle1, puzzle2]
 
 window.fnInit = (num = null) => {
   puzzle =
-    (num !==null)
-      ? puzzleArr[num]
+    (num !==null)//퍼즐이 넘버이면서 null이 아닐때.이부분 이해가 잘 안감 질문?????????
+      ? puzzleArr[num]//퍼즐이 넘버라면 해당넘버에 해당하는 퍼즐을 출력, 그렇지 않다면 랜덤한 퍼즐을 출력
       : puzzleArr[Math.floor(Math.random() * puzzleArr.length)]//숫자를 퍼즐어레이에 넣어줌
-  point = 0
-  fnCheckCnt()
+  point = 0//새로 시작하면 포인트를 0으로 바꿔줌
+  fnCheckCnt()//카운트를 0으로 바꾸고, 함수의 내용을 실행한다.
   fnPrintKeys()
   fnSetGrid()
   fnInputHandler()//인풋이 만들어지고 일을 시킨다.위치가 중요
   fnSetMarks()//td, tr다 만들어지고 해야함
 }
 
-window.fnCheckCnt = () => {
+window.fnCheckCnt = () => {//카운트를 0으로 바꾸고 퍼즐에 사용자가 입력한 캐릭터 즉 값이 있다면 카운트를 올려준다
   cnt = 0
-  puzzle.tableArr.forEach(rowArr => {
+  puzzle.tableArr.forEach(rowArr => {//여기서 왜 rowArr??????질문?????
     rowArr.forEach(char => {
       if (char) { cnt++ }
     })
   })
-  console.log(cnt);
+  console.log(cnt);//총 20개나온다.
 }
 
 window.fnSetGrid = () => {
-  document.querySelector('.board').innerHTML = '<table><tbody></tbody></table>'
-  puzzle.tableArr.forEach((rowArr, rowIdx) => {
-    document.querySelector('.board table tbody').insertAdjacentHTML('beforeend', `<tr></tr>`)
+  document.querySelector('.board').innerHTML = '<table><tbody></tbody></table>'//tbody를 넣지않으면 아래의 tr이 아니라 tbody가 들어가므로 여기서 tbody를 넣어준다.
+  puzzle.tableArr.forEach((rowArr, rowIdx) => {//배열은 무조건 포이치!!파라미터 두개 받으면 무조건 괄호!! rowArr를 rowIdx만큼 돌린다??질문!!!
+    document.querySelector('.board table tbody').insertAdjacentHTML('beforeend', `<tr></tr>`)//insetAdjacentHTML은 append와 유사한데 어펜드를 하나만 하는경우에 사용하면 편하다.
     rowArr.forEach((char, colIdx) => {
       let template
       if (char) {
@@ -80,7 +80,7 @@ window.fnPrintKeys = () => {
   puzzle.rowKeys.forEach(v => {
     document.querySelector('.desc-row').insertAdjacentHTML('beforeend', `
     <p>${v.num}) ${v.hint}</p>
-    `) //한번반복하는 간단한 형태에서는 어펜드보다 어드제이슨트html이편해
+    `) 
   })
 }
 
