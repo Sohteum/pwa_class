@@ -4,9 +4,9 @@ window.point
 window.puzzleArr = [puzzle1, puzzle2]
 
 
-window.fnInit = (num = null) => {
+window.fnInit = (num = null) => {//없을때 비워논다. 값을 안넣는다. 
   puzzle =
-    (num !==null)//퍼즐이 넘버이면서 null이 아닐때.이부분 이해가 잘 안감 질문?????????
+    (num !==null)//퍼즐이 넘버이면서 null이 아닐때.이부분 이해가 잘 안감 질문?????????넘버가 비어있지않을때, 0을 포함해야하는데 false로 나오니까 포함이 안돼서 null이아닐때, 즉 비어있지않을때라는 조건을 넣음
       ? puzzleArr[num]//퍼즐이 넘버라면 해당넘버에 해당하는 퍼즐을 출력, 그렇지 않다면 랜덤한 퍼즐을 출력
       : puzzleArr[Math.floor(Math.random() * puzzleArr.length)]//숫자를 퍼즐어레이에 넣어줌
   point = 0//새로 시작하면 포인트를 0으로 바꿔줌
