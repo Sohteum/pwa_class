@@ -1,0 +1,33 @@
+@use './mixin' as m;
+
+
+body {
+  color: #666;
+  font-family: 'Montserrat','Noto Sans KR', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+  --blue:#00aae5;
+  --orange:#f68b1e;
+  --green:#8cc63f;
+  --dark:#012633;
+  @media #{m.$minLg} {
+   --header-height: 125px;
+  }
+  @media #{m.$maxLg} {
+    --header-height: 100px;
+  }
+}
+
+
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none;
+}

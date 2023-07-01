@@ -1,0 +1,189 @@
+@use './mixin' as m;
+
+ul.page-numbers {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 30px;
+  border-top: 1px dotted #ccc;
+  li {
+    margin: 0 5px;
+    a {
+      &:hover {
+        color: (--blue);
+      }
+    }
+    span {
+      color: var(--orange);
+      font-weight: 600;
+    }
+  }
+}
+
+.category-gallery-section {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      box-sizing: border-box;
+      padding: 5px;
+      a {
+        display: block;
+        padding: 5px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        figure {
+          margin: 0;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+            transform: scale(1.1);
+          }
+          figcaption {
+            position: relative;
+            padding: 10px;
+            background-color: var(--dark);
+            transition: all 0.3s;
+            h3 {
+              padding-bottom: 5px;
+              margin-bottom: 5px;
+              color: #fff;
+              font-weight: 600;
+              border-bottom: 1px dotted rgba(#fff, 0.3);
+            }
+            p {
+              color: rgba(#fff, 0.8);
+            }
+          }
+        }
+        &:hover {
+          figure {
+            img {
+              transform: scale(1.2);
+              transition: all 10s;
+              filter: url(#filter);
+            }
+            figcaption {
+              background-color: var(--blue);
+            }
+          } //figure
+        } //a:hover
+      } //a
+      @media #{m.$minLg} {
+        width: 33.3%;
+      }
+      @media #{m.$md} {
+        width: 50%;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
+    } //li
+  } //ul
+} //category-gallery-section
+
+.category-webzin-section {
+  ul {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      padding: 10px;
+      box-sizing: border-box;
+      &:hover {
+        img {
+          transform: scale(1.2);
+          transition: all 10s;
+          filter: url(#filter);
+        }
+      }
+      .meta {
+        border-top: 1px solid rgba(#aaa, 0.9);
+        padding: 7px;
+        background-color: var(--blue);
+        color: #fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        > * {
+          display: inline-block;
+        }
+        address {
+          font-weight: bold;
+          margin-right: 5px;
+        }
+        b {
+          float: right;
+        }
+      } //meta
+      figure {
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 10px solid var(--blue);
+        img {
+          transform: scale(1.1);
+          transition: all 0.5s;
+          width: 100%;
+          height: auto;
+        }
+      } //figure
+      .textbox {
+        @include m.clearfix;
+        h3 {
+          font-weight: 600;
+          font-size: 1.15em;
+        }
+        p {
+          margin: 10px 0;
+        }
+        a {
+          float: right;
+          padding: 5px 15px;
+          background-color: #fff;
+          color: var(--blue);
+          border: 1px solid var(--blue);
+          border-radius: 10px;
+          &:hover {
+            background-color: var(--blue);
+            color: #fff;
+          }
+        }
+      } //textbox
+      @media #{m.$minLg} {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        .meta {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        figure {
+          width: 40%;
+          margin-right: 30px;
+        }
+        .textbox {
+          // width: 60%;
+          flex: 1;
+        }
+      } //minLg
+      @media #{m.$md} {
+        width: 50%;
+      }
+      @media #{m.$maxSm} {
+        width: 100%;
+      }
+      @media #{m.$maxLg} {
+        figure {
+          margin: 0;
+        }
+        .textbox {
+          background-color: var(--dark);
+          padding: 10px;
+          color: #fff;
+        }
+      } //maxLg
+    } //li
+  } //ul
+}

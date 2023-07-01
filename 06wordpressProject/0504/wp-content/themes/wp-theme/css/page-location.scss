@@ -1,0 +1,50 @@
+@use "./mixin" as m;
+
+.page-section-location {
+  overflow: hidden;
+  margin: 30px auto;
+  text-align: center;
+  dl {
+    margin-bottom: 30px;
+    // margin-block-start: 0;
+    // margin-block-end: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: min(100%, 1200px);
+    text-align: center;
+
+    dt {
+      width: 25%;
+      color: #fff;
+      background-color: var(--dark);
+      box-sizing: border-box;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    dd {
+      width: 75%;
+      box-sizing: border-box;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  iframe {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 0 auto;
+    width: min(100%, 1200px);
+  }
+}
+
+// .sigle-section .meta dt {
+//   width: 25%;
+//   text-align: center;
+//   color: #fff;
+//   background-color: var(--dark);
+// }
+
+// .sigle-section .meta dt, .sigle-section .meta dd {
+//   box-sizing: border-box;
+//   padding: 10px;
+//   border-bottom: 1px solid #ccc;
