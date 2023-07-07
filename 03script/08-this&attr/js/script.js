@@ -10,12 +10,19 @@ $(function () {
     fn1($(this))
   })
 
+  // function fn1(el) {
+  //   var num = el.val()
+  //   var alpha = el.attr('data-n')
+  //   alert(`${num}, ${alpha}`)
+  // }
+
+  // $(`.ex1 button`).click(function(){
+  //   fn1($(this))
+  // })
 
 
-  //  function fn2(el, con) {
-  //    $(`.ex2 .con${con} button`).not(el).css({ 'color': 'black' })
-  //    el.css({ 'color': 'red' })
-  //  }
+
+
 
   //  $('.ex2 button').click(function () {
   //    var con = $(this).val()
@@ -23,10 +30,21 @@ $(function () {
   //  }) 
 
   function fncol(el, con) {
-    $(`.ex2 .con${con} button`).not($(this)).css({ 'color': `black` });
+    $(`.ex2 .con${con} button`).not(el).css({ 'color': `black` });
     el.css({ 'color': `red` });
   }
 
+  /*   function fncol(el, con) {
+      $(`.ex2 .con${con} button`).not($(this)).css({'color':`black`})
+      el.css({'color':`red`})
+    } */
+
+/*   $(`.ex2 .con1 button`).click(function () {
+    var con = $(this).val()
+    $(`.ex2 .con1 button`).not($(this)).css({ 'color': `black` })
+    $(this).css({ 'color': 'red' })
+    fncol($(this), con)
+  }) */
 
   $(`.ex2 .con1 button`).click(function () {
     var con = $(this).val()
@@ -49,6 +67,7 @@ $(function () {
     $(`.ex3 .con${con} span`).not(el).css({ 'color': 'blue' })
   }
 
+  function fn3(el)
   $('.ex3 span').click(function () {
     fn3($(this))
   })
