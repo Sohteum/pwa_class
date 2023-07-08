@@ -7,11 +7,22 @@ $(document).ready(function () {
     $(`.ex1 .box${n}`).show() //css 명령어. display none이었던것을, 블럭으로 바꾼ㄴ닫고 생각하면 되는데 원래 블럭이었으니까..근데 얘가 만약 인라인이었다면 인라인으로 바꾸고. 그러니까 원래 자신의 디스플레이레벨으로 바꿔주는 기능인것({'display':'block'})
   })
 
+/*   $(`.ex1 button`).click(fucntion(){
+    var n = $(this).text()
+    $(`.ex1 .box`).hide()
+    $(`.ex1 .box${n}`).show()
+  }) */
+
   $(`.ex2 button`).click(function () {
     var n = $(this).text()
     /*   $(`.ex2 .box`).not($(`.ex2 .box${n}`)).css({'display':'none'}) */
     $(`.ex2 .box${n}`).siblings('.box').css({ 'display': 'none' })
     $(`.ex2 .box${n}`).toggle()
+  })
+
+  $(`.ex2 button`).click(function(){
+    $(`.ex2 box${n}`).siblings('.box').css({'display':'none'})
+    $(`.ex2 box${n}`).toggle()
   })
 
   /* $(`.ex3 .box`).click(function(){
